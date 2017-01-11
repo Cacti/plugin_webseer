@@ -79,8 +79,7 @@ function do_webseer() {
 			break;
 	}
 
-	Header('Location:webseer.php?header=false');
-
+	Header('Location: webseer.php');
 	exit;
 }
 
