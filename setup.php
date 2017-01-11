@@ -160,13 +160,13 @@ function plugin_webseer_setup_table() {
 function plugin_webseer_poller_bottom() {
 	global $config;
 
-	include_once($config["library_path"] . "/database.php");
+	include_once($config['library_path'] . '/database.php');
 
-	$command_string = trim(read_config_option("path_php_binary"));
+	$command_string = trim(read_config_option('path_php_binary'));
 
 	// If its not set, just assume its in the path
 	if (trim($command_string) == '')
-		$command_string = "php";
+		$command_string = 'php';
 	$extra_args = ' -q ' . $config['base_path'] . '/plugins/webseer/poller_webseer.php';
 
 	exec_background($command_string, $extra_args);
@@ -203,7 +203,7 @@ function plugin_webseer_user_admin_edit($user) {
 	$value = '';
 
 	if ($user != 0) {
-		$value = db_fetch_cell("SELECT data FROM plugin_thold_contacts WHERE user_id = $user AND type = 'text'");
+		$value = db_fetch_cell_prepared('SELECT data FROM plugin_thold_contacts WHERE user_id = ? AND type = "text"', array($user));
 	}
 
 	$fields_user_user_edit_host['text'] = array(
@@ -230,12 +230,12 @@ function plugin_webseer_user_admin_setup_sql_save($save) {
 			$save['id'] = sql_save($save, 'user_auth');
 		}
 
-		$cid = db_fetch_cell("SELECT id FROM plugin_thold_contacts WHERE type = 'text' AND user_id = " . $save['id'], false);
+		$cid = db_fetch_cell_prepared('SELECT id FROM plugin_thold_contacts WHERE type = "text" AND user_id = ?', array($save['id']), 'id', false);
 
 		if ($cid) {
-			db_execute("REPLACE INTO plugin_thold_contacts (id, user_id, type, data) VALUES ($cid, " . $save['id'] . ", 'text', '$text')");
+			db_execute_prepared('REPLACE INTO plugin_thold_contacts (id, user_id, type, data) VALUES (?, ?, "text", ?)', array($cid, $save['id'], $text));
 		}else{
-			db_execute("REPLACE INTO plugin_thold_contacts (user_id, type, data) VALUES (" . $save['id'] . ", 'text', '$text')");
+			db_execute_prepared('REPLACE INTO plugin_thold_contacts (user_id, type, data) VALUES (?, "text", ?)', array($save['id'], $text));
 		}
 	}
 

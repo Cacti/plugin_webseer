@@ -141,7 +141,7 @@ function webseer_edit_url () {
 
 	$url = array();
 	if (!isempty_request_var('id')) {
-		$url = db_fetch_row('SELECT * FROM plugin_webseer_urls WHERE id=' . get_request_var('id'), FALSE);
+		$url = db_fetch_row_prepared('SELECT * FROM plugin_webseer_urls WHERE id = ?', array(get_request_var('id')), false);
 		$header_label = __('Query [edit: %s]', $url['url']);
 		$url['notify_accounts'] = explode(',', $url['notify_accounts']);
 	}else{
@@ -150,7 +150,7 @@ function webseer_edit_url () {
 	}
 
 	$sql = 'SELECT id FROM plugin_thold_contacts 
-		WHERE id = ' . (!empty($url['notify_accounts']) ? implode($url['notify_accounts'], ' OR id = ') : 0);
+		WHERE id = ' . (!empty($url['notify_accounts']) && implode($url['notify_accounts'], '') != '' ? implode($url['notify_accounts'], ' OR id = ') : 0);
 
 	$url_edit = array(
 		'enabled' => array(

@@ -47,10 +47,10 @@ include_once($config['base_path'] . '/lib/poller.php');
 // Remove old Logs (ADD A SETTING!!!!!!)
 $t = time() - (86400 * 30);
 db_execute("DELETE FROM plugin_webseer_url_log WHERE lastcheck < $t", FALSE);
-db_execute("DELETE FROM plugin_webseer_processes WHERE time < " . (time() - 15));
+db_execute('DELETE FROM plugin_webseer_processes WHERE time < ' . (time() - 15));
 
 $start = microtime(true);
-$hosts = db_fetch_assoc("SELECT * FROM plugin_webseer_urls WHERE enabled = 'on'", FALSE);
+$hosts = db_fetch_assoc('SELECT * FROM plugin_webseer_urls WHERE enabled = "on"', FALSE);
 
 $max = 12;
 
@@ -66,12 +66,12 @@ for ($x = 0; $x < count($hosts); $x++) {
 	} else {
 		$x--;
 		usleep(10000);
-		db_execute("DELETE FROM plugin_webseer_processes WHERE time < " . (time() - 15));
+		db_execute('DELETE FROM plugin_webseer_processes WHERE time < ' . (time() - 15));
 	}
 }
 
 while(true) {
-	db_execute("DELETE FROM plugin_webseer_processes WHERE time < " . (time() - 15));
+	db_execute('DELETE FROM plugin_webseer_processes WHERE time < ' . (time() - 15));
 	$running = db_fetch_cell('SELECT COUNT(*) FROM plugin_webseer_processes');
 
 	if ($running == 0) {
@@ -86,10 +86,10 @@ $servers = plugin_webseer_update_servers();
 $end   = microtime(true);
 $ttime = round($end - $start, 3);
 
-cacti_log("STATS WEBSEER: Total Time:$ttime, Service Checks:" . sizeof($hosts) . ", Servers:" . $servers, false, "SYSTEM");
+cacti_log("STATS WEBSEER: Total Time:$ttime, Service Checks:" . sizeof($hosts) . ", Servers:" . $servers, false, 'SYSTEM');
 
 function plugin_webseer_update_servers() {
-	$servers = db_fetch_assoc("SELECT * FROM plugin_webseer_servers WHERE isme = 0 AND enabled=1");
+	$servers = db_fetch_assoc('SELECT * FROM plugin_webseer_servers WHERE isme = 0 AND enabled = 1');
 	foreach ($servers as $server) {
 		$cc = new cURL();
 		$cc->host['url'] = $server['url'];

@@ -60,20 +60,20 @@ function do_webseer() {
 	switch (get_nfilter_request_var('drp_action')) {
 		case 1:	// Delete
 			foreach ($hosts as $del => $rra) {
-				db_execute('DELETE FROM plugin_webseer_urls WHERE id=' . $del);
-				db_execute('DELETE FROM plugin_webseer_url_log WHERE url_id=' . $del);
+				db_execute_prepared('DELETE FROM plugin_webseer_urls WHERE id = ?', array($del));
+				db_execute_prepared('DELETE FROM plugin_webseer_url_log WHERE url_id = ?', array($del));
 				plugin_webseer_delete_remote_hosts($del);
 			}
 			break;
 		case 2:	// Disabled
 			foreach ($hosts as $del => $rra) {
-				db_execute("UPDATE plugin_webseer_urls SET enabled = 'off' WHERE id = $del");
+				db_execute_prepared('UPDATE plugin_webseer_urls SET enabled = "off" WHERE id = ?', array($del));
 				plugin_webseer_enable_remote_hosts($del, false);
 			}
 			break;
 		case 3:	// Enabled
 			foreach ($hosts as $del => $rra) {
-				db_execute("UPDATE plugin_webseer_urls SET enabled = 'on' WHERE id = $del");
+				db_execute_prepared('UPDATE plugin_webseer_urls SET enabled = "on" WHERE id = ?', array($del));
 				plugin_webseer_enable_remote_hosts($del, true);
 			}
 			break;

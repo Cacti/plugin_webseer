@@ -107,7 +107,7 @@ function webseer_edit_server() {
 
 	$server = array();
 	if (!isempty_request_var('id')) {
-		$server = db_fetch_row('SELECT * FROM plugin_webseer_servers WHERE id=' . get_request_var('id'), FALSE);
+		$server = db_fetch_row_prepared('SELECT * FROM plugin_webseer_servers WHERE id = ?', array(get_request_var('id')), FALSE);
 		$header_label = __('Query [edit: %s]', $server['ip']);
 	}else{
 		$header_label = __('Query [new]');

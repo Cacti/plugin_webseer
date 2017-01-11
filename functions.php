@@ -57,15 +57,12 @@ function plugin_webseer_refresh_servers() {
 			if (isset($servers[0]['id'])) {
 				db_execute('TRUNCATE TABLE plugin_webseer_servers');
 				foreach ($servers as $save) {
-					db_execute("REPLACE INTO plugin_webseer_servers (id, enabled, master, name, url, ip, location)
-						VALUES (" . 
-						$save['id'] . ", " . 
-						$save['enabled'] . ", " . 
-						$save['master'] . ", '" . 
-						$save['name'] . "', '" . 
-						$save['url'] . "', '" . 
-						$save['ip'] . "', '" . 
-						$save['location'] . "')");
+					db_execute_prepared('REPLACE INTO plugin_webseer_servers (id, enabled, master, name, url, ip, location)
+						VALUES (?,?,?,?,?,?,?)',
+						array(
+							$save['id'], $save['enabled'], $save['master'], $save['name'], $save['url'], $save['ip'] , $save['location'] 
+						)
+					);
 				}
 			}
 			break;
@@ -90,21 +87,13 @@ function plugin_webseer_refresh_urls () {
 			if (isset($urls[0]['id'])) {
 				db_execute('TRUNCATE TABLE plugin_webseer_urls');
 				foreach ($urls as $save) {
-					db_execute("REPLACE INTO plugin_webseer_urls (id, enabled, requiresauth, checkcert, ip, display_name, notify_accounts, url, search, search_maint, search_failed, notify_extra, downtrigger)
-						VALUES (" . 
-						$save['id'] . ", '" . 
-						$save['enabled'] . "', '" . 
-						$save['requiresauth'] . "', '" . 
-						$save['checkcert'] . "', '" . 
-						$save['ip'] . "', '" . 
-						$save['display_name'] . "', '" . 
-						$save['notify_accounts'] . "', '" . 
-						$save['url'] . "', '" . 
-						$save['search'] . "', '" . 
-						$save['search_maint'] . "', '" . 
-						$save['search_failed'] . "', '" .
-						$save['notify_extra'] . "', " . 
-						$save['downtrigger'] . ")");
+					db_execute_prepared('REPLACE INTO plugin_webseer_urls (id, enabled, requiresauth, checkcert, ip, display_name, notify_accounts, url, search, search_maint, search_failed, notify_extra, downtrigger)
+						VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)',
+						array(
+							$save['id'], $save['enabled'], $save['requiresauth'], $save['checkcert'], $save['ip'], $save['display_name'], $save['notify_accounts'],
+							$save['url'], $save['search'], $save['search_maint'], $save['search_failed'], $save['notify_extra'], $save['downtrigger']
+						)
+					);
 				}
 			}
 			break;
@@ -214,7 +203,7 @@ function plugin_webseer_add_remote_hosts ($id, $save) {
 }
 
 function plugin_webseer_update_remote_hosts ($save) {
-	$servers = db_fetch_assoc("SELECT * FROM plugin_webseer_servers WHERE isme = 0");
+	$servers = db_fetch_assoc('SELECT * FROM plugin_webseer_servers WHERE isme = 0');
 	foreach ($servers as $server) {
 		$cc = new cURL();
 		$cc->host['url'] = $server['url'];
@@ -224,7 +213,7 @@ function plugin_webseer_update_remote_hosts ($save) {
 }
 
 function plugin_webseer_add_remote_server ($id, $save) {
-	$servers = db_fetch_assoc("SELECT * FROM plugin_webseer_servers WHERE isme = 0");
+	$servers = db_fetch_assoc('SELECT * FROM plugin_webseer_servers WHERE isme = 0');
 	foreach ($servers as $server) {
 		$cc = new cURL();
 		$cc->host['url'] = $server['url'];
@@ -286,7 +275,7 @@ function webseer_send_mail($to, $from, $subject, $message, $filename = '', $head
 	$message = str_replace('<TO>', $to, $message);
 	$message = str_replace('<FROM>', $from, $message);
 
-	$how = read_config_option("settings_how");
+	$how = read_config_option('settings_how');
 	if ($how < 0 || $how > 2)
 		$how = 0;
 	if ($how == 0) {
@@ -298,10 +287,10 @@ function webseer_send_mail($to, $from, $subject, $message, $filename = '', $head
 			'Type' => 'DirectInject',
 			'DirectInject_Path' => $sendmail));
 	} else if ($how == 2) {
-		$smtp_host = read_config_option("settings_smtp_host");
-		$smtp_port = read_config_option("settings_smtp_port");
-		$smtp_username = read_config_option("settings_smtp_username");
-		$smtp_password = read_config_option("settings_smtp_password");
+		$smtp_host = read_config_option('settings_smtp_host');
+		$smtp_port = read_config_option('settings_smtp_port');
+		$smtp_username = read_config_option('settings_smtp_username');
+		$smtp_password = read_config_option('settings_smtp_password');
 
 		$Mailer = new Mailer(array(
 			'Type' => 'SMTP',
@@ -313,22 +302,22 @@ function webseer_send_mail($to, $from, $subject, $message, $filename = '', $head
 
 	$from = $Mailer->email_format('Webseer', $from);
 	if ($Mailer->header_set('From', $from) === false) {
-		print "ERROR: " . $Mailer->error() . "\n";
+		print 'ERROR: ' . $Mailer->error() . "\n";
 		return $Mailer->error();
 	}
 
 	if ($to == '')
-		return "Mailer Error: No <b>TO</b> address set!!<br>If using the <i>Test Mail</i> link, please set the <b>Alert e-mail</b> setting.";
+		return 'Mailer Error: No <b>TO</b> address set!!<br>If using the <i>Test Mail</i> link, please set the <b>Alert e-mail</b> setting.';
 	$to = explode(',', $to);
 
 	foreach($to as $t) {
-		if (trim($t) != '' && !$Mailer->header_set("To", $t)) {
-			print "ERROR: " . $Mailer->error() . "\n";
+		if (trim($t) != '' && !$Mailer->header_set('To', $t)) {
+			print 'ERROR: ' . $Mailer->error() . "\n";
 			return $Mailer->error();
 		}
 	}
 
-	$wordwrap = read_config_option("settings_wordwrap");
+	$wordwrap = read_config_option('settings_wordwrap');
 	if ($wordwrap == '')
 		$wordwrap = 76;
 	if ($wordwrap > 9999)
@@ -336,10 +325,10 @@ function webseer_send_mail($to, $from, $subject, $message, $filename = '', $head
 	if ($wordwrap < 0)
 		$wordwrap = 76;
 
-	$Mailer->Config["Mail"]["WordWrap"] = $wordwrap;
+	$Mailer->Config['Mail']['WordWrap'] = $wordwrap;
 
-	if (! $Mailer->header_set("Subject", $subject)) {
-		print "ERROR: " . $Mailer->error() . "\n";
+	if (! $Mailer->header_set('Subject', $subject)) {
+		print 'ERROR: ' . $Mailer->error() . "\n";
 		return $Mailer->error();
 	}
 
@@ -355,7 +344,7 @@ function webseer_send_mail($to, $from, $subject, $message, $filename = '', $head
 	}
 
 	if ($Mailer->send($text) == false) {
-		print "ERROR: " . $Mailer->error() . "\n";
+		print 'ERROR: ' . $Mailer->error() . "\n";
 		return $Mailer->error();
 	}
 
@@ -389,7 +378,7 @@ class cURL {
 		}
 		$this->results = array('result' => 0, 'time' => time(), 'error' => '');
 		$this->host['search'] = $this->host['search'];
-		$this->bundle = $config['base_path'] . "/plugins/webseer/ca-bundle.crt";
+		$this->bundle = $config['base_path'] . '/plugins/webseer/ca-bundle.crt';
 	}
 
 	function cookie($cookie_file) {
@@ -430,7 +419,7 @@ class cURL {
 		$process = curl_init($url);
 		if ($this->host['ip'] != '') {
 			curl_setopt($process, CURLOPT_PROXY, $this->host['ip']); 
-			if (substr(strtolower($url), 0, 5) == "https") {
+			if (substr(strtolower($url), 0, 5) == 'https') {
 				curl_setopt($process, CURLOPT_PROXYPORT, 443); 
 			} else {
 				curl_setopt($process, CURLOPT_PROXYPORT, 80); 
@@ -637,7 +626,7 @@ class mxlookup {
 			$this->arrMX[] = $ip;
 			//$mxPref = ord($this->gdi($this->cIx));
 			//$this->parse_data($curmx);
-			//$this->arrMX[] = array("MX_Pref" => $mxPref, "MX" => $curmx);
+			//$this->arrMX[] = array('MX_Pref' => $mxPref, 'MX' => $curmx);
 			//$this->cIx += 3;
 		}
 	}
@@ -651,11 +640,11 @@ class mxlookup {
 				$this->cIx = ord($this->gdi($cIx));
 				$tmpName = $retval;
 				$this->parse_data($tmpName);
-				$retval=$retval.".".$tmpName;
+				$retval=$retval . '.' . $tmpName;
 				$this->cIx = $tmpIx+1;
 				return;
 			}
-			$retval="";
+			$retval='';
 			$bCount = $byte;
 			for($b=0;$b<$bCount;$b++) {
 				$retval .= $this->gdi($this->cIx);
@@ -663,7 +652,7 @@ class mxlookup {
 			$arName[]=$retval;
 			$byte = ord($this->gdi($this->cIx));
 		}
-		$retval=join(".",$arName);
+		$retval=join('.',$arName);
 	}
 
 	function gdi(&$cIx,$bytes=1) {
@@ -673,8 +662,8 @@ class mxlookup {
 
 	function QNAME($domain) {
 		$dot_pos = 0;
-		$temp = "";
-		while($dot_pos = strpos($domain, ".")) {
+		$temp = '';
+		while($dot_pos = strpos($domain, '.')) {
 			$temp   = substr($domain, 0, $dot_pos);
 			$domain = substr($domain, $dot_pos + 1);
 			$this->QNAME .= chr(strlen($temp)) . $temp;
@@ -683,7 +672,7 @@ class mxlookup {
 	}
 
 	function gord($ln = 1) {
-       	$reply = "";
+       	$reply = '';
 		for($i = 0; $i < $ln; $i++){
 			$reply .= ord(substr($this->dns_reply, $this->cIx, 1));
 			$this->cIx++;
