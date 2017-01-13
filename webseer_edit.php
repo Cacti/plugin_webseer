@@ -204,7 +204,7 @@ function webseer_edit_url () {
 			),
 		'requiresauth' => array(
 			'method' => 'checkbox',
-			'friendly_name' => __('Requires Authenication'),
+			'friendly_name' => __('Requires Authentication'),
 			'description' => __('Check this box if the site will normally return a 401 Error as it requires a username and password.'),
 			'value' => '|arg1:requiresauth|',
 			'default' => '',
@@ -212,7 +212,7 @@ function webseer_edit_url () {
 		'checkcert' => array(
 			'method' => 'checkbox',
 			'friendly_name' => __('Check Certificate'),
-			'description' => __('If using SSL, check this box if you want to validate the certificate. Default on, turn off if you the site uses a self signed certificate.'),
+			'description' => __('If using SSL, check this box if you want to validate the certificate. Default on, turn off if you the site uses a self-signed certificate.'),
 			'value' => '|arg1:checkcert|',
 			'default' => 'on',
 			),
@@ -232,7 +232,7 @@ function webseer_edit_url () {
 				10 => __('%d Minutes', 10)
 			),
 			'default' => 3,
-			'description' => __('How many minutes the URL must be down before it will send an alert.  After an alert is sent, in order for a "Site Recovering" email to be send, it must also be up this number of minutes.'),
+			'description' => __('How many minutes the URL must be down before it will send an alert.  After an alert is sent, in order for a \'Site Recovering\' Email to be send, it must also be up this number of minutes.'),
 			'value' => '|arg1:downtrigger|',
 		),
 		'timeout_trigger' => array(
@@ -264,7 +264,7 @@ function webseer_edit_url () {
 			'method' => 'textarea',
 			'textarea_rows' => 3,
 			'textarea_cols' => 50,
-			'description' => __('You may specify here extra e-mails to receive alerts for this URL (comma separated)'),
+			'description' => __('You may specify here extra Emails to receive alerts for this URL (comma separated)'),
 			'value' => '|arg1:notify_extra|',
 			),
 		'id' => array(

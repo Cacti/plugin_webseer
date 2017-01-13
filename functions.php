@@ -300,14 +300,14 @@ function webseer_send_mail($to, $from, $subject, $message, $filename = '', $head
 			'SMTP_Password' => $smtp_password));
 	}
 
-	$from = $Mailer->email_format('Webseer', $from);
+	$from = $Mailer->email_format('WebSeer', $from);
 	if ($Mailer->header_set('From', $from) === false) {
 		print 'ERROR: ' . $Mailer->error() . "\n";
 		return $Mailer->error();
 	}
 
 	if ($to == '')
-		return 'Mailer Error: No <b>TO</b> address set!!<br>If using the <i>Test Mail</i> link, please set the <b>Alert e-mail</b> setting.';
+		return 'Mailer Error: No <b>TO</b> address set!!<br>If using the <i>Test Mail</i> link, please set the <b>Alert Email</b> setting.';
 	$to = explode(',', $to);
 
 	foreach($to as $t) {

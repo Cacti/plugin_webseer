@@ -124,7 +124,7 @@ function webseer_edit_server() {
 		'master' => array(
 			'method' => 'checkbox',
 			'friendly_name' => __('Master Server'),
-			'description' => __('Sets this server to the Master server.  The master server handles all email operations'),
+			'description' => __('Sets this server to the Master server.  The Master server handles all Email operations'),
 			'value' => (isset($server['master']) && $server['master'] == 1 ? 'on' : 'off'),
 			'default' => 'off',
 			),

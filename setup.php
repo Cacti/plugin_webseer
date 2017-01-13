@@ -177,7 +177,7 @@ function plugin_webseer_config_arrays() {
 
 	$menu[__('Management')]['plugins/webseer/webseer.php'] = __('Web Service Checks');
 
-	$user_auth_realms[423]='Manage Webseer';
+	$user_auth_realms[423]='Manage WebSeer';
 	$user_auth_realm_filenames['webseer_edit.php'] = 423;
 	$user_auth_realm_filenames['webseer.php'] = 423;
 	$user_auth_realm_filenames['webseer_servers.php'] = 423;
@@ -185,14 +185,14 @@ function plugin_webseer_config_arrays() {
 }
 
 function plugin_webseer_draw_navigation_text($nav) {
-	$nav['webseer.php:'] = array('title' => 'Webseer', 'mapping' => 'index.php:', 'url' => 'webseer.php', 'level' => '1');
-	$nav['webseer_servers.php:'] = array('title' => 'Webseer', 'mapping' => 'index.php:', 'url' => 'webseer_servers.php', 'level' => '1');
-	$nav['webseer_edit.php:'] = array('title' => 'Webseer', 'mapping' => 'index.php:', 'url' => 'webseer.php', 'level' => '1');
-	$nav['webseer_edit.php:edit'] = array('title' => 'Webseer', 'mapping' => 'index.php:', 'url' => 'webseer.php', 'level' => '1');
-	$nav['webseer_edit.php:save'] = array('title' => 'Webseer', 'mapping' => 'index.php:', 'url' => 'webseer.php', 'level' => '1');
-	$nav['webseer_servers_edit.php:'] = array('title' => 'Webseer', 'mapping' => 'index.php:', 'url' => 'webseer.php', 'level' => '1');
-	$nav['webseer_servers_edit.php:edit'] = array('title' => 'Webseer', 'mapping' => 'index.php:', 'url' => 'webseer.php', 'level' => '1');
-	$nav['webseer_servers_edit.php:save'] = array('title' => 'Webseer', 'mapping' => 'index.php:', 'url' => 'webseer.php', 'level' => '1');
+	$nav['webseer.php:'] = array('title' => 'WebSeer', 'mapping' => 'index.php:', 'url' => 'webseer.php', 'level' => '1');
+	$nav['webseer_servers.php:'] = array('title' => 'WebSeer', 'mapping' => 'index.php:', 'url' => 'webseer_servers.php', 'level' => '1');
+	$nav['webseer_edit.php:'] = array('title' => 'WebSeer', 'mapping' => 'index.php:', 'url' => 'webseer.php', 'level' => '1');
+	$nav['webseer_edit.php:edit'] = array('title' => 'WebSeer', 'mapping' => 'index.php:', 'url' => 'webseer.php', 'level' => '1');
+	$nav['webseer_edit.php:save'] = array('title' => 'WebSeer', 'mapping' => 'index.php:', 'url' => 'webseer.php', 'level' => '1');
+	$nav['webseer_servers_edit.php:'] = array('title' => 'WebSeer', 'mapping' => 'index.php:', 'url' => 'webseer.php', 'level' => '1');
+	$nav['webseer_servers_edit.php:edit'] = array('title' => 'WebSeer', 'mapping' => 'index.php:', 'url' => 'webseer.php', 'level' => '1');
+	$nav['webseer_servers_edit.php:save'] = array('title' => 'WebSeer', 'mapping' => 'index.php:', 'url' => 'webseer.php', 'level' => '1');
 
 	return $nav;
 }
