@@ -1,6 +1,6 @@
 # webseer
 
-This is Cacti's Web Services monitoring plugin.  This plugin allows you to add Web Site service monitoring to Cacti.  You simply add service checks, the desired service check URL, and the expected response from it's interface, as well as any escallation required if a service check fails.
+This is Cacti's Web Services monitoring plugin.  This plugin allows you to add Web Site service monitoring to Cacti.  You simply add service checks, the desired service check URL, and the expected response from it's interface, as well as any escallation required if a service check fails.  The plugin records statistics about the connection to the website, it's response, and can alert when the status changes.
 
 This plugin has existed for years, but up until this year, has never been made public.  It can be an asset used to address some monitoring requirements for customers who not only monitor servers, but need to know that the Web Services on those servers are operating as expected.
 
@@ -16,5 +16,5 @@ Bug and feature enhancements for the webseer plugin are handled in GitHub. If yo
 
 ## ChangeLog
 
---- 1.0 ---
+--- 0.1 ---
 * Initial public release
