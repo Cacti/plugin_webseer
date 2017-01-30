@@ -78,14 +78,15 @@ function webseer_save_url() {
 	}
 
 	if (isset_request_var('notify_accounts')) {
-		if (is_array(get_request_var('notify_accounts'))) {
-			foreach (get_request_var('notify_accounts') as $na) {
-				input_validate_input_number($na);
-			}
-			$save['notify_accounts'] = implode(',', get_request_var('notify_accounts'));
-		} else {
-			set_request_var('notify_accounts', '');
-		}
+		$save['notify_accounts'] = get_request_var('notify_accounts');
+	//	if (is_array(get_request_var('notify_accounts'))) {
+	//		foreach (get_request_var('notify_accounts') as $na) {
+	//			input_validate_input_number($na);
+	//		}
+	//		$save['notify_accounts'] = implode(',', get_request_var('notify_accounts'));
+	//	} else {
+	//		set_request_var('notify_accounts', '');
+	//	}
 	} else {
 		$save['notify_accounts'] = '';
 	}
@@ -121,19 +122,6 @@ function webseer_save_url() {
 
 function webseer_edit_url () {
 	// THOLD IS REQUIRED
-	$send_notification_array = array();
-	$users = db_fetch_assoc("SELECT plugin_thold_contacts.id, plugin_thold_contacts.data, 
-		plugin_thold_contacts.type, user_auth.full_name 
-		FROM plugin_thold_contacts, user_auth 
-		WHERE user_auth.id = plugin_thold_contacts.user_id 
-		AND plugin_thold_contacts.data != '' 
-		ORDER BY user_auth.full_name ASC, plugin_thold_contacts.type ASC");
-
-	if (!empty($users)) {
-		foreach ($users as $user) {
-			$send_notification_array[$user['id']] = $user['full_name'] . ' - ' . ucfirst($user['type']);
-		}
-	}
 
 	/* ================= input validation ================= */
 	get_filter_request_var('id');
@@ -143,14 +131,11 @@ function webseer_edit_url () {
 	if (!isempty_request_var('id')) {
 		$url = db_fetch_row_prepared('SELECT * FROM plugin_webseer_urls WHERE id = ?', array(get_request_var('id')), false);
 		$header_label = __('Query [edit: %s]', $url['url']);
-		$url['notify_accounts'] = explode(',', $url['notify_accounts']);
+		//$url['notify_accounts'] = explode(',', $url['notify_accounts']);
 	}else{
 		$header_label = __('Query [new]');
-		$url['notify_accounts'] = array();
+		//$url['notify_accounts'] = array();
 	}
-
-	$sql = 'SELECT id FROM plugin_thold_contacts 
-		WHERE id = ' . (!empty($url['notify_accounts']) && implode($url['notify_accounts'], '') != '' ? implode($url['notify_accounts'], ' OR id = ') : 0);
 
 	$url_edit = array(
 		'enabled' => array(
@@ -254,10 +239,11 @@ function webseer_edit_url () {
 		),
 		'notify_accounts' => array(
 			'friendly_name' => __('Notify accounts'),
-			'method' => 'drop_multi',
+			'method' => 'drop_sql',
 			'description' => __('This is a listing of accounts that will be notified when this website goes down.'),
-			'array' => $send_notification_array,
-			'sql' => $sql,
+			'value' => isset($url['notify_accounts']) ? $url['notify_accounts'] : '',
+			'none_value' => __('None'),
+			'sql' => 'SELECT id, name FROM plugin_notification_lists ORDER BY name'
 			),
 		'notify_extra' => array(
 			'friendly_name' => __('Extra Alert Emails'),

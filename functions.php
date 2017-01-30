@@ -267,89 +267,57 @@ function plugin_webseer_down_remote_hosts ($save) {
 	}
 }
 
-function webseer_send_mail($to, $from, $subject, $message, $filename = '', $headers = '') {
+function webseer_send_mail($to_email, $subject, $message, $type = '', $headers = '') {
 	global $config;
-	include_once($config['base_path'] . '/plugins/settings/include/mailer.php');
 
-	$message = str_replace('<SUBJECT>', $subject, $message);
-	$message = str_replace('<TO>', $to, $message);
-	$message = str_replace('<FROM>', $from, $message);
+	$headers = array();
 
-	$how = read_config_option('settings_how');
-	if ($how < 0 || $how > 2)
-		$how = 0;
-	if ($how == 0) {
-		$Mailer = new Mailer(array(
-			'Type' => 'PHP'));
-	} else if ($how == 1) {
-		$sendmail = read_config_option('settings_sendmail_path');
-		$Mailer = new Mailer(array(
-			'Type' => 'DirectInject',
-			'DirectInject_Path' => $sendmail));
-	} else if ($how == 2) {
-		$smtp_host = read_config_option('settings_smtp_host');
-		$smtp_port = read_config_option('settings_smtp_port');
-		$smtp_username = read_config_option('settings_smtp_username');
-		$smtp_password = read_config_option('settings_smtp_password');
-
-		$Mailer = new Mailer(array(
-			'Type' => 'SMTP',
-			'SMTP_Host' => $smtp_host,
-			'SMTP_Port' => $smtp_port,
-			'SMTP_Username' => $smtp_username,
-			'SMTP_Password' => $smtp_password));
+	$from_email = read_config_option('settings_from_email');
+	if ($from_email == '') {
+		$from_email = 'webseer@cacti.pvt';
 	}
 
-	$from = $Mailer->email_format('WebSeer', $from);
-	if ($Mailer->header_set('From', $from) === false) {
-		print 'ERROR: ' . $Mailer->error() . "\n";
-		return $Mailer->error();
-	}
-
-	if ($to == '')
-		return 'Mailer Error: No <b>TO</b> address set!!<br>If using the <i>Test Mail</i> link, please set the <b>Alert Email</b> setting.';
-	$to = explode(',', $to);
-
-	foreach($to as $t) {
-		if (trim($t) != '' && !$Mailer->header_set('To', $t)) {
-			print 'ERROR: ' . $Mailer->error() . "\n";
-			return $Mailer->error();
-		}
-	}
-
-	$wordwrap = read_config_option('settings_wordwrap');
-	if ($wordwrap == '')
-		$wordwrap = 76;
-	if ($wordwrap > 9999)
-		$wordwrap = 9999;
-	if ($wordwrap < 0)
-		$wordwrap = 76;
-
-	$Mailer->Config['Mail']['WordWrap'] = $wordwrap;
-
-	if (! $Mailer->header_set('Subject', $subject)) {
-		print 'ERROR: ' . $Mailer->error() . "\n";
-		return $Mailer->error();
+	$from_name = read_config_option('settings_from_name');
+	if ($from_name == '') {
+		$from_email = 'Webseer';
 	}
 
 	$text = array('text' => '', 'html' => '');
-	if ($filename == '') {
+	if ($type == 'text') {
 		$message = str_replace('<br>',  "\n", $message);
 		$message = str_replace('<BR>',  "\n", $message);
 		$message = str_replace('</BR>', "\n", $message);
 		$text['text'] = strip_tags($message);
 	} else {
-		$text['html'] = $message . '<br>';
+		$text['html'] = str_replace("\n", '<br>', $message);
 		$text['text'] = strip_tags(str_replace('<br>', "\n", $message));
 	}
 
-	if ($Mailer->send($text) == false) {
-		print 'ERROR: ' . $Mailer->error() . "\n";
-		return $Mailer->error();
+	$attachments = array();
+
+	$pinfo = plugin_webseer_version();
+	$headers['X-Mailer'] = $headers['User-Agent'] = 'Cacti-Webseer-v' . $pinfo['version'];
+
+	$error = mailer(
+		array($from_email, $from_name),
+		$to_email,
+		'',
+		'',
+		'',
+		$subject,
+		$text['html'],
+		$text['text'],
+		$attachments,
+		$headers
+	);
+
+	if (strlen($error)) {
+		cacti_log('ERROR: Sending Email Failed.  Error was ' . $error, true, 'WEBSEER');
+
+		return $error;
 	}
 
 	return '';
-
 }
 
 class cURL {

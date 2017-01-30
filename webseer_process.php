@@ -30,7 +30,6 @@ if (!isset($_SERVER['argv'][0]) || isset($_SERVER['REQUEST_METHOD'])  || isset($
 	die('<br><strong>This script is only meant to run at the command line.</strong>');
 }
 
-error_reporting(E_ALL ^ E_DEPRECATED);
 $dir = dirname(__FILE__);
 chdir($dir);
 
@@ -108,7 +107,7 @@ if ($_SERVER['argc'] == '2') {
 
 					if (plugin_webseer_amimaster ()) {
 						plugin_webseer_get_users($results, $host, '');
-						plugin_webseer_get_users($results, $host, 'text');
+						//plugin_webseer_get_users($results, $host, 'text');
 					}
 				}
 			}
@@ -160,18 +159,23 @@ if ($_SERVER['argc'] == '2') {
 
 function plugin_webseer_get_users($results, $host, $type) {
 	if ($type == 'text') {
-		$sql = "SELECT data FROM plugin_thold_contacts WHERE `type` = 'text' AND  (id = " . ($host['notify_accounts'] != '' ? implode(' OR id = ', explode(',', $host['notify_accounts'])) . ')' : '0)');
-		$users = db_fetch_assoc($sql);
+		//$sql = "SELECT data FROM plugin_notification_lists WHERE `type` = 'text' AND  (id = " . ($host['notify_accounts'] != '' ? implode(' OR id = ', explode(',', $host['notify_accounts'])) . ')' : '0)');
+		//$users = db_fetch_assoc($sql);
+		$users = array();
+
 	} else {
-		$sql = "SELECT data FROM plugin_thold_contacts WHERE (`type` = 'email' OR `type` = 'external') AND (id = " . ($host['notify_accounts'] != '' ? implode(' OR id = ', explode(',', $host['notify_accounts'])) . ')' : '0)');
-		$users = db_fetch_assoc($sql);
+		if ($host['notify_accounts'] != '') {
+			$users = db_fetch_assoc_prepared('SELECT emails FROM plugin_notification_lists WHERE id = ?', array($host['notify_accounts']));
+		} else {
+			$users = array();
+		}
 	}
 
 	$to = '';
 	$u = array();
 	if (!empty($users)) {
 		foreach ($users as $user) {
-			$u[] = $user['data'];
+			$u[] = $user['emails'];
 		}
 	}
 
@@ -235,10 +239,7 @@ function plugin_webseer_whoami () {
 	return 0;
 }
 
-function plugin_webseer_send_email($to, $subject, $message) {
-	global $config;
-
-	$from = 'jimmy@sqmail.org';
-	webseer_send_mail($to, $from, $subject, $message);
+function plugin_webseer_send_email($to, $subject, $message, $type = '') {
+	webseer_send_mail($to, $subject, $message, $type);
 }
 
