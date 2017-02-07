@@ -17,10 +17,10 @@ Bug and feature enhancements for the webseer plugin are handled in GitHub. If yo
 ##ChangeLog
 
 --- 1.0 ---
-* Refactor Database to Match Cacti Standards
-* Add Duplication of Service Check
-* Automatically Register Server
-* Internationalization
+* Refactor database schema to match Cacti standards
+* Add duplication of Service Check
+* Automatically register Server
+* Internationalization of GUI
 * Enhance GUI to comform to modern Cacti
 
 --- 0.1 ---
