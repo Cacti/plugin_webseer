@@ -33,7 +33,6 @@ if (!isset($_SERVER['argv'][0]) || isset($_SERVER['REQUEST_METHOD'])  || isset($
 /* let PHP run just as long as it has to */
 ini_set('max_execution_time', '55');
 
-error_reporting(E_ALL ^ E_DEPRECATED);
 $dir = dirname(__FILE__);
 chdir($dir);
 
@@ -44,35 +43,90 @@ include('./include/global.php');
 include_once($config['base_path'] . '/plugins/webseer/functions.php');
 include_once($config['base_path'] . '/lib/poller.php');
 
+/* process calling arguments */
+$parms = $_SERVER['argv'];
+array_shift($parms);
+
+$debug = false;
+$force = false;
+$start = microtime(true);
+
+if (sizeof($parms)) {
+	foreach($parms as $parameter) {
+		if (strpos($parameter, '=')) {
+			list($arg, $value) = explode('=', $parameter);
+		} else {
+			$arg = $parameter;
+			$value = '';
+		}
+
+		switch ($arg) {
+			case '-f':
+			case '--force':
+				$force = TRUE;
+				break;
+			case '-d':
+			case '--debug':
+				$debug = TRUE;
+				break;
+			case '--version':
+			case '-V':
+			case '-v':
+				display_version();
+				exit;
+			case '--help':
+			case '-H':
+			case '-h':
+				display_help();
+				exit;
+			default:
+				print "ERROR: Invalid Parameter " . $parameter . "\n\n";
+				display_help();
+				exit;
+		}
+	}
+}
+
+echo "Running Service Checks\n";
+
+plugin_webseer_register_server();
+
 // Remove old Logs (ADD A SETTING!!!!!!)
 $t = time() - (86400 * 30);
-db_execute("DELETE FROM plugin_webseer_url_log WHERE lastcheck < $t", FALSE);
-db_execute('DELETE FROM plugin_webseer_processes WHERE time < ' . (time() - 15));
 
-$start = microtime(true);
-$hosts = db_fetch_assoc('SELECT * FROM plugin_webseer_urls WHERE enabled = "on"', FALSE);
+db_execute("DELETE FROM plugin_webseer_url_log WHERE lastcheck < $t", FALSE);
+db_execute('DELETE FROM plugin_webseer_processes WHERE UNIX_TIMESTAMP(time) < ' . (time() - 15));
+
+$urls = db_fetch_assoc('SELECT * FROM plugin_webseer_urls WHERE enabled = "on"', FALSE);
 
 $max = 12;
 
-for ($x = 0; $x < count($hosts); $x++) {
-	$host = $hosts[$x];
-	$total = db_fetch_cell('SELECT count(id) FROM plugin_webseer_processes');
+for ($x = 0; $x < count($urls); $x++) {
+	$url   = $urls[$x];
+	$total = db_fetch_cell('SELECT count(id) 
+		FROM plugin_webseer_processes');
+
 	if ($max - $total > 0) {
-		db_execute('INSERT INTO plugin_webseer_processes (url, time) VALUES(' . $host['id'] . ', ' . time() . ')');
+		debug('Launching Service Check ' . $urls[$x]['url']);
 		$command_string = read_config_option("path_php_binary");
-		$extra_args     = '-q "' . $config["base_path"] . '/plugins/webseer/webseer_process.php" id=' . $host['id'];
+		$extra_args     = '-q "' . $config["base_path"] . '/plugins/webseer/webseer_process.php" --id=' . $url['id'] . ($debug ? ' --debug':'');
 		exec_background($command_string, $extra_args);
 		usleep(10000);
 	} else {
 		$x--;
 		usleep(10000);
-		db_execute('DELETE FROM plugin_webseer_processes WHERE time < ' . (time() - 15));
+
+		db_execute('DELETE FROM plugin_webseer_processes 
+			WHERE UNIX_TIMESTAMP(time) < ' . (time() - 15));
 	}
 }
 
 while(true) {
-	db_execute('DELETE FROM plugin_webseer_processes WHERE time < ' . (time() - 15));
-	$running = db_fetch_cell('SELECT COUNT(*) FROM plugin_webseer_processes');
+	db_execute('DELETE FROM plugin_webseer_processes 
+		WHERE UNIX_TIMESTAMP(time) < ' . (time() - 15));
+
+	$running = db_fetch_cell('SELECT COUNT(*) 
+		FROM plugin_webseer_processes');
 
 	if ($running == 0) {
 		break;
@@ -86,10 +140,62 @@ $servers = plugin_webseer_update_servers();
 $end   = microtime(true);
 $ttime = round($end - $start, 3);
 
-cacti_log("STATS WEBSEER: Total Time:$ttime, Service Checks:" . sizeof($hosts) . ", Servers:" . $servers, false, 'SYSTEM');
+cacti_log("STATS WEBSEER: Total Time:$ttime, Service Checks:" . sizeof($urls) . ", Servers:" . $servers, false, 'SYSTEM');
+
+function plugin_webseer_register_server() {
+	global $config;
+
+	$lastcheck = date('Y-m-d H:i:s');
+
+	if (function_exists('gethostname')) {
+		$hostname = gethostname();
+	}else{
+		$hostname = php_uname('n');
+	}
+
+	$ipaddress = gethostbyname($hostname);
+
+	$found = db_fetch_cell_prepared('SELECT id FROM plugin_webseer_servers WHERE ip = ?', array($ipaddress));
+
+	if (!$found) {
+		debug('Registering Server');
+
+		$save = array();
+		$save['enabled']   = 'on';
+		$save['isme']      = 1;
+		$save['lastcheck'] = $lastcheck;
+		$save['ip']        = $ipaddress;
+
+		if (isset($config['poller_id']) && $config['poller_id'] == 1) {
+			$save['master'] = 1;
+			$save['name']   = __('Cacti Master');
+		}else{
+			$save['master'] = 0;
+			$save['name']   = __('Cacti Remote Server');
+		}
+
+		if (substr_count($hostname, '.') > 0) {
+			$urlhost = $hostname;
+		}else{
+			$urlhost = $ipaddress;
+		}
+
+		if (isset($config['url_path'])) {
+			$save['url'] = (read_config_option('force_https') == 'on' ? 'https://':'http://') . $urlhost . $config['url_path'] . 'index.php';
+		}else{
+			$save['url'] = 'http://' . $urlhost;
+		}
+
+		$id = sql_save($save, 'plugin_webseer_servers');
+	}
+}
 
 function plugin_webseer_update_servers() {
-	$servers = db_fetch_assoc('SELECT * FROM plugin_webseer_servers WHERE isme = 0 AND enabled = 1');
+	$servers = db_fetch_assoc('SELECT * 
+		FROM plugin_webseer_servers 
+		WHERE isme = 0 
+		AND enabled = 1');
+
 	foreach ($servers as $server) {
 		$cc = new cURL();
 		$cc->host['url'] = $server['url'];
@@ -101,3 +207,26 @@ function plugin_webseer_update_servers() {
 	return sizeof($servers);
 }
 
+function debug($message) {
+	global $debug;
+
+	if ($debug) {
+		print "DEBUG: " . trim($message) . "\n";
+	}
+}
+
+/*  display_version - displays version information */
+function display_version() {
+    $version = db_fetch_cell('SELECT cacti FROM version');
+    echo "Cacti Web Service Check Master Process, Version $version, " . COPYRIGHT_YEARS . "\n";
+}
+
+/*  display_help - displays the usage of the function */
+function display_help () {
+    display_version();
+
+    echo "\nusage: poller_webseer.php [--debug] [--force]\n\n";
+	echo "This binary will exec all the Web Service check child processes.\n\n";
+    echo "--force    - Force all the service checks to run now\n";
+    echo "--debug    - Display verbose output during execution\n\n";
+}
