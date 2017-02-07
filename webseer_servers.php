@@ -65,19 +65,20 @@ function do_webseer() {
 			break;
 		case 2:	// Disabled
 			foreach ($hosts as $del => $rra) {
-				db_execute_prepared("UPDATE plugin_webseer_servers SET enabled = '' WHERE id = ?", array($del));
+				db_execute_prepared("UPDATE plugin_webseer_servers SET enabled = '0' WHERE id = ?", array($del));
 				plugin_webseer_enable_remote_server($del, false);
 			}
 			break;
 		case 3:	// Enabled
 			foreach ($hosts as $del => $rra) {
-				db_execute_prepared("UPDATE plugin_webseer_servers SET enabled = 'on' WHERE id = ?", array($del));
+				db_execute_prepared("UPDATE plugin_webseer_servers SET enabled = '1' WHERE id = ?", array($del));
 				plugin_webseer_enable_remote_server($del, true);
 			}
 			break;
 	}
 
-	header('Location:webseer_servers.php?header=false');
+	Header('Location:webseer_servers.php?header=false');
+
 	exit;
 }
 
@@ -130,18 +131,19 @@ function webseer_show_history() {
 	global $config, $webseer_bgcolors;
 
 	if (isset_request_var('id')) {
-		$id = get_filter_request_var('id');
+		$id = get_filter_request_var_post('id');
 	} else {
-		header('Location: webseer.php?header=false');
+		Location('webseer.php?header=false');
 		exit;
 	}
 
-	$result = db_fetch_assoc_prepared('SELECT plugin_webseer_url_log.*, plugin_webseer_urls.url 
+	$sql = 'SELECT plugin_webseer_url_log.*, plugin_webseer_urls.url 
 		FROM plugin_webseer_url_log,plugin_webseer_urls 
 		WHERE plugin_webseer_urls.id = ? 
 		AND plugin_webseer_url_log.url_id = plugin_webseer_urls.id 
-		ORDER BY plugin_webseer_url_log.lastcheck DESC',
-		array($id));
+		ORDER BY plugin_webseer_url_log.lastcheck DESC';
+
+	$result = db_fetch_assoc_prepared($sql, array($id));
 
 	top_header();
 
@@ -168,7 +170,7 @@ function webseer_show_history() {
 			}
 
 			form_alternate_row('line' . $row['id'], true);
-			form_selectable_cell($row['lastcheck'], $row['id']);
+			form_selectable_cell(date('F j, Y - h:i:s', $row['lastcheck']), $row['id']);
 			form_selectable_cell("<a class='linkEditMain' href='" . $row['url'] . "' target=_new><b>" . $row['url'] . '</b></a>', $row['id']);
 			form_selectable_cell($row['error'], $row['id']);
 			form_selectable_cell($row['http_code'], $row['id']);
@@ -184,13 +186,15 @@ function webseer_show_history() {
 		print '<td colspan=12><i>' . __('No Events in History') . '</i></td></tr>';
 	}
 
+	html_header(array('','','','','','','','',''));
+
 	html_end_box(false);
 }
 
 function list_urls () {
 	global $colors, $webseer_bgcolors, $item_rows, $config, $hostid;
 
-	$ds_actions = array(1 => __('Delete'), 2 => __('Disable'), 3 => __('Enable'));
+	$ds_actions = array(1 => 'Delete', 2 => 'Disable', 3 => 'Enable');
 
 	webseer_request_validation();
 
@@ -199,7 +203,7 @@ function list_urls () {
 		if (get_request_var('state') == '-1') {
 			$statefilter = '';
 		} else {
-			if (get_request_var('state') == '2') { $statefilter = "plugin_webseer_urls.enabled=''"; }
+			if (get_request_var('state') == '2') { $statefilter = "plugin_webseer_urls.enabled='off'"; }
 			if (get_request_var('state') == '1') { $statefilter = "plugin_webseer_urls.enabled='on'"; }
 			if (get_request_var('state') == '3') { $statefilter = 'plugin_webseer_urls.result!=1'; }
 		}
@@ -335,9 +339,7 @@ function list_urls () {
 	$display_text = array(
 		'nosort'    => array(__('Actions'), 'ASC'),
 		'name'      => array(__('Name'), 'ASC'),
-		'url'       => array(__('URL'), 'ASC'),
 		'ip'        => array(__('IP Address'), 'ASC'),
-		'enabled'   => array(__('Enabled'), 'ASC'),
 		'location'  => array(__('Location'), 'ASC'),
 		'lastcheck' => array(__('Last Check'), 'ASC'),
 		'master'    => array(__('Master'), 'ASC'),
@@ -357,37 +359,27 @@ function list_urls () {
 
 			form_alternate_row('line' . $row['id'], true);
 
-			print "<td width='1%' style='padding:0px;white-space:nowrap'>
-				<a class='pic' href='webseer_servers_edit.php?action=edit&id=" . $row['id'] . "'>
-					<img src='" . $config['url_path'] . "plugins/webseer/images/edit_object.png' border=0 alt='' title='" . __('Edit Site') . "'>
-				</a>";
-
-			if ($row['enabled'] == '') {
-				print "<a class='pic' href='webseer_servers.php?drp_action=3&chk_" . $row['id'] . "=1'>
-					<img src='" . $config['url_path'] . "plugins/webseer/images/enable_object.png' border=0 alt='' title='" . __('Enable Site') . "'>
-				</a>";
+			print "<td width='1%' style='white-space:nowrap'><a class='linkEditMain' href='webseer_servers_edit.php?action=edit&id=" . $row['id'] . "'><img src='" . $config['url_path'] . "plugins/webseer/images/edit_object.png' border=0 alt='' title='" . __('Edit Site') . "'></a>";
+			if ($row['enabled'] == '0') {
+				print "<a href='webseer_servers.php?drp_action=3&chk_" . $row['id'] . "=1'><img src='" . $config['url_path'] . "plugins/webseer/images/enable_object.png' border=0 alt='' title='" . __('Enable Site') . "'></a>";
 			} else {
-				print "<a class='pic' href='webseer_servers.php?drp_action=2&chk_" . $row['id'] . "=1'>
-					<img src='" . $config['url_path'] . "plugins/webseer/images/disable_object.png' border=0 alt='' title='" . __('Disable Site') . "'>
-				</a>";
+				print "<a href='webseer_servers.php?drp_action=2&chk_" . $row['id'] . "=1'><img src='" . $config['url_path'] . "plugins/webseer/images/disable_object.png' border=0 alt='' title='" . __('Disable Site') . "'></a>";
 			}
 
-			print "<a class='pic' href='webseer_servers.php?view_history=1&id=" . $row['id'] . "'><img src='" . $config['url_path'] . "plugins/webseer/images/view_log.gif' border=0 alt='' title='" . __('View History') . "'></td>";
+			print "<a href='webseer.php?view_history=1&id=" . $row['id'] . "'><img src='" . $config['url_path'] . "plugins/webseer/images/view_history.gif' border=0 alt='' title='" . __('View History') . "'></td>";
 
 			form_selectable_cell($row['name'], $row['id']);
-			form_selectable_cell("<a class='linkEditMain' href='" . $row['url'] . "' target=_new>" . $row['url'] . '</a>', $row['id']);
 			form_selectable_cell($row['ip'], $row['id']);
-			form_selectable_cell($row['enabled'] == 'on' ? __('Yes'):__('No'), $row['id']);
 			form_selectable_cell($row['location'], $row['id']);
-			form_selectable_cell($row['lastcheck'], $row['id']);
-			form_selectable_cell($row['master'] == 1 ? __('Yes'):__('No'), $row['id']);
-			form_selectable_cell($row['isme'] == 1 ? __('Yes'):__('No'), $row['id']);
+			form_selectable_cell(($row['lastcheck'] > 0 ? date('h:i:s', $row['lastcheck']) : ''), $row['id']);
+			form_selectable_cell($row['master'], $row['id']);
+			form_selectable_cell($row['isme'], $row['id']);
 			form_checkbox_cell($row['name'], $row['id']);
 			form_end_row();
 		}
 	} else {
 		form_alternate_row();
-		print '<td colspan="10"><i>' . __('No Servers Found') . '</i></td></tr>';
+		print '<td colspan=8><i>' . __('No Servers Found') . '</i></td></tr>';
 	}
 
 	html_end_box(false);

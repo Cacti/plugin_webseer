@@ -61,28 +61,28 @@ function webseer_save_url() {
 
 	if (isset_request_var('enabled')) {
 		$save['enabled'] = 'on';
-	}else{
-		$save['enabled'] = '';
+	} else {
+		$save['enabled'] = 'off';
 	}
 
 	if (isset_request_var('requiresauth')) {
 		$save['requiresauth'] = 'on';
-	}else{
-		$save['requiresauth'] = '';
+	} else {
+		$save['requiresauth'] = 'off';
 	}
 
 	if (isset_request_var('checkcert')) {
 		$save['checkcert'] = 'on';
-	}else{
-		$save['checkcert'] = '';
+	} else {
+		$save['checkcert'] = 'off';
 	}
 
 	if (isset_request_var('notify_accounts')) {
-		if (is_array(get_nfilter_request_var('notify_accounts'))) {
-			foreach (get_nfilter_request_var('notify_accounts') as $na) {
+		if (is_array(get_request_var('notify_accounts'))) {
+			foreach (get_request_var('notify_accounts') as $na) {
 				input_validate_input_number($na);
 			}
-			$save['notify_accounts'] = implode(',', get_nfilter_request_var('notify_accounts'));
+			$save['notify_accounts'] = implode(',', get_request_var('notify_accounts'));
 		} else {
 			set_request_var('notify_accounts', '');
 		}
@@ -109,7 +109,6 @@ function webseer_save_url() {
 		header('Location: webseer_edit.php?header=falseaction=edit&id=' . (empty($id) ? get_request_var('id') : $id));
 		exit;
 	}
-
 	if ($save['id'] == 0) {
 		plugin_webseer_add_remote_hosts ($id, $save);
 	} else {
@@ -154,35 +153,54 @@ function webseer_edit_url () {
 		WHERE id = ' . (!empty($url['notify_accounts']) && implode($url['notify_accounts'], '') != '' ? implode($url['notify_accounts'], ' OR id = ') : 0);
 
 	$url_edit = array(
-		'display_name' => array(
-			'method' => 'textbox',
-			'friendly_name' => __('Service Check Name'),
-			'description' => __('The name that is displayed for this Service Check, and is included in any Alert notifications.'),
-			'value' => '|arg1:display_name|',
-			'max_length' => '256',
-			),
 		'enabled' => array(
 			'method' => 'checkbox',
-			'friendly_name' => __('Enable Service Check'),
+			'friendly_name' => __('Enable URL'),
 			'description' => __('Uncheck this box to disabled this url from being checked.'),
 			'value' => '|arg1:enabled|',
 			'default' => 'on',
 			),
+		'display_name' => array(
+			'method' => 'textbox',
+			'friendly_name' => __('Display Name'),
+			'description' => __('The name that is displayed for this web site in alerts.'),
+			'value' => '|arg1:display_name|',
+			'max_length' => '256',
+			),
 		'url' => array(
-			'method' => 'textarea',
+			'method' => 'textbox',
 			'friendly_name' => __('URL'),
 			'description' => __('The URL to Monitor'),
 			'value' => '|arg1:url|',
-			'textarea_rows' => '3',
-			'textarea_cols' => '80',
+			'max_length' => '256',
 			),
 		'ip' => array(
 			'method' => 'textbox',
 			'friendly_name' => __('IP Address'),
 			'description' => __('Enter an IP address to connect to.  Leaving blank will use DNS Resolution instead.'),
 			'value' => '|arg1:ip|',
-			'max_length' => '40',
-			'size' => '30'
+			'max_length' => '128',
+			),
+		'search' => array(
+			'method' => 'textbox',
+			'friendly_name' => __('Search String'),
+			'description' => __('This is the string to search for.'),
+			'value' => '|arg1:search|',
+			'max_length' => '256',
+			),
+		'search_maint' => array(
+			'method' => 'textbox',
+			'friendly_name' => __('Search String - Maintenance Page'),
+			'description' => __('This is the string to search for on the Maintenance Page.  It will check for this string if the above string is not found.'),
+			'value' => '|arg1:search_maint|',
+			'max_length' => '256',
+			),
+		'search_failed' => array(
+			'method' => 'textbox',
+			'friendly_name' => __('Search String - Failed'),
+			'description' => __('This is the string to search for a known failure.  It will only alert if this string is found, ignoring any timeout issues and the search strings above.'),
+			'value' => '|arg1:search_failed|',
+			'max_length' => '256',
 			),
 		'requiresauth' => array(
 			'method' => 'checkbox',
@@ -196,7 +214,7 @@ function webseer_edit_url () {
 			'friendly_name' => __('Check Certificate'),
 			'description' => __('If using SSL, check this box if you want to validate the certificate. Default on, turn off if you the site uses a self-signed certificate.'),
 			'value' => '|arg1:checkcert|',
-			'default' => '',
+			'default' => 'on',
 			),
 		'downtrigger' => array(
 			'friendly_name' => __('Trigger'),
@@ -234,30 +252,6 @@ function webseer_edit_url () {
 			'description' => __('How many seconds to allow the page to timeout before reporting it as down.'),
 			'value' => '|arg1:timeout_trigger|',
 		),
-		'search' => array(
-			'method' => 'textarea',
-			'friendly_name' => __('Response Search String'),
-			'description' => __('This is the string to search for in the URL response for a live and working Web Service.'),
-			'value' => '|arg1:search|',
-			'textarea_rows' => '3',
-			'textarea_cols' => '80',
-			),
-		'search_maint' => array(
-			'method' => 'textarea',
-			'friendly_name' => __('Response Search String - Maintenance Page'),
-			'description' => __('This is the string to search for on the Maintenance Page.  The Service Check will check for this string if the above string is not found.  If found, it means that the Web Service is under maintenance.'),
-			'value' => '|arg1:search_maint|',
-			'textarea_rows' => '3',
-			'textarea_cols' => '80',
-			),
-		'search_failed' => array(
-			'method' => 'textarea',
-			'friendly_name' => __('Response Search String - Failed'),
-			'description' => __('This is the string to search for a known failure in the Web Service response.  The Service Check will only alert if this string is found, ignoring any timeout issues and the search strings above.'),
-			'value' => '|arg1:search_failed|',
-			'textarea_rows' => '3',
-			'textarea_cols' => '80',
-			),
 		'notify_accounts' => array(
 			'friendly_name' => __('Notify accounts'),
 			'method' => 'drop_multi',
@@ -293,69 +287,5 @@ function webseer_edit_url () {
 	html_end_box();
 
 	form_save_button('webseer.php', 'return');
-
-	?>
-	<script type='text/javascript'>
-	$(function() {
-		var msWidth = 100;
-		$('#notify_accounts option').each(function() {
-			if ($(this).textWidth() > msWidth) {
-				msWidth = $(this).textWidth();
-			}
-			$('#notify_accounts').css('width', msWidth+80+'px');
-		});
-
-		$('#notify_accounts').hide().multiselect({
-			noneSelectedText: '<?php print __('No Users Selected');?>', 
-			selectedText: function(numChecked, numTotal, checkedItems) {
-				myReturn = numChecked + ' <?php print __('Users Selected');?>';
-				$.each(checkedItems, function(index, value) {
-					if (value.value == '0') {
-						myReturn='<?php print __('All Users Selected');?>';
-						return false;
-					}
-				});
-				return myReturn;
-			},
-			checkAllText: '<?php print __('All');?>', 
-			uncheckAllText: '<?php print __('None');?>',
-			uncheckall: function() {
-				$(this).multiselect('widget').find(':checkbox:first').each(function() {
-					$(this).prop('checked', true);
-				});
-			},
-			open: function(event, ui) {
-				$("input[type='search']:first").focus();
-			},
-			click: function(event, ui) {
-				checked=$(this).multiselect('widget').find('input:checked').length;
-
-				if (ui.value == 0) {
-					if (ui.checked == true) {
-						$('#notify_accounts').multiselect('uncheckAll');
-						$(this).multiselect('widget').find(':checkbox:first').each(function() {
-							$(this).prop('checked', true);
-						});
-					}
-				}else if (checked == 0) {
-					$(this).multiselect('widget').find(':checkbox:first').each(function() {
-						$(this).click();
-					});
-				}else if ($(this).multiselect('widget').find('input:checked:first').val() == '0') {
-					if (checked > 0) {
-						$(this).multiselect('widget').find(':checkbox:first').each(function() {
-							$(this).click();
-							$(this).prop('disable', true);
-						});
-					}
-				}
-			}
-		}).multiselectfilter({
-			label: '<?php print __('Search');?>', 
-			width: msWidth
-		});
-	});
-	</script>
-	<?php
 }
 

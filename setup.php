@@ -26,8 +26,10 @@ function plugin_webseer_install () {
 	api_plugin_register_hook('webseer', 'draw_navigation_text', 'plugin_webseer_draw_navigation_text', 'setup.php');
 	api_plugin_register_hook('webseer', 'config_arrays', 'plugin_webseer_config_arrays', 'setup.php');
 	api_plugin_register_hook('webseer', 'poller_bottom', 'plugin_webseer_poller_bottom', 'setup.php');
+	api_plugin_register_hook('webseer', 'user_admin_edit', 'plugin_webseer_user_admin_edit', 'setup.php');
+	api_plugin_register_hook('webseer', 'user_admin_setup_sql_save', 'plugin_webseer_user_admin_setup_sql_save', 'setup.php');
 
-	api_plugin_register_realm('webseer', 'webseer.php,webseer_edit.php,webseer_servers.php,webseer_servers_edit.php', 'Web Service Check Admin', 1);
+	api_plugin_register_realm('webseer', 'websser.php,webseer_edit.php,webseer_servers.php,webseer_servers_edit.php', 'Web Service Check Admin', 1);
 
 	plugin_webseer_setup_table();
 }
@@ -48,14 +50,14 @@ function plugin_webseer_version() {
 
 function plugin_webseer_setup_table() {
 	db_execute("CREATE TABLE IF NOT EXISTS `plugin_webseer_servers` (
-		`id` int(11) unsigned NOT NULL auto_increment,
-		`enabled` char(2) NOT NULL default 'on',
-		`name` varchar(64) NOT NULL,
-		`ip` varchar(120) NOT NULL,
+		`id` int(5) NOT NULL auto_increment,
+		`enabled` int(1) NOT NULL default '1',
+		`name` varchar(128) NOT NULL,
+		`ip` varchar(64) NOT NULL,
 		`location` varchar(64) NOT NULL,
-		`lastcheck` timestamp NOT NULL default '0000-00-00',
-		`isme` int(11) unsigned NOT NULL default '0',
-		`master` int(11) unsigned NOT NULL default '0',
+		`lastcheck` int(16) NOT NULL default '0',
+		`isme` int(1) NOT NULL default '0',
+		`master` int(1) NOT NULL default '0',
 		`url` varchar(256) NOT NULL,
 		PRIMARY KEY  (`id`),
 		KEY `location` (`location`,`lastcheck`),
@@ -64,20 +66,20 @@ function plugin_webseer_setup_table() {
 		COMMENT='Holds WebSeer Server Definitions'");
 
 	db_execute("CREATE TABLE IF NOT EXISTS `plugin_webseer_servers_log` (
-		`id` int(11) unsigned NOT NULL auto_increment,
-		`server` int(11) unsigned NOT NULL default '0',
-		`url_id` int(11) unsigned NOT NULL default '0',
-		`lastcheck` timestamp NOT NULL default '0000-00-00',
-		`result` int(11) unsigned NOT NULL default '0',
-		`http_code` int(11) unsigned default NULL,
-		`error` varchar(256) default NULL,
-		`total_time` double default NULL,
-		`namelookup_time` double default NULL,
-		`connect_time` double default NULL,
-		`redirect_time` double default NULL,
-		`redirect_count` int(11) unsigned default NULL,
-		`size_download` int(11) unsigned default NULL,
-		`speed_download` int(11) unsigned default NULL,
+		`id` int(12) NOT NULL auto_increment,
+		`server` int(6) NOT NULL default '0',
+		`url_id` int(12) NOT NULL default '0',
+		`lastcheck` int(16) NOT NULL default '0',
+		`result` int(2) NOT NULL default '0',
+		`http_code` varchar(4) NOT NULL,
+		`error` varchar(256) NOT NULL,
+		`total_time` varchar(12) NOT NULL,
+		`namelookup_time` varchar(12) NOT NULL,
+		`connect_time` varchar(12) NOT NULL,
+		`redirect_time` varchar(12) NOT NULL,
+		`redirect_count` varchar(12) NOT NULL,
+		`size_download` varchar(12) NOT NULL,
+		`speed_download` varchar(12) NOT NULL,
 		PRIMARY KEY  (`id`),
 		KEY `url_id` (`url_id`),
 		KEY `lastcheck` (`lastcheck`),
@@ -86,35 +88,35 @@ function plugin_webseer_setup_table() {
 		COMMENT='Holds WebSeer Service Check Results'");
 
 	db_execute("CREATE TABLE IF NOT EXISTS `plugin_webseer_urls` (
-		`id` int(11) unsigned NOT NULL auto_increment,
-		`enabled` char(2) NOT NULL default 'on',
+		`id` int(12) NOT NULL auto_increment,
+		`enabled` varchar(3) NOT NULL default 'on',
 		`type` varchar(32) NOT NULL default 'http',
-		`display_name` varchar(64) NOT NULL default '',
+		`display_name` varchar(256) NOT NULL default '',
 		`url` varchar(256) NOT NULL,
-		`ip` varchar(120) NOT NULL default '',
-		`search` varchar(1024) NOT NULL,
-		`search_maint` varchar(1024) NOT NULL,
-		`search_failed` varchar(1024) NOT NULL,
-		`requiresauth` char(2) NOT NULL default '',
-		`checkcert` char(2) NOT NULL default 'on',
+		`ip` varchar(256) NOT NULL default '',
+		`search` varchar(256) NOT NULL,
+		`search_maint` varchar(256) NOT NULL,
+		`search_failed` varchar(256) NOT NULL,
+		`requiresauth` varchar(3) NOT NULL default 'off',
+		`checkcert` varchar(3) NOT NULL default 'on',
 		`notify_accounts` varchar(256) NOT NULL,
 		`notify_extra` varchar(256) NOT NULL,
-		`result` int(11) unsigned NOT NULL default '0',
-		`downtrigger` int(11) unsigned NOT NULL default '3',
-		`timeout_trigger` int(11) unsigned NOT NULL default '4',
-		`failures` int(11) unsigned NOT NULL default '0',
-		`triggered` int(11) unsigned NOT NULL default '0',
-		`lastcheck` timestamp NOT NULL default '0000-00-00',
-		`error` varchar(256) default NULL,
-		`http_code` int(11) unsigned default NULL,
-		`total_time` double default NULL,
-		`namelookup_time` double default NULL,
-		`connect_time` double default NULL,
-		`redirect_time` double default NULL,
-		`speed_download` int(11) unsigned default NULL,
-		`size_download` int(11) unsigned default NULL,
-		`redirect_count` int(11) unsigned default NULL,
-		`debug` longblob default NULL,
+		`result` int(2) NOT NULL default '0',
+		`downtrigger` int(3) NOT NULL default '3',
+		`timeout_trigger` int(2) NOT NULL default '4',
+		`failures` int(2) NOT NULL default '0',
+		`triggered` int(1) NOT NULL default '0',
+		`lastcheck` int(16) NOT NULL default '0',
+		`error` varchar(256) NOT NULL,
+		`http_code` varchar(4) NOT NULL,
+		`total_time` varchar(12) NOT NULL,
+		`namelookup_time` varchar(12) NOT NULL,
+		`connect_time` varchar(12) NOT NULL,
+		`redirect_time` varchar(12) NOT NULL,
+		`speed_download` varchar(12) NOT NULL,
+		`size_download` varchar(12) NOT NULL,
+		`redirect_count` varchar(12) NOT NULL,
+		`debug` longtext NOT NULL,
 		PRIMARY KEY  (`id`),
 		KEY `lastcheck` (`lastcheck`),
 		KEY `triggered` (`triggered`),
@@ -124,19 +126,19 @@ function plugin_webseer_setup_table() {
 		COMMENT='Holds WebSeer Service Check Definitions'");
 
 	db_execute("CREATE TABLE IF NOT EXISTS `plugin_webseer_url_log` (
-		`id` int(11) unsigned NOT NULL auto_increment,
-		`url_id` int(11) unsigned NOT NULL default '0',
-		`lastcheck` timestamp NOT NULL default '0000-00-00',
-		`result` int(11) unsigned NOT NULL default '0',
-		`http_code` int(11) unsigned default NULL,
-		`error` varchar(256) default NULL,
-		`total_time` double default NULL,
-		`namelookup_time` double default NULL,
-		`connect_time` double default NULL,
-		`redirect_time` double unsigned default NULL,
-		`redirect_count` int(11) unsigned default NULL,
-		`size_download` int(11) unsigned default NULL,
-		`speed_download` int(11) unsigned default NULL,
+		`id` int(12) NOT NULL auto_increment,
+		`url_id` int(12) NOT NULL default '0',
+		`lastcheck` int(16) NOT NULL default '0',
+		`result` int(2) NOT NULL default '0',
+		`http_code` varchar(4) NOT NULL,
+		`error` varchar(256) NOT NULL,
+		`total_time` varchar(12) NOT NULL,
+		`namelookup_time` varchar(12) NOT NULL,
+		`connect_time` varchar(12) NOT NULL,
+		`redirect_time` varchar(12) NOT NULL,
+		`redirect_count` varchar(12) NOT NULL,
+		`size_download` varchar(12) NOT NULL,
+		`speed_download` varchar(12) NOT NULL,
 		PRIMARY KEY  (`id`),
 		KEY `url_id` (`url_id`),
 		KEY `lastcheck` (`lastcheck`),
@@ -145,13 +147,11 @@ function plugin_webseer_setup_table() {
 		COMMENT='Holds WebSeer Service Check Logs'");
 
 	db_execute("CREATE TABLE IF NOT EXISTS `plugin_webseer_processes` (
-		`id` bigint unsigned NOT NULL auto_increment,
-		`url_id` int(11) unsigned NOT NULL,
-		`pid` int(11) unsigned NOT NULL,
-		`time` timestamp default CURRENT_TIMESTAMP,
+		`id` int(20) NOT NULL auto_increment,
+		`url` int(12) NOT NULL,
+		`time` int(20) NOT NULL,
 		PRIMARY KEY  (`id`),
-		KEY `pid` (`pid`),
-		KEY `url_id` (`url_id`),
+		KEY `url` (`url`),
 		KEY `time` (`time`)) 
 		ENGINE=MEMORY
 		COMMENT='Holds running process information'");
@@ -173,53 +173,15 @@ function plugin_webseer_poller_bottom() {
 }
 
 function plugin_webseer_config_arrays() {
-	global $menu, $user_auth_realms, $user_auth_realm_filenames, $httperrors;
+	global $menu, $user_auth_realms, $user_auth_realm_filenames;
 
 	$menu[__('Management')]['plugins/webseer/webseer.php'] = __('Web Service Checks');
 
-	$httperrors = array(
-		100 => 'Continue',
-		101 => 'Switching Protocols',
-		200 => 'OK',
-		201 => 'Created',
-		202 => 'Accepted',
-		203 => 'Non-Authoritative Information',
-		204 => 'No Content',
-		205 => 'Reset Content',
-		206 => 'Partial Content',
-		300 => 'Multiple Choices',
-		301 => 'Moved Permanently',
-		302 => 'Found',
-		303 => 'See Other',
-		304 => 'Not Modified',
-		305 => 'Use Proxy',
-		306 => '(Unused)',
-		307 => 'Temporary Redirect',
-		400 => 'Bad Request',
-		401 => 'Unauthorized',
-		402 => 'Payment Required',
-		403 => 'Forbidden',
-		404 => 'Not Found',
-		405 => 'Method Not Allowed',
-		406 => 'Not Acceptable',
-		407 => 'Proxy Authentication Required',
-		408 => 'Request Timeout',
-		409 => 'Conflict',
-		410 => 'Gone',
-		411 => 'Length Required',
-		412 => 'Precondition Failed',
-		413 => 'Request Entity Too Large',
-		414 => 'Request-URI Too Long',
-		415 => 'Unsupported Media Type',
-		416 => 'Requested Range Not Satisfiable',
-		417 => 'Expectation Failed',
-		500 => 'Internal Server Error',
-		501 => 'Not Implemented',
-		502 => 'Bad Gateway',
-		503 => 'Service Unavailable',
-		504 => 'Gateway Timeout',
-		505 => 'HTTP Version Not Supported'
-	);
+	$user_auth_realms[423]='Manage WebSeer';
+	$user_auth_realm_filenames['webseer_edit.php'] = 423;
+	$user_auth_realm_filenames['webseer.php'] = 423;
+	$user_auth_realm_filenames['webseer_servers.php'] = 423;
+	$user_auth_realm_filenames['webseer_servers_edit.php'] = 423;
 }
 
 function plugin_webseer_draw_navigation_text($nav) {
@@ -233,5 +195,50 @@ function plugin_webseer_draw_navigation_text($nav) {
 	$nav['webseer_servers_edit.php:save'] = array('title' => 'WebSeer', 'mapping' => 'index.php:', 'url' => 'webseer.php', 'level' => '1');
 
 	return $nav;
+}
+
+function plugin_webseer_user_admin_edit($user) {
+	global $fields_user_user_edit_host;
+
+	$value = '';
+
+	if ($user != 0) {
+		$value = db_fetch_cell_prepared('SELECT data FROM plugin_thold_contacts WHERE user_id = ? AND type = "text"', array($user));
+	}
+
+	$fields_user_user_edit_host['text'] = array(
+		'method' => 'textbox',
+		'value' => $value,
+		'friendly_name' => 'Text Email Address',
+		'form_id' => '|arg1:id|',
+		'default' => '',
+		'max_length' => 255
+	);
+
+	return $user;
+}
+
+function plugin_webseer_user_admin_setup_sql_save($save) {
+	if (is_error_message()) {
+		return $save;
+	}
+
+	if (isset_request_var('text')) {
+		$text = form_input_validate(get_nfilter_request_var('text'), 'text', '', true, 3);
+
+		if ($save['id'] == 0) {
+			$save['id'] = sql_save($save, 'user_auth');
+		}
+
+		$cid = db_fetch_cell_prepared('SELECT id FROM plugin_thold_contacts WHERE type = "text" AND user_id = ?', array($save['id']), 'id', false);
+
+		if ($cid) {
+			db_execute_prepared('REPLACE INTO plugin_thold_contacts (id, user_id, type, data) VALUES (?, ?, "text", ?)', array($cid, $save['id'], $text));
+		}else{
+			db_execute_prepared('REPLACE INTO plugin_thold_contacts (user_id, type, data) VALUES (?, "text", ?)', array($save['id'], $text));
+		}
+	}
+
+	return $save;
 }
 

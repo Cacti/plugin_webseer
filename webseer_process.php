@@ -30,321 +30,185 @@ if (!isset($_SERVER['argv'][0]) || isset($_SERVER['REQUEST_METHOD'])  || isset($
 	die('<br><strong>This script is only meant to run at the command line.</strong>');
 }
 
+error_reporting(E_ALL ^ E_DEPRECATED);
 $dir = dirname(__FILE__);
 chdir($dir);
 
 if (strpos($dir, 'plugins') !== false) {
 	chdir('../../');
 }
-
 include('./include/global.php');
 include_once($config['base_path'] . '/plugins/webseer/functions.php');
 
 ini_set('max_execution_time', '21');
 
-// Define the debug function if it does not exst
-if (!function_exists('debug')) {
-	function debug($message) {
-		global $debug;
+if ($_SERVER['argc'] == '2') {
+	$h = explode('=', $_SERVER['argv'][1]);
+	if ($h[0] == 'id' && intval($h[1]) == $h[1]) {
 
-		if ($debug) {
-			print "DEBUG: " . trim($message) . "\n";
-		}
-	}
-}
+		$host = db_fetch_row_prepared('SELECT * FROM plugin_webseer_urls WHERE enabled = "on" AND id = ?', array($h[1]), FALSE);
 
-/* process calling arguments */
-$parms = $_SERVER['argv'];
-array_shift($parms);
-
-global $debug;
-
-$debug  = true;
-$url_id = 0;
-$poller_interval = read_config_option('poller_interval');
-
-if (sizeof($parms)) {
-	foreach($parms as $parameter) {
-		if (strpos($parameter, '=')) {
-			list($arg, $value) = explode('=', $parameter);
-		} else {
-			$arg = $parameter;
-			$value = '';
-		}
-
-		switch ($arg) {
-			case '--id':
-				$url_id = $value;
-				break;
-			case '-d':
-			case '--debug':
-				$debug = TRUE;
-				break;
-			case '--version':
-			case '-V':
-			case '-v':
-				display_version();
-				exit;
-			case '--help':
-			case '-H':
-			case '-h':
-				display_help();
-				exit;
-			default:
-				echo "ERROR: Invalid Parameter " . $parameter . "\n\n";
-				display_help();
-				exit;
-		}
-	}
-}
-
-if (empty($url_id)) {
-	echo "ERROR: You must specify a URL id\n";
-	exit(1);
-}
-
-$url = db_fetch_row_prepared('SELECT * 
-	FROM plugin_webseer_urls 
-	WHERE enabled = "on" 
-	AND id = ?', 
-	array($url_id));
-
-if (!sizeof($url)) {
-	echo "ERROR: URL is not Found\n";
-	exit(1);
-}
-
-register_startup($url_id);
-
-if ($url['url'] != '') {
-	/* attempt to get results 3 times before exiting */
-	$x = 0;
-
-	while ($x < 3) {
-		debug('Service Check Number ' . $x);
-
-		switch ($url['type']) {
-			case 'http':
-				$cc = new cURL();
-				$cc->host = $url;
-				$results = $cc->get($url['url']);
-				$results['data'] = $cc->data;
-				break;
-			case 'dns':
-				$results = plugin_webseer_check_dns($url);
-				break;
-		}
-
-		if ($results['result']) {
-			break;
-		}
-
-		$x++;
-
-		usleep(10000);
-	}
-
-	// Do calculations for triggering
-	$pi = read_config_option('poller_interval');
-	$t  = time() - ($url['downtrigger'] * 60);
-	$lc = time() - ($pi*2);
-	$ts = db_fetch_cell_prepared('SELECT count(id) 
-		FROM plugin_webseer_servers 
-		WHERE isme = 1 
-		OR (isme = 0 AND UNIX_TIMESTAMP(lastcheck) > ?)', 
-		array($lc));
-
-	$tf = ($ts * ($url['downtrigger'] - 1)) + 1;
-
-	$url['failures'] = db_fetch_cell_prepared('SELECT COUNT(url_id) 
-		FROM plugin_webseer_servers_log 
-		WHERE UNIX_TIMESTAMP(lastcheck) > ? 
-		AND url_id = ?', 
-		array($t, $url['id']));
-
-	debug('pi:' . $pi . ', t:' . $t . ' (' . date('Y-m-d H:i:s', $t) . '), lc:' . $lc . ' (' . date('Y-m-d H:i:s', $lc) . '), ts:' . $ts . ', tf:' . $tf);
-	debug('failures:'. $url['failures'] . ', triggered:' . $url['triggered']);
-
-	if (strtotime($url['lastcheck']) > 0 && (($url['result'] != $results['result']) || $url['failures'] > 0 || $url['triggered'] == 1)) {
-		debug('Checking for trigger');
-
-		$sendemail = false;
-
-		if ($results['result'] == 0) {
-			$url['failures'] = $url['failures'] + 1;
-//			//////////if ($url['failures'] > $url['downtrigger'] && $url['triggered'] == 0) {
-			if ($url['failures'] >= $tf && $url['triggered'] == 0) {
-				$sendemail = true;
-				$url['triggered'] = 1;
+		if (isset($host['url'])) {
+			$x = 0;
+			while ($x < 2) {
+				switch ($host['type']) {
+					case 'http':
+						$cc = new cURL();
+						$cc->host = $host;
+						$results = $cc->get($host['url']);
+						$results['data'] = $cc->data;
+						break;
+					case 'dns':
+						$results = plugin_webseer_check_dns($host);
+						break;
+				}
+				if ($results['result'] > 0) {
+					$x = 3;
+				}
+				$x++;
 			}
-		}
 
-		if ($results['result'] == 1) {
-			if ($url['failures'] == 0 && $url['triggered'] == 1) {
-				$sendemail = true;
-				$url['triggered'] = 0;
+			$t  = (intval(time()/60) * 60) - ($host['downtrigger'] * 60);
+			$lc = (intval(time()/60) * 60) - 120;
+			$ts = db_fetch_cell_prepared('SELECT count(id) FROM plugin_webseer_servers WHERE isme = 1 OR (isme = 0 and lastcheck > ?)', array($lc));
+			$tf = ($ts * ($host['downtrigger'] - 1)) + 1;
+			
+			$host['failures'] = db_fetch_cell_prepared('SELECT count(url_id) FROM plugin_webseer_servers_log WHERE lastcheck > ? AND url_id = ?', array($t, $host['id']));
+//			$host['failures'] = $host['failures'] * .66;
+
+			if ($host['lastcheck'] > 0 && (($host['result'] != $results['result']) || $host['failures'] > 0 || $host['triggered'] == 1)) {
+				$sendemail = false;
+
+				if ($results['result'] == 0) {
+					$host['failures'] = $host['failures'] + 1;
+//					//////////if ($host['failures'] > $host['downtrigger'] && $host['triggered'] == 0) {
+					if ($host['failures'] >= $tf && $host['triggered'] == 0) {
+						$sendemail = true;
+						$host['triggered'] = 1;
+					}
+				}
+
+				if ($results['result'] == 1) {
+					if ($host['failures'] == 0 && $host['triggered'] == 1) {
+						$sendemail = true;
+						$host['triggered'] = 0;
+					}
+				}
+
+				if ($sendemail) {
+					db_execute_prepared("INSERT INTO plugin_webseer_url_log
+						(url_id, lastcheck, result, http_code, error, total_time, namelookup_time, connect_time, redirect_time, redirect_count, size_download, speed_download) 
+						VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
+						array($host['id'], $results['time'], $results['result'], $results['options']['http_code'],
+							$results['error'], $results['options']['total_time'], $results['options']['namelookup_time'],
+							$results['options']['connect_time'], $results['options']['redirect_time'], $results['options']['redirect_count'],
+							$results['options']['size_download'], $results['options']['speed_download']
+						)
+					);
+
+					if (plugin_webseer_amimaster ()) {
+						plugin_webseer_get_users($results, $host, '');
+						plugin_webseer_get_users($results, $host, 'text');
+					}
+				}
 			}
-		}
 
-		if ($sendemail) {
-			debug('Time to send email to admins');
-
-			db_execute_prepared("INSERT INTO plugin_webseer_url_log
-				(url_id, lastcheck, result, http_code, error, 
-				total_time, namelookup_time, connect_time, redirect_time, 
-				redirect_count, size_download, speed_download) 
-				VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
-				array($url['id'], date('Y-m-d H:i:s', $results['time']), $results['result'], 
-					$results['options']['http_code'], $results['error'], 
-					$results['options']['total_time'], $results['options']['namelookup_time'],
-					$results['options']['connect_time'], $results['options']['redirect_time'], 
-					$results['options']['redirect_count'], $results['options']['size_download'], 
-					$results['options']['speed_download']
+			db_execute_prepared('UPDATE plugin_webseer_urls SET result = ?, triggered = ?, failures = ?, lastcheck = ?, error = ?, http_code = ?,
+				total_time = ?, namelookup_time = ?, connect_time = ?, redirect_time = ?, redirect_count = ?, speed_download = ?, size_download = ?, debug = ? 
+				WHERE id = ?',
+				array( $results['result'], $host['triggered'], $host['failures'], $results['time'], $results['error'], $results['options']['http_code'],
+					$results['options']['total_time'], $results['options']['namelookup_time'], $results['options']['connect_time'], $results['options']['redirect_time'], 
+					$results['options']['redirect_count'], $results['options']['speed_download'], $results['options']['size_download'], $results['data'], $host['id']
 				)
 			);
 
-			if (plugin_webseer_amimaster ()) {
-				plugin_webseer_get_users($results, $url, '');
-				plugin_webseer_get_users($results, $url, 'text');
+			if ($results['result'] == 0) {
+				$save = array();
+				$save['url_id'] = $host['id'];
+				$save['server'] = plugin_webseer_whoami();
+				$save['lastcheck'] = $results['time'];
+				$save['result'] = $results['result'];
+				$save['http_code'] = $results['options']['http_code'];
+				$save['error'] = $results['error'];
+				$save['total_time'] = $results['options']['total_time'];
+				$save['namelookup_time'] = $results['options']['namelookup_time'];
+				$save['connect_time'] = $results['options']['connect_time'];
+				$save['redirect_time'] = $results['options']['redirect_time'];
+				$save['redirect_count'] = $results['options']['redirect_count'];
+				$save['size_download'] = $results['options']['size_download'];
+				$save['speed_download'] = $results['options']['speed_download'];
+				plugin_webseer_down_remote_hosts ($save);
+
+				db_execute_prepared('INSERT INTO plugin_webseer_servers_log
+					(url_id, server, lastcheck, result, http_code, error, total_time, namelookup_time, connect_time, redirect_time, redirect_count, size_download, speed_download) 
+					VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)', 
+					array(
+						$host['id'], plugin_webseer_whoami(), $results['time'], $results['result'], $results['options']['http_code'], $results['error'],
+						$results['options']['total_time'], $results['options']['namelookup_time'], $results['options']['connect_time'], $results['options']['redirect_time'],
+						$results['options']['redirect_count'], $results['options']['size_download'], $results['options']['speed_download']
+
+					)
+				);
 			}
 		}
-	}else{
-		debug('Not checking for trigger');
+
+		db_execute_prepared('DELETE FROM plugin_webseer_processes WHERE url = ?', array($h[1]), FALSE);
 	}
 
-	debug('Updating Statistics');
-
-	db_execute_prepared('UPDATE plugin_webseer_urls SET result = ?, triggered = ?, failures = ?, 
-		lastcheck = ?, error = ?, http_code = ?, total_time = ?, namelookup_time = ?, 
-		connect_time = ?, redirect_time = ?, redirect_count = ?, speed_download = ?, 
-		size_download = ?, debug = ? 
-		WHERE id = ?',
-		array($results['result'], $url['triggered'], $url['failures'], date('Y-m-d H:i:s', $results['time']), 
-			$results['error'], $results['options']['http_code'], $results['options']['total_time'], 
-			$results['options']['namelookup_time'], $results['options']['connect_time'], 
-			$results['options']['redirect_time'], $results['options']['redirect_count'], 
-			$results['options']['speed_download'], $results['options']['size_download'], 
-			$results['data'], $url['id']
-		)
-	);
-
-	if ($results['result'] == 0) {
-		$save = array();
-		$save['url_id']          = $url['id'];
-		$save['server']          = plugin_webseer_whoami();
-		$save['lastcheck']       = date('Y-m-d H:i:s', $results['time']);
-		$save['result']          = $results['result'];
-		$save['http_code']       = $results['options']['http_code'];
-		$save['error']           = $results['error'];
-		$save['total_time']      = $results['options']['total_time'];
-		$save['namelookup_time'] = $results['options']['namelookup_time'];
-		$save['connect_time']    = $results['options']['connect_time'];
-		$save['redirect_time']   = $results['options']['redirect_time'];
-		$save['redirect_count']  = $results['options']['redirect_count'];
-		$save['size_download']   = $results['options']['size_download'];
-		$save['speed_download']  = $results['options']['speed_download'];
-		plugin_webseer_down_remote_hosts ($save);
-
-		db_execute_prepared('INSERT INTO plugin_webseer_servers_log
-			(url_id, server, lastcheck, result, http_code, error, total_time, 
-			namelookup_time, connect_time, redirect_time, redirect_count, 
-			size_download, speed_download) 
-			VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)', 
-			array($url['id'], plugin_webseer_whoami(), date('Y-m-d H:i:s', $results['time']), 
-				$results['result'], $results['options']['http_code'], $results['error'],
-				$results['options']['total_time'], $results['options']['namelookup_time'], 
-				$results['options']['connect_time'], $results['options']['redirect_time'],
-				$results['options']['redirect_count'], $results['options']['size_download'], 
-				$results['options']['speed_download'])
-		);
-	}
+	db_execute('DELETE FROM plugin_webseer_servers_log WHERE lastcheck < ' . (time() - (86400 * 90)), FALSE);
 }
 
-/* register process end */
-register_shutdown($url_id);
-
-/* purge old entries from the log */
-
-db_execute('DELETE FROM plugin_webseer_servers_log 
-	WHERE UNIX_TIMESTAMP(lastcheck) < ' . (time() - (86400 * 90)));
-
-/* exit */
-
-function register_startup($url_id) {
-	db_execute_prepared('INSERT INTO plugin_webseer_processes 
-		(url_id, pid, time) 
-		VALUES(?, ?, NOW())', 
-		array($url_id, getmypid()));
-}
-
-function register_shutdown($url_id) {
-	db_execute_prepared('DELETE FROM plugin_webseer_processes 
-		WHERE url = ? 
-		AND pid = ?', 
-		array($url_id, getmypid()), FALSE);
-}
-
-function plugin_webseer_get_users($results, $url, $type) {
+function plugin_webseer_get_users($results, $host, $type) {
 	if ($type == 'text') {
-		$users = db_fetch_assoc("SELECT data 
-			FROM plugin_thold_contacts 
-			WHERE `type` = 'text' 
-			AND  (id = " . ($url['notify_accounts'] != '' ? implode(' OR id = ', explode(',', $url['notify_accounts'])) . ')' : '0)'));
+		$sql = "SELECT data FROM plugin_thold_contacts WHERE `type` = 'text' AND  (id = " . ($host['notify_accounts'] != '' ? implode(' OR id = ', explode(',', $host['notify_accounts'])) . ')' : '0)');
+		$users = db_fetch_assoc($sql);
 	} else {
-		$users = db_fetch_assoc("SELECT data 
-			FROM plugin_thold_contacts 
-			WHERE (`type` = 'email' OR `type` = 'external') 
-			AND (id = " . ($url['notify_accounts'] != '' ? implode(' OR id = ', explode(',', $url['notify_accounts'])) . ')' : '0)'));
-	}
-
-	if (!sizeof($users)) {
-		cacti_log('ERROR: No users to send WEBSEER Notification', false, 'WEBSEER');
-		return;
+		$sql = "SELECT data FROM plugin_thold_contacts WHERE (`type` = 'email' OR `type` = 'external') AND (id = " . ($host['notify_accounts'] != '' ? implode(' OR id = ', explode(',', $host['notify_accounts'])) . ')' : '0)');
+		$users = db_fetch_assoc($sql);
 	}
 
 	$to = '';
-	$u  = array();
-
-	if (sizeof($users)) {
+	$u = array();
+	if (!empty($users)) {
 		foreach ($users as $user) {
 			$u[] = $user['data'];
 		}
 	}
 
 	$to = implode(',', $u);			
-	if ($url['notify_extra'] != '') {
+	if ($host['notify_extra'] != '') {
 		if ($to != '') {
 			$to .= ',';
 		}
-		$to .= $url['notify_extra'];
+		$to .= $host['notify_extra'];
 	}
 
 	if ($type == 'text') {
-		$subject  = '';
-		$message  = "Site "        . ($results['result'] == 0 ? 'Down: ' : 'Recovering: ') . ($url['display_name'] != '' ? $url['display_name']:'') . "\n";
-		$message .= "URL: "        . $url['url'] . "\n";
-		$message .= "Error: "      . $results['error'] . "\n";
+		$subject = '';
+		$message = "Site " . ($results['result'] == 0 ? 'Down' : 'Recovering') . "\n";
+		$message .= "URL: " . $host['url'] . "\n";
+		$message .= "Error: " . $results['error'] . "\n";
 		$message .= "Total Time: " . $results['options']['total_time'] . "\n";
 	} else {
 		if ($results['result'] == 0) {
-			$subject = "Site Down: " . ($url['display_name'] != '' ? $url['display_name'] : $url['url']);
+			$subject = "Site Down: " . ($host['display_name'] != '' ? $host['display_name'] : $host['url']);
 		} else {
-			$subject = "Site Recovered: " . ($url['display_name'] != '' ? $url['display_name'] : $url['url']);
+			$subject = "Site Recovered: " . ($host['display_name'] != '' ? $host['display_name'] : $host['url']);
 		}
 
 		$message = "-------------------------------------------------------\n";
-		$message .= "URL: "            . $url['url'] . "\n";
-		$message .= "Status: "         . ($results['result'] == 0 ? 'Down' : 'Recovering') . "\n";
-		$message .= "Date: "           . date('F j, Y - h:i:s', $results['time']) . "\n";
-		$message .= "HTTP Code: "      . $results['options']['http_code'] . "\n";
-		$message .= "Error: "          . $results['error'] . "\n";
+		$message .= "URL: " . $host['url'] . "\n";
+		$message .= "Status: " . ($results['result'] == 0 ? 'Down' : 'Recovering') . "\n";
+		$message .= "Date: " . date('F j, Y - h:i:s', $results['time']) . "\n";
+		$message .= "HTTP Code: " . $results['options']['http_code'] . "\n";
+		$message .= "Error: " . $results['error'] . "\n";
 		$message .= "-------------------------------------------------------\n";
-		$message .= "Total Time: "     . $results['options']['total_time'] . "\n";
-		$message .= "Connect Time: "   . $results['options']['connect_time'] . "\n";
-		$message .= "DNS Time: "       . $results['options']['namelookup_time'] . "\n";
-		$message .= "Redirect Time: "  . $results['options']['redirect_time'] . "\n";
+		$message .= "Total Time: " . $results['options']['total_time'] . "\n";
+		$message .= "Connect Time: " . $results['options']['connect_time'] . "\n";
+		$message .= "DNS Time: " . $results['options']['namelookup_time'] . "\n";
+		$message .= "Redirect Time: " . $results['options']['redirect_time'] . "\n";
 		$message .= "Redirect Count: " . $results['options']['redirect_count'] . "\n";
-		$message .= "Download Size: "  . $results['options']['size_download'] . " Bytes\n";
+		$message .= "Download Size: " . $results['options']['size_download'] . " Bytes\n";
 		$message .= "Download Speed: " . $results['options']['speed_download'] . " Bps\n";
 		$message .= "-------------------------------------------------------\n";
 	}
@@ -355,74 +219,26 @@ function plugin_webseer_get_users($results, $url, $type) {
 	}
 }
 
-function plugin_webseer_amimaster() {
-	if (function_exists('gethostname')) {
-		$hostname = gethostname();
-	}else{
-		$hostname = php_uname('n');
+function plugin_webseer_amimaster () {
+	$server = db_fetch_row('SELECT * FROM plugin_webseer_servers WHERE isme = 1 AND master = 1', FALSE);
+	if (isset($server['ip'])) {
+		return 1;
 	}
-
-	$ipaddress = gethostbyname($hostname);
-
-	$server    = db_fetch_cell_prepared('SELECT id 
-		FROM plugin_webseer_servers 
-		WHERE ip = ?
-		AND master = 1', 
-		array($ipaddress));
-
-	if ($server) {
-		return true;
-	}
-
-	return false;
+	return 0;
 }
 
-function plugin_webseer_whoami() {
-	if (function_exists('gethostname')) {
-		$hostname = gethostname();
-	}else{
-		$hostname = php_uname('n');
+function plugin_webseer_whoami () {
+	$server = db_fetch_row('SELECT * FROM plugin_webseer_servers WHERE isme = 1', FALSE);
+	if (isset($server['id'])) {
+		return $server['id'];
 	}
-
-	$ipaddress = gethostbyname($hostname);
-	$server    = db_fetch_cell_prepared('SELECT id 
-		FROM plugin_webseer_servers 
-		WHERE ip = ?', 
-		array($ipaddress));
-
-	if ($server) {
-		return $server;
-	}
-
 	return 0;
 }
 
 function plugin_webseer_send_email($to, $subject, $message) {
-	$from_name  = read_config_option('settings_from_name');
-	$from_email = read_config_option('settings_from_email');
+	global $config;
 
-	if ($from_name != '') {
-		$from[0] = $from_email;
-		$from[1] = $from_name;
-	}else{
-		$from    = $from_email;
-	}
-
-	send_mail($to, $from, '', '', '', $subject, $message);
+	$from = 'jimmy@sqmail.org';
+	webseer_send_mail($to, $from, $subject, $message);
 }
 
-/*  display_version - displays version information */
-function display_version() {
-    $version = db_fetch_cell('SELECT cacti FROM version');
-    echo "Cacti Web Service Check Processor, Version $version, " . COPYRIGHT_YEARS . "\n";
-}
-
-/*  display_help - displays the usage of the function */
-function display_help() {
-    display_version();
-
-    echo "\nusage: webseer_process.php --id=N [--debug]\n\n";
-	echo "This binary will run the Web Service check for the WebSeer plugin.\n\n";
-    echo "--id=N     - The url ID from the WebSeer database.\n";
-    echo "--debug    - Display verbose output during execution\n\n";
-}
