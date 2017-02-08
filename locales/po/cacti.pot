@@ -1,0 +1,453 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-08 08:20-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../webseer_servers.php:152 ../webseer.php:185
+msgid "Date"
+msgstr ""
+
+#: ../webseer_servers.php:152 ../webseer_servers.php:338 ../webseer.php:185
+#: ../webseer.php:435 ../webseer_edit.php:173 ../webseer_servers_edit.php:161
+msgid "URL"
+msgstr ""
+
+#: ../webseer_servers.php:152 ../webseer.php:498
+msgid "Error"
+msgstr ""
+
+#: ../webseer_servers.php:152 ../webseer.php:185
+msgid "HTTP Code"
+msgstr ""
+
+#: ../webseer_servers.php:152 ../webseer.php:185 ../webseer.php:440
+msgid "DNS"
+msgstr ""
+
+#: ../webseer_servers.php:152 ../webseer.php:185 ../webseer.php:441
+msgid "Connect"
+msgstr ""
+
+#: ../webseer_servers.php:152 ../webseer.php:185 ../webseer.php:442
+msgid "Redirect"
+msgstr ""
+
+#: ../webseer_servers.php:152 ../webseer.php:185 ../webseer.php:443
+msgid "Total"
+msgstr ""
+
+#: ../webseer_servers.php:152
+msgid "Result"
+msgstr ""
+
+#: ../webseer_servers.php:179 ../webseer.php:211 ../webseer.php:494
+msgid "Up"
+msgstr ""
+
+#: ../webseer_servers.php:179 ../webseer.php:211 ../webseer.php:494
+msgid "Down"
+msgstr ""
+
+#: ../webseer_servers.php:184 ../webseer.php:216
+msgid "No Events in History"
+msgstr ""
+
+#: ../webseer_servers.php:193 ../webseer.php:226
+msgid "Delete"
+msgstr ""
+
+#: ../webseer_servers.php:193 ../webseer.php:227
+msgid "Disable"
+msgstr ""
+
+#: ../webseer_servers.php:193 ../webseer.php:228
+msgid "Enable"
+msgstr ""
+
+#: ../webseer_servers.php:267
+msgid "Webseer Server Management"
+msgstr ""
+
+#: ../webseer_servers.php:275 ../webseer.php:369
+msgid "State"
+msgstr ""
+
+#: ../webseer_servers.php:279 ../webseer.php:373
+msgid "Any"
+msgstr ""
+
+#: ../webseer_servers.php:281 ../webseer.php:497 ../webseer.php:499
+msgid "Disabled"
+msgstr ""
+
+#: ../webseer_servers.php:281 ../webseer_servers.php:340 ../webseer.php:437
+#: ../webseer.php:497 ../webseer.php:499
+msgid "Enabled"
+msgstr ""
+
+#: ../webseer_servers.php:281
+msgid "Triggered"
+msgstr ""
+
+#: ../webseer_servers.php:288 ../webseer.php:382
+msgid "Refresh"
+msgstr ""
+
+#: ../webseer_servers.php:293 ../webseer.php:387 ../webseer_edit.php:224
+#: ../webseer_edit.php:225 ../webseer_edit.php:226 ../webseer_edit.php:227
+#: ../webseer_edit.php:228 ../webseer_edit.php:229 ../webseer_edit.php:230
+#: ../webseer_edit.php:231
+#, php-format
+msgid "%d Seconds"
+msgstr ""
+
+#: ../webseer_servers.php:293 ../webseer.php:387 ../webseer_edit.php:205
+#, php-format
+msgid "%d Minute"
+msgstr ""
+
+#: ../webseer_servers.php:293 ../webseer.php:387 ../webseer_edit.php:206
+#: ../webseer_edit.php:207 ../webseer_edit.php:208 ../webseer_edit.php:209
+#: ../webseer_edit.php:210 ../webseer_edit.php:211 ../webseer_edit.php:212
+#: ../webseer_edit.php:213 ../webseer_edit.php:214
+#, php-format
+msgid "%d Minutes"
+msgstr ""
+
+#: ../webseer_servers.php:300
+msgid "Sites"
+msgstr ""
+
+#: ../webseer_servers.php:314 ../webseer.php:411
+msgid "Clear"
+msgstr ""
+
+#: ../webseer_servers.php:327 ../functions.php:29
+msgid "Servers"
+msgstr ""
+
+#: ../webseer_servers.php:336 ../webseer.php:433
+msgid "Actions"
+msgstr ""
+
+#: ../webseer_servers.php:337 ../webseer.php:434
+#: ../webseer_servers_edit.php:140
+msgid "Name"
+msgstr ""
+
+#: ../webseer_servers.php:339 ../webseer_edit.php:181
+#: ../webseer_servers_edit.php:147
+msgid "IP Address"
+msgstr ""
+
+#: ../webseer_servers.php:341 ../webseer_servers_edit.php:154
+msgid "Location"
+msgstr ""
+
+#: ../webseer_servers.php:342 ../webseer.php:445
+msgid "Last Check"
+msgstr ""
+
+#: ../webseer_servers.php:343
+msgid "Master"
+msgstr ""
+
+#: ../webseer_servers.php:344
+msgid "This Host"
+msgstr ""
+
+#: ../webseer_servers.php:362 ../webseer.php:465
+msgid "Edit Site"
+msgstr ""
+
+#: ../webseer_servers.php:367 ../webseer.php:470
+msgid "Enable Site"
+msgstr ""
+
+#: ../webseer_servers.php:371 ../webseer.php:474
+msgid "Disable Site"
+msgstr ""
+
+#: ../webseer_servers.php:375 ../webseer.php:479
+msgid "View History"
+msgstr ""
+
+#: ../webseer_servers.php:380 ../webseer_servers.php:383
+#: ../webseer_servers.php:384
+msgid "Yes"
+msgstr ""
+
+#: ../webseer_servers.php:380 ../webseer_servers.php:383
+#: ../webseer_servers.php:384
+msgid "No"
+msgstr ""
+
+#: ../webseer_servers.php:390 ../webseer.php:513
+msgid "No Servers Found"
+msgstr ""
+
+#: ../functions.php:28 ../webseer.php:394 ../webseer.php:424
+msgid "Checks"
+msgstr ""
+
+#: ../webseer.php:185 ../webseer.php:436
+msgid "Status"
+msgstr ""
+
+#: ../webseer.php:229
+msgid "Duplicate"
+msgstr ""
+
+#: ../webseer.php:354
+msgid "Webseer Site Management"
+msgstr ""
+
+#: ../webseer.php:363 ../webseer_edit.php:354
+msgid "Search"
+msgstr ""
+
+#: ../webseer.php:408
+msgid "Go"
+msgstr ""
+
+#: ../webseer.php:438
+msgid "Http Code"
+msgstr ""
+
+#: ../webseer.php:439
+msgid "Auth"
+msgstr ""
+
+#: ../webseer.php:444
+msgid "Timeout"
+msgstr ""
+
+#: ../webseer.php:488
+#, php-format
+msgid "DNS: Server %s - A Record for %s"
+msgstr ""
+
+#: ../webseer.php:492
+msgid "N/A"
+msgstr ""
+
+#: ../webseer_edit.php:146 ../webseer_servers_edit.php:111
+#, php-format
+msgid "Query [edit: %s]"
+msgstr ""
+
+#: ../webseer_edit.php:149 ../webseer_servers_edit.php:113
+msgid "Query [new]"
+msgstr ""
+
+#: ../webseer_edit.php:159
+msgid "Service Check Name"
+msgstr ""
+
+#: ../webseer_edit.php:160
+msgid ""
+"The name that is displayed for this Service Check, and is included in any "
+"Alert notifications."
+msgstr ""
+
+#: ../webseer_edit.php:166
+msgid "Enable Service Check"
+msgstr ""
+
+#: ../webseer_edit.php:167
+msgid "Uncheck this box to disabled this url from being checked."
+msgstr ""
+
+#: ../webseer_edit.php:174
+msgid "The URL to Monitor"
+msgstr ""
+
+#: ../webseer_edit.php:182
+msgid ""
+"Enter an IP address to connect to.  Leaving blank will use DNS Resolution "
+"instead."
+msgstr ""
+
+#: ../webseer_edit.php:189
+msgid "Requires Authentication"
+msgstr ""
+
+#: ../webseer_edit.php:190
+msgid ""
+"Check this box if the site will normally return a 401 Error as it requires a "
+"username and password."
+msgstr ""
+
+#: ../webseer_edit.php:196
+msgid "Check Certificate"
+msgstr ""
+
+#: ../webseer_edit.php:197
+msgid ""
+"If using SSL, check this box if you want to validate the certificate. "
+"Default on, turn off if you the site uses a self-signed certificate."
+msgstr ""
+
+#: ../webseer_edit.php:202
+msgid "Trigger"
+msgstr ""
+
+#: ../webseer_edit.php:217
+msgid ""
+"How many minutes the URL must be down before it will send an alert.  After "
+"an alert is sent, in order for a 'Site Recovering' Email to be send, it must "
+"also be up this number of minutes."
+msgstr ""
+
+#: ../webseer_edit.php:221
+msgid "Time Out"
+msgstr ""
+
+#: ../webseer_edit.php:234
+msgid ""
+"How many seconds to allow the page to timeout before reporting it as down."
+msgstr ""
+
+#: ../webseer_edit.php:239
+msgid "Response Search String"
+msgstr ""
+
+#: ../webseer_edit.php:240
+msgid ""
+"This is the string to search for in the URL response for a live and working "
+"Web Service."
+msgstr ""
+
+#: ../webseer_edit.php:247
+msgid "Response Search String - Maintenance Page"
+msgstr ""
+
+#: ../webseer_edit.php:248
+msgid ""
+"This is the string to search for on the Maintenance Page.  The Service Check "
+"will check for this string if the above string is not found.  If found, it "
+"means that the Web Service is under maintenance."
+msgstr ""
+
+#: ../webseer_edit.php:255
+msgid "Response Search String - Failed"
+msgstr ""
+
+#: ../webseer_edit.php:256
+msgid ""
+"This is the string to search for a known failure in the Web Service "
+"response.  The Service Check will only alert if this string is found, "
+"ignoring any timeout issues and the search strings above."
+msgstr ""
+
+#: ../webseer_edit.php:262
+msgid "Notify accounts"
+msgstr ""
+
+#: ../webseer_edit.php:264
+msgid ""
+"This is a listing of accounts that will be notified when this website goes "
+"down."
+msgstr ""
+
+#: ../webseer_edit.php:269
+msgid "Extra Alert Emails"
+msgstr ""
+
+#: ../webseer_edit.php:273
+msgid ""
+"You may specify here extra Emails to receive alerts for this URL (comma "
+"separated)"
+msgstr ""
+
+#: ../webseer_edit.php:309
+msgid "No Users Selected"
+msgstr ""
+
+#: ../webseer_edit.php:311
+msgid "Users Selected"
+msgstr ""
+
+#: ../webseer_edit.php:314
+msgid "All Users Selected"
+msgstr ""
+
+#: ../webseer_edit.php:320
+msgid "All"
+msgstr ""
+
+#: ../webseer_edit.php:321
+msgid "None"
+msgstr ""
+
+#: ../webseer_servers_edit.php:119
+msgid "Enable Server"
+msgstr ""
+
+#: ../webseer_servers_edit.php:120
+msgid "Uncheck this box to disabled this server from checking urls."
+msgstr ""
+
+#: ../webseer_servers_edit.php:126
+msgid "Master Server"
+msgstr ""
+
+#: ../webseer_servers_edit.php:127
+msgid ""
+"Sets this server to the Master server.  The Master server handles all Email "
+"operations"
+msgstr ""
+
+#: ../webseer_servers_edit.php:133
+msgid "Is this server the local server?"
+msgstr ""
+
+#: ../webseer_servers_edit.php:134
+msgid ""
+"Check this box if the current server you are connected to is this entry."
+msgstr ""
+
+#: ../webseer_servers_edit.php:141
+msgid "Display Name of this server"
+msgstr ""
+
+#: ../webseer_servers_edit.php:148
+msgid "IP Address to connect to this server"
+msgstr ""
+
+#: ../webseer_servers_edit.php:155
+msgid "Location of this server"
+msgstr ""
+
+#: ../webseer_servers_edit.php:162
+msgid "This is the URL to connect to remote.php on this server."
+msgstr ""
+
+#: ../poller_webseer.php:171
+msgid "Cacti Master"
+msgstr ""
+
+#: ../poller_webseer.php:174
+msgid "Cacti Remote Server"
+msgstr ""
+
+#: ../setup.php:178
+msgid "Management"
+msgstr ""
+
+#: ../setup.php:178
+msgid "Web Service Checks"
+msgstr ""
