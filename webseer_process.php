@@ -285,6 +285,8 @@ function register_shutdown($url_id) {
 }
 
 function plugin_webseer_get_users($results, $url, $type) {
+	global $httperrors;
+
 	if ($type == 'text') {
 		$users = db_fetch_assoc("SELECT data 
 			FROM plugin_thold_contacts 
@@ -297,8 +299,8 @@ function plugin_webseer_get_users($results, $url, $type) {
 			AND (id = " . ($url['notify_accounts'] != '' ? implode(' OR id = ', explode(',', $url['notify_accounts'])) . ')' : '0)'));
 	}
 
-	if (!sizeof($users)) {
-		cacti_log('ERROR: No users to send WEBSEER Notification', false, 'WEBSEER');
+	if (!sizeof($users) && isset($url['notify_extra']) && $url['notify_extra'] == '') {
+		cacti_log('ERROR: No users to send WEBSEER Notification for ' . $url['display_name'], false, 'WEBSEER');
 		return;
 	}
 
@@ -309,18 +311,21 @@ function plugin_webseer_get_users($results, $url, $type) {
 		foreach ($users as $user) {
 			$u[] = $user['data'];
 		}
+
+		$to = implode(',', $u);			
 	}
 
-	$to = implode(',', $u);			
 	if ($url['notify_extra'] != '') {
-		if ($to != '') {
-			$to .= ',';
-		}
-		$to .= $url['notify_extra'];
+		$to .= ($to != '' ? ',':'') . $url['notify_extra'];
 	}
 
 	if ($type == 'text') {
-		$subject  = '';
+		if ($results['result'] == 0) {
+			$subject = "Site Down: " . ($url['display_name'] != '' ? $url['display_name'] : $url['url']);
+		} else {
+			$subject = "Site Recovered: " . ($url['display_name'] != '' ? $url['display_name'] : $url['url']);
+		}
+
 		$message  = "Site "        . ($results['result'] == 0 ? 'Down: ' : 'Recovering: ') . ($url['display_name'] != '' ? $url['display_name']:'') . "\n";
 		$message .= "URL: "        . $url['url'] . "\n";
 		$message .= "Error: "      . $results['error'] . "\n";
@@ -332,21 +337,35 @@ function plugin_webseer_get_users($results, $url, $type) {
 			$subject = "Site Recovered: " . ($url['display_name'] != '' ? $url['display_name'] : $url['url']);
 		}
 
-		$message = "-------------------------------------------------------\n";
-		$message .= "URL: "            . $url['url'] . "\n";
-		$message .= "Status: "         . ($results['result'] == 0 ? 'Down' : 'Recovering') . "\n";
-		$message .= "Date: "           . date('F j, Y - h:i:s', $results['time']) . "\n";
-		$message .= "HTTP Code: "      . $results['options']['http_code'] . "\n";
-		$message .= "Error: "          . $results['error'] . "\n";
-		$message .= "-------------------------------------------------------\n";
-		$message .= "Total Time: "     . $results['options']['total_time'] . "\n";
-		$message .= "Connect Time: "   . $results['options']['connect_time'] . "\n";
-		$message .= "DNS Time: "       . $results['options']['namelookup_time'] . "\n";
-		$message .= "Redirect Time: "  . $results['options']['redirect_time'] . "\n";
-		$message .= "Redirect Count: " . $results['options']['redirect_count'] . "\n";
-		$message .= "Download Size: "  . $results['options']['size_download'] . " Bytes\n";
-		$message .= "Download Speed: " . $results['options']['speed_download'] . " Bps\n";
-		$message .= "-------------------------------------------------------\n";
+		$message  = "<h3>" . $subject . "</h3>\n";
+		$message .= "<hr>";
+
+		$message .= "<table>\n";
+		$message .= "<tr><td>URL:</td><td>"       . $url['url'] . "</td></tr>\n";
+		$message .= "<tr><td>Status:</td><td>"    . ($results['result'] == 0 ? 'Down' : 'Recovering') . "</td></tr>\n";
+		$message .= "<tr><td>Date:</td><td>"      . date('F j, Y - h:i:s', $results['time']) . "</td></tr>\n";
+		$message .= "<tr><td>HTTP Code:</td><td>" . $httperrors[$results['options']['http_code']] . "</td></tr>\n";
+
+		if ($results['error'] != '') {
+			$message .= "<tr><td>Error:</td><td>" . $results['error'] . "</td></tr>\n";
+		}
+		$message .= "</table>\n";
+
+		$message .= "<hr>";
+
+		if ($results['error'] > 0) {
+			$message .= "<table>\n";
+			$message .= "<tr><td>Total Time:</td><td> "     . round($results['options']['total_time'],4)      . "</td></tr>\n";
+			$message .= "<tr><td>Connect Time:</td><td> "   . round($results['options']['connect_time'],4)    . "</td></tr>\n";
+			$message .= "<tr><td>DNS Time:</td><td> "       . round($results['options']['namelookup_time'],4) . "</td></tr>\n";
+			$message .= "<tr><td>Redirect Time:</td><td> "  . round($results['options']['redirect_time'],4)   . "</td></tr>\n";
+			$message .= "<tr><td>Redirect Count:</td><td> " . round($results['options']['redirect_count'],4)  . "</td></tr>\n";
+			$message .= "<tr><td>Download Size:</td><td> "  . round($results['options']['size_download'],4)   . " Bytes" . "</td></tr>\n";
+			$message .= "<tr><td>Download Speed:</td><td> " . round($results['options']['speed_download'],4)  . " Bps" . "</td></tr>\n";
+			$message .= "</table>\n";
+
+			$message .= "<hr>";
+		}
 	}
 
 	$users = explode(',', $to);
@@ -408,7 +427,12 @@ function plugin_webseer_send_email($to, $subject, $message) {
 		$from    = $from_email;
 	}
 
-	send_mail($to, $from, '', '', '', $subject, $message);
+	$v = db_fetch_cell('SELECT cacti FROM version');
+	$headers['User-Agent'] = 'Cacti-WebSeer-v' . $v;
+
+	$message_text = strip_tags($message);
+
+	mailer($from, $to, '', '', '', $subject, $message, $message_text, '', $headers);
 }
 
 /*  display_version - displays version information */

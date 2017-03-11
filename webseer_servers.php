@@ -127,7 +127,7 @@ function webseer_request_validation() {
 }
 
 function webseer_show_history() {
-	global $config, $webseer_bgcolors;
+	global $config, $webseer_bgcolors, $httperrors;
 
 	if (isset_request_var('id')) {
 		$id = get_filter_request_var('id');
@@ -149,7 +149,7 @@ function webseer_show_history() {
 
 	html_start_box('', '100%', '', '4', 'center', '');
 
-	$display_text = array(__('Date'), __('URL'), __('Error'), __('HTTP Code'), __('DNS'), __('Connect'), __('Redirect'), __('Total'), __('Result'));
+	$display_text = array(__('Date'), __('URL'), __('Error'), __('HTTP Code'), __('DNS'), __('Connect'), __('Redirect'), __('Total'));
 
 	html_header($display_text);
 
@@ -170,13 +170,12 @@ function webseer_show_history() {
 			form_alternate_row('line' . $row['id'], true);
 			form_selectable_cell($row['lastcheck'], $row['id']);
 			form_selectable_cell("<a class='linkEditMain' href='" . $row['url'] . "' target=_new><b>" . $row['url'] . '</b></a>', $row['id']);
-			form_selectable_cell($row['error'], $row['id']);
-			form_selectable_cell($row['http_code'], $row['id']);
+			form_selectable_cell(($row['result'] == 1 ? __('Up') : __('Down')), $row['id']);
+			form_selectable_cell($httperrors[$row['http_code']], $row['id'], '', '', $row['error']);
 			form_selectable_cell(round($row['namelookup_time'], 4), $row['id'], '', ($row['namelookup_time'] > 4 ? 'background-color: red' : ($row['namelookup_time'] > 1 ? 'background-color: yellow':'')));
 			form_selectable_cell(round($row['connect_time'], 4), $row['id'], '', ($row['connect_time'] > 4 ? 'background-color: red' : ($row['connect_time'] > 1 ? 'background-color: yellow':'')));
 			form_selectable_cell(round($row['redirect_time'], 4), $row['id'], '', ($row['redirect_time'] > 4 ? 'background-color: red' : ($row['redirect_time'] > 1 ? 'background-color: yellow':'')));
 			form_selectable_cell(round($row['total_time'], 4), $row['id'], '', ($row['total_time'] > 4 ? 'background-color: red' : ($row['total_time'] > 1 ? 'background-color: yellow':'')));
-			form_selectable_cell(($row['result'] == 1 ? __('Up') : __('Down')), $row['id']);
 			form_end_row();
 		}
 	} else {

@@ -178,6 +178,7 @@ function plugin_webseer_config_arrays() {
 	$menu[__('Management')]['plugins/webseer/webseer.php'] = __('Web Service Checks');
 
 	$httperrors = array(
+		  0 => 'Unable to Connect',
 		100 => 'Continue',
 		101 => 'Switching Protocols',
 		200 => 'OK',

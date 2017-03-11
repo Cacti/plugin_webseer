@@ -159,7 +159,7 @@ function webseer_request_validation() {
 }
 
 function webseer_show_history() {
-	global $config, $webseer_bgcolors;
+	global $config, $webseer_bgcolors, $httperrors;
 
 	if (isset_request_var('id')) {
 		$id = get_filter_request_var('id');
@@ -203,7 +203,7 @@ function webseer_show_history() {
 			form_alternate_row_color($webseer_bgcolors[$bgcolor], $webseer_bgcolors[$bgcolor], $i, 'line' . $row['id']); $i++;
 			form_selectable_cell($row['lastcheck'], $row['id']);
 			form_selectable_cell("<a class='linkEditMain' href='" . $row['url'] . "' target=_new>" . $row['url'] . '</a>', $row['id']);
-			form_selectable_cell($row['http_code'], $row['id'], '', '', $row['error']);
+			form_selectable_cell($httperrors[$row['http_code']], $row['id'], '', '', $row['error']);
 			form_selectable_cell(round($row['namelookup_time'], 4), $row['id'], '', ($row['namelookup_time'] > 4 ? 'background-color: red' : ($row['namelookup_time'] > 1 ? 'background-color: yellow':'')));
 			form_selectable_cell(round($row['connect_time'], 4), $row['id'], '', ($row['connect_time'] > 4 ? 'background-color: red' : ($row['connect_time'] > 1 ? 'background-color: yellow':'')));
 			form_selectable_cell(round($row['redirect_time'], 4), $row['id'], '', ($row['redirect_time'] > 4 ? 'background-color: red' : ($row['redirect_time'] > 1 ? 'background-color: yellow':'')));
@@ -475,7 +475,7 @@ function list_urls() {
 				</a>";
 			}
 
-			print "<a href='webseer.php?view_history=1&id=" . $row['id'] . "'>
+			print "<a class='pic' href='webseer.php?view_history=1&id=" . $row['id'] . "'>
 					<img src='" . $config['url_path'] . "plugins/webseer/images/view_log.gif' border=0 alt='' title='" . __('View History') . "'>
 				</a>
 			</td>";
