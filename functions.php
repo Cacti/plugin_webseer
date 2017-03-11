@@ -485,7 +485,7 @@ class mxlookup {
 	var $arrMX      = array();
 	var $dns_repl_domain;
 
-	function mxlookup($domain, $dns = '4.2.2.1') {
+	function __construct($domain, $dns = '4.2.2.1') {
 		$this->QNAME($domain);
 		$this->pack_dns_packet();
 
@@ -524,6 +524,10 @@ class mxlookup {
 			//$this->arrMX[] = array('MX_Pref' => $mxPref, 'MX' => $curmx);
 			//$this->cIx += 3;
 		}
+	}
+
+	function __destruct() {
+		return true;
 	}
 
 	function parse_data(&$retval) {
