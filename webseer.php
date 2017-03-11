@@ -168,13 +168,12 @@ function webseer_show_history() {
 		exit;
 	}
 
-	$sql = "SELECT plugin_webseer_url_log.*, plugin_webseer_urls.url 
-		FROM plugin_webseer_url_log,plugin_webseer_urls 
-		WHERE plugin_webseer_urls.id = $id 
-		AND plugin_webseer_url_log.url_id = plugin_webseer_urls.id 
-		ORDER BY plugin_webseer_url_log.lastcheck DESC";
-
-	$result = db_fetch_assoc($sql);
+	$result = db_fetch_assoc_prepared("SELECT pwul.*, pwu.url 
+		FROM plugin_webseer_url_log AS pwul
+		INNER JOIN plugin_webseer_urls AS pwu
+		ON pwul.url_id=pwu.id
+		WHERE pwu.id = ?
+		ORDER BY pwul.lastcheck DESC", array($id));
 
 	top_header();
 
@@ -220,7 +219,7 @@ function webseer_show_history() {
 }
 
 function list_urls() {
-	global $webseer_bgcolors, $config, $hostid, $refresh, $item_rows;
+	global $webseer_bgcolors, $httperrors, $config, $hostid, $refresh, $item_rows;
 
 	$ds_actions = array(
 		1 => __('Delete'), 
@@ -435,7 +434,7 @@ function list_urls() {
 		'url'             => array('display' => __('URL'),        'sort' => 'ASC', 'align' => 'left'),
 		'result'          => array('display' => __('Status'),     'sort' => 'ASC', 'align' => 'right'),
 		'enabled'         => array('display' => __('Enabled'),    'sort' => 'ASC', 'align' => 'right'),
-		'http_code'       => array('display' => __('Http Code'),  'sort' => 'ASC', 'align' => 'right'),
+		'http_code'       => array('display' => __('HTTP Code'),  'sort' => 'ASC', 'align' => 'right'),
 		'requireauth'     => array('display' => __('Auth'),       'sort' => 'ASC', 'align' => 'right'),
 		'namelookup_time' => array('display' => __('DNS'),        'sort' => 'ASC', 'align' => 'right'),
 		'connect_time'    => array('display' => __('Connect'),    'sort' => 'ASC', 'align' => 'right'),
@@ -495,7 +494,7 @@ function list_urls() {
 			}
 
 			form_selectable_cell(($row['enabled'] == 'on' ? __('Enabled') : __('Disabled')), $row['id'], '', 'right');
-			form_selectable_cell($row['http_code'] != '0' ? $row['http_code']:__('Error'), $row['id'], '', $row['error'] != '' ? 'deviceDown right':'right', $row['error']);
+			form_selectable_cell($row['http_code'] != '0' ? $httperrors[$row['http_code']]:__('Error'), $row['id'], '', $row['error'] != '' ? 'deviceDown right':'right', $row['error']);
 			form_selectable_cell((($row['requiresauth'] == '') ? __('Disabled'): __('Enabled')), $row['id'], '', 'right');
 
 			form_selectable_cell(round($row['namelookup_time'], 4), $row['id'], '', ($row['namelookup_time'] > 4 ? 'deviceDown right' : ($row['namelookup_time'] > 1 ? 'deviceRecovering right':'right')));
