@@ -494,7 +494,7 @@ function list_urls() {
 			}
 
 			form_selectable_cell(($row['enabled'] == 'on' ? __('Enabled') : __('Disabled')), $row['id'], '', 'right');
-			form_selectable_cell($row['http_code'] != '0' ? $httperrors[$row['http_code']]:__('Error'), $row['id'], '', $row['error'] != '' ? 'deviceDown right':'right', $row['error']);
+			form_selectable_cell(!empty($row['http_code']) ? $httperrors[$row['http_code']]:__('Error'), $row['id'], '', $row['error'] != '' ? 'deviceDown right':'right', $row['error']);
 			form_selectable_cell((($row['requiresauth'] == '') ? __('Disabled'): __('Enabled')), $row['id'], '', 'right');
 
 			form_selectable_cell(round($row['namelookup_time'], 4), $row['id'], '', ($row['namelookup_time'] > 4 ? 'deviceDown right' : ($row['namelookup_time'] > 1 ? 'deviceRecovering right':'right')));
