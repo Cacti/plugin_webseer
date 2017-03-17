@@ -121,7 +121,7 @@ function webseer_request_validation() {
 		'rows' => array(
 			'filter' => FILTER_VALIDATE_INT,
 			'pageset' => true,
-			'default' => read_config_option('num_rows_table')
+			'default' => '-1'
 			),
 		'page' => array(
 			'filter' => FILTER_VALIDATE_INT,
@@ -219,7 +219,7 @@ function webseer_show_history() {
 }
 
 function list_urls() {
-	global $webseer_bgcolors, $httperrors, $config, $hostid, $refresh, $item_rows;
+	global $webseer_bgcolors, $httperrors, $config, $hostid, $refresh;
 
 	$ds_actions = array(
 		1 => __('Delete'), 
@@ -272,30 +272,28 @@ function list_urls() {
 		}
 	}
 
+	top_header();
+
+	webseer_show_tab('webseer.php');
+
+	webseer_filter();
+
 	if (get_request_var('rows') == '-1') {
 		$rows = read_config_option('num_rows_table');
 	}else{
 		$rows = get_request_var('rows');
 	}
 
-	if (isset_request_var('refresh') && get_request_var('refresh') != '' && get_request_var('refresh') != 0) {
-		$refresh['seconds'] = get_request_var('refresh');
-		$refresh['page'] = 'webseer.php?header=false';
-	}
-
-	top_header();
-
-	webseer_show_tab('webseer.php');
-
 	$sql_where = '';
-	$limit = ' LIMIT ' . ($rows*(get_request_var('page')-1)) . ",$rows";
+	$limit     = ' LIMIT ' . ($rows*(get_request_var('page')-1)) . ', ' . $rows;
+	$order     = 'ORDER BY ' . get_request_var('sort_column') . ' ' . get_request_var('sort_direction');
 
 	if ($statefilter != '') {
-		$sql_where .= (!strlen($sql_where) ? 'WHERE ' : ' AND ') . $statefilter;
+		$sql_where .= ($sql_where != '' ? ' AND ' : 'WHERE ') . $statefilter;
 	}
 
 	if (get_request_var('rfilter') != '') {
-		$sql_where .= (!strlen($sql_where) ? 'WHERE ' : ' AND ') . 
+		$sql_where .= ($sql_where == '' ? 'WHERE ' : ' AND ') . 
 			'display_name RLIKE \'' . get_request_var('rfilter') . '\' OR ' .
 			'url RLIKE \'' . get_request_var('rfilter') . '\' OR ' .
 			'search RLIKE \'' . get_request_var('rfilter') . '\' OR ' .
@@ -303,120 +301,7 @@ function list_urls() {
 			'search_failed RLIKE \'' . get_request_var('rfilter') . '\'';
 	}
 
-	$result = db_fetch_assoc("SELECT * 
-		FROM plugin_webseer_urls
-		$sql_where
-		ORDER BY " . get_request_var('sort_column') . " " . get_request_var('sort_direction') .
-		$limit);
-
-	?>
-	<script type='text/javascript'>
-	var refreshIsLogout=false;
-	var refreshPage='<?php print $refresh['page'];?>';
-	var refreshMSeconds=<?php print $refresh['seconds']*1000;?>;
-
-	function applyFilter() {
-		strURL  = 'webseer.php?header=false&state=' + $('#state').val();
-		strURL += '&refresh=' + $('#refresh').val();
-		strURL += '&rfilter=' + $('#rfilter').val();
-		strURL += '&rows=' + $('#rows').val();
-		loadPageNoHeader(strURL);
-	}
-
-	function clearFilter() {
-		strURL = 'webseer.php?clear=1&header=false';
-		loadPageNoHeader(strURL);
-	}
-
-	$(function(data) {
-		$('#refresh, #state, #rows, #rfilter').change(function() {
-			applyFilter();
-		});
-
-		$('#go').click(function() {
-			applyFilter();
-		});
-
-		$('#clear').click(function() {
-			clearFilter();
-		});
-
-		$('#form_webseer').submit(function(event) {
-			event.preventDefault();
-			applyFilter();
-		});
-	});
-
-	</script>
-	<?php
-
-	html_start_box(__('Webseer Site Management') , '100%', '', '3', 'center', 'webseer_edit.php?action=edit');
-	?>
-	<tr class='even noprint'>
-		<form id='form_webseer' action='webseer.php'>
-		<input type='hidden' name='search' value='search'>
-		<td class='noprint'>
-			<table class='filterTable'>
-				<tr class='noprint'>
-					<td>
-						<?php print __('Search');?>
-					</td>
-					<td>
-						<input type='text' id='rfilter' size='30' value='<?php print get_request_var('rfilter');?>'>
-					</td>
-					<td>
-						<?php print __('State');?>
-					</td>
-					<td>
-						<select id='state'>
-							<option value='-1'><?php print __('Any');?></option>
-							<?php
-							foreach (array('2' => 'Disabled','1' => 'Enabled','3' => 'Triggered') as $key => $row) {
-								echo "<option value='" . $key . "'" . (isset_request_var('state') && $key == get_request_var('state') ? ' selected' : '') . '>' . $row . '</option>';
-							}
-							?>
-						</select>
-					</td>
-					<td>
-						<?php print __('Refresh');?>
-					</td>
-					<td>
-						<select id='refresh'>
-							<?php
-							foreach (array(0 => '', 20 => __('%d Seconds', 20), 30 => __('%d Seconds', 30), 45 => __('%d Seconds', 45), 60 => __('%d Minute', 1), 120 => __('%d Minutes', 2), 300 => __('%d Minutes', 5)) as $r => $row) {
-								echo "<option value='" . $r . "'" . (isset_request_var('refresh') && $r == get_request_var('refresh') ? ' selected' : '') . '>' . $row . '</option>';
-							}
-							?>
-						</select>
-					</td>
-					<td>
-						<?php print __('Checks');?>
-					</td>
-					<td>
-						<select id='rows'>
-							<?php
-							if (sizeof($item_rows)) {
-							foreach ($item_rows as $key => $value) {
-								print "<option value='" . $key . "'"; if (get_request_var('rows') == $key) { print ' selected'; } print '>' . htmlspecialchars($value) . "</option>\n";
-							}
-							}
-							?>
-						</select>
-					</td>
-					<td>
-						<input type='button' id='go' value='<?php print __('Go');?>'>
-					</td>
-					<td>
-						<input type='button' id='clear' value='<?php print __('Clear');?>'>
-					</td>
-				</tr>
-			</table>
-		</td>
-		</form>
-	</tr>
-	<?php
-
-	html_end_box();
+	$result = db_fetch_assoc("SELECT * FROM plugin_webseer_urls $sql_where $order $limit");
 
 	$total_rows = count(db_fetch_assoc("SELECT id FROM plugin_webseer_urls $sql_where"));
 
@@ -524,3 +409,120 @@ function list_urls() {
 
 	bottom_footer();
 }
+
+function webseer_filter() {
+	global $item_rows;
+
+	$refresh['page']    = 'webseer.php?header=false';
+	$refresh['seconds'] = get_request_var('refresh');
+	$refresh['logout']  = 'false';
+
+	set_page_refresh($refresh);
+
+	?>
+	<script type='text/javascript'>
+	function applyFilter() {
+		strURL  = 'webseer.php?header=false&state=' + $('#state').val();
+		strURL += '&refresh=' + $('#refresh').val();
+		strURL += '&rfilter=' + $('#rfilter').val();
+		strURL += '&rows=' + $('#rows').val();
+		loadPageNoHeader(strURL);
+	}
+
+	function clearFilter() {
+		strURL = 'webseer.php?clear=1&header=false';
+		loadPageNoHeader(strURL);
+	}
+
+	$(function(data) {
+		$('#refresh, #state, #rows, #rfilter').change(function() {
+			applyFilter();
+		});
+
+		$('#go').click(function() {
+			applyFilter();
+		});
+
+		$('#clear').click(function() {
+			clearFilter();
+		});
+
+		$('#form_webseer').submit(function(event) {
+			event.preventDefault();
+			applyFilter();
+		});
+	});
+
+	</script>
+	<?php
+
+	html_start_box(__('Webseer Site Management') , '100%', '', '3', 'center', 'webseer_edit.php?action=edit');
+	?>
+	<tr class='even noprint'>
+		<form id='form_webseer' action='webseer.php'>
+		<input type='hidden' name='search' value='search'>
+		<td class='noprint'>
+			<table class='filterTable'>
+				<tr class='noprint'>
+					<td>
+						<?php print __('Search');?>
+					</td>
+					<td>
+						<input type='text' id='rfilter' size='30' value='<?php print get_request_var('rfilter');?>'>
+					</td>
+					<td>
+						<?php print __('State');?>
+					</td>
+					<td>
+						<select id='state'>
+							<option value='-1'><?php print __('Any');?></option>
+							<?php
+							foreach (array('2' => 'Disabled', '1' => 'Enabled', '3' => 'Triggered') as $key => $row) {
+								echo "<option value='" . $key . "'" . (isset_request_var('state') && $key == get_request_var('state') ? ' selected' : '') . '>' . $row . '</option>';
+							}
+							?>
+						</select>
+					</td>
+					<td>
+						<?php print __('Refresh');?>
+					</td>
+					<td>
+						<select id='refresh'>
+							<?php
+							foreach (array(20 => __('%d Seconds', 20), 30 => __('%d Seconds', 30), 45 => __('%d Seconds', 45), 60 => __('%d Minute', 1), 120 => __('%d Minutes', 2), 300 => __('%d Minutes', 5)) as $r => $row) {
+								echo "<option value='" . $r . "'" . (isset_request_var('refresh') && $r == get_request_var('refresh') ? ' selected' : '') . '>' . $row . '</option>';
+							}
+							?>
+						</select>
+					</td>
+					<td>
+						<?php print __('Checks');?>
+					</td>
+					<td>
+						<select id='rows'>
+							<?php
+							print "<option value='-1'" . (get_request_var('rows') == $key ? ' selected':'') . ">" . __('Default') . "</option>\n";
+							if (sizeof($item_rows)) {
+								foreach ($item_rows as $key => $value) {
+									print "<option value='" . $key . "'"; if (get_request_var('rows') == $key) { print ' selected'; } print '>' . htmlspecialchars($value) . "</option>\n";
+								}
+							}
+							?>
+						</select>
+					</td>
+					<td>
+						<input type='button' id='go' value='<?php print __('Go');?>'>
+					</td>
+					<td>
+						<input type='button' id='clear' value='<?php print __('Clear');?>'>
+					</td>
+				</tr>
+			</table>
+		</td>
+		</form>
+	</tr>
+	<?php
+
+	html_end_box();
+}
+

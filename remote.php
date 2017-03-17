@@ -26,8 +26,8 @@
 $no_http_headers = true;
 
 /* do NOT run this script through a web browser */
-if (!isset($_SERVER['argv'][0]) || isset($_SERVER['REQUEST_METHOD'])  || isset($_SERVER['REMOTE_ADDR'])) {
-	die('<br>This script is only meant to run at the command line.');
+if (isset($_SERVER['argv'][0])) {
+	die('<br>This script is only meant to run through a web service.');
 }
 
 chdir('../../');
@@ -36,7 +36,16 @@ require_once('./include/global.php');
 include_once($config['base_path'] . '/lib/functions.php');
 include_once($config['base_path'] . '/plugins/webseer/functions.php');
 
-$remoteip = (isset($_SERVER['HTTP_X_FORWARDED_FOR']) ? $_SERVER['HTTP_X_FORWARDED_FOR'] : $_SERVER['REMOTE_ADDR']);
+if (isset($_SERVER['X-Forwarded-For'])) {
+	$remoteip = $_SERVER['X-Forwarded-For'];
+} elseif (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+	$remoteip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+} elseif (isset($_SERVER['REMOTE_ADDR'])) {
+	$remoteip = $_SERVER['REMOTE_ADDR'];
+}else {
+	$remoteip = '127.0.0.1';
+}
+
 //cacti_log("Remote Connection received from : $remoteip");
 
 $servers = db_fetch_assoc('SELECT * FROM plugin_webseer_servers');

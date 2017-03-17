@@ -17,11 +17,14 @@ Bug and feature enhancements for the webseer plugin are handled in GitHub. If yo
 ##ChangeLog
 
 --- 1.0 ---
-* Refactor database schema to match Cacti standards
-* Add duplication of Service Check
-* Automatically register Server
-* Internationalization of GUI
-* Enhance GUI to comform to modern Cacti
+* issue#4: Resolving issues with Servers display
+* issue#5: Remote incorrectly assumes communications from the CLI
+* issue#6: Resolving issues with Servers display
+* feature: Refactor database schema to match Cacti standards
+* feature: Add duplication of Service Check
+* feature: Automatically register Server
+* feature: Internationalization of GUI
+* feature: Enhance GUI to comform to modern Cacti
 
 --- 0.1 ---
 * Initial public release

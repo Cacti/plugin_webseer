@@ -58,9 +58,9 @@ function webseer_save_server() {
 	}
 
 	if (isset_request_var('enabled')) {
-		$save['enabled'] = '1';
+		$save['enabled'] = 'on';
 	} else {
-		$save['enabled'] = '0';
+		$save['enabled'] = '';
 	}
 
 	if (isset_request_var('master')) {
