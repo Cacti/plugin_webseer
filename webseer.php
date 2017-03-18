@@ -285,12 +285,13 @@ function list_urls() {
 	}
 
 	$sql_where = '';
-	$limit     = ' LIMIT ' . ($rows*(get_request_var('page')-1)) . ', ' . $rows;
-	$order     = 'ORDER BY ' . get_request_var('sort_column') . ' ' . get_request_var('sort_direction');
 
 	if ($statefilter != '') {
 		$sql_where .= ($sql_where != '' ? ' AND ' : 'WHERE ') . $statefilter;
 	}
+
+	$sql_order = get_order_string();
+	$sql_limit = ' LIMIT ' . ($rows*(get_request_var('page')-1)) . ',' . $rows;
 
 	if (get_request_var('rfilter') != '') {
 		$sql_where .= ($sql_where == '' ? 'WHERE ' : ' AND ') . 
@@ -301,7 +302,7 @@ function list_urls() {
 			'search_failed RLIKE \'' . get_request_var('rfilter') . '\'';
 	}
 
-	$result = db_fetch_assoc("SELECT * FROM plugin_webseer_urls $sql_where $order $limit");
+	$result = db_fetch_assoc("SELECT * FROM plugin_webseer_urls $sql_where $sql_order $sql_limit");
 
 	$total_rows = count(db_fetch_assoc("SELECT id FROM plugin_webseer_urls $sql_where"));
 

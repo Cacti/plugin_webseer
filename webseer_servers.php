@@ -217,14 +217,15 @@ function list_urls () {
 	}
 
 	$sql_where = '';
-	$limit     = ' LIMIT ' . ($rows*(get_request_var('page')-1)) . ', ' . $rows;
-	$order     = 'ORDER BY ' . get_request_var('sort_column') . ' ' . get_request_var('sort_direction');
 
 	if($statefilter != '') {
 		$sql_where .= ($sql_where == '' ? 'WHERE ' : ' AND ') . $statefilter;
 	}
 
-	$result = db_fetch_assoc("SELECT * FROM plugin_webseer_servers $sql_where $order $limit");
+	$sql_order = get_order_string();
+	$sql_limit = ' LIMIT ' . ($rows*(get_request_var('page')-1)) . ',' . $rows;
+
+	$result = db_fetch_assoc("SELECT * FROM plugin_webseer_servers $sql_where $sql_order $sql_limit");
 
 	$total_rows = count(db_fetch_assoc("SELECT id FROM plugin_webseer_servers $sql_where"));
 
