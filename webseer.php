@@ -346,21 +346,21 @@ function list_urls() {
 
 			form_alternate_row('line' . $row['id'], true);
 			print "<td width='1%' style='padding:0px;white-space:nowrap'>
-				<a class='pic' href='webseer_edit.php?action=edit&id=" . $row['id'] . "'>
+				<a class='pic' href='" . htmlspecialchars($config['url_path'] . 'plugins/webseer/webseer_edit.php?action=edit&id=' . $row['id']) . "'>
 					<img src='" . $config['url_path'] . "plugins/webseer/images/edit_object.png' border=0 alt='' title='" . __('Edit Site') . "'>
 				</a>";
 
 			if ($row['enabled'] == '') {
-				print "<a class='pic' href='webseer.php?drp_action=3&chk_" . $row['id'] . "=1'>
+				print "<a class='pic' href='" . htmlspecialchars($config['url_path'] . 'plugins/webseer/webseer.php?drp_action=3&chk_' . $row['id']) . "=1'>
 					<img src='" . $config['url_path'] . "plugins/webseer/images/enable_object.png' border=0 alt='' title='" . __('Enable Site') . "'>
 				</a>";
 			} else {
-				print "<a class='pic' href='webseer.php?drp_action=2&chk_" . $row['id'] . "=1'>
+				print "<a class='pic' href='" . htmlspecialchars($config['url_path'] . 'plugins/webseer/webseer.php?drp_action=2&chk_' . $row['id']) . "=1'>
 					<img src='" . $config['url_path'] . "plugins/webseer/images/disable_object.png' border=0 alt='' title='" . __('Disable Site') . "'>
 				</a>";
 			}
 
-			print "<a class='pic' href='webseer.php?view_history=1&id=" . $row['id'] . "'>
+			print "<a class='pic' href='" . htmlspecialchars($config['url_path'] . 'plugins/webseer/webseer.php?view_history=1&id=' . $row['id']) . "'>
 					<img src='" . $config['url_path'] . "plugins/webseer/images/view_log.gif' border=0 alt='' title='" . __('View History') . "'>
 				</a>
 			</td>";
