@@ -435,7 +435,7 @@ function webseer_filter() {
 		loadPageNoHeader(strURL);
 	}
 
-	$(function(data) {
+	$(function() {
 		$('#refresh, #state, #rows, #rfilter').change(function() {
 			applyFilter();
 		});

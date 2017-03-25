@@ -332,7 +332,7 @@ function webseer_filter() {
 		loadPageNoHeader(strURL);
 	}
 
-	$(function(data) {
+	$(function() {
 		$('#refresh, #state, #rows').change(function() {
 			applyFilter();
 		});

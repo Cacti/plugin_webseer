@@ -424,7 +424,7 @@ class cURL {
 			case 0:
 				break;
 			default:
-				$this->results['error'] = 'HTTP ERROR: ' . str_replace(array('"', "'"), '', (curl_error($process)) . ' - ' . $this->host['url']);
+				$this->results['error'] = 'HTTP ERROR: ' . str_replace(array('"', "'"), '', (curl_error($process)));
 
 				break;
 		}
