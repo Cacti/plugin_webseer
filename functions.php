@@ -443,7 +443,12 @@ class cURL {
 		}elseif ($errnum == 0) {
 			$this->debug('Processing search');
 
-			$found = (strpos($data, $this->host['search']) !== false);
+			if ($this->host['search'] != '') {
+				$found = (strpos($data, $this->host['search']) !== false);
+			} else {
+				$found = false;
+			}
+
 			if (!$found && $this->host['search_maint'] != '') {
 				$this->debug('Processing search maint');
 				$found = (strpos($data, $this->host['search_maint']) !== false);

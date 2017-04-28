@@ -20,6 +20,7 @@ Bug and feature enhancements for the webseer plugin are handled in GitHub. If yo
 * issue#4: Resolving issues with Servers display
 * issue#5: Remote incorrectly assumes communications from the CLI
 * issue#6: Resolving issues with Servers display
+* issue#9: Warning message about empty needle in file
 * feature: Refactor database schema to match Cacti standards
 * feature: Add duplication of Service Check
 * feature: Automatically register Server
