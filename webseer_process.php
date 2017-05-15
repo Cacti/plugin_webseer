@@ -427,7 +427,7 @@ function plugin_webseer_send_email($to, $subject, $message) {
 		$from    = $from_email;
 	}
 
-	$v = db_fetch_cell('SELECT cacti FROM version');
+	$v = get_cacti_version();
 	$headers['User-Agent'] = 'Cacti-WebSeer-v' . $v;
 
 	$message_text = strip_tags($message);
@@ -437,7 +437,7 @@ function plugin_webseer_send_email($to, $subject, $message) {
 
 /*  display_version - displays version information */
 function display_version() {
-    $version = db_fetch_cell('SELECT cacti FROM version');
+	$version = get_cacti_version();
     echo "Cacti Web Service Check Processor, Version $version, " . COPYRIGHT_YEARS . "\n";
 }
 
