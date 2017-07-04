@@ -40,6 +40,37 @@ function plugin_webseer_uninstall () {
 	db_execute('DROP TABLE IF EXISTS plugin_webseer_processes');
 	db_execute('DROP TABLE IF EXISTS plugin_webseer_contacts');
 }
+function plugin_webseer_check_config () {
+	// Here we will check to ensure everything is configured
+	 plugin_webseer_upgrade ();
+	return true;
+}
+
+function plugin_webseer_upgrade () {
+	// Here we will upgrade to the newest version
+	global $config;
+
+	$current = plugin_webseer_version();
+	$current = $current['version'];
+	$old     = db_fetch_cell('SELECT version FROM plugin_config WHERE directory="webseer"');
+	if ($current != $old) {
+		if (version_compare($old, '1.1', '<')) {
+			db_execute("CREATE TABLE IF NOT EXISTS `plugin_webseer_contacts` (
+				`id` int(12) NOT NULL AUTO_INCREMENT,
+				`user_id` int(12) NOT NULL,
+				`type` varchar(32) NOT NULL,
+				`data` text NOT NULL,
+				PRIMARY KEY (`id`),
+				UNIQUE KEY `user_id_type` (`user_id`,`type`),
+				KEY `type` (`type`),
+				KEY `user_id` (`user_id`))
+				ENGINE=InnoDB
+				COMMENT='Table of WebSeer contacts'");
+		}
+		db_execute('UPDATE plugin_config SET version = "' . $current['version'] . '" WHERE directory = "webseer"');
+	}
+	return true;
+}
 
 function plugin_webseer_version() {
 	global $config;
