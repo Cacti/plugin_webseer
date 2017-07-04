@@ -38,6 +38,7 @@ function plugin_webseer_uninstall () {
 	db_execute('DROP TABLE IF EXISTS plugin_webseer_urls');
 	db_execute('DROP TABLE IF EXISTS plugin_webseer_url_log');
 	db_execute('DROP TABLE IF EXISTS plugin_webseer_processes');
+	db_execute('DROP TABLE IF EXISTS plugin_webseer_contacts');
 }
 
 function plugin_webseer_version() {
