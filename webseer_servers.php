@@ -277,7 +277,7 @@ function list_urls () {
 				</a>";
 			}
 
-			print "<a class='pic' href='" . htmlspecialchars($config['url_path'] . 'plugins/webseer/webseer_servers.php?view_history=1&id=' . $row['id']) . "'><img src='" . $config['url_path'] . "plugins/webseer/images/view_log.gif' alt='' title='" . __('View History') . "'></td>";
+			print "<a class='pic' href='" . htmlspecialchars($config['url_path'] . 'plugins/webseer/webseer_servers.php?view_history=1&id=' . $row['id']) . "'><img src='" . $config['url_path'] . "plugins/webseer/images/view_history.gif' alt='' title='" . __('View History') . "'></td>";
 
 			form_selectable_cell($row['name'], $row['id']);
 			form_selectable_cell("<a class='linkEditMain' href='" . $row['url'] . "' target=_new>" . $row['url'] . '</a>', $row['id']);
