@@ -67,7 +67,7 @@ function plugin_webseer_upgrade () {
 				ENGINE=InnoDB
 				COMMENT='Table of WebSeer contacts'");
 		}
-		db_execute('UPDATE plugin_config SET version = "' . $current['version'] . '" WHERE directory = "webseer"');
+		db_execute('UPDATE plugin_config SET version = "' . $current . '" WHERE directory = "webseer"');
 	}
 	return true;
 }
