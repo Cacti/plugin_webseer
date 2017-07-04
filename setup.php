@@ -155,6 +155,18 @@ function plugin_webseer_setup_table() {
 		KEY `time` (`time`)) 
 		ENGINE=MEMORY
 		COMMENT='Holds running process information'");
+
+	db_execute("CREATE TABLE IF NOT EXISTS `plugin_webseer_contacts` (
+		`id` int(12) NOT NULL,
+		`user_id` int(12) NOT NULL,
+		`type` varchar(32) NOT NULL,
+		`data` text NOT NULL,
+		PRIMARY KEY  (`id`),
+		UNIQUE KEY `user_id_type` (`user_id`,`type`),
+		KEY `type` (`type`),
+		KEY `user_id` (`user_id`))
+		ENGINE=InnoDB
+		COMMENT='Table of WebSeer contacts'");
 }
 
 function plugin_webseer_poller_bottom() {
