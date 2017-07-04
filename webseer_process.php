@@ -289,12 +289,12 @@ function plugin_webseer_get_users($results, $url, $type) {
 
 	if ($type == 'text') {
 		$users = db_fetch_assoc("SELECT data 
-			FROM plugin_thold_contacts 
+			FROM plugin_webseer_contacts
 			WHERE `type` = 'text' 
 			AND  (id = " . ($url['notify_accounts'] != '' ? implode(' OR id = ', explode(',', $url['notify_accounts'])) . ')' : '0)'));
 	} else {
 		$users = db_fetch_assoc("SELECT data 
-			FROM plugin_thold_contacts 
+			FROM plugin_webseer_contacts
 			WHERE (`type` = 'email' OR `type` = 'external') 
 			AND (id = " . ($url['notify_accounts'] != '' ? implode(' OR id = ', explode(',', $url['notify_accounts'])) . ')' : '0)'));
 	}

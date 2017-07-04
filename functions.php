@@ -107,10 +107,10 @@ function plugin_webseer_remove_old_users () {
 	foreach ($users as $user) {
 		$u[] = $user['id'];
 	}
-	$contacts = db_fetch_assoc('SELECT DISTINCT user_id FROM plugin_thold_contacts');
+	$contacts = db_fetch_assoc('SELECT DISTINCT user_id FROM plugin_webseer_contacts');
 	foreach ($contacts as $c) {
 		if (!in_array($c['user_id'], $u)) {
-			db_execute_prepared('DELETE FROM plugin_thold_contacts WHERE user_id = ?', array($c['user_id']));
+			db_execute_prepared('DELETE FROM plugin_webseer_contacts WHERE user_id = ?', array($c['user_id']));
 		}
 	}
 }

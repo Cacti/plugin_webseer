@@ -150,7 +150,7 @@ function webseer_edit_url () {
 		$url['notify_accounts'] = array();
 	}
 
-	$sql = 'SELECT id FROM plugin_thold_contacts 
+	$sql = 'SELECT id FROM plugin_webseer_contacts
 		WHERE id = ' . (!empty($url['notify_accounts']) && implode($url['notify_accounts'], '') != '' ? implode($url['notify_accounts'], ' OR id = ') : 0);
 
 	$url_edit = array(
