@@ -361,7 +361,7 @@ function list_urls() {
 			}
 
 			print "<a class='pic' href='" . htmlspecialchars($config['url_path'] . 'plugins/webseer/webseer.php?view_history=1&id=' . $row['id']) . "'>
-					<img src='" . $config['url_path'] . "plugins/webseer/images/view_log.gif' alt='' title='" . __('View History') . "'>
+					<img src='" . $config['url_path'] . "plugins/webseer/images/view_history.gif' alt='' title='" . __('View History') . "'>
 				</a>
 			</td>";
 
