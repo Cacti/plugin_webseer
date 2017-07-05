@@ -27,7 +27,7 @@ function plugin_webseer_install () {
 	api_plugin_register_hook('webseer', 'config_arrays', 'plugin_webseer_config_arrays', 'setup.php');
 	api_plugin_register_hook('webseer', 'poller_bottom', 'plugin_webseer_poller_bottom', 'setup.php');
 
-	api_plugin_register_realm('webseer', 'webseer.php,webseer_edit.php,webseer_servers.php,webseer_servers_edit.php', 'Web Service Check Admin', 1);
+	api_plugin_register_realm('webseer', 'webseer.php,webseer_edit.php,webseer_servers.php,webseer_servers_edit.php', __('Web Service Check Admin'), 1);
 
 	plugin_webseer_setup_table();
 }
@@ -40,20 +40,21 @@ function plugin_webseer_uninstall () {
 	db_execute('DROP TABLE IF EXISTS plugin_webseer_processes');
 	db_execute('DROP TABLE IF EXISTS plugin_webseer_contacts');
 }
+
 function plugin_webseer_check_config () {
 	// Here we will check to ensure everything is configured
-	 plugin_webseer_upgrade ();
+	plugin_webseer_upgrade();
 	return true;
 }
 
-function plugin_webseer_upgrade () {
+function plugin_webseer_upgrade() {
 	// Here we will upgrade to the newest version
 	global $config;
 
 	$current = plugin_webseer_version();
-	$current = $current['version'];
-	$old     = db_fetch_cell('SELECT version FROM plugin_config WHERE directory="webseer"');
-	if ($current != $old) {
+	$new = $current['version'];
+	$old = db_fetch_cell('SELECT version FROM plugin_config WHERE directory="webseer"');
+	if ($new != $old) {
 		if (version_compare($old, '1.1', '<')) {
 			db_execute("CREATE TABLE IF NOT EXISTS `plugin_webseer_contacts` (
 				`id` int(12) NOT NULL AUTO_INCREMENT,
@@ -67,8 +68,25 @@ function plugin_webseer_upgrade () {
 				ENGINE=InnoDB
 				COMMENT='Table of WebSeer contacts'");
 		}
-		db_execute('UPDATE plugin_config SET version = "' . $current . '" WHERE directory = "webseer"');
+
+		db_execute_prepared('UPDATE plugin_config
+			SET version = ?
+			WHERE directory = "webseer"',
+			array($new));
+
+		db_execute("UPDATE plugin_config SET
+			version = ?, name = ?, author = ?, webpage = ?
+			WHERE directory = ?",
+			array(
+				$current['version'],
+				$current['longname'],
+				$current['author'],
+				$current['url'],
+				$version['name']
+			)
+		);
 	}
+
 	return true;
 }
 
@@ -113,7 +131,7 @@ function plugin_webseer_setup_table() {
 		PRIMARY KEY  (`id`),
 		KEY `url_id` (`url_id`),
 		KEY `lastcheck` (`lastcheck`),
-		KEY `result` (`result`)) 
+		KEY `result` (`result`))
 		ENGINE=InnoDB
 		COMMENT='Holds WebSeer Service Check Results'");
 
@@ -151,7 +169,7 @@ function plugin_webseer_setup_table() {
 		KEY `lastcheck` (`lastcheck`),
 		KEY `triggered` (`triggered`),
 		KEY `result` (`result`),
-		KEY `enabled` (`enabled`)) 
+		KEY `enabled` (`enabled`))
 		ENGINE=InnoDB
 		COMMENT='Holds WebSeer Service Check Definitions'");
 
@@ -172,7 +190,7 @@ function plugin_webseer_setup_table() {
 		PRIMARY KEY  (`id`),
 		KEY `url_id` (`url_id`),
 		KEY `lastcheck` (`lastcheck`),
-		KEY `result` (`result`)) 
+		KEY `result` (`result`))
 		ENGINE=InnoDB
 		COMMENT='Holds WebSeer Service Check Logs'");
 
@@ -184,7 +202,7 @@ function plugin_webseer_setup_table() {
 		PRIMARY KEY  (`id`),
 		KEY `pid` (`pid`),
 		KEY `url_id` (`url_id`),
-		KEY `time` (`time`)) 
+		KEY `time` (`time`))
 		ENGINE=MEMORY
 		COMMENT='Holds running process information'");
 
@@ -265,17 +283,69 @@ function plugin_webseer_config_arrays() {
 		504 => 'Gateway Timeout',
 		505 => 'HTTP Version Not Supported'
 	);
+
+	$files = array('index.php', 'plugins.php', 'webseer.php');
+	if (in_array(get_current_page(), $files)) {
+		plugin_webseer_check_config();
+	}
 }
 
 function plugin_webseer_draw_navigation_text($nav) {
-	$nav['webseer.php:'] = array('title' => 'WebSeer', 'mapping' => 'index.php:', 'url' => 'webseer.php', 'level' => '1');
-	$nav['webseer_servers.php:'] = array('title' => 'WebSeer', 'mapping' => 'index.php:', 'url' => 'webseer_servers.php', 'level' => '1');
-	$nav['webseer_edit.php:'] = array('title' => 'WebSeer', 'mapping' => 'index.php:', 'url' => 'webseer.php', 'level' => '1');
-	$nav['webseer_edit.php:edit'] = array('title' => 'WebSeer', 'mapping' => 'index.php:', 'url' => 'webseer.php', 'level' => '1');
-	$nav['webseer_edit.php:save'] = array('title' => 'WebSeer', 'mapping' => 'index.php:', 'url' => 'webseer.php', 'level' => '1');
-	$nav['webseer_servers_edit.php:'] = array('title' => 'WebSeer', 'mapping' => 'index.php:', 'url' => 'webseer.php', 'level' => '1');
-	$nav['webseer_servers_edit.php:edit'] = array('title' => 'WebSeer', 'mapping' => 'index.php:', 'url' => 'webseer.php', 'level' => '1');
-	$nav['webseer_servers_edit.php:save'] = array('title' => 'WebSeer', 'mapping' => 'index.php:', 'url' => 'webseer.php', 'level' => '1');
+	$nav['webseer.php:'] = array(
+		'title' => __('WebSeer Service Checks'),
+		'mapping' => 'index.php:',
+		'url' => 'webseer.php',
+		'level' => '1'
+	);
+
+	$nav['webseer_servers.php:'] = array(
+		'title' => __('WebSeer Servers'),
+		'mapping' => 'index.php:',
+		'url' => 'webseer_servers.php',
+		'level' => '1'
+	);
+
+	$nav['webseer_edit.php:'] = array(
+		'title' => __('Service Check Edit'),
+		'mapping' => 'index.php:',
+		'url' => 'webseer.php',
+		'level' => '1'
+	);
+
+	$nav['webseer_edit.php:edit'] = array(
+		'title' => __('Service Check Edit'),
+		'mapping' => 'index.php:',
+		'url' => 'webseer.php',
+		'level' => '1'
+	);
+
+	$nav['webseer_edit.php:save'] = array(
+		'title' => __('Service Check Edit'),
+		'mapping' => 'index.php:',
+		'url' => 'webseer.php',
+		'level' => '1'
+	);
+
+	$nav['webseer_servers_edit.php:'] = array(
+		'title' => __('Server Edit'),
+		'mapping' => 'index.php:',
+		'url' => 'webseer.php',
+		'level' => '1'
+	);
+
+	$nav['webseer_servers_edit.php:edit'] = array(
+		'title' => __('Server Edit'),
+		'mapping' => 'index.php:',
+		'url' => 'webseer.php',
+		'level' => '1'
+	);
+
+	$nav['webseer_servers_edit.php:save'] = array(
+		'title' => __('Server Edit'),
+		'mapping' => 'index.php:',
+		'url' => 'webseer.php',
+		'level' => '1'
+	);
 
 	return $nav;
 }
