@@ -40,6 +40,7 @@ case 'save':
 	break;
 case 'edit':
 default:
+	plugin_webseer_update_contacts();
 	top_header();
 	webseer_edit_url();
 	bottom_footer();
@@ -123,12 +124,11 @@ function webseer_save_url() {
 function webseer_edit_url () {
 	// THOLD IS REQUIRED
 	$send_notification_array = array();
-	$users = db_fetch_assoc("SELECT plugin_thold_contacts.id, plugin_thold_contacts.data, 
-		plugin_thold_contacts.type, user_auth.full_name 
-		FROM plugin_thold_contacts, user_auth 
-		WHERE user_auth.id = plugin_thold_contacts.user_id 
-		AND plugin_thold_contacts.data != '' 
-		ORDER BY user_auth.full_name ASC, plugin_thold_contacts.type ASC");
+	$users = db_fetch_assoc("SELECT plugin_webseer_contacts.id, plugin_webseer_contacts.data,
+		plugin_webseer_contacts.type, user_auth.full_name
+		FROM plugin_webseer_contacts
+		LEFT JOIN user_auth ON user_auth.id=plugin_webseer_contacts.user_id
+		WHERE plugin_webseer_contacts.data != ''");
 
 	if (!empty($users)) {
 		foreach ($users as $user) {
@@ -150,7 +150,7 @@ function webseer_edit_url () {
 		$url['notify_accounts'] = array();
 	}
 
-	$sql = 'SELECT id FROM plugin_thold_contacts 
+	$sql = 'SELECT id FROM plugin_webseer_contacts
 		WHERE id = ' . (!empty($url['notify_accounts']) && implode($url['notify_accounts'], '') != '' ? implode($url['notify_accounts'], ' OR id = ') : 0);
 
 	$url_edit = array(

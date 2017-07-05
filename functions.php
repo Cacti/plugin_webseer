@@ -107,10 +107,10 @@ function plugin_webseer_remove_old_users () {
 	foreach ($users as $user) {
 		$u[] = $user['id'];
 	}
-	$contacts = db_fetch_assoc('SELECT DISTINCT user_id FROM plugin_thold_contacts');
+	$contacts = db_fetch_assoc('SELECT DISTINCT user_id FROM plugin_webseer_contacts');
 	foreach ($contacts as $c) {
 		if (!in_array($c['user_id'], $u)) {
-			db_execute_prepared('DELETE FROM plugin_thold_contacts WHERE user_id = ?', array($c['user_id']));
+			db_execute_prepared('DELETE FROM plugin_webseer_contacts WHERE user_id = ?', array($c['user_id']));
 		}
 	}
 }
@@ -273,6 +273,21 @@ function plugin_webseer_down_remote_hosts ($save) {
 		$cc->host['url'] = $server['url'];
 		$save['action']  = 'HOSTDOWN';
 		$results         = $cc->post($server['url'], $save);
+	}
+}
+
+function plugin_webseer_update_contacts() {
+	$users = db_fetch_assoc("SELECT id, 'email' AS type, email_address FROM user_auth WHERE email_address!=''");
+	if (sizeof($users)) {
+		foreach($users as $u) {
+			$cid = db_fetch_cell('SELECT id FROM plugin_webseer_contacts WHERE type="email" AND user_id=' . $u['id']);
+
+			if ($cid) {
+				db_execute("REPLACE INTO plugin_webseer_contacts (id, user_id, type, data) VALUES ($cid, " . $u['id'] . ", 'email', '" . $u['email_address'] . "')");
+			}else{
+				db_execute("REPLACE INTO plugin_webseer_contacts (user_id, type, data) VALUES (" . $u['id'] . ", 'email', '" . $u['email_address'] . "')");
+			}
+		}
 	}
 }
 
