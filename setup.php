@@ -51,9 +51,10 @@ function plugin_webseer_upgrade() {
 	// Here we will upgrade to the newest version
 	global $config;
 
-	$current = plugin_webseer_version();
-	$new = $current['version'];
-	$old = db_fetch_cell('SELECT version FROM plugin_config WHERE directory="webseer"');
+	$info = plugin_webseer_version();
+	$new  = $info['version'];
+	$old  = db_fetch_cell('SELECT version FROM plugin_config WHERE directory="webseer"');
+
 	if ($new != $old) {
 		if (version_compare($old, '1.1', '<')) {
 			db_execute("CREATE TABLE IF NOT EXISTS `plugin_webseer_contacts` (
@@ -78,11 +79,11 @@ function plugin_webseer_upgrade() {
 			version = ?, name = ?, author = ?, webpage = ?
 			WHERE directory = ?",
 			array(
-				$current['version'],
-				$current['longname'],
-				$current['author'],
-				$current['url'],
-				$version['name']
+				$info['version'],
+				$info['longname'],
+				$info['author'],
+				$info['homepage'],
+				$info['name']
 			)
 		);
 	}
