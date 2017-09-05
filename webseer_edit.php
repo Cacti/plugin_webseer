@@ -143,10 +143,10 @@ function webseer_edit_url () {
 	$url = array();
 	if (!isempty_request_var('id')) {
 		$url = db_fetch_row_prepared('SELECT * FROM plugin_webseer_urls WHERE id = ?', array(get_request_var('id')), false);
-		$header_label = __('Query [edit: %s]', $url['url']);
+		$header_label = __('Query [edit: %s]', $url['url'], 'webseer');
 		$url['notify_accounts'] = explode(',', $url['notify_accounts']);
 	}else{
-		$header_label = __('Query [new]');
+		$header_label = __('Query [new]', 'webseer');
 		$url['notify_accounts'] = array();
 	}
 
@@ -156,121 +156,121 @@ function webseer_edit_url () {
 	$url_edit = array(
 		'display_name' => array(
 			'method' => 'textbox',
-			'friendly_name' => __('Service Check Name'),
-			'description' => __('The name that is displayed for this Service Check, and is included in any Alert notifications.'),
+			'friendly_name' => __('Service Check Name', 'webseer'),
+			'description' => __('The name that is displayed for this Service Check, and is included in any Alert notifications.', 'webseer'),
 			'value' => '|arg1:display_name|',
 			'max_length' => '256',
 			),
 		'enabled' => array(
 			'method' => 'checkbox',
-			'friendly_name' => __('Enable Service Check'),
-			'description' => __('Uncheck this box to disabled this url from being checked.'),
+			'friendly_name' => __('Enable Service Check', 'webseer'),
+			'description' => __('Uncheck this box to disabled this url from being checked.', 'webseer'),
 			'value' => '|arg1:enabled|',
 			'default' => 'on',
 			),
 		'url' => array(
 			'method' => 'textarea',
-			'friendly_name' => __('URL'),
-			'description' => __('The URL to Monitor'),
+			'friendly_name' => __('URL', 'webseer'),
+			'description' => __('The URL to Monitor', 'webseer'),
 			'value' => '|arg1:url|',
 			'textarea_rows' => '3',
 			'textarea_cols' => '80',
 			),
 		'ip' => array(
 			'method' => 'textbox',
-			'friendly_name' => __('IP Address'),
-			'description' => __('Enter an IP address to connect to.  Leaving blank will use DNS Resolution instead.'),
+			'friendly_name' => __('IP Address', 'webseer'),
+			'description' => __('Enter an IP address to connect to.  Leaving blank will use DNS Resolution instead.', 'webseer'),
 			'value' => '|arg1:ip|',
 			'max_length' => '40',
 			'size' => '30'
 			),
 		'requiresauth' => array(
 			'method' => 'checkbox',
-			'friendly_name' => __('Requires Authentication'),
-			'description' => __('Check this box if the site will normally return a 401 Error as it requires a username and password.'),
+			'friendly_name' => __('Requires Authentication', 'webseer'),
+			'description' => __('Check this box if the site will normally return a 401 Error as it requires a username and password.', 'webseer'),
 			'value' => '|arg1:requiresauth|',
 			'default' => '',
 			),
 		'checkcert' => array(
 			'method' => 'checkbox',
-			'friendly_name' => __('Check Certificate'),
-			'description' => __('If using SSL, check this box if you want to validate the certificate. Default on, turn off if you the site uses a self-signed certificate.'),
+			'friendly_name' => __('Check Certificate', 'webseer'),
+			'description' => __('If using SSL, check this box if you want to validate the certificate. Default on, turn off if you the site uses a self-signed certificate.', 'webseer'),
 			'value' => '|arg1:checkcert|',
 			'default' => '',
 			),
 		'downtrigger' => array(
-			'friendly_name' => __('Trigger'),
+			'friendly_name' => __('Trigger', 'webseer'),
 			'method' => 'drop_array',
 			'array' => array(
-				1  => __('%d Minute', 1), 
-				2  => __('%d Minutes', 2), 
-				3  => __('%d Minutes', 3), 
-				4  => __('%d Minutes', 4), 
-				5  => __('%d Minutes', 5), 
-				6  => __('%d Minutes', 6), 
-				7  => __('%d Minutes', 7), 
-				8  => __('%d Minutes', 8), 
-				9  => __('%d Minutes', 9), 
-				10 => __('%d Minutes', 10)
+				1  => __('%d Minute', 1, 'webseer'), 
+				2  => __('%d Minutes', 2, 'webseer'), 
+				3  => __('%d Minutes', 3, 'webseer'), 
+				4  => __('%d Minutes', 4, 'webseer'), 
+				5  => __('%d Minutes', 5, 'webseer'), 
+				6  => __('%d Minutes', 6, 'webseer'), 
+				7  => __('%d Minutes', 7, 'webseer'), 
+				8  => __('%d Minutes', 8, 'webseer'), 
+				9  => __('%d Minutes', 9, 'webseer'), 
+				10 => __('%d Minutes', 10, 'webseer')
 			),
 			'default' => 3,
-			'description' => __('How many minutes the URL must be down before it will send an alert.  After an alert is sent, in order for a \'Site Recovering\' Email to be send, it must also be up this number of minutes.'),
+			'description' => __('How many minutes the URL must be down before it will send an alert.  After an alert is sent, in order for a \'Site Recovering\' Email to be send, it must also be up this number of minutes.', 'webseer'),
 			'value' => '|arg1:downtrigger|',
 		),
 		'timeout_trigger' => array(
-			'friendly_name' => __('Time Out'),
+			'friendly_name' => __('Time Out', 'webseer'),
 			'method' => 'drop_array',
 			'array' => array(
-				3  => __('%d Seconds', 3), 
-				4  => __('%d Seconds', 4), 
-				5  => __('%d Seconds', 5), 
-				6  => __('%d Seconds', 6), 
-				7  => __('%d Seconds', 7), 
-				8  => __('%d Seconds', 8), 
-				9  => __('%d Seconds', 9), 
-				10 => __('%d Seconds', 10)
+				3  => __('%d Seconds', 3, 'webseer'), 
+				4  => __('%d Seconds', 4, 'webseer'), 
+				5  => __('%d Seconds', 5, 'webseer'), 
+				6  => __('%d Seconds', 6, 'webseer'), 
+				7  => __('%d Seconds', 7, 'webseer'), 
+				8  => __('%d Seconds', 8, 'webseer'), 
+				9  => __('%d Seconds', 9, 'webseer'), 
+				10 => __('%d Seconds', 10, 'webseer')
 			),
 			'default' => 4,
-			'description' => __('How many seconds to allow the page to timeout before reporting it as down.'),
+			'description' => __('How many seconds to allow the page to timeout before reporting it as down.', 'webseer'),
 			'value' => '|arg1:timeout_trigger|',
 		),
 		'search' => array(
 			'method' => 'textarea',
-			'friendly_name' => __('Response Search String'),
-			'description' => __('This is the string to search for in the URL response for a live and working Web Service.'),
+			'friendly_name' => __('Response Search String', 'webseer'),
+			'description' => __('This is the string to search for in the URL response for a live and working Web Service.', 'webseer'),
 			'value' => '|arg1:search|',
 			'textarea_rows' => '3',
 			'textarea_cols' => '80',
 			),
 		'search_maint' => array(
 			'method' => 'textarea',
-			'friendly_name' => __('Response Search String - Maintenance Page'),
-			'description' => __('This is the string to search for on the Maintenance Page.  The Service Check will check for this string if the above string is not found.  If found, it means that the Web Service is under maintenance.'),
+			'friendly_name' => __('Response Search String - Maintenance Page', 'webseer'),
+			'description' => __('This is the string to search for on the Maintenance Page.  The Service Check will check for this string if the above string is not found.  If found, it means that the Web Service is under maintenance.', 'webseer'),
 			'value' => '|arg1:search_maint|',
 			'textarea_rows' => '3',
 			'textarea_cols' => '80',
 			),
 		'search_failed' => array(
 			'method' => 'textarea',
-			'friendly_name' => __('Response Search String - Failed'),
-			'description' => __('This is the string to search for a known failure in the Web Service response.  The Service Check will only alert if this string is found, ignoring any timeout issues and the search strings above.'),
+			'friendly_name' => __('Response Search String - Failed', 'webseer'),
+			'description' => __('This is the string to search for a known failure in the Web Service response.  The Service Check will only alert if this string is found, ignoring any timeout issues and the search strings above.', 'webseer'),
 			'value' => '|arg1:search_failed|',
 			'textarea_rows' => '3',
 			'textarea_cols' => '80',
 			),
 		'notify_accounts' => array(
-			'friendly_name' => __('Notify accounts'),
+			'friendly_name' => __('Notify accounts', 'webseer'),
 			'method' => 'drop_multi',
-			'description' => __('This is a listing of accounts that will be notified when this website goes down.'),
+			'description' => __('This is a listing of accounts that will be notified when this website goes down.', 'webseer'),
 			'array' => $send_notification_array,
 			'sql' => $sql,
 			),
 		'notify_extra' => array(
-			'friendly_name' => __('Extra Alert Emails'),
+			'friendly_name' => __('Extra Alert Emails', 'webseer'),
 			'method' => 'textarea',
 			'textarea_rows' => 3,
 			'textarea_cols' => 50,
-			'description' => __('You may specify here extra Emails to receive alerts for this URL (comma separated)'),
+			'description' => __('You may specify here extra Emails to receive alerts for this URL (comma separated)', 'webseer'),
 			'value' => '|arg1:notify_extra|',
 			),
 		'id' => array(
@@ -306,19 +306,19 @@ function webseer_edit_url () {
 		});
 
 		$('#notify_accounts').hide().multiselect({
-			noneSelectedText: '<?php print __('No Users Selected');?>', 
+			noneSelectedText: '<?php print __('No Users Selected', 'webseer');?>', 
 			selectedText: function(numChecked, numTotal, checkedItems) {
-				myReturn = numChecked + ' <?php print __('Users Selected');?>';
+				myReturn = numChecked + ' <?php print __('Users Selected', 'webseer');?>';
 				$.each(checkedItems, function(index, value) {
 					if (value.value == '0') {
-						myReturn='<?php print __('All Users Selected');?>';
+						myReturn='<?php print __('All Users Selected', 'webseer');?>';
 						return false;
 					}
 				});
 				return myReturn;
 			},
-			checkAllText: '<?php print __('All');?>', 
-			uncheckAllText: '<?php print __('None');?>',
+			checkAllText: '<?php print __('All', 'webseer');?>', 
+			uncheckAllText: '<?php print __('None', 'webseer');?>',
 			uncheckall: function() {
 				$(this).multiselect('widget').find(':checkbox:first').each(function() {
 					$(this).prop('checked', true);
@@ -351,7 +351,7 @@ function webseer_edit_url () {
 				}
 			}
 		}).multiselectfilter({
-			label: '<?php print __('Search');?>', 
+			label: '<?php print __('Search', 'webseer');?>', 
 			width: msWidth
 		});
 	});

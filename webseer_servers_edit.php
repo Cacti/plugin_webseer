@@ -108,58 +108,58 @@ function webseer_edit_server() {
 	$server = array();
 	if (!isempty_request_var('id')) {
 		$server = db_fetch_row_prepared('SELECT * FROM plugin_webseer_servers WHERE id = ?', array(get_request_var('id')), FALSE);
-		$header_label = __('Query [edit: %s]', $server['ip']);
+		$header_label = __('Query [edit: %s]', $server['ip'], 'webseer');
 	}else{
-		$header_label = __('Query [new]');
+		$header_label = __('Query [new]', 'webseer');
 	}
 
 	$server_edit = array(
 		'enabled' => array(
 			'method' => 'checkbox',
-			'friendly_name' => __('Enable Server'),
-			'description' => __('Uncheck this box to disabled this server from checking urls.'),
+			'friendly_name' => __('Enable Server', 'webseer'),
+			'description' => __('Uncheck this box to disabled this server from checking urls.', 'webseer'),
 			'value' => (isset($server['enabled']) && $server['enabled'] == 1 ? 'on' : ''),
 			'default' => '',
 			),
 		'master' => array(
 			'method' => 'checkbox',
-			'friendly_name' => __('Master Server'),
-			'description' => __('Sets this server to the Master server.  The Master server handles all Email operations'),
+			'friendly_name' => __('Master Server', 'webseer'),
+			'description' => __('Sets this server to the Master server.  The Master server handles all Email operations', 'webseer'),
 			'value' => (isset($server['master']) && $server['master'] == 1 ? 'on' : ''),
 			'default' => '',
 			),
 		'isme' => array(
 			'method' => 'checkbox',
-			'friendly_name' => __('Is this server the local server?'),
-			'description' => __('Check this box if the current server you are connected to is this entry.'),
+			'friendly_name' => __('Is this server the local server?', 'webseer'),
+			'description' => __('Check this box if the current server you are connected to is this entry.', 'webseer'),
 			'value' => (isset($server['isme']) && $server['isme'] == 1 ? 'on' : ''),
 			'default' => '',
 			),
 		'name' => array(
 			'method' => 'textbox',
-			'friendly_name' => __('Name'),
-			'description' => __('Display Name of this server'),
+			'friendly_name' => __('Name', 'webseer'),
+			'description' => __('Display Name of this server', 'webseer'),
 			'value' => '|arg1:name|',
 			'max_length' => '256',
 			),
 		'ip' => array(
 			'method' => 'textbox',
-			'friendly_name' => __('IP Address'),
-			'description' => __('IP Address to connect to this server'),
+			'friendly_name' => __('IP Address', 'webseer'),
+			'description' => __('IP Address to connect to this server', 'webseer'),
 			'value' => '|arg1:ip|',
 			'max_length' => '256',
 			),
 		'location' => array(
 			'method' => 'textbox',
-			'friendly_name' => __('Location'),
-			'description' => __('Location of this server'),
+			'friendly_name' => __('Location', 'webseer'),
+			'description' => __('Location of this server', 'webseer'),
 			'value' => '|arg1:location|',
 			'max_length' => '256',
 			),
 		'url' => array(
 			'method' => 'textbox',
-			'friendly_name' => __('URL'),
-			'description' => __('This is the URL to connect to remote.php on this server.'),
+			'friendly_name' => __('URL', 'webseer'),
+			'description' => __('This is the URL to connect to remote.php on this server.', 'webseer'),
 			'value' => '|arg1:url|',
 			'max_length' => '256',
 			),

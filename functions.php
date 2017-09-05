@@ -25,8 +25,8 @@
 function webseer_show_tab($current_tab) {
 	global $config;
 	$tabs = array(
-		'webseer.php'         => __('Checks'),
-		'webseer_servers.php' => __('Servers')
+		'webseer.php'         => __('Checks', 'webseer'),
+		'webseer_servers.php' => __('Servers', 'webseer')
 	);
 
 	print "<div class='tabs'><nav><ul>\n";
