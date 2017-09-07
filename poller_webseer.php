@@ -94,10 +94,17 @@ plugin_webseer_register_server();
 // Remove old Logs (ADD A SETTING!!!!!!)
 $t = time() - (86400 * 30);
 
-db_execute("DELETE FROM plugin_webseer_url_log WHERE lastcheck < $t", FALSE);
-db_execute('DELETE FROM plugin_webseer_processes WHERE UNIX_TIMESTAMP(time) < ' . (time() - 15));
+db_execute_prepared('DELETE FROM plugin_webseer_url_log 
+	WHERE lastcheck < ?', 
+	array($t));
 
-$urls = db_fetch_assoc('SELECT * FROM plugin_webseer_urls WHERE enabled = "on"', FALSE);
+db_execute_prepared('DELETE FROM plugin_webseer_processes 
+	WHERE UNIX_TIMESTAMP(time) < ?', 
+	array(time() - 15));
+
+$urls = db_fetch_assoc('SELECT * 
+	FROM plugin_webseer_urls 
+	WHERE enabled = "on"');
 
 $max = 12;
 
@@ -108,8 +115,8 @@ for ($x = 0; $x < count($urls); $x++) {
 
 	if ($max - $total > 0) {
 		debug('Launching Service Check ' . $urls[$x]['url']);
-		$command_string = read_config_option("path_php_binary");
-		$extra_args     = '-q "' . $config["base_path"] . '/plugins/webseer/webseer_process.php" --id=' . $url['id'] . ($debug ? ' --debug':'');
+		$command_string = read_config_option('path_php_binary');
+		$extra_args     = '-q "' . $config['base_path'] . '/plugins/webseer/webseer_process.php" --id=' . $url['id'] . ($debug ? ' --debug':'');
 		exec_background($command_string, $extra_args);
 		usleep(10000);
 	} else {
@@ -155,7 +162,10 @@ function plugin_webseer_register_server() {
 
 	$ipaddress = gethostbyname($hostname);
 
-	$found = db_fetch_cell_prepared('SELECT id FROM plugin_webseer_servers WHERE ip = ?', array($ipaddress));
+	$found = db_fetch_cell_prepared('SELECT id 
+		FROM plugin_webseer_servers 
+		WHERE ip = ?', 
+		array($ipaddress));
 
 	if (!$found) {
 		debug('Registering Server');

@@ -27,7 +27,7 @@ function plugin_webseer_install () {
 	api_plugin_register_hook('webseer', 'config_arrays', 'plugin_webseer_config_arrays', 'setup.php');
 	api_plugin_register_hook('webseer', 'poller_bottom', 'plugin_webseer_poller_bottom', 'setup.php');
 
-	api_plugin_register_realm('webseer', 'webseer.php,webseer_edit.php,webseer_servers.php,webseer_servers_edit.php', __('Web Service Check Admin', 'webseer'), 1);
+	api_plugin_register_realm('webseer', 'webseer.php,webseer_edit.php,webseer_servers.php,webseer_servers_edit.php,webseer_proxies.php', __('Web Service Check Admin', 'webseer'), 1);
 
 	plugin_webseer_setup_table();
 }
@@ -37,6 +37,7 @@ function plugin_webseer_uninstall () {
 	db_execute('DROP TABLE IF EXISTS plugin_webseer_servers_log');
 	db_execute('DROP TABLE IF EXISTS plugin_webseer_urls');
 	db_execute('DROP TABLE IF EXISTS plugin_webseer_url_log');
+	db_execute('DROP TABLE IF EXISTS plugin_webseer_proxies');
 	db_execute('DROP TABLE IF EXISTS plugin_webseer_processes');
 	db_execute('DROP TABLE IF EXISTS plugin_webseer_contacts');
 }
@@ -70,22 +71,48 @@ function plugin_webseer_upgrade() {
 				COMMENT='Table of WebSeer contacts'");
 		}
 
-		db_execute_prepared('UPDATE plugin_config
-			SET version = ?
-			WHERE directory = "webseer"',
-			array($new));
+		if (version_compare($old, '2.0', '<')) {
+			db_execute_prepared('UPDATE plugin_config
+				SET version = ?
+				WHERE directory = "webseer"',
+				array($new));
 
-		db_execute("UPDATE plugin_config SET
-			version = ?, name = ?, author = ?, webpage = ?
-			WHERE directory = ?",
-			array(
-				$info['version'],
-				$info['longname'],
-				$info['author'],
-				$info['homepage'],
-				$info['name']
-			)
-		);
+			db_execute_prepared("UPDATE plugin_config SET
+				version = ?, name = ?, author = ?, webpage = ?
+				WHERE directory = ?",
+				array(
+					$info['version'],
+					$info['longname'],
+					$info['author'],
+					$info['homepage'],
+					$info['name']
+				)
+			);
+		}
+
+		db_execute("CREATE TABLE IF NOT EXISTS `plugin_webseer_proxies` (
+			`id` int(11) unsigned NOT NULL auto_increment,
+			`name` varchar(30) default '',
+			`hostname` varchar(64) default '',
+			`http_port` mediumint() unsigned default '80',
+			`https_port` mediumint() unsigned default '443',
+			`username` varchar(40) default '',
+			`password` varchar(60) default '',
+			PRIMARY KEY (`id`),
+			KEY `hostname` (`hostname`),
+			KEY `name` (`name`))
+			ENGINE=InnoDB
+			COMMENT='Holds Proxy Information for Connections'");
+
+		if (!db_column_exists('plugins_webseer_urls', 'proxy_server')) {
+			db_execute('ALTER TABLE plugin_webseer_urls 
+				ADD COLUMN proxy_server int(11) unsigned NOT NULL default "0" AFTER requiresauth');
+		}
+
+		db_execute_prepared('UPDATE plugin_realms 
+			SET file = ? 
+			WHERE file LIKE "%webseer.php%"', 
+			array('webseer.php,webseer_edit.php,webseer_servers.php,webseer_servers_edit.php,webseer_proxies.php'));
 	}
 
 	return true;
@@ -147,6 +174,7 @@ function plugin_webseer_setup_table() {
 		`search_maint` varchar(1024) NOT NULL,
 		`search_failed` varchar(1024) NOT NULL,
 		`requiresauth` char(2) NOT NULL default '',
+		`proxy_server` int(11) unsigned NOT NULL default '0',
 		`checkcert` char(2) NOT NULL default 'on',
 		`notify_accounts` varchar(256) NOT NULL,
 		`notify_extra` varchar(256) NOT NULL,
@@ -208,7 +236,7 @@ function plugin_webseer_setup_table() {
 		COMMENT='Holds running process information'");
 
 	db_execute("CREATE TABLE IF NOT EXISTS `plugin_webseer_contacts` (
-		`id` int(12) NOT NULL AUTO_INCREMENT,
+		`id` int(12) NOT NULL auto_increment,
 		`user_id` int(12) NOT NULL,
 		`type` varchar(32) NOT NULL,
 		`data` text NOT NULL,
@@ -218,6 +246,19 @@ function plugin_webseer_setup_table() {
 		KEY `user_id` (`user_id`))
 		ENGINE=InnoDB
 		COMMENT='Table of WebSeer contacts'");
+
+	db_execute("CREATE TABLE IF NOT EXISTS `plugin_webseer_proxies` (
+		`id` int(11) unsigned NOT NULL auto_increment,
+		`name` varchar(30) default '',
+		`hostname` varchar(64) default '',
+		`port` mediumint() unsigned default '80',
+		`username` varchar(40) default '',
+		`password` varchar(60) default '',
+		PRIMARY KEY (`id`),
+		KEY `hostname` (`hostname`),
+		KEY `name` (`name`))
+		ENGINE=InnoDB
+		COMMENT='Holds WebSeer Proxy Information for Connections'");
 }
 
 function plugin_webseer_poller_bottom() {

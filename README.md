@@ -18,6 +18,9 @@ Bug and feature enhancements for the webseer plugin are handled in GitHub. If yo
 
 ## ChangeLog
 
+--- 2.0 ---
+* issue#12: Add proxy support to URL's
+
 --- 1.1 ---
 * feature: Changes to facilitate i18n by contributors
 

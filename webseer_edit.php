@@ -91,6 +91,7 @@ function webseer_save_url() {
 		$save['notify_accounts'] = '';
 	}
 
+	$save['proxy_server']    = get_nfilter_request_var('proxy_server');
 	$save['display_name']    = get_nfilter_request_var('display_name');
 	$save['url']             = get_nfilter_request_var('url');
 	$save['ip']              = get_nfilter_request_var('ip');
@@ -154,6 +155,10 @@ function webseer_edit_url () {
 		WHERE id = ' . (!empty($url['notify_accounts']) && implode($url['notify_accounts'], '') != '' ? implode($url['notify_accounts'], ' OR id = ') : 0);
 
 	$url_edit = array(
+		'general_spacer' => array(
+			'method' => 'spacer',
+			'friendly_name' => __('General Settings', 'webseer')
+			),
 		'display_name' => array(
 			'method' => 'textbox',
 			'friendly_name' => __('Service Check Name', 'webseer'),
@@ -184,6 +189,19 @@ function webseer_edit_url () {
 			'max_length' => '40',
 			'size' => '30'
 			),
+		'proxy_server' => array(
+			'method' => 'drop_sql',
+			'friendly_name' => __('Proxy Server', 'webseer'),
+			'description' => __('If this connection text requires a proxy, select it here.  Otherwise choose \'None\'.', 'webseer'),
+			'value' => '|arg1:proxy_server|',
+			'none_value' => __('None', 'webseer'),
+			'default' => '0',
+			'sql' => 'SELECT id, name FROM plugin_webseer_proxies ORDER by name'
+			),
+		'checks_spacer' => array(
+			'method' => 'spacer',
+			'friendly_name' => __('Available Checks', 'webseer')
+			),
 		'requiresauth' => array(
 			'method' => 'checkbox',
 			'friendly_name' => __('Requires Authentication', 'webseer'),
@@ -197,6 +215,10 @@ function webseer_edit_url () {
 			'description' => __('If using SSL, check this box if you want to validate the certificate. Default on, turn off if you the site uses a self-signed certificate.', 'webseer'),
 			'value' => '|arg1:checkcert|',
 			'default' => '',
+			),
+		'timings_spacer' => array(
+			'method' => 'spacer',
+			'friendly_name' => __('Notification Timing', 'webseer')
 			),
 		'downtrigger' => array(
 			'friendly_name' => __('Trigger', 'webseer'),
@@ -234,6 +256,10 @@ function webseer_edit_url () {
 			'description' => __('How many seconds to allow the page to timeout before reporting it as down.', 'webseer'),
 			'value' => '|arg1:timeout_trigger|',
 		),
+		'verifications_spacer' => array(
+			'method' => 'spacer',
+			'friendly_name' => __('Verification Strings', 'webseer')
+			),
 		'search' => array(
 			'method' => 'textarea',
 			'friendly_name' => __('Response Search String', 'webseer'),
@@ -257,6 +283,10 @@ function webseer_edit_url () {
 			'value' => '|arg1:search_failed|',
 			'textarea_rows' => '3',
 			'textarea_cols' => '80',
+			),
+		'notification_spacer' => array(
+			'method' => 'spacer',
+			'friendly_name' => __('Notification Settings', 'webseer')
 			),
 		'notify_accounts' => array(
 			'friendly_name' => __('Notify accounts', 'webseer'),

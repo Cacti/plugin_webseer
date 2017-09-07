@@ -48,7 +48,7 @@ if (!function_exists('debug')) {
 		global $debug;
 
 		if ($debug) {
-			print "DEBUG: " . trim($message) . "\n";
+			print 'DEBUG: ' . trim($message) . "\n";
 		}
 	}
 }
@@ -73,27 +73,27 @@ if (sizeof($parms)) {
 		}
 
 		switch ($arg) {
-			case '--id':
-				$url_id = $value;
-				break;
-			case '-d':
-			case '--debug':
-				$debug = TRUE;
-				break;
-			case '--version':
-			case '-V':
-			case '-v':
-				display_version();
-				exit;
-			case '--help':
-			case '-H':
-			case '-h':
-				display_help();
-				exit;
-			default:
-				echo "ERROR: Invalid Parameter " . $parameter . "\n\n";
-				display_help();
-				exit;
+		case '--id':
+			$url_id = $value;
+			break;
+		case '-d':
+		case '--debug':
+			$debug = TRUE;
+			break;
+		case '--version':
+		case '-V':
+		case '-v':
+			display_version();
+			exit;
+		case '--help':
+		case '-H':
+		case '-h':
+			display_help();
+			exit;
+		default:
+			echo 'ERROR: Invalid Parameter ' . $parameter . "\n\n";
+			display_help();
+			exit;
 		}
 	}
 }
@@ -127,6 +127,29 @@ if ($url['url'] != '') {
 			case 'http':
 				$cc = new cURL();
 				$cc->host = $url;
+
+				if ($url['proxy_server'] > 0) {
+					$proxy = db_fetch_row_prepared('SELECT * 
+						FROM plugin_webseer_proxies 
+						WHERE id = ?', 
+						array($url['proxy_server']));
+
+					if (sizeof($proxy)) {
+						$cc->proxy_hostname = $proxy['hostname'];
+						$cc->proxy_port     = $proxy['port'];
+
+						if ($proxy['username'] != '') {
+							$cc->proxy_username = $proxy['username'];
+						}
+
+						if ($proxy['password'] != '') {
+							$cc->proxy_password = $proxy['password'];
+						}
+					} else {
+						cacti_log('ERROR: Unable to obtain Proxy settings');
+					}
+				}
+
 				$results = $cc->get($url['url']);
 				$results['data'] = $cc->data;
 				break;
@@ -243,7 +266,8 @@ if ($url['url'] != '') {
 		$save['redirect_count']  = $results['options']['redirect_count'];
 		$save['size_download']   = $results['options']['size_download'];
 		$save['speed_download']  = $results['options']['speed_download'];
-		plugin_webseer_down_remote_hosts ($save);
+
+		plugin_webseer_down_remote_hosts($save);
 
 		db_execute_prepared('INSERT INTO plugin_webseer_servers_log
 			(url_id, server, lastcheck, result, http_code, error, total_time, 

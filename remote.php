@@ -105,6 +105,7 @@ foreach ($servers as $server) {
 					$save['id']              = get_filter_request_var('id');
 					$save['enabled']         = get_nfilter_request_var('enabled', '');
 					$save['requiresauth']    = get_nfilter_request_var('requiresauth', '');
+					$save['proxy_server']    = get_nfilter_request_var('proxy_server', '');
 					$save['checkcert']       = get_nfilter_request_var('checkcert', '');
 					$save['notify_accounts'] = get_nfilter_request_var('notify_accounts', '');
 					$save['url']             = get_nfilter_request_var('url');
@@ -120,13 +121,13 @@ foreach ($servers as $server) {
 						$id = sql_save($save, 'plugin_webseer_urls', 'id');
 					} else {
 						db_execute_prepared('REPLACE INTO plugin_webseer_urls 
-							(id, enabled, requiresauth, checkcert, ip, display_name, notify_accounts, 
+							(id, enabled, requiresauth, proxy_server, checkcert, ip, display_name, notify_accounts, 
 							url, search, search_maint, search_failed, notify_extra, downtrigger)
 							VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)', 
 							array(
-								$save['id'], $save['enabled'], $save['requiresauth'], $save['checkcert'], 
-								$save['ip'], $save['display_name'], $save['notify_accounts'], $save['url'], 
-								$save['search'], $save['search_maint'], $save['search_failed'],
+								$save['id'], $save['enabled'], $save['requiresauth'], $save['proxy_server'], 
+								$save['checkcert'], $save['ip'], $save['display_name'], $save['notify_accounts'], 
+								$save['url'], $save['search'], $save['search_maint'], $save['search_failed'],
 								$save['notify_extra'], $save['downtrigger']
 							)
 						);

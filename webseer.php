@@ -58,52 +58,56 @@ function do_webseer() {
 	}
 
 	switch (get_nfilter_request_var('drp_action')) {
-		case 1:	// Delete
-			foreach ($urls as $id) {
-				db_execute_prepared('DELETE FROM plugin_webseer_urls WHERE id = ?', array($id));
-				db_execute_prepared('DELETE FROM plugin_webseer_url_log WHERE url_id = ?', array($id));
-				plugin_webseer_delete_remote_hosts($id);
-			}
-			break;
-		case 2:	// Disable
-			foreach ($urls as $id) {
-				db_execute_prepared('UPDATE plugin_webseer_urls SET enabled = "" WHERE id = ?', array($id));
-				plugin_webseer_enable_remote_hosts($id, false);
-			}
-			break;
-		case 3:	// Enable
-			foreach ($urls as $id) {
-				db_execute_prepared('UPDATE plugin_webseer_urls SET enabled = "on" WHERE id = ?', array($id));
-				plugin_webseer_enable_remote_hosts($id, true);
-			}
-			break;
-		case 4:	// Duplicate
-			$newid = 1;
-			foreach ($urls as $id) {
-				$save = db_fetch_row_prepared('SELECT * FROM plugin_webseer_urls WHERE id = ?', array($id));
-				$save['id']              = 0;
-				$save['display_name']    = 'New Service Check (' . $newid . ')';
-				$save['lastcheck']       = '0000-00-00';
-				$save['result']          = 0;
-				$save['triggered']       = 0;
-				$save['enabled']         = '';
-				$save['failures']        = 0;
-				$save['error']           = '';
-				$save['http_code']       = 0;
-				$save['total_time']      = 0;
-				$save['namelookup_time'] = 0;
-				$save['connect_time']    = 0;
-				$save['redirect_time']   = 0;
-				$save['speed_download']  = 0;
-				$save['size_download']   = 0;
-				$save['redirect_count']  = 0;
-				$save['debug']           = '';
+	case 1:	// Delete
+		foreach ($urls as $id) {
+			db_execute_prepared('DELETE FROM plugin_webseer_urls WHERE id = ?', array($id));
+			db_execute_prepared('DELETE FROM plugin_webseer_url_log WHERE url_id = ?', array($id));
+			plugin_webseer_delete_remote_hosts($id);
+		}
 
-				sql_save($save, 'plugin_webseer_urls');
+		break;
+	case 2:	// Disable
+		foreach ($urls as $id) {
+			db_execute_prepared('UPDATE plugin_webseer_urls SET enabled = "" WHERE id = ?', array($id));
+			plugin_webseer_enable_remote_hosts($id, false);
+		}
 
-				$newid++;
-			}
-			break;
+		break;
+	case 3:	// Enable
+		foreach ($urls as $id) {
+			db_execute_prepared('UPDATE plugin_webseer_urls SET enabled = "on" WHERE id = ?', array($id));
+			plugin_webseer_enable_remote_hosts($id, true);
+		}
+
+		break;
+	case 4:	// Duplicate
+		$newid = 1;
+		foreach ($urls as $id) {
+			$save = db_fetch_row_prepared('SELECT * FROM plugin_webseer_urls WHERE id = ?', array($id));
+			$save['id']              = 0;
+			$save['display_name']    = 'New Service Check (' . $newid . ')';
+			$save['lastcheck']       = '0000-00-00';
+			$save['result']          = 0;
+			$save['triggered']       = 0;
+			$save['enabled']         = '';
+			$save['failures']        = 0;
+			$save['error']           = '';
+			$save['http_code']       = 0;
+			$save['total_time']      = 0;
+			$save['namelookup_time'] = 0;
+			$save['connect_time']    = 0;
+			$save['redirect_time']   = 0;
+			$save['speed_download']  = 0;
+			$save['size_download']   = 0;
+			$save['redirect_count']  = 0;
+			$save['debug']           = '';
+
+			sql_save($save, 'plugin_webseer_urls');
+
+			$newid++;
+		}
+
+		break;
 	}
 
 	header('Location: webseer.php?header=false');
@@ -311,17 +315,15 @@ function list_urls() {
 			'search_failed RLIKE \'' . get_request_var('rfilter') . '\'';
 	}
 
-	$result = db_fetch_assoc("SELECT * FROM plugin_webseer_urls $sql_where $sql_order $sql_limit");
+	$result = db_fetch_assoc("SELECT * 
+		FROM plugin_webseer_urls 
+		$sql_where 
+		$sql_order 
+		$sql_limit");
 
-	$total_rows = count(db_fetch_assoc("SELECT id FROM plugin_webseer_urls $sql_where"));
-
-	$nav = html_nav_bar('webseer.php', MAX_DISPLAY_PAGES, get_request_var('page'), $rows, $total_rows, 14, __('Checks', 'webseer'), 'page', 'main');
-
-	form_start('webseer.php', 'chk');
-
-	print $nav;
-
-	html_start_box('', '100%', '', '4', 'center', '');
+	$total_rows = db_fetch_cell("SELECT COUNT(id) 
+		FROM plugin_webseer_urls 
+		$sql_where");
 
 	$display_text = array(
 		'nosort'          => array('display' => __('Actions', 'webseer'),    'sort' => '',    'align' => 'left'),
@@ -338,6 +340,16 @@ function list_urls() {
 		'timeout_trigger' => array('display' => __('Timeout', 'webseer'),    'sort' => 'ASC', 'align' => 'right'),
 		'lastcheck'       => array('display' => __('Last Check', 'webseer'), 'sort' => 'ASC', 'align' => 'right')
 	);
+
+	$columns = sizeof($display_text);
+
+	$nav = html_nav_bar('webseer.php', MAX_DISPLAY_PAGES, get_request_var('page'), $rows, $total_rows, $columns, __('Checks', 'webseer'), 'page', 'main');
+
+	form_start('webseer.php', 'chk');
+
+	print $nav;
+
+	html_start_box('', '100%', '', '4', 'center', '');
 
 	html_header_sort_checkbox($display_text, get_request_var('sort_column'), get_request_var('sort_direction'));
 
