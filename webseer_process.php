@@ -103,10 +103,10 @@ if (empty($url_id)) {
 	exit(1);
 }
 
-$url = db_fetch_row_prepared('SELECT * 
-	FROM plugin_webseer_urls 
-	WHERE enabled = "on" 
-	AND id = ?', 
+$url = db_fetch_row_prepared('SELECT *
+	FROM plugin_webseer_urls
+	WHERE enabled = "on"
+	AND id = ?',
 	array($url_id));
 
 if (!sizeof($url)) {
@@ -125,18 +125,23 @@ if ($url['url'] != '') {
 
 		switch ($url['type']) {
 			case 'http':
+			case 'https':
 				$cc = new cURL();
 				$cc->host = $url;
 
 				if ($url['proxy_server'] > 0) {
-					$proxy = db_fetch_row_prepared('SELECT * 
-						FROM plugin_webseer_proxies 
-						WHERE id = ?', 
+					$proxy = db_fetch_row_prepared('SELECT *
+						FROM plugin_webseer_proxies
+						WHERE id = ?',
 						array($url['proxy_server']));
 
 					if (sizeof($proxy)) {
 						$cc->proxy_hostname = $proxy['hostname'];
-						$cc->proxy_port     = $proxy['port'];
+						if ($url['type'] == 'http') {
+							$cc->proxy_port     = $proxy['http_port'];
+						} else {
+							$cc->proxy_port     = $proxy['https_port'];
+						}
 
 						if ($proxy['username'] != '') {
 							$cc->proxy_username = $proxy['username'];
@@ -171,18 +176,18 @@ if ($url['url'] != '') {
 	$pi = read_config_option('poller_interval');
 	$t  = time() - ($url['downtrigger'] * 60);
 	$lc = time() - ($pi*2);
-	$ts = db_fetch_cell_prepared('SELECT count(id) 
-		FROM plugin_webseer_servers 
-		WHERE isme = 1 
-		OR (isme = 0 AND UNIX_TIMESTAMP(lastcheck) > ?)', 
+	$ts = db_fetch_cell_prepared('SELECT count(id)
+		FROM plugin_webseer_servers
+		WHERE isme = 1
+		OR (isme = 0 AND UNIX_TIMESTAMP(lastcheck) > ?)',
 		array($lc));
 
 	$tf = ($ts * ($url['downtrigger'] - 1)) + 1;
 
-	$url['failures'] = db_fetch_cell_prepared('SELECT COUNT(url_id) 
-		FROM plugin_webseer_servers_log 
-		WHERE UNIX_TIMESTAMP(lastcheck) > ? 
-		AND url_id = ?', 
+	$url['failures'] = db_fetch_cell_prepared('SELECT COUNT(url_id)
+		FROM plugin_webseer_servers_log
+		WHERE UNIX_TIMESTAMP(lastcheck) > ?
+		AND url_id = ?',
 		array($t, $url['id']));
 
 	debug('pi:' . $pi . ', t:' . $t . ' (' . date('Y-m-d H:i:s', $t) . '), lc:' . $lc . ' (' . date('Y-m-d H:i:s', $lc) . '), ts:' . $ts . ', tf:' . $tf);
@@ -213,15 +218,15 @@ if ($url['url'] != '') {
 			debug('Time to send email to admins');
 
 			db_execute_prepared("INSERT INTO plugin_webseer_url_log
-				(url_id, lastcheck, result, http_code, error, 
-				total_time, namelookup_time, connect_time, redirect_time, 
-				redirect_count, size_download, speed_download) 
+				(url_id, lastcheck, result, http_code, error,
+				total_time, namelookup_time, connect_time, redirect_time,
+				redirect_count, size_download, speed_download)
 				VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
-				array($url['id'], date('Y-m-d H:i:s', $results['time']), $results['result'], 
-					$results['options']['http_code'], $results['error'], 
+				array($url['id'], date('Y-m-d H:i:s', $results['time']), $results['result'],
+					$results['options']['http_code'], $results['error'],
 					$results['options']['total_time'], $results['options']['namelookup_time'],
-					$results['options']['connect_time'], $results['options']['redirect_time'], 
-					$results['options']['redirect_count'], $results['options']['size_download'], 
+					$results['options']['connect_time'], $results['options']['redirect_time'],
+					$results['options']['redirect_count'], $results['options']['size_download'],
 					$results['options']['speed_download']
 				)
 			);
@@ -237,16 +242,16 @@ if ($url['url'] != '') {
 
 	debug('Updating Statistics');
 
-	db_execute_prepared('UPDATE plugin_webseer_urls SET result = ?, triggered = ?, failures = ?, 
-		lastcheck = ?, error = ?, http_code = ?, total_time = ?, namelookup_time = ?, 
-		connect_time = ?, redirect_time = ?, redirect_count = ?, speed_download = ?, 
-		size_download = ?, debug = ? 
+	db_execute_prepared('UPDATE plugin_webseer_urls SET result = ?, triggered = ?, failures = ?,
+		lastcheck = ?, error = ?, http_code = ?, total_time = ?, namelookup_time = ?,
+		connect_time = ?, redirect_time = ?, redirect_count = ?, speed_download = ?,
+		size_download = ?, debug = ?
 		WHERE id = ?',
-		array($results['result'], $url['triggered'], $url['failures'], date('Y-m-d H:i:s', $results['time']), 
-			$results['error'], $results['options']['http_code'], $results['options']['total_time'], 
-			$results['options']['namelookup_time'], $results['options']['connect_time'], 
-			$results['options']['redirect_time'], $results['options']['redirect_count'], 
-			$results['options']['speed_download'], $results['options']['size_download'], 
+		array($results['result'], $url['triggered'], $url['failures'], date('Y-m-d H:i:s', $results['time']),
+			$results['error'], $results['options']['http_code'], $results['options']['total_time'],
+			$results['options']['namelookup_time'], $results['options']['connect_time'],
+			$results['options']['redirect_time'], $results['options']['redirect_count'],
+			$results['options']['speed_download'], $results['options']['size_download'],
 			$results['data'], $url['id']
 		)
 	);
@@ -270,15 +275,15 @@ if ($url['url'] != '') {
 		plugin_webseer_down_remote_hosts($save);
 
 		db_execute_prepared('INSERT INTO plugin_webseer_servers_log
-			(url_id, server, lastcheck, result, http_code, error, total_time, 
-			namelookup_time, connect_time, redirect_time, redirect_count, 
-			size_download, speed_download) 
-			VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)', 
-			array($url['id'], plugin_webseer_whoami(), date('Y-m-d H:i:s', $results['time']), 
+			(url_id, server, lastcheck, result, http_code, error, total_time,
+			namelookup_time, connect_time, redirect_time, redirect_count,
+			size_download, speed_download)
+			VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)',
+			array($url['id'], plugin_webseer_whoami(), date('Y-m-d H:i:s', $results['time']),
 				$results['result'], $results['options']['http_code'], $results['error'],
-				$results['options']['total_time'], $results['options']['namelookup_time'], 
+				$results['options']['total_time'], $results['options']['namelookup_time'],
 				$results['options']['connect_time'], $results['options']['redirect_time'],
-				$results['options']['redirect_count'], $results['options']['size_download'], 
+				$results['options']['redirect_count'], $results['options']['size_download'],
 				$results['options']['speed_download'])
 		);
 	}
@@ -289,22 +294,22 @@ register_shutdown($url_id);
 
 /* purge old entries from the log */
 
-db_execute('DELETE FROM plugin_webseer_servers_log 
+db_execute('DELETE FROM plugin_webseer_servers_log
 	WHERE UNIX_TIMESTAMP(lastcheck) < ' . (time() - (86400 * 90)));
 
 /* exit */
 
 function register_startup($url_id) {
-	db_execute_prepared('INSERT INTO plugin_webseer_processes 
-		(url_id, pid, time) 
-		VALUES(?, ?, NOW())', 
+	db_execute_prepared('INSERT INTO plugin_webseer_processes
+		(url_id, pid, time)
+		VALUES(?, ?, NOW())',
 		array($url_id, getmypid()));
 }
 
 function register_shutdown($url_id) {
-	db_execute_prepared('DELETE FROM plugin_webseer_processes 
-		WHERE url = ? 
-		AND pid = ?', 
+	db_execute_prepared('DELETE FROM plugin_webseer_processes
+		WHERE url = ?
+		AND pid = ?',
 		array($url_id, getmypid()), FALSE);
 }
 
@@ -312,14 +317,14 @@ function plugin_webseer_get_users($results, $url, $type) {
 	global $httperrors;
 
 	if ($type == 'text') {
-		$users = db_fetch_assoc("SELECT data 
+		$users = db_fetch_assoc("SELECT data
 			FROM plugin_webseer_contacts
-			WHERE `type` = 'text' 
+			WHERE `type` = 'text'
 			AND  (id = " . ($url['notify_accounts'] != '' ? implode(' OR id = ', explode(',', $url['notify_accounts'])) . ')' : '0)'));
 	} else {
-		$users = db_fetch_assoc("SELECT data 
+		$users = db_fetch_assoc("SELECT data
 			FROM plugin_webseer_contacts
-			WHERE (`type` = 'email' OR `type` = 'external') 
+			WHERE (`type` = 'email' OR `type` = 'external')
 			AND (id = " . ($url['notify_accounts'] != '' ? implode(' OR id = ', explode(',', $url['notify_accounts'])) . ')' : '0)'));
 	}
 
@@ -336,7 +341,7 @@ function plugin_webseer_get_users($results, $url, $type) {
 			$u[] = $user['data'];
 		}
 
-		$to = implode(',', $u);			
+		$to = implode(',', $u);
 	}
 
 	if ($url['notify_extra'] != '') {
@@ -407,10 +412,10 @@ function plugin_webseer_amimaster() {
 
 	$ipaddress = gethostbyname($hostname);
 
-	$server    = db_fetch_cell_prepared('SELECT id 
-		FROM plugin_webseer_servers 
+	$server    = db_fetch_cell_prepared('SELECT id
+		FROM plugin_webseer_servers
 		WHERE ip = ?
-		AND master = 1', 
+		AND master = 1',
 		array($ipaddress));
 
 	if ($server) {
@@ -428,9 +433,9 @@ function plugin_webseer_whoami() {
 	}
 
 	$ipaddress = gethostbyname($hostname);
-	$server    = db_fetch_cell_prepared('SELECT id 
-		FROM plugin_webseer_servers 
-		WHERE ip = ?', 
+	$server    = db_fetch_cell_prepared('SELECT id
+		FROM plugin_webseer_servers
+		WHERE ip = ?',
 		array($ipaddress));
 
 	if ($server) {
