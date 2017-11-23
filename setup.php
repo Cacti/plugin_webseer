@@ -90,14 +90,14 @@ function plugin_webseer_upgrade() {
 			);
 		}
 
-		db_execute("CREATE TABLE IF NOT EXISTS `plugin_webseer_proxies` (
-			`id` int(11) unsigned NOT NULL auto_increment,
-			`name` varchar(30) default '',
-			`hostname` varchar(64) default '',
-			`http_port` mediumint() unsigned default '80',
-			`https_port` mediumint() unsigned default '443',
-			`username` varchar(40) default '',
-			`password` varchar(60) default '',
+		db_execute("CREATE TABLE `plugin_webseer_proxies` (
+			`id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+			`name` varchar(30) DEFAULT '',
+			`hostname` varchar(64) DEFAULT '',
+			`http_port` mediumint(8) unsigned DEFAULT '80',
+			`https_port` mediumint(8) unsigned DEFAULT '443',
+			`username` varchar(40) DEFAULT '',
+			`password` varchar(60) DEFAULT '',
 			PRIMARY KEY (`id`),
 			KEY `hostname` (`hostname`),
 			KEY `name` (`name`))
@@ -247,14 +247,14 @@ function plugin_webseer_setup_table() {
 		ENGINE=InnoDB
 		COMMENT='Table of WebSeer contacts'");
 
-	db_execute("CREATE TABLE IF NOT EXISTS `plugin_webseer_proxies` (
-		`id` int(11) unsigned NOT NULL auto_increment,
-		`name` varchar(30) default '',
-		`hostname` varchar(64) default '',
-		`http_port` mediumint() unsigned default '80',
-		`https_port` mediumint() unsigned default '443',
-		`username` varchar(40) default '',
-		`password` varchar(60) default '',
+	db_execute("CREATE TABLE `plugin_webseer_proxies` (
+		`id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+		`name` varchar(30) DEFAULT '',
+		`hostname` varchar(64) DEFAULT '',
+		`http_port` mediumint(8) unsigned DEFAULT '80',
+		`https_port` mediumint(8) unsigned DEFAULT '443',
+		`username` varchar(40) DEFAULT '',
+		`password` varchar(60) DEFAULT '',
 		PRIMARY KEY (`id`),
 		KEY `hostname` (`hostname`),
 		KEY `name` (`name`))
