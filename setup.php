@@ -105,13 +105,13 @@ function plugin_webseer_upgrade() {
 			COMMENT='Holds Proxy Information for Connections'");
 
 		if (!db_column_exists('plugins_webseer_urls', 'proxy_server')) {
-			db_execute('ALTER TABLE plugin_webseer_urls 
+			db_execute('ALTER TABLE plugin_webseer_urls
 				ADD COLUMN proxy_server int(11) unsigned NOT NULL default "0" AFTER requiresauth');
 		}
 
-		db_execute_prepared('UPDATE plugin_realms 
-			SET file = ? 
-			WHERE file LIKE "%webseer.php%"', 
+		db_execute_prepared('UPDATE plugin_realms
+			SET file = ?
+			WHERE file LIKE "%webseer.php%"',
 			array('webseer.php,webseer_edit.php,webseer_servers.php,webseer_servers_edit.php,webseer_proxies.php'));
 	}
 
@@ -251,14 +251,15 @@ function plugin_webseer_setup_table() {
 		`id` int(11) unsigned NOT NULL auto_increment,
 		`name` varchar(30) default '',
 		`hostname` varchar(64) default '',
-		`port` mediumint() unsigned default '80',
+		`http_port` mediumint() unsigned default '80',
+		`https_port` mediumint() unsigned default '443',
 		`username` varchar(40) default '',
 		`password` varchar(60) default '',
 		PRIMARY KEY (`id`),
 		KEY `hostname` (`hostname`),
 		KEY `name` (`name`))
 		ENGINE=InnoDB
-		COMMENT='Holds WebSeer Proxy Information for Connections'");
+		COMMENT='Holds Proxy Information for Connections'");
 }
 
 function plugin_webseer_poller_bottom() {
