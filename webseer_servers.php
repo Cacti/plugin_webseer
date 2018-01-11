@@ -81,7 +81,7 @@ function do_webseer() {
 	exit;
 }
 
-/** 
+/**
  *  This is a generic funtion for this page that makes sure that
  *  we have a good request.  We want to protect against people who
  *  like to create issues with Cacti.
@@ -136,10 +136,10 @@ function webseer_show_history() {
 		exit;
 	}
 
-	$result = db_fetch_assoc_prepared('SELECT plugin_webseer_url_log.*, plugin_webseer_urls.url 
-		FROM plugin_webseer_url_log,plugin_webseer_urls 
-		WHERE plugin_webseer_urls.id = ? 
-		AND plugin_webseer_url_log.url_id = plugin_webseer_urls.id 
+	$result = db_fetch_assoc_prepared('SELECT plugin_webseer_url_log.*, plugin_webseer_urls.url
+		FROM plugin_webseer_url_log,plugin_webseer_urls
+		WHERE plugin_webseer_urls.id = ?
+		AND plugin_webseer_url_log.url_id = plugin_webseer_urls.id
 		ORDER BY plugin_webseer_url_log.lastcheck DESC',
 		array($id));
 
@@ -150,13 +150,13 @@ function webseer_show_history() {
 	html_start_box('', '100%', '', '4', 'center', '');
 
 	$display_text = array(
-		__('Date', 'webseer'), 
-		__('URL', 'webseer'), 
-		__('Error', 'webseer'), 
-		__('HTTP Code', 'webseer'), 
-		__('DNS', 'webseer'), 
-		__('Connect', 'webseer'), 
-		__('Redirect', 'webseer'), 
+		__('Date', 'webseer'),
+		__('URL', 'webseer'),
+		__('Error', 'webseer'),
+		__('HTTP Code', 'webseer'),
+		__('DNS', 'webseer'),
+		__('Connect', 'webseer'),
+		__('Redirect', 'webseer'),
 		__('Total', 'webseer')
 	);
 
@@ -199,8 +199,8 @@ function list_urls () {
 	global $colors, $webseer_bgcolors, $item_rows, $config, $hostid;
 
 	$ds_actions = array(
-		1 => __('Delete', 'webseer'), 
-		2 => __('Disable', 'webseer'), 
+		1 => __('Delete', 'webseer'),
+		2 => __('Disable', 'webseer'),
 		3 => __('Enable', 'webseer')
 	);
 
@@ -238,7 +238,11 @@ function list_urls () {
 	$sql_order = get_order_string();
 	$sql_limit = ' LIMIT ' . ($rows*(get_request_var('page')-1)) . ',' . $rows;
 
-	$result = db_fetch_assoc("SELECT * FROM plugin_webseer_servers $sql_where $sql_order $sql_limit");
+	$result = db_fetch_assoc("SELECT *
+		FROM plugin_webseer_servers
+		$sql_where
+		$sql_order
+		$sql_limit");
 
 	$total_rows = count(db_fetch_assoc("SELECT id FROM plugin_webseer_servers $sql_where"));
 
@@ -253,7 +257,6 @@ function list_urls () {
 	$display_text = array(
 		'nosort'    => array(__('Actions', 'webseer'), 'ASC'),
 		'name'      => array(__('Name', 'webseer'), 'ASC'),
-		'url'       => array(__('URL', 'webseer'), 'ASC'),
 		'ip'        => array(__('IP Address', 'webseer'), 'ASC'),
 		'enabled'   => array(__('Enabled', 'webseer'), 'ASC'),
 		'location'  => array(__('Location', 'webseer'), 'ASC'),
@@ -281,7 +284,7 @@ function list_urls () {
 					<img src='" . $config['url_path'] . "plugins/webseer/images/edit_object.png' alt='' title='" . __esc('Edit Site', 'webseer') . "'>
 				</a>";
 
-			if ($row['enabled'] == '') {
+			if ($row['enabled'] == '' || $row['enabled'] == '0') {
 				print "<a class='pic' href='" . htmlspecialchars($config['url_path'] . 'plugins/webseer/webseer_servers.php?drp_action=3&chk_' . $row['id']) . "=1'>
 					<img src='" . $config['url_path'] . "plugins/webseer/images/enable_object.png' alt='' title='" . __esc('Enable Site', 'webseer') . "'>
 				</a>";
@@ -293,10 +296,9 @@ function list_urls () {
 
 			print "<a class='pic' href='" . htmlspecialchars($config['url_path'] . 'plugins/webseer/webseer_servers.php?view_history=1&id=' . $row['id']) . "'><img src='" . $config['url_path'] . "plugins/webseer/images/view_history.gif' alt='' title='" . __esc('View History', 'webseer') . "'></td>";
 
-			form_selectable_cell($row['name'], $row['id']);
-			form_selectable_cell("<a class='linkEditMain' href='" . $row['url'] . "' target=_new>" . $row['url'] . '</a>', $row['id']);
+			form_selectable_cell($row['name'], $row['id'], '', '', html_escape($row['url']));
 			form_selectable_cell($row['ip'], $row['id']);
-			form_selectable_cell($row['enabled'] == 'on' ? __('Yes', 'webseer'):__('No', 'webseer'), $row['id']);
+			form_selectable_cell($row['enabled'] == '' || $row['enabled'] == '0' ? __('No', 'webseer'): __('Yes', 'webseer'), $row['id']);
 			form_selectable_cell($row['location'], $row['id']);
 			form_selectable_cell($row['lastcheck'], $row['id']);
 			form_selectable_cell($row['master'] == 1 ? __('Yes', 'webseer'):__('No', 'webseer'), $row['id']);
@@ -318,6 +320,23 @@ function list_urls () {
 	draw_actions_dropdown($ds_actions);
 
 	form_end();
+
+	?>
+	<script type='text/javascript'>
+	$(function() {
+		$('#webseer2_child').find('.cactiTooltipHint').each(function() {
+			title = $(this).attr('title');
+
+			if (title != undefined && title.indexOf('/') >= 0) {
+				$(this).click(function() {
+					window.open(title, 'webseer');
+				});
+			}
+		});
+	});
+
+	</script>
+	<?php
 
 	bottom_footer();
 }
@@ -375,10 +394,10 @@ function webseer_filter() {
 						<?php print __('State', 'webseer');?>
 					</td>
 					<td>
-						<select id='state'> 
+						<select id='state'>
 							<option value='-1'><?php print __('Any', 'webseer');?></option>
 							<?php
-							foreach (array('2' => __('Disabled', 'webseer'),'1' => __('Enabled', 'webseer'), 3 => __('Triggered', 'webseer')) as $key => $value) {
+							foreach (array('2' => __('Disabled', 'webseer'), '1' => __('Enabled', 'webseer'), 3 => __('Triggered', 'webseer')) as $key => $value) {
 								echo "<option value='" . $key . "'" . ($key == get_request_var('state') ? ' selected' : '') . '>' . $value . '</option>';
 							}
 							?>

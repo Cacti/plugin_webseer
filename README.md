@@ -20,7 +20,8 @@ Bug and feature enhancements for the webseer plugin are handled in GitHub. If yo
 
 --- 2.0 ---
 * issue#12: Add proxy support to URL's
-* issue#20: Resolve issues with Permanently Moved errors with proxy use
+* issue#19: Enabled does not display correctly when viewing and editing a server
+* issue#20: Redirection results in permanently Moved errors with proxy use
 * issue#21: Long processing time for DELETE queries
 * issue#22: Make additional room on page for long URL's
 
