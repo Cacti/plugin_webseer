@@ -193,7 +193,7 @@ if ($url['url'] != '') {
 	debug('pi:' . $pi . ', t:' . $t . ' (' . date('Y-m-d H:i:s', $t) . '), lc:' . $lc . ' (' . date('Y-m-d H:i:s', $lc) . '), ts:' . $ts . ', tf:' . $tf);
 	debug('failures:'. $url['failures'] . ', triggered:' . $url['triggered']);
 
-	if (strtotime($url['lastcheck']) > 0 && (($url['result'] != $results['result']) || $url['failures'] > 0 || $url['triggered'] == 1)) {
+	if (strtotime($url['lastcheck']) > 0 && (($url['result'] != '' && $url['result'] != $results['result']) || $url['failures'] > 0 || $url['triggered'] == 1)) {
 		debug('Checking for trigger');
 
 		$sendemail = false;

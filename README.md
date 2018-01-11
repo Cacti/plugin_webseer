@@ -19,6 +19,7 @@ Bug and feature enhancements for the webseer plugin are handled in GitHub. If yo
 ## ChangeLog
 
 --- 2.0 ---
+* issue#10: Check shows as Down even though site is up if there is no search string
 * issue#12: Add proxy support to URL's
 * issue#16: WebSeer not notifying users in dropdown list
 * issue#19: Enabled does not display correctly when viewing and editing a server
