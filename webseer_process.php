@@ -294,8 +294,9 @@ register_shutdown($url_id);
 
 /* purge old entries from the log */
 
-db_execute('DELETE FROM plugin_webseer_servers_log
-	WHERE UNIX_TIMESTAMP(lastcheck) < ' . (time() - (86400 * 90)));
+db_execute_prepared('DELETE FROM plugin_webseer_servers_log
+	WHERE lastcheck < FROM_UNIXTIME(?)',
+	array(time() - (86400 * 90)));
 
 /* exit */
 

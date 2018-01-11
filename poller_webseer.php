@@ -94,23 +94,23 @@ plugin_webseer_register_server();
 // Remove old Logs (ADD A SETTING!!!!!!)
 $t = time() - (86400 * 30);
 
-db_execute_prepared('DELETE FROM plugin_webseer_url_log 
-	WHERE lastcheck < ?', 
+db_execute_prepared('DELETE FROM plugin_webseer_url_log
+	WHERE lastcheck < FROM_UNIXTIME(?)',
 	array($t));
 
-db_execute_prepared('DELETE FROM plugin_webseer_processes 
-	WHERE UNIX_TIMESTAMP(time) < ?', 
+db_execute_prepared('DELETE FROM plugin_webseer_processes
+	WHERE time < FROM_UNIXTIME(?)',
 	array(time() - 15));
 
-$urls = db_fetch_assoc('SELECT * 
-	FROM plugin_webseer_urls 
+$urls = db_fetch_assoc('SELECT *
+	FROM plugin_webseer_urls
 	WHERE enabled = "on"');
 
 $max = 12;
 
 for ($x = 0; $x < count($urls); $x++) {
 	$url   = $urls[$x];
-	$total = db_fetch_cell('SELECT count(id) 
+	$total = db_fetch_cell('SELECT count(id)
 		FROM plugin_webseer_processes');
 
 	if ($max - $total > 0) {
@@ -123,16 +123,18 @@ for ($x = 0; $x < count($urls); $x++) {
 		$x--;
 		usleep(10000);
 
-		db_execute('DELETE FROM plugin_webseer_processes 
-			WHERE UNIX_TIMESTAMP(time) < ' . (time() - 15));
+		db_execute_prepared('DELETE FROM plugin_webseer_processes
+			WHERE time < FROM_UNIXTIME(?)',
+			array(time() - 15));
 	}
 }
 
 while(true) {
-	db_execute('DELETE FROM plugin_webseer_processes 
-		WHERE UNIX_TIMESTAMP(time) < ' . (time() - 15));
+	db_execute_prepared('DELETE FROM plugin_webseer_processes
+		WHERE time < FROM_UNIXTIME(?)',
+		array(time() - 15));
 
-	$running = db_fetch_cell('SELECT COUNT(*) 
+	$running = db_fetch_cell('SELECT COUNT(*)
 		FROM plugin_webseer_processes');
 
 	if ($running == 0) {
@@ -162,9 +164,9 @@ function plugin_webseer_register_server() {
 
 	$ipaddress = gethostbyname($hostname);
 
-	$found = db_fetch_cell_prepared('SELECT id 
-		FROM plugin_webseer_servers 
-		WHERE ip = ?', 
+	$found = db_fetch_cell_prepared('SELECT id
+		FROM plugin_webseer_servers
+		WHERE ip = ?',
 		array($ipaddress));
 
 	if (!$found) {
@@ -201,9 +203,9 @@ function plugin_webseer_register_server() {
 }
 
 function plugin_webseer_update_servers() {
-	$servers = db_fetch_assoc('SELECT * 
-		FROM plugin_webseer_servers 
-		WHERE isme = 0 
+	$servers = db_fetch_assoc('SELECT *
+		FROM plugin_webseer_servers
+		WHERE isme = 0
 		AND enabled = 1');
 
 	foreach ($servers as $server) {
