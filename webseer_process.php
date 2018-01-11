@@ -317,36 +317,21 @@ function register_shutdown($url_id) {
 function plugin_webseer_get_users($results, $url, $type) {
 	global $httperrors;
 
-	if ($type == 'text') {
-		$users = db_fetch_assoc("SELECT data
+	$users = '';
+	if ($url['notify_accounts'] != '') {
+		$users = db_fetch_cell("SELECT GROUP_CONCAT(DISTINCT data) AS emails
 			FROM plugin_webseer_contacts
-			WHERE `type` = 'text'
-			AND  (id = " . ($url['notify_accounts'] != '' ? implode(' OR id = ', explode(',', $url['notify_accounts'])) . ')' : '0)'));
-	} else {
-		$users = db_fetch_assoc("SELECT data
-			FROM plugin_webseer_contacts
-			WHERE (`type` = 'email' OR `type` = 'external')
-			AND (id = " . ($url['notify_accounts'] != '' ? implode(' OR id = ', explode(',', $url['notify_accounts'])) . ')' : '0)'));
+			WHERE id IN (" . $url['notify_accounts'] . ")");
 	}
 
-	if (!sizeof($users) && isset($url['notify_extra']) && $url['notify_extra'] == '') {
+	if ($users == '' && isset($url['notify_extra']) && $url['notify_extra'] == '') {
 		cacti_log('ERROR: No users to send WEBSEER Notification for ' . $url['display_name'], false, 'WEBSEER');
 		return;
 	}
 
-	$to = '';
-	$u  = array();
-
-	if (sizeof($users)) {
-		foreach ($users as $user) {
-			$u[] = $user['data'];
-		}
-
-		$to = implode(',', $u);
-	}
-
+	$to = $users;
 	if ($url['notify_extra'] != '') {
-		$to .= ($to != '' ? ',':'') . $url['notify_extra'];
+		$to .= ($to != '' ? ', ':'') . $url['notify_extra'];
 	}
 
 	if ($type == 'text') {
