@@ -114,7 +114,7 @@ function do_webseer() {
 	exit;
 }
 
-/** 
+/**
  *  This is a generic funtion for this page that makes sure that
  *  we have a good request.  We want to protect against people who
  *  like to create issues with Cacti.
@@ -172,7 +172,7 @@ function webseer_show_history() {
 		exit;
 	}
 
-	$result = db_fetch_assoc_prepared("SELECT pwul.*, pwu.url 
+	$result = db_fetch_assoc_prepared("SELECT pwul.*, pwu.url
 		FROM plugin_webseer_url_log AS pwul
 		INNER JOIN plugin_webseer_urls AS pwu
 		ON pwul.url_id=pwu.id
@@ -186,13 +186,13 @@ function webseer_show_history() {
 	html_start_box('', '100%', '', '4', 'center', '');
 
 	$display_text = array(
-		__('Date', 'webseer'), 
-		__('URL', 'webseer'), 
-		__('HTTP Code', 'webseer'), 
-		__('DNS', 'webseer'), 
-		__('Connect', 'webseer'), 
-		__('Redirect', 'webseer'), 
-		__('Total', 'webseer'), 
+		__('Date', 'webseer'),
+		__('URL', 'webseer'),
+		__('HTTP Code', 'webseer'),
+		__('DNS', 'webseer'),
+		__('Connect', 'webseer'),
+		__('Redirect', 'webseer'),
+		__('Total', 'webseer'),
 		__('Status', 'webseer')
 	);
 
@@ -235,8 +235,8 @@ function list_urls() {
 	global $webseer_bgcolors, $httperrors, $config, $hostid, $refresh;
 
 	$ds_actions = array(
-		1 => __('Delete', 'webseer'), 
-		2 => __('Disable', 'webseer'), 
+		1 => __('Delete', 'webseer'),
+		2 => __('Disable', 'webseer'),
 		3 => __('Enable', 'webseer'),
 		4 => __('Duplicate', 'webseer')
 	);
@@ -307,7 +307,7 @@ function list_urls() {
 	$sql_limit = ' LIMIT ' . ($rows*(get_request_var('page')-1)) . ',' . $rows;
 
 	if (get_request_var('rfilter') != '') {
-		$sql_where .= ($sql_where == '' ? 'WHERE ' : ' AND ') . 
+		$sql_where .= ($sql_where == '' ? 'WHERE ' : ' AND ') .
 			'display_name RLIKE \'' . get_request_var('rfilter') . '\' OR ' .
 			'url RLIKE \'' . get_request_var('rfilter') . '\' OR ' .
 			'search RLIKE \'' . get_request_var('rfilter') . '\' OR ' .
@@ -315,20 +315,19 @@ function list_urls() {
 			'search_failed RLIKE \'' . get_request_var('rfilter') . '\'';
 	}
 
-	$result = db_fetch_assoc("SELECT * 
-		FROM plugin_webseer_urls 
-		$sql_where 
-		$sql_order 
+	$result = db_fetch_assoc("SELECT *
+		FROM plugin_webseer_urls
+		$sql_where
+		$sql_order
 		$sql_limit");
 
-	$total_rows = db_fetch_cell("SELECT COUNT(id) 
-		FROM plugin_webseer_urls 
+	$total_rows = db_fetch_cell("SELECT COUNT(id)
+		FROM plugin_webseer_urls
 		$sql_where");
 
 	$display_text = array(
 		'nosort'          => array('display' => __('Actions', 'webseer'),    'sort' => '',    'align' => 'left'),
 		'display_name'    => array('display' => __('Name', 'webseer'),       'sort' => 'ASC', 'align' => 'left'),
-		'url'             => array('display' => __('URL', 'webseer'),        'sort' => 'ASC', 'align' => 'left'),
 		'result'          => array('display' => __('Status', 'webseer'),     'sort' => 'ASC', 'align' => 'right'),
 		'enabled'         => array('display' => __('Enabled', 'webseer'),    'sort' => 'ASC', 'align' => 'right'),
 		'http_code'       => array('display' => __('HTTP Code', 'webseer'),  'sort' => 'ASC', 'align' => 'right'),
@@ -386,13 +385,13 @@ function list_urls() {
 				</a>
 			</td>";
 
-			form_selectable_cell($row['display_name'], $row['id']);
-
 			if ($row['type'] == 'http') {
-				form_selectable_cell("<a class='linkEditMain' href='" . $row['url'] . "' target=_new>" . $row['url'] . '</a>', $row['id']);
+				$url = $row['url'];
 			} else if ($row['type'] == 'dns') {
-				form_selectable_cell(__('DNS: Server %s - A Record for %s', $row['url'], $row['search']), $row['id'], 'webseer');
+				$url = __('DNS: Server %s - A Record for %s', $row['url'], $row['search'], 'webseer');
 			}
+
+			form_selectable_cell($row['display_name'], $row['id'], '', '', html_escape($url));
 
 			if ($row['lastcheck'] == '0000-00-00 00:00:00') {
 				form_selectable_cell(__('N/A', 'webseer'), $row['id'], '', 'right');
@@ -428,6 +427,23 @@ function list_urls() {
 	draw_actions_dropdown($ds_actions);
 
 	form_end();
+
+	?>
+	<script type='text/javascript'>
+	$(function() {
+		$('#webseer2_child').find('.cactiTooltipHint').each(function() {
+			title = $(this).attr('title');
+
+			if (title != undefined && title.indexOf('/') >= 0) {
+				$(this).click(function() {
+					window.open(title, 'webseer');
+				});
+			}
+		});
+	});
+
+	</script>
+	<?php
 
 	bottom_footer();
 }
