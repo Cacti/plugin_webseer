@@ -17,6 +17,8 @@ To install the webseer plugin, simply copy the plugin_webseer directory to Cacti
 Bug and feature enhancements for the webseer plugin are handled in GitHub. If you find a first search the Cacti forums for a solution before creating an issue in GitHub.
 
 ## ChangeLog
+--- 2.1 ---
+* issue#26: Undefined variable 'key' error in webseer_proxies.php
 
 --- 2.0 ---
 * issue#10: Check shows as Down even though site is up if there is no search string
