@@ -392,7 +392,7 @@ function list_urls() {
 				$url = __('DNS: Server %s - A Record for %s', $row['url'], $row['search'], 'webseer');
 			}
 
-			if (empty($url)) {
+			if (trim($url) == '') {
 				form_selectable_cell($row['display_name'], $row['id']);
 			} else {
 				form_selectable_cell($row['display_name'], $row['id'], '', '', html_escape($url));
@@ -437,7 +437,7 @@ function list_urls() {
 	<script type='text/javascript'>
 	$(function() {
 		$('#webseer2_child').find('.cactiTooltipHint').each(function() {
-			title = $(this).attr('title');
+			var title = $(this).attr('title');
 
 			if (title != undefined && title.indexOf('/') >= 0) {
 				$(this).click(function() {
