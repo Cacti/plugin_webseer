@@ -385,6 +385,7 @@ function list_urls() {
 				</a>
 			</td>";
 
+			$url='';
 			if ($row['type'] == 'http') {
 				$url = $row['url'];
 			} else if ($row['type'] == 'dns') {
