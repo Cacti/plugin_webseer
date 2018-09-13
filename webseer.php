@@ -392,7 +392,11 @@ function list_urls() {
 				$url = __('DNS: Server %s - A Record for %s', $row['url'], $row['search'], 'webseer');
 			}
 
-			form_selectable_cell($row['display_name'], $row['id'], '', '', html_escape($url));
+			if (empty($url)) {
+				form_selectable_cell($row['display_name'], $row['id']);
+			} else {
+				form_selectable_cell($row['display_name'], $row['id'], '', '', html_escape($url));
+			}
 
 			if ($row['lastcheck'] == '0000-00-00 00:00:00') {
 				form_selectable_cell(__('N/A', 'webseer'), $row['id'], '', 'right');
