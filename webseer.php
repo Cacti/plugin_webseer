@@ -52,7 +52,7 @@ function do_webseer() {
 	while (list($var,$val) = each($_REQUEST)) {
 		if (preg_match('/^chk_(.*)$/', $var, $matches)) {
 			$id = $matches[1];
-			input_validate_input_number($del);
+			input_validate_input_number($id);
 			$urls[$id] = $id;
 		}
 	}
