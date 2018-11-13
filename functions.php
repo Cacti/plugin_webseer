@@ -433,9 +433,7 @@ class cURL {
 		// if ($this->cookies == TRUE) curl_setopt($process, CURLOPT_COOKIEFILE, $this->cookie_file);
 		// if ($this->cookies == TRUE) curl_setopt($process, CURLOPT_COOKIEJAR, $this->cookie_file);
 
-		if ($this->host['requiresauth'] == '') {
-			curl_setopt($process, CURLOPT_FAILONERROR, ($this->host['requiresauth'] == '' ? true : false));
-		}
+		curl_setopt($process, CURLOPT_FAILONERROR, ($this->host['requiresauth'] == '' ? true : false));
 
 		// curl_setopt($process, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_0);
 		// curl_setopt($process, CURLOPT_SSLVERSION, 3);  // FORCE SSL v3
