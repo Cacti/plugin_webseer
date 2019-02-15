@@ -252,7 +252,11 @@ function list_urls () {
 
 	print $nav;
 
-	html_start_box('', '100%', $colors['header'], '4', 'center', '');
+	$header_color = '';
+	if (isset($colors['header'])) {
+		$header_color = $colors['header'];
+	}
+	html_start_box('', '100%', $header_color, '4', 'center', '');
 
 	$display_text = array(
 		'nosort'    => array(__('Actions', 'webseer'), 'ASC'),
