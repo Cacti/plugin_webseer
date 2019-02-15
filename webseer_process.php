@@ -42,17 +42,6 @@ include_once($config['base_path'] . '/plugins/webseer/functions.php');
 
 ini_set('max_execution_time', '21');
 
-// Define the debug function if it does not exst
-if (!function_exists('debug')) {
-	function debug($message) {
-		global $debug;
-
-		if ($debug) {
-			print 'DEBUG: ' . trim($message) . "\n";
-		}
-	}
-}
-
 /* process calling arguments */
 $parms = $_SERVER['argv'];
 array_shift($parms);
@@ -103,6 +92,8 @@ if (empty($url_id)) {
 	exit(1);
 }
 
+plugin_webseer_check_debug();
+
 $url = db_fetch_row_prepared('SELECT *
 	FROM plugin_webseer_urls
 	WHERE enabled = "on"
@@ -114,6 +105,7 @@ if (!sizeof($url)) {
 	exit(1);
 }
 
+$url['debug_type'] = 'Url';
 register_startup($url_id);
 
 if ($url['url'] != '') {
@@ -121,13 +113,12 @@ if ($url['url'] != '') {
 	$x = 0;
 
 	while ($x < 3) {
-		debug('Service Check Number ' . $x);
+		plugin_webseer_debug('Service Check Number ' . $x, $url);
 
 		switch ($url['type']) {
 			case 'http':
 			case 'https':
-				$cc = new cURL();
-				$cc->host = $url;
+				$cc = new cURL(true, 'cookies.txt', 'gzip', '', $url);
 
 				if ($url['proxy_server'] > 0) {
 					$proxy = db_fetch_row_prepared('SELECT *
@@ -190,11 +181,11 @@ if ($url['url'] != '') {
 		AND url_id = ?',
 		array($t, $url['id']));
 
-	debug('pi:' . $pi . ', t:' . $t . ' (' . date('Y-m-d H:i:s', $t) . '), lc:' . $lc . ' (' . date('Y-m-d H:i:s', $lc) . '), ts:' . $ts . ', tf:' . $tf);
-	debug('failures:'. $url['failures'] . ', triggered:' . $url['triggered']);
+	plugin_webseer_debug('pi:' . $pi . ', t:' . $t . ' (' . date('Y-m-d H:i:s', $t) . '), lc:' . $lc . ' (' . date('Y-m-d H:i:s', $lc) . '), ts:' . $ts . ', tf:' . $tf, $url);
+	plugin_webseer_debug('failures:'. $url['failures'] . ', triggered:' . $url['triggered'], $url);
 
 	if (strtotime($url['lastcheck']) > 0 && (($url['result'] != '' && $url['result'] != $results['result']) || $url['failures'] > 0 || $url['triggered'] == 1)) {
-		debug('Checking for trigger');
+		plugin_webseer_debug('Checking for trigger', $url);
 
 		$sendemail = false;
 
@@ -215,7 +206,7 @@ if ($url['url'] != '') {
 		}
 
 		if ($sendemail) {
-			debug('Time to send email to admins');
+			plugin_webseer_debug('Time to send email to admins', $url);
 
 			db_execute_prepared("INSERT INTO plugin_webseer_url_log
 				(url_id, lastcheck, result, http_code, error,
@@ -237,10 +228,10 @@ if ($url['url'] != '') {
 			}
 		}
 	}else{
-		debug('Not checking for trigger');
+		plugin_webseer_debug('Not checking for trigger', $url);
 	}
 
-	debug('Updating Statistics');
+	plugin_webseer_debug('Updating Statistics', $url);
 
 	db_execute_prepared('UPDATE plugin_webseer_urls SET result = ?, triggered = ?, failures = ?,
 		lastcheck = ?, error = ?, http_code = ?, total_time = ?, namelookup_time = ?,

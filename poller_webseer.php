@@ -87,6 +87,8 @@ if (sizeof($parms)) {
 	}
 }
 
+plugin_webseer_check_debug();
+
 echo "Running Service Checks\n";
 
 plugin_webseer_register_server();
@@ -114,7 +116,8 @@ for ($x = 0; $x < count($urls); $x++) {
 		FROM plugin_webseer_processes');
 
 	if ($max - $total > 0) {
-		debug('Launching Service Check ' . $urls[$x]['url']);
+		$url['debug_type'] = 'Url';
+		plugin_webseer_debug('Launching Service Check ' . $urls[$x]['url'], $url);
 		$command_string = read_config_option('path_php_binary');
 		$extra_args     = '-q "' . $config['base_path'] . '/plugins/webseer/webseer_process.php" --id=' . $url['id'] . ($debug ? ' --debug':'');
 		exec_background($command_string, $extra_args);
@@ -170,7 +173,7 @@ function plugin_webseer_register_server() {
 		array($ipaddress));
 
 	if (!$found) {
-		debug('Registering Server');
+		plugin_webseer_debug('Registering Server ' . $ipaddress);
 
 		$save = array();
 		$save['enabled']   = 'on';
@@ -209,22 +212,14 @@ function plugin_webseer_update_servers() {
 		AND enabled = 1');
 
 	foreach ($servers as $server) {
-		$cc = new cURL();
-		$cc->host['url'] = $server['url'];
+		$server['debug_type'] = 'Server';
+		$cc = new cURL(true, 'cookies.txt', 'gzip', '', $server);;
 		$data = array();
 		$data['action'] = 'HEARTBEAT';
 		$results = $cc->post($server['url'], $data);
 	}
 
 	return sizeof($servers);
-}
-
-function debug($message) {
-	global $debug;
-
-	if ($debug) {
-		print "DEBUG: " . trim($message) . "\n";
-	}
 }
 
 /*  display_version - displays version information */

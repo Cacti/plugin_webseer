@@ -42,9 +42,9 @@ function webseer_show_tab($current_tab) {
 
 function plugin_webseer_refresh_servers() {
 	$server = db_fetch_row('SELECT * FROM plugin_webseer_servers WHERE master = 1');
+	$server['debug_type'] = 'Server';
 
-	$cc              = new cURL();
-	$cc->host['url'] = $server['url'];
+	$cc              = new cURL(true, 'cookies.txt', 'gzip', '', $server);
 	$data            = array();
 	$data['action']  = 'GETSERVERS';
 	$results         = $cc->post($server['url'], $data);
@@ -74,8 +74,9 @@ function plugin_webseer_refresh_servers() {
 
 function plugin_webseer_refresh_urls () {
 	$server          = db_fetch_row('SELECT * FROM plugin_webseer_servers WHERE master = 1');
-	$cc              = new cURL();
-	$cc->host['url'] = $server['url'];
+	$server['debug_type'] = 'Server';
+
+	$cc              = new cURL(true, 'cookies.txt', 'gzip', '', $server);
 	$data            = array();
 	$data['action']  = 'GETURLS';
 	$results         = $cc->post($server['url'], $data);
@@ -157,6 +158,7 @@ function plugin_webseer_check_dns ($host) {
 function plugin_webseer_set_remote_masters ($ip) {
 	$servers = db_fetch_assoc('SELECT * FROM plugin_webseer_servers WHERE isme = 0');
 	foreach ($servers as $server) {
+		$server['debug_type'] = 'Server';
 		plugin_webseer_set_remote_master ($server['url'], $ip);
 	}
 	db_execute('UPDATE plugin_webseer_servers set master = 0');
@@ -164,20 +166,18 @@ function plugin_webseer_set_remote_masters ($ip) {
 }
 
 function plugin_webseer_set_remote_master ($url, $ip) {
-	$cc              = new cURL();
-	$cc->host['url'] = $url;
+	$cc              = new cURL(true, 'cookies.txt', 'gzip', '', $url);
 	$data            = array();
 	$data['action']  = 'SETMASTER';
 	$data['ip']      = $ip;
-	$results         = $cc->post($server['url'], $data);
+	$results         = $cc->post($url['url'], $data);
 }
 
 function plugin_webseer_enable_remote_hosts ($id, $value = true) {
 	$servers = db_fetch_assoc('SELECT * FROM plugin_webseer_servers WHERE isme = 0');
 
 	foreach ($servers as $server) {
-		$cc              = new cURL();
-		$cc->host['url'] = $server['url'];
+		$cc              = new cURL(true, 'cookies.txt', 'gzip', '', $server);
 		$data            = array();
 		$data['action']  = ($value ? 'ENABLEURL' : 'DISABLEURL');
 		$data['id']      = $id;
@@ -189,8 +189,7 @@ function plugin_webseer_delete_remote_hosts ($id) {
 	$servers = db_fetch_assoc('SELECT * FROM plugin_webseer_servers WHERE isme = 0');
 
 	foreach ($servers as $server) {
-		$cc              = new cURL();
-		$cc->host['url'] = $server['url'];
+		$cc              = new cURL(true, 'cookies.txt', 'gzip', '', $server);
 		$data            = array();
 		$data['action']  = 'DELETEURL';
 		$data['id']      = $id;
@@ -202,8 +201,9 @@ function plugin_webseer_add_remote_hosts ($id, $save) {
 	$servers = db_fetch_assoc('SELECT * FROM plugin_webseer_servers WHERE isme = 0');
 
 	foreach ($servers as $server) {
-		$cc              = new cURL();
-		$cc->host['url'] = $server['url'];
+		$server['debug_type'] = 'Server';
+
+		$cc              = new cURL(true, 'cookies.txt', 'gzip', '', $server);
 		$save['action']  = 'ADDURL';
 		$save['id']      = $id;
 		$results         = $cc->post($server['url'], $save);
@@ -214,8 +214,9 @@ function plugin_webseer_update_remote_hosts ($save) {
 	$servers = db_fetch_assoc('SELECT * FROM plugin_webseer_servers WHERE isme = 0');
 
 	foreach ($servers as $server) {
-		$cc = new cURL();
-		$cc->host['url'] = $server['url'];
+		$server['debug_type'] = 'Server';
+
+		$cc = new cURL(true, 'cookies.txt', 'gzip', '', $server);
 		$save['action'] = 'UPDATEURL';
 		$results = $cc->post($server['url'], $save);
 	}
@@ -225,8 +226,9 @@ function plugin_webseer_add_remote_server ($id, $save) {
 	$servers = db_fetch_assoc('SELECT * FROM plugin_webseer_servers WHERE isme = 0');
 
 	foreach ($servers as $server) {
-		$cc = new cURL();
-		$cc->host['url'] = $server['url'];
+		$server['debug_type'] = 'Server';
+
+		$cc = new cURL(true, 'cookies.txt', 'gzip', '', $server);
 		$save['action'] = 'ADDSERVER';
 		$save['id'] = $id;
 		$results = $cc->post($server['url'], $save);
@@ -237,8 +239,9 @@ function plugin_webseer_update_remote_server ($save) {
 	$servers = db_fetch_assoc('SELECT * FROM plugin_webseer_servers WHERE isme = 0');
 
 	foreach ($servers as $server) {
-		$cc              = new cURL();
-		$cc->host['url'] = $server['url'];
+		$server['debug_type'] = 'Server';
+
+		$cc              = new cURL(true, 'cookies.txt', 'gzip', '', $server);
 		$save['action']  = 'UPDATESERVER';
 		$results         = $cc->post($server['url'], $save);
 	}
@@ -248,8 +251,9 @@ function plugin_webseer_enable_remote_server ($id, $value = true) {
 	$servers = db_fetch_assoc('SELECT * FROM plugin_webseer_servers WHERE isme = 0');
 
 	foreach ($servers as $server) {
-		$cc              = new cURL();
-		$cc->host['url'] = $server['url'];
+		$server['debug_type'] = 'Server';
+
+		$cc              = new cURL(true, 'cookies.txt', 'gzip', '', $server);
 		$data            = array();
 		$data['action']  = ($value ? 'ENABLESERVER' : 'DISABLESERVER');
 		$data['id']      = $id;
@@ -261,8 +265,9 @@ function plugin_webseer_delete_remote_server ($id) {
 	$servers = db_fetch_assoc('SELECT * FROM plugin_webseer_servers WHERE isme = 0');
 
 	foreach ($servers as $server) {
-		$cc              = new cURL();
-		$cc->host['url'] = $server['url'];
+		$server['debug_type'] = 'Server';
+
+		$cc              = new cURL(true, 'cookies.txt', 'gzip', '', $server);
 		$data            = array();
 		$data['action']  = 'DELETESERVER';
 		$data['id']      = $id;
@@ -274,8 +279,7 @@ function plugin_webseer_down_remote_hosts ($save) {
 	$servers = db_fetch_assoc('SELECT * FROM plugin_webseer_servers WHERE isme = 0');
 
 	foreach ($servers as $server) {
-		$cc              = new cURL();
-		$cc->host['url'] = $server['url'];
+		$cc              = new cURL(true, 'cookies.txt', 'gzip', '', $server);
 		$save['action']  = 'HOSTDOWN';
 		$results         = $cc->post($server['url'], $save);
 	}
@@ -316,13 +320,14 @@ class cURL {
 	var $httperrors;
 	var $debug;
 
-	function __construct($cookies = true, $cookie = 'cookies.txt', $compression = 'gzip', $proxy_hostname = '') {
+	function __construct($cookies = true, $cookie = 'cookies.txt', $compression = 'gzip', $proxy_hostname = '', $host = '') {
 		global $config, $httperrors, $debug;
 
 //		$this->headers[] = 'Accept: image/gif, image/x-bitmap, image/jpeg, image/pjpeg';
 //		$this->headers[] = 'Connection: Keep-Alive';
 //		$this->headers[] = 'Content-type: application/x-www-form-urlencoded;charset=UTF-8';
 
+		$this->host           = $host;
 		$this->user_agent     = 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.0.3705; .NET CLR 1.1.4322)';
 		$this->compression    = $compression;
 		$this->proxy_hostname = $proxy_hostname;
@@ -382,9 +387,7 @@ class cURL {
 	}
 
 	function debug($message) {
-		if ($this->debug) {
-			echo "DEBUG: " . trim($message) . "\n";
-		}
+		plugin_webseer_debug($message, $this->host);
 	}
 
 	function get() {
@@ -645,5 +648,27 @@ class mxlookup {
 			$this->QNAME .
 			chr(0).chr(1).
 			chr(0).chr(1);
+	}
+}
+
+function plugin_webseer_check_debug() {
+	global $debug;
+	if (!$debug) {
+		$plugin_debug = read_config_option('selective_plugin_debug');
+		if (preg_match('/(^|[, ]+)(webseer)($|[, ]+)/', $plugin_debug, $matches)) {
+			$debug = (sizeof($matches) == 4 && $matches[2] == 'webseer');
+		}
+	}
+}
+
+function plugin_webseer_debug($message,$host) {
+	global $debug;
+	if ($debug) {
+		$prefix = (empty($host['id']) && empty($host['debug_type'])) ? '' : '[';
+		$suffix = (empty($host['id']) && empty($host['debug_type'])) ? '' : '] ';
+		$spacer = (empty($host['id']) || empty($host['debug_type'])) ? '' : ' ';
+		$host_id = (empty($host['id'])) ? '' : $host['id'];
+		$host_dt = (empty($host['debug_type'])) ? '' : $host['debug_type'];
+		cacti_log("DEBUG: " . $prefix . $host_dt . $spacer . $host_id . $suffix . trim($message), true, 'WEBSEER');
 	}
 }
