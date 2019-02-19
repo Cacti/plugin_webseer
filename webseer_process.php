@@ -48,7 +48,7 @@ array_shift($parms);
 
 global $debug;
 
-$debug  = true;
+$debug  = false;
 $url_id = 0;
 $poller_interval = read_config_option('poller_interval');
 
