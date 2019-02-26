@@ -43,7 +43,7 @@ $debug = false;
 $force = false;
 $start = microtime(true);
 
-if (sizeof($parms)) {
+if (cacti_sizeof($parms)) {
 	foreach($parms as $parameter) {
 		if (strpos($parameter, '=')) {
 			list($arg, $value) = explode('=', $parameter);
@@ -88,7 +88,7 @@ plugin_webseer_register_server();
 // Remove old Logs (ADD A SETTING!!!!!!)
 $t = time() - (86400 * 30);
 
-db_execute_prepared('DELETE FROM plugin_webseer_url_log
+db_execute_prepared('DELETE FROM plugin_webseer_urls_log
 	WHERE lastcheck < FROM_UNIXTIME(?)',
 	array($t));
 
@@ -102,7 +102,7 @@ $urls = db_fetch_assoc('SELECT *
 
 $max = 12;
 
-for ($x = 0; $x < count($urls); $x++) {
+for ($x = 0; $x < cacti_count($urls); $x++) {
 	$url   = $urls[$x];
 	$total = db_fetch_cell('SELECT count(id)
 		FROM plugin_webseer_processes');
@@ -144,7 +144,7 @@ $servers = plugin_webseer_update_servers();
 $end   = microtime(true);
 $ttime = round($end - $start, 3);
 
-cacti_log("WEBSEER STATS: Total Time:$ttime, Service Checks:" . sizeof($urls) . ", Servers:" . $servers, false, 'SYSTEM');
+cacti_log("WEBSEER STATS: Total Time:$ttime, Service Checks:" . cacti_sizeof($urls) . ", Servers:" . $servers, false, 'SYSTEM');
 
 function plugin_webseer_register_server() {
 	global $config;
@@ -206,13 +206,13 @@ function plugin_webseer_update_servers() {
 
 	foreach ($servers as $server) {
 		$server['debug_type'] = 'Server';
-		$cc = new cURL(true, 'cookies.txt', 'gzip', '', $server);;
+		$cc = new cURL(true, 'cookies.txt', $server['compression'], '', $server);;
 		$data = array();
 		$data['action'] = 'HEARTBEAT';
 		$results = $cc->post($server['url'], $data);
 	}
 
-	return sizeof($servers);
+	return cacti_sizeof($servers);
 }
 
 /*  display_version - displays version information */

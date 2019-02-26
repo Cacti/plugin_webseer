@@ -176,7 +176,7 @@ foreach ($servers as $server) {
 				if (isset($_POST['id'])) {
 					$id = intval(get_filter_request_var('id'));
 					db_execute_prepared('DELETE FROM plugin_webseer_urls WHERE id = ?', array($id));
-					db_execute_prepared('DELETE FROM plugin_webseer_url_log WHERE url_id = ?', array($id));
+					db_execute_prepared('DELETE FROM plugin_webseer_urls_log WHERE url_id = ?', array($id));
 				}
 				break;
 			case 'SETMASTER':

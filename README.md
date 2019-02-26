@@ -35,11 +35,15 @@ in GitHub.
 
 ## ChangeLog
 
---- 2.1 ---
+--- 3.0 ---
+
+* issue#18: Some sites require compression to properly redirect
 
 * issue#26: Undefined variable 'key' error in webseer_proxies.php
 
 * issue#31: Undefined variable 'del' error in webseer.php
+
+* feature: PHP 7.2 compatibility
 
 --- 2.0 ---
 

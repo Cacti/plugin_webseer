@@ -30,7 +30,7 @@ if (strpos($dir, 'plugins') !== false) {
 	chdir('../../');
 }
 
-include('./include/cli_check.php');
+require('./include/cli_check.php');
 include_once($config['base_path'] . '/plugins/webseer/includes/functions.php');
 
 ini_set('max_execution_time', '21');
@@ -45,7 +45,7 @@ $debug  = false;
 $url_id = 0;
 $poller_interval = read_config_option('poller_interval');
 
-if (sizeof($parms)) {
+if (cacti_sizeof($parms)) {
 	foreach($parms as $parameter) {
 		if (strpos($parameter, '=')) {
 			list($arg, $value) = explode('=', $parameter);
@@ -93,7 +93,7 @@ $url = db_fetch_row_prepared('SELECT *
 	AND id = ?',
 	array($url_id));
 
-if (!sizeof($url)) {
+if (!cacti_sizeof($url)) {
 	echo "ERROR: URL is not Found\n";
 	exit(1);
 }
@@ -111,7 +111,7 @@ if ($url['url'] != '') {
 		switch ($url['type']) {
 			case 'http':
 			case 'https':
-				$cc = new cURL(true, 'cookies.txt', 'gzip', '', $url);
+				$cc = new cURL(true, 'cookies.txt', $url['compression'], '', $url);
 
 				if ($url['proxy_server'] > 0) {
 					$proxy = db_fetch_row_prepared('SELECT *
@@ -119,7 +119,7 @@ if ($url['url'] != '') {
 						WHERE id = ?',
 						array($url['proxy_server']));
 
-					if (sizeof($proxy)) {
+					if (cacti_sizeof($proxy)) {
 						$cc->proxy_hostname = $proxy['hostname'];
 						if ($url['type'] == 'http') {
 							$cc->proxy_port     = $proxy['http_port'];
@@ -198,22 +198,23 @@ if ($url['url'] != '') {
 			}
 		}
 
+		db_execute_prepared("INSERT INTO plugin_webseer_urls_log
+			(url_id, lastcheck, compression, result, http_code, error,
+			total_time, namelookup_time, connect_time, redirect_time,
+			redirect_count, size_download, speed_download)
+			VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
+			array($url['id'], date('Y-m-d H:i:s', $results['time']),
+				$results['options']['compression'], $results['result'],
+				$results['options']['http_code'], $results['error'],
+				$results['options']['total_time'], $results['options']['namelookup_time'],
+				$results['options']['connect_time'], $results['options']['redirect_time'],
+				$results['options']['redirect_count'], $results['options']['size_download'],
+				$results['options']['speed_download']
+			)
+		);
+
 		if ($sendemail) {
 			plugin_webseer_debug('Time to send email to admins', $url);
-
-			db_execute_prepared("INSERT INTO plugin_webseer_url_log
-				(url_id, lastcheck, result, http_code, error,
-				total_time, namelookup_time, connect_time, redirect_time,
-				redirect_count, size_download, speed_download)
-				VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
-				array($url['id'], date('Y-m-d H:i:s', $results['time']), $results['result'],
-					$results['options']['http_code'], $results['error'],
-					$results['options']['total_time'], $results['options']['namelookup_time'],
-					$results['options']['connect_time'], $results['options']['redirect_time'],
-					$results['options']['redirect_count'], $results['options']['size_download'],
-					$results['options']['speed_download']
-				)
-			);
 
 			if (plugin_webseer_amimaster ()) {
 				plugin_webseer_get_users($results, $url, '');

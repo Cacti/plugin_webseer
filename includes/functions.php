@@ -22,8 +22,10 @@
  +-------------------------------------------------------------------------+
 */
 
-include_once('../classes/cURL.php');
-include_once('../classes/mxlookup.php');
+include_once(__DIR__ . '/constants.php');
+include_once(__DIR__ . '/arrays.php');
+include_once(__DIR__ . '/../classes/cURL.php');
+include_once(__DIR__ . '/../classes/mxlookup.php');
 
 function webseer_show_tab($current_tab) {
 	global $config;
@@ -34,7 +36,7 @@ function webseer_show_tab($current_tab) {
 	);
 
 	print "<div class='tabs'><nav><ul>\n";
-	if (sizeof($tabs)) {
+	if (cacti_sizeof($tabs)) {
 		foreach ($tabs as $url => $name) {
 			print "<li><a class='" . (($url == $current_tab) ? 'pic selected' : 'pic') .  "' href='" . $config['url_path'] .
 				"plugins/webseer/$url'>$name</a></li>\n";
@@ -127,7 +129,7 @@ function plugin_webseer_remove_old_users () {
 function plugin_webseer_check_dns ($host) {
 	$results = false;
 
-	if (sizeof($host)) {
+	if (cacti_sizeof($host)) {
 		$results = array();
 		$results['result']                     = 0;
 		$results['options']['http_code']       = 0;
@@ -290,7 +292,7 @@ function plugin_webseer_down_remote_hosts ($save) {
 
 function plugin_webseer_update_contacts() {
 	$users = db_fetch_assoc("SELECT id, 'email' AS type, email_address FROM user_auth WHERE email_address!=''");
-	if (sizeof($users)) {
+	if (cacti_sizeof($users)) {
 		foreach($users as $u) {
 			$cid = db_fetch_cell('SELECT id FROM plugin_webseer_contacts WHERE type="email" AND user_id=' . $u['id']);
 
@@ -308,7 +310,7 @@ function plugin_webseer_check_debug() {
 	if (!$debug) {
 		$plugin_debug = read_config_option('selective_plugin_debug');
 		if (preg_match('/(^|[, ]+)(webseer)($|[, ]+)/', $plugin_debug, $matches)) {
-			$debug = (sizeof($matches) == 4 && $matches[2] == 'webseer');
+			$debug = (cacti_sizeof($matches) == 4 && $matches[2] == 'webseer');
 		}
 	}
 }

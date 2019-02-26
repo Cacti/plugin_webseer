@@ -26,10 +26,6 @@ chdir('../../');
 include_once('./include/auth.php');
 include_once($config['base_path'] . '/plugins/webseer/includes/functions.php');
 
-$proxy_actions = array(
-	'1' => __('Delete')
-);
-
 set_default_action();
 
 switch (get_request_var('action')) {
@@ -52,16 +48,16 @@ default:
 }
 
 function proxy_form_actions() {
-	global $proxy_actions;
+	global $webseer_actions_proxy;
 
 	/* if we are to save this form, instead of display it */
 	if (isset_request_var('selected_items')) {
 		$selected_items = sanitize_unserialize_selected_items(get_nfilter_request_var('selected_items'));
 
 		if ($selected_items != false) {
-			if (get_nfilter_request_var('drp_action') === '1') { // delete
+			if (get_nfilter_request_var('drp_action') === WEBSEER_ACTION_PROXY_DELETE) { // delete
 				/* do a referential integrity check */
-				if (sizeof($selected_items)) {
+				if (cacti_sizeof($selected_items)) {
 					foreach($selected_items as $proxy) {
 						$proxies[] = $proxy;
 					}
@@ -97,32 +93,32 @@ function proxy_form_actions() {
 
 	form_start('webseer_proxies.php');
 
-	html_start_box($proxy_actions{get_nfilter_request_var('drp_action')}, '60%', '', '3', 'center', '');
+	html_start_box($webseer_actions_proxy{get_nfilter_request_var('drp_action')}, '60%', '', '3', 'center', '');
 
 	if (isset($vdef_array)) {
-		if (get_nfilter_request_var('drp_action') === '1') { // delete
+		if (get_nfilter_request_var('drp_action') === WEBSEER_ACTION_PROXY_DELETE) { // delete
 			print "	<tr>
 					<td class='topBoxAlt'>
-						<p>" . __n('Click \'Continue\' to delete the following Proxy.', 'Click \'Continue\' to delete following Proxies.', sizeof($proxy_array)) . "</p>
+						<p>" . __n('Click \'Continue\' to delete the following Proxy.', 'Click \'Continue\' to delete following Proxies.', cacti_sizeof($proxy_array)) . "</p>
 						<div class='itemlist'><ul>$proxy_list</ul></div>
 					</td>
 				</tr>\n";
 
-			$save_html = "<input type='button' value='" . __esc('Cancel') . "' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Delete Proxy', 'Delete Proxies', sizeof($proxy_array)) . "'>";
+			$save_html = "<input type='button' value='" . __esc('Cancel') . "' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Delete Proxy', 'Delete Proxies', cacti_sizeof($proxy_array)) . "'>";
 		}
 	} else {
 		print "<tr><td class='odd'><span class='textError'>" . __('You must select at least one Proxy.') . "</span></td></tr>\n";
 		$save_html = "<input type='button' value='" . __esc('Return') . "' onClick='cactiReturnTo()'>";
 	}
 
-    print "<tr>
-        <td class='saveRow'>
-            <input type='hidden' name='action' value='actions'>
-            <input type='hidden' name='selected_items' value='" . (isset($proxy_array) ? serialize($proxy_array) : '') . "'>
-            <input type='hidden' name='drp_action' value='" . get_nfilter_request_var('drp_action') . "'>
-            $save_html
-        </td>
-    </tr>\n";
+	print "<tr>
+		<td class='saveRow'>
+			<input type='hidden' name='action' value='actions'>
+			<input type='hidden' name='selected_items' value='" . (isset($proxy_array) ? serialize($proxy_array) : '') . "'>
+			<input type='hidden' name='drp_action' value='" . get_nfilter_request_var('drp_action') . "'>
+			$save_html
+		</td>
+	</tr>\n";
 
 	html_end_box();
 
@@ -156,14 +152,16 @@ function proxy_form_save() {
 }
 
 function proxy_edit() {
+	global $webseer_proxy_fields;
+
 	/* ================= input validation ================= */
 	get_filter_request_var('id');
 	/* ==================================================== */
 
 	if (!isempty_request_var('id')) {
-		$proxy = db_fetch_row_prepared('SELECT * 
-			FROM plugin_webseer_proxies 
-			WHERE id = ?', 
+		$proxy = db_fetch_row_prepared('SELECT *
+			FROM plugin_webseer_proxies
+			WHERE id = ?',
 			array(get_request_var('id')));
 
 		$header_label = __('Proxy [edit: %s]', $proxy['name']);
@@ -177,12 +175,10 @@ function proxy_edit() {
 
 	html_start_box($header_label, '100%', true, '3', 'center', '');
 
-	$form = proxy_form();
-
 	draw_edit_form(
 		array(
 			'config' => array('no_form_tag' => true),
-			'fields' => inject_form_variables($form, (isset($proxy) ? $proxy : array()))
+			'fields' => inject_form_variables($webseer_proxy_fields, (isset($proxy) ? $proxy : array()))
 		)
 	);
 
@@ -195,75 +191,8 @@ function proxy_edit() {
 	bottom_footer();
 }
 
-function proxy_form() {
-	return array(
-		'name' => array(
-			'method' => 'textbox',
-			'friendly_name' => __('Name'),
-			'description' => __('A Useful Name for this Proxy.'),
-			'value' => '|arg1:name|',
-			'max_length' => '40',
-			'size' => '40',
-			'default' => __('New Proxy')
-			),
-		'hostname' => array(
-			'method' => 'textbox',
-			'friendly_name' => __('Hostname'),
-			'description' => __('The Proxy Hostname.'),
-			'value' => '|arg1:hostname|',
-			'max_length' => '64',
-			'size' => '40',
-			'default' => ''
-			),
-		'http_port' => array(
-			'method' => 'textbox',
-			'friendly_name' => __('HTTP Port'),
-			'description' => __('The HTTP Proxy Port.'),
-			'value' => '|arg1:http_port|',
-			'max_length' => '5',
-			'size' => '5',
-			'default' => '80'
-			),
-		'https_port' => array(
-			'method' => 'textbox',
-			'friendly_name' => __('HTTPS Port'),
-			'description' => __('The HTTPS Proxy Port.'),
-			'value' => '|arg1:https_port|',
-			'max_length' => '5',
-			'size' => '5',
-			'default' => '443'
-			),
-		'username' => array(
-			'method' => 'textbox',
-			'friendly_name' => __('User Name'),
-			'description' => __('The user to use to authenticate with the Proxy if any.'),
-			'value' => '|arg1:username|',
-			'max_length' => '64',
-			'size' => '40',
-			'default' => ''
-			),
-		'password' => array(
-			'method' => 'textbox_password',
-			'friendly_name' => __('Password'),
-			'description' => __('The user password to use to authenticate with the Proxy if any.'),
-			'value' => '|arg1:password|',
-			'max_length' => '40',
-			'size' => '40',
-			'default' => ''
-			),
-		'id' => array(
-			'method' => 'hidden_zero',
-			'value' => '|arg1:id|'
-			),
-		'save_component_proxy' => array(
-			'method' => 'hidden',
-			'value' => '1'
-			)
-	);
-}
-
 /* file: rra.php, action: edit */
-/** 
+/**
  *  This is a generic funtion for this page that makes sure that
  *  we have a good request.  We want to protect against people who
  *  like to create issues with Cacti.
@@ -302,7 +231,7 @@ function request_validation() {
 }
 
 function proxies() {
-	global $proxy_actions;
+	global $webseer_actions_proxy;
 
 	request_validation();
 
@@ -344,7 +273,7 @@ function proxies() {
 		'username'  => array(__('Username', 'webseer'), 'ASC'),
 	);
 
-	$columns = sizeof($display_text);
+	$columns = cacti_sizeof($display_text);
 
 	$nav = html_nav_bar('webseer_proxies.php', MAX_DISPLAY_PAGES, get_request_var('page'), $rows, $total_rows, $columns, __('Proxies', 'webseer'), 'page', 'main');
 
@@ -356,7 +285,7 @@ function proxies() {
 
 	html_header_sort_checkbox($display_text, get_request_var('sort_column'), get_request_var('sort_direction'));
 
-	if (sizeof($result)) {
+	if (cacti_sizeof($result)) {
 		foreach ($result as $row) {
 			form_alternate_row('line' . $row['id'], true);
 			form_selectable_cell(filter_value($row['name'], get_request_var('filter'), 'webseer_proxies.php?header=false&action=edit&id=' . $row['id']), $row['id']);
@@ -372,11 +301,11 @@ function proxies() {
 
 	html_end_box(false);
 
-	if (sizeof($result)) {
+	if (cacti_sizeof($result)) {
 		print $nav;
 	}
 
-	draw_actions_dropdown($proxy_actions);
+	draw_actions_dropdown($webseer_actions_proxy);
 
 	form_end();
 
@@ -407,7 +336,7 @@ function webseer_filter() {
 						<select id='rows'>
 							<?php
 							print "<option value='-1'" . (get_request_var('rows') == -1 ? ' selected':'') . ">" . __('Default', 'webseer') . "</option>\n";
-							if (sizeof($item_rows)) {
+							if (cacti_sizeof($item_rows)) {
 								foreach ($item_rows as $key => $value) {
 									print "<option value='" . $key . "'"; if (get_request_var('rows') == $key) { print ' selected'; } print '>' . htmlspecialchars($value) . "</option>\n";
 								}

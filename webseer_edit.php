@@ -52,6 +52,7 @@ function webseer_save_url() {
 	get_filter_request_var('id');
 	get_filter_request_var('downtrigger');
 	get_filter_request_var('timeout_trigger');
+	get_filter_request_var('compression');
 	/* ==================================================== */
 
 	if (isset_request_var('id')) {
@@ -98,7 +99,7 @@ function webseer_save_url() {
 	$save['search']          = get_nfilter_request_var('search');
 	$save['search_maint']    = get_nfilter_request_var('search_maint');
 	$save['search_failed']   = get_nfilter_request_var('search_failed');
-
+	$save['compression']     = get_nfilter_request_var('compression');
 	$save['notify_extra']    = get_nfilter_request_var('notify_extra');
 	$save['downtrigger']     = get_filter_request_var('downtrigger');
 	$save['timeout_trigger'] = get_filter_request_var('timeout_trigger');
@@ -107,35 +108,25 @@ function webseer_save_url() {
 
 	plugin_webseer_remove_old_users();
 
-	if (is_error_message()) {
-		header('Location: webseer_edit.php?header=falseaction=edit&id=' . (empty($id) ? get_request_var('id') : $id));
-		exit;
+	if (!is_error_message()) {
+		if ($save['id'] == 0) {
+			plugin_webseer_add_remote_hosts ($id, $save);
+		} else {
+			plugin_webseer_update_remote_hosts ($save);
+		}
+		if ($id) {
+			raise_message(1);
+		} else {
+			raise_message(2);
+		}
 	}
 
-	if ($save['id'] == 0) {
-		plugin_webseer_add_remote_hosts ($id, $save);
-	} else {
-		plugin_webseer_update_remote_hosts ($save);
-	}
-
-	header('Location: webseer.php?header=false');
+	header('Location: webseer_edit.php?action=edit&id=' . $save['id'] . '&header=false');
 	exit;
 }
 
 function webseer_edit_url () {
-	// THOLD IS REQUIRED
-	$send_notification_array = array();
-	$users = db_fetch_assoc("SELECT plugin_webseer_contacts.id, plugin_webseer_contacts.data,
-		plugin_webseer_contacts.type, user_auth.full_name
-		FROM plugin_webseer_contacts
-		LEFT JOIN user_auth ON user_auth.id=plugin_webseer_contacts.user_id
-		WHERE plugin_webseer_contacts.data != ''");
-
-	if (!empty($users)) {
-		foreach ($users as $user) {
-			$send_notification_array[$user['id']] = $user['full_name'] . ' - ' . ucfirst($user['type']);
-		}
-	}
+	global $webseer_url_fields;
 
 	/* ================= input validation ================= */
 	get_filter_request_var('id');
@@ -151,164 +142,6 @@ function webseer_edit_url () {
 		$url['notify_accounts'] = array();
 	}
 
-	$sql = 'SELECT id FROM plugin_webseer_contacts
-		WHERE id = ' . (!empty($url['notify_accounts']) && implode($url['notify_accounts'], '') != '' ? implode($url['notify_accounts'], ' OR id = ') : 0);
-
-	$url_edit = array(
-		'general_spacer' => array(
-			'method' => 'spacer',
-			'friendly_name' => __('General Settings', 'webseer')
-			),
-		'display_name' => array(
-			'method' => 'textbox',
-			'friendly_name' => __('Service Check Name', 'webseer'),
-			'description' => __('The name that is displayed for this Service Check, and is included in any Alert notifications.', 'webseer'),
-			'value' => '|arg1:display_name|',
-			'max_length' => '256',
-			),
-		'enabled' => array(
-			'method' => 'checkbox',
-			'friendly_name' => __('Enable Service Check', 'webseer'),
-			'description' => __('Uncheck this box to disabled this url from being checked.', 'webseer'),
-			'value' => '|arg1:enabled|',
-			'default' => 'on',
-			),
-		'url' => array(
-			'method' => 'textarea',
-			'friendly_name' => __('URL', 'webseer'),
-			'description' => __('The URL to Monitor', 'webseer'),
-			'value' => '|arg1:url|',
-			'textarea_rows' => '3',
-			'textarea_cols' => '80',
-			),
-		'ip' => array(
-			'method' => 'textbox',
-			'friendly_name' => __('IP Address', 'webseer'),
-			'description' => __('Enter an IP address to connect to.  Leaving blank will use DNS Resolution instead.', 'webseer'),
-			'value' => '|arg1:ip|',
-			'max_length' => '40',
-			'size' => '30'
-			),
-		'proxy_server' => array(
-			'method' => 'drop_sql',
-			'friendly_name' => __('Proxy Server', 'webseer'),
-			'description' => __('If this connection text requires a proxy, select it here.  Otherwise choose \'None\'.', 'webseer'),
-			'value' => '|arg1:proxy_server|',
-			'none_value' => __('None', 'webseer'),
-			'default' => '0',
-			'sql' => 'SELECT id, name FROM plugin_webseer_proxies ORDER by name'
-			),
-		'checks_spacer' => array(
-			'method' => 'spacer',
-			'friendly_name' => __('Available Checks', 'webseer')
-			),
-		'requiresauth' => array(
-			'method' => 'checkbox',
-			'friendly_name' => __('Requires Authentication', 'webseer'),
-			'description' => __('Check this box if the site will normally return a 401 Error as it requires a username and password.', 'webseer'),
-			'value' => '|arg1:requiresauth|',
-			'default' => '',
-			),
-		'checkcert' => array(
-			'method' => 'checkbox',
-			'friendly_name' => __('Check Certificate', 'webseer'),
-			'description' => __('If using SSL, check this box if you want to validate the certificate. Default on, turn off if you the site uses a self-signed certificate.', 'webseer'),
-			'value' => '|arg1:checkcert|',
-			'default' => '',
-			),
-		'timings_spacer' => array(
-			'method' => 'spacer',
-			'friendly_name' => __('Notification Timing', 'webseer')
-			),
-		'downtrigger' => array(
-			'friendly_name' => __('Trigger', 'webseer'),
-			'method' => 'drop_array',
-			'array' => array(
-				1  => __('%d Minute', 1, 'webseer'), 
-				2  => __('%d Minutes', 2, 'webseer'), 
-				3  => __('%d Minutes', 3, 'webseer'), 
-				4  => __('%d Minutes', 4, 'webseer'), 
-				5  => __('%d Minutes', 5, 'webseer'), 
-				6  => __('%d Minutes', 6, 'webseer'), 
-				7  => __('%d Minutes', 7, 'webseer'), 
-				8  => __('%d Minutes', 8, 'webseer'), 
-				9  => __('%d Minutes', 9, 'webseer'), 
-				10 => __('%d Minutes', 10, 'webseer')
-			),
-			'default' => 3,
-			'description' => __('How many minutes the URL must be down before it will send an alert.  After an alert is sent, in order for a \'Site Recovering\' Email to be send, it must also be up this number of minutes.', 'webseer'),
-			'value' => '|arg1:downtrigger|',
-		),
-		'timeout_trigger' => array(
-			'friendly_name' => __('Time Out', 'webseer'),
-			'method' => 'drop_array',
-			'array' => array(
-				3  => __('%d Seconds', 3, 'webseer'), 
-				4  => __('%d Seconds', 4, 'webseer'), 
-				5  => __('%d Seconds', 5, 'webseer'), 
-				6  => __('%d Seconds', 6, 'webseer'), 
-				7  => __('%d Seconds', 7, 'webseer'), 
-				8  => __('%d Seconds', 8, 'webseer'), 
-				9  => __('%d Seconds', 9, 'webseer'), 
-				10 => __('%d Seconds', 10, 'webseer')
-			),
-			'default' => 4,
-			'description' => __('How many seconds to allow the page to timeout before reporting it as down.', 'webseer'),
-			'value' => '|arg1:timeout_trigger|',
-		),
-		'verifications_spacer' => array(
-			'method' => 'spacer',
-			'friendly_name' => __('Verification Strings', 'webseer')
-			),
-		'search' => array(
-			'method' => 'textarea',
-			'friendly_name' => __('Response Search String', 'webseer'),
-			'description' => __('This is the string to search for in the URL response for a live and working Web Service.', 'webseer'),
-			'value' => '|arg1:search|',
-			'textarea_rows' => '3',
-			'textarea_cols' => '80',
-			),
-		'search_maint' => array(
-			'method' => 'textarea',
-			'friendly_name' => __('Response Search String - Maintenance Page', 'webseer'),
-			'description' => __('This is the string to search for on the Maintenance Page.  The Service Check will check for this string if the above string is not found.  If found, it means that the Web Service is under maintenance.', 'webseer'),
-			'value' => '|arg1:search_maint|',
-			'textarea_rows' => '3',
-			'textarea_cols' => '80',
-			),
-		'search_failed' => array(
-			'method' => 'textarea',
-			'friendly_name' => __('Response Search String - Failed', 'webseer'),
-			'description' => __('This is the string to search for a known failure in the Web Service response.  The Service Check will only alert if this string is found, ignoring any timeout issues and the search strings above.', 'webseer'),
-			'value' => '|arg1:search_failed|',
-			'textarea_rows' => '3',
-			'textarea_cols' => '80',
-			),
-		'notification_spacer' => array(
-			'method' => 'spacer',
-			'friendly_name' => __('Notification Settings', 'webseer')
-			),
-		'notify_accounts' => array(
-			'friendly_name' => __('Notify accounts', 'webseer'),
-			'method' => 'drop_multi',
-			'description' => __('This is a listing of accounts that will be notified when this website goes down.', 'webseer'),
-			'array' => $send_notification_array,
-			'sql' => $sql,
-			),
-		'notify_extra' => array(
-			'friendly_name' => __('Extra Alert Emails', 'webseer'),
-			'method' => 'textarea',
-			'textarea_rows' => 3,
-			'textarea_cols' => 50,
-			'description' => __('You may specify here extra Emails to receive alerts for this URL (comma separated)', 'webseer'),
-			'value' => '|arg1:notify_extra|',
-			),
-		'id' => array(
-			'method' => 'hidden_zero',
-			'value' => '|arg1:id|'
-			),
-		);
-
 	form_start('webseer_edit.php');
 
 	html_start_box($header_label, '100%', '', '3', 'center', '');
@@ -316,7 +149,7 @@ function webseer_edit_url () {
 	draw_edit_form(
 		array(
 			'config' => array('form_name' => 'chk'),
-			'fields' => inject_form_variables($url_edit, $url)
+			'fields' => inject_form_variables($webseer_url_fields, $url)
 		)
 	);
 
