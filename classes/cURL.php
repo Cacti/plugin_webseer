@@ -44,7 +44,6 @@ class cURL {
 		}
 
 		$this->results        = array('result' => 0, 'time' => time(), 'error' => '');
-		$this->host['search'] = $this->host['search'];
 		$this->bundle         = $config['base_path'] . '/plugins/webseer/ca-bundle.crt';
 	}
 

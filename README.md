@@ -43,6 +43,8 @@ in GitHub.
 
 * issue#31: Undefined variable 'del' error in webseer.php
 
+* issue#34: Undefined index 'search' when saving Webseer Server
+
 * feature: PHP 7.2 compatibility
 
 --- 2.0 ---
