@@ -661,7 +661,7 @@ function plugin_webseer_check_debug() {
 	}
 }
 
-function plugin_webseer_debug($message,$host) {
+function plugin_webseer_debug($message='',$host=array()) {
 	global $debug;
 	if ($debug) {
 		$prefix = (empty($host['id']) && empty($host['debug_type'])) ? '' : '[';
