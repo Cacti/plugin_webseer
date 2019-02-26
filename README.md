@@ -41,6 +41,8 @@ in GitHub.
 
 * issue#26: Undefined variable 'key' error in webseer_proxies.php
 
+* issue#27: Notification email sent twice with different info
+
 * issue#31: Undefined variable 'del' error in webseer.php
 
 * issue#34: Undefined index 'search' when saving Webseer Server

@@ -217,8 +217,11 @@ if ($url['url'] != '') {
 			plugin_webseer_debug('Time to send email to admins', $url);
 
 			if (plugin_webseer_amimaster ()) {
-				plugin_webseer_get_users($results, $url, '');
-				plugin_webseer_get_users($results, $url, 'text');
+				if ($url['notify_format'] == WEBSEER_FORMAT_PLAIN) {
+					plugin_webseer_get_users($results, $url, 'text');
+				} else {
+					plugin_webseer_get_users($results, $url, '');
+				}
 			}
 		}
 	}else{

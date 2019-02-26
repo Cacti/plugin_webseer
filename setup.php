@@ -98,7 +98,8 @@ function plugin_webseer_upgrade() {
 		if (version_compare($old, '3.0', '<')) {
 			db_execute('RENAME TABLE `plugin_webseer_url_log` TO `plugin_webseer_urls_log`');
 			db_execute('ALTER TABLE `plugin_webseer_urls`
-				ADD COLUMN compression int(3) unsigned NOT NULL default "0" AFTER lastcheck');
+				ADD COLUMN compression int(3) unsigned NOT NULL default "0" AFTER lastcheck,
+				ADD COLUMN notify_format int(3) unsigned NOT NULL default "0" AFTER notify_accounts');
 			db_execute('ALTER TABLE `plugin_webseer_urls_log`
 				ADD COLUMN compression int(3) unsigned NOT NULL default "0" AFTER lastcheck');
 			db_execute('ALTER TABLE `plugin_webseer_servers`
@@ -195,6 +196,7 @@ function plugin_webseer_setup_table() {
 		`checkcert` char(2) NOT NULL default 'on',
 		`notify_accounts` varchar(256) NOT NULL,
 		`notify_extra` varchar(256) NOT NULL,
+		`notify_format` int(3) unsigned NOT NULL default '0',
 		`result` int(11) unsigned NOT NULL default '0',
 		`downtrigger` int(11) unsigned NOT NULL default '3',
 		`timeout_trigger` int(11) unsigned NOT NULL default '4',

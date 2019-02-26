@@ -113,6 +113,11 @@ $webseer_seconds = array(
 	10 => __('%d Seconds', 10, 'webseer'),
 );
 
+$webseer_notify_formats = array(
+	WEBSEER_FORMAT_HTML  => 'html',
+	WEBSEER_FORMAT_PLAIN => 'plain',
+);
+
 $webser_contact_users = db_fetch_assoc("SELECT plugin_webseer_contacts.id, plugin_webseer_contacts.data,
 	plugin_webseer_contacts.type, user_auth.full_name
 	FROM plugin_webseer_contacts
@@ -394,12 +399,19 @@ $webseer_url_fields = array(
 		'method' => 'spacer',
 		'friendly_name' => __('Notification Settings', 'webseer')
 	),
+	'notify_format' => array(
+		'friendly_name' => __('Notify Format', 'webseer'),
+		'method' => 'drop_array',
+		'description' => __('This is the format to use when sending the notification email', 'webseer'),
+		'array' => $webseer_notify_formats,
+	),
 	'notify_accounts' => array(
 		'friendly_name' => __('Notify accounts', 'webseer'),
 		'method' => 'drop_multi',
 		'description' => __('This is a listing of accounts that will be notified when this website goes down.', 'webseer'),
 		'array' => $webseer_notify_users,
 		'sql' => 'SELECT id FROM plugin_webseer_contacts',
+		'value' => '|arg1:notify_users|',
 	),
 	'notify_extra' => array(
 		'friendly_name' => __('Extra Alert Emails', 'webseer'),
