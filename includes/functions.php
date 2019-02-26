@@ -22,8 +22,8 @@
  +-------------------------------------------------------------------------+
 */
 
-include_once('classes/cURL.php');
-include_once('classes/mxlookup.php');
+include_once('../classes/cURL.php');
+include_once('../classes/mxlookup.php');
 
 function webseer_show_tab($current_tab) {
 	global $config;
