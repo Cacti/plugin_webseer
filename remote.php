@@ -1,7 +1,7 @@
 <?php
 /*
  +-------------------------------------------------------------------------+
- | Copyright (C) 2010-2017 The Cacti Group                                 |
+ | Copyright (C) 2004-2019 The Cacti Group                                 |
  |                                                                         |
  | This program is free software; you can redistribute it and/or           |
  | modify it under the terms of the GNU General Public License             |
@@ -13,7 +13,7 @@
  | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the           |
  | GNU General Public License for more details.                            |
  +-------------------------------------------------------------------------+
- | Cacti: The Complete RRDTool-based Graphing Solution                     |
+ | Cacti: The Complete RRDtool-based Graphing Solution                     |
  +-------------------------------------------------------------------------+
  | This code is designed, written, and maintained by the Cacti Group. See  |
  | about.php and/or the AUTHORS file for specific developer information.   |
@@ -32,9 +32,9 @@ if (isset($_SERVER['argv'][0])) {
 
 chdir('../../');
 
-require_once('./include/global.php');
+require_once('./include/cli_check.php');
 include_once($config['base_path'] . '/lib/functions.php');
-include_once($config['base_path'] . '/plugins/webseer/functions.php');
+include_once($config['base_path'] . '/plugins/webseer/includes/functions.php');
 
 if (isset($_SERVER['X-Forwarded-For'])) {
 	$remoteip = $_SERVER['X-Forwarded-For'];

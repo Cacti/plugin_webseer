@@ -1,7 +1,7 @@
 <?php
 /*
  +-------------------------------------------------------------------------+
- | Copyright (C) 2010-2017 The Cacti Group                                 |
+ | Copyright (C) 2004-2019 The Cacti Group                                 |
  |                                                                         |
  | This program is free software; you can redistribute it and/or           |
  | modify it under the terms of the GNU General Public License             |
@@ -13,7 +13,7 @@
  | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the           |
  | GNU General Public License for more details.                            |
  +-------------------------------------------------------------------------+
- | Cacti: The Complete RRDTool-based Graphing Solution                     |
+ | Cacti: The Complete RRDtool-based Graphing Solution                     |
  +-------------------------------------------------------------------------+
  | This code is designed, written, and maintained by the Cacti Group. See  |
  | about.php and/or the AUTHORS file for specific developer information.   |
@@ -72,42 +72,42 @@ function plugin_webseer_upgrade() {
 		}
 
 		if (version_compare($old, '2.0', '<')) {
-			db_execute_prepared('UPDATE plugin_config
-				SET version = ?
-				WHERE directory = "webseer"',
-				array($new));
+			db_execute("CREATE TABLE `plugin_webseer_proxies` (
+				`id` int(11) unsigned NOT NULL AUTO_INCREMENT	,
+				`name` varchar(30) DEFAULT '',
+				`hostname` varchar(64) DEFAULT '',
+				`http_port` mediumint(8) unsigned DEFAULT '80',
+				`https_port` mediumint(8) unsigned DEFAULT '443',
+				`username` varchar(40) DEFAULT '',
+				`password` varchar(60) DEFAULT '',
+				PRIMARY KEY (`id`),
+				KEY `hostname` (`hostname`),
+				KEY `name` (`name`))
+				ENGINE=InnoDB
+				COMMENT='Holds Proxy Information for Connections'");
 
-			db_execute_prepared("UPDATE plugin_config SET
-				version = ?, name = ?, author = ?, webpage = ?
-				WHERE directory = ?",
-				array(
-					$info['version'],
-					$info['longname'],
-					$info['author'],
-					$info['homepage'],
-					$info['name']
-				)
-			);
+			if (!db_column_exists('plugins_webseer_urls', 'proxy_server')) {
+				db_execute('ALTER TABLE plugin_webseer_urls
+					ADD COLUMN proxy_server int(11) unsigned NOT NULL default "0" AFTER requiresauth');
+			}
 		}
 
-		db_execute("CREATE TABLE `plugin_webseer_proxies` (
-			`id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-			`name` varchar(30) DEFAULT '',
-			`hostname` varchar(64) DEFAULT '',
-			`http_port` mediumint(8) unsigned DEFAULT '80',
-			`https_port` mediumint(8) unsigned DEFAULT '443',
-			`username` varchar(40) DEFAULT '',
-			`password` varchar(60) DEFAULT '',
-			PRIMARY KEY (`id`),
-			KEY `hostname` (`hostname`),
-			KEY `name` (`name`))
-			ENGINE=InnoDB
-			COMMENT='Holds Proxy Information for Connections'");
+		db_execute_prepared('UPDATE plugin_config
+			SET version = ?
+			WHERE directory = "webseer"',
+			array($new));
 
-		if (!db_column_exists('plugins_webseer_urls', 'proxy_server')) {
-			db_execute('ALTER TABLE plugin_webseer_urls
-				ADD COLUMN proxy_server int(11) unsigned NOT NULL default "0" AFTER requiresauth');
-		}
+		db_execute_prepared("UPDATE plugin_config SET
+			version = ?, name = ?, author = ?, webpage = ?
+			WHERE directory = ?",
+			array(
+				$info['version'],
+				$info['longname'],
+				$info['author'],
+				$info['homepage'],
+				$info['name']
+			)
+		);
 
 		db_execute_prepared('UPDATE plugin_realms
 			SET file = ?
