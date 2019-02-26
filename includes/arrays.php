@@ -404,6 +404,7 @@ $webseer_url_fields = array(
 		'method' => 'drop_array',
 		'description' => __('This is the format to use when sending the notification email', 'webseer'),
 		'array' => $webseer_notify_formats,
+		'value' => '|arg1:notify_format|',
 	),
 	'notify_accounts' => array(
 		'friendly_name' => __('Notify accounts', 'webseer'),
