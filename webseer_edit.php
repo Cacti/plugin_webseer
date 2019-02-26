@@ -136,10 +136,8 @@ function webseer_edit_url () {
 	if (!isempty_request_var('id')) {
 		$url = db_fetch_row_prepared('SELECT * FROM plugin_webseer_urls WHERE id = ?', array(get_request_var('id')), false);
 		$header_label = __('Query [edit: %s]', $url['url'], 'webseer');
-		$url['notify_accounts'] = explode(',', $url['notify_accounts']);
 	}else{
 		$header_label = __('Query [new]', 'webseer');
-		$url['notify_accounts'] = array();
 	}
 
 	form_start('webseer_edit.php');
@@ -159,6 +157,7 @@ function webseer_edit_url () {
 
 	?>
 	<script type='text/javascript'>
+
 	$(function() {
 		var msWidth = 100;
 		$('#notify_accounts option').each(function() {
@@ -218,6 +217,7 @@ function webseer_edit_url () {
 			width: msWidth
 		});
 	});
+
 	</script>
 	<?php
 }

@@ -26,7 +26,7 @@ include_once(__DIR__ . '/constants.php');
 
 global	$webseer_actions_proxy, $webseer_actions_url, $webseer_actions_server,
 	$webseer_proxy_fields, $webseer_server_fields, $webseer_url_fields,
-	$webseer_notify_users, $httperrors, $httpcompressions, $webseer_seconds,
+	$webseer_notify_accounts, $httperrors, $httpcompressions, $webseer_seconds,
 	$webseer_minutes;
 
 $httperrors = array(
@@ -118,16 +118,16 @@ $webseer_notify_formats = array(
 	WEBSEER_FORMAT_PLAIN => 'plain',
 );
 
-$webser_contact_users = db_fetch_assoc("SELECT plugin_webseer_contacts.id, plugin_webseer_contacts.data,
+$webseer_contact_users = db_fetch_assoc("SELECT plugin_webseer_contacts.id, plugin_webseer_contacts.data,
 	plugin_webseer_contacts.type, user_auth.full_name
 	FROM plugin_webseer_contacts
 	LEFT JOIN user_auth ON user_auth.id=plugin_webseer_contacts.user_id
 	WHERE plugin_webseer_contacts.data != ''");
 
-$webseer_notify_users = array();
-if (!empty($users)) {
+$webseer_notify_accounts = array();
+if (!empty($webseer_contact_users)) {
 	foreach ($webseer_contact_users as $webseer_contact_user) {
-		$webseer_notify_users[$webseer_contact_user['id']] = $webseer_contact_user['full_name'] . ' - ' . ucfirst($webseer_contact_user['type']);
+		$webseer_notify_accounts[$webseer_contact_user['id']] = $webseer_contact_user['full_name'] . ' - ' . ucfirst($webseer_contact_user['type']);
 	}
 }
 
@@ -410,9 +410,8 @@ $webseer_url_fields = array(
 		'friendly_name' => __('Notify accounts', 'webseer'),
 		'method' => 'drop_multi',
 		'description' => __('This is a listing of accounts that will be notified when this website goes down.', 'webseer'),
-		'array' => $webseer_notify_users,
-		'sql' => 'SELECT id FROM plugin_webseer_contacts',
-		'value' => '|arg1:notify_users|',
+		'array' => $webseer_notify_accounts,
+		'value' => '|arg1:notify_accounts|',
 	),
 	'notify_extra' => array(
 		'friendly_name' => __('Extra Alert Emails', 'webseer'),
