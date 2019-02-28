@@ -43,6 +43,8 @@ in GitHub.
 
 * issue#27: Notification email sent twice with different info
 
+* issue#28: Notification email not sent
+
 * issue#31: Undefined variable 'del' error in webseer.php
 
 * issue#34: Undefined index 'search' when saving Webseer Server
