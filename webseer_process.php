@@ -185,7 +185,7 @@ if ($url['url'] != '') {
 		if ($results['result'] == 0) {
 			$url['failures'] = $url['failures'] + 1;
 //			//////////if ($url['failures'] > $url['downtrigger'] && $url['triggered'] == 0) {
-			if ($url['failures'] >= $tf && $url['triggered'] == 0) {
+			if ($url['failures'] >= ($url['downtrigger'] * 60)/$poller_interval && $url['triggered'] == 0) {
 				$sendemail = true;
 				$url['triggered'] = 1;
 			}
