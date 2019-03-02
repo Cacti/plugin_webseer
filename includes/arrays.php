@@ -118,11 +118,15 @@ $webseer_notify_formats = array(
 	WEBSEER_FORMAT_PLAIN => 'plain',
 );
 
-$webseer_contact_users = db_fetch_assoc("SELECT plugin_webseer_contacts.id, plugin_webseer_contacts.data,
-	plugin_webseer_contacts.type, user_auth.full_name
-	FROM plugin_webseer_contacts
-	LEFT JOIN user_auth ON user_auth.id=plugin_webseer_contacts.user_id
-	WHERE plugin_webseer_contacts.data != ''");
+if (db_table_exists('plugin_webseer_contacts')) {
+	$webseer_contact_users = db_fetch_assoc("SELECT pwc.id, pwc.data, pwc.type, ua.full_name
+		FROM plugin_webseer_contacts AS pwc
+		LEFT JOIN user_auth AS ua
+		ON ua.id=pwc.user_id
+		WHERE pwc.data != ''");
+} else {
+	$webseer_contact_users = array();
+}
 
 $webseer_notify_accounts = array();
 if (!empty($webseer_contact_users)) {
