@@ -144,7 +144,9 @@ $servers = plugin_webseer_update_servers();
 $end   = microtime(true);
 $ttime = round($end - $start, 3);
 
-cacti_log("WEBSEER STATS: Total Time:$ttime, Service Checks:" . cacti_sizeof($urls) . ", Servers:" . $servers, false, 'SYSTEM');
+$stats = 'Time:' . $ttime . ' Checks:' . sizeof($urls) . ' Servers:' . $servers;
+cacti_log("WEBSEER STATS: $stats", false, 'SYSTEM');
+set_config_option('stats_webseer', $stats);
 
 function plugin_webseer_register_server() {
 	global $config;
