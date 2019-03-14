@@ -206,12 +206,14 @@ function plugin_webseer_update_servers() {
 		WHERE isme = 0
 		AND enabled = 1');
 
-	foreach ($servers as $server) {
-		$server['debug_type'] = 'Server';
-		$cc = new cURL(true, 'cookies.txt', $server['compression'], '', $server);;
-		$data = array();
-		$data['action'] = 'HEARTBEAT';
-		$results = $cc->post($server['url'], $data);
+	if ($servers !== false && cacti_sizeof($servers)) {
+		foreach ($servers as $server) {
+			$server['debug_type'] = 'Server';
+			$cc = new cURL(true, 'cookies.txt', $server['compression'], '', $server);;
+			$data = array();
+			$data['action'] = 'HEARTBEAT';
+			$results = $cc->post($server['url'], $data);
+		}
 	}
 
 	return cacti_sizeof($servers);
