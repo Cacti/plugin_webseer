@@ -5,441 +5,561 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-05 16:06-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: tr-TR\n"
+"PO-Revision-Date: 2019-03-16 20:06-0400\n"
+"Language: tr_TR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.2.1\n"
 
 #: ../poller_webseer.php:171
+#, fuzzy
 msgid "Cacti Master"
-msgstr ""
+msgstr "Kaktüsler Master"
 
 #: ../poller_webseer.php:174
+#, fuzzy
 msgid "Cacti Remote Server"
-msgstr ""
+msgstr "Kaktüsler Uzak Sunucu"
 
 #: ../webseer_servers_edit.php:111 ../webseer_edit.php:146
-#, php-format
+#, fuzzy, php-format
 msgid "Query [edit: %s]"
-msgstr ""
+msgstr "Sorgu [düzenle: %s]"
 
 #: ../webseer_servers_edit.php:113 ../webseer_edit.php:149
+#, fuzzy
 msgid "Query [new]"
-msgstr ""
+msgstr "Sorgu [yeni]"
 
 #: ../webseer_servers_edit.php:119
+#, fuzzy
 msgid "Enable Server"
-msgstr ""
+msgstr "Sunucuyu Etkinleştir"
 
 #: ../webseer_servers_edit.php:120
+#, fuzzy
 msgid "Uncheck this box to disabled this server from checking urls."
 msgstr ""
+"Bu sunucunun URL'leri kontrol etmesini devre dışı bırakmak için bu kutunun "
+"işaretini kaldırın."
 
 #: ../webseer_servers_edit.php:126
+#, fuzzy
 msgid "Master Server"
-msgstr ""
+msgstr "Ana Sunucu"
 
 #: ../webseer_servers_edit.php:127
+#, fuzzy
 msgid ""
 "Sets this server to the Master server.  The Master server handles all Email "
 "operations"
 msgstr ""
+"Bu sunucuyu Ana sunucuya ayarlar. Ana sunucu tüm e-posta işlemlerini "
+"gerçekleştirir."
 
 #: ../webseer_servers_edit.php:133
+#, fuzzy
 msgid "Is this server the local server?"
-msgstr ""
+msgstr "Bu sunucu yerel sunucu mu?"
 
 #: ../webseer_servers_edit.php:134
+#, fuzzy
 msgid ""
 "Check this box if the current server you are connected to is this entry."
-msgstr ""
+msgstr "Bağlandığınız sunucu bu giriş ise bu kutuyu işaretleyin."
 
 #: ../webseer_servers_edit.php:140 ../webseer.php:328
 #: ../webseer_servers.php:255
+#, fuzzy
 msgid "Name"
-msgstr ""
+msgstr "İsim"
 
 #: ../webseer_servers_edit.php:141
+#, fuzzy
 msgid "Display Name of this server"
-msgstr ""
+msgstr "Bu sunucunun Görünen Adı"
 
 #: ../webseer_servers_edit.php:147 ../webseer_edit.php:181
 #: ../webseer_servers.php:257
+#, fuzzy
 msgid "IP Address"
-msgstr ""
+msgstr "IP Adresi"
 
 #: ../webseer_servers_edit.php:148
+#, fuzzy
 msgid "IP Address to connect to this server"
-msgstr ""
+msgstr "Bu sunucuya bağlanmak için IP Adresi"
 
 #: ../webseer_servers_edit.php:154 ../webseer_servers.php:259
+#, fuzzy
 msgid "Location"
-msgstr ""
+msgstr "Konum"
 
 #: ../webseer_servers_edit.php:155
+#, fuzzy
 msgid "Location of this server"
-msgstr ""
+msgstr "Bu sunucunun yeri"
 
 #: ../webseer_servers_edit.php:161 ../webseer_edit.php:173 ../webseer.php:186
 #: ../webseer.php:329 ../webseer_servers.php:154 ../webseer_servers.php:256
+#, fuzzy
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: ../webseer_servers_edit.php:162
+#, fuzzy
 msgid "This is the URL to connect to remote.php on this server."
-msgstr ""
+msgstr "Bu sunucudaki remote.php'ye bağlanılacak URL."
 
 #: ../setup.php:30
+#, fuzzy
 msgid "Web Service Check Admin"
-msgstr ""
+msgstr "Web Servis Kontrolü Yöneticisi"
 
 #: ../setup.php:241
+#, fuzzy
 msgid "Management"
-msgstr ""
+msgstr "Kullanıcı Yonetimi"
 
 #: ../setup.php:241
+#, fuzzy
 msgid "Web Service Checks"
-msgstr ""
+msgstr "Web Servis Kontrolleri"
 
 #: ../setup.php:296
+#, fuzzy
 msgid "WebSeer Service Checks"
-msgstr ""
+msgstr "WebSeer Servis Kontrolleri"
 
 #: ../setup.php:303
+#, fuzzy
 msgid "WebSeer Servers"
-msgstr ""
+msgstr "Web Sunucusu"
 
 #: ../setup.php:310 ../setup.php:317 ../setup.php:324
+#, fuzzy
 msgid "Service Check Edit"
-msgstr ""
+msgstr "Servis Kontrolü Düzenle"
 
 #: ../setup.php:331 ../setup.php:338 ../setup.php:345
+#, fuzzy
 msgid "Server Edit"
-msgstr ""
+msgstr "Sunucu Düzenlemesi"
 
 #: ../functions.php:28 ../webseer.php:318 ../webseer.php:509
+#, fuzzy
 msgid "Checks"
-msgstr ""
+msgstr "Kontroller"
 
 #: ../functions.php:29 ../webseer_servers.php:245
+#, fuzzy
 msgid "Servers"
-msgstr ""
+msgstr "Sunucular"
 
 #: ../webseer_edit.php:159
+#, fuzzy
 msgid "Service Check Name"
-msgstr ""
+msgstr "Servis Kontrol Adı"
 
 #: ../webseer_edit.php:160
+#, fuzzy
 msgid ""
 "The name that is displayed for this Service Check, and is included in any "
 "Alert notifications."
 msgstr ""
+"Bu Servis Kontrolü için görüntülenen ad ve Uyarı bildirimlerine dahil edilir."
 
 #: ../webseer_edit.php:166
+#, fuzzy
 msgid "Enable Service Check"
-msgstr ""
+msgstr "Servis Kontrolünü Etkinleştir"
 
 #: ../webseer_edit.php:167
+#, fuzzy
 msgid "Uncheck this box to disabled this url from being checked."
 msgstr ""
+"Bu URL'nin denetlenmesini devre dışı bırakmak için bu kutunun işaretini "
+"kaldırın."
 
 #: ../webseer_edit.php:174
+#, fuzzy
 msgid "The URL to Monitor"
-msgstr ""
+msgstr "İzlenecek URL"
 
 #: ../webseer_edit.php:182
+#, fuzzy
 msgid ""
 "Enter an IP address to connect to.  Leaving blank will use DNS Resolution "
 "instead."
 msgstr ""
+"Bağlanmak için bir IP adresi girin. Boş bırakmak, bunun yerine DNS "
+"Çözünürlüğünü kullanır."
 
 #: ../webseer_edit.php:189
+#, fuzzy
 msgid "Requires Authentication"
-msgstr ""
+msgstr "Kimlik Doğrulama Gerektirir"
 
 #: ../webseer_edit.php:190
+#, fuzzy
 msgid ""
 "Check this box if the site will normally return a 401 Error as it requires a "
 "username and password."
 msgstr ""
+"Site normalde bir kullanıcı adı ve şifre gerektirdiği için 401 Hatası "
+"döndürecekse bu kutuyu işaretleyin."
 
 #: ../webseer_edit.php:196
+#, fuzzy
 msgid "Check Certificate"
-msgstr ""
+msgstr "Sertifikayı Kontrol Et"
 
 #: ../webseer_edit.php:197
+#, fuzzy
 msgid ""
 "If using SSL, check this box if you want to validate the certificate. "
 "Default on, turn off if you the site uses a self-signed certificate."
 msgstr ""
+"SSL kullanıyorsanız, sertifikayı doğrulamak istiyorsanız bu kutuyu "
+"işaretleyin. Varsayılan olarak, sitenin kendinden imzalı bir sertifikası "
+"kullanıyorsanız kapatın."
 
 #: ../webseer_edit.php:202
+#, fuzzy
 msgid "Trigger"
-msgstr ""
+msgstr "Tetikleyici"
 
 #: ../webseer_edit.php:205 ../webseer.php:502 ../webseer_servers.php:393
-#, php-format
+#, fuzzy, php-format
 msgid "%d Minute"
-msgstr ""
+msgstr "% d Dakika"
 
 #: ../webseer_edit.php:206 ../webseer_edit.php:207 ../webseer_edit.php:208
 #: ../webseer_edit.php:209 ../webseer_edit.php:210 ../webseer_edit.php:211
 #: ../webseer_edit.php:212 ../webseer_edit.php:213 ../webseer_edit.php:214
 #: ../webseer.php:502 ../webseer_servers.php:393
-#, php-format
+#, fuzzy, php-format
 msgid "%d Minutes"
-msgstr ""
+msgstr "%d Dakika"
 
 #: ../webseer_edit.php:217
+#, fuzzy
 msgid ""
 "How many minutes the URL must be down before it will send an alert.  After "
 "an alert is sent, in order for a 'Site Recovering' Email to be send, it must "
 "also be up this number of minutes."
 msgstr ""
+"Bir uyarı göndermeden önce URL’nin kaç dakika kapalı kalması gerekir. Bir "
+"uyarı gönderildikten sonra, bir 'Site Kurtarılıyor' E-postasının "
+"gönderilebilmesi için bu dakika kadar olmalıdır."
 
 #: ../webseer_edit.php:221
+#, fuzzy
 msgid "Time Out"
-msgstr ""
+msgstr "Zaman aşımı"
 
 #: ../webseer_edit.php:224 ../webseer_edit.php:225 ../webseer_edit.php:226
 #: ../webseer_edit.php:227 ../webseer_edit.php:228 ../webseer_edit.php:229
 #: ../webseer_edit.php:230 ../webseer_edit.php:231 ../webseer.php:502
 #: ../webseer_servers.php:393
-#, php-format
+#, fuzzy, php-format
 msgid "%d Seconds"
-msgstr ""
+msgstr "%d saniye"
 
 #: ../webseer_edit.php:234
+#, fuzzy
 msgid ""
 "How many seconds to allow the page to timeout before reporting it as down."
 msgstr ""
+"Sayfanın aşağı olarak bildirilmeden önce sayfanın zaman aşımına uğramasına "
+"izin vermek için kaç saniye bekleyin."
 
 #: ../webseer_edit.php:239
+#, fuzzy
 msgid "Response Search String"
-msgstr ""
+msgstr "Yanıt Arama Dizesi"
 
 #: ../webseer_edit.php:240
+#, fuzzy
 msgid ""
 "This is the string to search for in the URL response for a live and working "
 "Web Service."
 msgstr ""
+"Bu, canlı ve çalışan bir Web Hizmeti için URL yanıtında aranacak dizedir."
 
 #: ../webseer_edit.php:247
+#, fuzzy
 msgid "Response Search String - Maintenance Page"
-msgstr ""
+msgstr "Yanıt Arama Dizesi - Bakım Sayfası"
 
 #: ../webseer_edit.php:248
+#, fuzzy
 msgid ""
 "This is the string to search for on the Maintenance Page.  The Service Check "
 "will check for this string if the above string is not found.  If found, it "
 "means that the Web Service is under maintenance."
 msgstr ""
+"Bu Bakım Sayfasında aranacak dizedir. Yukarıdaki kontrol bulunmazsa, Servis "
+"Kontrolü bu dizgiyi kontrol eder. Eğer bulunursa, Web Servisinin bakım "
+"altında olduğu anlamına gelir."
 
 #: ../webseer_edit.php:255
+#, fuzzy
 msgid "Response Search String - Failed"
-msgstr ""
+msgstr "Yanıt Arama Dizesi - Başarısız"
 
 #: ../webseer_edit.php:256
+#, fuzzy
 msgid ""
 "This is the string to search for a known failure in the Web Service "
 "response.  The Service Check will only alert if this string is found, "
 "ignoring any timeout issues and the search strings above."
 msgstr ""
+"Bu, Web Hizmeti yanıtında bilinen bir hatayı aramak için kullanılan dizedir. "
+"Servis Kontrolü, yalnızca bu dizgi bulunduğunda, zaman aşımı sorunlarını ve "
+"yukarıdaki arama dizelerini dikkate almazsa uyarır."
 
 #: ../webseer_edit.php:262
+#, fuzzy
 msgid "Notify accounts"
-msgstr ""
+msgstr "Hesapları bildir"
 
 #: ../webseer_edit.php:264
+#, fuzzy
 msgid ""
 "This is a listing of accounts that will be notified when this website goes "
 "down."
-msgstr ""
+msgstr "Bu web sitesi düştüğünde haberdar edilecek hesapların listesidir."
 
 #: ../webseer_edit.php:269
+#, fuzzy
 msgid "Extra Alert Emails"
-msgstr ""
+msgstr "Ekstra Uyarı E-postaları"
 
 #: ../webseer_edit.php:273
+#, fuzzy
 msgid ""
 "You may specify here extra Emails to receive alerts for this URL (comma "
 "separated)"
 msgstr ""
+"Bu URL için uyarılar almak için buraya ek E-postalar belirleyebilirsiniz "
+"(virgülle ayrılmış)"
 
 #: ../webseer_edit.php:309
+#, fuzzy
 msgid "No Users Selected"
-msgstr ""
+msgstr "Seçili Kullanıcı Yok"
 
 #: ../webseer_edit.php:311
+#, fuzzy
 msgid "Users Selected"
-msgstr ""
+msgstr "Seçilmiş Kullanıcılar"
 
 #: ../webseer_edit.php:314
+#, fuzzy
 msgid "All Users Selected"
-msgstr ""
+msgstr "Tüm Kullanıcılar Seçildi"
 
 #: ../webseer_edit.php:320
+#, fuzzy
 msgid "All"
-msgstr ""
+msgstr "Tümü"
 
 #: ../webseer_edit.php:321
+#, fuzzy
 msgid "None"
-msgstr ""
+msgstr "Yok"
 
 #: ../webseer_edit.php:354 ../webseer.php:478
+#, fuzzy
 msgid "Search"
-msgstr ""
+msgstr "Arama"
 
 #: ../webseer.php:185 ../webseer_servers.php:153
+#, fuzzy
 msgid "Date"
-msgstr ""
+msgstr "Tarih"
 
 #: ../webseer.php:187 ../webseer.php:332 ../webseer_servers.php:156
+#, fuzzy
 msgid "HTTP Code"
-msgstr ""
+msgstr "HTTP Kodu"
 
 #: ../webseer.php:188 ../webseer.php:334 ../webseer_servers.php:157
+#, fuzzy
 msgid "DNS"
-msgstr ""
+msgstr "DNS"
 
 #: ../webseer.php:189 ../webseer.php:335 ../webseer_servers.php:158
+#, fuzzy
 msgid "Connect"
-msgstr ""
+msgstr "Bağlan"
 
 #: ../webseer.php:190 ../webseer.php:336 ../webseer_servers.php:159
+#, fuzzy
 msgid "Redirect"
-msgstr ""
+msgstr "Yönlendir"
 
 #: ../webseer.php:191 ../webseer.php:337 ../webseer_servers.php:160
+#, fuzzy
 msgid "Total"
-msgstr ""
+msgstr "Toplam"
 
 #: ../webseer.php:192 ../webseer.php:330
+#, fuzzy
 msgid "Status"
-msgstr ""
+msgstr "Durum"
 
 #: ../webseer.php:219 ../webseer.php:388 ../webseer_servers.php:182
+#, fuzzy
 msgid "Up"
-msgstr ""
+msgstr "Yukarı"
 
 #: ../webseer.php:219 ../webseer.php:388 ../webseer_servers.php:182
+#, fuzzy
 msgid "Down"
-msgstr ""
+msgstr "Aşağı"
 
 #: ../webseer.php:224 ../webseer_servers.php:192
+#, fuzzy
 msgid "No Events in History"
-msgstr ""
+msgstr "Tarihte Etkinlik Yok"
 
 #: ../webseer.php:234 ../webseer_servers.php:202
+#, fuzzy
 msgid "Delete"
-msgstr ""
+msgstr "Sil"
 
 #: ../webseer.php:235 ../webseer_servers.php:203
+#, fuzzy
 msgid "Disable"
-msgstr ""
+msgstr "Devre Dışı"
 
 #: ../webseer.php:236 ../webseer_servers.php:204
+#, fuzzy
 msgid "Enable"
-msgstr ""
+msgstr "Etkinleştir"
 
 #: ../webseer.php:237
+#, fuzzy
 msgid "Duplicate"
-msgstr ""
+msgstr "Kopyala"
 
 #: ../webseer.php:327 ../webseer_servers.php:254
+#, fuzzy
 msgid "Actions"
-msgstr ""
+msgstr "Eylemler"
 
 #: ../webseer.php:331 ../webseer.php:391 ../webseer.php:393
 #: ../webseer_servers.php:258 ../webseer_servers.php:381
+#, fuzzy
 msgid "Enabled"
-msgstr ""
+msgstr "Etkin"
 
 #: ../webseer.php:333
+#, fuzzy
 msgid "Auth"
-msgstr ""
+msgstr "auth"
 
 #: ../webseer.php:338
+#, fuzzy
 msgid "Timeout"
-msgstr ""
+msgstr "Zaman Aşımı"
 
 #: ../webseer.php:339 ../webseer_servers.php:260
+#, fuzzy
 msgid "Last Check"
-msgstr ""
+msgstr "Son kontrol"
 
 #: ../webseer.php:382
-#, php-format
+#, fuzzy, php-format
 msgid "DNS: Server %s - A Record for %s"
-msgstr ""
+msgstr "DNS: Sunucu %s - %s için bir kayıt"
 
 #: ../webseer.php:386
+#, fuzzy
 msgid "N/A"
-msgstr ""
+msgstr "N/A"
 
 #: ../webseer.php:391 ../webseer.php:393 ../webseer_servers.php:381
+#, fuzzy
 msgid "Disabled"
-msgstr ""
+msgstr "Devre dışı"
 
 #: ../webseer.php:392 ../webseer_servers.php:155
+#, fuzzy
 msgid "Error"
-msgstr ""
+msgstr "Hata"
 
 #: ../webseer.php:407 ../webseer_servers.php:309
+#, fuzzy
 msgid "No Servers Found"
-msgstr ""
+msgstr "Sunucu Bulunamadı"
 
 #: ../webseer.php:469
+#, fuzzy
 msgid "Webseer Site Management"
-msgstr ""
+msgstr "Websitesi Site Yönetimi"
 
 #: ../webseer.php:484 ../webseer_servers.php:375
+#, fuzzy
 msgid "State"
-msgstr ""
+msgstr "Şehir"
 
 #: ../webseer.php:488 ../webseer_servers.php:379
+#, fuzzy
 msgid "Any"
-msgstr ""
+msgstr "Herhangi"
 
 #: ../webseer.php:497 ../webseer_servers.php:388
+#, fuzzy
 msgid "Refresh"
-msgstr ""
+msgstr "Yenile"
 
 #: ../webseer.php:514 ../webseer_servers.php:405
+#, fuzzy
 msgid "Default"
-msgstr ""
+msgstr "Varsayılan"
 
 #: ../webseer_servers.php:261
+#, fuzzy
 msgid "Master"
-msgstr ""
+msgstr "Orijinal Fotoğraf"
 
 #: ../webseer_servers.php:262
+#, fuzzy
 msgid "This Host"
-msgstr ""
+msgstr "Bu Sunucunun"
 
 #: ../webseer_servers.php:299 ../webseer_servers.php:302
 #: ../webseer_servers.php:303
+#, fuzzy
 msgid "Yes"
-msgstr ""
+msgstr "Evet"
 
 #: ../webseer_servers.php:299 ../webseer_servers.php:302
 #: ../webseer_servers.php:303
+#, fuzzy
 msgid "No"
-msgstr ""
+msgstr "Hayır"
 
 #: ../webseer_servers.php:367
+#, fuzzy
 msgid "Webseer Server Management"
-msgstr ""
+msgstr "Web sunucusu Sunucu Yönetimi"
 
 #: ../webseer_servers.php:381
+#, fuzzy
 msgid "Triggered"
-msgstr ""
+msgstr "Tetikleyici"
 
 #: ../webseer_servers.php:400
+#, fuzzy
 msgid "Sites"
-msgstr ""
+msgstr "Siteler"

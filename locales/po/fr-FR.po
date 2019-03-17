@@ -5,441 +5,565 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-05 16:06-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: fr-FR\n"
+"PO-Revision-Date: 2019-03-16 19:53-0400\n"
+"Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.2.1\n"
 
 #: ../poller_webseer.php:171
+#, fuzzy
 msgid "Cacti Master"
-msgstr ""
+msgstr "Cacti Master"
 
 #: ../poller_webseer.php:174
+#, fuzzy
 msgid "Cacti Remote Server"
-msgstr ""
+msgstr "Serveur à distance Cacti"
 
 #: ../webseer_servers_edit.php:111 ../webseer_edit.php:146
-#, php-format
+#, fuzzy, php-format
 msgid "Query [edit: %s]"
-msgstr ""
+msgstr "Requête[modifier : %s]"
 
 #: ../webseer_servers_edit.php:113 ../webseer_edit.php:149
+#, fuzzy
 msgid "Query [new]"
-msgstr ""
+msgstr "Requête[nouveau]"
 
 #: ../webseer_servers_edit.php:119
+#, fuzzy
 msgid "Enable Server"
-msgstr ""
+msgstr "Activer le serveur"
 
 #: ../webseer_servers_edit.php:120
+#, fuzzy
 msgid "Uncheck this box to disabled this server from checking urls."
 msgstr ""
+"Décochez cette case pour désactiver la vérification des urls sur ce serveur."
 
 #: ../webseer_servers_edit.php:126
+#, fuzzy
 msgid "Master Server"
-msgstr ""
+msgstr "Serveur Principal"
 
 #: ../webseer_servers_edit.php:127
+#, fuzzy
 msgid ""
 "Sets this server to the Master server.  The Master server handles all Email "
 "operations"
 msgstr ""
+"Définit ce serveur comme serveur maître.  Le serveur maître gère toutes les "
+"opérations de courrier électronique"
 
 #: ../webseer_servers_edit.php:133
+#, fuzzy
 msgid "Is this server the local server?"
-msgstr ""
+msgstr "Ce serveur est-il le serveur local ?"
 
 #: ../webseer_servers_edit.php:134
+#, fuzzy
 msgid ""
 "Check this box if the current server you are connected to is this entry."
 msgstr ""
+"Cochez cette case si le serveur auquel vous êtes connecté est cette entrée."
 
 #: ../webseer_servers_edit.php:140 ../webseer.php:328
 #: ../webseer_servers.php:255
+#, fuzzy
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #: ../webseer_servers_edit.php:141
+#, fuzzy
 msgid "Display Name of this server"
-msgstr ""
+msgstr "Nom d'affichage de ce serveur"
 
 #: ../webseer_servers_edit.php:147 ../webseer_edit.php:181
 #: ../webseer_servers.php:257
+#, fuzzy
 msgid "IP Address"
-msgstr ""
+msgstr "Adresse IP"
 
 #: ../webseer_servers_edit.php:148
+#, fuzzy
 msgid "IP Address to connect to this server"
-msgstr ""
+msgstr "Adresse IP pour se connecter à ce serveur"
 
 #: ../webseer_servers_edit.php:154 ../webseer_servers.php:259
+#, fuzzy
 msgid "Location"
-msgstr ""
+msgstr "Emplacement"
 
 #: ../webseer_servers_edit.php:155
+#, fuzzy
 msgid "Location of this server"
-msgstr ""
+msgstr "Emplacement de ce serveur"
 
 #: ../webseer_servers_edit.php:161 ../webseer_edit.php:173 ../webseer.php:186
 #: ../webseer.php:329 ../webseer_servers.php:154 ../webseer_servers.php:256
+#, fuzzy
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: ../webseer_servers_edit.php:162
+#, fuzzy
 msgid "This is the URL to connect to remote.php on this server."
-msgstr ""
+msgstr "C'est l'URL pour se connecter à remote.php sur ce serveur."
 
 #: ../setup.php:30
+#, fuzzy
 msgid "Web Service Check Admin"
-msgstr ""
+msgstr "Web Service Check Admin"
 
 #: ../setup.php:241
+#, fuzzy
 msgid "Management"
-msgstr ""
+msgstr "Gestion"
 
 #: ../setup.php:241
+#, fuzzy
 msgid "Web Service Checks"
-msgstr ""
+msgstr "Contrôles de service Web"
 
 #: ../setup.php:296
+#, fuzzy
 msgid "WebSeer Service Checks"
-msgstr ""
+msgstr "Contrôles de service WebSeer"
 
 #: ../setup.php:303
+#, fuzzy
 msgid "WebSeer Servers"
-msgstr ""
+msgstr "Serveurs WebSeer"
 
 #: ../setup.php:310 ../setup.php:317 ../setup.php:324
+#, fuzzy
 msgid "Service Check Edit"
-msgstr ""
+msgstr "Vérification du service Modifier"
 
 #: ../setup.php:331 ../setup.php:338 ../setup.php:345
+#, fuzzy
 msgid "Server Edit"
-msgstr ""
+msgstr "Édition du serveur"
 
 #: ../functions.php:28 ../webseer.php:318 ../webseer.php:509
+#, fuzzy
 msgid "Checks"
-msgstr ""
+msgstr "Contrôles"
 
 #: ../functions.php:29 ../webseer_servers.php:245
+#, fuzzy
 msgid "Servers"
-msgstr ""
+msgstr "Serveurs"
 
 #: ../webseer_edit.php:159
+#, fuzzy
 msgid "Service Check Name"
-msgstr ""
+msgstr "Nom du chèque de service"
 
 #: ../webseer_edit.php:160
+#, fuzzy
 msgid ""
 "The name that is displayed for this Service Check, and is included in any "
 "Alert notifications."
 msgstr ""
+"Le nom qui est affiché pour ce contrôle de service et qui est inclus dans "
+"toutes les notifications d'alerte."
 
 #: ../webseer_edit.php:166
+#, fuzzy
 msgid "Enable Service Check"
-msgstr ""
+msgstr "Activer le contrôle de service"
 
 #: ../webseer_edit.php:167
+#, fuzzy
 msgid "Uncheck this box to disabled this url from being checked."
-msgstr ""
+msgstr "Décochez cette case pour désactiver cette url."
 
 #: ../webseer_edit.php:174
+#, fuzzy
 msgid "The URL to Monitor"
-msgstr ""
+msgstr "L'URL à surveiller"
 
 #: ../webseer_edit.php:182
+#, fuzzy
 msgid ""
 "Enter an IP address to connect to.  Leaving blank will use DNS Resolution "
 "instead."
 msgstr ""
+"Entrez une adresse IP à laquelle vous souhaitez vous connecter.  Laisser "
+"vide utilisera la résolution DNS à la place."
 
 #: ../webseer_edit.php:189
+#, fuzzy
 msgid "Requires Authentication"
-msgstr ""
+msgstr "Nécessite une authentification"
 
 #: ../webseer_edit.php:190
+#, fuzzy
 msgid ""
 "Check this box if the site will normally return a 401 Error as it requires a "
 "username and password."
 msgstr ""
+"Cochez cette case si le site renvoie normalement une erreur 401 car il "
+"nécessite un nom d'utilisateur et un mot de passe."
 
 #: ../webseer_edit.php:196
+#, fuzzy
 msgid "Check Certificate"
-msgstr ""
+msgstr "Vérifier le certificat"
 
 #: ../webseer_edit.php:197
+#, fuzzy
 msgid ""
 "If using SSL, check this box if you want to validate the certificate. "
 "Default on, turn off if you the site uses a self-signed certificate."
 msgstr ""
+"Si vous utilisez SSL, cochez cette case si vous voulez valider le "
+"certificat. Par défaut activé, désactivé si vous utilisez un certificat auto-"
+"signé."
 
 #: ../webseer_edit.php:202
+#, fuzzy
 msgid "Trigger"
-msgstr ""
+msgstr "Déclencheur"
 
 #: ../webseer_edit.php:205 ../webseer.php:502 ../webseer_servers.php:393
-#, php-format
+#, fuzzy, php-format
 msgid "%d Minute"
-msgstr ""
+msgstr "d Minute %d Minute"
 
 #: ../webseer_edit.php:206 ../webseer_edit.php:207 ../webseer_edit.php:208
 #: ../webseer_edit.php:209 ../webseer_edit.php:210 ../webseer_edit.php:211
 #: ../webseer_edit.php:212 ../webseer_edit.php:213 ../webseer_edit.php:214
 #: ../webseer.php:502 ../webseer_servers.php:393
-#, php-format
+#, fuzzy, php-format
 msgid "%d Minutes"
-msgstr ""
+msgstr "%d minutes"
 
 #: ../webseer_edit.php:217
+#, fuzzy
 msgid ""
 "How many minutes the URL must be down before it will send an alert.  After "
 "an alert is sent, in order for a 'Site Recovering' Email to be send, it must "
 "also be up this number of minutes."
 msgstr ""
+"Combien de minutes l'URL doit être en panne avant d'envoyer une alerte.  "
+"Après l'envoi d'une alerte, pour qu'un e-mail de récupération de site soit "
+"envoyé, il doit également être en haut de ce nombre de minutes."
 
 #: ../webseer_edit.php:221
+#, fuzzy
 msgid "Time Out"
-msgstr ""
+msgstr "Expiration"
 
 #: ../webseer_edit.php:224 ../webseer_edit.php:225 ../webseer_edit.php:226
 #: ../webseer_edit.php:227 ../webseer_edit.php:228 ../webseer_edit.php:229
 #: ../webseer_edit.php:230 ../webseer_edit.php:231 ../webseer.php:502
 #: ../webseer_servers.php:393
-#, php-format
+#, fuzzy, php-format
 msgid "%d Seconds"
-msgstr ""
+msgstr "%d secondes"
 
 #: ../webseer_edit.php:234
+#, fuzzy
 msgid ""
 "How many seconds to allow the page to timeout before reporting it as down."
 msgstr ""
+"Combien de secondes pour permettre à la page de s'écouler avant qu'elle ne "
+"soit signalée comme étant vers le bas."
 
 #: ../webseer_edit.php:239
+#, fuzzy
 msgid "Response Search String"
-msgstr ""
+msgstr "Chaîne de recherche de réponse"
 
 #: ../webseer_edit.php:240
+#, fuzzy
 msgid ""
 "This is the string to search for in the URL response for a live and working "
 "Web Service."
 msgstr ""
+"C'est la chaîne de caractères à rechercher dans la réponse URL pour un "
+"service Web en direct et fonctionnel."
 
 #: ../webseer_edit.php:247
+#, fuzzy
 msgid "Response Search String - Maintenance Page"
-msgstr ""
+msgstr "Chaîne de recherche de réponse - Page d'entretien"
 
 #: ../webseer_edit.php:248
+#, fuzzy
 msgid ""
 "This is the string to search for on the Maintenance Page.  The Service Check "
 "will check for this string if the above string is not found.  If found, it "
 "means that the Web Service is under maintenance."
 msgstr ""
+"C'est la chaîne de caractères à rechercher sur la page de maintenance.  Le "
+"Service Check vérifiera la présence de cette chaîne si la chaîne ci-dessus "
+"n'est pas trouvée.  S'il est trouvé, cela signifie que le service Web est en "
+"cours de maintenance."
 
 #: ../webseer_edit.php:255
+#, fuzzy
 msgid "Response Search String - Failed"
-msgstr ""
+msgstr "Chaîne de recherche de réponse - Échec"
 
 #: ../webseer_edit.php:256
+#, fuzzy
 msgid ""
 "This is the string to search for a known failure in the Web Service "
 "response.  The Service Check will only alert if this string is found, "
 "ignoring any timeout issues and the search strings above."
 msgstr ""
+"Il s'agit de la chaîne de caractères permettant de rechercher un échec connu "
+"dans la réponse du service Web.  Le Service Check n'alertera que si cette "
+"chaîne est trouvée, ignorant tout problème de délai d'attente et les chaînes "
+"de recherche ci-dessus."
 
 #: ../webseer_edit.php:262
+#, fuzzy
 msgid "Notify accounts"
-msgstr ""
+msgstr "Aviser les comptes"
 
 #: ../webseer_edit.php:264
+#, fuzzy
 msgid ""
 "This is a listing of accounts that will be notified when this website goes "
 "down."
 msgstr ""
+"Il s'agit d'une liste de comptes qui seront avisés lorsque ce site Web sera "
+"mis hors service."
 
 #: ../webseer_edit.php:269
+#, fuzzy
 msgid "Extra Alert Emails"
-msgstr ""
+msgstr "Courriels d'alerte supplémentaire"
 
 #: ../webseer_edit.php:273
+#, fuzzy
 msgid ""
 "You may specify here extra Emails to receive alerts for this URL (comma "
 "separated)"
 msgstr ""
+"Vous pouvez spécifier ici les Emails supplémentaires pour recevoir les "
+"alertes pour cette URL (séparés par des virgules)"
 
 #: ../webseer_edit.php:309
+#, fuzzy
 msgid "No Users Selected"
-msgstr ""
+msgstr "Aucun utilisateur sélectionné"
 
 #: ../webseer_edit.php:311
+#, fuzzy
 msgid "Users Selected"
-msgstr ""
+msgstr "Utilisateurs Sélectionnés"
 
 #: ../webseer_edit.php:314
+#, fuzzy
 msgid "All Users Selected"
-msgstr ""
+msgstr "Tous les utilisateurs sélectionnés"
 
 #: ../webseer_edit.php:320
+#, fuzzy
 msgid "All"
-msgstr ""
+msgstr "Tout"
 
 #: ../webseer_edit.php:321
+#, fuzzy
 msgid "None"
-msgstr ""
+msgstr "Aucun"
 
 #: ../webseer_edit.php:354 ../webseer.php:478
+#, fuzzy
 msgid "Search"
-msgstr ""
+msgstr "Rechercher"
 
 #: ../webseer.php:185 ../webseer_servers.php:153
+#, fuzzy
 msgid "Date"
-msgstr ""
+msgstr "Date"
 
 #: ../webseer.php:187 ../webseer.php:332 ../webseer_servers.php:156
+#, fuzzy
 msgid "HTTP Code"
-msgstr ""
+msgstr "Code HTTP"
 
 #: ../webseer.php:188 ../webseer.php:334 ../webseer_servers.php:157
+#, fuzzy
 msgid "DNS"
-msgstr ""
+msgstr "DNS"
 
 #: ../webseer.php:189 ../webseer.php:335 ../webseer_servers.php:158
+#, fuzzy
 msgid "Connect"
-msgstr ""
+msgstr "Connecter"
 
 #: ../webseer.php:190 ../webseer.php:336 ../webseer_servers.php:159
+#, fuzzy
 msgid "Redirect"
-msgstr ""
+msgstr "Redirection"
 
 #: ../webseer.php:191 ../webseer.php:337 ../webseer_servers.php:160
+#, fuzzy
 msgid "Total"
-msgstr ""
+msgstr "Total"
 
 #: ../webseer.php:192 ../webseer.php:330
+#, fuzzy
 msgid "Status"
-msgstr ""
+msgstr "État"
 
 #: ../webseer.php:219 ../webseer.php:388 ../webseer_servers.php:182
+#, fuzzy
 msgid "Up"
-msgstr ""
+msgstr "Haut"
 
 #: ../webseer.php:219 ../webseer.php:388 ../webseer_servers.php:182
+#, fuzzy
 msgid "Down"
-msgstr ""
+msgstr "Bas"
 
 #: ../webseer.php:224 ../webseer_servers.php:192
+#, fuzzy
 msgid "No Events in History"
-msgstr ""
+msgstr "Aucun événement dans l'historique"
 
 #: ../webseer.php:234 ../webseer_servers.php:202
+#, fuzzy
 msgid "Delete"
-msgstr ""
+msgstr "Supprimer"
 
 #: ../webseer.php:235 ../webseer_servers.php:203
+#, fuzzy
 msgid "Disable"
-msgstr ""
+msgstr "Désactiver"
 
 #: ../webseer.php:236 ../webseer_servers.php:204
+#, fuzzy
 msgid "Enable"
-msgstr ""
+msgstr "Activer"
 
 #: ../webseer.php:237
+#, fuzzy
 msgid "Duplicate"
-msgstr ""
+msgstr "Dupliquer"
 
 #: ../webseer.php:327 ../webseer_servers.php:254
+#, fuzzy
 msgid "Actions"
-msgstr ""
+msgstr "Actions"
 
 #: ../webseer.php:331 ../webseer.php:391 ../webseer.php:393
 #: ../webseer_servers.php:258 ../webseer_servers.php:381
+#, fuzzy
 msgid "Enabled"
-msgstr ""
+msgstr "Activé"
 
 #: ../webseer.php:333
+#, fuzzy
 msgid "Auth"
-msgstr ""
+msgstr "Auth"
 
 #: ../webseer.php:338
+#, fuzzy
 msgid "Timeout"
-msgstr ""
+msgstr "Délai"
 
 #: ../webseer.php:339 ../webseer_servers.php:260
+#, fuzzy
 msgid "Last Check"
-msgstr ""
+msgstr "Dernière vérification"
 
 #: ../webseer.php:382
-#, php-format
+#, fuzzy, php-format
 msgid "DNS: Server %s - A Record for %s"
-msgstr ""
+msgstr "DNS : Server %s - Un record pour %s"
 
 #: ../webseer.php:386
+#, fuzzy
 msgid "N/A"
-msgstr ""
+msgstr "N/A"
 
 #: ../webseer.php:391 ../webseer.php:393 ../webseer_servers.php:381
+#, fuzzy
 msgid "Disabled"
-msgstr ""
+msgstr "Désactivé"
 
 #: ../webseer.php:392 ../webseer_servers.php:155
+#, fuzzy
 msgid "Error"
-msgstr ""
+msgstr "Erreur"
 
 #: ../webseer.php:407 ../webseer_servers.php:309
+#, fuzzy
 msgid "No Servers Found"
-msgstr ""
+msgstr "Aucun serveur trouvé"
 
 #: ../webseer.php:469
+#, fuzzy
 msgid "Webseer Site Management"
-msgstr ""
+msgstr "Gestion du site Webseer"
 
 #: ../webseer.php:484 ../webseer_servers.php:375
+#, fuzzy
 msgid "State"
-msgstr ""
+msgstr "État"
 
 #: ../webseer.php:488 ../webseer_servers.php:379
+#, fuzzy
 msgid "Any"
-msgstr ""
+msgstr "N'importe quel"
 
 #: ../webseer.php:497 ../webseer_servers.php:388
+#, fuzzy
 msgid "Refresh"
-msgstr ""
+msgstr "Actualiser"
 
 #: ../webseer.php:514 ../webseer_servers.php:405
+#, fuzzy
 msgid "Default"
-msgstr ""
+msgstr "Défaut"
 
 #: ../webseer_servers.php:261
+#, fuzzy
 msgid "Master"
-msgstr ""
+msgstr "Maître"
 
 #: ../webseer_servers.php:262
+#, fuzzy
 msgid "This Host"
-msgstr ""
+msgstr "Cet hôte"
 
 #: ../webseer_servers.php:299 ../webseer_servers.php:302
 #: ../webseer_servers.php:303
+#, fuzzy
 msgid "Yes"
-msgstr ""
+msgstr "Oui"
 
 #: ../webseer_servers.php:299 ../webseer_servers.php:302
 #: ../webseer_servers.php:303
+#, fuzzy
 msgid "No"
-msgstr ""
+msgstr "Non"
 
 #: ../webseer_servers.php:367
+#, fuzzy
 msgid "Webseer Server Management"
-msgstr ""
+msgstr "Gestion du serveur Webseer"
 
 #: ../webseer_servers.php:381
+#, fuzzy
 msgid "Triggered"
-msgstr ""
+msgstr "Déclenché"
 
 #: ../webseer_servers.php:400
+#, fuzzy
 msgid "Sites"
-msgstr ""
+msgstr "Sites"

@@ -5,441 +5,553 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-05 16:06-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: ar-SA\n"
+"PO-Revision-Date: 2019-03-16 19:48-0400\n"
+"Language: ar_SA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.2.1\n"
 
 #: ../poller_webseer.php:171
+#, fuzzy
 msgid "Cacti Master"
-msgstr ""
+msgstr "الصبار ماجستير"
 
 #: ../poller_webseer.php:174
+#, fuzzy
 msgid "Cacti Remote Server"
-msgstr ""
+msgstr "الصبار خادم عن بعد"
 
 #: ../webseer_servers_edit.php:111 ../webseer_edit.php:146
-#, php-format
+#, fuzzy, php-format
 msgid "Query [edit: %s]"
-msgstr ""
+msgstr "الاستعلام [عدل:٪ s]"
 
 #: ../webseer_servers_edit.php:113 ../webseer_edit.php:149
+#, fuzzy
 msgid "Query [new]"
-msgstr ""
+msgstr "استعلام [جديد]"
 
 #: ../webseer_servers_edit.php:119
+#, fuzzy
 msgid "Enable Server"
-msgstr ""
+msgstr "تمكين الخادم"
 
 #: ../webseer_servers_edit.php:120
+#, fuzzy
 msgid "Uncheck this box to disabled this server from checking urls."
-msgstr ""
+msgstr "ألغ تحديد هذا المربع لتعطيل هذا الخادم من التحقق من عناوين المواقع."
 
 #: ../webseer_servers_edit.php:126
+#, fuzzy
 msgid "Master Server"
-msgstr ""
+msgstr "سيد الخادم"
 
 #: ../webseer_servers_edit.php:127
+#, fuzzy
 msgid ""
 "Sets this server to the Master server.  The Master server handles all Email "
 "operations"
 msgstr ""
+"يضبط هذا الخادم على الخادم الرئيسي. يعالج خادم Master جميع عمليات البريد "
+"الإلكتروني"
 
 #: ../webseer_servers_edit.php:133
+#, fuzzy
 msgid "Is this server the local server?"
-msgstr ""
+msgstr "هل هذا الخادم هو الخادم المحلي؟"
 
 #: ../webseer_servers_edit.php:134
+#, fuzzy
 msgid ""
 "Check this box if the current server you are connected to is this entry."
-msgstr ""
+msgstr "حدد هذا المربع إذا كان الخادم الحالي الذي تتصل به هو هذا الإدخال."
 
 #: ../webseer_servers_edit.php:140 ../webseer.php:328
 #: ../webseer_servers.php:255
+#, fuzzy
 msgid "Name"
-msgstr ""
+msgstr "الاسم"
 
 #: ../webseer_servers_edit.php:141
+#, fuzzy
 msgid "Display Name of this server"
-msgstr ""
+msgstr "اسم العرض لهذا الخادم"
 
 #: ../webseer_servers_edit.php:147 ../webseer_edit.php:181
 #: ../webseer_servers.php:257
+#, fuzzy
 msgid "IP Address"
-msgstr ""
+msgstr "عنوان IP"
 
 #: ../webseer_servers_edit.php:148
+#, fuzzy
 msgid "IP Address to connect to this server"
-msgstr ""
+msgstr "عنوان IP للاتصال بهذا الخادم"
 
 #: ../webseer_servers_edit.php:154 ../webseer_servers.php:259
+#, fuzzy
 msgid "Location"
-msgstr ""
+msgstr "الموقع"
 
 #: ../webseer_servers_edit.php:155
+#, fuzzy
 msgid "Location of this server"
-msgstr ""
+msgstr "موقع هذا الخادم"
 
 #: ../webseer_servers_edit.php:161 ../webseer_edit.php:173 ../webseer.php:186
 #: ../webseer.php:329 ../webseer_servers.php:154 ../webseer_servers.php:256
+#, fuzzy
 msgid "URL"
-msgstr ""
+msgstr "الرابط"
 
 #: ../webseer_servers_edit.php:162
+#, fuzzy
 msgid "This is the URL to connect to remote.php on this server."
-msgstr ""
+msgstr "هذا هو عنوان URL للاتصال بـ remote.php على هذا الخادم."
 
 #: ../setup.php:30
+#, fuzzy
 msgid "Web Service Check Admin"
-msgstr ""
+msgstr "التحقق من خدمة الويب"
 
 #: ../setup.php:241
+#, fuzzy
 msgid "Management"
-msgstr ""
+msgstr "إدارة"
 
 #: ../setup.php:241
+#, fuzzy
 msgid "Web Service Checks"
-msgstr ""
+msgstr "الشيكات خدمة الويب"
 
 #: ../setup.php:296
+#, fuzzy
 msgid "WebSeer Service Checks"
-msgstr ""
+msgstr "الشيكات خدمة WebSeer"
 
 #: ../setup.php:303
+#, fuzzy
 msgid "WebSeer Servers"
-msgstr ""
+msgstr "خوادم الويب"
 
 #: ../setup.php:310 ../setup.php:317 ../setup.php:324
+#, fuzzy
 msgid "Service Check Edit"
-msgstr ""
+msgstr "تحقق الخدمة تحرير"
 
 #: ../setup.php:331 ../setup.php:338 ../setup.php:345
+#, fuzzy
 msgid "Server Edit"
-msgstr ""
+msgstr "خادم التحرير"
 
 #: ../functions.php:28 ../webseer.php:318 ../webseer.php:509
+#, fuzzy
 msgid "Checks"
-msgstr ""
+msgstr "الشيكات"
 
 #: ../functions.php:29 ../webseer_servers.php:245
+#, fuzzy
 msgid "Servers"
-msgstr ""
+msgstr "الخوادم"
 
 #: ../webseer_edit.php:159
+#, fuzzy
 msgid "Service Check Name"
-msgstr ""
+msgstr "اسم خدمة التحقق"
 
 #: ../webseer_edit.php:160
+#, fuzzy
 msgid ""
 "The name that is displayed for this Service Check, and is included in any "
 "Alert notifications."
 msgstr ""
+"الاسم الذي يتم عرضه لهذا التحقق من الخدمة ، ويتم تضمينه في أي إشعارات تنبيه."
 
 #: ../webseer_edit.php:166
+#, fuzzy
 msgid "Enable Service Check"
-msgstr ""
+msgstr "تمكين التحقق من الخدمة"
 
 #: ../webseer_edit.php:167
+#, fuzzy
 msgid "Uncheck this box to disabled this url from being checked."
-msgstr ""
+msgstr "ألغ تحديد هذا المربع لتعطيل عنوان url هذا."
 
 #: ../webseer_edit.php:174
+#, fuzzy
 msgid "The URL to Monitor"
-msgstr ""
+msgstr "عنوان URL للمراقبة"
 
 #: ../webseer_edit.php:182
+#, fuzzy
 msgid ""
 "Enter an IP address to connect to.  Leaving blank will use DNS Resolution "
 "instead."
-msgstr ""
+msgstr "أدخل عنوان IP للاتصال به. ترك الفراغ سيستخدم تحليل DNS بدلاً من ذلك."
 
 #: ../webseer_edit.php:189
+#, fuzzy
 msgid "Requires Authentication"
-msgstr ""
+msgstr "يتطلب المصادقة"
 
 #: ../webseer_edit.php:190
+#, fuzzy
 msgid ""
 "Check this box if the site will normally return a 401 Error as it requires a "
 "username and password."
 msgstr ""
+"حدد هذا المربع إذا كان الموقع سيعود عادةً خطأ 401 لأنه يتطلب اسم مستخدم وكلمة "
+"مرور."
 
 #: ../webseer_edit.php:196
+#, fuzzy
 msgid "Check Certificate"
-msgstr ""
+msgstr "تحقق الشهادة"
 
 #: ../webseer_edit.php:197
+#, fuzzy
 msgid ""
 "If using SSL, check this box if you want to validate the certificate. "
 "Default on, turn off if you the site uses a self-signed certificate."
 msgstr ""
+"إذا كنت تستخدم طبقة المقابس الآمنة ، فحدد هذا المربع إذا كنت تريد التحقق من "
+"صحة الشهادة. افتراضيًا ، قم بإيقاف التشغيل إذا كان الموقع يستخدم شهادة موقعة "
+"ذاتيًا."
 
 #: ../webseer_edit.php:202
+#, fuzzy
 msgid "Trigger"
-msgstr ""
+msgstr "اثار"
 
 #: ../webseer_edit.php:205 ../webseer.php:502 ../webseer_servers.php:393
-#, php-format
+#, fuzzy, php-format
 msgid "%d Minute"
-msgstr ""
+msgstr "٪ د دقيقة"
 
 #: ../webseer_edit.php:206 ../webseer_edit.php:207 ../webseer_edit.php:208
 #: ../webseer_edit.php:209 ../webseer_edit.php:210 ../webseer_edit.php:211
 #: ../webseer_edit.php:212 ../webseer_edit.php:213 ../webseer_edit.php:214
 #: ../webseer.php:502 ../webseer_servers.php:393
-#, php-format
+#, fuzzy, php-format
 msgid "%d Minutes"
-msgstr ""
+msgstr "٪ د دقائق"
 
 #: ../webseer_edit.php:217
+#, fuzzy
 msgid ""
 "How many minutes the URL must be down before it will send an alert.  After "
 "an alert is sent, in order for a 'Site Recovering' Email to be send, it must "
 "also be up this number of minutes."
 msgstr ""
+"كم دقيقة يجب أن يكون عنوان URL معطلاً قبل إرسال التنبيه. بعد إرسال تنبيه ، "
+"حتى يتم إرسال رسالة بريد إلكتروني \"لاستعادة الموقع\" ، يجب أن يكون هذا "
+"العدد أيضًا من الدقائق."
 
 #: ../webseer_edit.php:221
+#, fuzzy
 msgid "Time Out"
-msgstr ""
+msgstr "نفذ الوقت"
 
 #: ../webseer_edit.php:224 ../webseer_edit.php:225 ../webseer_edit.php:226
 #: ../webseer_edit.php:227 ../webseer_edit.php:228 ../webseer_edit.php:229
 #: ../webseer_edit.php:230 ../webseer_edit.php:231 ../webseer.php:502
 #: ../webseer_servers.php:393
-#, php-format
+#, fuzzy, php-format
 msgid "%d Seconds"
-msgstr ""
+msgstr "٪ د ثواني"
 
 #: ../webseer_edit.php:234
+#, fuzzy
 msgid ""
 "How many seconds to allow the page to timeout before reporting it as down."
-msgstr ""
+msgstr "كم عدد الثواني للسماح للصفحة بالوقت قبل الإبلاغ عنها."
 
 #: ../webseer_edit.php:239
+#, fuzzy
 msgid "Response Search String"
-msgstr ""
+msgstr "استجابة سلسلة البحث"
 
 #: ../webseer_edit.php:240
+#, fuzzy
 msgid ""
 "This is the string to search for in the URL response for a live and working "
 "Web Service."
 msgstr ""
+"هذه هي السلسلة التي يجب البحث عنها في استجابة URL لخدمة الويب الحية والعمل."
 
 #: ../webseer_edit.php:247
+#, fuzzy
 msgid "Response Search String - Maintenance Page"
-msgstr ""
+msgstr "استجابة سلسلة البحث - صفحة الصيانة"
 
 #: ../webseer_edit.php:248
+#, fuzzy
 msgid ""
 "This is the string to search for on the Maintenance Page.  The Service Check "
 "will check for this string if the above string is not found.  If found, it "
 "means that the Web Service is under maintenance."
 msgstr ""
+"هذه هي السلسلة للبحث عنها في صفحة الصيانة. يتحقق \"التحقق من الخدمة\" من هذه "
+"السلسلة إذا لم يتم العثور على السلسلة أعلاه. إذا وجدت ، فهذا يعني أن خدمة "
+"الويب قيد الصيانة."
 
 #: ../webseer_edit.php:255
+#, fuzzy
 msgid "Response Search String - Failed"
-msgstr ""
+msgstr "استجابة سلسلة البحث - فشل"
 
 #: ../webseer_edit.php:256
+#, fuzzy
 msgid ""
 "This is the string to search for a known failure in the Web Service "
 "response.  The Service Check will only alert if this string is found, "
 "ignoring any timeout issues and the search strings above."
 msgstr ""
+"هذه هي السلسلة للبحث عن فشل معروف في استجابة \"خدمة الويب\". سيتم تنبيه خدمة "
+"Service Check فقط في حالة العثور على هذه السلسلة ، مع تجاهل أي مشكلات متعلقة "
+"بوقت الاستراحة وسلاسل البحث أعلاه."
 
 #: ../webseer_edit.php:262
+#, fuzzy
 msgid "Notify accounts"
-msgstr ""
+msgstr "يخطر الحسابات"
 
 #: ../webseer_edit.php:264
+#, fuzzy
 msgid ""
 "This is a listing of accounts that will be notified when this website goes "
 "down."
-msgstr ""
+msgstr "هذه قائمة بالحسابات التي سيتم إخطارها عند تعطل موقع الويب هذا."
 
 #: ../webseer_edit.php:269
+#, fuzzy
 msgid "Extra Alert Emails"
-msgstr ""
+msgstr "رسائل تنبيه إضافية"
 
 #: ../webseer_edit.php:273
+#, fuzzy
 msgid ""
 "You may specify here extra Emails to receive alerts for this URL (comma "
 "separated)"
 msgstr ""
+"يمكنك تحديد رسائل البريد الإلكتروني الإضافية هنا لتلقي تنبيهات لعنوان URL "
+"هذا (مفصولة بفواصل)"
 
 #: ../webseer_edit.php:309
+#, fuzzy
 msgid "No Users Selected"
-msgstr ""
+msgstr "لم يتم اختيار المستخدمين"
 
 #: ../webseer_edit.php:311
+#, fuzzy
 msgid "Users Selected"
-msgstr ""
+msgstr "مستخدمين مختارين"
 
 #: ../webseer_edit.php:314
+#, fuzzy
 msgid "All Users Selected"
-msgstr ""
+msgstr "جميع المستخدمين المختارين"
 
 #: ../webseer_edit.php:320
+#, fuzzy
 msgid "All"
-msgstr ""
+msgstr "الكل"
 
 #: ../webseer_edit.php:321
+#, fuzzy
 msgid "None"
-msgstr ""
+msgstr "لا شيء"
 
 #: ../webseer_edit.php:354 ../webseer.php:478
+#, fuzzy
 msgid "Search"
-msgstr ""
+msgstr "بحث"
 
 #: ../webseer.php:185 ../webseer_servers.php:153
+#, fuzzy
 msgid "Date"
-msgstr ""
+msgstr "التاريخ"
 
 #: ../webseer.php:187 ../webseer.php:332 ../webseer_servers.php:156
+#, fuzzy
 msgid "HTTP Code"
-msgstr ""
+msgstr "كود المتشعب"
 
 #: ../webseer.php:188 ../webseer.php:334 ../webseer_servers.php:157
+#, fuzzy
 msgid "DNS"
-msgstr ""
+msgstr "DNS"
 
 #: ../webseer.php:189 ../webseer.php:335 ../webseer_servers.php:158
+#, fuzzy
 msgid "Connect"
-msgstr ""
+msgstr "اتصل"
 
 #: ../webseer.php:190 ../webseer.php:336 ../webseer_servers.php:159
+#, fuzzy
 msgid "Redirect"
-msgstr ""
+msgstr "إعادة توجيه"
 
 #: ../webseer.php:191 ../webseer.php:337 ../webseer_servers.php:160
+#, fuzzy
 msgid "Total"
-msgstr ""
+msgstr "الإجمالي"
 
 #: ../webseer.php:192 ../webseer.php:330
+#, fuzzy
 msgid "Status"
-msgstr ""
+msgstr "الحالة"
 
 #: ../webseer.php:219 ../webseer.php:388 ../webseer_servers.php:182
+#, fuzzy
 msgid "Up"
-msgstr ""
+msgstr "فوق"
 
 #: ../webseer.php:219 ../webseer.php:388 ../webseer_servers.php:182
+#, fuzzy
 msgid "Down"
-msgstr ""
+msgstr "المرض"
 
 #: ../webseer.php:224 ../webseer_servers.php:192
+#, fuzzy
 msgid "No Events in History"
-msgstr ""
+msgstr "لا توجد أحداث في التاريخ"
 
 #: ../webseer.php:234 ../webseer_servers.php:202
+#, fuzzy
 msgid "Delete"
-msgstr ""
+msgstr "حذف"
 
 #: ../webseer.php:235 ../webseer_servers.php:203
+#, fuzzy
 msgid "Disable"
-msgstr ""
+msgstr "تعطيل"
 
 #: ../webseer.php:236 ../webseer_servers.php:204
+#, fuzzy
 msgid "Enable"
-msgstr ""
+msgstr "تفعيل"
 
 #: ../webseer.php:237
+#, fuzzy
 msgid "Duplicate"
-msgstr ""
+msgstr "تكرار"
 
 #: ../webseer.php:327 ../webseer_servers.php:254
+#, fuzzy
 msgid "Actions"
-msgstr ""
+msgstr "أفعال"
 
 #: ../webseer.php:331 ../webseer.php:391 ../webseer.php:393
 #: ../webseer_servers.php:258 ../webseer_servers.php:381
+#, fuzzy
 msgid "Enabled"
-msgstr ""
+msgstr "مفعل"
 
 #: ../webseer.php:333
+#, fuzzy
 msgid "Auth"
-msgstr ""
+msgstr "المصادقة"
 
 #: ../webseer.php:338
+#, fuzzy
 msgid "Timeout"
-msgstr ""
+msgstr "نفذ الوقت"
 
 #: ../webseer.php:339 ../webseer_servers.php:260
+#, fuzzy
 msgid "Last Check"
-msgstr ""
+msgstr "اخر فحص"
 
 #: ../webseer.php:382
-#, php-format
+#, fuzzy, php-format
 msgid "DNS: Server %s - A Record for %s"
-msgstr ""
+msgstr "DNS: الخادم٪ s - سجل لـ٪ s"
 
 #: ../webseer.php:386
+#, fuzzy
 msgid "N/A"
-msgstr ""
+msgstr "N/A"
 
 #: ../webseer.php:391 ../webseer.php:393 ../webseer_servers.php:381
+#, fuzzy
 msgid "Disabled"
-msgstr ""
+msgstr "معطل"
 
 #: ../webseer.php:392 ../webseer_servers.php:155
+#, fuzzy
 msgid "Error"
-msgstr ""
+msgstr "خطأ"
 
 #: ../webseer.php:407 ../webseer_servers.php:309
+#, fuzzy
 msgid "No Servers Found"
-msgstr ""
+msgstr "لا توجد خوادم"
 
 #: ../webseer.php:469
+#, fuzzy
 msgid "Webseer Site Management"
-msgstr ""
+msgstr "إدارة موقع ويب"
 
 #: ../webseer.php:484 ../webseer_servers.php:375
+#, fuzzy
 msgid "State"
-msgstr ""
+msgstr "الحالة"
 
 #: ../webseer.php:488 ../webseer_servers.php:379
+#, fuzzy
 msgid "Any"
-msgstr ""
+msgstr "الجميع"
 
 #: ../webseer.php:497 ../webseer_servers.php:388
+#, fuzzy
 msgid "Refresh"
-msgstr ""
+msgstr "تحديث"
 
 #: ../webseer.php:514 ../webseer_servers.php:405
+#, fuzzy
 msgid "Default"
-msgstr ""
+msgstr "الافتراضي"
 
 #: ../webseer_servers.php:261
+#, fuzzy
 msgid "Master"
-msgstr ""
+msgstr "رئيس"
 
 #: ../webseer_servers.php:262
+#, fuzzy
 msgid "This Host"
-msgstr ""
+msgstr "هذا المضيف"
 
 #: ../webseer_servers.php:299 ../webseer_servers.php:302
 #: ../webseer_servers.php:303
+#, fuzzy
 msgid "Yes"
-msgstr ""
+msgstr "نعم"
 
 #: ../webseer_servers.php:299 ../webseer_servers.php:302
 #: ../webseer_servers.php:303
+#, fuzzy
 msgid "No"
-msgstr ""
+msgstr "لا"
 
 #: ../webseer_servers.php:367
+#, fuzzy
 msgid "Webseer Server Management"
-msgstr ""
+msgstr "إدارة خادم ويب"
 
 #: ../webseer_servers.php:381
+#, fuzzy
 msgid "Triggered"
-msgstr ""
+msgstr "أثار"
 
 #: ../webseer_servers.php:400
+#, fuzzy
 msgid "Sites"
-msgstr ""
+msgstr "المواقع"
