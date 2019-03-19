@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-05 16:06-0400\n"
+"POT-Creation-Date: 2019-03-19 09:51+0000\n"
 "PO-Revision-Date: 2019-03-16 19:59-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -17,42 +17,140 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.2.1\n"
 
-#: ../poller_webseer.php:171
-#, fuzzy
-msgid "Cacti Master"
-msgstr "선인장 마스터"
-
-#: ../poller_webseer.php:174
-#, fuzzy
-msgid "Cacti Remote Server"
-msgstr "선인장 원격 서버"
-
-#: ../webseer_servers_edit.php:111 ../webseer_edit.php:146
+#: includes/arrays.php:93 webseer.php:532 webseer_servers.php:410
 #, fuzzy, php-format
-msgid "Query [edit: %s]"
-msgstr "쿼리 [편집 :  %s]"
+msgid "%d Minute"
+msgstr "% d 분"
 
-#: ../webseer_servers_edit.php:113 ../webseer_edit.php:149
+#: includes/arrays.php:94 includes/arrays.php:95 includes/arrays.php:96
+#: includes/arrays.php:97 includes/arrays.php:98 includes/arrays.php:99
+#: includes/arrays.php:100 includes/arrays.php:101 includes/arrays.php:102
+#: webseer.php:532 webseer_servers.php:410
+#, fuzzy, php-format
+msgid "%d Minutes"
+msgstr "%d 분"
+
+#: includes/arrays.php:106 includes/arrays.php:107 includes/arrays.php:108
+#: includes/arrays.php:109 includes/arrays.php:110 includes/arrays.php:111
+#: includes/arrays.php:112 includes/arrays.php:113 webseer.php:532
+#: webseer_servers.php:410
+#, fuzzy, php-format
+msgid "%d Seconds"
+msgstr "%d 초"
+
+#: includes/arrays.php:141 includes/arrays.php:145 includes/arrays.php:152
 #, fuzzy
-msgid "Query [new]"
-msgstr "검색어 [신규]"
+msgid "Delete"
+msgstr "삭제"
 
-#: ../webseer_servers_edit.php:119
+#: includes/arrays.php:146 includes/arrays.php:153
+#, fuzzy
+msgid "Disable"
+msgstr "비활성화"
+
+#: includes/arrays.php:147 includes/arrays.php:154
+#, fuzzy
+msgid "Enable"
+msgstr "활성화"
+
+#: includes/arrays.php:148
+#, fuzzy
+msgid "Duplicate"
+msgstr "복사"
+
+#: includes/arrays.php:162 includes/arrays.php:231 webseer.php:325
+#: webseer_proxies.php:270 webseer_servers.php:257
+#, fuzzy
+msgid "Name"
+msgstr "이름"
+
+#: includes/arrays.php:163
+msgid "A Useful Name for this Proxy."
+msgstr ""
+
+#: includes/arrays.php:167
+msgid "New Proxy"
+msgstr ""
+
+#: includes/arrays.php:171 webseer_proxies.php:271
+msgid "Hostname"
+msgstr ""
+
+#: includes/arrays.php:172
+msgid "The Proxy Hostname."
+msgstr ""
+
+#: includes/arrays.php:180
+#, fuzzy
+msgid "HTTP Port"
+msgstr "HTTP 코드"
+
+#: includes/arrays.php:181
+msgid "The HTTP Proxy Port."
+msgstr ""
+
+#: includes/arrays.php:189
+#, fuzzy
+msgid "HTTPS Port"
+msgstr "HTTP 코드"
+
+#: includes/arrays.php:190
+msgid "The HTTPS Proxy Port."
+msgstr ""
+
+#: includes/arrays.php:198
+#, fuzzy
+msgid "User Name"
+msgstr "이름"
+
+#: includes/arrays.php:199
+msgid "The user to use to authenticate with the Proxy if any."
+msgstr ""
+
+#: includes/arrays.php:207
+msgid "Password"
+msgstr ""
+
+#: includes/arrays.php:208
+msgid "The user password to use to authenticate with the Proxy if any."
+msgstr ""
+
+#: includes/arrays.php:227 includes/arrays.php:287
+msgid "General Settings"
+msgstr ""
+
+#: includes/arrays.php:232
+#, fuzzy
+msgid "Display Name of this server"
+msgstr "이 서버의 표시 이름"
+
+#: includes/arrays.php:238
 #, fuzzy
 msgid "Enable Server"
 msgstr "서버 사용"
 
-#: ../webseer_servers_edit.php:120
+#: includes/arrays.php:239
 #, fuzzy
 msgid "Uncheck this box to disabled this server from checking urls."
 msgstr "이 체크 박스를 선택 취소하면이 서버의 URL 확인이 비활성화됩니다."
 
-#: ../webseer_servers_edit.php:126
+#: includes/arrays.php:245
+#, fuzzy
+msgid "Is this server the local server?"
+msgstr "이 서버가 로컬 서버입니까?"
+
+#: includes/arrays.php:246
+#, fuzzy
+msgid ""
+"Check this box if the current server you are connected to is this entry."
+msgstr "현재 연결된 서버가이 항목 인 경우이 상자를 선택하십시오."
+
+#: includes/arrays.php:252
 #, fuzzy
 msgid "Master Server"
 msgstr "마스터 서버"
 
-#: ../webseer_servers_edit.php:127
+#: includes/arrays.php:253
 #, fuzzy
 msgid ""
 "Sets this server to the Master server.  The Master server handles all Email "
@@ -61,145 +159,107 @@ msgstr ""
 "이 서버를 마스터 서버로 설정합니다. 마스터 서버가 모든 전자 메일 작업을 처리"
 "합니다."
 
-#: ../webseer_servers_edit.php:133
-#, fuzzy
-msgid "Is this server the local server?"
-msgstr "이 서버가 로컬 서버입니까?"
-
-#: ../webseer_servers_edit.php:134
-#, fuzzy
-msgid ""
-"Check this box if the current server you are connected to is this entry."
-msgstr "현재 연결된 서버가이 항목 인 경우이 상자를 선택하십시오."
-
-#: ../webseer_servers_edit.php:140 ../webseer.php:328
-#: ../webseer_servers.php:255
-#, fuzzy
-msgid "Name"
-msgstr "이름"
-
-#: ../webseer_servers_edit.php:141
-#, fuzzy
-msgid "Display Name of this server"
-msgstr "이 서버의 표시 이름"
-
-#: ../webseer_servers_edit.php:147 ../webseer_edit.php:181
-#: ../webseer_servers.php:257
+#: includes/arrays.php:259 includes/arrays.php:313 webseer_servers.php:258
 #, fuzzy
 msgid "IP Address"
 msgstr "IP 주소"
 
-#: ../webseer_servers_edit.php:148
+#: includes/arrays.php:260
 #, fuzzy
 msgid "IP Address to connect to this server"
 msgstr "이 서버에 연결할 IP 주소"
 
-#: ../webseer_servers_edit.php:154 ../webseer_servers.php:259
-#, fuzzy
-msgid "Location"
-msgstr "위치"
-
-#: ../webseer_servers_edit.php:155
-#, fuzzy
-msgid "Location of this server"
-msgstr "이 서버의 위치"
-
-#: ../webseer_servers_edit.php:161 ../webseer_edit.php:173 ../webseer.php:186
-#: ../webseer.php:329 ../webseer_servers.php:154 ../webseer_servers.php:256
+#: includes/arrays.php:266 includes/arrays.php:305 webseer.php:190
+#: webseer_servers.php:154
 #, fuzzy
 msgid "URL"
 msgstr "URL"
 
-#: ../webseer_servers_edit.php:162
+#: includes/arrays.php:267
 #, fuzzy
 msgid "This is the URL to connect to remote.php on this server."
 msgstr "이 서버의 remote.php에 연결하는 URL입니다."
 
-#: ../setup.php:30
+#: includes/arrays.php:273 webseer_servers.php:260
 #, fuzzy
-msgid "Web Service Check Admin"
-msgstr "웹 서비스 관리자 확인"
+msgid "Location"
+msgstr "위치"
 
-#: ../setup.php:241
+#: includes/arrays.php:274
 #, fuzzy
-msgid "Management"
-msgstr "관리"
+msgid "Location of this server"
+msgstr "이 서버의 위치"
 
-#: ../setup.php:241
-#, fuzzy
-msgid "Web Service Checks"
-msgstr "웹 서비스 점검"
-
-#: ../setup.php:296
-#, fuzzy
-msgid "WebSeer Service Checks"
-msgstr "WebSeer 서비스 점검"
-
-#: ../setup.php:303
-#, fuzzy
-msgid "WebSeer Servers"
-msgstr "WebSeer 서버"
-
-#: ../setup.php:310 ../setup.php:317 ../setup.php:324
-#, fuzzy
-msgid "Service Check Edit"
-msgstr "서비스 확인 편집"
-
-#: ../setup.php:331 ../setup.php:338 ../setup.php:345
-#, fuzzy
-msgid "Server Edit"
-msgstr "서버 편집"
-
-#: ../functions.php:28 ../webseer.php:318 ../webseer.php:509
-#, fuzzy
-msgid "Checks"
-msgstr "체크 무늬"
-
-#: ../functions.php:29 ../webseer_servers.php:245
-#, fuzzy
-msgid "Servers"
-msgstr "서버"
-
-#: ../webseer_edit.php:159
+#: includes/arrays.php:291
 #, fuzzy
 msgid "Service Check Name"
 msgstr "서비스 확인 이름"
 
-#: ../webseer_edit.php:160
+#: includes/arrays.php:292
 #, fuzzy
 msgid ""
 "The name that is displayed for this Service Check, and is included in any "
 "Alert notifications."
 msgstr "이 서비스 확인을 위해 표시되는 이름이며 경고 알림에 포함됩니다."
 
-#: ../webseer_edit.php:166
+#: includes/arrays.php:298
 #, fuzzy
 msgid "Enable Service Check"
 msgstr "서비스 확인 사용"
 
-#: ../webseer_edit.php:167
+#: includes/arrays.php:299
 #, fuzzy
 msgid "Uncheck this box to disabled this url from being checked."
 msgstr "이 확인란의 선택을 취소하면이 URL이 선택되지 않습니다."
 
-#: ../webseer_edit.php:174
+#: includes/arrays.php:306
 #, fuzzy
 msgid "The URL to Monitor"
 msgstr "모니터 할 URL"
 
-#: ../webseer_edit.php:182
+#: includes/arrays.php:314
 #, fuzzy
 msgid ""
 "Enter an IP address to connect to.  Leaving blank will use DNS Resolution "
 "instead."
 msgstr "연결할 IP 주소를 입력하십시오. 비워두면 대신 DNS 확인을 사용합니다."
 
-#: ../webseer_edit.php:189
+#: includes/arrays.php:321
+#, fuzzy
+msgid "Proxy Server"
+msgstr "마스터 서버"
+
+#: includes/arrays.php:322
+msgid ""
+"If this connection text requires a proxy, select it here.  Otherwise choose "
+"'None'."
+msgstr ""
+
+#: includes/arrays.php:324 webseer_edit.php:183
+#, fuzzy
+msgid "None"
+msgstr "없음"
+
+#: includes/arrays.php:329 webseer.php:191 webseer.php:328
+msgid "Compression"
+msgstr ""
+
+#: includes/arrays.php:333
+msgid ""
+"What compression does the server require?  Most servers should not need "
+"this, but some will not redirect properly without it."
+msgstr ""
+
+#: includes/arrays.php:338
+msgid "Available Checks"
+msgstr ""
+
+#: includes/arrays.php:342
 #, fuzzy
 msgid "Requires Authentication"
 msgstr "인증 필요"
 
-#: ../webseer_edit.php:190
+#: includes/arrays.php:343
 #, fuzzy
 msgid ""
 "Check this box if the site will normally return a 401 Error as it requires a "
@@ -208,12 +268,12 @@ msgstr ""
 "사이트가 일반적으로 사용자 이름과 암호가 필요하므로 401 오류를 반환하는 경우"
 "이 확인란을 선택하십시오."
 
-#: ../webseer_edit.php:196
+#: includes/arrays.php:349
 #, fuzzy
 msgid "Check Certificate"
 msgstr "인증서 확인"
 
-#: ../webseer_edit.php:197
+#: includes/arrays.php:350
 #, fuzzy
 msgid ""
 "If using SSL, check this box if you want to validate the certificate. "
@@ -222,25 +282,16 @@ msgstr ""
 "SSL을 사용하는 경우 인증서의 유효성을 검사하려면이 상자를 선택하십시오. 기본 "
 "설정은 사이트에서 자체 서명 된 인증서를 사용하는 경우 해제하십시오."
 
-#: ../webseer_edit.php:202
+#: includes/arrays.php:356
+msgid "Notification Timing"
+msgstr ""
+
+#: includes/arrays.php:359
 #, fuzzy
 msgid "Trigger"
 msgstr "트리거"
 
-#: ../webseer_edit.php:205 ../webseer.php:502 ../webseer_servers.php:393
-#, fuzzy, php-format
-msgid "%d Minute"
-msgstr "% d 분"
-
-#: ../webseer_edit.php:206 ../webseer_edit.php:207 ../webseer_edit.php:208
-#: ../webseer_edit.php:209 ../webseer_edit.php:210 ../webseer_edit.php:211
-#: ../webseer_edit.php:212 ../webseer_edit.php:213 ../webseer_edit.php:214
-#: ../webseer.php:502 ../webseer_servers.php:393
-#, fuzzy, php-format
-msgid "%d Minutes"
-msgstr "%d 분"
-
-#: ../webseer_edit.php:217
+#: includes/arrays.php:363
 #, fuzzy
 msgid ""
 "How many minutes the URL must be down before it will send an alert.  After "
@@ -250,20 +301,12 @@ msgstr ""
 "경고를 보내기 전에 URL이 몇 분 이내에 있어야합니다. 경고가 전송 된 후 '사이"
 "트 복구'전자 메일을 보내려면이 시간 (분) 이상이어야합니다."
 
-#: ../webseer_edit.php:221
+#: includes/arrays.php:367
 #, fuzzy
 msgid "Time Out"
 msgstr "타임 아웃"
 
-#: ../webseer_edit.php:224 ../webseer_edit.php:225 ../webseer_edit.php:226
-#: ../webseer_edit.php:227 ../webseer_edit.php:228 ../webseer_edit.php:229
-#: ../webseer_edit.php:230 ../webseer_edit.php:231 ../webseer.php:502
-#: ../webseer_servers.php:393
-#, fuzzy, php-format
-msgid "%d Seconds"
-msgstr "%d 초"
-
-#: ../webseer_edit.php:234
+#: includes/arrays.php:371
 #, fuzzy
 msgid ""
 "How many seconds to allow the page to timeout before reporting it as down."
@@ -271,24 +314,28 @@ msgstr ""
 "페이지가 중단 된 것으로보고하기 전에 페이지가 시간 초과되도록 허용하는 데 걸"
 "린 시간 (초)입니다."
 
-#: ../webseer_edit.php:239
+#: includes/arrays.php:376
+msgid "Verification Strings"
+msgstr ""
+
+#: includes/arrays.php:380
 #, fuzzy
 msgid "Response Search String"
 msgstr "응답 검색 문자열"
 
-#: ../webseer_edit.php:240
+#: includes/arrays.php:381
 #, fuzzy
 msgid ""
 "This is the string to search for in the URL response for a live and working "
 "Web Service."
 msgstr "이것은 작동중인 웹 서비스에 대한 URL 응답에서 검색 할 문자열입니다."
 
-#: ../webseer_edit.php:247
+#: includes/arrays.php:388
 #, fuzzy
 msgid "Response Search String - Maintenance Page"
 msgstr "응답 검색 문자열 - 유지 관리 페이지"
 
-#: ../webseer_edit.php:248
+#: includes/arrays.php:389
 #, fuzzy
 msgid ""
 "This is the string to search for on the Maintenance Page.  The Service Check "
@@ -299,12 +346,12 @@ msgstr ""
 "Service Check는이 문자열을 확인합니다. 발견되면 웹 서비스가 유지 보수 중임을 "
 "의미합니다."
 
-#: ../webseer_edit.php:255
+#: includes/arrays.php:396
 #, fuzzy
 msgid "Response Search String - Failed"
 msgstr "응답 검색 문자열 - 실패"
 
-#: ../webseer_edit.php:256
+#: includes/arrays.php:397
 #, fuzzy
 msgid ""
 "This is the string to search for a known failure in the Web Service "
@@ -314,24 +361,37 @@ msgstr ""
 "이 문자열은 웹 서비스 응답에서 알려진 오류를 검색합니다. 서비스 검사는이 문자"
 "열이 발견되면 경고하고 시간 초과 문제와 위의 검색 문자열을 무시합니다."
 
-#: ../webseer_edit.php:262
+#: includes/arrays.php:404
+msgid "Notification Settings"
+msgstr ""
+
+#: includes/arrays.php:407
+#, fuzzy
+msgid "Notify Format"
+msgstr "계정에 알림"
+
+#: includes/arrays.php:409
+msgid "This is the format to use when sending the notification email"
+msgstr ""
+
+#: includes/arrays.php:414
 #, fuzzy
 msgid "Notify accounts"
 msgstr "계정에 알림"
 
-#: ../webseer_edit.php:264
+#: includes/arrays.php:416
 #, fuzzy
 msgid ""
 "This is a listing of accounts that will be notified when this website goes "
 "down."
 msgstr "이 웹 사이트가 다운 될 때 통보 될 계정 목록입니다."
 
-#: ../webseer_edit.php:269
+#: includes/arrays.php:421
 #, fuzzy
 msgid "Extra Alert Emails"
 msgstr "추가 경고 이메일"
 
-#: ../webseer_edit.php:273
+#: includes/arrays.php:425
 #, fuzzy
 msgid ""
 "You may specify here extra Emails to receive alerts for this URL (comma "
@@ -340,215 +400,339 @@ msgstr ""
 "이 URL에 대한 알림을 받으려면 추가 이메일을 여기에서 지정할 수 있습니다 (쉼표"
 "로 구분)."
 
-#: ../webseer_edit.php:309
+#: includes/functions.php:33 webseer.php:341 webseer.php:539
 #, fuzzy
-msgid "No Users Selected"
-msgstr "선택된 사용자 없음"
+msgid "Checks"
+msgstr "체크 무늬"
 
-#: ../webseer_edit.php:311
+#: includes/functions.php:34 webseer_servers.php:243
 #, fuzzy
-msgid "Users Selected"
-msgstr "선택된 사용자"
+msgid "Servers"
+msgstr "서버"
 
-#: ../webseer_edit.php:314
+#: includes/functions.php:35 webseer_proxies.php:278 webseer_proxies.php:333
+msgid "Proxies"
+msgstr ""
+
+#: poller_webseer.php:181
 #, fuzzy
-msgid "All Users Selected"
-msgstr "모든 사용자 선택"
+msgid "Cacti Master"
+msgstr "선인장 마스터"
 
-#: ../webseer_edit.php:320
+#: poller_webseer.php:184
 #, fuzzy
-msgid "All"
-msgstr "모두"
+msgid "Cacti Remote Server"
+msgstr "선인장 원격 서버"
 
-#: ../webseer_edit.php:321
+#: setup.php:33
 #, fuzzy
-msgid "None"
-msgstr "없음"
+msgid "Web Service Check Admin"
+msgstr "웹 서비스 관리자 확인"
 
-#: ../webseer_edit.php:354 ../webseer.php:478
+#: setup.php:304
 #, fuzzy
-msgid "Search"
-msgstr "검색"
+msgid "Management"
+msgstr "관리"
 
-#: ../webseer.php:185 ../webseer_servers.php:153
+#: setup.php:304
+#, fuzzy
+msgid "Web Service Checks"
+msgstr "웹 서비스 점검"
+
+#: setup.php:314
+#, fuzzy
+msgid "WebSeer Service Checks"
+msgstr "WebSeer 서비스 점검"
+
+#: setup.php:321
+#, fuzzy
+msgid "WebSeer Servers"
+msgstr "WebSeer 서버"
+
+#: setup.php:328 setup.php:335 setup.php:342
+#, fuzzy
+msgid "Service Check Edit"
+msgstr "서비스 확인 편집"
+
+#: setup.php:349 setup.php:356 setup.php:363
+#, fuzzy
+msgid "Server Edit"
+msgstr "서버 편집"
+
+#: webseer.php:189 webseer_servers.php:153
 #, fuzzy
 msgid "Date"
 msgstr "날짜"
 
-#: ../webseer.php:187 ../webseer.php:332 ../webseer_servers.php:156
+#: webseer.php:192 webseer.php:329 webseer_servers.php:156
 #, fuzzy
 msgid "HTTP Code"
 msgstr "HTTP 코드"
 
-#: ../webseer.php:188 ../webseer.php:334 ../webseer_servers.php:157
+#: webseer.php:193 webseer.php:331 webseer_servers.php:157
 #, fuzzy
 msgid "DNS"
 msgstr "DNS"
 
-#: ../webseer.php:189 ../webseer.php:335 ../webseer_servers.php:158
+#: webseer.php:194 webseer.php:332 webseer_servers.php:158
 #, fuzzy
 msgid "Connect"
 msgstr "연결"
 
-#: ../webseer.php:190 ../webseer.php:336 ../webseer_servers.php:159
+#: webseer.php:195 webseer.php:333 webseer_servers.php:159
 #, fuzzy
 msgid "Redirect"
 msgstr "리다이렉트"
 
-#: ../webseer.php:191 ../webseer.php:337 ../webseer_servers.php:160
+#: webseer.php:196 webseer.php:334 webseer_servers.php:160
 #, fuzzy
 msgid "Total"
 msgstr "합계"
 
-#: ../webseer.php:192 ../webseer.php:330
+#: webseer.php:197 webseer.php:326
 #, fuzzy
 msgid "Status"
 msgstr "상태"
 
-#: ../webseer.php:219 ../webseer.php:388 ../webseer_servers.php:182
-#, fuzzy
-msgid "Up"
-msgstr "위로"
-
-#: ../webseer.php:219 ../webseer.php:388 ../webseer_servers.php:182
+#: webseer.php:225 webseer.php:400 webseer_servers.php:182
 #, fuzzy
 msgid "Down"
 msgstr "아래로"
 
-#: ../webseer.php:224 ../webseer_servers.php:192
+#: webseer.php:225 webseer.php:400 webseer_servers.php:182
+#, fuzzy
+msgid "Up"
+msgstr "위로"
+
+#: webseer.php:230 webseer_servers.php:192
 #, fuzzy
 msgid "No Events in History"
 msgstr "역사상의 사건 없음"
 
-#: ../webseer.php:234 ../webseer_servers.php:202
-#, fuzzy
-msgid "Delete"
-msgstr "삭제"
-
-#: ../webseer.php:235 ../webseer_servers.php:203
-#, fuzzy
-msgid "Disable"
-msgstr "비활성화"
-
-#: ../webseer.php:236 ../webseer_servers.php:204
-#, fuzzy
-msgid "Enable"
-msgstr "활성화"
-
-#: ../webseer.php:237
-#, fuzzy
-msgid "Duplicate"
-msgstr "복사"
-
-#: ../webseer.php:327 ../webseer_servers.php:254
+#: webseer.php:324 webseer_servers.php:256
 #, fuzzy
 msgid "Actions"
 msgstr "작업"
 
-#: ../webseer.php:331 ../webseer.php:391 ../webseer.php:393
-#: ../webseer_servers.php:258 ../webseer_servers.php:381
+#: webseer.php:327 webseer.php:403 webseer.php:406 webseer_servers.php:259
+#: webseer_servers.php:398
 #, fuzzy
 msgid "Enabled"
 msgstr "활성화"
 
-#: ../webseer.php:333
+#: webseer.php:330
 #, fuzzy
 msgid "Auth"
 msgstr "Auth"
 
-#: ../webseer.php:338
+#: webseer.php:335
 #, fuzzy
 msgid "Timeout"
 msgstr "타임아웃"
 
-#: ../webseer.php:339 ../webseer_servers.php:260
+#: webseer.php:336 webseer_servers.php:261
 #, fuzzy
 msgid "Last Check"
 msgstr "마지막 확인"
 
-#: ../webseer.php:382
+#: webseer.php:366 webseer_servers.php:282
+msgid "Edit Site"
+msgstr ""
+
+#: webseer.php:371 webseer_servers.php:287
+#, fuzzy
+msgid "Enable Site"
+msgstr "서버 사용"
+
+#: webseer.php:375 webseer_servers.php:291
+#, fuzzy
+msgid "Disable Site"
+msgstr "비활성화"
+
+#: webseer.php:380 webseer_servers.php:295
+msgid "View History"
+msgstr ""
+
+#: webseer.php:388
 #, fuzzy, php-format
 msgid "DNS: Server %s - A Record for %s"
 msgstr "DNS : 서버  %s -  %s의 레코드"
 
-#: ../webseer.php:386
+#: webseer.php:398
 #, fuzzy
 msgid "N/A"
 msgstr "N/A"
 
-#: ../webseer.php:391 ../webseer.php:393 ../webseer_servers.php:381
+#: webseer.php:403 webseer.php:406 webseer_servers.php:398
 #, fuzzy
 msgid "Disabled"
 msgstr "비활성화"
 
-#: ../webseer.php:392 ../webseer_servers.php:155
+#: webseer.php:405 webseer_servers.php:155
 #, fuzzy
 msgid "Error"
 msgstr "오류"
 
-#: ../webseer.php:407 ../webseer_servers.php:309
+#: webseer.php:420 webseer_proxies.php:299 webseer_servers.php:309
 #, fuzzy
 msgid "No Servers Found"
 msgstr "서버를 찾을 수 없음"
 
-#: ../webseer.php:469
+#: webseer.php:499
 #, fuzzy
 msgid "Webseer Site Management"
 msgstr "웹 사이트 사이트 관리"
 
-#: ../webseer.php:484 ../webseer_servers.php:375
+#: webseer.php:508 webseer_edit.php:216 webseer_proxies.php:327
+#, fuzzy
+msgid "Search"
+msgstr "검색"
+
+#: webseer.php:514 webseer_servers.php:392
 #, fuzzy
 msgid "State"
 msgstr "주"
 
-#: ../webseer.php:488 ../webseer_servers.php:379
+#: webseer.php:518 webseer_servers.php:396
 #, fuzzy
 msgid "Any"
 msgstr "일부"
 
-#: ../webseer.php:497 ../webseer_servers.php:388
+#: webseer.php:527 webseer_servers.php:405
 #, fuzzy
 msgid "Refresh"
 msgstr "새로고침"
 
-#: ../webseer.php:514 ../webseer_servers.php:405
+#: webseer.php:544 webseer_proxies.php:338 webseer_servers.php:422
 #, fuzzy
 msgid "Default"
 msgstr "기본값"
 
-#: ../webseer_servers.php:261
+#: webseer.php:555 webseer_proxies.php:349
+msgid "Go"
+msgstr ""
+
+#: webseer.php:556 webseer_proxies.php:350 webseer_servers.php:433
+msgid "Clear"
+msgstr ""
+
+#: webseer_edit.php:138 webseer_servers_edit.php:116
+#, fuzzy, php-format
+msgid "Query [edit: %s]"
+msgstr "쿼리 [편집 :  %s]"
+
+#: webseer_edit.php:140 webseer_servers_edit.php:118
+#, fuzzy
+msgid "Query [new]"
+msgstr "검색어 [신규]"
+
+#: webseer_edit.php:171
+#, fuzzy
+msgid "No Users Selected"
+msgstr "선택된 사용자 없음"
+
+#: webseer_edit.php:173
+#, fuzzy
+msgid "Users Selected"
+msgstr "선택된 사용자"
+
+#: webseer_edit.php:176
+#, fuzzy
+msgid "All Users Selected"
+msgstr "모든 사용자 선택"
+
+#: webseer_edit.php:182
+#, fuzzy
+msgid "All"
+msgstr "모두"
+
+#: webseer_proxies.php:102
+msgid "Click 'Continue' to delete the following Proxy."
+msgid_plural "Click 'Continue' to delete following Proxies."
+msgstr[0] ""
+msgstr[1] ""
+
+#: webseer_proxies.php:107
+msgid "Cancel"
+msgstr ""
+
+#: webseer_proxies.php:107
+msgid "Continue"
+msgstr ""
+
+#: webseer_proxies.php:107
+#, fuzzy
+msgid "Delete Proxy"
+msgid_plural "Delete Proxies"
+msgstr[0] "삭제"
+msgstr[1] "삭제"
+
+#: webseer_proxies.php:110
+msgid "You must select at least one Proxy."
+msgstr ""
+
+#: webseer_proxies.php:111
+msgid "Return"
+msgstr ""
+
+#: webseer_proxies.php:167
+#, fuzzy, php-format
+msgid "Proxy [edit: %s]"
+msgstr "쿼리 [편집 :  %s]"
+
+#: webseer_proxies.php:169
+#, fuzzy
+msgid "Proxy [new]"
+msgstr "검색어 [신규]"
+
+#: webseer_proxies.php:272
+msgid "Ports (http/https)"
+msgstr ""
+
+#: webseer_proxies.php:273
+msgid "Username"
+msgstr ""
+
+#: webseer_proxies.php:294
+msgid "Not Set"
+msgstr ""
+
+#: webseer_proxies.php:318
+#, fuzzy
+msgid "Webseer Proxy Management"
+msgstr "웹 서버 관리"
+
+#: webseer_servers.php:262
 #, fuzzy
 msgid "Master"
 msgstr "마스터"
 
-#: ../webseer_servers.php:262
+#: webseer_servers.php:263
 #, fuzzy
 msgid "This Host"
 msgstr "이 호스트"
 
-#: ../webseer_servers.php:299 ../webseer_servers.php:302
-#: ../webseer_servers.php:303
-#, fuzzy
-msgid "Yes"
-msgstr "예"
-
-#: ../webseer_servers.php:299 ../webseer_servers.php:302
-#: ../webseer_servers.php:303
+#: webseer_servers.php:299 webseer_servers.php:302 webseer_servers.php:303
 #, fuzzy
 msgid "No"
 msgstr "아니오"
 
-#: ../webseer_servers.php:367
+#: webseer_servers.php:299 webseer_servers.php:302 webseer_servers.php:303
+#, fuzzy
+msgid "Yes"
+msgstr "예"
+
+#: webseer_servers.php:384
 #, fuzzy
 msgid "Webseer Server Management"
 msgstr "웹 서버 관리"
 
-#: ../webseer_servers.php:381
+#: webseer_servers.php:398
 #, fuzzy
 msgid "Triggered"
 msgstr "트리거 됨"
 
-#: ../webseer_servers.php:400
+#: webseer_servers.php:417
 #, fuzzy
 msgid "Sites"
 msgstr "사이트"
