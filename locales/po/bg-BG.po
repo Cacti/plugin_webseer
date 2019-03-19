@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-05 16:06-0400\n"
+"POT-Creation-Date: 2019-03-19 09:51+0000\n"
 "PO-Revision-Date: 2019-03-16 19:49-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -17,44 +17,144 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.2.1\n"
 
-#: ../poller_webseer.php:171
-#, fuzzy
-msgid "Cacti Master"
-msgstr "Cacti Master"
-
-#: ../poller_webseer.php:174
-#, fuzzy
-msgid "Cacti Remote Server"
-msgstr "Cacti Remote Server"
-
-#: ../webseer_servers_edit.php:111 ../webseer_edit.php:146
+#: includes/arrays.php:93 webseer.php:532 webseer_servers.php:410
 #, fuzzy, php-format
-msgid "Query [edit: %s]"
-msgstr "Заявка [редактиране: %s]"
+msgid "%d Minute"
+msgstr "% d Минута"
 
-#: ../webseer_servers_edit.php:113 ../webseer_edit.php:149
+#: includes/arrays.php:94 includes/arrays.php:95 includes/arrays.php:96
+#: includes/arrays.php:97 includes/arrays.php:98 includes/arrays.php:99
+#: includes/arrays.php:100 includes/arrays.php:101 includes/arrays.php:102
+#: webseer.php:532 webseer_servers.php:410
+#, fuzzy, php-format
+msgid "%d Minutes"
+msgstr "% d Минути"
+
+#: includes/arrays.php:106 includes/arrays.php:107 includes/arrays.php:108
+#: includes/arrays.php:109 includes/arrays.php:110 includes/arrays.php:111
+#: includes/arrays.php:112 includes/arrays.php:113 webseer.php:532
+#: webseer_servers.php:410
+#, fuzzy, php-format
+msgid "%d Seconds"
+msgstr "% d Секунди"
+
+#: includes/arrays.php:141 includes/arrays.php:145 includes/arrays.php:152
 #, fuzzy
-msgid "Query [new]"
-msgstr "Заявка [нова]"
+msgid "Delete"
+msgstr "Изтрий"
 
-#: ../webseer_servers_edit.php:119
+#: includes/arrays.php:146 includes/arrays.php:153
+#, fuzzy
+msgid "Disable"
+msgstr "Изключи"
+
+#: includes/arrays.php:147 includes/arrays.php:154
+#, fuzzy
+msgid "Enable"
+msgstr "Включи"
+
+#: includes/arrays.php:148
+#, fuzzy
+msgid "Duplicate"
+msgstr "Дублирай"
+
+#: includes/arrays.php:162 includes/arrays.php:231 webseer.php:325
+#: webseer_proxies.php:270 webseer_servers.php:257
+#, fuzzy
+msgid "Name"
+msgstr "Име"
+
+#: includes/arrays.php:163
+msgid "A Useful Name for this Proxy."
+msgstr ""
+
+#: includes/arrays.php:167
+msgid "New Proxy"
+msgstr ""
+
+#: includes/arrays.php:171 webseer_proxies.php:271
+msgid "Hostname"
+msgstr ""
+
+#: includes/arrays.php:172
+msgid "The Proxy Hostname."
+msgstr ""
+
+#: includes/arrays.php:180
+#, fuzzy
+msgid "HTTP Port"
+msgstr "HTTP код"
+
+#: includes/arrays.php:181
+msgid "The HTTP Proxy Port."
+msgstr ""
+
+#: includes/arrays.php:189
+#, fuzzy
+msgid "HTTPS Port"
+msgstr "HTTP код"
+
+#: includes/arrays.php:190
+msgid "The HTTPS Proxy Port."
+msgstr ""
+
+#: includes/arrays.php:198
+#, fuzzy
+msgid "User Name"
+msgstr "Име"
+
+#: includes/arrays.php:199
+msgid "The user to use to authenticate with the Proxy if any."
+msgstr ""
+
+#: includes/arrays.php:207
+msgid "Password"
+msgstr ""
+
+#: includes/arrays.php:208
+msgid "The user password to use to authenticate with the Proxy if any."
+msgstr ""
+
+#: includes/arrays.php:227 includes/arrays.php:287
+msgid "General Settings"
+msgstr ""
+
+#: includes/arrays.php:232
+#, fuzzy
+msgid "Display Name of this server"
+msgstr "Показва името на този сървър"
+
+#: includes/arrays.php:238
 #, fuzzy
 msgid "Enable Server"
 msgstr "Активиране на сървъра"
 
-#: ../webseer_servers_edit.php:120
+#: includes/arrays.php:239
 #, fuzzy
 msgid "Uncheck this box to disabled this server from checking urls."
 msgstr ""
 "Махнете отметката от това квадратче, за да изключите този сървър от проверка "
 "на URL адресите."
 
-#: ../webseer_servers_edit.php:126
+#: includes/arrays.php:245
+#, fuzzy
+msgid "Is this server the local server?"
+msgstr "Този сървър ли е местният сървър?"
+
+#: includes/arrays.php:246
+#, fuzzy
+msgid ""
+"Check this box if the current server you are connected to is this entry."
+msgstr ""
+"Поставете отметка в това квадратче, ако текущият сървър, към който сте "
+"свързани, е този запис."
+
+#: includes/arrays.php:252
 #, fuzzy
 msgid "Master Server"
 msgstr "Главен сървър"
 
-#: ../webseer_servers_edit.php:127
+#: includes/arrays.php:253
 #, fuzzy
 msgid ""
 "Sets this server to the Master server.  The Master server handles all Email "
@@ -63,113 +163,43 @@ msgstr ""
 "Задава този сървър на главния сървър. Главният сървър управлява всички "
 "операции по имейл"
 
-#: ../webseer_servers_edit.php:133
-#, fuzzy
-msgid "Is this server the local server?"
-msgstr "Този сървър ли е местният сървър?"
-
-#: ../webseer_servers_edit.php:134
-#, fuzzy
-msgid ""
-"Check this box if the current server you are connected to is this entry."
-msgstr ""
-"Поставете отметка в това квадратче, ако текущият сървър, към който сте "
-"свързани, е този запис."
-
-#: ../webseer_servers_edit.php:140 ../webseer.php:328
-#: ../webseer_servers.php:255
-#, fuzzy
-msgid "Name"
-msgstr "Име"
-
-#: ../webseer_servers_edit.php:141
-#, fuzzy
-msgid "Display Name of this server"
-msgstr "Показва името на този сървър"
-
-#: ../webseer_servers_edit.php:147 ../webseer_edit.php:181
-#: ../webseer_servers.php:257
+#: includes/arrays.php:259 includes/arrays.php:313 webseer_servers.php:258
 #, fuzzy
 msgid "IP Address"
 msgstr "IP Адрес"
 
-#: ../webseer_servers_edit.php:148
+#: includes/arrays.php:260
 #, fuzzy
 msgid "IP Address to connect to this server"
 msgstr "IP адрес за свързване към този сървър"
 
-#: ../webseer_servers_edit.php:154 ../webseer_servers.php:259
-#, fuzzy
-msgid "Location"
-msgstr "Местоположение"
-
-#: ../webseer_servers_edit.php:155
-#, fuzzy
-msgid "Location of this server"
-msgstr "Местоположение на този сървър"
-
-#: ../webseer_servers_edit.php:161 ../webseer_edit.php:173 ../webseer.php:186
-#: ../webseer.php:329 ../webseer_servers.php:154 ../webseer_servers.php:256
+#: includes/arrays.php:266 includes/arrays.php:305 webseer.php:190
+#: webseer_servers.php:154
 #, fuzzy
 msgid "URL"
 msgstr "URL"
 
-#: ../webseer_servers_edit.php:162
+#: includes/arrays.php:267
 #, fuzzy
 msgid "This is the URL to connect to remote.php on this server."
 msgstr "Това е URL адресът за свързване към remote.php на този сървър."
 
-#: ../setup.php:30
+#: includes/arrays.php:273 webseer_servers.php:260
 #, fuzzy
-msgid "Web Service Check Admin"
-msgstr "Проверка на уеб услуги Админ"
+msgid "Location"
+msgstr "Местоположение"
 
-#: ../setup.php:241
+#: includes/arrays.php:274
 #, fuzzy
-msgid "Management"
-msgstr "управление"
+msgid "Location of this server"
+msgstr "Местоположение на този сървър"
 
-#: ../setup.php:241
-#, fuzzy
-msgid "Web Service Checks"
-msgstr "Проверки на уеб услуги"
-
-#: ../setup.php:296
-#, fuzzy
-msgid "WebSeer Service Checks"
-msgstr "Проверки за услугата WebSeer"
-
-#: ../setup.php:303
-#, fuzzy
-msgid "WebSeer Servers"
-msgstr "WebSeer сървъри"
-
-#: ../setup.php:310 ../setup.php:317 ../setup.php:324
-#, fuzzy
-msgid "Service Check Edit"
-msgstr "Проверка на услугата Редактиране"
-
-#: ../setup.php:331 ../setup.php:338 ../setup.php:345
-#, fuzzy
-msgid "Server Edit"
-msgstr "Редактиране на сървъра"
-
-#: ../functions.php:28 ../webseer.php:318 ../webseer.php:509
-#, fuzzy
-msgid "Checks"
-msgstr "Проверки"
-
-#: ../functions.php:29 ../webseer_servers.php:245
-#, fuzzy
-msgid "Servers"
-msgstr "Сървъри"
-
-#: ../webseer_edit.php:159
+#: includes/arrays.php:291
 #, fuzzy
 msgid "Service Check Name"
 msgstr "Име за проверка на услугата"
 
-#: ../webseer_edit.php:160
+#: includes/arrays.php:292
 #, fuzzy
 msgid ""
 "The name that is displayed for this Service Check, and is included in any "
@@ -178,24 +208,24 @@ msgstr ""
 "Името, което се показва за тази Проверка на услугата, и е включено във "
 "всички известия за предупреждения."
 
-#: ../webseer_edit.php:166
+#: includes/arrays.php:298
 #, fuzzy
 msgid "Enable Service Check"
 msgstr "Активиране на услугата Проверка"
 
-#: ../webseer_edit.php:167
+#: includes/arrays.php:299
 #, fuzzy
 msgid "Uncheck this box to disabled this url from being checked."
 msgstr ""
 "Махнете отметката от това квадратче, за да деактивирате този URL адрес от "
 "проверка."
 
-#: ../webseer_edit.php:174
+#: includes/arrays.php:306
 #, fuzzy
 msgid "The URL to Monitor"
 msgstr "URL адресът за наблюдение"
 
-#: ../webseer_edit.php:182
+#: includes/arrays.php:314
 #, fuzzy
 msgid ""
 "Enter an IP address to connect to.  Leaving blank will use DNS Resolution "
@@ -204,12 +234,42 @@ msgstr ""
 "Въведете IP адрес, с който да се свържете. Ако оставите празно, вместо това "
 "ще се използва DNS резолюция."
 
-#: ../webseer_edit.php:189
+#: includes/arrays.php:321
+#, fuzzy
+msgid "Proxy Server"
+msgstr "Главен сървър"
+
+#: includes/arrays.php:322
+msgid ""
+"If this connection text requires a proxy, select it here.  Otherwise choose "
+"'None'."
+msgstr ""
+
+#: includes/arrays.php:324 webseer_edit.php:183
+#, fuzzy
+msgid "None"
+msgstr "Няма"
+
+#: includes/arrays.php:329 webseer.php:191 webseer.php:328
+msgid "Compression"
+msgstr ""
+
+#: includes/arrays.php:333
+msgid ""
+"What compression does the server require?  Most servers should not need "
+"this, but some will not redirect properly without it."
+msgstr ""
+
+#: includes/arrays.php:338
+msgid "Available Checks"
+msgstr ""
+
+#: includes/arrays.php:342
 #, fuzzy
 msgid "Requires Authentication"
 msgstr "Изисква удостоверяване"
 
-#: ../webseer_edit.php:190
+#: includes/arrays.php:343
 #, fuzzy
 msgid ""
 "Check this box if the site will normally return a 401 Error as it requires a "
@@ -218,12 +278,12 @@ msgstr ""
 "Поставете отметка в това квадратче, ако сайтът обикновено връща грешка 401, "
 "тъй като изисква потребителско име и парола."
 
-#: ../webseer_edit.php:196
+#: includes/arrays.php:349
 #, fuzzy
 msgid "Check Certificate"
 msgstr "Проверете сертификата"
 
-#: ../webseer_edit.php:197
+#: includes/arrays.php:350
 #, fuzzy
 msgid ""
 "If using SSL, check this box if you want to validate the certificate. "
@@ -233,25 +293,16 @@ msgstr ""
 "потвърдите сертификата. По подразбиране, изключете, ако сайтът използва "
 "самостоятелно подписан сертификат."
 
-#: ../webseer_edit.php:202
+#: includes/arrays.php:356
+msgid "Notification Timing"
+msgstr ""
+
+#: includes/arrays.php:359
 #, fuzzy
 msgid "Trigger"
 msgstr "тригер"
 
-#: ../webseer_edit.php:205 ../webseer.php:502 ../webseer_servers.php:393
-#, fuzzy, php-format
-msgid "%d Minute"
-msgstr "% d Минута"
-
-#: ../webseer_edit.php:206 ../webseer_edit.php:207 ../webseer_edit.php:208
-#: ../webseer_edit.php:209 ../webseer_edit.php:210 ../webseer_edit.php:211
-#: ../webseer_edit.php:212 ../webseer_edit.php:213 ../webseer_edit.php:214
-#: ../webseer.php:502 ../webseer_servers.php:393
-#, fuzzy, php-format
-msgid "%d Minutes"
-msgstr "% d Минути"
-
-#: ../webseer_edit.php:217
+#: includes/arrays.php:363
 #, fuzzy
 msgid ""
 "How many minutes the URL must be down before it will send an alert.  After "
@@ -262,20 +313,12 @@ msgstr ""
 "бъде изпратен сигнал, за да бъде изпратен имейл за „Възстановяване на сайт“, "
 "той трябва също да се увеличи с този брой минути."
 
-#: ../webseer_edit.php:221
+#: includes/arrays.php:367
 #, fuzzy
 msgid "Time Out"
 msgstr "Time Out"
 
-#: ../webseer_edit.php:224 ../webseer_edit.php:225 ../webseer_edit.php:226
-#: ../webseer_edit.php:227 ../webseer_edit.php:228 ../webseer_edit.php:229
-#: ../webseer_edit.php:230 ../webseer_edit.php:231 ../webseer.php:502
-#: ../webseer_servers.php:393
-#, fuzzy, php-format
-msgid "%d Seconds"
-msgstr "% d Секунди"
-
-#: ../webseer_edit.php:234
+#: includes/arrays.php:371
 #, fuzzy
 msgid ""
 "How many seconds to allow the page to timeout before reporting it as down."
@@ -283,12 +326,16 @@ msgstr ""
 "Колко секунди да позволи на страницата да изчака, преди да я докладва като "
 "надолу."
 
-#: ../webseer_edit.php:239
+#: includes/arrays.php:376
+msgid "Verification Strings"
+msgstr ""
+
+#: includes/arrays.php:380
 #, fuzzy
 msgid "Response Search String"
 msgstr "Строка за търсене на отговор"
 
-#: ../webseer_edit.php:240
+#: includes/arrays.php:381
 #, fuzzy
 msgid ""
 "This is the string to search for in the URL response for a live and working "
@@ -297,12 +344,12 @@ msgstr ""
 "Това е низът, който трябва да се търси в отговора на URL адреса за жива и "
 "работеща уеб услуга."
 
-#: ../webseer_edit.php:247
+#: includes/arrays.php:388
 #, fuzzy
 msgid "Response Search String - Maintenance Page"
 msgstr "Низ за търсене на отговор - страница за поддръжка"
 
-#: ../webseer_edit.php:248
+#: includes/arrays.php:389
 #, fuzzy
 msgid ""
 "This is the string to search for on the Maintenance Page.  The Service Check "
@@ -313,12 +360,12 @@ msgstr ""
 "провери за този низ, ако горният низ не е намерен. Ако е намерено, това "
 "означава, че уеб услугата се поддържа."
 
-#: ../webseer_edit.php:255
+#: includes/arrays.php:396
 #, fuzzy
 msgid "Response Search String - Failed"
 msgstr "Ред за търсене на отговор - неуспешно"
 
-#: ../webseer_edit.php:256
+#: includes/arrays.php:397
 #, fuzzy
 msgid ""
 "This is the string to search for a known failure in the Web Service "
@@ -329,12 +376,25 @@ msgstr ""
 "Проверката на услугата ще предупреждава само ако този низ е намерен, "
 "пренебрегвайки всички проблеми с изчакване и по-горните нива за търсене."
 
-#: ../webseer_edit.php:262
+#: includes/arrays.php:404
+msgid "Notification Settings"
+msgstr ""
+
+#: includes/arrays.php:407
+#, fuzzy
+msgid "Notify Format"
+msgstr "Известяване на профили"
+
+#: includes/arrays.php:409
+msgid "This is the format to use when sending the notification email"
+msgstr ""
+
+#: includes/arrays.php:414
 #, fuzzy
 msgid "Notify accounts"
 msgstr "Известяване на профили"
 
-#: ../webseer_edit.php:264
+#: includes/arrays.php:416
 #, fuzzy
 msgid ""
 "This is a listing of accounts that will be notified when this website goes "
@@ -343,12 +403,12 @@ msgstr ""
 "Това е списък с профили, които ще бъдат известени, когато този уебсайт се "
 "понижи."
 
-#: ../webseer_edit.php:269
+#: includes/arrays.php:421
 #, fuzzy
 msgid "Extra Alert Emails"
 msgstr "Допълнителни предупредителни имейли"
 
-#: ../webseer_edit.php:273
+#: includes/arrays.php:425
 #, fuzzy
 msgid ""
 "You may specify here extra Emails to receive alerts for this URL (comma "
@@ -357,215 +417,339 @@ msgstr ""
 "Можете да посочите тук допълнителни имейли за получаване на сигнали за този "
 "URL адрес (разделени със запетая)"
 
-#: ../webseer_edit.php:309
+#: includes/functions.php:33 webseer.php:341 webseer.php:539
 #, fuzzy
-msgid "No Users Selected"
-msgstr "Няма избрани потребители"
+msgid "Checks"
+msgstr "Проверки"
 
-#: ../webseer_edit.php:311
+#: includes/functions.php:34 webseer_servers.php:243
 #, fuzzy
-msgid "Users Selected"
-msgstr "Избрани потребители"
+msgid "Servers"
+msgstr "Сървъри"
 
-#: ../webseer_edit.php:314
+#: includes/functions.php:35 webseer_proxies.php:278 webseer_proxies.php:333
+msgid "Proxies"
+msgstr ""
+
+#: poller_webseer.php:181
 #, fuzzy
-msgid "All Users Selected"
-msgstr "Всички потребители са избрани"
+msgid "Cacti Master"
+msgstr "Cacti Master"
 
-#: ../webseer_edit.php:320
+#: poller_webseer.php:184
 #, fuzzy
-msgid "All"
-msgstr "Всички"
+msgid "Cacti Remote Server"
+msgstr "Cacti Remote Server"
 
-#: ../webseer_edit.php:321
+#: setup.php:33
 #, fuzzy
-msgid "None"
-msgstr "Няма"
+msgid "Web Service Check Admin"
+msgstr "Проверка на уеб услуги Админ"
 
-#: ../webseer_edit.php:354 ../webseer.php:478
+#: setup.php:304
 #, fuzzy
-msgid "Search"
-msgstr "Търсене"
+msgid "Management"
+msgstr "управление"
 
-#: ../webseer.php:185 ../webseer_servers.php:153
+#: setup.php:304
+#, fuzzy
+msgid "Web Service Checks"
+msgstr "Проверки на уеб услуги"
+
+#: setup.php:314
+#, fuzzy
+msgid "WebSeer Service Checks"
+msgstr "Проверки за услугата WebSeer"
+
+#: setup.php:321
+#, fuzzy
+msgid "WebSeer Servers"
+msgstr "WebSeer сървъри"
+
+#: setup.php:328 setup.php:335 setup.php:342
+#, fuzzy
+msgid "Service Check Edit"
+msgstr "Проверка на услугата Редактиране"
+
+#: setup.php:349 setup.php:356 setup.php:363
+#, fuzzy
+msgid "Server Edit"
+msgstr "Редактиране на сървъра"
+
+#: webseer.php:189 webseer_servers.php:153
 #, fuzzy
 msgid "Date"
 msgstr "Дата"
 
-#: ../webseer.php:187 ../webseer.php:332 ../webseer_servers.php:156
+#: webseer.php:192 webseer.php:329 webseer_servers.php:156
 #, fuzzy
 msgid "HTTP Code"
 msgstr "HTTP код"
 
-#: ../webseer.php:188 ../webseer.php:334 ../webseer_servers.php:157
+#: webseer.php:193 webseer.php:331 webseer_servers.php:157
 #, fuzzy
 msgid "DNS"
 msgstr "DNS"
 
-#: ../webseer.php:189 ../webseer.php:335 ../webseer_servers.php:158
+#: webseer.php:194 webseer.php:332 webseer_servers.php:158
 #, fuzzy
 msgid "Connect"
 msgstr "Свързване"
 
-#: ../webseer.php:190 ../webseer.php:336 ../webseer_servers.php:159
+#: webseer.php:195 webseer.php:333 webseer_servers.php:159
 #, fuzzy
 msgid "Redirect"
 msgstr "Пренасочване"
 
-#: ../webseer.php:191 ../webseer.php:337 ../webseer_servers.php:160
+#: webseer.php:196 webseer.php:334 webseer_servers.php:160
 #, fuzzy
 msgid "Total"
 msgstr "Общо"
 
-#: ../webseer.php:192 ../webseer.php:330
+#: webseer.php:197 webseer.php:326
 #, fuzzy
 msgid "Status"
 msgstr "Статус"
 
-#: ../webseer.php:219 ../webseer.php:388 ../webseer_servers.php:182
-#, fuzzy
-msgid "Up"
-msgstr "Нагоре"
-
-#: ../webseer.php:219 ../webseer.php:388 ../webseer_servers.php:182
+#: webseer.php:225 webseer.php:400 webseer_servers.php:182
 #, fuzzy
 msgid "Down"
 msgstr "Надолу"
 
-#: ../webseer.php:224 ../webseer_servers.php:192
+#: webseer.php:225 webseer.php:400 webseer_servers.php:182
+#, fuzzy
+msgid "Up"
+msgstr "Нагоре"
+
+#: webseer.php:230 webseer_servers.php:192
 #, fuzzy
 msgid "No Events in History"
 msgstr "Няма събития в историята"
 
-#: ../webseer.php:234 ../webseer_servers.php:202
-#, fuzzy
-msgid "Delete"
-msgstr "Изтрий"
-
-#: ../webseer.php:235 ../webseer_servers.php:203
-#, fuzzy
-msgid "Disable"
-msgstr "Изключи"
-
-#: ../webseer.php:236 ../webseer_servers.php:204
-#, fuzzy
-msgid "Enable"
-msgstr "Включи"
-
-#: ../webseer.php:237
-#, fuzzy
-msgid "Duplicate"
-msgstr "Дублирай"
-
-#: ../webseer.php:327 ../webseer_servers.php:254
+#: webseer.php:324 webseer_servers.php:256
 #, fuzzy
 msgid "Actions"
 msgstr "Действия"
 
-#: ../webseer.php:331 ../webseer.php:391 ../webseer.php:393
-#: ../webseer_servers.php:258 ../webseer_servers.php:381
+#: webseer.php:327 webseer.php:403 webseer.php:406 webseer_servers.php:259
+#: webseer_servers.php:398
 #, fuzzy
 msgid "Enabled"
 msgstr "Разрешен"
 
-#: ../webseer.php:333
+#: webseer.php:330
 #, fuzzy
 msgid "Auth"
 msgstr "Нормативни данни"
 
-#: ../webseer.php:338
+#: webseer.php:335
 #, fuzzy
 msgid "Timeout"
 msgstr "Време за изчакване"
 
-#: ../webseer.php:339 ../webseer_servers.php:260
+#: webseer.php:336 webseer_servers.php:261
 #, fuzzy
 msgid "Last Check"
 msgstr "Последна проверка"
 
-#: ../webseer.php:382
+#: webseer.php:366 webseer_servers.php:282
+msgid "Edit Site"
+msgstr ""
+
+#: webseer.php:371 webseer_servers.php:287
+#, fuzzy
+msgid "Enable Site"
+msgstr "Активиране на сървъра"
+
+#: webseer.php:375 webseer_servers.php:291
+#, fuzzy
+msgid "Disable Site"
+msgstr "Изключи"
+
+#: webseer.php:380 webseer_servers.php:295
+msgid "View History"
+msgstr ""
+
+#: webseer.php:388
 #, fuzzy, php-format
 msgid "DNS: Server %s - A Record for %s"
 msgstr "DNS: Server %s - запис за %s"
 
-#: ../webseer.php:386
+#: webseer.php:398
 #, fuzzy
 msgid "N/A"
 msgstr "Няма"
 
-#: ../webseer.php:391 ../webseer.php:393 ../webseer_servers.php:381
+#: webseer.php:403 webseer.php:406 webseer_servers.php:398
 #, fuzzy
 msgid "Disabled"
 msgstr "Изключен"
 
-#: ../webseer.php:392 ../webseer_servers.php:155
+#: webseer.php:405 webseer_servers.php:155
 #, fuzzy
 msgid "Error"
 msgstr "Грешка"
 
-#: ../webseer.php:407 ../webseer_servers.php:309
+#: webseer.php:420 webseer_proxies.php:299 webseer_servers.php:309
 #, fuzzy
 msgid "No Servers Found"
 msgstr "Не са намерени сървъри"
 
-#: ../webseer.php:469
+#: webseer.php:499
 #, fuzzy
 msgid "Webseer Site Management"
 msgstr "Управление на уебсайта на сайта"
 
-#: ../webseer.php:484 ../webseer_servers.php:375
+#: webseer.php:508 webseer_edit.php:216 webseer_proxies.php:327
+#, fuzzy
+msgid "Search"
+msgstr "Търсене"
+
+#: webseer.php:514 webseer_servers.php:392
 #, fuzzy
 msgid "State"
 msgstr "Област"
 
-#: ../webseer.php:488 ../webseer_servers.php:379
+#: webseer.php:518 webseer_servers.php:396
 #, fuzzy
 msgid "Any"
 msgstr "Всички"
 
-#: ../webseer.php:497 ../webseer_servers.php:388
+#: webseer.php:527 webseer_servers.php:405
 #, fuzzy
 msgid "Refresh"
 msgstr "Обновяване"
 
-#: ../webseer.php:514 ../webseer_servers.php:405
+#: webseer.php:544 webseer_proxies.php:338 webseer_servers.php:422
 #, fuzzy
 msgid "Default"
 msgstr "По подразбиране"
 
-#: ../webseer_servers.php:261
+#: webseer.php:555 webseer_proxies.php:349
+msgid "Go"
+msgstr ""
+
+#: webseer.php:556 webseer_proxies.php:350 webseer_servers.php:433
+msgid "Clear"
+msgstr ""
+
+#: webseer_edit.php:138 webseer_servers_edit.php:116
+#, fuzzy, php-format
+msgid "Query [edit: %s]"
+msgstr "Заявка [редактиране: %s]"
+
+#: webseer_edit.php:140 webseer_servers_edit.php:118
+#, fuzzy
+msgid "Query [new]"
+msgstr "Заявка [нова]"
+
+#: webseer_edit.php:171
+#, fuzzy
+msgid "No Users Selected"
+msgstr "Няма избрани потребители"
+
+#: webseer_edit.php:173
+#, fuzzy
+msgid "Users Selected"
+msgstr "Избрани потребители"
+
+#: webseer_edit.php:176
+#, fuzzy
+msgid "All Users Selected"
+msgstr "Всички потребители са избрани"
+
+#: webseer_edit.php:182
+#, fuzzy
+msgid "All"
+msgstr "Всички"
+
+#: webseer_proxies.php:102
+msgid "Click 'Continue' to delete the following Proxy."
+msgid_plural "Click 'Continue' to delete following Proxies."
+msgstr[0] ""
+msgstr[1] ""
+
+#: webseer_proxies.php:107
+msgid "Cancel"
+msgstr ""
+
+#: webseer_proxies.php:107
+msgid "Continue"
+msgstr ""
+
+#: webseer_proxies.php:107
+#, fuzzy
+msgid "Delete Proxy"
+msgid_plural "Delete Proxies"
+msgstr[0] "Изтрий"
+msgstr[1] "Изтрий"
+
+#: webseer_proxies.php:110
+msgid "You must select at least one Proxy."
+msgstr ""
+
+#: webseer_proxies.php:111
+msgid "Return"
+msgstr ""
+
+#: webseer_proxies.php:167
+#, fuzzy, php-format
+msgid "Proxy [edit: %s]"
+msgstr "Заявка [редактиране: %s]"
+
+#: webseer_proxies.php:169
+#, fuzzy
+msgid "Proxy [new]"
+msgstr "Заявка [нова]"
+
+#: webseer_proxies.php:272
+msgid "Ports (http/https)"
+msgstr ""
+
+#: webseer_proxies.php:273
+msgid "Username"
+msgstr ""
+
+#: webseer_proxies.php:294
+msgid "Not Set"
+msgstr ""
+
+#: webseer_proxies.php:318
+#, fuzzy
+msgid "Webseer Proxy Management"
+msgstr "Управление на сървър за уеб сървъри"
+
+#: webseer_servers.php:262
 #, fuzzy
 msgid "Master"
 msgstr "Мастер"
 
-#: ../webseer_servers.php:262
+#: webseer_servers.php:263
 #, fuzzy
 msgid "This Host"
 msgstr "Този домакин"
 
-#: ../webseer_servers.php:299 ../webseer_servers.php:302
-#: ../webseer_servers.php:303
-#, fuzzy
-msgid "Yes"
-msgstr "Да"
-
-#: ../webseer_servers.php:299 ../webseer_servers.php:302
-#: ../webseer_servers.php:303
+#: webseer_servers.php:299 webseer_servers.php:302 webseer_servers.php:303
 #, fuzzy
 msgid "No"
 msgstr "Не"
 
-#: ../webseer_servers.php:367
+#: webseer_servers.php:299 webseer_servers.php:302 webseer_servers.php:303
+#, fuzzy
+msgid "Yes"
+msgstr "Да"
+
+#: webseer_servers.php:384
 #, fuzzy
 msgid "Webseer Server Management"
 msgstr "Управление на сървър за уеб сървъри"
 
-#: ../webseer_servers.php:381
+#: webseer_servers.php:398
 #, fuzzy
 msgid "Triggered"
 msgstr "Задействани"
 
-#: ../webseer_servers.php:400
+#: webseer_servers.php:417
 #, fuzzy
 msgid "Sites"
 msgstr "сайтове"
