@@ -6,16 +6,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: webseer on cacti 1.1.34\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: developer@cacti.net\n"
 "POT-Creation-Date: 2019-03-19 09:51+0000\n"
-"PO-Revision-Date: 2019-03-16 20:08-0400\n"
-"Last-Translator: \n"
-"Language-Team: sfqas <sfqas@163.com>\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2019-04-26 10:12+0000\n"
+"Last-Translator: whsir <wh@whsir.com>\n"
+"Language-Team: Chinese (Simplified) <http://translate.cacti.net/projects/"
+"cacti/webseer/zh-CN/>\n"
+"Language: zh-CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 3.4-dev\n"
 
 #: includes/arrays.php:93 webseer.php:532 webseer_servers.php:410
 #, php-format
@@ -39,6 +41,7 @@ msgid "%d Seconds"
 msgstr "%d 秒"
 
 #: includes/arrays.php:141 includes/arrays.php:145 includes/arrays.php:152
+#, fuzzy
 msgid "Delete"
 msgstr "删除"
 
@@ -210,8 +213,9 @@ msgid ""
 msgstr ""
 
 #: includes/arrays.php:324 webseer_edit.php:183
+#, fuzzy
 msgid "None"
-msgstr "没有"
+msgstr "无"
 
 #: includes/arrays.php:329 webseer.php:191 webseer.php:328
 msgid "Compression"
@@ -479,6 +483,7 @@ msgid "DNS: Server %s - A Record for %s"
 msgstr "DNS：服务器 %s -   %s的记录"
 
 #: webseer.php:398
+#, fuzzy
 msgid "N/A"
 msgstr "N/A"
 
@@ -499,6 +504,7 @@ msgid "Webseer Site Management"
 msgstr "Webseer网站管理"
 
 #: webseer.php:508 webseer_edit.php:216 webseer_proxies.php:327
+#, fuzzy
 msgid "Search"
 msgstr "搜索"
 
@@ -519,10 +525,12 @@ msgid "Default"
 msgstr "默认"
 
 #: webseer.php:555 webseer_proxies.php:349
+#, fuzzy
 msgid "Go"
-msgstr "启动"
+msgstr "Go"
 
 #: webseer.php:556 webseer_proxies.php:350 webseer_servers.php:433
+#, fuzzy
 msgid "Clear"
 msgstr "清除"
 
@@ -558,12 +566,13 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: webseer_proxies.php:107
+#, fuzzy
 msgid "Cancel"
-msgstr ""
+msgstr "取消"
 
 #: webseer_proxies.php:107
 msgid "Continue"
-msgstr ""
+msgstr "继续"
 
 #: webseer_proxies.php:107
 #, fuzzy
@@ -578,7 +587,7 @@ msgstr ""
 
 #: webseer_proxies.php:111
 msgid "Return"
-msgstr ""
+msgstr "返回"
 
 #: webseer_proxies.php:167
 #, fuzzy, php-format
