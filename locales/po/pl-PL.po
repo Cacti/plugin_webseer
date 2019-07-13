@@ -6,16 +6,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: developer@cacti.net\n"
 "POT-Creation-Date: 2019-03-19 09:51+0000\n"
-"PO-Revision-Date: 2019-03-16 20:00-0400\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: pl_PL\n"
+"PO-Revision-Date: 2019-07-13 03:14+0000\n"
+"Last-Translator: Jaroslaw Kłopotek <jkl@interduo.pl>\n"
+"Language-Team: Polish <http://translate.cacti.net/projects/cacti/webseer/"
+"pl-PL/>\n"
+"Language: pl-PL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 3.4-dev\n"
 
 #: includes/arrays.php:93 webseer.php:532 webseer_servers.php:410
 #, fuzzy, php-format
@@ -39,7 +42,6 @@ msgid "%d Seconds"
 msgstr "%d sek."
 
 #: includes/arrays.php:141 includes/arrays.php:145 includes/arrays.php:152
-#, fuzzy
 msgid "Delete"
 msgstr "Usuń"
 
@@ -74,7 +76,7 @@ msgstr ""
 
 #: includes/arrays.php:171 webseer_proxies.php:271
 msgid "Hostname"
-msgstr ""
+msgstr "Nazwa hosta"
 
 #: includes/arrays.php:172
 msgid "The Proxy Hostname."
@@ -244,7 +246,6 @@ msgid ""
 msgstr ""
 
 #: includes/arrays.php:324 webseer_edit.php:183
-#, fuzzy
 msgid "None"
 msgstr "Brak"
 
@@ -505,7 +506,6 @@ msgid "Total"
 msgstr "Razem"
 
 #: webseer.php:197 webseer.php:326
-#, fuzzy
 msgid "Status"
 msgstr "Status"
 
@@ -574,12 +574,10 @@ msgid "DNS: Server %s - A Record for %s"
 msgstr "DNS: Serwer %s - rekord dla %s"
 
 #: webseer.php:398
-#, fuzzy
 msgid "N/A"
-msgstr "Nie dotyczy"
+msgstr "N/D"
 
 #: webseer.php:403 webseer.php:406 webseer_servers.php:398
-#, fuzzy
 msgid "Disabled"
 msgstr "Wyłączone"
 
@@ -599,7 +597,6 @@ msgid "Webseer Site Management"
 msgstr "Zarządzanie witryną internetową"
 
 #: webseer.php:508 webseer_edit.php:216 webseer_proxies.php:327
-#, fuzzy
 msgid "Search"
 msgstr "Szukaj"
 
@@ -609,12 +606,10 @@ msgid "State"
 msgstr "Województwo"
 
 #: webseer.php:518 webseer_servers.php:396
-#, fuzzy
 msgid "Any"
 msgstr "Dowolny"
 
 #: webseer.php:527 webseer_servers.php:405
-#, fuzzy
 msgid "Refresh"
 msgstr "Odśwież"
 
@@ -669,7 +664,7 @@ msgstr[1] ""
 
 #: webseer_proxies.php:107
 msgid "Cancel"
-msgstr ""
+msgstr "Anuluj"
 
 #: webseer_proxies.php:107
 msgid "Continue"
@@ -743,11 +738,9 @@ msgid "Webseer Server Management"
 msgstr "Zarządzanie serwerem Webseer"
 
 #: webseer_servers.php:398
-#, fuzzy
 msgid "Triggered"
 msgstr "Wyzwolony"
 
 #: webseer_servers.php:417
-#, fuzzy
 msgid "Sites"
-msgstr "Strony"
+msgstr "Lokalizacje"
