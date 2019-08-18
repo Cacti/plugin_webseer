@@ -49,7 +49,7 @@ if (isset_request_var('drp_action')) {
 
 function do_webseer() {
 	$urls = array();
-	while (list($var,$val) = each($_REQUEST)) {
+	foreach ($_REQUEST as $var => $val) {
 		if (preg_match('/^chk_(.*)$/', $var, $matches)) {
 			$id = $matches[1];
 			input_validate_input_number($id);
