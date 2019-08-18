@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: webseer on cacti 1.1.34\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-03-19 09:51+0000\n"
-"PO-Revision-Date: 2019-07-13 03:14+0000\n"
+"PO-Revision-Date: 2019-07-26 13:15+0000\n"
 "Last-Translator: tomcat <luis_126@126.com>\n"
 "Language-Team: Chinese (Simplified) <http://translate.cacti.net/projects/"
 "cacti/webseer/zh-CN/>\n"
@@ -41,7 +41,6 @@ msgid "%d Seconds"
 msgstr "%d 秒"
 
 #: includes/arrays.php:141 includes/arrays.php:145 includes/arrays.php:152
-#, fuzzy
 msgid "Delete"
 msgstr "删除"
 
