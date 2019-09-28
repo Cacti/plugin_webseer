@@ -430,7 +430,12 @@ function plugin_webseer_send_email($to, $subject, $message) {
 		$from    = $from_email;
 	}
 
-	$v = get_cacti_version();
+	if (defined('CACTI_VERSION')) {
+		$v = CACTI_VERSION;
+	} else {
+		$v = get_cacti_version();
+	}
+
 	$headers['User-Agent'] = 'Cacti-WebSeer-v' . $v;
 
 	$message_text = strip_tags($message);
