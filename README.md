@@ -35,6 +35,8 @@ in GitHub.
 
 ## ChangeLog
 
+* feature:  Maintenance schedule check
+
 --- 3.0 ---
 
 * issue#18: Some sites require compression to properly redirect
