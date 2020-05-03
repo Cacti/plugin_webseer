@@ -134,7 +134,7 @@ function webseer_request_validation() {
 		'refresh' => array(
 			'filter' => FILTER_VALIDATE_INT,
 			'pageset' => true,
-			'default' => '20',
+			'default' => read_config_option('log_refresh_interval')
 			),
 		'rfilter' => array(
 			'filter' => FILTER_VALIDATE_IS_REGEX,
@@ -250,7 +250,7 @@ function list_urls() {
 			),
 		'refresh' => array(
 			'filter' => FILTER_VALIDATE_INT,
-			'default' => '20'
+			'default' => read_config_option('log_refresh_interval')
 			),
 		'sort_column' => array(
 			'filter' => FILTER_CALLBACK,
@@ -451,7 +451,7 @@ function list_urls() {
 }
 
 function webseer_filter() {
-	global $item_rows;
+	global $item_rows, $page_refresh_interval;
 
 	$refresh['page']    = 'webseer.php?header=false';
 	$refresh['seconds'] = get_request_var('refresh');
@@ -499,9 +499,9 @@ function webseer_filter() {
 	html_start_box(__('Webseer Site Management', 'webseer') , '100%', '', '3', 'center', 'webseer_edit.php?action=edit');
 	?>
 	<tr class='even noprint'>
-		<form id='form_webseer' action='webseer.php'>
-		<input type='hidden' name='search' value='search'>
 		<td class='noprint'>
+			<form id='form_webseer' action='webseer.php'>
+			<input type='hidden' name='search' value='search'>
 			<table class='filterTable'>
 				<tr class='noprint'>
 					<td>
@@ -529,8 +529,12 @@ function webseer_filter() {
 					<td>
 						<select id='refresh'>
 							<?php
-							foreach (array(20 => __('%d Seconds', 20, 'webseer'), 30 => __('%d Seconds', 30, 'webseer'), 45 => __('%d Seconds', 45, 'webseer'), 60 => __('%d Minute', 1, 'webseer'), 120 => __('%d Minutes', 2, 'webseer'), 300 => __('%d Minutes', 5, 'webseer')) as $r => $row) {
-								echo "<option value='" . $r . "'" . (isset_request_var('refresh') && $r == get_request_var('refresh') ? ' selected' : '') . '>' . $row . '</option>';
+							foreach($page_refresh_interval AS $seconds => $display_text) {
+								print "<option value='" . $seconds . "'";
+								if (get_request_var('refresh') == $seconds) {
+									print ' selected';
+								}
+								print '>' . $display_text . "</option>\n";
 							}
 							?>
 						</select>

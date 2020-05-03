@@ -35,7 +35,7 @@ in GitHub.
 
 ## ChangeLog
 
-* feature:  Maintenance schedule check
+* issue#41:  Maintenance schedule check add
 
 --- 3.0 ---
 

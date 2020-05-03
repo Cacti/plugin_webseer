@@ -102,7 +102,7 @@ if (api_plugin_is_enabled('maint')) {
 	include_once($config['base_path'] . '/plugins/maint/functions.php');
 }
 
-if (function_exists('plugin_maint_check_cacti_host')) {
+if (function_exists('plugin_maint_check_webseer_url')) {
 	if (plugin_maint_check_webseer_url($url_id)) {
 		plugin_webseer_debug('Maintenance schedule active, skipped ' , $url);
 		exit(0);
