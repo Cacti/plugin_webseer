@@ -500,7 +500,7 @@ function webseer_filter() {
 	?>
 	<tr class='even noprint'>
 		<td class='noprint'>
-		<form id='form_webseer' action='webseer.php'>
+			<form id='form_webseer' action='webseer.php'>
 			<input type='hidden' name='search' value='search'>
 			<table class='filterTable'>
 				<tr class='noprint'>
