@@ -139,7 +139,8 @@ function webseer_request_validation() {
 		'rfilter' => array(
 			'filter' => FILTER_VALIDATE_IS_REGEX,
 			'default' => '',
-			'pageset' => true
+			'pageset' => true,
+			'options' => array('options' => 'sanitize_search_string')
 			),
 		'sort_column' => array(
 			'filter' => FILTER_CALLBACK,
@@ -464,7 +465,7 @@ function webseer_filter() {
 	function applyFilter() {
 		strURL  = 'webseer.php?header=false&state=' + $('#state').val();
 		strURL += '&refresh=' + $('#refresh').val();
-		strURL += '&rfilter=' + $('#rfilter').val();
+		strURL += '&rfilter=' + base64_encode($('#rfilter').val());
 		strURL += '&rows=' + $('#rows').val();
 		loadPageNoHeader(strURL);
 	}
@@ -492,7 +493,6 @@ function webseer_filter() {
 			applyFilter();
 		});
 	});
-
 	</script>
 	<?php
 
@@ -508,7 +508,7 @@ function webseer_filter() {
 						<?php print __('Search', 'webseer');?>
 					</td>
 					<td>
-						<input type='text' id='rfilter' size='30' value='<?php print get_request_var('rfilter');?>'>
+						<input type='text' class='ui-state-default ui-corner-all' id='rfilter' size='30' value='<?php print html_escape_request_var('rfilter');?>'>
 					</td>
 					<td>
 						<?php print __('State', 'webseer');?>
@@ -562,11 +562,11 @@ function webseer_filter() {
 					</td>
 				</tr>
 			</table>
-		</td>
 		</form>
+		</td>
 	</tr>
 	<?php
 
 	html_end_box();
+	
 }
-

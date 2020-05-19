@@ -35,7 +35,9 @@ in GitHub.
 
 ## ChangeLog
 
-* issue#41:  Maintenance schedule check add
+* issue#41: Maintenance schedule check add
+
+* issue#42: Search string fix
 
 --- 3.0 ---
 
