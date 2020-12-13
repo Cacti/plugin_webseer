@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-19 09:51+0000\n"
+"Report-Msgid-Bugs-To: developers@cacti.net\n"
+"POT-Creation-Date: 2020-12-12 22:16-0500\n"
 "PO-Revision-Date: 2019-03-16 20:08-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.2.1\n"
 
-#: includes/arrays.php:93 webseer.php:532 webseer_servers.php:410
+#: includes/arrays.php:93 webseer_servers.php:410
 #, fuzzy, php-format
 msgid "%d Minute"
 msgstr "％d分鐘"
@@ -25,15 +25,14 @@ msgstr "％d分鐘"
 #: includes/arrays.php:94 includes/arrays.php:95 includes/arrays.php:96
 #: includes/arrays.php:97 includes/arrays.php:98 includes/arrays.php:99
 #: includes/arrays.php:100 includes/arrays.php:101 includes/arrays.php:102
-#: webseer.php:532 webseer_servers.php:410
+#: webseer_servers.php:410
 #, fuzzy, php-format
 msgid "%d Minutes"
 msgstr "%d 分鐘"
 
 #: includes/arrays.php:106 includes/arrays.php:107 includes/arrays.php:108
 #: includes/arrays.php:109 includes/arrays.php:110 includes/arrays.php:111
-#: includes/arrays.php:112 includes/arrays.php:113 webseer.php:532
-#: webseer_servers.php:410
+#: includes/arrays.php:112 includes/arrays.php:113 webseer_servers.php:410
 #, fuzzy, php-format
 msgid "%d Seconds"
 msgstr "%d 秒"
@@ -58,7 +57,7 @@ msgstr "啟用"
 msgid "Duplicate"
 msgstr "複製"
 
-#: includes/arrays.php:162 includes/arrays.php:231 webseer.php:325
+#: includes/arrays.php:162 includes/arrays.php:231 webseer.php:326
 #: webseer_proxies.php:270 webseer_servers.php:257
 #, fuzzy
 msgid "Name"
@@ -141,8 +140,7 @@ msgstr "這台服務器是本地服務器嗎？"
 
 #: includes/arrays.php:246
 #, fuzzy
-msgid ""
-"Check this box if the current server you are connected to is this entry."
+msgid "Check this box if the current server you are connected to is this entry."
 msgstr "如果您連接的當前服務器是此條目，請選中此框。"
 
 #: includes/arrays.php:252
@@ -152,9 +150,7 @@ msgstr "主服務器"
 
 #: includes/arrays.php:253
 #, fuzzy
-msgid ""
-"Sets this server to the Master server.  The Master server handles all Email "
-"operations"
+msgid "Sets this server to the Master server.  The Master server handles all Email operations"
 msgstr "將此服務器設置為主服務器。主服務器處理所有電子郵件操作"
 
 #: includes/arrays.php:259 includes/arrays.php:313 webseer_servers.php:258
@@ -167,7 +163,7 @@ msgstr "IP 位址"
 msgid "IP Address to connect to this server"
 msgstr "連接到此服務器的IP地址"
 
-#: includes/arrays.php:266 includes/arrays.php:305 webseer.php:190
+#: includes/arrays.php:266 includes/arrays.php:305 webseer.php:191
 #: webseer_servers.php:154
 #, fuzzy
 msgid "URL"
@@ -195,9 +191,7 @@ msgstr "服務檢查名稱"
 
 #: includes/arrays.php:292
 #, fuzzy
-msgid ""
-"The name that is displayed for this Service Check, and is included in any "
-"Alert notifications."
+msgid "The name that is displayed for this Service Check, and is included in any Alert notifications."
 msgstr "為此服務檢查顯示的名稱，包含在任何警報通知中。"
 
 #: includes/arrays.php:298
@@ -217,9 +211,7 @@ msgstr "要監控的URL"
 
 #: includes/arrays.php:314
 #, fuzzy
-msgid ""
-"Enter an IP address to connect to.  Leaving blank will use DNS Resolution "
-"instead."
+msgid "Enter an IP address to connect to.  Leaving blank will use DNS Resolution instead."
 msgstr "輸入要連接的IP地址。留空將改為使用DNS解析。"
 
 #: includes/arrays.php:321
@@ -228,9 +220,7 @@ msgid "Proxy Server"
 msgstr "主服務器"
 
 #: includes/arrays.php:322
-msgid ""
-"If this connection text requires a proxy, select it here.  Otherwise choose "
-"'None'."
+msgid "If this connection text requires a proxy, select it here.  Otherwise choose 'None'."
 msgstr ""
 
 #: includes/arrays.php:324 webseer_edit.php:183
@@ -238,14 +228,12 @@ msgstr ""
 msgid "None"
 msgstr "無"
 
-#: includes/arrays.php:329 webseer.php:191 webseer.php:328
+#: includes/arrays.php:329 webseer.php:192 webseer.php:329
 msgid "Compression"
 msgstr ""
 
 #: includes/arrays.php:333
-msgid ""
-"What compression does the server require?  Most servers should not need "
-"this, but some will not redirect properly without it."
+msgid "What compression does the server require?  Most servers should not need this, but some will not redirect properly without it."
 msgstr ""
 
 #: includes/arrays.php:338
@@ -259,9 +247,7 @@ msgstr "需要身份驗證"
 
 #: includes/arrays.php:343
 #, fuzzy
-msgid ""
-"Check this box if the site will normally return a 401 Error as it requires a "
-"username and password."
+msgid "Check this box if the site will normally return a 401 Error as it requires a username and password."
 msgstr "如果站點通常會返回401錯誤，請選中此框，因為它需要用戶名和密碼。"
 
 #: includes/arrays.php:349
@@ -271,12 +257,8 @@ msgstr "檢查證書"
 
 #: includes/arrays.php:350
 #, fuzzy
-msgid ""
-"If using SSL, check this box if you want to validate the certificate. "
-"Default on, turn off if you the site uses a self-signed certificate."
-msgstr ""
-"如果使用SSL，如果要驗證證書，請選中此框。默認打開，如果您的站點使用自簽名證"
-"書，則關閉。"
+msgid "If using SSL, check this box if you want to validate the certificate. Default on, turn off if you the site uses a self-signed certificate."
+msgstr "如果使用SSL，如果要驗證證書，請選中此框。默認打開，如果您的站點使用自簽名證書，則關閉。"
 
 #: includes/arrays.php:356
 msgid "Notification Timing"
@@ -289,13 +271,8 @@ msgstr "觸發"
 
 #: includes/arrays.php:363
 #, fuzzy
-msgid ""
-"How many minutes the URL must be down before it will send an alert.  After "
-"an alert is sent, in order for a 'Site Recovering' Email to be send, it must "
-"also be up this number of minutes."
-msgstr ""
-"在發送警報之前，URL必須關閉多少分鐘。發送警報後，為了發送“站點恢復”電子郵件，"
-"它也必須達到這個分鐘數。"
+msgid "How many minutes the URL must be down before it will send an alert.  After an alert is sent, in order for a 'Site Recovering' Email to be send, it must also be up this number of minutes."
+msgstr "在發送警報之前，URL必須關閉多少分鐘。發送警報後，為了發送“站點恢復”電子郵件，它也必須達到這個分鐘數。"
 
 #: includes/arrays.php:367
 #, fuzzy
@@ -304,8 +281,7 @@ msgstr "超時"
 
 #: includes/arrays.php:371
 #, fuzzy
-msgid ""
-"How many seconds to allow the page to timeout before reporting it as down."
+msgid "How many seconds to allow the page to timeout before reporting it as down."
 msgstr "在將頁面報告為關閉之前允許頁面超時的秒數。"
 
 #: includes/arrays.php:376
@@ -319,9 +295,7 @@ msgstr "響應搜索字符串"
 
 #: includes/arrays.php:381
 #, fuzzy
-msgid ""
-"This is the string to search for in the URL response for a live and working "
-"Web Service."
+msgid "This is the string to search for in the URL response for a live and working Web Service."
 msgstr "這是在實時和工作Web服務的URL響應中搜索的字符串。"
 
 #: includes/arrays.php:388
@@ -331,13 +305,8 @@ msgstr "響應搜索字符串 - 維護頁面"
 
 #: includes/arrays.php:389
 #, fuzzy
-msgid ""
-"This is the string to search for on the Maintenance Page.  The Service Check "
-"will check for this string if the above string is not found.  If found, it "
-"means that the Web Service is under maintenance."
-msgstr ""
-"這是要在維護頁面上搜索的字符串。如果找不到上面的字符串，Service Check將檢查此"
-"字符串。如果找到，則表示Web服務正在維護中。"
+msgid "This is the string to search for on the Maintenance Page.  The Service Check will check for this string if the above string is not found.  If found, it means that the Web Service is under maintenance."
+msgstr "這是要在維護頁面上搜索的字符串。如果找不到上面的字符串，Service Check將檢查此字符串。如果找到，則表示Web服務正在維護中。"
 
 #: includes/arrays.php:396
 #, fuzzy
@@ -346,13 +315,8 @@ msgstr "響應搜索字符串 - 失敗"
 
 #: includes/arrays.php:397
 #, fuzzy
-msgid ""
-"This is the string to search for a known failure in the Web Service "
-"response.  The Service Check will only alert if this string is found, "
-"ignoring any timeout issues and the search strings above."
-msgstr ""
-"這是在Web Service響應中搜索已知故障的字符串。服務檢查僅在發現此字符串時發出警"
-"報，忽略任何超時問題和上面的搜索字符串。"
+msgid "This is the string to search for a known failure in the Web Service response.  The Service Check will only alert if this string is found, ignoring any timeout issues and the search strings above."
+msgstr "這是在Web Service響應中搜索已知故障的字符串。服務檢查僅在發現此字符串時發出警報，忽略任何超時問題和上面的搜索字符串。"
 
 #: includes/arrays.php:404
 msgid "Notification Settings"
@@ -374,9 +338,7 @@ msgstr "通知帳戶"
 
 #: includes/arrays.php:416
 #, fuzzy
-msgid ""
-"This is a listing of accounts that will be notified when this website goes "
-"down."
+msgid "This is a listing of accounts that will be notified when this website goes down."
 msgstr "這是當該網站出現故障時將通知的帳戶列表。"
 
 #: includes/arrays.php:421
@@ -386,12 +348,10 @@ msgstr "額外警報電子郵件"
 
 #: includes/arrays.php:425
 #, fuzzy
-msgid ""
-"You may specify here extra Emails to receive alerts for this URL (comma "
-"separated)"
+msgid "You may specify here extra Emails to receive alerts for this URL (comma separated)"
 msgstr "您可以在此處指定額外的電子郵件以接收此URL的警報（以逗號分隔）"
 
-#: includes/functions.php:33 webseer.php:341 webseer.php:539
+#: includes/functions.php:33 webseer.php:342 webseer.php:543
 #, fuzzy
 msgid "Checks"
 msgstr "檢查"
@@ -450,121 +410,121 @@ msgstr "服務檢查編輯"
 msgid "Server Edit"
 msgstr "服務器編輯"
 
-#: webseer.php:189 webseer_servers.php:153
+#: webseer.php:190 webseer_servers.php:153
 #, fuzzy
 msgid "Date"
 msgstr "日期"
 
-#: webseer.php:192 webseer.php:329 webseer_servers.php:156
+#: webseer.php:193 webseer.php:330 webseer_servers.php:156
 #, fuzzy
 msgid "HTTP Code"
 msgstr "HTTP代碼"
 
-#: webseer.php:193 webseer.php:331 webseer_servers.php:157
+#: webseer.php:194 webseer.php:332 webseer_servers.php:157
 #, fuzzy
 msgid "DNS"
 msgstr "DNS"
 
-#: webseer.php:194 webseer.php:332 webseer_servers.php:158
+#: webseer.php:195 webseer.php:333 webseer_servers.php:158
 #, fuzzy
 msgid "Connect"
 msgstr "連線"
 
-#: webseer.php:195 webseer.php:333 webseer_servers.php:159
+#: webseer.php:196 webseer.php:334 webseer_servers.php:159
 #, fuzzy
 msgid "Redirect"
 msgstr "重新導向"
 
-#: webseer.php:196 webseer.php:334 webseer_servers.php:160
+#: webseer.php:197 webseer.php:335 webseer_servers.php:160
 #, fuzzy
 msgid "Total"
 msgstr "總計"
 
-#: webseer.php:197 webseer.php:326
+#: webseer.php:198 webseer.php:327
 #, fuzzy
 msgid "Status"
 msgstr "狀態"
 
-#: webseer.php:225 webseer.php:400 webseer_servers.php:182
+#: webseer.php:226 webseer.php:401 webseer_servers.php:182
 #, fuzzy
 msgid "Down"
 msgstr "向下"
 
-#: webseer.php:225 webseer.php:400 webseer_servers.php:182
+#: webseer.php:226 webseer.php:401 webseer_servers.php:182
 #, fuzzy
 msgid "Up"
 msgstr "向上"
 
-#: webseer.php:230 webseer_servers.php:192
+#: webseer.php:231 webseer_servers.php:192
 #, fuzzy
 msgid "No Events in History"
 msgstr "沒有歷史事件"
 
-#: webseer.php:324 webseer_servers.php:256
+#: webseer.php:325 webseer_servers.php:256
 #, fuzzy
 msgid "Actions"
 msgstr "動作"
 
-#: webseer.php:327 webseer.php:403 webseer.php:406 webseer_servers.php:259
+#: webseer.php:328 webseer.php:404 webseer.php:407 webseer_servers.php:259
 #: webseer_servers.php:398
 #, fuzzy
 msgid "Enabled"
 msgstr "啟用"
 
-#: webseer.php:330
+#: webseer.php:331
 #, fuzzy
 msgid "Auth"
 msgstr "驗證"
 
-#: webseer.php:335
+#: webseer.php:336
 #, fuzzy
 msgid "Timeout"
 msgstr "已逾時"
 
-#: webseer.php:336 webseer_servers.php:261
+#: webseer.php:337 webseer_servers.php:261
 #, fuzzy
 msgid "Last Check"
 msgstr "最後檢查"
 
-#: webseer.php:366 webseer_servers.php:282
+#: webseer.php:367 webseer_servers.php:282
 msgid "Edit Site"
 msgstr ""
 
-#: webseer.php:371 webseer_servers.php:287
+#: webseer.php:372 webseer_servers.php:287
 #, fuzzy
 msgid "Enable Site"
 msgstr "啟用服務器"
 
-#: webseer.php:375 webseer_servers.php:291
+#: webseer.php:376 webseer_servers.php:291
 #, fuzzy
 msgid "Disable Site"
 msgstr "停用"
 
-#: webseer.php:380 webseer_servers.php:295
+#: webseer.php:381 webseer_servers.php:295
 msgid "View History"
 msgstr ""
 
-#: webseer.php:388
+#: webseer.php:389
 #, fuzzy, php-format
 msgid "DNS: Server %s - A Record for %s"
 msgstr "DNS：服務器％s  - ％s的記錄"
 
-#: webseer.php:398
+#: webseer.php:399
 #, fuzzy
 msgid "N/A"
 msgstr "不适用"
 
-#: webseer.php:403 webseer.php:406 webseer_servers.php:398
+#: webseer.php:404 webseer.php:407 webseer_servers.php:398
 #, fuzzy
 msgid "Disabled"
 msgstr "停用"
 
-#: webseer.php:405 webseer_servers.php:155
+#: webseer.php:406 webseer_servers.php:155
 #, fuzzy
 msgid "Error"
 msgstr "錯誤"
 
-#: webseer.php:420 webseer_proxies.php:299 webseer_servers.php:309
+#: webseer.php:421 webseer_proxies.php:299 webseer_servers.php:309
 #, fuzzy
 msgid "No Servers Found"
 msgstr "找不到服務器"
@@ -594,16 +554,16 @@ msgstr "任何"
 msgid "Refresh"
 msgstr "重新整理"
 
-#: webseer.php:544 webseer_proxies.php:338 webseer_servers.php:422
+#: webseer.php:548 webseer_proxies.php:338 webseer_servers.php:422
 #, fuzzy
 msgid "Default"
 msgstr "預設"
 
-#: webseer.php:555 webseer_proxies.php:349
+#: webseer.php:559 webseer_proxies.php:349
 msgid "Go"
 msgstr ""
 
-#: webseer.php:556 webseer_proxies.php:350 webseer_servers.php:433
+#: webseer.php:560 webseer_proxies.php:350 webseer_servers.php:433
 msgid "Clear"
 msgstr ""
 

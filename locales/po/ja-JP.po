@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-19 09:51+0000\n"
+"Report-Msgid-Bugs-To: developers@cacti.net\n"
+"POT-Creation-Date: 2020-12-12 22:16-0500\n"
 "PO-Revision-Date: 2019-03-16 19:58-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.2.1\n"
 
-#: includes/arrays.php:93 webseer.php:532 webseer_servers.php:410
+#: includes/arrays.php:93 webseer_servers.php:410
 #, fuzzy, php-format
 msgid "%d Minute"
 msgstr "％d分"
@@ -25,15 +25,14 @@ msgstr "％d分"
 #: includes/arrays.php:94 includes/arrays.php:95 includes/arrays.php:96
 #: includes/arrays.php:97 includes/arrays.php:98 includes/arrays.php:99
 #: includes/arrays.php:100 includes/arrays.php:101 includes/arrays.php:102
-#: webseer.php:532 webseer_servers.php:410
+#: webseer_servers.php:410
 #, fuzzy, php-format
 msgid "%d Minutes"
 msgstr "%d 分"
 
 #: includes/arrays.php:106 includes/arrays.php:107 includes/arrays.php:108
 #: includes/arrays.php:109 includes/arrays.php:110 includes/arrays.php:111
-#: includes/arrays.php:112 includes/arrays.php:113 webseer.php:532
-#: webseer_servers.php:410
+#: includes/arrays.php:112 includes/arrays.php:113 webseer_servers.php:410
 #, fuzzy, php-format
 msgid "%d Seconds"
 msgstr "%d 秒"
@@ -58,7 +57,7 @@ msgstr "有効"
 msgid "Duplicate"
 msgstr "複製"
 
-#: includes/arrays.php:162 includes/arrays.php:231 webseer.php:325
+#: includes/arrays.php:162 includes/arrays.php:231 webseer.php:326
 #: webseer_proxies.php:270 webseer_servers.php:257
 #, fuzzy
 msgid "Name"
@@ -132,9 +131,7 @@ msgstr "サーバーを有効にする"
 #: includes/arrays.php:239
 #, fuzzy
 msgid "Uncheck this box to disabled this server from checking urls."
-msgstr ""
-"このチェックボックスをオフにすると、このサーバはURLをチェックできなくなりま"
-"す。"
+msgstr "このチェックボックスをオフにすると、このサーバはURLをチェックできなくなります。"
 
 #: includes/arrays.php:245
 #, fuzzy
@@ -143,10 +140,8 @@ msgstr "このサーバーはローカルサーバーですか？"
 
 #: includes/arrays.php:246
 #, fuzzy
-msgid ""
-"Check this box if the current server you are connected to is this entry."
-msgstr ""
-"現在接続しているサーバーがこのエントリの場合は、このボックスをオンにします。"
+msgid "Check this box if the current server you are connected to is this entry."
+msgstr "現在接続しているサーバーがこのエントリの場合は、このボックスをオンにします。"
 
 #: includes/arrays.php:252
 #, fuzzy
@@ -155,12 +150,8 @@ msgstr "マスターサーバー"
 
 #: includes/arrays.php:253
 #, fuzzy
-msgid ""
-"Sets this server to the Master server.  The Master server handles all Email "
-"operations"
-msgstr ""
-"このサーバーをマスターサーバーに設定します。マスターサーバーはすべての電子"
-"メール操作を処理します"
+msgid "Sets this server to the Master server.  The Master server handles all Email operations"
+msgstr "このサーバーをマスターサーバーに設定します。マスターサーバーはすべての電子メール操作を処理します"
 
 #: includes/arrays.php:259 includes/arrays.php:313 webseer_servers.php:258
 #, fuzzy
@@ -172,7 +163,7 @@ msgstr "IPアドレス"
 msgid "IP Address to connect to this server"
 msgstr "このサーバーに接続するためのIPアドレス"
 
-#: includes/arrays.php:266 includes/arrays.php:305 webseer.php:190
+#: includes/arrays.php:266 includes/arrays.php:305 webseer.php:191
 #: webseer_servers.php:154
 #, fuzzy
 msgid "URL"
@@ -200,9 +191,7 @@ msgstr "サービスチェック名"
 
 #: includes/arrays.php:292
 #, fuzzy
-msgid ""
-"The name that is displayed for this Service Check, and is included in any "
-"Alert notifications."
+msgid "The name that is displayed for this Service Check, and is included in any Alert notifications."
 msgstr "このサービスチェックに表示される名前で、アラート通知に含まれています。"
 
 #: includes/arrays.php:298
@@ -222,12 +211,8 @@ msgstr "監視するURL"
 
 #: includes/arrays.php:314
 #, fuzzy
-msgid ""
-"Enter an IP address to connect to.  Leaving blank will use DNS Resolution "
-"instead."
-msgstr ""
-"接続するIPアドレスを入力してください。空白のままにすると、代わりにDNS解決が使"
-"用されます。"
+msgid "Enter an IP address to connect to.  Leaving blank will use DNS Resolution instead."
+msgstr "接続するIPアドレスを入力してください。空白のままにすると、代わりにDNS解決が使用されます。"
 
 #: includes/arrays.php:321
 #, fuzzy
@@ -235,9 +220,7 @@ msgid "Proxy Server"
 msgstr "マスターサーバー"
 
 #: includes/arrays.php:322
-msgid ""
-"If this connection text requires a proxy, select it here.  Otherwise choose "
-"'None'."
+msgid "If this connection text requires a proxy, select it here.  Otherwise choose 'None'."
 msgstr ""
 
 #: includes/arrays.php:324 webseer_edit.php:183
@@ -245,14 +228,12 @@ msgstr ""
 msgid "None"
 msgstr "なし"
 
-#: includes/arrays.php:329 webseer.php:191 webseer.php:328
+#: includes/arrays.php:329 webseer.php:192 webseer.php:329
 msgid "Compression"
 msgstr ""
 
 #: includes/arrays.php:333
-msgid ""
-"What compression does the server require?  Most servers should not need "
-"this, but some will not redirect properly without it."
+msgid "What compression does the server require?  Most servers should not need this, but some will not redirect properly without it."
 msgstr ""
 
 #: includes/arrays.php:338
@@ -266,12 +247,8 @@ msgstr "認証が必要"
 
 #: includes/arrays.php:343
 #, fuzzy
-msgid ""
-"Check this box if the site will normally return a 401 Error as it requires a "
-"username and password."
-msgstr ""
-"ユーザー名とパスワードが必要なため、サイトが通常401エラーを返す場合は、この"
-"ボックスをオンにします。"
+msgid "Check this box if the site will normally return a 401 Error as it requires a username and password."
+msgstr "ユーザー名とパスワードが必要なため、サイトが通常401エラーを返す場合は、このボックスをオンにします。"
 
 #: includes/arrays.php:349
 #, fuzzy
@@ -280,12 +257,8 @@ msgstr "証明書を確認する"
 
 #: includes/arrays.php:350
 #, fuzzy
-msgid ""
-"If using SSL, check this box if you want to validate the certificate. "
-"Default on, turn off if you the site uses a self-signed certificate."
-msgstr ""
-"SSLを使用している場合、証明書を検証したい場合はこのボックスをチェックしてくだ"
-"さい。サイトが自己署名証明書を使用している場合はデフォルトでオンになります。"
+msgid "If using SSL, check this box if you want to validate the certificate. Default on, turn off if you the site uses a self-signed certificate."
+msgstr "SSLを使用している場合、証明書を検証したい場合はこのボックスをチェックしてください。サイトが自己署名証明書を使用している場合はデフォルトでオンになります。"
 
 #: includes/arrays.php:356
 msgid "Notification Timing"
@@ -298,14 +271,8 @@ msgstr "トリガー"
 
 #: includes/arrays.php:363
 #, fuzzy
-msgid ""
-"How many minutes the URL must be down before it will send an alert.  After "
-"an alert is sent, in order for a 'Site Recovering' Email to be send, it must "
-"also be up this number of minutes."
-msgstr ""
-"アラートが送信されるまでにURLが停止するまでの時間（分）。アラートが送信された"
-"後、「Site Recovering」Eメールが送信されるようにするには、この分数も経過して"
-"いる必要があります。"
+msgid "How many minutes the URL must be down before it will send an alert.  After an alert is sent, in order for a 'Site Recovering' Email to be send, it must also be up this number of minutes."
+msgstr "アラートが送信されるまでにURLが停止するまでの時間（分）。アラートが送信された後、「Site Recovering」Eメールが送信されるようにするには、この分数も経過している必要があります。"
 
 #: includes/arrays.php:367
 #, fuzzy
@@ -314,11 +281,8 @@ msgstr "時間外"
 
 #: includes/arrays.php:371
 #, fuzzy
-msgid ""
-"How many seconds to allow the page to timeout before reporting it as down."
-msgstr ""
-"ページがダウンしていると報告されるまでに、ページがタイムアウトするまでの秒"
-"数。"
+msgid "How many seconds to allow the page to timeout before reporting it as down."
+msgstr "ページがダウンしていると報告されるまでに、ページがタイムアウトするまでの秒数。"
 
 #: includes/arrays.php:376
 msgid "Verification Strings"
@@ -331,9 +295,7 @@ msgstr "レスポンス検索文字列"
 
 #: includes/arrays.php:381
 #, fuzzy
-msgid ""
-"This is the string to search for in the URL response for a live and working "
-"Web Service."
+msgid "This is the string to search for in the URL response for a live and working Web Service."
 msgstr "これは、稼働中の機能しているWebサービスのURL応答で検索する文字列です。"
 
 #: includes/arrays.php:388
@@ -343,14 +305,8 @@ msgstr "応答検索文字列 - メンテナンスページ"
 
 #: includes/arrays.php:389
 #, fuzzy
-msgid ""
-"This is the string to search for on the Maintenance Page.  The Service Check "
-"will check for this string if the above string is not found.  If found, it "
-"means that the Web Service is under maintenance."
-msgstr ""
-"これは、メンテナンスページで検索する文字列です。上記の文字列が見つからない場"
-"合、Service Checkはこの文字列をチェックします。見つかった場合は、Webサービス"
-"がメンテナンス中であることを意味します。"
+msgid "This is the string to search for on the Maintenance Page.  The Service Check will check for this string if the above string is not found.  If found, it means that the Web Service is under maintenance."
+msgstr "これは、メンテナンスページで検索する文字列です。上記の文字列が見つからない場合、Service Checkはこの文字列をチェックします。見つかった場合は、Webサービスがメンテナンス中であることを意味します。"
 
 #: includes/arrays.php:396
 #, fuzzy
@@ -359,14 +315,8 @@ msgstr "応答検索文字列 - 失敗"
 
 #: includes/arrays.php:397
 #, fuzzy
-msgid ""
-"This is the string to search for a known failure in the Web Service "
-"response.  The Service Check will only alert if this string is found, "
-"ignoring any timeout issues and the search strings above."
-msgstr ""
-"これは、Webサービスの応答における既知の失敗を検索するための文字列です。 "
-"Service Checkは、この文字列が見つかった場合にのみ警告を発し、タイムアウトの問"
-"題や上記の検索文字列は無視します。"
+msgid "This is the string to search for a known failure in the Web Service response.  The Service Check will only alert if this string is found, ignoring any timeout issues and the search strings above."
+msgstr "これは、Webサービスの応答における既知の失敗を検索するための文字列です。 Service Checkは、この文字列が見つかった場合にのみ警告を発し、タイムアウトの問題や上記の検索文字列は無視します。"
 
 #: includes/arrays.php:404
 msgid "Notification Settings"
@@ -388,11 +338,8 @@ msgstr "アカウントを通知する"
 
 #: includes/arrays.php:416
 #, fuzzy
-msgid ""
-"This is a listing of accounts that will be notified when this website goes "
-"down."
-msgstr ""
-"これはこのウェブサイトがダウンしたときに通知されるアカウントのリストです。"
+msgid "This is a listing of accounts that will be notified when this website goes down."
+msgstr "これはこのウェブサイトがダウンしたときに通知されるアカウントのリストです。"
 
 #: includes/arrays.php:421
 #, fuzzy
@@ -401,14 +348,10 @@ msgstr "追加のアラートメール"
 
 #: includes/arrays.php:425
 #, fuzzy
-msgid ""
-"You may specify here extra Emails to receive alerts for this URL (comma "
-"separated)"
-msgstr ""
-"このURLのアラートを受け取るための追加のEメールをここで指定できます（コンマ区"
-"切り）。"
+msgid "You may specify here extra Emails to receive alerts for this URL (comma separated)"
+msgstr "このURLのアラートを受け取るための追加のEメールをここで指定できます（コンマ区切り）。"
 
-#: includes/functions.php:33 webseer.php:341 webseer.php:539
+#: includes/functions.php:33 webseer.php:342 webseer.php:543
 #, fuzzy
 msgid "Checks"
 msgstr "チェック"
@@ -467,121 +410,121 @@ msgstr "サービスチェック編集"
 msgid "Server Edit"
 msgstr "サーバー編集"
 
-#: webseer.php:189 webseer_servers.php:153
+#: webseer.php:190 webseer_servers.php:153
 #, fuzzy
 msgid "Date"
 msgstr "日付"
 
-#: webseer.php:192 webseer.php:329 webseer_servers.php:156
+#: webseer.php:193 webseer.php:330 webseer_servers.php:156
 #, fuzzy
 msgid "HTTP Code"
 msgstr "HTTPコード"
 
-#: webseer.php:193 webseer.php:331 webseer_servers.php:157
+#: webseer.php:194 webseer.php:332 webseer_servers.php:157
 #, fuzzy
 msgid "DNS"
 msgstr "DNS"
 
-#: webseer.php:194 webseer.php:332 webseer_servers.php:158
+#: webseer.php:195 webseer.php:333 webseer_servers.php:158
 #, fuzzy
 msgid "Connect"
 msgstr "接続"
 
-#: webseer.php:195 webseer.php:333 webseer_servers.php:159
+#: webseer.php:196 webseer.php:334 webseer_servers.php:159
 #, fuzzy
 msgid "Redirect"
 msgstr "リダイレクト"
 
-#: webseer.php:196 webseer.php:334 webseer_servers.php:160
+#: webseer.php:197 webseer.php:335 webseer_servers.php:160
 #, fuzzy
 msgid "Total"
 msgstr "合計"
 
-#: webseer.php:197 webseer.php:326
+#: webseer.php:198 webseer.php:327
 #, fuzzy
 msgid "Status"
 msgstr "状態"
 
-#: webseer.php:225 webseer.php:400 webseer_servers.php:182
+#: webseer.php:226 webseer.php:401 webseer_servers.php:182
 #, fuzzy
 msgid "Down"
 msgstr "下"
 
-#: webseer.php:225 webseer.php:400 webseer_servers.php:182
+#: webseer.php:226 webseer.php:401 webseer_servers.php:182
 #, fuzzy
 msgid "Up"
 msgstr "上"
 
-#: webseer.php:230 webseer_servers.php:192
+#: webseer.php:231 webseer_servers.php:192
 #, fuzzy
 msgid "No Events in History"
 msgstr "歴史上のイベントはありません"
 
-#: webseer.php:324 webseer_servers.php:256
+#: webseer.php:325 webseer_servers.php:256
 #, fuzzy
 msgid "Actions"
 msgstr "操作"
 
-#: webseer.php:327 webseer.php:403 webseer.php:406 webseer_servers.php:259
+#: webseer.php:328 webseer.php:404 webseer.php:407 webseer_servers.php:259
 #: webseer_servers.php:398
 #, fuzzy
 msgid "Enabled"
 msgstr "有効"
 
-#: webseer.php:330
+#: webseer.php:331
 #, fuzzy
 msgid "Auth"
 msgstr "認証"
 
-#: webseer.php:335
+#: webseer.php:336
 #, fuzzy
 msgid "Timeout"
 msgstr "タイムアウト"
 
-#: webseer.php:336 webseer_servers.php:261
+#: webseer.php:337 webseer_servers.php:261
 #, fuzzy
 msgid "Last Check"
 msgstr "最後のチェック"
 
-#: webseer.php:366 webseer_servers.php:282
+#: webseer.php:367 webseer_servers.php:282
 msgid "Edit Site"
 msgstr ""
 
-#: webseer.php:371 webseer_servers.php:287
+#: webseer.php:372 webseer_servers.php:287
 #, fuzzy
 msgid "Enable Site"
 msgstr "サーバーを有効にする"
 
-#: webseer.php:375 webseer_servers.php:291
+#: webseer.php:376 webseer_servers.php:291
 #, fuzzy
 msgid "Disable Site"
 msgstr "無効"
 
-#: webseer.php:380 webseer_servers.php:295
+#: webseer.php:381 webseer_servers.php:295
 msgid "View History"
 msgstr ""
 
-#: webseer.php:388
+#: webseer.php:389
 #, fuzzy, php-format
 msgid "DNS: Server %s - A Record for %s"
 msgstr "DNS：サーバー％s  - ％sのレコード"
 
-#: webseer.php:398
+#: webseer.php:399
 #, fuzzy
 msgid "N/A"
 msgstr "該当なし"
 
-#: webseer.php:403 webseer.php:406 webseer_servers.php:398
+#: webseer.php:404 webseer.php:407 webseer_servers.php:398
 #, fuzzy
 msgid "Disabled"
 msgstr "無効"
 
-#: webseer.php:405 webseer_servers.php:155
+#: webseer.php:406 webseer_servers.php:155
 #, fuzzy
 msgid "Error"
 msgstr "エラー"
 
-#: webseer.php:420 webseer_proxies.php:299 webseer_servers.php:309
+#: webseer.php:421 webseer_proxies.php:299 webseer_servers.php:309
 #, fuzzy
 msgid "No Servers Found"
 msgstr "サーバーが見つかりません"
@@ -611,16 +554,16 @@ msgstr "任意"
 msgid "Refresh"
 msgstr "更新"
 
-#: webseer.php:544 webseer_proxies.php:338 webseer_servers.php:422
+#: webseer.php:548 webseer_proxies.php:338 webseer_servers.php:422
 #, fuzzy
 msgid "Default"
 msgstr "デフォルト"
 
-#: webseer.php:555 webseer_proxies.php:349
+#: webseer.php:559 webseer_proxies.php:349
 msgid "Go"
 msgstr ""
 
-#: webseer.php:556 webseer_proxies.php:350 webseer_servers.php:433
+#: webseer.php:560 webseer_proxies.php:350 webseer_servers.php:433
 msgid "Clear"
 msgstr ""
 

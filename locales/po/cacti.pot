@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR The Cacti Group
+# This file is distributed under the same license as the Cacti package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-19 09:51+0000\n"
+"Project-Id-Version: Cacti \n"
+"Report-Msgid-Bugs-To: developers@cacti.net\n"
+"POT-Creation-Date: 2020-12-12 22:16-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: includes/arrays.php:93 webseer.php:532 webseer_servers.php:410
+#: includes/arrays.php:93 webseer_servers.php:410
 #, php-format
 msgid "%d Minute"
 msgstr ""
@@ -26,15 +26,14 @@ msgstr ""
 #: includes/arrays.php:94 includes/arrays.php:95 includes/arrays.php:96
 #: includes/arrays.php:97 includes/arrays.php:98 includes/arrays.php:99
 #: includes/arrays.php:100 includes/arrays.php:101 includes/arrays.php:102
-#: webseer.php:532 webseer_servers.php:410
+#: webseer_servers.php:410
 #, php-format
 msgid "%d Minutes"
 msgstr ""
 
 #: includes/arrays.php:106 includes/arrays.php:107 includes/arrays.php:108
 #: includes/arrays.php:109 includes/arrays.php:110 includes/arrays.php:111
-#: includes/arrays.php:112 includes/arrays.php:113 webseer.php:532
-#: webseer_servers.php:410
+#: includes/arrays.php:112 includes/arrays.php:113 webseer_servers.php:410
 #, php-format
 msgid "%d Seconds"
 msgstr ""
@@ -55,7 +54,7 @@ msgstr ""
 msgid "Duplicate"
 msgstr ""
 
-#: includes/arrays.php:162 includes/arrays.php:231 webseer.php:325
+#: includes/arrays.php:162 includes/arrays.php:231 webseer.php:326
 #: webseer_proxies.php:270 webseer_servers.php:257
 msgid "Name"
 msgstr ""
@@ -129,8 +128,7 @@ msgid "Is this server the local server?"
 msgstr ""
 
 #: includes/arrays.php:246
-msgid ""
-"Check this box if the current server you are connected to is this entry."
+msgid "Check this box if the current server you are connected to is this entry."
 msgstr ""
 
 #: includes/arrays.php:252
@@ -138,9 +136,7 @@ msgid "Master Server"
 msgstr ""
 
 #: includes/arrays.php:253
-msgid ""
-"Sets this server to the Master server.  The Master server handles all Email "
-"operations"
+msgid "Sets this server to the Master server.  The Master server handles all Email operations"
 msgstr ""
 
 #: includes/arrays.php:259 includes/arrays.php:313 webseer_servers.php:258
@@ -151,7 +147,7 @@ msgstr ""
 msgid "IP Address to connect to this server"
 msgstr ""
 
-#: includes/arrays.php:266 includes/arrays.php:305 webseer.php:190
+#: includes/arrays.php:266 includes/arrays.php:305 webseer.php:191
 #: webseer_servers.php:154
 msgid "URL"
 msgstr ""
@@ -173,9 +169,7 @@ msgid "Service Check Name"
 msgstr ""
 
 #: includes/arrays.php:292
-msgid ""
-"The name that is displayed for this Service Check, and is included in any "
-"Alert notifications."
+msgid "The name that is displayed for this Service Check, and is included in any Alert notifications."
 msgstr ""
 
 #: includes/arrays.php:298
@@ -191,9 +185,7 @@ msgid "The URL to Monitor"
 msgstr ""
 
 #: includes/arrays.php:314
-msgid ""
-"Enter an IP address to connect to.  Leaving blank will use DNS Resolution "
-"instead."
+msgid "Enter an IP address to connect to.  Leaving blank will use DNS Resolution instead."
 msgstr ""
 
 #: includes/arrays.php:321
@@ -201,23 +193,19 @@ msgid "Proxy Server"
 msgstr ""
 
 #: includes/arrays.php:322
-msgid ""
-"If this connection text requires a proxy, select it here.  Otherwise choose "
-"'None'."
+msgid "If this connection text requires a proxy, select it here.  Otherwise choose 'None'."
 msgstr ""
 
 #: includes/arrays.php:324 webseer_edit.php:183
 msgid "None"
 msgstr ""
 
-#: includes/arrays.php:329 webseer.php:191 webseer.php:328
+#: includes/arrays.php:329 webseer.php:192 webseer.php:329
 msgid "Compression"
 msgstr ""
 
 #: includes/arrays.php:333
-msgid ""
-"What compression does the server require?  Most servers should not need "
-"this, but some will not redirect properly without it."
+msgid "What compression does the server require?  Most servers should not need this, but some will not redirect properly without it."
 msgstr ""
 
 #: includes/arrays.php:338
@@ -229,9 +217,7 @@ msgid "Requires Authentication"
 msgstr ""
 
 #: includes/arrays.php:343
-msgid ""
-"Check this box if the site will normally return a 401 Error as it requires a "
-"username and password."
+msgid "Check this box if the site will normally return a 401 Error as it requires a username and password."
 msgstr ""
 
 #: includes/arrays.php:349
@@ -239,9 +225,7 @@ msgid "Check Certificate"
 msgstr ""
 
 #: includes/arrays.php:350
-msgid ""
-"If using SSL, check this box if you want to validate the certificate. "
-"Default on, turn off if you the site uses a self-signed certificate."
+msgid "If using SSL, check this box if you want to validate the certificate. Default on, turn off if you the site uses a self-signed certificate."
 msgstr ""
 
 #: includes/arrays.php:356
@@ -253,10 +237,7 @@ msgid "Trigger"
 msgstr ""
 
 #: includes/arrays.php:363
-msgid ""
-"How many minutes the URL must be down before it will send an alert.  After "
-"an alert is sent, in order for a 'Site Recovering' Email to be send, it must "
-"also be up this number of minutes."
+msgid "How many minutes the URL must be down before it will send an alert.  After an alert is sent, in order for a 'Site Recovering' Email to be send, it must also be up this number of minutes."
 msgstr ""
 
 #: includes/arrays.php:367
@@ -264,8 +245,7 @@ msgid "Time Out"
 msgstr ""
 
 #: includes/arrays.php:371
-msgid ""
-"How many seconds to allow the page to timeout before reporting it as down."
+msgid "How many seconds to allow the page to timeout before reporting it as down."
 msgstr ""
 
 #: includes/arrays.php:376
@@ -277,9 +257,7 @@ msgid "Response Search String"
 msgstr ""
 
 #: includes/arrays.php:381
-msgid ""
-"This is the string to search for in the URL response for a live and working "
-"Web Service."
+msgid "This is the string to search for in the URL response for a live and working Web Service."
 msgstr ""
 
 #: includes/arrays.php:388
@@ -287,10 +265,7 @@ msgid "Response Search String - Maintenance Page"
 msgstr ""
 
 #: includes/arrays.php:389
-msgid ""
-"This is the string to search for on the Maintenance Page.  The Service Check "
-"will check for this string if the above string is not found.  If found, it "
-"means that the Web Service is under maintenance."
+msgid "This is the string to search for on the Maintenance Page.  The Service Check will check for this string if the above string is not found.  If found, it means that the Web Service is under maintenance."
 msgstr ""
 
 #: includes/arrays.php:396
@@ -298,10 +273,7 @@ msgid "Response Search String - Failed"
 msgstr ""
 
 #: includes/arrays.php:397
-msgid ""
-"This is the string to search for a known failure in the Web Service "
-"response.  The Service Check will only alert if this string is found, "
-"ignoring any timeout issues and the search strings above."
+msgid "This is the string to search for a known failure in the Web Service response.  The Service Check will only alert if this string is found, ignoring any timeout issues and the search strings above."
 msgstr ""
 
 #: includes/arrays.php:404
@@ -321,9 +293,7 @@ msgid "Notify accounts"
 msgstr ""
 
 #: includes/arrays.php:416
-msgid ""
-"This is a listing of accounts that will be notified when this website goes "
-"down."
+msgid "This is a listing of accounts that will be notified when this website goes down."
 msgstr ""
 
 #: includes/arrays.php:421
@@ -331,12 +301,10 @@ msgid "Extra Alert Emails"
 msgstr ""
 
 #: includes/arrays.php:425
-msgid ""
-"You may specify here extra Emails to receive alerts for this URL (comma "
-"separated)"
+msgid "You may specify here extra Emails to receive alerts for this URL (comma separated)"
 msgstr ""
 
-#: includes/functions.php:33 webseer.php:341 webseer.php:539
+#: includes/functions.php:33 webseer.php:342 webseer.php:543
 msgid "Checks"
 msgstr ""
 
@@ -384,101 +352,101 @@ msgstr ""
 msgid "Server Edit"
 msgstr ""
 
-#: webseer.php:189 webseer_servers.php:153
+#: webseer.php:190 webseer_servers.php:153
 msgid "Date"
 msgstr ""
 
-#: webseer.php:192 webseer.php:329 webseer_servers.php:156
+#: webseer.php:193 webseer.php:330 webseer_servers.php:156
 msgid "HTTP Code"
 msgstr ""
 
-#: webseer.php:193 webseer.php:331 webseer_servers.php:157
+#: webseer.php:194 webseer.php:332 webseer_servers.php:157
 msgid "DNS"
 msgstr ""
 
-#: webseer.php:194 webseer.php:332 webseer_servers.php:158
+#: webseer.php:195 webseer.php:333 webseer_servers.php:158
 msgid "Connect"
 msgstr ""
 
-#: webseer.php:195 webseer.php:333 webseer_servers.php:159
+#: webseer.php:196 webseer.php:334 webseer_servers.php:159
 msgid "Redirect"
 msgstr ""
 
-#: webseer.php:196 webseer.php:334 webseer_servers.php:160
+#: webseer.php:197 webseer.php:335 webseer_servers.php:160
 msgid "Total"
 msgstr ""
 
-#: webseer.php:197 webseer.php:326
+#: webseer.php:198 webseer.php:327
 msgid "Status"
 msgstr ""
 
-#: webseer.php:225 webseer.php:400 webseer_servers.php:182
+#: webseer.php:226 webseer.php:401 webseer_servers.php:182
 msgid "Down"
 msgstr ""
 
-#: webseer.php:225 webseer.php:400 webseer_servers.php:182
+#: webseer.php:226 webseer.php:401 webseer_servers.php:182
 msgid "Up"
 msgstr ""
 
-#: webseer.php:230 webseer_servers.php:192
+#: webseer.php:231 webseer_servers.php:192
 msgid "No Events in History"
 msgstr ""
 
-#: webseer.php:324 webseer_servers.php:256
+#: webseer.php:325 webseer_servers.php:256
 msgid "Actions"
 msgstr ""
 
-#: webseer.php:327 webseer.php:403 webseer.php:406 webseer_servers.php:259
+#: webseer.php:328 webseer.php:404 webseer.php:407 webseer_servers.php:259
 #: webseer_servers.php:398
 msgid "Enabled"
 msgstr ""
 
-#: webseer.php:330
+#: webseer.php:331
 msgid "Auth"
 msgstr ""
 
-#: webseer.php:335
+#: webseer.php:336
 msgid "Timeout"
 msgstr ""
 
-#: webseer.php:336 webseer_servers.php:261
+#: webseer.php:337 webseer_servers.php:261
 msgid "Last Check"
 msgstr ""
 
-#: webseer.php:366 webseer_servers.php:282
+#: webseer.php:367 webseer_servers.php:282
 msgid "Edit Site"
 msgstr ""
 
-#: webseer.php:371 webseer_servers.php:287
+#: webseer.php:372 webseer_servers.php:287
 msgid "Enable Site"
 msgstr ""
 
-#: webseer.php:375 webseer_servers.php:291
+#: webseer.php:376 webseer_servers.php:291
 msgid "Disable Site"
 msgstr ""
 
-#: webseer.php:380 webseer_servers.php:295
+#: webseer.php:381 webseer_servers.php:295
 msgid "View History"
 msgstr ""
 
-#: webseer.php:388
+#: webseer.php:389
 #, php-format
 msgid "DNS: Server %s - A Record for %s"
 msgstr ""
 
-#: webseer.php:398
+#: webseer.php:399
 msgid "N/A"
 msgstr ""
 
-#: webseer.php:403 webseer.php:406 webseer_servers.php:398
+#: webseer.php:404 webseer.php:407 webseer_servers.php:398
 msgid "Disabled"
 msgstr ""
 
-#: webseer.php:405 webseer_servers.php:155
+#: webseer.php:406 webseer_servers.php:155
 msgid "Error"
 msgstr ""
 
-#: webseer.php:420 webseer_proxies.php:299 webseer_servers.php:309
+#: webseer.php:421 webseer_proxies.php:299 webseer_servers.php:309
 msgid "No Servers Found"
 msgstr ""
 
@@ -502,15 +470,15 @@ msgstr ""
 msgid "Refresh"
 msgstr ""
 
-#: webseer.php:544 webseer_proxies.php:338 webseer_servers.php:422
+#: webseer.php:548 webseer_proxies.php:338 webseer_servers.php:422
 msgid "Default"
 msgstr ""
 
-#: webseer.php:555 webseer_proxies.php:349
+#: webseer.php:559 webseer_proxies.php:349
 msgid "Go"
 msgstr ""
 
-#: webseer.php:556 webseer_proxies.php:350 webseer_servers.php:433
+#: webseer.php:560 webseer_proxies.php:350 webseer_servers.php:433
 msgid "Clear"
 msgstr ""
 
