@@ -8,19 +8,20 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
 "POT-Creation-Date: 2020-12-12 22:16-0500\n"
-"PO-Revision-Date: 2019-03-16 19:54-0400\n"
+"PO-Revision-Date: 2020-12-14 19:05-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: he_IL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.4.2\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? 2 : 3);\n"
 
 #: includes/arrays.php:93 webseer_servers.php:410
-#, fuzzy, php-format
+#, php-format
 msgid "%d Minute"
-msgstr "% d דקות"
+msgstr "‫%d דקה"
 
 #: includes/arrays.php:94 includes/arrays.php:95 includes/arrays.php:96
 #: includes/arrays.php:97 includes/arrays.php:98 includes/arrays.php:99
@@ -35,49 +36,46 @@ msgstr "דקות %d"
 #: includes/arrays.php:112 includes/arrays.php:113 webseer_servers.php:410
 #, fuzzy, php-format
 msgid "%d Seconds"
-msgstr "% d שניות"
+msgstr "%d שניות"
 
 #: includes/arrays.php:141 includes/arrays.php:145 includes/arrays.php:152
-#, fuzzy
 msgid "Delete"
 msgstr "מחק"
 
 #: includes/arrays.php:146 includes/arrays.php:153
-#, fuzzy
 msgid "Disable"
 msgstr "כיבוי"
 
 #: includes/arrays.php:147 includes/arrays.php:154
-#, fuzzy
 msgid "Enable"
 msgstr "אפשר"
 
 #: includes/arrays.php:148
-#, fuzzy
 msgid "Duplicate"
 msgstr "שכפל"
 
 #: includes/arrays.php:162 includes/arrays.php:231 webseer.php:326
 #: webseer_proxies.php:270 webseer_servers.php:257
-#, fuzzy
 msgid "Name"
 msgstr "שם"
 
 #: includes/arrays.php:163
+#, fuzzy
 msgid "A Useful Name for this Proxy."
-msgstr ""
+msgstr "שם שימושי לפרוקסי זה."
 
 #: includes/arrays.php:167
 msgid "New Proxy"
-msgstr ""
+msgstr "פרוקסי חדש"
 
 #: includes/arrays.php:171 webseer_proxies.php:271
 msgid "Hostname"
-msgstr ""
+msgstr "Hostname"
 
 #: includes/arrays.php:172
+#, fuzzy
 msgid "The Proxy Hostname."
-msgstr ""
+msgstr "שם המארח של ה- Proxy."
 
 #: includes/arrays.php:180
 #, fuzzy
@@ -85,8 +83,9 @@ msgid "HTTP Port"
 msgstr "קוד HTTP"
 
 #: includes/arrays.php:181
+#, fuzzy
 msgid "The HTTP Proxy Port."
-msgstr ""
+msgstr "יציאת ה- proxy של HTTP."
 
 #: includes/arrays.php:189
 #, fuzzy
@@ -94,29 +93,31 @@ msgid "HTTPS Port"
 msgstr "קוד HTTP"
 
 #: includes/arrays.php:190
+#, fuzzy
 msgid "The HTTPS Proxy Port."
-msgstr ""
+msgstr "יציאת ה- proxy של HTTPS."
 
 #: includes/arrays.php:198
-#, fuzzy
 msgid "User Name"
-msgstr "שם"
+msgstr "שם משתמש"
 
 #: includes/arrays.php:199
+#, fuzzy
 msgid "The user to use to authenticate with the Proxy if any."
-msgstr ""
+msgstr "המשתמש להשתמש בו כדי לאמת עם ה- Proxy אם יש."
 
 #: includes/arrays.php:207
 msgid "Password"
-msgstr ""
+msgstr "סיסמה"
 
 #: includes/arrays.php:208
+#, fuzzy
 msgid "The user password to use to authenticate with the Proxy if any."
-msgstr ""
+msgstr "סיסמת המשתמש שבה ניתן להשתמש כדי לאמת עם ה- Proxy, אם בכלל."
 
 #: includes/arrays.php:227 includes/arrays.php:287
 msgid "General Settings"
-msgstr ""
+msgstr "הגדרות כלליות"
 
 #: includes/arrays.php:232
 #, fuzzy
@@ -154,7 +155,6 @@ msgid "Sets this server to the Master server.  The Master server handles all Ema
 msgstr "מגדיר שרת זה לשרת הראשי. שרת המאסטר מטפל בכל פעולות הדואר האלקטרוני"
 
 #: includes/arrays.php:259 includes/arrays.php:313 webseer_servers.php:258
-#, fuzzy
 msgid "IP Address"
 msgstr "כתובת IP"
 
@@ -165,7 +165,6 @@ msgstr "כתובת IP כדי להתחבר לשרת זה"
 
 #: includes/arrays.php:266 includes/arrays.php:305 webseer.php:191
 #: webseer_servers.php:154
-#, fuzzy
 msgid "URL"
 msgstr "URL"
 
@@ -175,7 +174,6 @@ msgid "This is the URL to connect to remote.php on this server."
 msgstr "זוהי כתובת האתר להתחבר ל- remote.php בשרת זה."
 
 #: includes/arrays.php:273 webseer_servers.php:260
-#, fuzzy
 msgid "Location"
 msgstr "מיקום"
 
@@ -220,28 +218,30 @@ msgid "Proxy Server"
 msgstr "שרת ראשי"
 
 #: includes/arrays.php:322
+#, fuzzy
 msgid "If this connection text requires a proxy, select it here.  Otherwise choose 'None'."
-msgstr ""
+msgstr "אם טקסט חיבור זה דורש שרת proxy, בחר אותו כאן. אחרת בחר 'ללא'."
 
 #: includes/arrays.php:324 webseer_edit.php:183
-#, fuzzy
 msgid "None"
 msgstr "ללא"
 
 #: includes/arrays.php:329 webseer.php:192 webseer.php:329
+#, fuzzy
 msgid "Compression"
-msgstr ""
+msgstr "דְחִיסָה"
 
 #: includes/arrays.php:333
+#, fuzzy
 msgid "What compression does the server require?  Most servers should not need this, but some will not redirect properly without it."
-msgstr ""
+msgstr "איזה דחיסה השרת דורש? רוב השרתים לא צריכים להזדקק לכך, אך חלקם לא ינתבו מחדש כראוי בלעדיו."
 
 #: includes/arrays.php:338
+#, fuzzy
 msgid "Available Checks"
-msgstr ""
+msgstr "צ'קים זמינים"
 
 #: includes/arrays.php:342
-#, fuzzy
 msgid "Requires Authentication"
 msgstr "מסמכים נדרשים"
 
@@ -261,11 +261,11 @@ msgid "If using SSL, check this box if you want to validate the certificate. Def
 msgstr "אם אתה משתמש ב- SSL, סמן תיבה זו אם ברצונך לאמת את האישור. כברירת מחדל, כבה אם האתר משתמש באישור חתום."
 
 #: includes/arrays.php:356
+#, fuzzy
 msgid "Notification Timing"
-msgstr ""
+msgstr "תזמון התראות"
 
 #: includes/arrays.php:359
-#, fuzzy
 msgid "Trigger"
 msgstr "טריגר"
 
@@ -275,7 +275,6 @@ msgid "How many minutes the URL must be down before it will send an alert.  Afte
 msgstr "כמה דקות כתובת האתר חייבת להיות מושבתת לפני שהיא תשלח התראה. לאחר שנשלח התראה, על מנת לשלוח הודעת אימייל 'שחזור אתר', היא חייבת להיות גם מספר דקות זה."
 
 #: includes/arrays.php:367
-#, fuzzy
 msgid "Time Out"
 msgstr "פסק זמן"
 
@@ -285,8 +284,9 @@ msgid "How many seconds to allow the page to timeout before reporting it as down
 msgstr "כמה שניות כדי לאפשר לדף לפסק זמן לפני הדיווח על זה למטה."
 
 #: includes/arrays.php:376
+#, fuzzy
 msgid "Verification Strings"
-msgstr ""
+msgstr "מחרוזות אימות"
 
 #: includes/arrays.php:380
 #, fuzzy
@@ -320,7 +320,7 @@ msgstr "זוהי המחרוזת לחפש כשל ידוע בתגובת שירות
 
 #: includes/arrays.php:404
 msgid "Notification Settings"
-msgstr ""
+msgstr "הגדרות התראות"
 
 #: includes/arrays.php:407
 #, fuzzy
@@ -328,8 +328,9 @@ msgid "Notify Format"
 msgstr "יידע חשבונות"
 
 #: includes/arrays.php:409
+#, fuzzy
 msgid "This is the format to use when sending the notification email"
-msgstr ""
+msgstr "זהו הפורמט לשימוש בעת שליחת דוא\"ל ההודעה"
 
 #: includes/arrays.php:414
 #, fuzzy
@@ -357,13 +358,12 @@ msgid "Checks"
 msgstr "המחאות"
 
 #: includes/functions.php:34 webseer_servers.php:243
-#, fuzzy
 msgid "Servers"
 msgstr "Serveurs"
 
 #: includes/functions.php:35 webseer_proxies.php:278 webseer_proxies.php:333
 msgid "Proxies"
-msgstr ""
+msgstr "פרוקסים"
 
 #: poller_webseer.php:181
 #, fuzzy
@@ -381,7 +381,6 @@ msgid "Web Service Check Admin"
 msgstr "שירות אינטרנט בדוק מנהל"
 
 #: setup.php:304
-#, fuzzy
 msgid "Management"
 msgstr "ניהול"
 
@@ -411,7 +410,6 @@ msgid "Server Edit"
 msgstr "עריכת שרת"
 
 #: webseer.php:190 webseer_servers.php:153
-#, fuzzy
 msgid "Date"
 msgstr "תאריך"
 
@@ -426,32 +424,26 @@ msgid "DNS"
 msgstr "‫DNS"
 
 #: webseer.php:195 webseer.php:333 webseer_servers.php:158
-#, fuzzy
 msgid "Connect"
 msgstr "התחבר"
 
 #: webseer.php:196 webseer.php:334 webseer_servers.php:159
-#, fuzzy
 msgid "Redirect"
 msgstr "הפניה"
 
 #: webseer.php:197 webseer.php:335 webseer_servers.php:160
-#, fuzzy
 msgid "Total"
 msgstr "סה\"כ"
 
 #: webseer.php:198 webseer.php:327
-#, fuzzy
 msgid "Status"
 msgstr "סטטוס"
 
 #: webseer.php:226 webseer.php:401 webseer_servers.php:182
-#, fuzzy
 msgid "Down"
 msgstr "למטה"
 
 #: webseer.php:226 webseer.php:401 webseer_servers.php:182
-#, fuzzy
 msgid "Up"
 msgstr "למעלה"
 
@@ -461,23 +453,19 @@ msgid "No Events in History"
 msgstr "אין אירועים בהיסטוריה"
 
 #: webseer.php:325 webseer_servers.php:256
-#, fuzzy
 msgid "Actions"
 msgstr "פעולות"
 
 #: webseer.php:328 webseer.php:404 webseer.php:407 webseer_servers.php:259
 #: webseer_servers.php:398
-#, fuzzy
 msgid "Enabled"
 msgstr "מאופשר"
 
 #: webseer.php:331
-#, fuzzy
 msgid "Auth"
-msgstr "Auth"
+msgstr "אימות"
 
 #: webseer.php:336
-#, fuzzy
 msgid "Timeout"
 msgstr "פסק זמן"
 
@@ -487,8 +475,9 @@ msgid "Last Check"
 msgstr "בדיקה אחרונה"
 
 #: webseer.php:367 webseer_servers.php:282
+#, fuzzy
 msgid "Edit Site"
-msgstr ""
+msgstr "ערוך אתר"
 
 #: webseer.php:372 webseer_servers.php:287
 #, fuzzy
@@ -502,7 +491,7 @@ msgstr "כיבוי"
 
 #: webseer.php:381 webseer_servers.php:295
 msgid "View History"
-msgstr ""
+msgstr "צפה בהיסטוריה"
 
 #: webseer.php:389
 #, fuzzy, php-format
@@ -510,17 +499,14 @@ msgid "DNS: Server %s - A Record for %s"
 msgstr "DNS: שרת %s - רשומה עבור %s"
 
 #: webseer.php:399
-#, fuzzy
 msgid "N/A"
 msgstr "לא זמין"
 
 #: webseer.php:404 webseer.php:407 webseer_servers.php:398
-#, fuzzy
 msgid "Disabled"
 msgstr "לא זמין"
 
 #: webseer.php:406 webseer_servers.php:155
-#, fuzzy
 msgid "Error"
 msgstr "שגיאה"
 
@@ -535,37 +521,32 @@ msgid "Webseer Site Management"
 msgstr "ניהול אתר Webseer"
 
 #: webseer.php:508 webseer_edit.php:216 webseer_proxies.php:327
-#, fuzzy
 msgid "Search"
 msgstr "חיפוש"
 
 #: webseer.php:514 webseer_servers.php:392
-#, fuzzy
 msgid "State"
 msgstr "מדינה"
 
 #: webseer.php:518 webseer_servers.php:396
-#, fuzzy
 msgid "Any"
 msgstr "הכל"
 
 #: webseer.php:527 webseer_servers.php:405
-#, fuzzy
 msgid "Refresh"
 msgstr "רענן"
 
 #: webseer.php:548 webseer_proxies.php:338 webseer_servers.php:422
-#, fuzzy
 msgid "Default"
 msgstr "ברירת מחדל"
 
 #: webseer.php:559 webseer_proxies.php:349
 msgid "Go"
-msgstr ""
+msgstr "עבור"
 
 #: webseer.php:560 webseer_proxies.php:350 webseer_servers.php:433
 msgid "Clear"
-msgstr ""
+msgstr "נקה"
 
 #: webseer_edit.php:138 webseer_servers_edit.php:116
 #, fuzzy, php-format
@@ -593,23 +574,25 @@ msgid "All Users Selected"
 msgstr "כל המשתמשים נבחרו"
 
 #: webseer_edit.php:182
-#, fuzzy
 msgid "All"
 msgstr "הכל"
 
 #: webseer_proxies.php:102
+#, fuzzy
 msgid "Click 'Continue' to delete the following Proxy."
 msgid_plural "Click 'Continue' to delete following Proxies."
-msgstr[0] ""
+msgstr[0] "לחץ על 'המשך' כדי למחוק את ה- Proxy הבא."
 msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: webseer_proxies.php:107
 msgid "Cancel"
-msgstr ""
+msgstr "ביטול"
 
 #: webseer_proxies.php:107
 msgid "Continue"
-msgstr ""
+msgstr "המשך"
 
 #: webseer_proxies.php:107
 #, fuzzy
@@ -617,14 +600,17 @@ msgid "Delete Proxy"
 msgid_plural "Delete Proxies"
 msgstr[0] "מחק"
 msgstr[1] "מחק"
+msgstr[2] ""
+msgstr[3] ""
 
 #: webseer_proxies.php:110
+#, fuzzy
 msgid "You must select at least one Proxy."
-msgstr ""
+msgstr "עליך לבחור לפחות proxy אחד."
 
 #: webseer_proxies.php:111
 msgid "Return"
-msgstr ""
+msgstr "חזרה אל עריכת פוסט"
 
 #: webseer_proxies.php:167
 #, fuzzy, php-format
@@ -637,16 +623,17 @@ msgid "Proxy [new]"
 msgstr "שאילתה [חדש]"
 
 #: webseer_proxies.php:272
+#, fuzzy
 msgid "Ports (http/https)"
-msgstr ""
+msgstr "יציאות (http / https)"
 
 #: webseer_proxies.php:273
 msgid "Username"
-msgstr ""
+msgstr "שם משתמש"
 
 #: webseer_proxies.php:294
 msgid "Not Set"
-msgstr ""
+msgstr "לא מוגדר"
 
 #: webseer_proxies.php:318
 #, fuzzy
@@ -664,12 +651,10 @@ msgid "This Host"
 msgstr "מארח זה"
 
 #: webseer_servers.php:299 webseer_servers.php:302 webseer_servers.php:303
-#, fuzzy
 msgid "No"
 msgstr "לא"
 
 #: webseer_servers.php:299 webseer_servers.php:302 webseer_servers.php:303
-#, fuzzy
 msgid "Yes"
 msgstr "כן"
 
@@ -684,6 +669,5 @@ msgid "Triggered"
 msgstr "טריגר"
 
 #: webseer_servers.php:417
-#, fuzzy
 msgid "Sites"
 msgstr "אתרים"

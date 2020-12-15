@@ -8,25 +8,26 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
 "POT-Creation-Date: 2020-12-12 22:16-0500\n"
-"PO-Revision-Date: 2019-03-16 20:08-0400\n"
+"PO-Revision-Date: 2020-12-14 19:09-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.4.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: includes/arrays.php:93 webseer_servers.php:410
-#, fuzzy, php-format
+#, php-format
 msgid "%d Minute"
-msgstr "％d分鐘"
+msgstr "%d 分鐘"
 
 #: includes/arrays.php:94 includes/arrays.php:95 includes/arrays.php:96
 #: includes/arrays.php:97 includes/arrays.php:98 includes/arrays.php:99
 #: includes/arrays.php:100 includes/arrays.php:101 includes/arrays.php:102
 #: webseer_servers.php:410
-#, fuzzy, php-format
+#, php-format
 msgid "%d Minutes"
 msgstr "%d 分鐘"
 
@@ -38,55 +39,52 @@ msgid "%d Seconds"
 msgstr "%d 秒"
 
 #: includes/arrays.php:141 includes/arrays.php:145 includes/arrays.php:152
-#, fuzzy
 msgid "Delete"
 msgstr "刪除"
 
 #: includes/arrays.php:146 includes/arrays.php:153
-#, fuzzy
 msgid "Disable"
 msgstr "停用"
 
 #: includes/arrays.php:147 includes/arrays.php:154
-#, fuzzy
 msgid "Enable"
 msgstr "啟用"
 
 #: includes/arrays.php:148
-#, fuzzy
 msgid "Duplicate"
 msgstr "複製"
 
 #: includes/arrays.php:162 includes/arrays.php:231 webseer.php:326
 #: webseer_proxies.php:270 webseer_servers.php:257
-#, fuzzy
 msgid "Name"
 msgstr "名稱"
 
 #: includes/arrays.php:163
+#, fuzzy
 msgid "A Useful Name for this Proxy."
-msgstr ""
+msgstr "此代理的有用名稱。"
 
 #: includes/arrays.php:167
 msgid "New Proxy"
-msgstr ""
+msgstr "新增代理伺服器"
 
 #: includes/arrays.php:171 webseer_proxies.php:271
 msgid "Hostname"
-msgstr ""
+msgstr "主機名稱"
 
 #: includes/arrays.php:172
+#, fuzzy
 msgid "The Proxy Hostname."
-msgstr ""
+msgstr "代理主機名。"
 
 #: includes/arrays.php:180
-#, fuzzy
 msgid "HTTP Port"
-msgstr "HTTP代碼"
+msgstr "HTTP 埠號"
 
 #: includes/arrays.php:181
+#, fuzzy
 msgid "The HTTP Proxy Port."
-msgstr ""
+msgstr "HTTP代理端口。"
 
 #: includes/arrays.php:189
 #, fuzzy
@@ -94,29 +92,31 @@ msgid "HTTPS Port"
 msgstr "HTTP代碼"
 
 #: includes/arrays.php:190
+#, fuzzy
 msgid "The HTTPS Proxy Port."
-msgstr ""
+msgstr "HTTPS代理端口。"
 
 #: includes/arrays.php:198
-#, fuzzy
 msgid "User Name"
-msgstr "名稱"
+msgstr "使用者名稱"
 
 #: includes/arrays.php:199
+#, fuzzy
 msgid "The user to use to authenticate with the Proxy if any."
-msgstr ""
+msgstr "用於通過代理進行身份驗證的用戶（如果有）。"
 
 #: includes/arrays.php:207
 msgid "Password"
-msgstr ""
+msgstr "密碼"
 
 #: includes/arrays.php:208
+#, fuzzy
 msgid "The user password to use to authenticate with the Proxy if any."
-msgstr ""
+msgstr "用於通過代理進行身份驗證的用戶密碼（如果有）。"
 
 #: includes/arrays.php:227 includes/arrays.php:287
 msgid "General Settings"
-msgstr ""
+msgstr "一般設定"
 
 #: includes/arrays.php:232
 #, fuzzy
@@ -154,7 +154,6 @@ msgid "Sets this server to the Master server.  The Master server handles all Ema
 msgstr "將此服務器設置為主服務器。主服務器處理所有電子郵件操作"
 
 #: includes/arrays.php:259 includes/arrays.php:313 webseer_servers.php:258
-#, fuzzy
 msgid "IP Address"
 msgstr "IP 位址"
 
@@ -165,7 +164,6 @@ msgstr "連接到此服務器的IP地址"
 
 #: includes/arrays.php:266 includes/arrays.php:305 webseer.php:191
 #: webseer_servers.php:154
-#, fuzzy
 msgid "URL"
 msgstr "網址"
 
@@ -175,7 +173,6 @@ msgid "This is the URL to connect to remote.php on this server."
 msgstr "這是連接到此服務器上的remote.php的URL。"
 
 #: includes/arrays.php:273 webseer_servers.php:260
-#, fuzzy
 msgid "Location"
 msgstr "地點"
 
@@ -220,25 +217,27 @@ msgid "Proxy Server"
 msgstr "主服務器"
 
 #: includes/arrays.php:322
+#, fuzzy
 msgid "If this connection text requires a proxy, select it here.  Otherwise choose 'None'."
-msgstr ""
+msgstr "如果此連接文本需要代理，請在此處選擇它。否則，選擇“無”。"
 
 #: includes/arrays.php:324 webseer_edit.php:183
-#, fuzzy
 msgid "None"
 msgstr "無"
 
 #: includes/arrays.php:329 webseer.php:192 webseer.php:329
 msgid "Compression"
-msgstr ""
+msgstr "壓縮"
 
 #: includes/arrays.php:333
+#, fuzzy
 msgid "What compression does the server require?  Most servers should not need this, but some will not redirect properly without it."
-msgstr ""
+msgstr "服務器需要什麼壓縮？大多數服務器不需要此服務器，但是如果沒有它，某些服務器將無法正確重定向。"
 
 #: includes/arrays.php:338
+#, fuzzy
 msgid "Available Checks"
-msgstr ""
+msgstr "可用支票"
 
 #: includes/arrays.php:342
 #, fuzzy
@@ -261,11 +260,11 @@ msgid "If using SSL, check this box if you want to validate the certificate. Def
 msgstr "如果使用SSL，如果要驗證證書，請選中此框。默認打開，如果您的站點使用自簽名證書，則關閉。"
 
 #: includes/arrays.php:356
+#, fuzzy
 msgid "Notification Timing"
-msgstr ""
+msgstr "通知時間"
 
 #: includes/arrays.php:359
-#, fuzzy
 msgid "Trigger"
 msgstr "觸發"
 
@@ -285,8 +284,9 @@ msgid "How many seconds to allow the page to timeout before reporting it as down
 msgstr "在將頁面報告為關閉之前允許頁面超時的秒數。"
 
 #: includes/arrays.php:376
+#, fuzzy
 msgid "Verification Strings"
-msgstr ""
+msgstr "驗證字符串"
 
 #: includes/arrays.php:380
 #, fuzzy
@@ -320,7 +320,7 @@ msgstr "這是在Web Service響應中搜索已知故障的字符串。服務檢�
 
 #: includes/arrays.php:404
 msgid "Notification Settings"
-msgstr ""
+msgstr "通知設定"
 
 #: includes/arrays.php:407
 #, fuzzy
@@ -328,8 +328,9 @@ msgid "Notify Format"
 msgstr "通知帳戶"
 
 #: includes/arrays.php:409
+#, fuzzy
 msgid "This is the format to use when sending the notification email"
-msgstr ""
+msgstr "這是發送通知電子郵件時使用的格式"
 
 #: includes/arrays.php:414
 #, fuzzy
@@ -352,7 +353,6 @@ msgid "You may specify here extra Emails to receive alerts for this URL (comma s
 msgstr "您可以在此處指定額外的電子郵件以接收此URL的警報（以逗號分隔）"
 
 #: includes/functions.php:33 webseer.php:342 webseer.php:543
-#, fuzzy
 msgid "Checks"
 msgstr "檢查"
 
@@ -363,7 +363,7 @@ msgstr "服務器"
 
 #: includes/functions.php:35 webseer_proxies.php:278 webseer_proxies.php:333
 msgid "Proxies"
-msgstr ""
+msgstr "代理"
 
 #: poller_webseer.php:181
 #, fuzzy
@@ -381,7 +381,6 @@ msgid "Web Service Check Admin"
 msgstr "Web服務檢查管理員"
 
 #: setup.php:304
-#, fuzzy
 msgid "Management"
 msgstr "管理"
 
@@ -411,7 +410,6 @@ msgid "Server Edit"
 msgstr "服務器編輯"
 
 #: webseer.php:190 webseer_servers.php:153
-#, fuzzy
 msgid "Date"
 msgstr "日期"
 
@@ -426,32 +424,26 @@ msgid "DNS"
 msgstr "DNS"
 
 #: webseer.php:195 webseer.php:333 webseer_servers.php:158
-#, fuzzy
 msgid "Connect"
-msgstr "連線"
+msgstr "連接"
 
 #: webseer.php:196 webseer.php:334 webseer_servers.php:159
-#, fuzzy
 msgid "Redirect"
 msgstr "重新導向"
 
 #: webseer.php:197 webseer.php:335 webseer_servers.php:160
-#, fuzzy
 msgid "Total"
 msgstr "總計"
 
 #: webseer.php:198 webseer.php:327
-#, fuzzy
 msgid "Status"
 msgstr "狀態"
 
 #: webseer.php:226 webseer.php:401 webseer_servers.php:182
-#, fuzzy
 msgid "Down"
 msgstr "向下"
 
 #: webseer.php:226 webseer.php:401 webseer_servers.php:182
-#, fuzzy
 msgid "Up"
 msgstr "向上"
 
@@ -461,13 +453,11 @@ msgid "No Events in History"
 msgstr "沒有歷史事件"
 
 #: webseer.php:325 webseer_servers.php:256
-#, fuzzy
 msgid "Actions"
 msgstr "動作"
 
 #: webseer.php:328 webseer.php:404 webseer.php:407 webseer_servers.php:259
 #: webseer_servers.php:398
-#, fuzzy
 msgid "Enabled"
 msgstr "啟用"
 
@@ -477,7 +467,6 @@ msgid "Auth"
 msgstr "驗證"
 
 #: webseer.php:336
-#, fuzzy
 msgid "Timeout"
 msgstr "已逾時"
 
@@ -488,7 +477,7 @@ msgstr "最後檢查"
 
 #: webseer.php:367 webseer_servers.php:282
 msgid "Edit Site"
-msgstr ""
+msgstr "編輯網站"
 
 #: webseer.php:372 webseer_servers.php:287
 #, fuzzy
@@ -502,7 +491,7 @@ msgstr "停用"
 
 #: webseer.php:381 webseer_servers.php:295
 msgid "View History"
-msgstr ""
+msgstr "瀏覽歷程"
 
 #: webseer.php:389
 #, fuzzy, php-format
@@ -510,17 +499,14 @@ msgid "DNS: Server %s - A Record for %s"
 msgstr "DNS：服務器％s  - ％s的記錄"
 
 #: webseer.php:399
-#, fuzzy
 msgid "N/A"
 msgstr "不适用"
 
 #: webseer.php:404 webseer.php:407 webseer_servers.php:398
-#, fuzzy
 msgid "Disabled"
 msgstr "停用"
 
 #: webseer.php:406 webseer_servers.php:155
-#, fuzzy
 msgid "Error"
 msgstr "錯誤"
 
@@ -535,37 +521,32 @@ msgid "Webseer Site Management"
 msgstr "Webseer網站管理"
 
 #: webseer.php:508 webseer_edit.php:216 webseer_proxies.php:327
-#, fuzzy
 msgid "Search"
 msgstr "搜尋"
 
 #: webseer.php:514 webseer_servers.php:392
-#, fuzzy
 msgid "State"
 msgstr "州"
 
 #: webseer.php:518 webseer_servers.php:396
-#, fuzzy
 msgid "Any"
 msgstr "任何"
 
 #: webseer.php:527 webseer_servers.php:405
-#, fuzzy
 msgid "Refresh"
 msgstr "重新整理"
 
 #: webseer.php:548 webseer_proxies.php:338 webseer_servers.php:422
-#, fuzzy
 msgid "Default"
 msgstr "預設"
 
 #: webseer.php:559 webseer_proxies.php:349
 msgid "Go"
-msgstr ""
+msgstr "送出"
 
 #: webseer.php:560 webseer_proxies.php:350 webseer_servers.php:433
 msgid "Clear"
-msgstr ""
+msgstr "清除"
 
 #: webseer_edit.php:138 webseer_servers_edit.php:116
 #, fuzzy, php-format
@@ -593,38 +574,37 @@ msgid "All Users Selected"
 msgstr "選擇所有用戶"
 
 #: webseer_edit.php:182
-#, fuzzy
 msgid "All"
 msgstr "全部"
 
 #: webseer_proxies.php:102
+#, fuzzy
 msgid "Click 'Continue' to delete the following Proxy."
 msgid_plural "Click 'Continue' to delete following Proxies."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "單擊“繼續”以刪除以下代理。"
 
 #: webseer_proxies.php:107
 msgid "Cancel"
-msgstr ""
+msgstr "取消"
 
 #: webseer_proxies.php:107
 msgid "Continue"
-msgstr ""
+msgstr "繼續"
 
 #: webseer_proxies.php:107
 #, fuzzy
 msgid "Delete Proxy"
 msgid_plural "Delete Proxies"
 msgstr[0] "刪除"
-msgstr[1] "刪除"
 
 #: webseer_proxies.php:110
+#, fuzzy
 msgid "You must select at least one Proxy."
-msgstr ""
+msgstr "您必須至少選擇一個代理。"
 
 #: webseer_proxies.php:111
 msgid "Return"
-msgstr ""
+msgstr "返回"
 
 #: webseer_proxies.php:167
 #, fuzzy, php-format
@@ -637,16 +617,17 @@ msgid "Proxy [new]"
 msgstr "查詢[新]"
 
 #: webseer_proxies.php:272
+#, fuzzy
 msgid "Ports (http/https)"
-msgstr ""
+msgstr "端口（http / https）"
 
 #: webseer_proxies.php:273
 msgid "Username"
-msgstr ""
+msgstr "用戶名"
 
 #: webseer_proxies.php:294
 msgid "Not Set"
-msgstr ""
+msgstr "未設定"
 
 #: webseer_proxies.php:318
 #, fuzzy
@@ -654,9 +635,8 @@ msgid "Webseer Proxy Management"
 msgstr "Webseer服務器管理"
 
 #: webseer_servers.php:262
-#, fuzzy
 msgid "Master"
-msgstr "主控"
+msgstr "Master"
 
 #: webseer_servers.php:263
 #, fuzzy
@@ -664,12 +644,10 @@ msgid "This Host"
 msgstr "這個主持人"
 
 #: webseer_servers.php:299 webseer_servers.php:302 webseer_servers.php:303
-#, fuzzy
 msgid "No"
 msgstr "否"
 
 #: webseer_servers.php:299 webseer_servers.php:302 webseer_servers.php:303
-#, fuzzy
 msgid "Yes"
 msgstr "是"
 
@@ -684,6 +662,5 @@ msgid "Triggered"
 msgstr "觸發"
 
 #: webseer_servers.php:417
-#, fuzzy
 msgid "Sites"
 msgstr "網站"

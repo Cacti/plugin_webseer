@@ -8,17 +8,18 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
 "POT-Creation-Date: 2020-12-12 22:16-0500\n"
-"PO-Revision-Date: 2019-03-16 19:59-0400\n"
+"PO-Revision-Date: 2020-12-14 19:07-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.4.2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: includes/arrays.php:93 webseer_servers.php:410
-#, fuzzy, php-format
+#, php-format
 msgid "%d Minute"
 msgstr "%d Minuut"
 
@@ -26,58 +27,56 @@ msgstr "%d Minuut"
 #: includes/arrays.php:97 includes/arrays.php:98 includes/arrays.php:99
 #: includes/arrays.php:100 includes/arrays.php:101 includes/arrays.php:102
 #: webseer_servers.php:410
-#, fuzzy, php-format
+#, php-format
 msgid "%d Minutes"
 msgstr "%d Minuten"
 
 #: includes/arrays.php:106 includes/arrays.php:107 includes/arrays.php:108
 #: includes/arrays.php:109 includes/arrays.php:110 includes/arrays.php:111
 #: includes/arrays.php:112 includes/arrays.php:113 webseer_servers.php:410
-#, fuzzy, php-format
+#, php-format
 msgid "%d Seconds"
 msgstr "%d Seconden"
 
 #: includes/arrays.php:141 includes/arrays.php:145 includes/arrays.php:152
-#, fuzzy
 msgid "Delete"
-msgstr "Verwijder"
+msgstr "Verwijderen"
 
 #: includes/arrays.php:146 includes/arrays.php:153
-#, fuzzy
 msgid "Disable"
 msgstr "Uitschakelen"
 
 #: includes/arrays.php:147 includes/arrays.php:154
-#, fuzzy
 msgid "Enable"
 msgstr "Inschakelen"
 
 #: includes/arrays.php:148
-#, fuzzy
 msgid "Duplicate"
 msgstr "Dupliceer"
 
 #: includes/arrays.php:162 includes/arrays.php:231 webseer.php:326
 #: webseer_proxies.php:270 webseer_servers.php:257
-#, fuzzy
 msgid "Name"
 msgstr "Naam"
 
 #: includes/arrays.php:163
+#, fuzzy
 msgid "A Useful Name for this Proxy."
-msgstr ""
+msgstr "Een bruikbare naam voor deze proxy."
 
 #: includes/arrays.php:167
+#, fuzzy
 msgid "New Proxy"
-msgstr ""
+msgstr "Nieuwe proxy"
 
 #: includes/arrays.php:171 webseer_proxies.php:271
 msgid "Hostname"
-msgstr ""
+msgstr "Hostname"
 
 #: includes/arrays.php:172
+#, fuzzy
 msgid "The Proxy Hostname."
-msgstr ""
+msgstr "De proxy-hostnaam."
 
 #: includes/arrays.php:180
 #, fuzzy
@@ -85,8 +84,9 @@ msgid "HTTP Port"
 msgstr "HTTP-code"
 
 #: includes/arrays.php:181
+#, fuzzy
 msgid "The HTTP Proxy Port."
-msgstr ""
+msgstr "De HTTP-proxypoort."
 
 #: includes/arrays.php:189
 #, fuzzy
@@ -94,29 +94,31 @@ msgid "HTTPS Port"
 msgstr "HTTP-code"
 
 #: includes/arrays.php:190
+#, fuzzy
 msgid "The HTTPS Proxy Port."
-msgstr ""
+msgstr "De HTTPS-proxypoort."
 
 #: includes/arrays.php:198
-#, fuzzy
 msgid "User Name"
-msgstr "Naam"
+msgstr "Gebruikersnaam"
 
 #: includes/arrays.php:199
+#, fuzzy
 msgid "The user to use to authenticate with the Proxy if any."
-msgstr ""
+msgstr "De gebruiker die moet worden gebruikt om te verifiëren met de proxy, indien aanwezig."
 
 #: includes/arrays.php:207
 msgid "Password"
-msgstr ""
+msgstr "Wachtwoord"
 
 #: includes/arrays.php:208
+#, fuzzy
 msgid "The user password to use to authenticate with the Proxy if any."
-msgstr ""
+msgstr "Het gebruikerswachtwoord dat moet worden gebruikt om te verifiëren met de proxy, indien aanwezig."
 
 #: includes/arrays.php:227 includes/arrays.php:287
 msgid "General Settings"
-msgstr ""
+msgstr "Algemene instellingen"
 
 #: includes/arrays.php:232
 #, fuzzy
@@ -154,7 +156,6 @@ msgid "Sets this server to the Master server.  The Master server handles all Ema
 msgstr "Stelt deze server in op de Master server.  De masterserver verwerkt alle e-mailbewerkingen"
 
 #: includes/arrays.php:259 includes/arrays.php:313 webseer_servers.php:258
-#, fuzzy
 msgid "IP Address"
 msgstr "IP-adres"
 
@@ -165,7 +166,6 @@ msgstr "IP-adres om verbinding te maken met deze server"
 
 #: includes/arrays.php:266 includes/arrays.php:305 webseer.php:191
 #: webseer_servers.php:154
-#, fuzzy
 msgid "URL"
 msgstr "URL"
 
@@ -175,7 +175,6 @@ msgid "This is the URL to connect to remote.php on this server."
 msgstr "Dit is de URL om verbinding te maken met remote.php op deze server."
 
 #: includes/arrays.php:273 webseer_servers.php:260
-#, fuzzy
 msgid "Location"
 msgstr "Locatie"
 
@@ -215,33 +214,33 @@ msgid "Enter an IP address to connect to.  Leaving blank will use DNS Resolution
 msgstr "Voer een IP-adres in om verbinding mee te maken.  Als u niets invult, wordt in plaats daarvan DNS-resolutie gebruikt."
 
 #: includes/arrays.php:321
-#, fuzzy
 msgid "Proxy Server"
-msgstr "Hoofdserver"
+msgstr "Proxy server"
 
 #: includes/arrays.php:322
+#, fuzzy
 msgid "If this connection text requires a proxy, select it here.  Otherwise choose 'None'."
-msgstr ""
+msgstr "Als deze verbindingstekst een proxy vereist, selecteert u deze hier. Kies anders 'Geen'."
 
 #: includes/arrays.php:324 webseer_edit.php:183
-#, fuzzy
 msgid "None"
 msgstr "Geen"
 
 #: includes/arrays.php:329 webseer.php:192 webseer.php:329
 msgid "Compression"
-msgstr ""
+msgstr "Compressie"
 
 #: includes/arrays.php:333
+#, fuzzy
 msgid "What compression does the server require?  Most servers should not need this, but some will not redirect properly without it."
-msgstr ""
+msgstr "Welke compressie heeft de server nodig? De meeste servers hebben dit niet nodig, maar sommige zullen zonder dit niet correct omleiden."
 
 #: includes/arrays.php:338
+#, fuzzy
 msgid "Available Checks"
-msgstr ""
+msgstr "Beschikbare cheques"
 
 #: includes/arrays.php:342
-#, fuzzy
 msgid "Requires Authentication"
 msgstr "Vereist authenticatie"
 
@@ -261,11 +260,11 @@ msgid "If using SSL, check this box if you want to validate the certificate. Def
 msgstr "Als u SSL gebruikt, vink dit vakje aan als u het certificaat wilt valideren. Default aan, zet de site uit als u een zelf ondertekend certificaat gebruikt."
 
 #: includes/arrays.php:356
+#, fuzzy
 msgid "Notification Timing"
-msgstr ""
+msgstr "Meldingstijdstip"
 
 #: includes/arrays.php:359
-#, fuzzy
 msgid "Trigger"
 msgstr "Trigger"
 
@@ -285,8 +284,9 @@ msgid "How many seconds to allow the page to timeout before reporting it as down
 msgstr "Hoeveel seconden om de pagina te laten time-outen voordat u de pagina als down rapporteert."
 
 #: includes/arrays.php:376
+#, fuzzy
 msgid "Verification Strings"
-msgstr ""
+msgstr "Verificatiestrings"
 
 #: includes/arrays.php:380
 #, fuzzy
@@ -320,7 +320,7 @@ msgstr "Dit is de string om te zoeken naar een bekende fout in de Web Service re
 
 #: includes/arrays.php:404
 msgid "Notification Settings"
-msgstr ""
+msgstr "Notificatie instellingen"
 
 #: includes/arrays.php:407
 #, fuzzy
@@ -328,8 +328,9 @@ msgid "Notify Format"
 msgstr "Rekeningen aanmelden"
 
 #: includes/arrays.php:409
+#, fuzzy
 msgid "This is the format to use when sending the notification email"
-msgstr ""
+msgstr "Dit is het formaat dat moet worden gebruikt bij het verzenden van de notificatie-e-mail"
 
 #: includes/arrays.php:414
 #, fuzzy
@@ -352,18 +353,16 @@ msgid "You may specify here extra Emails to receive alerts for this URL (comma s
 msgstr "U kunt hier extra E-mails opgeven om waarschuwingen te ontvangen voor deze URL (gescheiden door een komma)"
 
 #: includes/functions.php:33 webseer.php:342 webseer.php:543
-#, fuzzy
 msgid "Checks"
-msgstr "Pre installatie controle"
+msgstr "Checks"
 
 #: includes/functions.php:34 webseer_servers.php:243
-#, fuzzy
 msgid "Servers"
 msgstr "Servers"
 
 #: includes/functions.php:35 webseer_proxies.php:278 webseer_proxies.php:333
 msgid "Proxies"
-msgstr ""
+msgstr "Proxy’s"
 
 #: poller_webseer.php:181
 #, fuzzy
@@ -381,7 +380,6 @@ msgid "Web Service Check Admin"
 msgstr "Web Service Check Admin"
 
 #: setup.php:304
-#, fuzzy
 msgid "Management"
 msgstr "Onderhoud"
 
@@ -411,7 +409,6 @@ msgid "Server Edit"
 msgstr "Server bewerken"
 
 #: webseer.php:190 webseer_servers.php:153
-#, fuzzy
 msgid "Date"
 msgstr "Datum"
 
@@ -421,37 +418,30 @@ msgid "HTTP Code"
 msgstr "HTTP-code"
 
 #: webseer.php:194 webseer.php:332 webseer_servers.php:157
-#, fuzzy
 msgid "DNS"
-msgstr "Alternatieve DNS servers"
+msgstr "DNS"
 
 #: webseer.php:195 webseer.php:333 webseer_servers.php:158
-#, fuzzy
 msgid "Connect"
-msgstr "FOUT: Kon geen verbinding maken met de remote poller."
+msgstr "Verbinden"
 
 #: webseer.php:196 webseer.php:334 webseer_servers.php:159
-#, fuzzy
 msgid "Redirect"
 msgstr "Doorsturen"
 
 #: webseer.php:197 webseer.php:335 webseer_servers.php:160
-#, fuzzy
 msgid "Total"
 msgstr "Totaal"
 
 #: webseer.php:198 webseer.php:327
-#, fuzzy
 msgid "Status"
 msgstr "Status"
 
 #: webseer.php:226 webseer.php:401 webseer_servers.php:182
-#, fuzzy
 msgid "Down"
 msgstr "Offline"
 
 #: webseer.php:226 webseer.php:401 webseer_servers.php:182
-#, fuzzy
 msgid "Up"
 msgstr "Online"
 
@@ -461,34 +451,29 @@ msgid "No Events in History"
 msgstr "Geen gebeurtenissen in de geschiedenis"
 
 #: webseer.php:325 webseer_servers.php:256
-#, fuzzy
 msgid "Actions"
 msgstr "Acties"
 
 #: webseer.php:328 webseer.php:404 webseer.php:407 webseer_servers.php:259
 #: webseer_servers.php:398
-#, fuzzy
 msgid "Enabled"
 msgstr "Ingeschakeld"
 
 #: webseer.php:331
-#, fuzzy
 msgid "Auth"
-msgstr "SNMP Auth protocol (v3)"
+msgstr "Auth"
 
 #: webseer.php:336
-#, fuzzy
 msgid "Timeout"
 msgstr "Timeout"
 
 #: webseer.php:337 webseer_servers.php:261
-#, fuzzy
 msgid "Last Check"
 msgstr "Laatst gecontroleerd"
 
 #: webseer.php:367 webseer_servers.php:282
 msgid "Edit Site"
-msgstr ""
+msgstr "Site Bewerken"
 
 #: webseer.php:372 webseer_servers.php:287
 #, fuzzy
@@ -502,7 +487,7 @@ msgstr "Uitschakelen"
 
 #: webseer.php:381 webseer_servers.php:295
 msgid "View History"
-msgstr ""
+msgstr "Bekijk historie"
 
 #: webseer.php:389
 #, fuzzy, php-format
@@ -510,17 +495,14 @@ msgid "DNS: Server %s - A Record for %s"
 msgstr "DNS: Server %s - Een record voor %s"
 
 #: webseer.php:399
-#, fuzzy
 msgid "N/A"
 msgstr "N/B"
 
 #: webseer.php:404 webseer.php:407 webseer_servers.php:398
-#, fuzzy
 msgid "Disabled"
 msgstr "Uitgeschakeld"
 
 #: webseer.php:406 webseer_servers.php:155
-#, fuzzy
 msgid "Error"
 msgstr "Fout"
 
@@ -535,37 +517,32 @@ msgid "Webseer Site Management"
 msgstr "Beheer van de website"
 
 #: webseer.php:508 webseer_edit.php:216 webseer_proxies.php:327
-#, fuzzy
 msgid "Search"
 msgstr "Zoeken"
 
 #: webseer.php:514 webseer_servers.php:392
-#, fuzzy
 msgid "State"
 msgstr "Staat"
 
 #: webseer.php:518 webseer_servers.php:396
-#, fuzzy
 msgid "Any"
 msgstr "Alle"
 
 #: webseer.php:527 webseer_servers.php:405
-#, fuzzy
 msgid "Refresh"
 msgstr "Vernieuwen"
 
 #: webseer.php:548 webseer_proxies.php:338 webseer_servers.php:422
-#, fuzzy
 msgid "Default"
 msgstr "Standaard"
 
 #: webseer.php:559 webseer_proxies.php:349
 msgid "Go"
-msgstr ""
+msgstr "Ga"
 
 #: webseer.php:560 webseer_proxies.php:350 webseer_servers.php:433
 msgid "Clear"
-msgstr ""
+msgstr "Herstel"
 
 #: webseer_edit.php:138 webseer_servers_edit.php:116
 #, fuzzy, php-format
@@ -593,23 +570,23 @@ msgid "All Users Selected"
 msgstr "Alle gebruikers geselecteerd"
 
 #: webseer_edit.php:182
-#, fuzzy
 msgid "All"
 msgstr "Alle"
 
 #: webseer_proxies.php:102
+#, fuzzy
 msgid "Click 'Continue' to delete the following Proxy."
 msgid_plural "Click 'Continue' to delete following Proxies."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Klik op 'Doorgaan' om de volgende proxy te verwijderen."
+msgstr[1] "Klik op 'Doorgaan' om volgende proxy's te verwijderen."
 
 #: webseer_proxies.php:107
 msgid "Cancel"
-msgstr ""
+msgstr "Annuleer"
 
 #: webseer_proxies.php:107
 msgid "Continue"
-msgstr ""
+msgstr "Volgende"
 
 #: webseer_proxies.php:107
 #, fuzzy
@@ -619,12 +596,13 @@ msgstr[0] "Verwijder"
 msgstr[1] "Verwijder"
 
 #: webseer_proxies.php:110
+#, fuzzy
 msgid "You must select at least one Proxy."
-msgstr ""
+msgstr "U moet minimaal één proxy selecteren."
 
 #: webseer_proxies.php:111
 msgid "Return"
-msgstr ""
+msgstr "Terug"
 
 #: webseer_proxies.php:167
 #, fuzzy, php-format
@@ -637,16 +615,17 @@ msgid "Proxy [new]"
 msgstr "Vraag [nieuw]"
 
 #: webseer_proxies.php:272
+#, fuzzy
 msgid "Ports (http/https)"
-msgstr ""
+msgstr "Poorten (http / https)"
 
 #: webseer_proxies.php:273
 msgid "Username"
-msgstr ""
+msgstr "Gebruikersnaam"
 
 #: webseer_proxies.php:294
 msgid "Not Set"
-msgstr ""
+msgstr "Niet ingesteld"
 
 #: webseer_proxies.php:318
 #, fuzzy
@@ -654,7 +633,6 @@ msgid "Webseer Proxy Management"
 msgstr "Webseer Server Management"
 
 #: webseer_servers.php:262
-#, fuzzy
 msgid "Master"
 msgstr "Master"
 
@@ -664,12 +642,10 @@ msgid "This Host"
 msgstr "Deze gastheer"
 
 #: webseer_servers.php:299 webseer_servers.php:302 webseer_servers.php:303
-#, fuzzy
 msgid "No"
 msgstr "Nee"
 
 #: webseer_servers.php:299 webseer_servers.php:302 webseer_servers.php:303
-#, fuzzy
 msgid "Yes"
 msgstr "Ja"
 
@@ -679,11 +655,9 @@ msgid "Webseer Server Management"
 msgstr "Webseer Server Management"
 
 #: webseer_servers.php:398
-#, fuzzy
 msgid "Triggered"
-msgstr "Getriggerd"
+msgstr "Geactiveerd"
 
 #: webseer_servers.php:417
-#, fuzzy
 msgid "Sites"
 msgstr "Locaties"

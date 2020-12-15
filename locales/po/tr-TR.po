@@ -8,25 +8,26 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
 "POT-Creation-Date: 2020-12-12 22:16-0500\n"
-"PO-Revision-Date: 2019-03-16 20:06-0400\n"
+"PO-Revision-Date: 2020-12-14 19:08-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: tr_TR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.4.2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: includes/arrays.php:93 webseer_servers.php:410
-#, fuzzy, php-format
+#, php-format
 msgid "%d Minute"
-msgstr "% d Dakika"
+msgstr "% d dakika"
 
 #: includes/arrays.php:94 includes/arrays.php:95 includes/arrays.php:96
 #: includes/arrays.php:97 includes/arrays.php:98 includes/arrays.php:99
 #: includes/arrays.php:100 includes/arrays.php:101 includes/arrays.php:102
 #: webseer_servers.php:410
-#, fuzzy, php-format
+#, php-format
 msgid "%d Minutes"
 msgstr "%d Dakika"
 
@@ -38,55 +39,53 @@ msgid "%d Seconds"
 msgstr "%d saniye"
 
 #: includes/arrays.php:141 includes/arrays.php:145 includes/arrays.php:152
-#, fuzzy
 msgid "Delete"
 msgstr "Sil"
 
 #: includes/arrays.php:146 includes/arrays.php:153
-#, fuzzy
 msgid "Disable"
 msgstr "Devre Dışı"
 
 #: includes/arrays.php:147 includes/arrays.php:154
-#, fuzzy
 msgid "Enable"
 msgstr "Etkinleştir"
 
 #: includes/arrays.php:148
-#, fuzzy
 msgid "Duplicate"
 msgstr "Kopyala"
 
 #: includes/arrays.php:162 includes/arrays.php:231 webseer.php:326
 #: webseer_proxies.php:270 webseer_servers.php:257
-#, fuzzy
 msgid "Name"
 msgstr "İsim"
 
 #: includes/arrays.php:163
+#, fuzzy
 msgid "A Useful Name for this Proxy."
-msgstr ""
+msgstr "Bu Proxy için Kullanışlı Bir Ad."
 
 #: includes/arrays.php:167
+#, fuzzy
 msgid "New Proxy"
-msgstr ""
+msgstr "Yeni Proxy"
 
 #: includes/arrays.php:171 webseer_proxies.php:271
 msgid "Hostname"
-msgstr ""
+msgstr "Sunucu Adı"
 
 #: includes/arrays.php:172
+#, fuzzy
 msgid "The Proxy Hostname."
-msgstr ""
+msgstr "Proxy Ana Bilgisayar Adı."
 
 #: includes/arrays.php:180
-#, fuzzy
 msgid "HTTP Port"
-msgstr "HTTP Kodu"
+msgstr "HTTP bağlantı noktası"
 
 #: includes/arrays.php:181
+#, fuzzy
 msgid "The HTTP Proxy Port."
-msgstr ""
+msgstr "HTTP Proxy Bağlantı Noktası."
 
 #: includes/arrays.php:189
 #, fuzzy
@@ -94,29 +93,31 @@ msgid "HTTPS Port"
 msgstr "HTTP Kodu"
 
 #: includes/arrays.php:190
+#, fuzzy
 msgid "The HTTPS Proxy Port."
-msgstr ""
+msgstr "HTTPS Proxy Bağlantı Noktası."
 
 #: includes/arrays.php:198
-#, fuzzy
 msgid "User Name"
-msgstr "İsim"
+msgstr "Kullanıcı Adı"
 
 #: includes/arrays.php:199
+#, fuzzy
 msgid "The user to use to authenticate with the Proxy if any."
-msgstr ""
+msgstr "Varsa, Proxy ile kimlik doğrulaması yapmak için kullanılacak kullanıcı."
 
 #: includes/arrays.php:207
 msgid "Password"
-msgstr ""
+msgstr "Şifre"
 
 #: includes/arrays.php:208
+#, fuzzy
 msgid "The user password to use to authenticate with the Proxy if any."
-msgstr ""
+msgstr "Varsa, Proxy ile kimlik doğrulaması yapmak için kullanılacak kullanıcı parolası."
 
 #: includes/arrays.php:227 includes/arrays.php:287
 msgid "General Settings"
-msgstr ""
+msgstr "Genel Ayarlar"
 
 #: includes/arrays.php:232
 #, fuzzy
@@ -154,7 +155,6 @@ msgid "Sets this server to the Master server.  The Master server handles all Ema
 msgstr "Bu sunucuyu Ana sunucuya ayarlar. Ana sunucu tüm e-posta işlemlerini gerçekleştirir."
 
 #: includes/arrays.php:259 includes/arrays.php:313 webseer_servers.php:258
-#, fuzzy
 msgid "IP Address"
 msgstr "IP Adresi"
 
@@ -165,7 +165,6 @@ msgstr "Bu sunucuya bağlanmak için IP Adresi"
 
 #: includes/arrays.php:266 includes/arrays.php:305 webseer.php:191
 #: webseer_servers.php:154
-#, fuzzy
 msgid "URL"
 msgstr "URL"
 
@@ -175,7 +174,6 @@ msgid "This is the URL to connect to remote.php on this server."
 msgstr "Bu sunucudaki remote.php'ye bağlanılacak URL."
 
 #: includes/arrays.php:273 webseer_servers.php:260
-#, fuzzy
 msgid "Location"
 msgstr "Konum"
 
@@ -215,30 +213,32 @@ msgid "Enter an IP address to connect to.  Leaving blank will use DNS Resolution
 msgstr "Bağlanmak için bir IP adresi girin. Boş bırakmak, bunun yerine DNS Çözünürlüğünü kullanır."
 
 #: includes/arrays.php:321
-#, fuzzy
 msgid "Proxy Server"
-msgstr "Ana Sunucu"
+msgstr "Proxy Sunucusu"
 
 #: includes/arrays.php:322
+#, fuzzy
 msgid "If this connection text requires a proxy, select it here.  Otherwise choose 'None'."
-msgstr ""
+msgstr "Bu bağlantı metni bir proxy gerektiriyorsa, buradan seçin. Aksi takdirde 'Yok'u seçin."
 
 #: includes/arrays.php:324 webseer_edit.php:183
-#, fuzzy
 msgid "None"
 msgstr "Yok"
 
 #: includes/arrays.php:329 webseer.php:192 webseer.php:329
+#, fuzzy
 msgid "Compression"
-msgstr ""
+msgstr "Sıkıştırma"
 
 #: includes/arrays.php:333
+#, fuzzy
 msgid "What compression does the server require?  Most servers should not need this, but some will not redirect properly without it."
-msgstr ""
+msgstr "Sunucu hangi sıkıştırmayı gerektiriyor? Çoğu sunucu buna ihtiyaç duymamalıdır, ancak bazıları onsuz düzgün bir şekilde yeniden yönlendirmeyecektir."
 
 #: includes/arrays.php:338
+#, fuzzy
 msgid "Available Checks"
-msgstr ""
+msgstr "Mevcut Çekler"
 
 #: includes/arrays.php:342
 #, fuzzy
@@ -261,13 +261,13 @@ msgid "If using SSL, check this box if you want to validate the certificate. Def
 msgstr "SSL kullanıyorsanız, sertifikayı doğrulamak istiyorsanız bu kutuyu işaretleyin. Varsayılan olarak, sitenin kendinden imzalı bir sertifikası kullanıyorsanız kapatın."
 
 #: includes/arrays.php:356
+#, fuzzy
 msgid "Notification Timing"
-msgstr ""
+msgstr "Bildirim Zamanlaması"
 
 #: includes/arrays.php:359
-#, fuzzy
 msgid "Trigger"
-msgstr "Tetikleyici"
+msgstr "Tetik"
 
 #: includes/arrays.php:363
 #, fuzzy
@@ -285,8 +285,9 @@ msgid "How many seconds to allow the page to timeout before reporting it as down
 msgstr "Sayfanın aşağı olarak bildirilmeden önce sayfanın zaman aşımına uğramasına izin vermek için kaç saniye bekleyin."
 
 #: includes/arrays.php:376
+#, fuzzy
 msgid "Verification Strings"
-msgstr ""
+msgstr "Doğrulama Dizeleri"
 
 #: includes/arrays.php:380
 #, fuzzy
@@ -320,7 +321,7 @@ msgstr "Bu, Web Hizmeti yanıtında bilinen bir hatayı aramak için kullanılan
 
 #: includes/arrays.php:404
 msgid "Notification Settings"
-msgstr ""
+msgstr "Bildirim Ayarları"
 
 #: includes/arrays.php:407
 #, fuzzy
@@ -328,8 +329,9 @@ msgid "Notify Format"
 msgstr "Hesapları bildir"
 
 #: includes/arrays.php:409
+#, fuzzy
 msgid "This is the format to use when sending the notification email"
-msgstr ""
+msgstr "Bu, bildirim e-postasını gönderirken kullanılacak biçimdir"
 
 #: includes/arrays.php:414
 #, fuzzy
@@ -352,18 +354,17 @@ msgid "You may specify here extra Emails to receive alerts for this URL (comma s
 msgstr "Bu URL için uyarılar almak için buraya ek E-postalar belirleyebilirsiniz (virgülle ayrılmış)"
 
 #: includes/functions.php:33 webseer.php:342 webseer.php:543
-#, fuzzy
 msgid "Checks"
 msgstr "Kontroller"
 
 #: includes/functions.php:34 webseer_servers.php:243
-#, fuzzy
 msgid "Servers"
 msgstr "Sunucular"
 
 #: includes/functions.php:35 webseer_proxies.php:278 webseer_proxies.php:333
+#, fuzzy
 msgid "Proxies"
-msgstr ""
+msgstr "Vekiller"
 
 #: poller_webseer.php:181
 #, fuzzy
@@ -381,7 +382,6 @@ msgid "Web Service Check Admin"
 msgstr "Web Servis Kontrolü Yöneticisi"
 
 #: setup.php:304
-#, fuzzy
 msgid "Management"
 msgstr "Kullanıcı Yonetimi"
 
@@ -411,7 +411,6 @@ msgid "Server Edit"
 msgstr "Sunucu Düzenlemesi"
 
 #: webseer.php:190 webseer_servers.php:153
-#, fuzzy
 msgid "Date"
 msgstr "Tarih"
 
@@ -426,32 +425,26 @@ msgid "DNS"
 msgstr "DNS"
 
 #: webseer.php:195 webseer.php:333 webseer_servers.php:158
-#, fuzzy
 msgid "Connect"
 msgstr "Bağlan"
 
 #: webseer.php:196 webseer.php:334 webseer_servers.php:159
-#, fuzzy
 msgid "Redirect"
 msgstr "Yönlendir"
 
 #: webseer.php:197 webseer.php:335 webseer_servers.php:160
-#, fuzzy
 msgid "Total"
 msgstr "Toplam"
 
 #: webseer.php:198 webseer.php:327
-#, fuzzy
 msgid "Status"
 msgstr "Durum"
 
 #: webseer.php:226 webseer.php:401 webseer_servers.php:182
-#, fuzzy
 msgid "Down"
 msgstr "Aşağı"
 
 #: webseer.php:226 webseer.php:401 webseer_servers.php:182
-#, fuzzy
 msgid "Up"
 msgstr "Yukarı"
 
@@ -461,13 +454,11 @@ msgid "No Events in History"
 msgstr "Tarihte Etkinlik Yok"
 
 #: webseer.php:325 webseer_servers.php:256
-#, fuzzy
 msgid "Actions"
 msgstr "Eylemler"
 
 #: webseer.php:328 webseer.php:404 webseer.php:407 webseer_servers.php:259
 #: webseer_servers.php:398
-#, fuzzy
 msgid "Enabled"
 msgstr "Etkin"
 
@@ -477,7 +468,6 @@ msgid "Auth"
 msgstr "auth"
 
 #: webseer.php:336
-#, fuzzy
 msgid "Timeout"
 msgstr "Zaman Aşımı"
 
@@ -488,7 +478,7 @@ msgstr "Son kontrol"
 
 #: webseer.php:367 webseer_servers.php:282
 msgid "Edit Site"
-msgstr ""
+msgstr "Siteyi Düzenle"
 
 #: webseer.php:372 webseer_servers.php:287
 #, fuzzy
@@ -502,7 +492,7 @@ msgstr "Devre Dışı"
 
 #: webseer.php:381 webseer_servers.php:295
 msgid "View History"
-msgstr ""
+msgstr "Geçmişi Görüntüle"
 
 #: webseer.php:389
 #, fuzzy, php-format
@@ -510,17 +500,14 @@ msgid "DNS: Server %s - A Record for %s"
 msgstr "DNS: Sunucu %s - %s için bir kayıt"
 
 #: webseer.php:399
-#, fuzzy
 msgid "N/A"
 msgstr "N/A"
 
 #: webseer.php:404 webseer.php:407 webseer_servers.php:398
-#, fuzzy
 msgid "Disabled"
 msgstr "Devre dışı"
 
 #: webseer.php:406 webseer_servers.php:155
-#, fuzzy
 msgid "Error"
 msgstr "Hata"
 
@@ -535,37 +522,32 @@ msgid "Webseer Site Management"
 msgstr "Websitesi Site Yönetimi"
 
 #: webseer.php:508 webseer_edit.php:216 webseer_proxies.php:327
-#, fuzzy
 msgid "Search"
 msgstr "Arama"
 
 #: webseer.php:514 webseer_servers.php:392
-#, fuzzy
 msgid "State"
 msgstr "Şehir"
 
 #: webseer.php:518 webseer_servers.php:396
-#, fuzzy
 msgid "Any"
 msgstr "Herhangi"
 
 #: webseer.php:527 webseer_servers.php:405
-#, fuzzy
 msgid "Refresh"
 msgstr "Yenile"
 
 #: webseer.php:548 webseer_proxies.php:338 webseer_servers.php:422
-#, fuzzy
 msgid "Default"
 msgstr "Varsayılan"
 
 #: webseer.php:559 webseer_proxies.php:349
 msgid "Go"
-msgstr ""
+msgstr "Git"
 
 #: webseer.php:560 webseer_proxies.php:350 webseer_servers.php:433
 msgid "Clear"
-msgstr ""
+msgstr "Temizle"
 
 #: webseer_edit.php:138 webseer_servers_edit.php:116
 #, fuzzy, php-format
@@ -593,23 +575,23 @@ msgid "All Users Selected"
 msgstr "Tüm Kullanıcılar Seçildi"
 
 #: webseer_edit.php:182
-#, fuzzy
 msgid "All"
 msgstr "Tümü"
 
 #: webseer_proxies.php:102
+#, fuzzy
 msgid "Click 'Continue' to delete the following Proxy."
 msgid_plural "Click 'Continue' to delete following Proxies."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Aşağıdaki Proxy'yi silmek için 'Devam Et'i tıklayın."
+msgstr[1] "Aşağıdaki Proxy'leri silmek için 'Devam Et'i tıklayın."
 
 #: webseer_proxies.php:107
 msgid "Cancel"
-msgstr ""
+msgstr "İptal"
 
 #: webseer_proxies.php:107
 msgid "Continue"
-msgstr ""
+msgstr "Devam et"
 
 #: webseer_proxies.php:107
 #, fuzzy
@@ -619,12 +601,13 @@ msgstr[0] "Sil"
 msgstr[1] "Sil"
 
 #: webseer_proxies.php:110
+#, fuzzy
 msgid "You must select at least one Proxy."
-msgstr ""
+msgstr "En az bir Proxy seçmelisiniz."
 
 #: webseer_proxies.php:111
 msgid "Return"
-msgstr ""
+msgstr "Dönüş"
 
 #: webseer_proxies.php:167
 #, fuzzy, php-format
@@ -637,16 +620,17 @@ msgid "Proxy [new]"
 msgstr "Sorgu [yeni]"
 
 #: webseer_proxies.php:272
+#, fuzzy
 msgid "Ports (http/https)"
-msgstr ""
+msgstr "Bağlantı noktaları (http / https)"
 
 #: webseer_proxies.php:273
 msgid "Username"
-msgstr ""
+msgstr "Kullanıcı Adı"
 
 #: webseer_proxies.php:294
 msgid "Not Set"
-msgstr ""
+msgstr "Ayarlanmadı"
 
 #: webseer_proxies.php:318
 #, fuzzy
@@ -654,9 +638,8 @@ msgid "Webseer Proxy Management"
 msgstr "Web sunucusu Sunucu Yönetimi"
 
 #: webseer_servers.php:262
-#, fuzzy
 msgid "Master"
-msgstr "Orijinal Fotoğraf"
+msgstr "Master"
 
 #: webseer_servers.php:263
 #, fuzzy
@@ -664,12 +647,10 @@ msgid "This Host"
 msgstr "Bu Sunucunun"
 
 #: webseer_servers.php:299 webseer_servers.php:302 webseer_servers.php:303
-#, fuzzy
 msgid "No"
 msgstr "Hayır"
 
 #: webseer_servers.php:299 webseer_servers.php:302 webseer_servers.php:303
-#, fuzzy
 msgid "Yes"
 msgstr "Evet"
 
@@ -679,11 +660,9 @@ msgid "Webseer Server Management"
 msgstr "Web sunucusu Sunucu Yönetimi"
 
 #: webseer_servers.php:398
-#, fuzzy
 msgid "Triggered"
 msgstr "Tetikleyici"
 
 #: webseer_servers.php:417
-#, fuzzy
 msgid "Sites"
 msgstr "Siteler"

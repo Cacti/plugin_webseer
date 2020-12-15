@@ -8,17 +8,18 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
 "POT-Creation-Date: 2020-12-12 22:16-0500\n"
-"PO-Revision-Date: 2019-03-16 20:02-0400\n"
+"PO-Revision-Date: 2020-12-14 19:07-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.4.2\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: includes/arrays.php:93 webseer_servers.php:410
-#, fuzzy, php-format
+#, php-format
 msgid "%d Minute"
 msgstr "%d Minuto"
 
@@ -26,9 +27,9 @@ msgstr "%d Minuto"
 #: includes/arrays.php:97 includes/arrays.php:98 includes/arrays.php:99
 #: includes/arrays.php:100 includes/arrays.php:101 includes/arrays.php:102
 #: webseer_servers.php:410
-#, fuzzy, php-format
+#, php-format
 msgid "%d Minutes"
-msgstr "%d minutos"
+msgstr "<ph id=\"mtc_1\" equiv-text=\"base64:JWQ=\"/> Minutos"
 
 #: includes/arrays.php:106 includes/arrays.php:107 includes/arrays.php:108
 #: includes/arrays.php:109 includes/arrays.php:110 includes/arrays.php:111
@@ -38,46 +39,44 @@ msgid "%d Seconds"
 msgstr "%d segundos"
 
 #: includes/arrays.php:141 includes/arrays.php:145 includes/arrays.php:152
-#, fuzzy
 msgid "Delete"
 msgstr "Excluir"
 
 #: includes/arrays.php:146 includes/arrays.php:153
-#, fuzzy
 msgid "Disable"
 msgstr "Desativar"
 
 #: includes/arrays.php:147 includes/arrays.php:154
-#, fuzzy
 msgid "Enable"
 msgstr "Habilitar"
 
 #: includes/arrays.php:148
-#, fuzzy
 msgid "Duplicate"
 msgstr "Duplicar"
 
 #: includes/arrays.php:162 includes/arrays.php:231 webseer.php:326
 #: webseer_proxies.php:270 webseer_servers.php:257
-#, fuzzy
 msgid "Name"
-msgstr "nome"
+msgstr "Nome"
 
 #: includes/arrays.php:163
+#, fuzzy
 msgid "A Useful Name for this Proxy."
-msgstr ""
+msgstr "Um nome útil para este proxy."
 
 #: includes/arrays.php:167
+#, fuzzy
 msgid "New Proxy"
-msgstr ""
+msgstr "Novo Proxy"
 
 #: includes/arrays.php:171 webseer_proxies.php:271
 msgid "Hostname"
-msgstr ""
+msgstr "Hostname"
 
 #: includes/arrays.php:172
+#, fuzzy
 msgid "The Proxy Hostname."
-msgstr ""
+msgstr "O nome do host proxy."
 
 #: includes/arrays.php:180
 #, fuzzy
@@ -85,8 +84,9 @@ msgid "HTTP Port"
 msgstr "Código HTTP"
 
 #: includes/arrays.php:181
+#, fuzzy
 msgid "The HTTP Proxy Port."
-msgstr ""
+msgstr "A porta proxy HTTP."
 
 #: includes/arrays.php:189
 #, fuzzy
@@ -94,29 +94,31 @@ msgid "HTTPS Port"
 msgstr "Código HTTP"
 
 #: includes/arrays.php:190
+#, fuzzy
 msgid "The HTTPS Proxy Port."
-msgstr ""
+msgstr "A porta proxy HTTPS."
 
 #: includes/arrays.php:198
-#, fuzzy
 msgid "User Name"
-msgstr "nome"
+msgstr "Nome de Usuário"
 
 #: includes/arrays.php:199
+#, fuzzy
 msgid "The user to use to authenticate with the Proxy if any."
-msgstr ""
+msgstr "O usuário a ser usado para autenticação com o Proxy, se houver."
 
 #: includes/arrays.php:207
 msgid "Password"
-msgstr ""
+msgstr "Senha"
 
 #: includes/arrays.php:208
+#, fuzzy
 msgid "The user password to use to authenticate with the Proxy if any."
-msgstr ""
+msgstr "A senha do usuário a ser usada para autenticação no Proxy, se houver."
 
 #: includes/arrays.php:227 includes/arrays.php:287
 msgid "General Settings"
-msgstr ""
+msgstr "Configurações Gerais"
 
 #: includes/arrays.php:232
 #, fuzzy
@@ -154,7 +156,6 @@ msgid "Sets this server to the Master server.  The Master server handles all Ema
 msgstr "Define este servidor para o servidor Master.  O servidor Master trata de todas as operações de e-mail"
 
 #: includes/arrays.php:259 includes/arrays.php:313 webseer_servers.php:258
-#, fuzzy
 msgid "IP Address"
 msgstr "Endereço IP"
 
@@ -165,7 +166,6 @@ msgstr "Endereço IP para conectar a este servidor"
 
 #: includes/arrays.php:266 includes/arrays.php:305 webseer.php:191
 #: webseer_servers.php:154
-#, fuzzy
 msgid "URL"
 msgstr "URL"
 
@@ -175,7 +175,6 @@ msgid "This is the URL to connect to remote.php on this server."
 msgstr "Este é o URL para se conectar ao remote.php neste servidor."
 
 #: includes/arrays.php:273 webseer_servers.php:260
-#, fuzzy
 msgid "Location"
 msgstr "Localização"
 
@@ -220,25 +219,27 @@ msgid "Proxy Server"
 msgstr "Servidor Master"
 
 #: includes/arrays.php:322
+#, fuzzy
 msgid "If this connection text requires a proxy, select it here.  Otherwise choose 'None'."
-msgstr ""
+msgstr "Se este texto de conexão requer um proxy, selecione-o aqui. Caso contrário, escolha 'Nenhum'."
 
 #: includes/arrays.php:324 webseer_edit.php:183
-#, fuzzy
 msgid "None"
 msgstr "Nenhum"
 
 #: includes/arrays.php:329 webseer.php:192 webseer.php:329
 msgid "Compression"
-msgstr ""
+msgstr "Compressão"
 
 #: includes/arrays.php:333
+#, fuzzy
 msgid "What compression does the server require?  Most servers should not need this, but some will not redirect properly without it."
-msgstr ""
+msgstr "Qual compactação o servidor exige? A maioria dos servidores não deve precisar disso, mas alguns não redirecionarão corretamente sem ele."
 
 #: includes/arrays.php:338
+#, fuzzy
 msgid "Available Checks"
-msgstr ""
+msgstr "Cheques Disponíveis"
 
 #: includes/arrays.php:342
 #, fuzzy
@@ -261,11 +262,11 @@ msgid "If using SSL, check this box if you want to validate the certificate. Def
 msgstr "Se estiver usando SSL, marque esta caixa se quiser validar o certificado. Default on, desligar se o site usa um certificado autoassinado."
 
 #: includes/arrays.php:356
+#, fuzzy
 msgid "Notification Timing"
-msgstr ""
+msgstr "Tempo de Notificação"
 
 #: includes/arrays.php:359
-#, fuzzy
 msgid "Trigger"
 msgstr "Gatilho"
 
@@ -275,7 +276,6 @@ msgid "How many minutes the URL must be down before it will send an alert.  Afte
 msgstr "Quantos minutos a URL deve estar desativada antes de enviar um alerta.  Após o envio de um alerta, para que um e-mail de 'Recuperação de Site' seja enviado, ele também deve ter esse número de minutos."
 
 #: includes/arrays.php:367
-#, fuzzy
 msgid "Time Out"
 msgstr "Tempo esgotado"
 
@@ -285,8 +285,9 @@ msgid "How many seconds to allow the page to timeout before reporting it as down
 msgstr "Quantos segundos para permitir que a página perca tempo antes de a reportar como desativada."
 
 #: includes/arrays.php:376
+#, fuzzy
 msgid "Verification Strings"
-msgstr ""
+msgstr "Strings de verificação"
 
 #: includes/arrays.php:380
 #, fuzzy
@@ -320,7 +321,7 @@ msgstr "Esta é a string para procurar por uma falha conhecida na resposta do We
 
 #: includes/arrays.php:404
 msgid "Notification Settings"
-msgstr ""
+msgstr "Configurações de notificação"
 
 #: includes/arrays.php:407
 #, fuzzy
@@ -328,8 +329,9 @@ msgid "Notify Format"
 msgstr "Notificar contas"
 
 #: includes/arrays.php:409
+#, fuzzy
 msgid "This is the format to use when sending the notification email"
-msgstr ""
+msgstr "Este é o formato a ser usado ao enviar o e-mail de notificação"
 
 #: includes/arrays.php:414
 #, fuzzy
@@ -352,18 +354,16 @@ msgid "You may specify here extra Emails to receive alerts for this URL (comma s
 msgstr "Você pode especificar aqui Emails extras para receber alertas para esta URL (separados por vírgulas)"
 
 #: includes/functions.php:33 webseer.php:342 webseer.php:543
-#, fuzzy
 msgid "Checks"
 msgstr "Verificações"
 
 #: includes/functions.php:34 webseer_servers.php:243
-#, fuzzy
 msgid "Servers"
 msgstr "Servidores"
 
 #: includes/functions.php:35 webseer_proxies.php:278 webseer_proxies.php:333
 msgid "Proxies"
-msgstr ""
+msgstr "Proxys"
 
 #: poller_webseer.php:181
 #, fuzzy
@@ -381,7 +381,6 @@ msgid "Web Service Check Admin"
 msgstr "Web Service Check Admin"
 
 #: setup.php:304
-#, fuzzy
 msgid "Management"
 msgstr "Gerenciamento"
 
@@ -411,7 +410,6 @@ msgid "Server Edit"
 msgstr "Edição do Servidor"
 
 #: webseer.php:190 webseer_servers.php:153
-#, fuzzy
 msgid "Date"
 msgstr "Data"
 
@@ -421,37 +419,30 @@ msgid "HTTP Code"
 msgstr "Código HTTP"
 
 #: webseer.php:194 webseer.php:332 webseer_servers.php:157
-#, fuzzy
 msgid "DNS"
 msgstr "DNS"
 
 #: webseer.php:195 webseer.php:333 webseer_servers.php:158
-#, fuzzy
 msgid "Connect"
 msgstr "Conectar"
 
 #: webseer.php:196 webseer.php:334 webseer_servers.php:159
-#, fuzzy
 msgid "Redirect"
 msgstr "Redirecionar"
 
 #: webseer.php:197 webseer.php:335 webseer_servers.php:160
-#, fuzzy
 msgid "Total"
 msgstr "Total"
 
 #: webseer.php:198 webseer.php:327
-#, fuzzy
 msgid "Status"
 msgstr "Status"
 
 #: webseer.php:226 webseer.php:401 webseer_servers.php:182
-#, fuzzy
 msgid "Down"
 msgstr "Baixo"
 
 #: webseer.php:226 webseer.php:401 webseer_servers.php:182
-#, fuzzy
 msgid "Up"
 msgstr "Acima"
 
@@ -461,13 +452,11 @@ msgid "No Events in History"
 msgstr "Nenhum evento na história"
 
 #: webseer.php:325 webseer_servers.php:256
-#, fuzzy
 msgid "Actions"
 msgstr "Ações"
 
 #: webseer.php:328 webseer.php:404 webseer.php:407 webseer_servers.php:259
 #: webseer_servers.php:398
-#, fuzzy
 msgid "Enabled"
 msgstr "Ativado"
 
@@ -477,18 +466,17 @@ msgid "Auth"
 msgstr "Auth"
 
 #: webseer.php:336
-#, fuzzy
 msgid "Timeout"
 msgstr "Tempo esgotado"
 
 #: webseer.php:337 webseer_servers.php:261
 #, fuzzy
 msgid "Last Check"
-msgstr "Último cheque"
+msgstr "Última verificação"
 
 #: webseer.php:367 webseer_servers.php:282
 msgid "Edit Site"
-msgstr ""
+msgstr "Editar sua loja"
 
 #: webseer.php:372 webseer_servers.php:287
 #, fuzzy
@@ -502,7 +490,7 @@ msgstr "Desativar"
 
 #: webseer.php:381 webseer_servers.php:295
 msgid "View History"
-msgstr ""
+msgstr "Ver Histórico"
 
 #: webseer.php:389
 #, fuzzy, php-format
@@ -510,17 +498,14 @@ msgid "DNS: Server %s - A Record for %s"
 msgstr "DNS: Servidor %s - Um recorde para %s"
 
 #: webseer.php:399
-#, fuzzy
 msgid "N/A"
 msgstr "N/A"
 
 #: webseer.php:404 webseer.php:407 webseer_servers.php:398
-#, fuzzy
 msgid "Disabled"
 msgstr "Desativado"
 
 #: webseer.php:406 webseer_servers.php:155
-#, fuzzy
 msgid "Error"
 msgstr "Erro"
 
@@ -535,37 +520,32 @@ msgid "Webseer Site Management"
 msgstr "Gestão de Sites Webseer"
 
 #: webseer.php:508 webseer_edit.php:216 webseer_proxies.php:327
-#, fuzzy
 msgid "Search"
 msgstr "Pesquisar"
 
 #: webseer.php:514 webseer_servers.php:392
-#, fuzzy
 msgid "State"
 msgstr "Estado"
 
 #: webseer.php:518 webseer_servers.php:396
-#, fuzzy
 msgid "Any"
 msgstr "Qualquer"
 
 #: webseer.php:527 webseer_servers.php:405
-#, fuzzy
 msgid "Refresh"
 msgstr "Atualizar"
 
 #: webseer.php:548 webseer_proxies.php:338 webseer_servers.php:422
-#, fuzzy
 msgid "Default"
 msgstr "Padrão"
 
 #: webseer.php:559 webseer_proxies.php:349
 msgid "Go"
-msgstr ""
+msgstr "Ir"
 
 #: webseer.php:560 webseer_proxies.php:350 webseer_servers.php:433
 msgid "Clear"
-msgstr ""
+msgstr "Limpar"
 
 #: webseer_edit.php:138 webseer_servers_edit.php:116
 #, fuzzy, php-format
@@ -593,23 +573,23 @@ msgid "All Users Selected"
 msgstr "Todos os usuários selecionados"
 
 #: webseer_edit.php:182
-#, fuzzy
 msgid "All"
 msgstr "Todos"
 
 #: webseer_proxies.php:102
+#, fuzzy
 msgid "Click 'Continue' to delete the following Proxy."
 msgid_plural "Click 'Continue' to delete following Proxies."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Clique em 'Continuar' para excluir o seguinte Proxy."
+msgstr[1] "Clique em 'Continuar' para excluir os proxies seguintes."
 
 #: webseer_proxies.php:107
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 #: webseer_proxies.php:107
 msgid "Continue"
-msgstr ""
+msgstr "Continuar"
 
 #: webseer_proxies.php:107
 #, fuzzy
@@ -619,12 +599,13 @@ msgstr[0] "Excluir"
 msgstr[1] "Excluir"
 
 #: webseer_proxies.php:110
+#, fuzzy
 msgid "You must select at least one Proxy."
-msgstr ""
+msgstr "Você deve selecionar pelo menos um Proxy."
 
 #: webseer_proxies.php:111
 msgid "Return"
-msgstr ""
+msgstr "Retorno"
 
 #: webseer_proxies.php:167
 #, fuzzy, php-format
@@ -637,16 +618,17 @@ msgid "Proxy [new]"
 msgstr "Consulta [nova]"
 
 #: webseer_proxies.php:272
+#, fuzzy
 msgid "Ports (http/https)"
-msgstr ""
+msgstr "Portas (http / https)"
 
 #: webseer_proxies.php:273
 msgid "Username"
-msgstr ""
+msgstr "Nome de usuário"
 
 #: webseer_proxies.php:294
 msgid "Not Set"
-msgstr ""
+msgstr "Não configurado"
 
 #: webseer_proxies.php:318
 #, fuzzy
@@ -654,7 +636,6 @@ msgid "Webseer Proxy Management"
 msgstr "Gestão de Servidores Webseer"
 
 #: webseer_servers.php:262
-#, fuzzy
 msgid "Master"
 msgstr "Master"
 
@@ -664,12 +645,10 @@ msgid "This Host"
 msgstr "Este Anfitrião"
 
 #: webseer_servers.php:299 webseer_servers.php:302 webseer_servers.php:303
-#, fuzzy
 msgid "No"
 msgstr "Não"
 
 #: webseer_servers.php:299 webseer_servers.php:302 webseer_servers.php:303
-#, fuzzy
 msgid "Yes"
 msgstr "Sim"
 
@@ -679,11 +658,9 @@ msgid "Webseer Server Management"
 msgstr "Gestão de Servidores Webseer"
 
 #: webseer_servers.php:398
-#, fuzzy
 msgid "Triggered"
 msgstr "Provocado"
 
 #: webseer_servers.php:417
-#, fuzzy
 msgid "Sites"
 msgstr "Sites"

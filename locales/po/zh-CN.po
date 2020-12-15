@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: webseer on cacti 1.1.34\n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
 "POT-Creation-Date: 2020-12-12 22:16-0500\n"
-"PO-Revision-Date: 2019-07-26 13:15+0000\n"
+"PO-Revision-Date: 2020-12-14 19:09-0500\n"
 "Last-Translator: tomcat <luis_126@126.com>\n"
 "Language-Team: Chinese (Simplified) <http://translate.cacti.net/projects/cacti/webseer/zh-CN/>\n"
-"Language: zh-CN\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.4-dev\n"
+"X-Generator: Poedit 2.4.2\n"
 
 #: includes/arrays.php:93 webseer_servers.php:410
 #, php-format
@@ -60,59 +60,63 @@ msgid "Name"
 msgstr "名称"
 
 #: includes/arrays.php:163
+#, fuzzy
 msgid "A Useful Name for this Proxy."
-msgstr ""
+msgstr "此代理的有用名称。"
 
 #: includes/arrays.php:167
+#, fuzzy
 msgid "New Proxy"
-msgstr ""
+msgstr "新代理"
 
 #: includes/arrays.php:171 webseer_proxies.php:271
 msgid "Hostname"
-msgstr ""
+msgstr "主机名"
 
 #: includes/arrays.php:172
+#, fuzzy
 msgid "The Proxy Hostname."
-msgstr ""
+msgstr "代理主机名。"
 
 #: includes/arrays.php:180
-#, fuzzy
 msgid "HTTP Port"
-msgstr "HTTP代码"
+msgstr "HTTP 端口"
 
 #: includes/arrays.php:181
+#, fuzzy
 msgid "The HTTP Proxy Port."
-msgstr ""
+msgstr "HTTP代理端口。"
 
 #: includes/arrays.php:189
-#, fuzzy
 msgid "HTTPS Port"
-msgstr "HTTP代码"
+msgstr "HTTPs 端口"
 
 #: includes/arrays.php:190
+#, fuzzy
 msgid "The HTTPS Proxy Port."
-msgstr ""
+msgstr "HTTPS代理端口。"
 
 #: includes/arrays.php:198
-#, fuzzy
 msgid "User Name"
-msgstr "名称"
+msgstr "用户名"
 
 #: includes/arrays.php:199
+#, fuzzy
 msgid "The user to use to authenticate with the Proxy if any."
-msgstr ""
+msgstr "用于通过代理进行身份验证的用户（如果有）。"
 
 #: includes/arrays.php:207
 msgid "Password"
-msgstr ""
+msgstr "密码"
 
 #: includes/arrays.php:208
+#, fuzzy
 msgid "The user password to use to authenticate with the Proxy if any."
-msgstr ""
+msgstr "用于通过代理进行身份验证的用户密码（如果有）。"
 
 #: includes/arrays.php:227 includes/arrays.php:287
 msgid "General Settings"
-msgstr ""
+msgstr "常规设置"
 
 #: includes/arrays.php:232
 msgid "Display Name of this server"
@@ -192,30 +196,31 @@ msgid "Enter an IP address to connect to.  Leaving blank will use DNS Resolution
 msgstr "输入要连接的IP地址。 留空将使用DNS解析。"
 
 #: includes/arrays.php:321
-#, fuzzy
 msgid "Proxy Server"
-msgstr "主服务器"
+msgstr "代理服务器"
 
 #: includes/arrays.php:322
+#, fuzzy
 msgid "If this connection text requires a proxy, select it here.  Otherwise choose 'None'."
-msgstr ""
+msgstr "如果此连接文本需要代理，请在此处选择它。否则，选择“无”。"
 
 #: includes/arrays.php:324 webseer_edit.php:183
-#, fuzzy
 msgid "None"
 msgstr "无"
 
 #: includes/arrays.php:329 webseer.php:192 webseer.php:329
 msgid "Compression"
-msgstr ""
+msgstr "压缩"
 
 #: includes/arrays.php:333
+#, fuzzy
 msgid "What compression does the server require?  Most servers should not need this, but some will not redirect properly without it."
-msgstr ""
+msgstr "服务器需要什么压缩？大多数服务器不需要此服务器，但是如果没有它，某些服务器将无法正确重定向。"
 
 #: includes/arrays.php:338
+#, fuzzy
 msgid "Available Checks"
-msgstr ""
+msgstr "可用支票"
 
 #: includes/arrays.php:342
 msgid "Requires Authentication"
@@ -234,8 +239,9 @@ msgid "If using SSL, check this box if you want to validate the certificate. Def
 msgstr "如果使用SSL，如果要验证证书，请选中此框。 如果您的网站使用自签名证书，则默认开启。"
 
 #: includes/arrays.php:356
+#, fuzzy
 msgid "Notification Timing"
-msgstr ""
+msgstr "通知时间"
 
 #: includes/arrays.php:359
 msgid "Trigger"
@@ -254,8 +260,9 @@ msgid "How many seconds to allow the page to timeout before reporting it as down
 msgstr "在报告为关闭之前允许页面超时多少秒。"
 
 #: includes/arrays.php:376
+#, fuzzy
 msgid "Verification Strings"
-msgstr ""
+msgstr "验证字符串"
 
 #: includes/arrays.php:380
 msgid "Response Search String"
@@ -283,7 +290,7 @@ msgstr "这是在Web Service响应中搜索已知失败的字符串。 如果找
 
 #: includes/arrays.php:404
 msgid "Notification Settings"
-msgstr ""
+msgstr "通知设置"
 
 #: includes/arrays.php:407
 #, fuzzy
@@ -291,8 +298,9 @@ msgid "Notify Format"
 msgstr "通知帐户"
 
 #: includes/arrays.php:409
+#, fuzzy
 msgid "This is the format to use when sending the notification email"
-msgstr ""
+msgstr "这是发送通知电子邮件时使用的格式"
 
 #: includes/arrays.php:414
 msgid "Notify accounts"
@@ -320,7 +328,7 @@ msgstr "服务器"
 
 #: includes/functions.php:35 webseer_proxies.php:278 webseer_proxies.php:333
 msgid "Proxies"
-msgstr ""
+msgstr "代表权"
 
 #: poller_webseer.php:181
 msgid "Cacti Master"
@@ -441,7 +449,6 @@ msgid "DNS: Server %s - A Record for %s"
 msgstr "DNS：服务器 %s -   %s的记录"
 
 #: webseer.php:399
-#, fuzzy
 msgid "N/A"
 msgstr "N/A"
 
@@ -515,13 +522,12 @@ msgid "All"
 msgstr "所有"
 
 #: webseer_proxies.php:102
+#, fuzzy
 msgid "Click 'Continue' to delete the following Proxy."
 msgid_plural "Click 'Continue' to delete following Proxies."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "单击“继续”以删除以下代理。"
 
 #: webseer_proxies.php:107
-#, fuzzy
 msgid "Cancel"
 msgstr "取消"
 
@@ -530,15 +536,14 @@ msgid "Continue"
 msgstr "继续"
 
 #: webseer_proxies.php:107
-#, fuzzy
 msgid "Delete Proxy"
 msgid_plural "Delete Proxies"
-msgstr[0] "删除"
-msgstr[1] "删除"
+msgstr[0] "删除代理  Delete Proxy"
 
 #: webseer_proxies.php:110
+#, fuzzy
 msgid "You must select at least one Proxy."
-msgstr ""
+msgstr "您必须至少选择一个代理。"
 
 #: webseer_proxies.php:111
 msgid "Return"
@@ -555,16 +560,17 @@ msgid "Proxy [new]"
 msgstr "查询[新建]"
 
 #: webseer_proxies.php:272
+#, fuzzy
 msgid "Ports (http/https)"
-msgstr ""
+msgstr "端口（http / https）"
 
 #: webseer_proxies.php:273
 msgid "Username"
-msgstr ""
+msgstr "用户名"
 
 #: webseer_proxies.php:294
 msgid "Not Set"
-msgstr ""
+msgstr "没有设置"
 
 #: webseer_proxies.php:318
 #, fuzzy
