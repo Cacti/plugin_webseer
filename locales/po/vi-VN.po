@@ -229,8 +229,6 @@ msgstr "Không"
 #: includes/arrays.php:329 webseer.php:192 webseer.php:329
 msgid "Compression"
 msgstr ""
-"\n"
-"Nén"
 
 #: includes/arrays.php:333
 #, fuzzy
