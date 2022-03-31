@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2020-12-14 19:20-0500\nPO-Revision-Date: 2022-03-25 04:14+0000\nLast-Translator: Anatoliy <hamrad99h2@gmail.com>\nLanguage-Team: Russian <http://translate.cacti.net/projects/cacti/webseer/ru/>\nLanguage: ru-RU\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\nX-Generator: Weblate 4.8.1\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2020-12-14 19:20-0500\nPO-Revision-Date: 2022-03-31 16:49+0000\nLast-Translator: Anatoliy <hamrad99h2@gmail.com>\nLanguage-Team: Russian <http://translate.cacti.net/projects/cacti/webseer/ru/>\nLanguage: ru-RU\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\nX-Generator: Weblate 4.8.1\n"
 
 #: includes/arrays.php:93 webseer_servers.php:410
 #, php-format
@@ -105,7 +105,7 @@ msgstr "Пароль пользователя для аутентификаци�
 
 #: includes/arrays.php:227 includes/arrays.php:287
 msgid "General Settings"
-msgstr "Основые Настройки"
+msgstr "Основные Настройки"
 
 #: includes/arrays.php:232
 #, fuzzy
@@ -507,7 +507,7 @@ msgstr "Управление сайтом Webseer Site Management"
 
 #: webseer.php:508 webseer_edit.php:216 webseer_proxies.php:327
 msgid "Search"
-msgstr "Найти"
+msgstr "Поиск"
 
 #: webseer.php:514 webseer_servers.php:392
 msgid "State"
