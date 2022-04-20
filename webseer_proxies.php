@@ -93,7 +93,7 @@ function proxy_form_actions() {
 
 	form_start('webseer_proxies.php');
 
-	html_start_box($webseer_actions_proxy{get_nfilter_request_var('drp_action')}, '60%', '', '3', 'center', '');
+	html_start_box($webseer_actions_proxy[get_nfilter_request_var('drp_action')], '60%', '', '3', 'center', '');
 
 	if (isset($vdef_array)) {
 		if (get_nfilter_request_var('drp_action') === WEBSEER_ACTION_PROXY_DELETE) { // delete
@@ -256,14 +256,14 @@ function proxies() {
 	$sql_order = get_order_string();
 	$sql_limit = ' LIMIT ' . ($rows*(get_request_var('page')-1)) . ',' . $rows;
 
-	$result = db_fetch_assoc("SELECT * 
-		FROM plugin_webseer_proxies 
-		$sql_where 
-		$sql_order 
+	$result = db_fetch_assoc("SELECT *
+		FROM plugin_webseer_proxies
+		$sql_where
+		$sql_order
 		$sql_limit");
 
-	$total_rows = db_fetch_cell("SELECT COUNT(id) 
-		FROM plugin_webseer_proxies 
+	$total_rows = db_fetch_cell("SELECT COUNT(id)
+		FROM plugin_webseer_proxies
 		$sql_where");
 
 	$display_text = array(
