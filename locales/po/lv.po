@@ -1,0 +1,579 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR The Cacti Group
+# This file is distributed under the same license as the Cacti package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr "Project-Id-Version: Cacti 1.2.16\nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2020-12-14 19:20-0500\nPO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\nLast-Translator: Automatically generated\nLanguage-Team: none\nLanguage: lv\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=3; plural=(n % 10 == 0 || n % 100 >= 11 && n % 100 <= 19) ? 0 : ((n % 10 == 1 && n % 100 != 11) ? 1 : 2);\n"
+
+#: includes/arrays.php:93 webseer_servers.php:410
+#, php-format
+msgid "%d Minute"
+msgstr ""
+
+#: includes/arrays.php:94 includes/arrays.php:95 includes/arrays.php:96
+#: includes/arrays.php:97 includes/arrays.php:98 includes/arrays.php:99
+#: includes/arrays.php:100 includes/arrays.php:101 includes/arrays.php:102
+#: webseer_servers.php:410
+#, php-format
+msgid "%d Minutes"
+msgstr ""
+
+#: includes/arrays.php:106 includes/arrays.php:107 includes/arrays.php:108
+#: includes/arrays.php:109 includes/arrays.php:110 includes/arrays.php:111
+#: includes/arrays.php:112 includes/arrays.php:113 webseer_servers.php:410
+#, php-format
+msgid "%d Seconds"
+msgstr ""
+
+#: includes/arrays.php:141 includes/arrays.php:145 includes/arrays.php:152
+msgid "Delete"
+msgstr ""
+
+#: includes/arrays.php:146 includes/arrays.php:153
+msgid "Disable"
+msgstr ""
+
+#: includes/arrays.php:147 includes/arrays.php:154
+msgid "Enable"
+msgstr ""
+
+#: includes/arrays.php:148
+msgid "Duplicate"
+msgstr ""
+
+#: includes/arrays.php:162 includes/arrays.php:231 webseer.php:326
+#: webseer_proxies.php:270 webseer_servers.php:257
+msgid "Name"
+msgstr ""
+
+#: includes/arrays.php:163
+msgid "A Useful Name for this Proxy."
+msgstr ""
+
+#: includes/arrays.php:167
+msgid "New Proxy"
+msgstr ""
+
+#: includes/arrays.php:171 webseer_proxies.php:271
+msgid "Hostname"
+msgstr ""
+
+#: includes/arrays.php:172
+msgid "The Proxy Hostname."
+msgstr ""
+
+#: includes/arrays.php:180
+msgid "HTTP Port"
+msgstr ""
+
+#: includes/arrays.php:181
+msgid "The HTTP Proxy Port."
+msgstr ""
+
+#: includes/arrays.php:189
+msgid "HTTPS Port"
+msgstr ""
+
+#: includes/arrays.php:190
+msgid "The HTTPS Proxy Port."
+msgstr ""
+
+#: includes/arrays.php:198
+msgid "User Name"
+msgstr ""
+
+#: includes/arrays.php:199
+msgid "The user to use to authenticate with the Proxy if any."
+msgstr ""
+
+#: includes/arrays.php:207
+msgid "Password"
+msgstr ""
+
+#: includes/arrays.php:208
+msgid "The user password to use to authenticate with the Proxy if any."
+msgstr ""
+
+#: includes/arrays.php:227 includes/arrays.php:287
+msgid "General Settings"
+msgstr ""
+
+#: includes/arrays.php:232
+msgid "Display Name of this server"
+msgstr ""
+
+#: includes/arrays.php:238
+msgid "Enable Server"
+msgstr ""
+
+#: includes/arrays.php:239
+msgid "Uncheck this box to disabled this server from checking urls."
+msgstr ""
+
+#: includes/arrays.php:245
+msgid "Is this server the local server?"
+msgstr ""
+
+#: includes/arrays.php:246
+msgid "Check this box if the current server you are connected to is this entry."
+msgstr ""
+
+#: includes/arrays.php:252
+msgid "Master Server"
+msgstr ""
+
+#: includes/arrays.php:253
+msgid "Sets this server to the Master server.  The Master server handles all Email operations"
+msgstr ""
+
+#: includes/arrays.php:259 includes/arrays.php:313 webseer_servers.php:258
+msgid "IP Address"
+msgstr ""
+
+#: includes/arrays.php:260
+msgid "IP Address to connect to this server"
+msgstr ""
+
+#: includes/arrays.php:266 includes/arrays.php:305 webseer.php:191
+#: webseer_servers.php:154
+msgid "URL"
+msgstr ""
+
+#: includes/arrays.php:267
+msgid "This is the URL to connect to remote.php on this server."
+msgstr ""
+
+#: includes/arrays.php:273 webseer_servers.php:260
+msgid "Location"
+msgstr ""
+
+#: includes/arrays.php:274
+msgid "Location of this server"
+msgstr ""
+
+#: includes/arrays.php:291
+msgid "Service Check Name"
+msgstr ""
+
+#: includes/arrays.php:292
+msgid "The name that is displayed for this Service Check, and is included in any Alert notifications."
+msgstr ""
+
+#: includes/arrays.php:298
+msgid "Enable Service Check"
+msgstr ""
+
+#: includes/arrays.php:299
+msgid "Uncheck this box to disabled this url from being checked."
+msgstr ""
+
+#: includes/arrays.php:306
+msgid "The URL to Monitor"
+msgstr ""
+
+#: includes/arrays.php:314
+msgid "Enter an IP address to connect to.  Leaving blank will use DNS Resolution instead."
+msgstr ""
+
+#: includes/arrays.php:321
+msgid "Proxy Server"
+msgstr ""
+
+#: includes/arrays.php:322
+msgid "If this connection text requires a proxy, select it here.  Otherwise choose 'None'."
+msgstr ""
+
+#: includes/arrays.php:324 webseer_edit.php:183
+msgid "None"
+msgstr ""
+
+#: includes/arrays.php:329 webseer.php:192 webseer.php:329
+msgid "Compression"
+msgstr ""
+
+#: includes/arrays.php:333
+msgid "What compression does the server require?  Most servers should not need this, but some will not redirect properly without it."
+msgstr ""
+
+#: includes/arrays.php:338
+msgid "Available Checks"
+msgstr ""
+
+#: includes/arrays.php:342
+msgid "Requires Authentication"
+msgstr ""
+
+#: includes/arrays.php:343
+msgid "Check this box if the site will normally return a 401 Error as it requires a username and password."
+msgstr ""
+
+#: includes/arrays.php:349
+msgid "Check Certificate"
+msgstr ""
+
+#: includes/arrays.php:350
+msgid "If using SSL, check this box if you want to validate the certificate. Default on, turn off if you the site uses a self-signed certificate."
+msgstr ""
+
+#: includes/arrays.php:356
+msgid "Notification Timing"
+msgstr ""
+
+#: includes/arrays.php:359
+msgid "Trigger"
+msgstr ""
+
+#: includes/arrays.php:363
+msgid "How many minutes the URL must be down before it will send an alert.  After an alert is sent, in order for a 'Site Recovering' Email to be send, it must also be up this number of minutes."
+msgstr ""
+
+#: includes/arrays.php:367
+msgid "Time Out"
+msgstr ""
+
+#: includes/arrays.php:371
+msgid "How many seconds to allow the page to timeout before reporting it as down."
+msgstr ""
+
+#: includes/arrays.php:376
+msgid "Verification Strings"
+msgstr ""
+
+#: includes/arrays.php:380
+msgid "Response Search String"
+msgstr ""
+
+#: includes/arrays.php:381
+msgid "This is the string to search for in the URL response for a live and working Web Service."
+msgstr ""
+
+#: includes/arrays.php:388
+msgid "Response Search String - Maintenance Page"
+msgstr ""
+
+#: includes/arrays.php:389
+msgid "This is the string to search for on the Maintenance Page.  The Service Check will check for this string if the above string is not found.  If found, it means that the Web Service is under maintenance."
+msgstr ""
+
+#: includes/arrays.php:396
+msgid "Response Search String - Failed"
+msgstr ""
+
+#: includes/arrays.php:397
+msgid "This is the string to search for a known failure in the Web Service response.  The Service Check will only alert if this string is found, ignoring any timeout issues and the search strings above."
+msgstr ""
+
+#: includes/arrays.php:404
+msgid "Notification Settings"
+msgstr ""
+
+#: includes/arrays.php:407
+msgid "Notify Format"
+msgstr ""
+
+#: includes/arrays.php:409
+msgid "This is the format to use when sending the notification email"
+msgstr ""
+
+#: includes/arrays.php:414
+msgid "Notify accounts"
+msgstr ""
+
+#: includes/arrays.php:416
+msgid "This is a listing of accounts that will be notified when this website goes down."
+msgstr ""
+
+#: includes/arrays.php:421
+msgid "Extra Alert Emails"
+msgstr ""
+
+#: includes/arrays.php:425
+msgid "You may specify here extra Emails to receive alerts for this URL (comma separated)"
+msgstr ""
+
+#: includes/functions.php:33 webseer.php:342 webseer.php:543
+msgid "Checks"
+msgstr ""
+
+#: includes/functions.php:34 webseer_servers.php:243
+msgid "Servers"
+msgstr ""
+
+#: includes/functions.php:35 webseer_proxies.php:278 webseer_proxies.php:333
+msgid "Proxies"
+msgstr ""
+
+#: poller_webseer.php:181
+msgid "Cacti Master"
+msgstr ""
+
+#: poller_webseer.php:184
+msgid "Cacti Remote Server"
+msgstr ""
+
+#: setup.php:33
+msgid "Web Service Check Admin"
+msgstr ""
+
+#: setup.php:304
+msgid "Management"
+msgstr ""
+
+#: setup.php:304
+msgid "Web Service Checks"
+msgstr ""
+
+#: setup.php:314
+msgid "WebSeer Service Checks"
+msgstr ""
+
+#: setup.php:321
+msgid "WebSeer Servers"
+msgstr ""
+
+#: setup.php:328 setup.php:335 setup.php:342
+msgid "Service Check Edit"
+msgstr ""
+
+#: setup.php:349 setup.php:356 setup.php:363
+msgid "Server Edit"
+msgstr ""
+
+#: webseer.php:190 webseer_servers.php:153
+msgid "Date"
+msgstr ""
+
+#: webseer.php:193 webseer.php:330 webseer_servers.php:156
+msgid "HTTP Code"
+msgstr ""
+
+#: webseer.php:194 webseer.php:332 webseer_servers.php:157
+msgid "DNS"
+msgstr ""
+
+#: webseer.php:195 webseer.php:333 webseer_servers.php:158
+msgid "Connect"
+msgstr ""
+
+#: webseer.php:196 webseer.php:334 webseer_servers.php:159
+msgid "Redirect"
+msgstr ""
+
+#: webseer.php:197 webseer.php:335 webseer_servers.php:160
+msgid "Total"
+msgstr ""
+
+#: webseer.php:198 webseer.php:327
+msgid "Status"
+msgstr ""
+
+#: webseer.php:226 webseer.php:401 webseer_servers.php:182
+msgid "Down"
+msgstr ""
+
+#: webseer.php:226 webseer.php:401 webseer_servers.php:182
+msgid "Up"
+msgstr ""
+
+#: webseer.php:231 webseer_servers.php:192
+msgid "No Events in History"
+msgstr ""
+
+#: webseer.php:325 webseer_servers.php:256
+msgid "Actions"
+msgstr ""
+
+#: webseer.php:328 webseer.php:404 webseer.php:407 webseer_servers.php:259
+#: webseer_servers.php:398
+msgid "Enabled"
+msgstr ""
+
+#: webseer.php:331
+msgid "Auth"
+msgstr ""
+
+#: webseer.php:336
+msgid "Timeout"
+msgstr ""
+
+#: webseer.php:337 webseer_servers.php:261
+msgid "Last Check"
+msgstr ""
+
+#: webseer.php:367 webseer_servers.php:282
+msgid "Edit Site"
+msgstr ""
+
+#: webseer.php:372 webseer_servers.php:287
+msgid "Enable Site"
+msgstr ""
+
+#: webseer.php:376 webseer_servers.php:291
+msgid "Disable Site"
+msgstr ""
+
+#: webseer.php:381 webseer_servers.php:295
+msgid "View History"
+msgstr ""
+
+#: webseer.php:389
+#, php-format
+msgid "DNS: Server %s - A Record for %s"
+msgstr ""
+
+#: webseer.php:399
+msgid "N/A"
+msgstr ""
+
+#: webseer.php:404 webseer.php:407 webseer_servers.php:398
+msgid "Disabled"
+msgstr ""
+
+#: webseer.php:406 webseer_servers.php:155
+msgid "Error"
+msgstr ""
+
+#: webseer.php:421 webseer_proxies.php:299 webseer_servers.php:309
+msgid "No Servers Found"
+msgstr ""
+
+#: webseer.php:499
+msgid "Webseer Site Management"
+msgstr ""
+
+#: webseer.php:508 webseer_edit.php:216 webseer_proxies.php:327
+msgid "Search"
+msgstr ""
+
+#: webseer.php:514 webseer_servers.php:392
+msgid "State"
+msgstr ""
+
+#: webseer.php:518 webseer_servers.php:396
+msgid "Any"
+msgstr ""
+
+#: webseer.php:527 webseer_servers.php:405
+msgid "Refresh"
+msgstr ""
+
+#: webseer.php:548 webseer_proxies.php:338 webseer_servers.php:422
+msgid "Default"
+msgstr ""
+
+#: webseer.php:559 webseer_proxies.php:349
+msgid "Go"
+msgstr ""
+
+#: webseer.php:560 webseer_proxies.php:350 webseer_servers.php:433
+msgid "Clear"
+msgstr ""
+
+#: webseer_edit.php:138 webseer_servers_edit.php:116
+#, php-format
+msgid "Query [edit: %s]"
+msgstr ""
+
+#: webseer_edit.php:140 webseer_servers_edit.php:118
+msgid "Query [new]"
+msgstr ""
+
+#: webseer_edit.php:171
+msgid "No Users Selected"
+msgstr ""
+
+#: webseer_edit.php:173
+msgid "Users Selected"
+msgstr ""
+
+#: webseer_edit.php:176
+msgid "All Users Selected"
+msgstr ""
+
+#: webseer_edit.php:182
+msgid "All"
+msgstr ""
+
+#: webseer_proxies.php:102
+msgid "Click 'Continue' to delete the following Proxy."
+msgid_plural "Click 'Continue' to delete following Proxies."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: webseer_proxies.php:107
+msgid "Cancel"
+msgstr ""
+
+#: webseer_proxies.php:107
+msgid "Continue"
+msgstr ""
+
+#: webseer_proxies.php:107
+msgid "Delete Proxy"
+msgid_plural "Delete Proxies"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: webseer_proxies.php:110
+msgid "You must select at least one Proxy."
+msgstr ""
+
+#: webseer_proxies.php:111
+msgid "Return"
+msgstr ""
+
+#: webseer_proxies.php:167
+#, php-format
+msgid "Proxy [edit: %s]"
+msgstr ""
+
+#: webseer_proxies.php:169
+msgid "Proxy [new]"
+msgstr ""
+
+#: webseer_proxies.php:272
+msgid "Ports (http/https)"
+msgstr ""
+
+#: webseer_proxies.php:273
+msgid "Username"
+msgstr ""
+
+#: webseer_proxies.php:294
+msgid "Not Set"
+msgstr ""
+
+#: webseer_proxies.php:318
+msgid "Webseer Proxy Management"
+msgstr ""
+
+#: webseer_servers.php:262
+msgid "Master"
+msgstr ""
+
+#: webseer_servers.php:263
+msgid "This Host"
+msgstr ""
+
+#: webseer_servers.php:299 webseer_servers.php:302 webseer_servers.php:303
+msgid "No"
+msgstr ""
+
+#: webseer_servers.php:299 webseer_servers.php:302 webseer_servers.php:303
+msgid "Yes"
+msgstr ""
+
+#: webseer_servers.php:384
+msgid "Webseer Server Management"
+msgstr ""
+
+#: webseer_servers.php:398
+msgid "Triggered"
+msgstr ""
+
+#: webseer_servers.php:417
+msgid "Sites"
+msgstr ""
