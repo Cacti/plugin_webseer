@@ -4,12 +4,12 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: Cacti 1.2.16\nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2020-12-14 19:20-0500\nPO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\nLast-Translator: Automatically generated\nLanguage-Team: none\nLanguage: lv\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=3; plural=(n % 10 == 0 || n % 100 >= 11 && n % 100 <= 19) ? 0 : ((n % 10 == 1 && n % 100 != 11) ? 1 : 2);\n"
+msgstr "Project-Id-Version: Cacti 1.2.16\nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2020-12-14 19:20-0500\nPO-Revision-Date: 2022-06-21 05:25+0000\nLast-Translator: Coool (github.com/Coool) <coool@mail.lv>\nLanguage-Team: Latvian <http://translate.cacti.net/projects/cacti/webseer/lv/>\nLanguage: lv-LV\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=3; plural=(n % 10 == 0 || n % 100 >= 11 && n % 100 <= 19) ? 0 : ((n % 10 == 1 && n % 100 != 11) ? 1 : 2);\nX-Generator: Weblate 4.8.1\n"
 
 #: includes/arrays.php:93 webseer_servers.php:410
 #, php-format
 msgid "%d Minute"
-msgstr ""
+msgstr "%d minūte"
 
 #: includes/arrays.php:94 includes/arrays.php:95 includes/arrays.php:96
 #: includes/arrays.php:97 includes/arrays.php:98 includes/arrays.php:99
@@ -17,248 +17,252 @@ msgstr ""
 #: webseer_servers.php:410
 #, php-format
 msgid "%d Minutes"
-msgstr ""
+msgstr "%d minūtes"
 
 #: includes/arrays.php:106 includes/arrays.php:107 includes/arrays.php:108
 #: includes/arrays.php:109 includes/arrays.php:110 includes/arrays.php:111
 #: includes/arrays.php:112 includes/arrays.php:113 webseer_servers.php:410
 #, php-format
 msgid "%d Seconds"
-msgstr ""
+msgstr "%d sekundes"
 
 #: includes/arrays.php:141 includes/arrays.php:145 includes/arrays.php:152
 msgid "Delete"
-msgstr ""
+msgstr "Dzēst"
 
 #: includes/arrays.php:146 includes/arrays.php:153
 msgid "Disable"
-msgstr ""
+msgstr "Izslēgt"
 
 #: includes/arrays.php:147 includes/arrays.php:154
 msgid "Enable"
-msgstr ""
+msgstr "Iespējot"
 
 #: includes/arrays.php:148
 msgid "Duplicate"
-msgstr ""
+msgstr "Dublēt"
 
 #: includes/arrays.php:162 includes/arrays.php:231 webseer.php:326
 #: webseer_proxies.php:270 webseer_servers.php:257
 msgid "Name"
-msgstr ""
+msgstr "Nosaukums"
 
 #: includes/arrays.php:163
 msgid "A Useful Name for this Proxy."
-msgstr ""
+msgstr "Noderīgs nosaukums šim starpniekserverim."
 
 #: includes/arrays.php:167
 msgid "New Proxy"
-msgstr ""
+msgstr "Jauns starpniekserveris"
 
 #: includes/arrays.php:171 webseer_proxies.php:271
 msgid "Hostname"
-msgstr ""
+msgstr "Resursdatora nosaukums"
 
 #: includes/arrays.php:172
 msgid "The Proxy Hostname."
-msgstr ""
+msgstr "Starpniekservera resursdatora nosaukums."
 
 #: includes/arrays.php:180
 msgid "HTTP Port"
-msgstr ""
+msgstr "HTTP ports"
 
 #: includes/arrays.php:181
 msgid "The HTTP Proxy Port."
-msgstr ""
+msgstr "HTTP starpniekservera ports."
 
 #: includes/arrays.php:189
 msgid "HTTPS Port"
-msgstr ""
+msgstr "HTTPS ports"
 
 #: includes/arrays.php:190
 msgid "The HTTPS Proxy Port."
-msgstr ""
+msgstr "HTTPS starpniekservera ports."
 
 #: includes/arrays.php:198
 msgid "User Name"
-msgstr ""
+msgstr "Lietotājvārds"
 
 #: includes/arrays.php:199
 msgid "The user to use to authenticate with the Proxy if any."
-msgstr ""
+msgstr "Lietotājs, ko izmanto, lai autentificētos ar starpniekserveri, ja tāds ir."
 
 #: includes/arrays.php:207
 msgid "Password"
-msgstr ""
+msgstr "Parole"
 
 #: includes/arrays.php:208
 msgid "The user password to use to authenticate with the Proxy if any."
-msgstr ""
+msgstr "Lietotāja parole, ko izmanto, lai autentificētos ar starpniekserveri, ja tāds ir."
 
 #: includes/arrays.php:227 includes/arrays.php:287
 msgid "General Settings"
-msgstr ""
+msgstr "Pamatiestatījumi"
 
 #: includes/arrays.php:232
 msgid "Display Name of this server"
-msgstr ""
+msgstr "Šī servera attēlojamais nosaukums"
 
 #: includes/arrays.php:238
 msgid "Enable Server"
-msgstr ""
+msgstr "Iespējot serveri"
 
 #: includes/arrays.php:239
 msgid "Uncheck this box to disabled this server from checking urls."
-msgstr ""
+msgstr "Noņemiet ķeksi, lai šis serveris neveiktu vietrāžu URL pārbaudi."
 
 #: includes/arrays.php:245
 msgid "Is this server the local server?"
-msgstr ""
+msgstr "Vai šis serveris ir lokālais serveris?"
 
 #: includes/arrays.php:246
+#, fuzzy
 msgid "Check this box if the current server you are connected to is this entry."
-msgstr ""
+msgstr "Atķeksējiet, ja pašreizējais serveris, ar kuru esat izveidojis savienojumu, ir šis ieraksts."
 
 #: includes/arrays.php:252
 msgid "Master Server"
-msgstr ""
+msgstr "Galvenais serveris"
 
 #: includes/arrays.php:253
 msgid "Sets this server to the Master server.  The Master server handles all Email operations"
-msgstr ""
+msgstr "Iestata šo serveri par galveno serveri.  Galvenais serveris veic visas e-pasta darbības"
 
 #: includes/arrays.php:259 includes/arrays.php:313 webseer_servers.php:258
 msgid "IP Address"
-msgstr ""
+msgstr "IP adrese"
 
 #: includes/arrays.php:260
 msgid "IP Address to connect to this server"
-msgstr ""
+msgstr "IP adrese, lai izveidotu savienojumu ar šo serveri"
 
 #: includes/arrays.php:266 includes/arrays.php:305 webseer.php:191
 #: webseer_servers.php:154
 msgid "URL"
-msgstr ""
+msgstr "Tīmekļa vietņu adrese"
 
 #: includes/arrays.php:267
 msgid "This is the URL to connect to remote.php on this server."
-msgstr ""
+msgstr "Tīmekļa vietņu adrese, lai izveidotu savienojumu ar remote.php šajā serverī."
 
 #: includes/arrays.php:273 webseer_servers.php:260
 msgid "Location"
-msgstr ""
+msgstr "Atrašanās vieta"
 
 #: includes/arrays.php:274
 msgid "Location of this server"
-msgstr ""
+msgstr "Šī servera atrašanās vieta"
 
 #: includes/arrays.php:291
 msgid "Service Check Name"
-msgstr ""
+msgstr "Pakalpojuma pārbaudes nosaukums"
 
 #: includes/arrays.php:292
 msgid "The name that is displayed for this Service Check, and is included in any Alert notifications."
-msgstr ""
+msgstr "Nosaukums, kas tiek attēlots šai pakalpojuma pārbaudei un ir iekļauts visos brīdinājuma paziņojumos."
 
 #: includes/arrays.php:298
 msgid "Enable Service Check"
-msgstr ""
+msgstr "Iespējot pakalpojuma pārbaudi"
 
 #: includes/arrays.php:299
 msgid "Uncheck this box to disabled this url from being checked."
-msgstr ""
+msgstr "Noņemiet ķeksi, lai atspējotu šīs tīmekļa vietņu adreses pārbaudi."
 
 #: includes/arrays.php:306
 msgid "The URL to Monitor"
-msgstr ""
+msgstr "Tīmekļa vietņu adrese, ko uzraudzīt"
 
 #: includes/arrays.php:314
 msgid "Enter an IP address to connect to.  Leaving blank will use DNS Resolution instead."
-msgstr ""
+msgstr "Ievadiet IP adresi, ar kuru veidot savienojumu.  Atstājot tukšu, tiks izmantots DNS vaicājuma lēmums ."
 
 #: includes/arrays.php:321
 msgid "Proxy Server"
-msgstr ""
+msgstr "Starpniekserveris"
 
 #: includes/arrays.php:322
+#, fuzzy
 msgid "If this connection text requires a proxy, select it here.  Otherwise choose 'None'."
-msgstr ""
+msgstr "Ja šim savienojuma tekstam ir nepieciešams starpniekserveris, izvēlieties to šeit.  Pretējā gadījumā izvēlieties 'Neviens'."
 
 #: includes/arrays.php:324 webseer_edit.php:183
 msgid "None"
-msgstr ""
+msgstr "Neviens"
 
 #: includes/arrays.php:329 webseer.php:192 webseer.php:329
 msgid "Compression"
-msgstr ""
+msgstr "Saspiešana"
 
 #: includes/arrays.php:333
 msgid "What compression does the server require?  Most servers should not need this, but some will not redirect properly without it."
-msgstr ""
+msgstr "Kāda saspiešana ir nepieciešama serverim?  Lielākajai daļai serveru tas nav vajadzīgs, taču daži bez tā nevarēs pareizi novirzīt."
 
 #: includes/arrays.php:338
 msgid "Available Checks"
-msgstr ""
+msgstr "Pieejamās pārbaudes"
 
 #: includes/arrays.php:342
 msgid "Requires Authentication"
-msgstr ""
+msgstr "Nepieciešama autentifikācija"
 
 #: includes/arrays.php:343
 msgid "Check this box if the site will normally return a 401 Error as it requires a username and password."
-msgstr ""
+msgstr "Atķeksējiet, ja vietne parasti atgriež 401 kļūdu. Tai ir nepieciešams lietotājvārds un parole."
 
 #: includes/arrays.php:349
 msgid "Check Certificate"
-msgstr ""
+msgstr "Pārbaudīt sertifikātu"
 
 #: includes/arrays.php:350
 msgid "If using SSL, check this box if you want to validate the certificate. Default on, turn off if you the site uses a self-signed certificate."
-msgstr ""
+msgstr "Ja izmantojat SSL, atķeksējiet, ja vēlaties pārbaudīt sertifikāta derīgumu. Noklusējums ieslēgts, izslēdziet, ja vietne izmanto pašparakstītu sertifikātu."
 
 #: includes/arrays.php:356
 msgid "Notification Timing"
-msgstr ""
+msgstr "Paziņojumu laiks"
 
 #: includes/arrays.php:359
+#, fuzzy
 msgid "Trigger"
-msgstr ""
+msgstr "Iedarbinātājs"
 
 #: includes/arrays.php:363
 msgid "How many minutes the URL must be down before it will send an alert.  After an alert is sent, in order for a 'Site Recovering' Email to be send, it must also be up this number of minutes."
-msgstr ""
+msgstr "Cik minūtes tīmekļa vietnes saitei ir jābūt nesasniedzamai, lai tiktu nosūtīts brīdinājums.  Pēc brīdinājuma nosūtīšanas tiks nosūtīts tīmekļa vietnes atkopšanas e-pasts, ja tīmekļa vietne ir sasniedzama ilgāk par šo minūšu skaitu."
 
 #: includes/arrays.php:367
 msgid "Time Out"
-msgstr ""
+msgstr "Pārtraukums"
 
 #: includes/arrays.php:371
 msgid "How many seconds to allow the page to timeout before reporting it as down."
-msgstr ""
+msgstr "Cik sekundes ļaut lapai būt nesasniedzamai, pirms tiek ziņots par tā nedarbošanos."
 
 #: includes/arrays.php:376
 msgid "Verification Strings"
-msgstr ""
+msgstr "Pārbaudes teksti"
 
 #: includes/arrays.php:380
 msgid "Response Search String"
-msgstr ""
+msgstr "Atbilžu meklēšanas teksts"
 
 #: includes/arrays.php:381
 msgid "This is the string to search for in the URL response for a live and working Web Service."
-msgstr ""
+msgstr "Teksts, kas jāmeklē tīmekļa vietnes saites atbildē aktīvam un strādājošam tīmekļa pakalpojumam."
 
 #: includes/arrays.php:388
 msgid "Response Search String - Maintenance Page"
-msgstr ""
+msgstr "Atbilžu meklēšanas teksts - Tehniskās apkopes lapa"
 
 #: includes/arrays.php:389
 msgid "This is the string to search for on the Maintenance Page.  The Service Check will check for this string if the above string is not found.  If found, it means that the Web Service is under maintenance."
-msgstr ""
+msgstr "Teksts, ko meklēt tehniskās apkopes lapā.  Pakalpojuma pārbaude meklēs šo tekstu, ja iepriekš minētais teksts netiks atrasts.  Ja atrod šo tekstu, tas nozīmē, ka tīmekļa pakalpojumam tiek veikta apkope."
 
 #: includes/arrays.php:396
+#, fuzzy
 msgid "Response Search String - Failed"
-msgstr ""
+msgstr "Atbilžu meklēšanas teksts - Neizdevās"
 
 #: includes/arrays.php:397
 msgid "This is the string to search for a known failure in the Web Service response.  The Service Check will only alert if this string is found, ignoring any timeout issues and the search strings above."
@@ -266,51 +270,51 @@ msgstr ""
 
 #: includes/arrays.php:404
 msgid "Notification Settings"
-msgstr ""
+msgstr "Paziņojuma iestatījumi"
 
 #: includes/arrays.php:407
 msgid "Notify Format"
-msgstr ""
+msgstr "Paziņojuma formāts"
 
 #: includes/arrays.php:409
 msgid "This is the format to use when sending the notification email"
-msgstr ""
+msgstr "Formāts, kas jāizmanto, nosūtot e-pasta paziņojumu"
 
 #: includes/arrays.php:414
 msgid "Notify accounts"
-msgstr ""
+msgstr "Paziņošanas konti"
 
 #: includes/arrays.php:416
 msgid "This is a listing of accounts that will be notified when this website goes down."
-msgstr ""
+msgstr "Kontu saraksts, kuriem tiks paziņots, kad šī vietne nav sasniedzama."
 
 #: includes/arrays.php:421
 msgid "Extra Alert Emails"
-msgstr ""
+msgstr "Papildus brīdinājuma e-pasti"
 
 #: includes/arrays.php:425
 msgid "You may specify here extra Emails to receive alerts for this URL (comma separated)"
-msgstr ""
+msgstr "Varat norādīt papildus e-pastus, kas saņems brīdinājumu ziņojumus par šo tīmekļa vietni (atdalīti ar komatu)"
 
 #: includes/functions.php:33 webseer.php:342 webseer.php:543
 msgid "Checks"
-msgstr ""
+msgstr "Pārbaudes"
 
 #: includes/functions.php:34 webseer_servers.php:243
 msgid "Servers"
-msgstr ""
+msgstr "Serveri"
 
 #: includes/functions.php:35 webseer_proxies.php:278 webseer_proxies.php:333
 msgid "Proxies"
-msgstr ""
+msgstr "Starpniekserveri"
 
 #: poller_webseer.php:181
 msgid "Cacti Master"
-msgstr ""
+msgstr "Galvenais Cacti"
 
 #: poller_webseer.php:184
 msgid "Cacti Remote Server"
-msgstr ""
+msgstr "Cacti attālais serveris"
 
 #: setup.php:33
 msgid "Web Service Check Admin"
@@ -318,7 +322,7 @@ msgstr ""
 
 #: setup.php:304
 msgid "Management"
-msgstr ""
+msgstr "Vadība"
 
 #: setup.php:304
 msgid "Web Service Checks"
@@ -330,7 +334,7 @@ msgstr ""
 
 #: setup.php:321
 msgid "WebSeer Servers"
-msgstr ""
+msgstr "WebSeer serveri"
 
 #: setup.php:328 setup.php:335 setup.php:342
 msgid "Service Check Edit"
@@ -342,31 +346,31 @@ msgstr ""
 
 #: webseer.php:190 webseer_servers.php:153
 msgid "Date"
-msgstr ""
+msgstr "Datums"
 
 #: webseer.php:193 webseer.php:330 webseer_servers.php:156
 msgid "HTTP Code"
-msgstr ""
+msgstr "HTTP kods"
 
 #: webseer.php:194 webseer.php:332 webseer_servers.php:157
 msgid "DNS"
-msgstr ""
+msgstr "DNS"
 
 #: webseer.php:195 webseer.php:333 webseer_servers.php:158
 msgid "Connect"
-msgstr ""
+msgstr "Savienot"
 
 #: webseer.php:196 webseer.php:334 webseer_servers.php:159
 msgid "Redirect"
-msgstr ""
+msgstr "Pāradresēt"
 
 #: webseer.php:197 webseer.php:335 webseer_servers.php:160
 msgid "Total"
-msgstr ""
+msgstr "Kopā"
 
 #: webseer.php:198 webseer.php:327
 msgid "Status"
-msgstr ""
+msgstr "Statuss"
 
 #: webseer.php:226 webseer.php:401 webseer_servers.php:182
 msgid "Down"
@@ -378,20 +382,20 @@ msgstr ""
 
 #: webseer.php:231 webseer_servers.php:192
 msgid "No Events in History"
-msgstr ""
+msgstr "Vēsturē nav notikumu"
 
 #: webseer.php:325 webseer_servers.php:256
 msgid "Actions"
-msgstr ""
+msgstr "Darbības"
 
 #: webseer.php:328 webseer.php:404 webseer.php:407 webseer_servers.php:259
 #: webseer_servers.php:398
 msgid "Enabled"
-msgstr ""
+msgstr "Iespējots"
 
 #: webseer.php:331
 msgid "Auth"
-msgstr ""
+msgstr "Autorizācijas kods"
 
 #: webseer.php:336
 msgid "Timeout"
@@ -399,148 +403,149 @@ msgstr ""
 
 #: webseer.php:337 webseer_servers.php:261
 msgid "Last Check"
-msgstr ""
+msgstr "Pēdējā pārbaude"
 
 #: webseer.php:367 webseer_servers.php:282
 msgid "Edit Site"
-msgstr ""
+msgstr "Rediģēt vietni"
 
 #: webseer.php:372 webseer_servers.php:287
 msgid "Enable Site"
-msgstr ""
+msgstr "Iespējot vietni"
 
 #: webseer.php:376 webseer_servers.php:291
 msgid "Disable Site"
-msgstr ""
+msgstr "Atspējot vietni"
 
 #: webseer.php:381 webseer_servers.php:295
 msgid "View History"
-msgstr ""
+msgstr "Skatīt vēsturi"
 
 #: webseer.php:389
 #, php-format
 msgid "DNS: Server %s - A Record for %s"
-msgstr ""
+msgstr "DNS: Serveris %s - A ieraksts - %s"
 
 #: webseer.php:399
+#, fuzzy
 msgid "N/A"
-msgstr ""
+msgstr "Nav piemērojams"
 
 #: webseer.php:404 webseer.php:407 webseer_servers.php:398
 msgid "Disabled"
-msgstr ""
+msgstr "Atspējots"
 
 #: webseer.php:406 webseer_servers.php:155
 msgid "Error"
-msgstr ""
+msgstr "Kļūda"
 
 #: webseer.php:421 webseer_proxies.php:299 webseer_servers.php:309
 msgid "No Servers Found"
-msgstr ""
+msgstr "Nav atrasts neviens serveris"
 
 #: webseer.php:499
 msgid "Webseer Site Management"
-msgstr ""
+msgstr "Webseer vietņu pārvaldība"
 
 #: webseer.php:508 webseer_edit.php:216 webseer_proxies.php:327
 msgid "Search"
-msgstr ""
+msgstr "Meklēt"
 
 #: webseer.php:514 webseer_servers.php:392
 msgid "State"
-msgstr ""
+msgstr "Stāvoklis (Valsts, Apgabals, Novads, Reģions?)"
 
 #: webseer.php:518 webseer_servers.php:396
 msgid "Any"
-msgstr ""
+msgstr "Jebkuru"
 
 #: webseer.php:527 webseer_servers.php:405
 msgid "Refresh"
-msgstr ""
+msgstr "Atsvaidzināt"
 
 #: webseer.php:548 webseer_proxies.php:338 webseer_servers.php:422
 msgid "Default"
-msgstr ""
+msgstr "Noklusējuma"
 
 #: webseer.php:559 webseer_proxies.php:349
 msgid "Go"
-msgstr ""
+msgstr "Aiziet"
 
 #: webseer.php:560 webseer_proxies.php:350 webseer_servers.php:433
 msgid "Clear"
-msgstr ""
+msgstr "Notīrīt"
 
 #: webseer_edit.php:138 webseer_servers_edit.php:116
 #, php-format
 msgid "Query [edit: %s]"
-msgstr ""
+msgstr "Vaicājums [labot: %s]"
 
 #: webseer_edit.php:140 webseer_servers_edit.php:118
 msgid "Query [new]"
-msgstr ""
+msgstr "Vaicājums [jauns]"
 
 #: webseer_edit.php:171
 msgid "No Users Selected"
-msgstr ""
+msgstr "Nav atlasīts neviens lietotājs"
 
 #: webseer_edit.php:173
 msgid "Users Selected"
-msgstr ""
+msgstr "Atlasītie lietotāji"
 
 #: webseer_edit.php:176
 msgid "All Users Selected"
-msgstr ""
+msgstr "Atlasīti visi lietotāji"
 
 #: webseer_edit.php:182
 msgid "All"
-msgstr ""
+msgstr "Visi"
 
 #: webseer_proxies.php:102
 msgid "Click 'Continue' to delete the following Proxy."
 msgid_plural "Click 'Continue' to delete following Proxies."
 msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[1] "Noklikšķiniet 'Turpināt', lai dzēstu norādīto starpniekserveri."
+msgstr[2] "Noklikšķiniet 'Turpināt', lai dzēstu norādītos starpniekserverus."
 
 #: webseer_proxies.php:107
 msgid "Cancel"
-msgstr ""
+msgstr "Atcelt"
 
 #: webseer_proxies.php:107
 msgid "Continue"
-msgstr ""
+msgstr "Turpināt"
 
 #: webseer_proxies.php:107
 msgid "Delete Proxy"
 msgid_plural "Delete Proxies"
 msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[1] "Dzēst starpniekserveri"
+msgstr[2] "Dzēst starpniekserverus"
 
 #: webseer_proxies.php:110
 msgid "You must select at least one Proxy."
-msgstr ""
+msgstr "Jums ir jāizvēlas vismaz viens starpniekserveris."
 
 #: webseer_proxies.php:111
 msgid "Return"
-msgstr ""
+msgstr "Atgriezties"
 
 #: webseer_proxies.php:167
 #, php-format
 msgid "Proxy [edit: %s]"
-msgstr ""
+msgstr "Starpniekserveris [labot: %s]"
 
 #: webseer_proxies.php:169
 msgid "Proxy [new]"
-msgstr ""
+msgstr "Starpniekserveris [jauns]"
 
 #: webseer_proxies.php:272
 msgid "Ports (http/https)"
-msgstr ""
+msgstr "Porti (http(80)/https(443))"
 
 #: webseer_proxies.php:273
 msgid "Username"
-msgstr ""
+msgstr "Lietotājvārds"
 
 #: webseer_proxies.php:294
 msgid "Not Set"
@@ -548,27 +553,27 @@ msgstr ""
 
 #: webseer_proxies.php:318
 msgid "Webseer Proxy Management"
-msgstr ""
+msgstr "Webseer starpniekserveru pārvaldība"
 
 #: webseer_servers.php:262
 msgid "Master"
-msgstr ""
+msgstr "Galvenais"
 
 #: webseer_servers.php:263
 msgid "This Host"
-msgstr ""
+msgstr "Šis resursdators"
 
 #: webseer_servers.php:299 webseer_servers.php:302 webseer_servers.php:303
 msgid "No"
-msgstr ""
+msgstr "Nē"
 
 #: webseer_servers.php:299 webseer_servers.php:302 webseer_servers.php:303
 msgid "Yes"
-msgstr ""
+msgstr "Jā"
 
 #: webseer_servers.php:384
 msgid "Webseer Server Management"
-msgstr ""
+msgstr "Webseer servera pārvaldība"
 
 #: webseer_servers.php:398
 msgid "Triggered"
@@ -576,4 +581,4 @@ msgstr ""
 
 #: webseer_servers.php:417
 msgid "Sites"
-msgstr ""
+msgstr "Vietnes"
