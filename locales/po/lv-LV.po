@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: Cacti 1.2.16\nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2020-12-14 19:20-0500\nPO-Revision-Date: 2022-06-21 05:25+0000\nLast-Translator: Coool (github.com/Coool) <coool@mail.lv>\nLanguage-Team: Latvian <http://translate.cacti.net/projects/cacti/webseer/lv/>\nLanguage: lv-LV\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=3; plural=(n % 10 == 0 || n % 100 >= 11 && n % 100 <= 19) ? 0 : ((n % 10 == 1 && n % 100 != 11) ? 1 : 2);\nX-Generator: Weblate 4.8.1\n"
+msgstr "Project-Id-Version: Cacti 1.2.16\nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2020-12-14 19:20-0500\nPO-Revision-Date: 2022-06-21 23:05+0000\nLast-Translator: Coool (github.com/Coool) <coool@mail.lv>\nLanguage-Team: Latvian <http://translate.cacti.net/projects/cacti/webseer/lv/>\nLanguage: lv-LV\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=3; plural=(n % 10 == 0 || n % 100 >= 11 && n % 100 <= 19) ? 0 : ((n % 10 == 1 && n % 100 != 11) ? 1 : 2);\nX-Generator: Weblate 4.8.1\n"
 
 #: includes/arrays.php:93 webseer_servers.php:410
 #, php-format
@@ -116,9 +116,8 @@ msgid "Is this server the local server?"
 msgstr "Vai šis serveris ir lokālais serveris?"
 
 #: includes/arrays.php:246
-#, fuzzy
 msgid "Check this box if the current server you are connected to is this entry."
-msgstr "Atķeksējiet, ja pašreizējais serveris, ar kuru esat izveidojis savienojumu, ir šis ieraksts."
+msgstr "Atķeksējiet, ja pašreizējais serveris, ar kuru esat izveidojis savienojumu, ir šis."
 
 #: includes/arrays.php:252
 msgid "Master Server"
@@ -260,13 +259,13 @@ msgid "This is the string to search for on the Maintenance Page.  The Service Ch
 msgstr "Teksts, ko meklēt tehniskās apkopes lapā.  Pakalpojuma pārbaude meklēs šo tekstu, ja iepriekš minētais teksts netiks atrasts.  Ja atrod šo tekstu, tas nozīmē, ka tīmekļa pakalpojumam tiek veikta apkope."
 
 #: includes/arrays.php:396
-#, fuzzy
 msgid "Response Search String - Failed"
-msgstr "Atbilžu meklēšanas teksts - Neizdevās"
+msgstr "Atbilžu meklēšanas teksts - Neizdevušies"
 
 #: includes/arrays.php:397
+#, fuzzy
 msgid "This is the string to search for a known failure in the Web Service response.  The Service Check will only alert if this string is found, ignoring any timeout issues and the search strings above."
-msgstr ""
+msgstr "Teksts, lai meklētu zināmu kļūmi tīmekļa pakalpojuma atbildē. Pakalpojuma pārbaude brīdinās tikai tad, ja šī virkne tiks atrasta, ignorējot visas taimauta problēmas un iepriekš minētās meklēšanas virknes."
 
 #: includes/arrays.php:404
 msgid "Notification Settings"
@@ -326,11 +325,11 @@ msgstr "Vadība"
 
 #: setup.php:304
 msgid "Web Service Checks"
-msgstr ""
+msgstr "Tīmekļa pakalpojumu pārbaudes"
 
 #: setup.php:314
 msgid "WebSeer Service Checks"
-msgstr ""
+msgstr "WebSeer pakalpojumu pārbaudes"
 
 #: setup.php:321
 msgid "WebSeer Servers"
@@ -338,11 +337,11 @@ msgstr "WebSeer serveri"
 
 #: setup.php:328 setup.php:335 setup.php:342
 msgid "Service Check Edit"
-msgstr ""
+msgstr "Pakalpojuma pārbaudes rediģēšana"
 
 #: setup.php:349 setup.php:356 setup.php:363
 msgid "Server Edit"
-msgstr ""
+msgstr "Servera rediģēšana"
 
 #: webseer.php:190 webseer_servers.php:153
 msgid "Date"
@@ -549,7 +548,7 @@ msgstr "Lietotājvārds"
 
 #: webseer_proxies.php:294
 msgid "Not Set"
-msgstr ""
+msgstr "Nav iestatīts"
 
 #: webseer_proxies.php:318
 msgid "Webseer Proxy Management"
