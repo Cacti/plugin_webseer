@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: Cacti 1.2.16\nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2020-12-14 19:20-0500\nPO-Revision-Date: 2022-06-21 23:05+0000\nLast-Translator: Coool (github.com/Coool) <coool@mail.lv>\nLanguage-Team: Latvian <http://translate.cacti.net/projects/cacti/webseer/lv/>\nLanguage: lv-LV\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=3; plural=(n % 10 == 0 || n % 100 >= 11 && n % 100 <= 19) ? 0 : ((n % 10 == 1 && n % 100 != 11) ? 1 : 2);\nX-Generator: Weblate 4.8.1\n"
+msgstr "Project-Id-Version: Cacti 1.2.16\nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2020-12-14 19:20-0500\nPO-Revision-Date: 2022-06-23 02:40+0000\nLast-Translator: Coool (github.com/Coool) <coool@mail.lv>\nLanguage-Team: Latvian <http://translate.cacti.net/projects/cacti/webseer/lv/>\nLanguage: lv-LV\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=3; plural=(n % 10 == 0 || n % 100 >= 11 && n % 100 <= 19) ? 0 : ((n % 10 == 1 && n % 100 != 11) ? 1 : 2);\nX-Generator: Weblate 4.8.1\n"
 
 #: includes/arrays.php:93 webseer_servers.php:410
 #, php-format
@@ -109,7 +109,7 @@ msgstr "Iespējot serveri"
 
 #: includes/arrays.php:239
 msgid "Uncheck this box to disabled this server from checking urls."
-msgstr "Noņemiet ķeksi, lai šis serveris neveiktu vietrāžu URL pārbaudi."
+msgstr "Noņemiet ķeksi, lai šis serveris neveiktu tīmekļa vietņu adrešu (URLs) pārbaudi."
 
 #: includes/arrays.php:245
 msgid "Is this server the local server?"
@@ -181,7 +181,6 @@ msgid "Proxy Server"
 msgstr "Starpniekserveris"
 
 #: includes/arrays.php:322
-#, fuzzy
 msgid "If this connection text requires a proxy, select it here.  Otherwise choose 'None'."
 msgstr "Ja šim savienojuma tekstam ir nepieciešams starpniekserveris, izvēlieties to šeit.  Pretējā gadījumā izvēlieties 'Neviens'."
 
@@ -222,9 +221,8 @@ msgid "Notification Timing"
 msgstr "Paziņojumu laiks"
 
 #: includes/arrays.php:359
-#, fuzzy
 msgid "Trigger"
-msgstr "Iedarbinātājs"
+msgstr "Palaidējs"
 
 #: includes/arrays.php:363
 msgid "How many minutes the URL must be down before it will send an alert.  After an alert is sent, in order for a 'Site Recovering' Email to be send, it must also be up this number of minutes."
@@ -232,7 +230,7 @@ msgstr "Cik minūtes tīmekļa vietnes saitei ir jābūt nesasniedzamai, lai tik
 
 #: includes/arrays.php:367
 msgid "Time Out"
-msgstr "Pārtraukums"
+msgstr "Nesasniedzams"
 
 #: includes/arrays.php:371
 msgid "How many seconds to allow the page to timeout before reporting it as down."
@@ -263,9 +261,8 @@ msgid "Response Search String - Failed"
 msgstr "Atbilžu meklēšanas teksts - Neizdevušies"
 
 #: includes/arrays.php:397
-#, fuzzy
 msgid "This is the string to search for a known failure in the Web Service response.  The Service Check will only alert if this string is found, ignoring any timeout issues and the search strings above."
-msgstr "Teksts, lai meklētu zināmu kļūmi tīmekļa pakalpojuma atbildē. Pakalpojuma pārbaude brīdinās tikai tad, ja šī virkne tiks atrasta, ignorējot visas taimauta problēmas un iepriekš minētās meklēšanas virknes."
+msgstr "Teksts, ko meklēt zināmas kļūmes tīmekļa pakalpojuma atbildē.  Pakalpojuma pārbaude brīdinās tikai tad, ja atradīs šo tekstu, ignorējot visas nesasniedzamības problēmas un iepriekš minētos meklēšanas tekstus."
 
 #: includes/arrays.php:404
 msgid "Notification Settings"
@@ -317,7 +314,7 @@ msgstr "Cacti attālais serveris"
 
 #: setup.php:33
 msgid "Web Service Check Admin"
-msgstr ""
+msgstr "Tīmekļa pakalpojuma pārbaudes administrators"
 
 #: setup.php:304
 msgid "Management"
@@ -325,11 +322,11 @@ msgstr "Vadība"
 
 #: setup.php:304
 msgid "Web Service Checks"
-msgstr "Tīmekļa pakalpojumu pārbaudes"
+msgstr "Tīmekļa pakalpojuma pārbaudes"
 
 #: setup.php:314
 msgid "WebSeer Service Checks"
-msgstr "WebSeer pakalpojumu pārbaudes"
+msgstr "WebSeer pakalpojuma pārbaudes"
 
 #: setup.php:321
 msgid "WebSeer Servers"
@@ -373,11 +370,11 @@ msgstr "Statuss"
 
 #: webseer.php:226 webseer.php:401 webseer_servers.php:182
 msgid "Down"
-msgstr ""
+msgstr "Uz leju"
 
 #: webseer.php:226 webseer.php:401 webseer_servers.php:182
 msgid "Up"
-msgstr ""
+msgstr "Uz augšu"
 
 #: webseer.php:231 webseer_servers.php:192
 msgid "No Events in History"
@@ -398,7 +395,7 @@ msgstr "Autorizācijas kods"
 
 #: webseer.php:336
 msgid "Timeout"
-msgstr ""
+msgstr "Nesasniedzams"
 
 #: webseer.php:337 webseer_servers.php:261
 msgid "Last Check"
@@ -426,9 +423,8 @@ msgid "DNS: Server %s - A Record for %s"
 msgstr "DNS: Serveris %s - A ieraksts - %s"
 
 #: webseer.php:399
-#, fuzzy
 msgid "N/A"
-msgstr "Nav piemērojams"
+msgstr "Nav atbildes"
 
 #: webseer.php:404 webseer.php:407 webseer_servers.php:398
 msgid "Disabled"
@@ -452,7 +448,7 @@ msgstr "Meklēt"
 
 #: webseer.php:514 webseer_servers.php:392
 msgid "State"
-msgstr "Stāvoklis (Valsts, Apgabals, Novads, Reģions?)"
+msgstr "Stāvoklis"
 
 #: webseer.php:518 webseer_servers.php:396
 msgid "Any"
@@ -576,7 +572,7 @@ msgstr "Webseer servera pārvaldība"
 
 #: webseer_servers.php:398
 msgid "Triggered"
-msgstr ""
+msgstr "Palaists"
 
 #: webseer_servers.php:417
 msgid "Sites"
