@@ -142,7 +142,7 @@ while(true) {
 $servers = plugin_webseer_update_servers();
 
 $end   = microtime(true);
-$ttime = round($end - $start, 3);
+$ttime = round($end - $start, 2);
 
 $stats = 'Time:' . $ttime . ' Checks:' . sizeof($urls) . ' Servers:' . $servers;
 cacti_log("WEBSEER STATS: $stats", false, 'SYSTEM');
