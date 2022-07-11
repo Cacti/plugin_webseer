@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: Cacti 1.2.16\nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2020-12-14 19:20-0500\nPO-Revision-Date: 2022-06-28 04:15+0000\nLast-Translator: Coool (github.com/Coool) <coool@mail.lv>\nLanguage-Team: Latvian <http://translate.cacti.net/projects/cacti/webseer/lv/>\nLanguage: lv-LV\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=3; plural=(n % 10 == 0 || n % 100 >= 11 && n % 100 <= 19) ? 0 : ((n % 10 == 1 && n % 100 != 11) ? 1 : 2);\nX-Generator: Weblate 4.8.1\n"
+msgstr "Project-Id-Version: Cacti 1.2.16\nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2020-12-14 19:20-0500\nPO-Revision-Date: 2022-07-11 21:22+0000\nLast-Translator: Coool (github.com/Coool) <coool@mail.lv>\nLanguage-Team: Latvian <http://translate.cacti.net/projects/cacti/webseer/lv/>\nLanguage: lv-LV\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=3; plural=(n % 10 == 0 || n % 100 >= 11 && n % 100 <= 19) ? 0 : ((n % 10 == 1 && n % 100 != 11) ? 1 : 2);\nX-Generator: Weblate 4.8.1\n"
 
 #: includes/arrays.php:93 webseer_servers.php:410
 #, php-format
@@ -423,8 +423,9 @@ msgid "DNS: Server %s - A Record for %s"
 msgstr "DNS: Serveris %s - A ieraksts - %s"
 
 #: webseer.php:399
+#, fuzzy
 msgid "N/A"
-msgstr "Nav atbildes"
+msgstr "Nav pieejams"
 
 #: webseer.php:404 webseer.php:407 webseer_servers.php:398
 msgid "Disabled"
@@ -572,7 +573,7 @@ msgstr "Webseer servera pārvaldība"
 
 #: webseer_servers.php:398
 msgid "Triggered"
-msgstr "Palaists"
+msgstr "Nostrādājuši"
 
 #: webseer_servers.php:417
 msgid "Sites"
