@@ -1,7 +1,7 @@
 <?php
 /*
  +-------------------------------------------------------------------------+
- | Copyright (C) 2004-2019 The Cacti Group                                 |
+ | Copyright (C) 2004-2022 The Cacti Group                                 |
  |                                                                         |
  | This program is free software; you can redistribute it and/or           |
  | modify it under the terms of the GNU General Public License             |
@@ -110,10 +110,11 @@ function webseer_save_url() {
 
 	if (!is_error_message()) {
 		if ($save['id'] == 0) {
-			plugin_webseer_add_remote_hosts ($id, $save);
+			plugin_webseer_add_remote_hosts($id, $save);
 		} else {
-			plugin_webseer_update_remote_hosts ($save);
+			plugin_webseer_update_remote_hosts($save);
 		}
+
 		if ($id) {
 			raise_message(1);
 		} else {
@@ -121,7 +122,7 @@ function webseer_save_url() {
 		}
 	}
 
-	header('Location: webseer_edit.php?action=edit&id=' . $save['id'] . '&header=false');
+	header('Location: webseer_edit.php?action=edit&id=' . $id . '&header=false');
 	exit;
 }
 
@@ -168,7 +169,7 @@ function webseer_edit_url () {
 		});
 
 		$('#notify_accounts').hide().multiselect({
-			noneSelectedText: '<?php print __('No Users Selected', 'webseer');?>', 
+			noneSelectedText: '<?php print __('No Users Selected', 'webseer');?>',
 			selectedText: function(numChecked, numTotal, checkedItems) {
 				myReturn = numChecked + ' <?php print __('Users Selected', 'webseer');?>';
 				$.each(checkedItems, function(index, value) {
@@ -179,7 +180,7 @@ function webseer_edit_url () {
 				});
 				return myReturn;
 			},
-			checkAllText: '<?php print __('All', 'webseer');?>', 
+			checkAllText: '<?php print __('All', 'webseer');?>',
 			uncheckAllText: '<?php print __('None', 'webseer');?>',
 			uncheckall: function() {
 				$(this).multiselect('widget').find(':checkbox:first').each(function() {
@@ -213,7 +214,7 @@ function webseer_edit_url () {
 				}
 			}
 		}).multiselectfilter({
-			label: '<?php print __('Search', 'webseer');?>', 
+			label: '<?php print __('Search', 'webseer');?>',
 			width: msWidth
 		});
 	});

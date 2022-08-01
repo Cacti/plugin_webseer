@@ -1,7 +1,7 @@
 <?php
 /*
  +-------------------------------------------------------------------------+
- | Copyright (C) 2004-2019 The Cacti Group                                 |
+ | Copyright (C) 2004-2022 The Cacti Group                                 |
  |                                                                         |
  | This program is free software; you can redistribute it and/or           |
  | modify it under the terms of the GNU General Public License             |
@@ -268,31 +268,34 @@ function list_urls () {
 	if (cacti_sizeof($result)) {
 		foreach ($result as $row) {
 			if ($row['isme'] == 0 && $row['lastcheck'] < time() - 180) {
-				$alertstat='yes';
-				$bgcolor='red';
+				$alertstat = 'yes';
+				$bgcolor   = 'red';
 			} else {
-				$alertstat='no';
-				$bgcolor='green';
+				$alertstat = 'no';
+				$bgcolor   = 'green';
 			};
 
 			form_alternate_row('line' . $row['id'], true);
 
 			print "<td width='1%' style='padding:0px;white-space:nowrap'>
-				<a class='pic' href='" . htmlspecialchars($config['url_path'] . 'plugins/webseer/webseer_servers_edit.php?action=edit&id=' . $row['id']) . "'>
-					<img src='" . $config['url_path'] . "plugins/webseer/images/edit_object.png' alt='' title='" . __esc('Edit Site', 'webseer') . "'>
+				<a class='pic' href='" . html_escape($config['url_path'] . 'plugins/webseer/webseer_servers_edit.php?action=edit&id=' . $row['id']) . "' title='" . __esc('Edit Site', 'webseer') . "'>
+					<i class='tholdGlyphEdit fas fa-wrench'></i>
 				</a>";
 
-			if ($row['enabled'] == '' || $row['enabled'] == '0') {
-				print "<a class='pic' href='" . htmlspecialchars($config['url_path'] . 'plugins/webseer/webseer_servers.php?drp_action=' . WEBSEER_ACTION_SERVER_ENABLE . '&chk_' . $row['id']) . "=1'>
-					<img src='" . $config['url_path'] . "plugins/webseer/images/enable_object.png' alt='' title='" . __esc('Enable Site', 'webseer') . "'>
+			if ($row['enabled'] == '') {
+				print "<a class='pic' href='" . html_escape($config['url_path'] . 'plugins/webseer/webseer_servers.php?drp_action=' . WEBSEER_ACTION_SERVER_ENABLE .'&chk_' . $row['id'] . '=1') . "' title='" . __esc('Enable Site', 'webseer') . "'>
+					<i class='tholdGlyphEnable fas fa-play-circle'></i>
 				</a>";
 			} else {
-				print "<a class='pic' href='" . htmlspecialchars($config['url_path'] . 'plugins/webseer/webseer_servers.php?drp_action=' . WEBSEER_ACTION_SERVER_DISABLE . '&chk_' . $row['id']) . "=1'>
-					<img src='" . $config['url_path'] . "plugins/webseer/images/disable_object.png' alt='' title='" . __esc('Disable Site', 'webseer') . "'>
+				print "<a class='pic' href='" . html_escape($config['url_path'] . 'plugins/webseer/webseer_servers.php?drp_action=' . WEBSEER_ACTION_SERVER_DISABLE . '&chk_' . $row['id'] . '=1') . "' title='" . __esc('Disable Site', 'webseer') . "'>
+					<i class='tholdGlyphDisable fas fa-stop-circle'></i>
 				</a>";
 			}
 
-			print "<a class='pic' href='" . htmlspecialchars($config['url_path'] . 'plugins/webseer/webseer_servers.php?view_history=1&id=' . $row['id']) . "'><img src='" . $config['url_path'] . "plugins/webseer/images/view_history.gif' alt='' title='" . __esc('View History', 'webseer') . "'></td>";
+			print "<a class='pic' href='" . html_escape($config['url_path'] . 'plugins/webseer/webseer_servers.php?view_history=1&id=' . $row['id']) . "' title='" . __esc('View History', 'webseer') . "'>
+					<i class='tholdGlyphLog fas fa-exclamation-triangle'></i>
+				</a>
+			</td>";
 
 			form_selectable_cell($row['name'], $row['id'], '', '', html_escape($row['url']));
 			form_selectable_cell($row['ip'], $row['id']);

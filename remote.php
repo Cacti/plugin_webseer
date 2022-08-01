@@ -1,7 +1,7 @@
 <?php
 /*
  +-------------------------------------------------------------------------+
- | Copyright (C) 2004-2019 The Cacti Group                                 |
+ | Copyright (C) 2004-2022 The Cacti Group                                 |
  |                                                                         |
  | This program is free software; you can redistribute it and/or           |
  | modify it under the terms of the GNU General Public License             |
@@ -22,14 +22,6 @@
  +-------------------------------------------------------------------------+
 */
 
-/* we are not talking to the browser */
-$no_http_headers = true;
-
-/* do NOT run this script through a web browser */
-if (isset($_SERVER['argv'][0])) {
-	die('<br>This script is only meant to run through a web service.');
-}
-
 chdir('../../');
 
 require_once('./include/cli_check.php');
@@ -46,17 +38,17 @@ if (isset($_SERVER['X-Forwarded-For'])) {
 	$remoteip = '127.0.0.1';
 }
 
-//cacti_log("Remote Connection received from : $remoteip");
-
 $servers = db_fetch_assoc('SELECT * FROM plugin_webseer_servers');
+
 $s = array();
+
 foreach ($servers as $server) {
 	if ($server['ip'] == $remoteip) {
 		$action = get_nfilter_request_var('action', '');
-		//cacti_log("Received $action from $remoteip");
+
 		switch ($action) {
 			case 'HEARTBEAT':
-				db_execute_prepared('UPDATE plugin_webseer_servers 
+				db_execute_prepared('UPDATE plugin_webseer_servers
 					SET lastcheck = ? WHERE ip = ?',
 					array(time(), $remoteip));
 
@@ -64,15 +56,15 @@ foreach ($servers as $server) {
 			case 'HOSTDOWN':
 				if (isset($_POST['url_id'])) {
 					db_execute_prepared('INSERT INTO plugin_webseer_servers_log
-						(url_id, server, lastcheck, result, http_code, error, total_time, namelookup_time, 
+						(url_id, server, lastcheck, result, http_code, error, total_time, namelookup_time,
 						connect_time, redirect_time, redirect_count, size_download, speed_download)
 						VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)',
 						array(
-							get_nfilter_request_var('url_id'), get_nfilter_request_var('server'), get_nfilter_request_var('lastcheck'), 
-							get_nfilter_request_var('result'), get_nfilter_request_var('http_code'), 
+							get_nfilter_request_var('url_id'), get_nfilter_request_var('server'), get_nfilter_request_var('lastcheck'),
+							get_nfilter_request_var('result'), get_nfilter_request_var('http_code'),
 							get_nfilter_request_var('error'), get_nfilter_request_var('total_time'),
-							get_nfilter_request_var('namelookup_time'), get_nfilter_request_var('connect_time'), 
-							get_nfilter_request_var('redirect_time'), get_nfilter_request_var('redirect_count'), 
+							get_nfilter_request_var('namelookup_time'), get_nfilter_request_var('connect_time'),
+							get_nfilter_request_var('redirect_time'), get_nfilter_request_var('redirect_count'),
 							get_nfilter_request_var('size_download'), get_nfilter_request_var('speed_download')
 						)
 					);
@@ -82,8 +74,8 @@ foreach ($servers as $server) {
 			case 'ENABLEURL':
 				if (isset($_POST['id'])) {
 					$id = get_filter_request_var('id');
-					db_execute_prepared('UPDATE plugin_webseer_urls 
-						SET enabled = ? WHERE id = ?', 
+					db_execute_prepared('UPDATE plugin_webseer_urls
+						SET enabled = ? WHERE id = ?',
 						array(($action == 'ENABLEURL' ? 'on' : ''), $id));
 				}
 
@@ -120,13 +112,13 @@ foreach ($servers as $server) {
 					if ($action == 'UPDATEURL') {
 						$id = sql_save($save, 'plugin_webseer_urls', 'id');
 					} else {
-						db_execute_prepared('REPLACE INTO plugin_webseer_urls 
-							(id, enabled, requiresauth, proxy_server, checkcert, ip, display_name, notify_accounts, 
+						db_execute_prepared('REPLACE INTO plugin_webseer_urls
+							(id, enabled, requiresauth, proxy_server, checkcert, ip, display_name, notify_accounts,
 							url, search, search_maint, search_failed, notify_extra, downtrigger)
-							VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)', 
+							VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)',
 							array(
-								$save['id'], $save['enabled'], $save['requiresauth'], $save['proxy_server'], 
-								$save['checkcert'], $save['ip'], $save['display_name'], $save['notify_accounts'], 
+								$save['id'], $save['enabled'], $save['requiresauth'], $save['proxy_server'],
+								$save['checkcert'], $save['ip'], $save['display_name'], $save['notify_accounts'],
 								$save['url'], $save['search'], $save['search_maint'], $save['search_failed'],
 								$save['notify_extra'], $save['downtrigger']
 							)
@@ -140,8 +132,8 @@ foreach ($servers as $server) {
 				if (isset($_POST['id'])) {
 					$id = intval(get_filter_request_var('id'));
 
-					db_execute_prepared('UPDATE plugin_webseer_servers 
-						SET enabled = ? WHERE id = ?', 
+					db_execute_prepared('UPDATE plugin_webseer_servers
+						SET enabled = ? WHERE id = ?',
 						array(($action == 'ENABLESERVER' ? 1 : 0), $id));
 				}
 
@@ -160,14 +152,14 @@ foreach ($servers as $server) {
 					if ($action == 'UPDATESERVER') {
 						$id = sql_save($save, 'plugin_webseer_servers', 'id');
 					} else {
-						db_execute_prepared('REPLACE INTO plugin_webseer_servers 
+						db_execute_prepared('REPLACE INTO plugin_webseer_servers
 							(id, enabled, master, name, url, ip, location)
-							VALUES (?,?,?,?,?,?,?)', 
+							VALUES (?,?,?,?,?,?,?)',
 							array(
-								$save['id'], $save['enabled'], $save['master'], 
-								$save['name'], $save['url'], $save['ip'], $save['location'] 
+								$save['id'], $save['enabled'], $save['master'],
+								$save['name'], $save['url'], $save['ip'], $save['location']
 							)
-						);				
+						);
 					}
 				}
 

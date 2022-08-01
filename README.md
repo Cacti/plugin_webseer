@@ -39,6 +39,12 @@ in GitHub.
 
 * issue#42: Search string fix
 
+* issue: When creating a service check after save, return to that service check
+
+* feature: Convert images to Glyphs
+
+* feature: Support PHP 8.x
+
 --- 3.0 ---
 
 * issue#18: Some sites require compression to properly redirect

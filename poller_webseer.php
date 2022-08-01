@@ -1,7 +1,7 @@
 <?php
 /*
  +-------------------------------------------------------------------------+
- | Copyright (C) 2004-2019 The Cacti Group                                 |
+ | Copyright (C) 2004-2022 The Cacti Group                                 |
  |                                                                         |
  | This program is free software; you can redistribute it and/or           |
  | modify it under the terms of the GNU General Public License             |
@@ -55,11 +55,11 @@ if (cacti_sizeof($parms)) {
 		switch ($arg) {
 			case '-f':
 			case '--force':
-				$force = TRUE;
+				$force = true;
 				break;
 			case '-d':
 			case '--debug':
-				$debug = TRUE;
+				$debug = true;
 				break;
 			case '--version':
 			case '-V':
@@ -81,7 +81,7 @@ if (cacti_sizeof($parms)) {
 
 plugin_webseer_check_debug();
 
-echo "Running Service Checks\n";
+print "Running Service Checks\n";
 
 plugin_webseer_register_server();
 
@@ -134,7 +134,7 @@ while(true) {
 
 	if ($running == 0) {
 		break;
-	}else{
+	} else {
 		sleep(1);
 	}
 }
@@ -155,7 +155,7 @@ function plugin_webseer_register_server() {
 
 	if (function_exists('gethostname')) {
 		$hostname = gethostname();
-	}else{
+	} else {
 		$hostname = php_uname('n');
 	}
 
@@ -179,20 +179,20 @@ function plugin_webseer_register_server() {
 		if (isset($config['poller_id']) && $config['poller_id'] == 1) {
 			$save['master'] = 1;
 			$save['name']   = __('Cacti Master');
-		}else{
+		} else {
 			$save['master'] = 0;
 			$save['name']   = __('Cacti Remote Server');
 		}
 
 		if (substr_count($hostname, '.') > 0) {
 			$urlhost = $hostname;
-		}else{
+		} else {
 			$urlhost = $ipaddress;
 		}
 
 		if (isset($config['url_path'])) {
 			$save['url'] = (read_config_option('force_https') == 'on' ? 'https://':'http://') . $urlhost . $config['url_path'] . 'index.php';
-		}else{
+		} else {
 			$save['url'] = 'http://' . $urlhost;
 		}
 
@@ -228,15 +228,15 @@ function display_version() {
 	}
 
     $info = plugin_webseer_version();
-    echo "Cacti Web Service Check Master Process, Version " . $info['version'] . ", " . COPYRIGHT_YEARS . "\n";
+    print "Cacti Web Service Check Master Process, Version " . $info['version'] . ", " . COPYRIGHT_YEARS . "\n";
 }
 
 /*  display_help - displays the usage of the function */
 function display_help () {
     display_version();
 
-    echo "\nusage: poller_webseer.php [--debug] [--force]\n\n";
-	echo "This binary will exec all the Web Service check child processes.\n\n";
-    echo "--force    - Force all the service checks to run now\n";
-    echo "--debug    - Display verbose output during execution\n\n";
+    print "\nusage: poller_webseer.php [--debug] [--force]\n\n";
+	print "This binary will exec all the Web Service check child processes.\n\n";
+    print "--force    - Force all the service checks to run now\n";
+    print "--debug    - Display verbose output during execution\n\n";
 }
