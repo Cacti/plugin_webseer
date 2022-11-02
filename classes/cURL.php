@@ -18,6 +18,7 @@ class cURL {
 	var $bundle;
 	var $httperrors;
 	var $debug;
+	var $cookies;
 
 	function __construct($cookies = true, $cookie = 'cookies.txt', $compression = WEBSEER_COMPRESSION_NONE, $proxy_hostname = '', $host = '') {
 		global $config, $httperrors, $httpcompressions, $debug;
