@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: Cacti 1.2.16\nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2020-12-14 19:20-0500\nPO-Revision-Date: 2022-11-04 04:14+0000\nLast-Translator: Coool (github.com/Coool) <coool@mail.lv>\nLanguage-Team: Latvian <http://translate.cacti.net/projects/cacti/webseer/lv/>\nLanguage: lv-LV\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=3; plural=(n % 10 == 0 || n % 100 >= 11 && n % 100 <= 19) ? 0 : ((n % 10 == 1 && n % 100 != 11) ? 1 : 2);\nX-Generator: Weblate 4.8.1\n"
+msgstr "Project-Id-Version: Cacti 1.2.16\nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2020-12-14 19:20-0500\nPO-Revision-Date: 2022-12-30 06:32+0000\nLast-Translator: Coool (github.com/Coool) <coool@mail.lv>\nLanguage-Team: Latvian <http://translate.cacti.net/projects/cacti/webseer/lv/>\nLanguage: lv-LV\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=3; plural=(n % 10 == 0 || n % 100 >= 11 && n % 100 <= 19) ? 0 : ((n % 10 == 1 && n % 100 != 11) ? 1 : 2);\nX-Generator: Weblate 4.8.1\n"
 
 #: includes/arrays.php:93 webseer_servers.php:410
 #, php-format
@@ -32,7 +32,7 @@ msgstr "Dzēst"
 
 #: includes/arrays.php:146 includes/arrays.php:153
 msgid "Disable"
-msgstr "Izslēgt"
+msgstr "Atspējot"
 
 #: includes/arrays.php:147 includes/arrays.php:154
 msgid "Enable"
@@ -374,7 +374,7 @@ msgstr "Neaktīva (nedarbojoša, bezsaistē, izslēgta)"
 
 #: webseer.php:226 webseer.php:401 webseer_servers.php:182
 msgid "Up"
-msgstr "Aktīva (darbojoša, tiešsaistē)"
+msgstr "Aktīva (darbojoša, tiešsaistē, ieslēgta)"
 
 #: webseer.php:231 webseer_servers.php:192
 msgid "No Events in History"
@@ -463,6 +463,7 @@ msgid "Default"
 msgstr "Noklusējuma"
 
 #: webseer.php:559 webseer_proxies.php:349
+#, fuzzy
 msgid "Go"
 msgstr "Doties"
 
