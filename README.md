@@ -106,3 +106,6 @@ in GitHub.
 
 * Initial public release
 
+-----------------------------------------------
+Copyright (c) 2004-2023 - The Cacti Group, Inc.
+
