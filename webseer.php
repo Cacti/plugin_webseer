@@ -37,82 +37,363 @@ $webseer_bgcolors = array(
 	'grey'   => 'CDCFC4'
 );
 
-if (isset_request_var('drp_action')) {
-	do_webseer();
-} else {
-	if (isset_request_var('view_history')) {
-		webseer_show_history();
-	} else {
-		list_urls();
-	}
+set_default_action();
+
+switch (get_request_var('action')) {
+case 'save':
+	form_save();
+
+    break;
+case 'actions':
+	form_actions();
+
+	break;
+case 'edit':
+	top_header();
+	webseer_edit_url();
+	bottom_footer();
+
+	break;
+case 'history':
+	webseer_show_history();
+
+	break;
+default:
+	list_urls();
+
+	break;
 }
 
-function do_webseer() {
-	$urls = array();
-	foreach ($_REQUEST as $var => $val) {
-		if (preg_match('/^chk_(.*)$/', $var, $matches)) {
-			$id = $matches[1];
-			input_validate_input_number($id);
-			$urls[$id] = $id;
+exit;
+
+function form_actions() {
+	global $webseer_actions_url;
+
+	/* if we are to save this form, instead of display it */
+	if (isset_request_var('selected_items')) {
+		$selected_items = sanitize_unserialize_selected_items(get_nfilter_request_var('selected_items'));
+		$action         = get_nfilter_request_var('drp_action');
+
+		if ($selected_items != false) {
+			if (cacti_sizeof($selected_items)) {
+				foreach($selected_items as $url) {
+					$urls[] = $url;
+				}
+			}
+
+			if (cacti_sizeof($urls)) {
+				if ($action == WEBSEER_ACTION_URL_DELETE) { // delete
+					foreach ($urls as $id) {
+						db_execute_prepared('DELETE FROM plugin_webseer_urls WHERE id = ?', array($id));
+						db_execute_prepared('DELETE FROM plugin_webseer_urls_log WHERE url_id = ?', array($id));
+						plugin_webseer_delete_remote_hosts($id);
+					}
+				} elseif ($action == WEBSEER_ACTION_URL_DISABLE) { // disable
+					foreach ($urls as $id) {
+						db_execute_prepared('UPDATE plugin_webseer_urls SET enabled = "" WHERE id = ?', array($id));
+						plugin_webseer_enable_remote_hosts($id, false);
+					}
+				} elseif ($action == WEBSEER_ACTION_URL_ENABLE) { // enable
+					foreach ($urls as $id) {
+						db_execute_prepared('UPDATE plugin_webseer_urls SET enabled = "on" WHERE id = ?', array($id));
+						plugin_webseer_enable_remote_hosts($id, true);
+					}
+				} elseif ($action == WEBSEER_ACTION_URL_DUPLICATE) { // duplicate
+					foreach($urls as $url) {
+						$newid = 1;
+
+						foreach ($urls as $id) {
+							$save = db_fetch_row_prepared('SELECT * FROM plugin_webseer_urls WHERE id = ?', array($id));
+							$save['id']              = 0;
+							$save['display_name']    = 'New Service Check (' . $newid . ')';
+							$save['lastcheck']       = '0000-00-00';
+							$save['result']          = 0;
+							$save['triggered']       = 0;
+							$save['enabled']         = '';
+							$save['failures']        = 0;
+							$save['error']           = '';
+							$save['http_code']       = 0;
+							$save['total_time']      = 0;
+							$save['namelookup_time'] = 0;
+							$save['connect_time']    = 0;
+							$save['redirect_time']   = 0;
+							$save['speed_download']  = 0;
+							$save['size_download']   = 0;
+							$save['redirect_count']  = 0;
+							$save['debug']           = '';
+
+							$id = sql_save($save, 'plugin_webseer_urls');
+
+							$newid++;
+						}
+					}
+				}
+			}
+		}
+
+		header('Location: webseer.php?header=false');
+
+		exit;
+	}
+
+	/* setup some variables */
+	$url_list  = '';
+	$url_array = array();
+
+	/* loop through each of the graphs selected on the previous page and get more info about them */
+	foreach ($_POST as $var => $val) {
+		if (preg_match('/^chk_([0-9]+)$/', $var, $matches)) {
+			/* ================= input validation ================= */
+			input_validate_input_number($matches[1]);
+			/* ==================================================== */
+
+			$url_list .= '<li>' . db_fetch_cell_prepared('SELECT display_name FROM plugin_webseer_urls WHERE id = ?', array($matches[1])) . '</li>';
+			$url_array[] = $matches[1];
 		}
 	}
 
-	switch (get_nfilter_request_var('drp_action')) {
-	case WEBSEER_ACTION_URL_DELETE: // Delete
-		foreach ($urls as $id) {
-			db_execute_prepared('DELETE FROM plugin_webseer_urls WHERE id = ?', array($id));
-			db_execute_prepared('DELETE FROM plugin_webseer_urls_log WHERE url_id = ?', array($id));
-			plugin_webseer_delete_remote_hosts($id);
+	top_header();
+
+	form_start('webseer.php');
+
+	html_start_box($webseer_actions_url[get_nfilter_request_var('drp_action')], '60%', '', '3', 'center', '');
+
+	$action = get_nfilter_request_var('drp_action');
+
+	if (cacti_sizeof($url_array)) {
+		if ($action == WEBSEER_ACTION_URL_DELETE) { // delete
+			print "	<tr>
+					<td class='topBoxAlt'>
+						<p>" . __n('Click \'Continue\' to Delete the following URL.', 'Click \'Continue\' to Delete following URLs.', cacti_sizeof($url_array)) . "</p>
+						<div class='itemlist'><ul>$url_list</ul></div>
+					</td>
+				</tr>\n";
+
+			$save_html = "<input type='button' value='" . __esc('Cancel') . "' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Delete URL', 'Delete URLs', cacti_sizeof($url_array)) . "'>";
+		} elseif ($action == WEBSEER_ACTION_URL_DISABLE) {
+			print "	<tr>
+					<td class='topBoxAlt'>
+						<p>" . __n('Click \'Continue\' to Disable the following URL.', 'Click \'Continue\' to Disable following URLs.', cacti_sizeof($url_array)) . "</p>
+						<div class='itemlist'><ul>$url_list</ul></div>
+					</td>
+				</tr>\n";
+
+			$save_html = "<input type='button' value='" . __esc('Cancel') . "' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Disable URL', 'Disable URLs', cacti_sizeof($url_array)) . "'>";
+		} elseif ($action == WEBSEER_ACTION_URL_ENABLE) {
+			print "	<tr>
+					<td class='topBoxAlt'>
+						<p>" . __n('Click \'Continue\' to Enable the following URL.', 'Click \'Continue\' to Enable following URLs.', cacti_sizeof($url_array)) . "</p>
+						<div class='itemlist'><ul>$url_list</ul></div>
+					</td>
+				</tr>\n";
+
+			$save_html = "<input type='button' value='" . __esc('Cancel') . "' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Enable URL', 'Enable URLs', cacti_sizeof($url_array)) . "'>";
+		} elseif ($action == WEBSEER_ACTION_URL_DUPLICATE) {
+			print "	<tr>
+					<td class='topBoxAlt'>
+						<p>" . __n('Click \'Continue\' to Duplicate the following URL.', 'Click \'Continue\' to Duplicate following URLs.', cacti_sizeof($url_array)) . "</p>
+						<div class='itemlist'><ul>$url_list</ul></div>
+					</td>
+				</tr>\n";
+
+			$save_html = "<input type='button' value='" . __esc('Cancel') . "' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Duplicate URL', 'Duplicate URLs', cacti_sizeof($url_array)) . "'>";
 		}
-
-		break;
-	case WEBSEER_ACTION_URL_DISABLE: // Disable
-		foreach ($urls as $id) {
-			db_execute_prepared('UPDATE plugin_webseer_urls SET enabled = "" WHERE id = ?', array($id));
-			plugin_webseer_enable_remote_hosts($id, false);
-		}
-
-		break;
-	case WEBSEER_ACTION_URL_ENABLE: // Enable
-		foreach ($urls as $id) {
-			db_execute_prepared('UPDATE plugin_webseer_urls SET enabled = "on" WHERE id = ?', array($id));
-			plugin_webseer_enable_remote_hosts($id, true);
-		}
-
-		break;
-	case WEBSEER_ACTION_URL_DUPLICATE: // Duplicate
-		$newid = 1;
-
-		foreach ($urls as $id) {
-			$save = db_fetch_row_prepared('SELECT * FROM plugin_webseer_urls WHERE id = ?', array($id));
-			$save['id']              = 0;
-			$save['display_name']    = 'New Service Check (' . $newid . ')';
-			$save['lastcheck']       = '0000-00-00';
-			$save['result']          = 0;
-			$save['triggered']       = 0;
-			$save['enabled']         = '';
-			$save['failures']        = 0;
-			$save['error']           = '';
-			$save['http_code']       = 0;
-			$save['total_time']      = 0;
-			$save['namelookup_time'] = 0;
-			$save['connect_time']    = 0;
-			$save['redirect_time']   = 0;
-			$save['speed_download']  = 0;
-			$save['size_download']   = 0;
-			$save['redirect_count']  = 0;
-			$save['debug']           = '';
-
-			$id = sql_save($save, 'plugin_webseer_urls');
-
-			$newid++;
-		}
-
-		break;
+	} else {
+		raise_message(40);
+		header('Location: webseer.php');
+		exit;
 	}
 
-	header('Location: webseer.php?header=false');
+	print "<tr>
+		<td class='saveRow'>
+			<input type='hidden' name='action' value='actions'>
+			<input type='hidden' name='selected_items' value='" . (isset($url_array) ? serialize($url_array) : '') . "'>
+			<input type='hidden' name='drp_action' value='" . get_nfilter_request_var('drp_action') . "'>
+			$save_html
+		</td>
+	</tr>\n";
+
+	html_end_box();
+
+	form_end();
+
+	bottom_footer();
+}
+
+function form_save() {
+	/* ================= input validation ================= */
+	get_filter_request_var('id');
+	get_filter_request_var('downtrigger');
+	get_filter_request_var('timeout_trigger');
+	get_filter_request_var('compression');
+	/* ==================================================== */
+
+	if (isset_request_var('id')) {
+		$save['id'] = get_request_var('id');
+	} else {
+		$save['id'] = 0;
+	}
+
+	if (isset_request_var('enabled')) {
+		$save['enabled'] = 'on';
+	} else {
+		$save['enabled'] = '';
+	}
+
+	if (isset_request_var('requiresauth')) {
+		$save['requiresauth'] = 'on';
+	} else {
+		$save['requiresauth'] = '';
+	}
+
+	if (isset_request_var('checkcert')) {
+		$save['checkcert'] = 'on';
+	} else {
+		$save['checkcert'] = '';
+	}
+
+	if (isset_request_var('notify_accounts')) {
+		if (is_array(get_nfilter_request_var('notify_accounts'))) {
+			foreach (get_nfilter_request_var('notify_accounts') as $na) {
+				input_validate_input_number($na);
+			}
+			$save['notify_accounts'] = implode(',', get_nfilter_request_var('notify_accounts'));
+		} else {
+			set_request_var('notify_accounts', '');
+		}
+	} else {
+		$save['notify_accounts'] = '';
+	}
+
+	$save['proxy_server']    = get_nfilter_request_var('proxy_server');
+	$save['display_name']    = get_nfilter_request_var('display_name');
+	$save['url']             = get_nfilter_request_var('url');
+	$save['ip']              = get_nfilter_request_var('ip');
+	$save['search']          = get_nfilter_request_var('search');
+	$save['search_maint']    = get_nfilter_request_var('search_maint');
+	$save['search_failed']   = get_nfilter_request_var('search_failed');
+	$save['compression']     = get_nfilter_request_var('compression');
+	$save['notify_extra']    = get_nfilter_request_var('notify_extra');
+	$save['downtrigger']     = get_filter_request_var('downtrigger');
+	$save['timeout_trigger'] = get_filter_request_var('timeout_trigger');
+
+	$id = sql_save($save, 'plugin_webseer_urls', 'id');
+
+	plugin_webseer_remove_old_users();
+
+	if (!is_error_message()) {
+		if ($save['id'] == 0) {
+			plugin_webseer_add_remote_hosts($id, $save);
+		} else {
+			plugin_webseer_update_remote_hosts($save);
+		}
+
+		if ($id) {
+			raise_message(1);
+		} else {
+			raise_message(2);
+		}
+	}
+
+	header('Location: webseer.php?action=edit&id=' . $id . '&header=false');
 	exit;
+}
+
+function webseer_edit_url() {
+	global $webseer_url_fields;
+
+	/* ================= input validation ================= */
+	get_filter_request_var('id');
+	/* ==================================================== */
+
+	$url = array();
+	if (!isempty_request_var('id')) {
+		$url = db_fetch_row_prepared('SELECT * FROM plugin_webseer_urls WHERE id = ?', array(get_request_var('id')), false);
+		$header_label = __('Query [edit: %s]', $url['url'], 'webseer');
+	} else {
+		$header_label = __('Query [new]', 'webseer');
+	}
+
+	form_start('webseer.php');
+
+	html_start_box($header_label, '100%', '', '3', 'center', '');
+
+	draw_edit_form(
+		array(
+			'config' => array('form_name' => 'chk'),
+			'fields' => inject_form_variables($webseer_url_fields, $url)
+		)
+	);
+
+	html_end_box();
+
+	form_save_button('webseer.php', 'return');
+
+	?>
+	<script type='text/javascript'>
+
+	$(function() {
+		var msWidth = 100;
+		$('#notify_accounts option').each(function() {
+			if ($(this).textWidth() > msWidth) {
+				msWidth = $(this).textWidth();
+			}
+			$('#notify_accounts').css('width', msWidth+80+'px');
+		});
+
+		$('#notify_accounts').hide().multiselect({
+			noneSelectedText: '<?php print __('No Users Selected', 'webseer');?>',
+			selectedText: function(numChecked, numTotal, checkedItems) {
+				myReturn = numChecked + ' <?php print __('Users Selected', 'webseer');?>';
+				$.each(checkedItems, function(index, value) {
+					if (value.value == '0') {
+						myReturn='<?php print __('All Users Selected', 'webseer');?>';
+						return false;
+					}
+				});
+				return myReturn;
+			},
+			checkAllText: '<?php print __('All', 'webseer');?>',
+			uncheckAllText: '<?php print __('None', 'webseer');?>',
+			uncheckall: function() {
+				$(this).multiselect('widget').find(':checkbox:first').each(function() {
+					$(this).prop('checked', true);
+				});
+			},
+			open: function(event, ui) {
+				$("input[type='search']:first").focus();
+			},
+			click: function(event, ui) {
+				checked=$(this).multiselect('widget').find('input:checked').length;
+
+				if (ui.value == 0) {
+					if (ui.checked == true) {
+						$('#notify_accounts').multiselect('uncheckAll');
+						$(this).multiselect('widget').find(':checkbox:first').each(function() {
+							$(this).prop('checked', true);
+						});
+					}
+				} else if (checked == 0) {
+					$(this).multiselect('widget').find(':checkbox:first').each(function() {
+						$(this).click();
+					});
+				} else if ($(this).multiselect('widget').find('input:checked:first').val() == '0') {
+					if (checked > 0) {
+						$(this).multiselect('widget').find(':checkbox:first').each(function() {
+							$(this).click();
+							$(this).prop('disable', true);
+						});
+					}
+				}
+			}
+		}).multiselectfilter({
+			label: '<?php print __('Search', 'webseer');?>',
+			width: msWidth
+		});
+	});
+
+	</script>
+	<?php
 }
 
 /**
@@ -292,7 +573,7 @@ function list_urls() {
 
 	if (get_request_var('rows') == '-1') {
 		$rows = read_config_option('num_rows_table');
-	}else{
+	} else {
 		$rows = get_request_var('rows');
 	}
 
@@ -402,7 +683,7 @@ function list_urls() {
 
 	html_start_box('', '100%', '', '4', 'center', '');
 
-	html_header_sort_checkbox($display_text, get_request_var('sort_column'), get_request_var('sort_direction'));
+	html_header_sort_checkbox($display_text, get_request_var('sort_column'), get_request_var('sort_direction'), false);
 
 	$i = 0;
 	if (cacti_sizeof($result)) {
@@ -419,7 +700,7 @@ function list_urls() {
 			form_alternate_row('line' . $row['id'], true);
 
 			print "<td width='1%' style='padding:0px;white-space:nowrap'>
-				<a class='pic' href='" . html_escape($config['url_path'] . 'plugins/webseer/webseer_edit.php?action=edit&id=' . $row['id']) . "' title='" . __esc('Edit Site', 'webseer') . "'>
+				<a class='pic' href='" . html_escape($config['url_path'] . 'plugins/webseer/webseer.php?action=edit&id=' . $row['id']) . "' title='" . __esc('Edit Site', 'webseer') . "'>
 					<i class='tholdGlyphEdit fas fa-wrench'></i>
 				</a>";
 
@@ -433,7 +714,7 @@ function list_urls() {
 				</a>";
 			}
 
-			print "<a class='pic' href='" . html_escape($config['url_path'] . 'plugins/webseer/webseer.php?view_history=1&id=' . $row['id']) . "' title='" . __esc('View History', 'webseer') . "'>
+			print "<a class='pic' href='" . html_escape($config['url_path'] . 'plugins/webseer/webseer.php?action=history=1&id=' . $row['id']) . "' title='" . __esc('View History', 'webseer') . "'>
 					<i class='tholdGlyphLog fas fa-exclamation-triangle'></i>
 				</a>
 			</td>";
@@ -453,7 +734,7 @@ function list_urls() {
 
 			if ($row['lastcheck'] == '0000-00-00 00:00:00') {
 				form_selectable_cell(__('N/A', 'webseer'), $row['id'], '', 'right');
-			}else{
+			} else {
 				form_selectable_cell(($row['result'] == 1 ? __('Up', 'webseer') : __('Down', 'webseer')), $row['id'], '', 'right');
 			}
 
@@ -560,7 +841,7 @@ function webseer_filter() {
 	</script>
 	<?php
 
-	html_start_box(__('Webseer Site Management', 'webseer') , '100%', '', '3', 'center', 'webseer_edit.php?action=edit');
+	html_start_box(__('Webseer Site Management', 'webseer') , '100%', '', '3', 'center', 'webseer.php?action=edit');
 	?>
 	<tr class='even noprint'>
 		<td class='noprint'>
@@ -582,7 +863,7 @@ function webseer_filter() {
 							<option value='-1'><?php print __('Any', 'webseer');?></option>
 							<?php
 							foreach (array('2' => 'Disabled', '1' => 'Enabled', '3' => 'Triggered') as $key => $row) {
-								echo "<option value='" . $key . "'" . (isset_request_var('state') && $key == get_request_var('state') ? ' selected' : '') . '>' . $row . '</option>';
+								print "<option value='" . $key . "'" . (isset_request_var('state') && $key == get_request_var('state') ? ' selected' : '') . '>' . $row . '</option>';
 							}
 							?>
 						</select>

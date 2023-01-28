@@ -80,6 +80,10 @@ if (cacti_sizeof($parms)) {
 	}
 }
 
+if (!function_exists('curl_init')) {
+	print "FATAL: You must install php-curl to use this Plugin" . PHP_EOL;
+}
+
 if (empty($url_id)) {
 	echo "ERROR: You must specify a URL id\n";
 	exit(1);

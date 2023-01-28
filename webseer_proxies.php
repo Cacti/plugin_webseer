@@ -55,7 +55,7 @@ function proxy_form_actions() {
 		$selected_items = sanitize_unserialize_selected_items(get_nfilter_request_var('selected_items'));
 
 		if ($selected_items != false) {
-			if (get_nfilter_request_var('drp_action') === WEBSEER_ACTION_PROXY_DELETE) { // delete
+			if (get_nfilter_request_var('drp_action') == WEBSEER_ACTION_PROXY_DELETE) { // delete
 				/* do a referential integrity check */
 				if (cacti_sizeof($selected_items)) {
 					foreach($selected_items as $proxy) {
@@ -63,7 +63,7 @@ function proxy_form_actions() {
 					}
 				}
 
-				if (isset($vdef_ids)) {
+				if (cacti_sizeof($proxies)) {
 					db_execute('DELETE FROM plugin_webseer_proxies WHERE ' . array_to_sql_or($proxies, 'id'));
 				}
 			}
@@ -75,7 +75,8 @@ function proxy_form_actions() {
 	}
 
 	/* setup some variables */
-	$proxy_list = '';
+	$proxy_list  = '';
+	$proxy_array = array();
 
 	/* loop through each of the graphs selected on the previous page and get more info about them */
 	foreach ($_POST as $var => $val) {
@@ -95,8 +96,8 @@ function proxy_form_actions() {
 
 	html_start_box($webseer_actions_proxy[get_nfilter_request_var('drp_action')], '60%', '', '3', 'center', '');
 
-	if (isset($vdef_array)) {
-		if (get_nfilter_request_var('drp_action') === WEBSEER_ACTION_PROXY_DELETE) { // delete
+	if (cacti_sizeof($proxy_array) > 0) {
+		if (get_nfilter_request_var('drp_action') == WEBSEER_ACTION_PROXY_DELETE) { // delete
 			print "	<tr>
 					<td class='topBoxAlt'>
 						<p>" . __n('Click \'Continue\' to delete the following Proxy.', 'Click \'Continue\' to delete following Proxies.', cacti_sizeof($proxy_array)) . "</p>
@@ -107,8 +108,9 @@ function proxy_form_actions() {
 			$save_html = "<input type='button' value='" . __esc('Cancel') . "' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Delete Proxy', 'Delete Proxies', cacti_sizeof($proxy_array)) . "'>";
 		}
 	} else {
-		print "<tr><td class='odd'><span class='textError'>" . __('You must select at least one Proxy.') . "</span></td></tr>\n";
-		$save_html = "<input type='button' value='" . __esc('Return') . "' onClick='cactiReturnTo()'>";
+		raise_message(40);
+		header('Location: webseer_proxies.php');
+		exit;
 	}
 
 	print "<tr>
@@ -267,10 +269,22 @@ function proxies() {
 		$sql_where");
 
 	$display_text = array(
-		'name'      => array(__('Name', 'webseer'), 'ASC'),
-		'hostname'  => array(__('Hostname', 'webseer'), 'ASC'),
-		'nosort1'   => array(__('Ports (http/https)', 'webseer'), 'ASC'),
-		'username'  => array(__('Username', 'webseer'), 'ASC'),
+		'name' => array(
+			'display' => __('Name', 'webseer'),
+			'sort'    => 'ASC'
+		),
+		'hostname' => array(
+			'display' => __('Hostname', 'webseer'),
+			'sort'    => 'ASC'
+		),
+		'nosort1' => array(
+			'display' => __('Ports (http/https)', 'webseer'),
+			'sort'    => 'ASC'
+		),
+		'username' => array(
+			'display' => __('Username', 'webseer'),
+			'sort'    => 'ASC'
+		),
 	);
 
 	$columns = cacti_sizeof($display_text);
@@ -283,16 +297,18 @@ function proxies() {
 
 	html_start_box('', '100%', '', '3', 'center', '');
 
-	html_header_sort_checkbox($display_text, get_request_var('sort_column'), get_request_var('sort_direction'));
+	html_header_sort_checkbox($display_text, get_request_var('sort_column'), get_request_var('sort_direction'), false);
 
 	if (cacti_sizeof($result)) {
 		foreach ($result as $row) {
 			form_alternate_row('line' . $row['id'], true);
+
 			form_selectable_cell(filter_value($row['name'], get_request_var('filter'), 'webseer_proxies.php?header=false&action=edit&id=' . $row['id']), $row['id']);
 			form_selectable_cell($row['hostname'], $row['id']);
 			form_selectable_cell($row['http_port'] . '/' . $row['https_port'], $row['id']);
 			form_selectable_cell($row['username'] == '' ? __('Not Set', 'webseer'):$row['username'], $row['id']);
 			form_checkbox_cell($row['name'], $row['id']);
+
 			form_end_row();
 		}
 	} else {

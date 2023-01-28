@@ -35,15 +35,27 @@ in GitHub.
 
 ## ChangeLog
 
+--- 3.1 ---
+
 * issue#41: Maintenance schedule check add
 
 * issue#42: Search string fix
+
+* issue#44: Webseer and CURL
+
+* issue#46: Unable to delete proxy server
 
 * issue: When creating a service check after save, return to that service check
 
 * feature: Convert images to Glyphs
 
 * feature: Support PHP 8.x
+
+* feature: Minimum Cacti version 1.2.24
+
+* feature: Remove webseer_edit.php and webseer_servers_edit.php
+
+* feature: Prompt for Removal, Enable, Disable, and Duplicate Actions
 
 --- 3.0 ---
 

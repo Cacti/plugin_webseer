@@ -31,6 +31,7 @@ chdir($dir);
 if (strpos($dir, 'plugins') !== false) {
 	chdir('../../');
 }
+
 include('./include/cli_check.php');
 include_once($config['base_path'] . '/plugins/webseer/includes/functions.php');
 include_once($config['base_path'] . '/lib/poller.php');
@@ -77,6 +78,10 @@ if (cacti_sizeof($parms)) {
 				exit;
 		}
 	}
+}
+
+if (!function_exists('curl_init')) {
+	print "FATAL: You must install php-curl to use this Plugin" . PHP_EOL;
 }
 
 plugin_webseer_check_debug();

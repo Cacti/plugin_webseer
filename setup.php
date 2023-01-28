@@ -30,7 +30,7 @@ function plugin_webseer_install () {
 	api_plugin_register_hook('webseer', 'config_arrays', 'plugin_webseer_config_arrays', 'setup.php');
 	api_plugin_register_hook('webseer', 'poller_bottom', 'plugin_webseer_poller_bottom', 'setup.php');
 
-	api_plugin_register_realm('webseer', 'webseer.php,webseer_edit.php,webseer_servers.php,webseer_servers_edit.php,webseer_proxies.php', __('Web Service Check Admin', 'webseer'), 1);
+	api_plugin_register_realm('webseer', 'webseer.php,webseer_servers.php,webseer_proxies.php', __('Web Service Check Admin', 'webseer'), 1);
 
 	plugin_webseer_setup_table();
 }
@@ -128,7 +128,7 @@ function plugin_webseer_upgrade() {
 		db_execute_prepared('UPDATE plugin_realms
 			SET file = ?
 			WHERE file LIKE "%webseer.php%"',
-			array('webseer.php,webseer_edit.php,webseer_servers.php,webseer_servers_edit.php,webseer_proxies.php'));
+			array('webseer.php,webseer_servers.php,webseer_proxies.php'));
 	}
 
 	return true;
@@ -317,6 +317,20 @@ function plugin_webseer_draw_navigation_text($nav) {
 		'level' => '1'
 	);
 
+	$nav['webseer.php:edit'] = array(
+		'title' => __('Service Check Edit', 'webseer'),
+		'mapping' => 'index.php:',
+		'url' => 'webseer.php',
+		'level' => '1'
+	);
+
+	$nav['webseer.php:save'] = array(
+		'title' => __('Service Check Save', 'webseer'),
+		'mapping' => 'index.php:',
+		'url' => 'webseer.php',
+		'level' => '1'
+	);
+
 	$nav['webseer_servers.php:'] = array(
 		'title' => __('WebSeer Servers', 'webseer'),
 		'mapping' => 'index.php:',
@@ -324,43 +338,36 @@ function plugin_webseer_draw_navigation_text($nav) {
 		'level' => '1'
 	);
 
-	$nav['webseer_edit.php:'] = array(
-		'title' => __('Service Check Edit', 'webseer'),
-		'mapping' => 'index.php:',
-		'url' => 'webseer.php',
-		'level' => '1'
-	);
-
-	$nav['webseer_edit.php:edit'] = array(
-		'title' => __('Service Check Edit', 'webseer'),
-		'mapping' => 'index.php:',
-		'url' => 'webseer.php',
-		'level' => '1'
-	);
-
-	$nav['webseer_edit.php:save'] = array(
-		'title' => __('Service Check Edit', 'webseer'),
-		'mapping' => 'index.php:',
-		'url' => 'webseer.php',
-		'level' => '1'
-	);
-
-	$nav['webseer_servers_edit.php:'] = array(
+	$nav['webseer_servers.php:edit'] = array(
 		'title' => __('Server Edit', 'webseer'),
 		'mapping' => 'index.php:',
 		'url' => 'webseer.php',
 		'level' => '1'
 	);
 
-	$nav['webseer_servers_edit.php:edit'] = array(
-		'title' => __('Server Edit', 'webseer'),
+	$nav['webseer_servers.php:save'] = array(
+		'title' => __('Save Server', 'webseer'),
 		'mapping' => 'index.php:',
 		'url' => 'webseer.php',
 		'level' => '1'
 	);
 
-	$nav['webseer_servers_edit.php:save'] = array(
-		'title' => __('Server Edit', 'webseer'),
+	$nav['webseer_proxies.php:'] = array(
+		'title' => __('WebSeer Proxies', 'webseer'),
+		'mapping' => 'index.php:',
+		'url' => 'webseer.php',
+		'level' => '1'
+	);
+
+	$nav['webseer_proxies.php:edit'] = array(
+		'title' => __('Proxie Edit', 'webseer'),
+		'mapping' => 'index.php:',
+		'url' => 'webseer.php',
+		'level' => '1'
+	);
+
+	$nav['webseer_proxies.php:save'] = array(
+		'title' => __('Save Proxy', 'webseer'),
 		'mapping' => 'index.php:',
 		'url' => 'webseer.php',
 		'level' => '1'
