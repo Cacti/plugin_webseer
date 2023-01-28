@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2020-12-14 19:20-0500\n"
+"POT-Creation-Date: 2023-01-28 12:56-0500\n"
 "PO-Revision-Date: 2020-12-14 19:06-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Generator: Poedit 2.4.2\n"
 "Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
 
-#: includes/arrays.php:93 webseer_servers.php:410
+#: includes/arrays.php:93 webseer_servers.php:636
 #, fuzzy, php-format
 msgid "%d Minute"
 msgstr "% d मिनट"
@@ -26,14 +26,14 @@ msgstr "% d मिनट"
 #: includes/arrays.php:94 includes/arrays.php:95 includes/arrays.php:96
 #: includes/arrays.php:97 includes/arrays.php:98 includes/arrays.php:99
 #: includes/arrays.php:100 includes/arrays.php:101 includes/arrays.php:102
-#: webseer_servers.php:410
+#: webseer_servers.php:636
 #, fuzzy, php-format
 msgid "%d Minutes"
 msgstr "% d मिनट"
 
 #: includes/arrays.php:106 includes/arrays.php:107 includes/arrays.php:108
 #: includes/arrays.php:109 includes/arrays.php:110 includes/arrays.php:111
-#: includes/arrays.php:112 includes/arrays.php:113 webseer_servers.php:410
+#: includes/arrays.php:112 includes/arrays.php:113 webseer_servers.php:636
 #, fuzzy, php-format
 msgid "%d Seconds"
 msgstr "% d सेकंड्स"
@@ -54,8 +54,8 @@ msgstr "सक्षम करें"
 msgid "Duplicate"
 msgstr "डुप्लीकेट"
 
-#: includes/arrays.php:162 includes/arrays.php:231 webseer.php:326
-#: webseer_proxies.php:270 webseer_servers.php:257
+#: includes/arrays.php:162 includes/arrays.php:231 webseer.php:615
+#: webseer_proxies.php:273 webseer_servers.php:395
 msgid "Name"
 msgstr "नाम"
 
@@ -69,7 +69,7 @@ msgstr "इस प्रॉक्सी के लिए एक उपयोग�
 msgid "New Proxy"
 msgstr "नई प्रॉक्सी"
 
-#: includes/arrays.php:171 webseer_proxies.php:271
+#: includes/arrays.php:171 webseer_proxies.php:277
 msgid "Hostname"
 msgstr "होस्टनांऽ"
 
@@ -125,10 +125,12 @@ msgstr "सामान्य सेटिंग्स"
 msgid "Display Name of this server"
 msgstr "इस सर्वर का नाम प्रदर्शित करें"
 
-#: includes/arrays.php:238
+#: includes/arrays.php:238 webseer_servers.php:158 webseer_servers.php:424
 #, fuzzy
 msgid "Enable Server"
-msgstr "सर्वर सक्षम करें"
+msgid_plural "Enable Servers"
+msgstr[0] "सर्वर सक्षम करें"
+msgstr[1] "सर्वर सक्षम करें"
 
 #: includes/arrays.php:239
 #, fuzzy
@@ -155,7 +157,7 @@ msgstr "मास्टर सर्वर"
 msgid "Sets this server to the Master server.  The Master server handles all Email operations"
 msgstr "इस सर्वर को मास्टर सर्वर पर सेट करता है। मास्टर सर्वर सभी ईमेल संचालन को संभालता है"
 
-#: includes/arrays.php:259 includes/arrays.php:313 webseer_servers.php:258
+#: includes/arrays.php:259 includes/arrays.php:313 webseer_servers.php:396
 msgid "IP Address"
 msgstr "IP सिरनामा"
 
@@ -164,8 +166,8 @@ msgstr "IP सिरनामा"
 msgid "IP Address to connect to this server"
 msgstr "इस सर्वर से कनेक्ट करने के लिए आईपी एड्रेस"
 
-#: includes/arrays.php:266 includes/arrays.php:305 webseer.php:191
-#: webseer_servers.php:154
+#: includes/arrays.php:266 includes/arrays.php:305 webseer.php:473
+#: webseer_servers.php:291
 msgid "URL"
 msgstr "URL"
 
@@ -174,7 +176,7 @@ msgstr "URL"
 msgid "This is the URL to connect to remote.php on this server."
 msgstr "यह इस सर्वर पर Remote.php से जुड़ने वाला URL है"
 
-#: includes/arrays.php:273 webseer_servers.php:260
+#: includes/arrays.php:273 webseer_servers.php:398
 msgid "Location"
 msgstr "स्थान"
 
@@ -223,11 +225,11 @@ msgstr "मास्टर सर्वर"
 msgid "If this connection text requires a proxy, select it here.  Otherwise choose 'None'."
 msgstr "यदि इस कनेक्शन पाठ को प्रॉक्सी की आवश्यकता है, तो इसे यहां चुनें। अन्यथा 'कोई नहीं' चुनें।"
 
-#: includes/arrays.php:324 webseer_edit.php:183
+#: includes/arrays.php:324 webseer.php:357
 msgid "None"
 msgstr "कोई नहीं"
 
-#: includes/arrays.php:329 webseer.php:192 webseer.php:329
+#: includes/arrays.php:329 webseer.php:474 webseer.php:630
 #, fuzzy
 msgid "Compression"
 msgstr "दबाव"
@@ -357,26 +359,26 @@ msgstr "अतिरिक्त अलर्ट ईमेल"
 msgid "You may specify here extra Emails to receive alerts for this URL (comma separated)"
 msgstr "आप इस URL के लिए अलर्ट प्राप्त करने के लिए यहां अतिरिक्त ईमेल निर्दिष्ट कर सकते हैं (अल्पविराम से अलग)"
 
-#: includes/functions.php:33 webseer.php:342 webseer.php:543
+#: includes/functions.php:34 webseer.php:678 webseer.php:888
 #, fuzzy
 msgid "Checks"
 msgstr "चेकों"
 
-#: includes/functions.php:34 webseer_servers.php:243
+#: includes/functions.php:35 webseer_servers.php:381 webseer_servers.php:643
 msgid "Servers"
 msgstr "सर्वर"
 
-#: includes/functions.php:35 webseer_proxies.php:278 webseer_proxies.php:333
+#: includes/functions.php:36 webseer_proxies.php:292 webseer_proxies.php:349
 #, fuzzy
 msgid "Proxies"
 msgstr "प्रॉक्सी"
 
-#: poller_webseer.php:181
+#: poller_webseer.php:186
 #, fuzzy
 msgid "Cacti Master"
 msgstr "कैक्टि मास्टर"
 
-#: poller_webseer.php:184
+#: poller_webseer.php:189
 #, fuzzy
 msgid "Cacti Remote Server"
 msgstr "Cacti रिमोट सर्वर"
@@ -415,266 +417,367 @@ msgstr "सेवा की जाँच संपादित करें"
 msgid "Server Edit"
 msgstr "सर्वर संपादित करें"
 
-#: webseer.php:190 webseer_servers.php:153
-msgid "Date"
-msgstr "दिनांक"
-
-#: webseer.php:193 webseer.php:330 webseer_servers.php:156
+#: webseer.php:167
 #, fuzzy
-msgid "HTTP Code"
-msgstr "HTTP कोड"
+msgid "Click 'Continue' to Delete the following URL."
+msgid_plural "Click 'Continue' to Delete following URLs."
+msgstr[0] "निम्नलिखित प्रॉक्सी को हटाने के लिए 'जारी रखें' पर क्लिक करें।"
+msgstr[1] "निम्नलिखित प्रॉक्सी को हटाने के लिए 'जारी रखें' पर क्लिक करें।"
 
-#: webseer.php:194 webseer.php:332 webseer_servers.php:157
+#: webseer.php:172 webseer.php:181 webseer.php:190 webseer.php:199
+#: webseer_proxies.php:108 webseer_servers.php:140 webseer_servers.php:149
+#: webseer_servers.php:158
+msgid "Cancel"
+msgstr "कैंसिल करें"
+
+#: webseer.php:172 webseer.php:181 webseer.php:190 webseer.php:199
+#: webseer_proxies.php:108 webseer_servers.php:140 webseer_servers.php:149
+#: webseer_servers.php:158
+msgid "Continue"
+msgstr "जारी रखें"
+
+#: webseer.php:172
 #, fuzzy
-msgid "DNS"
-msgstr "डीएनएस"
+#| msgid "Delete"
+msgid "Delete URL"
+msgid_plural "Delete URLs"
+msgstr[0] "हटाएं"
+msgstr[1] "हटाएं"
 
-#: webseer.php:195 webseer.php:333 webseer_servers.php:158
+#: webseer.php:176
 #, fuzzy
-msgid "Connect"
-msgstr "जुडिये"
+msgid "Click 'Continue' to Disable the following URL."
+msgid_plural "Click 'Continue' to Disable following URLs."
+msgstr[0] "निम्नलिखित प्रॉक्सी को हटाने के लिए 'जारी रखें' पर क्लिक करें।"
+msgstr[1] "निम्नलिखित प्रॉक्सी को हटाने के लिए 'जारी रखें' पर क्लिक करें।"
 
-#: webseer.php:196 webseer.php:334 webseer_servers.php:159
+#: webseer.php:181
 #, fuzzy
-msgid "Redirect"
-msgstr "पुन: निर्देशित"
+#| msgid "Disable"
+msgid "Disable URL"
+msgid_plural "Disable URLs"
+msgstr[0] "अक्षम करें"
+msgstr[1] "अक्षम करें"
 
-#: webseer.php:197 webseer.php:335 webseer_servers.php:160
-msgid "Total"
-msgstr "कुल"
-
-#: webseer.php:198 webseer.php:327
-msgid "Status"
-msgstr "ऑर्डर स्थिति"
-
-#: webseer.php:226 webseer.php:401 webseer_servers.php:182
-msgid "Down"
-msgstr "नीचे"
-
-#: webseer.php:226 webseer.php:401 webseer_servers.php:182
-msgid "Up"
-msgstr "ऊपर"
-
-#: webseer.php:231 webseer_servers.php:192
+#: webseer.php:185
 #, fuzzy
-msgid "No Events in History"
-msgstr "इतिहास की कोई घटना नहीं"
+msgid "Click 'Continue' to Enable the following URL."
+msgid_plural "Click 'Continue' to Enable following URLs."
+msgstr[0] "निम्नलिखित प्रॉक्सी को हटाने के लिए 'जारी रखें' पर क्लिक करें।"
+msgstr[1] "निम्नलिखित प्रॉक्सी को हटाने के लिए 'जारी रखें' पर क्लिक करें।"
 
-#: webseer.php:325 webseer_servers.php:256
-msgid "Actions"
-msgstr "कार्रवाइयाँ"
-
-#: webseer.php:328 webseer.php:404 webseer.php:407 webseer_servers.php:259
-#: webseer_servers.php:398
-msgid "Enabled"
-msgstr "सक्षम"
-
-#: webseer.php:331
+#: webseer.php:190
 #, fuzzy
-msgid "Auth"
-msgstr "प्रमाणीकरण"
+#| msgid "Enable"
+msgid "Enable URL"
+msgid_plural "Enable URLs"
+msgstr[0] "सक्षम करें"
+msgstr[1] "सक्षम करें"
 
-#: webseer.php:336
-msgid "Timeout"
-msgstr "टाइमआउट"
-
-#: webseer.php:337 webseer_servers.php:261
+#: webseer.php:194
 #, fuzzy
-msgid "Last Check"
-msgstr "अंतिम जांच"
+msgid "Click 'Continue' to Duplicate the following URL."
+msgid_plural "Click 'Continue' to Duplicate following URLs."
+msgstr[0] "निम्नलिखित प्रॉक्सी को हटाने के लिए 'जारी रखें' पर क्लिक करें।"
+msgstr[1] "निम्नलिखित प्रॉक्सी को हटाने के लिए 'जारी रखें' पर क्लिक करें।"
 
-#: webseer.php:367 webseer_servers.php:282
+#: webseer.php:199
 #, fuzzy
-msgid "Edit Site"
-msgstr "साइट संपादित करें"
+#| msgid "Duplicate"
+msgid "Duplicate URL"
+msgid_plural "Duplicate URLs"
+msgstr[0] "डुप्लीकेट"
+msgstr[1] "डुप्लीकेट"
 
-#: webseer.php:372 webseer_servers.php:287
-#, fuzzy
-msgid "Enable Site"
-msgstr "सर्वर सक्षम करें"
-
-#: webseer.php:376 webseer_servers.php:291
-#, fuzzy
-msgid "Disable Site"
-msgstr "अक्षम"
-
-#: webseer.php:381 webseer_servers.php:295
-#, fuzzy
-msgid "View History"
-msgstr "इतिहास देखे"
-
-#: webseer.php:389
-#, fuzzy, php-format
-msgid "DNS: Server %s - A Record for %s"
-msgstr "DNS: सर्वर %s - %s के लिए एक रिकॉर्ड"
-
-#: webseer.php:399
-msgid "N/A"
-msgstr "लागू नहीं"
-
-#: webseer.php:404 webseer.php:407 webseer_servers.php:398
-msgid "Disabled"
-msgstr "अक्षम"
-
-#: webseer.php:406 webseer_servers.php:155
-msgid "Error"
-msgstr "त्रुटि"
-
-#: webseer.php:421 webseer_proxies.php:299 webseer_servers.php:309
-#, fuzzy
-msgid "No Servers Found"
-msgstr "कोई सर्वर नहीं मिला"
-
-#: webseer.php:499
-#, fuzzy
-msgid "Webseer Site Management"
-msgstr "वेबसीर साइट प्रबंधन"
-
-#: webseer.php:508 webseer_edit.php:216 webseer_proxies.php:327
-msgid "Search"
-msgstr "खोजें"
-
-#: webseer.php:514 webseer_servers.php:392
-msgid "State"
-msgstr "राज्य"
-
-#: webseer.php:518 webseer_servers.php:396
-msgid "Any"
-msgstr "कोई भी@ label"
-
-#: webseer.php:527 webseer_servers.php:405
-msgid "Refresh"
-msgstr "रीफ्रैश करो"
-
-#: webseer.php:548 webseer_proxies.php:338 webseer_servers.php:422
-msgid "Default"
-msgstr "डिफ़ॉल्ट"
-
-#: webseer.php:559 webseer_proxies.php:349
-msgid "Go"
-msgstr "जाएं"
-
-#: webseer.php:560 webseer_proxies.php:350 webseer_servers.php:433
-msgid "Clear"
-msgstr "明确"
-
-#: webseer_edit.php:138 webseer_servers_edit.php:116
+#: webseer.php:312 webseer_servers.php:550
 #, fuzzy, php-format
 msgid "Query [edit: %s]"
 msgstr "क्वेरी [संपादित करें: %s]"
 
-#: webseer_edit.php:140 webseer_servers_edit.php:118
+#: webseer.php:314 webseer_servers.php:552
 #, fuzzy
 msgid "Query [new]"
 msgstr "क्वेरी [नया]"
 
-#: webseer_edit.php:171
+#: webseer.php:345
 #, fuzzy
 msgid "No Users Selected"
 msgstr "कोई उपयोगकर्ता नहीं चुना गया"
 
-#: webseer_edit.php:173
+#: webseer.php:347
 #, fuzzy
 msgid "Users Selected"
 msgstr "उपयोगकर्ताओं का चयन किया"
 
-#: webseer_edit.php:176
+#: webseer.php:350
 #, fuzzy
 msgid "All Users Selected"
 msgstr "सभी उपयोगकर्ता चयनित"
 
-#: webseer_edit.php:182
+#: webseer.php:356
 msgid "All"
 msgstr "所有"
 
-#: webseer_proxies.php:102
+#: webseer.php:390 webseer.php:853 webseer_proxies.php:343
+msgid "Search"
+msgstr "खोजें"
+
+#: webseer.php:472 webseer_servers.php:290
+msgid "Date"
+msgstr "दिनांक"
+
+#: webseer.php:475 webseer.php:635 webseer_servers.php:293
+#, fuzzy
+msgid "HTTP Code"
+msgstr "HTTP कोड"
+
+#: webseer.php:476 webseer.php:645 webseer_servers.php:294
+#, fuzzy
+msgid "DNS"
+msgstr "डीएनएस"
+
+#: webseer.php:477 webseer.php:650 webseer_servers.php:295
+#, fuzzy
+msgid "Connect"
+msgstr "जुडिये"
+
+#: webseer.php:478 webseer.php:655 webseer_servers.php:296
+#, fuzzy
+msgid "Redirect"
+msgstr "पुन: निर्देशित"
+
+#: webseer.php:479 webseer.php:660 webseer_servers.php:297
+msgid "Total"
+msgstr "कुल"
+
+#: webseer.php:480 webseer.php:620
+msgid "Status"
+msgstr "ऑर्डर स्थिति"
+
+#: webseer.php:508 webseer.php:738 webseer_servers.php:320
+msgid "Down"
+msgstr "नीचे"
+
+#: webseer.php:508 webseer.php:738 webseer_servers.php:320
+msgid "Up"
+msgstr "ऊपर"
+
+#: webseer.php:513 webseer_servers.php:330
+#, fuzzy
+msgid "No Events in History"
+msgstr "इतिहास की कोई घटना नहीं"
+
+#: webseer.php:610 webseer_servers.php:394
+msgid "Actions"
+msgstr "कार्रवाइयाँ"
+
+#: webseer.php:625 webseer.php:741 webseer.php:744 webseer_servers.php:397
+#: webseer_servers.php:624
+msgid "Enabled"
+msgstr "सक्षम"
+
+#: webseer.php:640
+#, fuzzy
+msgid "Auth"
+msgstr "प्रमाणीकरण"
+
+#: webseer.php:665
+msgid "Timeout"
+msgstr "टाइमआउट"
+
+#: webseer.php:670 webseer_servers.php:399
+#, fuzzy
+msgid "Last Check"
+msgstr "अंतिम जांच"
+
+#: webseer.php:703
+#, fuzzy
+msgid "Edit Site"
+msgstr "साइट संपादित करें"
+
+#: webseer.php:708
+#, fuzzy
+msgid "Enable Site"
+msgstr "सर्वर सक्षम करें"
+
+#: webseer.php:712
+#, fuzzy
+msgid "Disable Site"
+msgstr "अक्षम"
+
+#: webseer.php:717 webseer_servers.php:433
+#, fuzzy
+msgid "View History"
+msgstr "इतिहास देखे"
+
+#: webseer.php:726
+#, fuzzy, php-format
+msgid "DNS: Server %s - A Record for %s"
+msgstr "DNS: सर्वर %s - %s के लिए एक रिकॉर्ड"
+
+#: webseer.php:736
+msgid "N/A"
+msgstr "लागू नहीं"
+
+#: webseer.php:741 webseer.php:744 webseer_servers.php:624
+msgid "Disabled"
+msgstr "अक्षम"
+
+#: webseer.php:743 webseer_servers.php:292
+msgid "Error"
+msgstr "त्रुटि"
+
+#: webseer.php:758 webseer_proxies.php:315 webseer_servers.php:450
+#, fuzzy
+msgid "No Servers Found"
+msgstr "कोई सर्वर नहीं मिला"
+
+#: webseer.php:844
+#, fuzzy
+msgid "Webseer Site Management"
+msgstr "वेबसीर साइट प्रबंधन"
+
+#: webseer.php:859 webseer_servers.php:618
+msgid "State"
+msgstr "राज्य"
+
+#: webseer.php:863 webseer_servers.php:622
+msgid "Any"
+msgstr "कोई भी@ label"
+
+#: webseer.php:872 webseer_servers.php:631
+msgid "Refresh"
+msgstr "रीफ्रैश करो"
+
+#: webseer.php:893 webseer_proxies.php:354 webseer_servers.php:648
+msgid "Default"
+msgstr "डिफ़ॉल्ट"
+
+#: webseer.php:904 webseer_proxies.php:365
+msgid "Go"
+msgstr "जाएं"
+
+#: webseer.php:905 webseer_proxies.php:366 webseer_servers.php:659
+msgid "Clear"
+msgstr "明确"
+
+#: webseer_proxies.php:103
 #, fuzzy
 msgid "Click 'Continue' to delete the following Proxy."
 msgid_plural "Click 'Continue' to delete following Proxies."
 msgstr[0] "निम्नलिखित प्रॉक्सी को हटाने के लिए 'जारी रखें' पर क्लिक करें।"
 msgstr[1] "निम्नलिखित प्रॉक्सी को हटाने के लिए 'जारी रखें' पर क्लिक करें।"
 
-#: webseer_proxies.php:107
-msgid "Cancel"
-msgstr "कैंसिल करें"
-
-#: webseer_proxies.php:107
-msgid "Continue"
-msgstr "जारी रखें"
-
-#: webseer_proxies.php:107
+#: webseer_proxies.php:108
 #, fuzzy
 msgid "Delete Proxy"
 msgid_plural "Delete Proxies"
 msgstr[0] "हटाना"
 msgstr[1] "हटाना"
 
-#: webseer_proxies.php:110
-#, fuzzy
-msgid "You must select at least one Proxy."
-msgstr "आपको कम से कम एक प्रॉक्सी का चयन करना होगा।"
-
-#: webseer_proxies.php:111
-msgid "Return"
-msgstr "वापसी"
-
-#: webseer_proxies.php:167
+#: webseer_proxies.php:169
 #, fuzzy, php-format
 msgid "Proxy [edit: %s]"
 msgstr "क्वेरी [संपादित करें: %s]"
 
-#: webseer_proxies.php:169
+#: webseer_proxies.php:171
 #, fuzzy
 msgid "Proxy [new]"
 msgstr "क्वेरी [नया]"
 
-#: webseer_proxies.php:272
+#: webseer_proxies.php:281
 #, fuzzy
 msgid "Ports (http/https)"
 msgstr "पोर्ट (http / https)"
 
-#: webseer_proxies.php:273
+#: webseer_proxies.php:285
 msgid "Username"
 msgstr "उपयोगकर्ता नाम"
 
-#: webseer_proxies.php:294
+#: webseer_proxies.php:309
 #, fuzzy
 msgid "Not Set"
 msgstr "डिफ़ॉल्ट नियत करें"
 
-#: webseer_proxies.php:318
+#: webseer_proxies.php:334
 #, fuzzy
 msgid "Webseer Proxy Management"
 msgstr "वेबसीर सर्वर प्रबंधन"
 
-#: webseer_servers.php:262
+#: webseer_servers.php:135
+#, fuzzy
+msgid "Click 'Continue' to Delete the following Server."
+msgid_plural "Click 'Continue' to Delete following Servers."
+msgstr[0] "निम्नलिखित प्रॉक्सी को हटाने के लिए 'जारी रखें' पर क्लिक करें।"
+msgstr[1] "निम्नलिखित प्रॉक्सी को हटाने के लिए 'जारी रखें' पर क्लिक करें।"
+
+#: webseer_servers.php:140
+#, fuzzy
+msgid "Delete Server"
+msgid_plural "Delete Servers"
+msgstr[0] "वेबसर्वर सर्वर"
+msgstr[1] "वेबसर्वर सर्वर"
+
+#: webseer_servers.php:144
+#, fuzzy
+msgid "Click 'Continue' to Disable the following Server."
+msgid_plural "Click 'Continue' to Disable following Servers."
+msgstr[0] "निम्नलिखित प्रॉक्सी को हटाने के लिए 'जारी रखें' पर क्लिक करें।"
+msgstr[1] "निम्नलिखित प्रॉक्सी को हटाने के लिए 'जारी रखें' पर क्लिक करें।"
+
+#: webseer_servers.php:149 webseer_servers.php:428
+#, fuzzy
+msgid "Disable Server"
+msgid_plural "Disable Servers"
+msgstr[0] "सर्वर सक्षम करें"
+msgstr[1] "सर्वर सक्षम करें"
+
+#: webseer_servers.php:153
+#, fuzzy
+msgid "Click 'Continue' to Enable the following Server."
+msgid_plural "Click 'Continue' to Enable following Servers."
+msgstr[0] "निम्नलिखित प्रॉक्सी को हटाने के लिए 'जारी रखें' पर क्लिक करें।"
+msgstr[1] "निम्नलिखित प्रॉक्सी को हटाने के लिए 'जारी रखें' पर क्लिक करें।"
+
+#: webseer_servers.php:400
 #, fuzzy
 msgid "Master"
 msgstr "स्वामी"
 
-#: webseer_servers.php:263
+#: webseer_servers.php:401
 #, fuzzy
 msgid "This Host"
 msgstr "यह मेजबान"
 
-#: webseer_servers.php:299 webseer_servers.php:302 webseer_servers.php:303
+#: webseer_servers.php:419
+#, fuzzy
+msgid "Edit Server"
+msgstr "साइट संपादित करें"
+
+#: webseer_servers.php:440 webseer_servers.php:443 webseer_servers.php:444
 msgid "No"
 msgstr "नहीं"
 
-#: webseer_servers.php:299 webseer_servers.php:302 webseer_servers.php:303
+#: webseer_servers.php:440 webseer_servers.php:443 webseer_servers.php:444
 msgid "Yes"
 msgstr "हाँ"
 
-#: webseer_servers.php:384
+#: webseer_servers.php:610
 #, fuzzy
 msgid "Webseer Server Management"
 msgstr "वेबसीर सर्वर प्रबंधन"
 
-#: webseer_servers.php:398
+#: webseer_servers.php:624
 #, fuzzy
 msgid "Triggered"
 msgstr "उत्प्रेरित"
 
-#: webseer_servers.php:417
-msgid "Sites"
-msgstr "साइटां"
+#, fuzzy
+#~ msgid "You must select at least one Proxy."
+#~ msgstr "आपको कम से कम एक प्रॉक्सी का चयन करना होगा।"
+
+#~ msgid "Return"
+#~ msgstr "वापसी"
+
+#~ msgid "Sites"
+#~ msgstr "साइटां"
