@@ -376,7 +376,7 @@ function list_servers() {
 		$sql_order
 		$sql_limit");
 
-	$total_rows = cacti_count(db_fetch_assoc("SELECT id FROM plugin_webseer_servers $sql_where"));
+	$total_rows = db_fetch_cell("SELECT count(*) FROM plugin_webseer_servers $sql_where");
 
 	$nav = html_nav_bar('webseer_servers.php', MAX_DISPLAY_PAGES, get_request_var('page'), $rows, $total_rows, 8, __('Servers', 'webseer'), 'page', 'main');
 
@@ -405,6 +405,7 @@ function list_servers() {
 
 	if (cacti_sizeof($result)) {
 		foreach ($result as $row) {
+
 			if ($row['isme'] == 0 && $row['lastcheck'] < time() - 180) {
 				$alertstat = 'yes';
 				$bgcolor   = 'red';
@@ -551,6 +552,9 @@ function webseer_edit_server() {
 	}else{
 		$header_label = __('Query [new]', 'webseer');
 	}
+
+	$server['isme']   = $server['isme'] ? 'on' : '';
+	$server['master'] = $server['master'] ? 'on' : '';
 
 	form_start('webseer_servers.php');
 	html_start_box($header_label, '100%', '', '3', 'center', '');
