@@ -714,7 +714,7 @@ function list_urls() {
 				</a>";
 			}
 
-			print "<a class='pic' href='" . html_escape($config['url_path'] . 'plugins/webseer/webseer.php?action=history=1&id=' . $row['id']) . "' title='" . __esc('View History', 'webseer') . "'>
+			print "<a class='pic' href='" . html_escape($config['url_path'] . 'plugins/webseer/webseer.php?action=history&id=' . $row['id']) . "' title='" . __esc('View History', 'webseer') . "'>
 					<i class='tholdGlyphLog fas fa-exclamation-triangle'></i>
 				</a>
 			</td>";
