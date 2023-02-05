@@ -175,6 +175,7 @@ if ($url['url'] != '') {
 	$pi = read_config_option('poller_interval');
 	$t  = time() - ($url['downtrigger'] * 60);
 	$lc = time() - ($pi*2);
+
 	$ts = db_fetch_cell_prepared('SELECT count(id)
 		FROM plugin_webseer_servers
 		WHERE isme = 1
@@ -190,6 +191,7 @@ if ($url['url'] != '') {
 		array($t, $url['id']));
 
 	plugin_webseer_debug('pi:' . $pi . ', t:' . $t . ' (' . date('Y-m-d H:i:s', $t) . '), lc:' . $lc . ' (' . date('Y-m-d H:i:s', $lc) . '), ts:' . $ts . ', tf:' . $tf, $url);
+
 	plugin_webseer_debug('failures:'. $url['failures'] . ', triggered:' . $url['triggered'], $url);
 
 	if (strtotime($url['lastcheck']) > 0 && (($url['result'] != '' && $url['result'] != $results['result']) || $url['failures'] > 0 || $url['triggered'] == 1)) {
@@ -198,8 +200,8 @@ if ($url['url'] != '') {
 		$sendemail = false;
 
 		if ($results['result'] == 0) {
-			$url['failures'] = $url['failures'] + 1;
-//			//////////if ($url['failures'] > $url['downtrigger'] && $url['triggered'] == 0) {
+			$url['failures'] += $url['failures'];
+
 			if ($url['failures'] >= ($url['downtrigger'] * 60)/$poller_interval && $url['triggered'] == 0) {
 				$sendemail = true;
 				$url['triggered'] = 1;
@@ -217,7 +219,7 @@ if ($url['url'] != '') {
 			(url_id, lastcheck, compression, result, http_code, error,
 			total_time, namelookup_time, connect_time, redirect_time,
 			redirect_count, size_download, speed_download)
-			VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
+			VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
 			array($url['id'], date('Y-m-d H:i:s', $results['time']),
 				$results['options']['compression'], $results['result'],
 				$results['options']['http_code'], $results['error'],
@@ -231,7 +233,7 @@ if ($url['url'] != '') {
 		if ($sendemail) {
 			plugin_webseer_debug('Time to send email to admins', $url);
 
-			if (plugin_webseer_amimaster ()) {
+			if (plugin_webseer_amimaster()) {
 				if ($url['notify_format'] == WEBSEER_FORMAT_PLAIN) {
 					plugin_webseer_get_users($results, $url, 'text');
 				} else {
@@ -245,7 +247,8 @@ if ($url['url'] != '') {
 
 	plugin_webseer_debug('Updating Statistics', $url);
 
-	db_execute_prepared('UPDATE plugin_webseer_urls SET result = ?, triggered = ?, failures = ?,
+	db_execute_prepared('UPDATE plugin_webseer_urls
+		SET result = ?, triggered = ?, failures = ?,
 		lastcheck = ?, error = ?, http_code = ?, total_time = ?, namelookup_time = ?,
 		connect_time = ?, redirect_time = ?, redirect_count = ?, speed_download = ?,
 		size_download = ?, debug = ?
@@ -281,7 +284,7 @@ if ($url['url'] != '') {
 			(url_id, server, lastcheck, result, http_code, error, total_time,
 			namelookup_time, connect_time, redirect_time, redirect_count,
 			size_download, speed_download)
-			VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)',
+			VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
 			array($url['id'], plugin_webseer_whoami(), date('Y-m-d H:i:s', $results['time']),
 				$results['result'], $results['options']['http_code'], $results['error'],
 				$results['options']['total_time'], $results['options']['namelookup_time'],
@@ -289,6 +292,11 @@ if ($url['url'] != '') {
 				$results['options']['redirect_count'], $results['options']['size_download'],
 				$results['options']['speed_download'])
 		);
+
+		db_execute_prepared('UPDATE plugin_webseer_servers
+			SET lastcheck=NOW()
+			WHERE id = ?',
+			array(plugin_webseer_whoami()));
 	}
 }
 
