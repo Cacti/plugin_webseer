@@ -410,8 +410,16 @@ $webseer_url_fields = array(
 		'array' => $webseer_notify_formats,
 		'value' => '|arg1:notify_format|',
 	),
+	'notify_list' => array(
+		'friendly_name' => __('Notification List', 'webseer'),
+		'method' => 'drop_sql',
+		'description' => __('Use this Notification List for those to be notified when this website goes down.', 'webseer'),
+		'sql' => 'SELECT id, name FROM plugin_notification_lists ORDER BY name',
+		'value' => '|arg1:notify_list|',
+		'none_value' => __('None', 'webseer')
+	),
 	'notify_accounts' => array(
-		'friendly_name' => __('Notify accounts', 'webseer'),
+		'friendly_name' => __('Notify Accounts', 'webseer'),
 		'method' => 'drop_multi',
 		'description' => __('This is a listing of accounts that will be notified when this website goes down.', 'webseer'),
 		'array' => $webseer_notify_accounts,

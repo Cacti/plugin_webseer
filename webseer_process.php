@@ -60,7 +60,7 @@ if (cacti_sizeof($parms)) {
 			break;
 		case '-d':
 		case '--debug':
-			$debug = TRUE;
+			$debug = true;
 			break;
 		case '--version':
 		case '-V':
@@ -73,7 +73,7 @@ if (cacti_sizeof($parms)) {
 			display_help();
 			exit;
 		default:
-			echo 'ERROR: Invalid Parameter ' . $parameter . "\n\n";
+			print 'ERROR: Invalid Parameter ' . $parameter . "\n\n";
 			display_help();
 			exit;
 		}
@@ -85,7 +85,7 @@ if (!function_exists('curl_init')) {
 }
 
 if (empty($url_id)) {
-	echo "ERROR: You must specify a URL id\n";
+	print "ERROR: You must specify a URL id\n";
 	exit(1);
 }
 
@@ -98,7 +98,7 @@ $url = db_fetch_row_prepared('SELECT *
 	array($url_id));
 
 if (!cacti_sizeof($url)) {
-	echo "ERROR: URL is not Found\n";
+	print "ERROR: URL is not Found\n";
 	exit(1);
 }
 
@@ -239,7 +239,7 @@ if ($url['url'] != '') {
 				}
 			}
 		}
-	}else{
+	} else {
 		plugin_webseer_debug('Not checking for trigger', $url);
 	}
 
@@ -314,7 +314,7 @@ function register_shutdown($url_id) {
 	db_execute_prepared('DELETE FROM plugin_webseer_processes
 		WHERE url = ?
 		AND pid = ?',
-		array($url_id, getmypid()), FALSE);
+		array($url_id, getmypid()), false);
 }
 
 function plugin_webseer_get_users($results, $url, $type) {
@@ -327,36 +327,52 @@ function plugin_webseer_get_users($results, $url, $type) {
 			WHERE id IN (" . $url['notify_accounts'] . ")");
 	}
 
-	if ($users == '' && isset($url['notify_extra']) && $url['notify_extra'] == '') {
+	if ($users == '' && isset($url['notify_extra']) && $url['notify_extra'] == '' && $url['notify_list'] <= 0) {
 		cacti_log('ERROR: No users to send WEBSEER Notification for ' . $url['display_name'], false, 'WEBSEER');
 		return;
 	}
 
 	$to = $users;
+
+	if (read_config_option('thold_disable_legacy') == 'on' && ($to != '' || $url['notify_extra'] != '')) {
+		cacti_log(sprintf('WARNING: WebSeer Service Check %s has individual Emails specified and Disable Legacy Notification is Enabled.', $url['display_name']), false, 'WEBSEER');
+	}
+
 	if ($url['notify_extra'] != '') {
 		$to .= ($to != '' ? ', ':'') . $url['notify_extra'];
 	}
 
+	if ($url['notify_list'] > 0) {
+		$emails = db_fetch_cell_prepared('SELECT emails
+			FROM plugin_notification_lists
+			WHERE id = ?',
+			array($url['notify_list']));
+
+		if ($emails != '') {
+			$to .= ($to != '' ? ', ':'') . $emails;
+		}
+	}
+
 	if ($type == 'text') {
 		if ($results['result'] == 0) {
-			$subject = "Site Down: " . ($url['display_name'] != '' ? $url['display_name'] : $url['url']);
+			$subject = 'Site Down: ' . ($url['display_name'] != '' ? $url['display_name'] : $url['url']);
 		} else {
-			$subject = "Site Recovered: " . ($url['display_name'] != '' ? $url['display_name'] : $url['url']);
+			$subject = 'Site Recovered: ' . ($url['display_name'] != '' ? $url['display_name'] : $url['url']);
 		}
 
-		$message  = "Site "        . ($results['result'] == 0 ? 'Down: ' : 'Recovering: ') . ($url['display_name'] != '' ? $url['display_name']:'') . "\n";
-		$message .= "URL: "        . $url['url'] . "\n";
-		$message .= "Error: "      . $results['error'] . "\n";
-		$message .= "Total Time: " . $results['options']['total_time'] . "\n";
+		$message  = 'Site '        . ($results['result'] == 0 ? 'Down: ' : 'Recovering: ') . ($url['display_name'] != '' ? $url['display_name']:'') . "\n";
+		$message .= 'URL: '        . $url['url'] . "\n";
+		$message .= 'Error: '      . $results['error'] . "\n";
+		$message .= 'Total Time: ' . $results['options']['total_time'] . "\n";
 	} else {
 		if ($results['result'] == 0) {
-			$subject = "Site Down: " . ($url['display_name'] != '' ? $url['display_name'] : $url['url']);
+			$subject = 'Site Down: ' . ($url['display_name'] != '' ? $url['display_name'] : $url['url']);
 		} else {
-			$subject = "Site Recovered: " . ($url['display_name'] != '' ? $url['display_name'] : $url['url']);
+			$subject = 'Site Recovered: ' . ($url['display_name'] != '' ? $url['display_name'] : $url['url']);
 		}
 
-		$message  = "<h3>" . $subject . "</h3>\n";
-		$message .= "<hr>";
+		$message  = '<h3>' . $subject . "</h3>\n";
+		$message .= '<hr>';
 
 		$message .= "<table>\n";
 		$message .= "<tr><td>URL:</td><td>"       . $url['url'] . "</td></tr>\n";
@@ -395,7 +411,7 @@ function plugin_webseer_get_users($results, $url, $type) {
 function plugin_webseer_amimaster() {
 	if (function_exists('gethostname')) {
 		$hostname = gethostname();
-	}else{
+	} else {
 		$hostname = php_uname('n');
 	}
 
@@ -417,7 +433,7 @@ function plugin_webseer_amimaster() {
 function plugin_webseer_whoami() {
 	if (function_exists('gethostname')) {
 		$hostname = gethostname();
-	}else{
+	} else {
 		$hostname = php_uname('n');
 	}
 
@@ -441,7 +457,7 @@ function plugin_webseer_send_email($to, $subject, $message) {
 	if ($from_name != '') {
 		$from[0] = $from_email;
 		$from[1] = $from_name;
-	}else{
+	} else {
 		$from    = $from_email;
 	}
 
@@ -461,15 +477,15 @@ function plugin_webseer_send_email($to, $subject, $message) {
 /*  display_version - displays version information */
 function display_version() {
 	$version = get_cacti_version();
-    echo "Cacti Web Service Check Processor, Version $version, " . COPYRIGHT_YEARS . "\n";
+    print "Cacti Web Service Check Processor, Version $version, " . COPYRIGHT_YEARS . "\n";
 }
 
 /*  display_help - displays the usage of the function */
 function display_help() {
     display_version();
 
-    echo "\nusage: webseer_process.php --id=N [--debug]\n\n";
-	echo "This binary will run the Web Service check for the WebSeer plugin.\n\n";
-    echo "--id=N     - The url ID from the WebSeer database.\n";
-    echo "--debug    - Display verbose output during execution\n\n";
+    print "\nusage: webseer_process.php --id=N [--debug]\n\n";
+	print "This binary will run the Web Service check for the WebSeer plugin.\n\n";
+    print "--id=N     - The url ID from the WebSeer database.\n";
+    print "--debug    - Display verbose output during execution\n\n";
 }

@@ -26,15 +26,6 @@ chdir('../../');
 include_once('./include/auth.php');
 include_once($config['base_path'] . '/plugins/webseer/includes/functions.php');
 
-/* global colors */
-$webseer_bgcolors = array(
-	'red'    => 'FF6044',
-	'yellow' => 'FAFD9E',
-	'orange' => 'FF7D00',
-	'green'  => 'CCFFCC',
-	'grey'   => 'CDCFC4'
-);
-
 set_default_action();
 
 switch (get_request_var('action')) {
@@ -44,6 +35,32 @@ case 'save':
 	break;
 case 'actions':
 	form_actions();
+
+	break;
+case 'enable':
+	$id = get_request_var('id');
+
+	if ($id > 0) {
+		db_execute_prepared('UPDATE plugin_webseer_urls SET enabled = "" WHERE id = ?', array($id));
+
+		db_execute_prepared('UPDATE plugin_webseer_urls SET enabled = "on" WHERE id = ?', array($id));
+		plugin_webseer_enable_remote_hosts($id, true);
+	}
+
+	header('Location: webseer_servers.php?header=false');
+	exit;
+
+	break;
+case 'disable':
+	$id = get_request_var('id');
+
+	if ($id > 0) {
+		db_execute_prepared('UPDATE plugin_webseer_urls SET enabled = "" WHERE id = ?', array($id));
+		plugin_webseer_enable_remote_hosts($id, false);
+	}
+
+	header('Location: webseer_servers.php?header=false');
+	exit;
 
 	break;
 case 'history':
@@ -122,7 +139,7 @@ function form_actions() {
 
 	top_header();
 
-	form_start('webseer.php');
+	form_start('webseer_servers.php');
 
 	html_start_box($webseer_actions_server[get_nfilter_request_var('drp_action')], '60%', '', '3', 'center', '');
 
@@ -224,7 +241,7 @@ function do_webseer() {
  *  like to create issues with Cacti.
 */
 function webseer_request_validation() {
-	global $title, $colors, $rows_selector, $config, $reset_multi;
+	global $title, $rows_selector, $config, $reset_multi;
 
 	/* ================= input validation and session storage ================= */
 	$filters = array(
@@ -263,66 +280,165 @@ function webseer_request_validation() {
 	/* ================= input validation ================= */
 }
 
+function webseer_log_request_validation() {
+	global $title, $rows_selector, $config, $reset_multi;
+
+	/* ================= input validation and session storage ================= */
+	$filters = array(
+		'id' => array(
+			'filter' => FILTER_VALIDATE_INT,
+			'default' => '-1'
+		),
+		'rows' => array(
+			'filter' => FILTER_VALIDATE_INT,
+			'pageset' => true,
+			'default' => '-1'
+		),
+		'page' => array(
+			'filter' => FILTER_VALIDATE_INT,
+			'default' => '1'
+		),
+		'filter' => array(
+			'filter' => FILTER_CALLBACK,
+			'default' => '',
+			'options' => array('options' => 'sanitize_search_string')
+		),
+		'sort_column' => array(
+			'filter' => FILTER_CALLBACK,
+			'default' => 'lastcheck',
+			'options' => array('options' => 'sanitize_search_string')
+		),
+		'sort_direction' => array(
+			'filter' => FILTER_CALLBACK,
+			'default' => 'DESC',
+			'options' => array('options' => 'sanitize_search_string')
+		),
+	);
+
+	validate_store_request_vars($filters, 'sess_weseer_server_log');
+	/* ================= input validation ================= */
+}
+
 function webseer_show_history() {
-	global $config, $webseer_bgcolors, $httperrors;
+	global $config, $httperrors;
+
+	webseer_log_request_validation();
 
 	if (isset_request_var('id')) {
 		$id = get_filter_request_var('id');
 	} else {
-		header('Location: webseer.php?header=false');
+		header('Location: webseer_servers.php?header=false');
 		exit;
 	}
 
-	$result = db_fetch_assoc_prepared('SELECT plugin_webseer_urls_log.*, plugin_webseer_urls.url
-		FROM plugin_webseer_urls_log,plugin_webseer_urls
-		WHERE plugin_webseer_urls.id = ?
-		AND plugin_webseer_urls_log.url_id = plugin_webseer_urls.id
-		ORDER BY plugin_webseer_urls_log.lastcheck DESC',
-		array($id));
+	$refresh['seconds'] = 9999999;
+	$refresh['page']    = 'webseer_servers.php?action=history&id=' . get_filter_request_var('id') . '&header=false';
+	$refresh['logout']  = 'false';
+
+	set_page_refresh($refresh);
 
 	top_header();
 
+	if (get_request_var('rows') == '-1') {
+		$rows = read_config_option('num_rows_table');
+	} else {
+		$rows = get_request_var('rows');
+	}
+
+	$sql_where    = '';
+	$sql_params[] = get_filter_request_var('id');
+
+	if (get_request_var('filter') != '') {
+		$sql_where .= 'AND wl.lastcheck LIKE ?';
+		$sql_params[] = '%' . get_request_var('filter') . '%';
+	}
+
+	$sql_order = get_order_string();
+	$sql_limit = ' LIMIT ' . ($rows*(get_request_var('page')-1)) . ',' . $rows;
+
+	$result = db_fetch_assoc_prepared("SELECT wl.*, wu.url
+		FROM plugin_webseer_servers_log AS wl
+		INNER JOIN plugin_webseer_urls wu
+		ON wl.url_id = wu.id
+		WHERE wu.id = ?
+		$sql_where
+		$sql_order
+		$sql_limit",
+		$sql_params);
+
+	$total_rows = db_fetch_cell_prepared("SELECT COUNT(*)
+		FROM plugin_webseer_servers_log AS wl
+		WHERE wl.url_id = ?
+		$sql_where",
+		$sql_params);
+
+	$nav = html_nav_bar('webseer_servers.php?action=history', MAX_DISPLAY_PAGES, get_request_var('page'), $rows, $total_rows, 8, __('Servers', 'webseer'), 'page', 'main');
+
 	webseer_show_tab('webseer_servers.php');
+
+	webseer_log_filter();
+
+	print $nav;
 
 	html_start_box('', '100%', '', '4', 'center', '');
 
 	$display_text = array(
-		__('Date', 'webseer'),
-		__('URL', 'webseer'),
-		__('Error', 'webseer'),
-		__('HTTP Code', 'webseer'),
-		__('DNS', 'webseer'),
-		__('Connect', 'webseer'),
-		__('Redirect', 'webseer'),
-		__('Total', 'webseer')
+		'lastcheck' => array(
+			'display' => __('Date', 'webseer')
+		),
+		'url' => array(
+			'display' => __('URL', 'webseer'),
+		),
+		'result' => array(
+			'display' => __('Error', 'webseer'),
+		),
+		'http_code' => array(
+			'display' => __('HTTP Code', 'webseer'),
+			'align'   => 'right',
+			'sort'    => 'DESC'
+		),
+		'namelookup_time' => array(
+			'display' => __('DNS', 'webseer'),
+			'align'   => 'right',
+			'sort'    => 'DESC'
+		),
+		'connect_time' => array(
+			'display' => __('Connect', 'webseer'),
+			'align'   => 'right',
+			'sort'    => 'DESC'
+		),
+		'redirect_time' => array(
+			'display' => __('Redirect', 'webseer'),
+			'align'   => 'right',
+			'sort'    => 'DESC'
+		),
+		'total_time' => array(
+			'display' => __('Total', 'webseer'),
+			'align'   => 'right',
+			'sort'    => 'DESC'
+		),
 	);
 
-	html_header($display_text);
-
-	$c = 0;
-	$i = 0;
+	html_header_sort($display_text, get_request_var('sort_column'), get_request_var('sort_direction'), 1, 'webseer_servers.php?action=history&id=' . get_request_var('id'), 'main');
 
 	if (cacti_count($result)) {
 		foreach ($result as $row) {
-			$c++;
+            if ($row['result'] == 0) {
+                $style = "color:rgba(10,10,10,0.8);background-color:rgba(242, 25, 36, 0.6);";
+            } else {
+                $style = "color:rgba(10,10,10,0.8);background-color:rgba(204, 255, 204, 0.6)";
+            }
 
-			if ($row['result'] == 0) {
-				$alertstat='yes';
-				$bgcolor='red';
-			} else {
-				$alertstat='no';
-				$bgcolor='green';
-			}
+            print "<tr class='tableRow selectable' style='$style' id='line" . $row['id'] . "'>";
 
-			form_alternate_row('line' . $row['id'], true);
 			form_selectable_cell($row['lastcheck'], $row['id']);
 			form_selectable_cell("<a class='linkEditMain' href='" . $row['url'] . "' target=_new><b>" . $row['url'] . '</b></a>', $row['id']);
 			form_selectable_cell(($row['result'] == 1 ? __('Up', 'webseer') : __('Down', 'webseer')), $row['id']);
-			form_selectable_cell($httperrors[$row['http_code']], $row['id'], '', '', $row['error']);
-			form_selectable_cell(round($row['namelookup_time'], 4), $row['id'], '', ($row['namelookup_time'] > 4 ? 'background-color: red' : ($row['namelookup_time'] > 1 ? 'background-color: yellow':'')));
-			form_selectable_cell(round($row['connect_time'], 4), $row['id'], '', ($row['connect_time'] > 4 ? 'background-color: red' : ($row['connect_time'] > 1 ? 'background-color: yellow':'')));
-			form_selectable_cell(round($row['redirect_time'], 4), $row['id'], '', ($row['redirect_time'] > 4 ? 'background-color: red' : ($row['redirect_time'] > 1 ? 'background-color: yellow':'')));
-			form_selectable_cell(round($row['total_time'], 4), $row['id'], '', ($row['total_time'] > 4 ? 'background-color: red' : ($row['total_time'] > 1 ? 'background-color: yellow':'')));
+			form_selectable_cell($httperrors[$row['http_code']], $row['id'], '', 'right');
+			form_selectable_cell(round($row['namelookup_time'], 4), $row['id'], '', ($row['namelookup_time'] > 4 ? 'background-color: red;text-align:right;' : ($row['namelookup_time'] > 1 ? 'background-color: yellow;text-align:right;':'text-align:right')));
+			form_selectable_cell(round($row['connect_time'], 4), $row['id'], '', ($row['connect_time'] > 4 ? 'background-color: red;text-align:right;' : ($row['connect_time'] > 1 ? 'background-color: yellow;text-align:right;':'text-align:right')));
+			form_selectable_cell(round($row['redirect_time'], 4), $row['id'], '', ($row['redirect_time'] > 4 ? 'background-color: red;text-align:right;' : ($row['redirect_time'] > 1 ? 'background-color: yellow;text-align:right;':'text-align:right')));
+			form_selectable_cell(round($row['total_time'], 4), $row['id'], '', ($row['total_time'] > 4 ? 'background-color: red;text-align:right' : ($row['total_time'] > 1 ? 'background-color: yellow;text-align:right;':'text-align:right')));
 			form_end_row();
 		}
 	} else {
@@ -331,10 +447,14 @@ function webseer_show_history() {
 	}
 
 	html_end_box(false);
+
+	if (cacti_sizeof($result)) {
+		print $nav;
+	}
 }
 
 function list_servers() {
-	global $colors, $webseer_actions_server, $webseer_bgcolors, $item_rows, $config, $hostid;
+	global $webseer_actions_server, $item_rows, $config, $hostid;
 
 	webseer_request_validation();
 
@@ -349,6 +469,12 @@ function list_servers() {
 		}
 	}
 
+	$refresh['seconds'] = get_request_var('refresh');
+	$refresh['page']    = 'webseer_servers.php?header=false';
+	$refresh['logout']  = 'false';
+
+	set_page_refresh($refresh);
+
 	top_header();
 
 	webseer_show_tab('webseer_servers.php');
@@ -357,13 +483,13 @@ function list_servers() {
 
 	if (get_request_var('rows') == '-1') {
 		$rows = read_config_option('num_rows_table');
-	}else{
+	} else {
 		$rows = get_request_var('rows');
 	}
 
 	$sql_where = '';
 
-	if($statefilter != '') {
+	if ($statefilter != '') {
 		$sql_where .= ($sql_where == '' ? 'WHERE ' : ' AND ') . $statefilter;
 	}
 
@@ -384,11 +510,7 @@ function list_servers() {
 
 	print $nav;
 
-	$header_color = '';
-	if (isset($colors['header'])) {
-		$header_color = $colors['header'];
-	}
-	html_start_box('', '100%', $header_color, '4', 'center', '');
+	html_start_box('', '100%', '', '4', 'center', '');
 
 	$display_text = array(
 		'nosort'    => array(__('Actions', 'webseer'), 'ASC'),
@@ -405,16 +527,13 @@ function list_servers() {
 
 	if (cacti_sizeof($result)) {
 		foreach ($result as $row) {
+            if ($row['isme'] == 0 && $row['lastcheck'] < time() - 10) {
+                $style = "color:rgba(10,10,10,0.8);background-color:rgba(242, 25, 36, 0.6);";
+            } else {
+                $style = "color:rgba(10,10,10,0.8);background-color:rgba(204, 255, 204, 0.6)";
+            }
 
-			if ($row['isme'] == 0 && $row['lastcheck'] < time() - 180) {
-				$alertstat = 'yes';
-				$bgcolor   = 'red';
-			} else {
-				$alertstat = 'no';
-				$bgcolor   = 'green';
-			};
-
-			form_alternate_row('line' . $row['id'], true);
+            print "<tr class='tableRow selectable' style='$style' id='line" . $row['id'] . "'>";
 
 			print "<td width='1%' class='nowrap left'>
 				<a class='pic' href='" . html_escape($config['url_path'] . 'plugins/webseer/webseer_servers.php?action=edit&id=' . $row['id']) . "' title='" . __esc('Edit Server', 'webseer') . "'>
@@ -422,16 +541,16 @@ function list_servers() {
 				</a>";
 
 			if ($row['enabled'] == '') {
-				print "<a class='pic' href='" . html_escape($config['url_path'] . 'plugins/webseer/webseer_servers.php?drp_action=' . WEBSEER_ACTION_SERVER_ENABLE .'&chk_' . $row['id'] . '=1') . "' title='" . __esc('Enable Server', 'webseer') . "'>
+				print "<a class='pic' href='" . html_escape($config['url_path'] . 'plugins/webseer/webseer_servers.php?action=enable&id=' . $row['id']) . "' title='" . __esc('Enable Server', 'webseer') . "'>
 					<i class='tholdGlyphEnable fas fa-play-circle'></i>
 				</a>";
 			} else {
-				print "<a class='pic' href='" . html_escape($config['url_path'] . 'plugins/webseer/webseer_servers.php?drp_action=' . WEBSEER_ACTION_SERVER_DISABLE . '&chk_' . $row['id'] . '=1') . "' title='" . __esc('Disable Server', 'webseer') . "'>
+				print "<a class='pic' href='" . html_escape($config['url_path'] . 'plugins/webseer/webseer_servers.php?action=disable&id=' . $row['id']) . "' title='" . __esc('Disable Server', 'webseer') . "'>
 					<i class='tholdGlyphDisable fas fa-stop-circle'></i>
 				</a>";
 			}
 
-			print "<a class='pic' href='" . html_escape($config['url_path'] . 'plugins/webseer/webseer_servers.php?view_history=1&id=' . $row['id']) . "' title='" . __esc('View History', 'webseer') . "'>
+			print "<a class='pic' href='" . html_escape($config['url_path'] . 'plugins/webseer/webseer_servers.php?action=history&id=' . $row['id']) . "' title='" . __esc('View Server History', 'webseer') . "'>
 					<i class='tholdGlyphLog fas fa-exclamation-triangle'></i>
 				</a>
 			</td>";
@@ -547,9 +666,9 @@ function webseer_edit_server() {
 
 	$server = array();
 	if (!isempty_request_var('id')) {
-		$server = db_fetch_row_prepared('SELECT * FROM plugin_webseer_servers WHERE id = ?', array(get_request_var('id')), FALSE);
+		$server = db_fetch_row_prepared('SELECT * FROM plugin_webseer_servers WHERE id = ?', array(get_request_var('id')), false);
 		$header_label = __('Query [edit: %s]', $server['ip'], 'webseer');
-	}else{
+	} else {
 		$header_label = __('Query [new]', 'webseer');
 	}
 
@@ -571,12 +690,6 @@ function webseer_edit_server() {
 
 function webseer_filter() {
 	global $item_rows;
-
-	$refresh['seconds'] = get_request_var('refresh');
-	$refresh['page']    = 'webseer_servers.php?header=false';
-	$refresh['logout']  = 'false';
-
-	set_page_refresh($refresh);
 
 	?>
 	<script type='text/javascript'>
@@ -611,7 +724,7 @@ function webseer_filter() {
 	</script>
 	<?php
 
-	html_start_box(__('Webseer Server Management', 'webseer') , '100%', '', '3', 'center', 'webseer_servers.php?action=edit');
+	html_start_box(__('Webseer Servers', 'webseer') , '100%', '', '3', 'center', 'webseer_servers.php?action=edit');
 	?>
 	<tr class='even noprint'>
 		<td class='noprint'>
@@ -626,7 +739,7 @@ function webseer_filter() {
 							<option value='-1'><?php print __('Any', 'webseer');?></option>
 							<?php
 							foreach (array('2' => __('Disabled', 'webseer'), '1' => __('Enabled', 'webseer'), 3 => __('Triggered', 'webseer')) as $key => $value) {
-								echo "<option value='" . $key . "'" . ($key == get_request_var('state') ? ' selected' : '') . '>' . $value . '</option>';
+								print "<option value='" . $key . "'" . ($key == get_request_var('state') ? ' selected' : '') . '>' . $value . '</option>';
 							}
 							?>
 						</select>
@@ -638,7 +751,7 @@ function webseer_filter() {
 						<select id='refresh'>
 							<?php
 							foreach (array(20 => __('%d Seconds', 20, 'webseer'), 30 => __('%d Seconds', 30, 'webseer'), 45 => __('%d Seconds', 45, 'webseer'), 60 => __('%d Minute', 1, 'webseer'), 120 => __('%d Minutes', 2, 'webseer'), 300 => __('%d Minutes', 5, 'webseer')) as $r => $row) {
-								echo "<option value='" . $r . "'" . (isset_request_var('refresh') && $r == get_request_var('refresh') ? ' selected' : '') . '>' . $row . '</option>';
+								print "<option value='" . $r . "'" . (isset_request_var('refresh') && $r == get_request_var('refresh') ? ' selected' : '') . '>' . $row . '</option>';
 							}
 							?>
 						</select>
@@ -649,7 +762,7 @@ function webseer_filter() {
 					<td>
 						<select id='rows'>
 							<?php
-							print "<option value='-1'" . (get_request_var('rows') == $key ? ' selected':'') . ">" . __('Default', 'webseer') . "</option>";
+							print "<option value='-1'" . (get_request_var('rows') == '-1' ? ' selected':'') . ">" . __('Default', 'webseer') . "</option>";
 							if (cacti_sizeof($item_rows)) {
 								foreach ($item_rows as $key => $value) {
 									print "<option value='" . $key . "'"; if (get_request_var('rows') == $key) { print ' selected'; } print '>' . htmlspecialchars($value) . "</option>";
@@ -666,6 +779,88 @@ function webseer_filter() {
 				</tr>
 			</table>
 			<input type='hidden' name='search' value='search'>
+			</form>
+		</td>
+	</tr>
+	<?php
+	html_end_box();
+}
+
+function webseer_log_filter() {
+	global $item_rows;
+
+	?>
+	<script type='text/javascript'>
+
+	refreshMSeconds=99999999;
+
+	function applyFilter() {
+		strURL  = 'webseer_servers.php?action=history&header=false&id=<?php print get_request_var('id');?>';
+		strURL += '&filter=' + $('#filter').val();
+		strURL += '&rows=' + $('#rows').val();
+		refreshMSeconds=99999999;
+		loadPageNoHeader(strURL);
+	}
+
+	function clearFilter() {
+		strURL = 'webseer_servers.php?action=history&clear=1&header=false';
+		loadPageNoHeader(strURL);
+	}
+
+	$(function() {
+		$('#rows').change(function() {
+			applyFilter();
+		});
+
+		$('#clear').click(function() {
+			clearFilter();
+		});
+
+		$('#webseer').submit(function(event) {
+			event.preventDefault();
+			applyFilter();
+		});
+	});
+
+	</script>
+	<?php
+
+	html_start_box(__('Webseer Server History', 'webseer') , '100%', '', '3', 'center', '');
+	?>
+	<tr class='even noprint'>
+		<td class='noprint'>
+			<form id='webseer' action='webseer_servers.php?action=history'>
+			<table class='filterTable'>
+				<tr class='noprint'>
+					<td>
+						<?php print __('Date Search', 'webseer');?>
+					</td>
+					<td>
+						<input type='text' class='ui-state-default ui-corner-all' id='filter' size='30' value='<?php print html_escape_request_var('filter');?>'>
+					</td>
+					<td>
+						<?php print __('Entries', 'webseer');?>
+					</td>
+					<td>
+						<select id='rows'>
+							<?php
+							print "<option value='-1'" . (get_request_var('rows') == '-1' ? ' selected':'') . ">" . __('Default', 'webseer') . "</option>";
+							if (cacti_sizeof($item_rows)) {
+								foreach ($item_rows as $key => $value) {
+									print "<option value='" . $key . "'"; if (get_request_var('rows') == $key) { print ' selected'; } print '>' . htmlspecialchars($value) . "</option>";
+								}
+							}
+							?>
+						</select>
+					</td>
+					<td>
+						<span class='nowrap'>
+							<input type='submit' id='go' alt='' value='<?php print __esc('Go', 'webseer');?>'>
+							<input type='button' id='clear' alt='' value='<?php print __esc('Clear', 'webseer');?>'>
+						</span>
+					</td>
+				</tr>
+			</table>
 			</form>
 		</td>
 	</tr>

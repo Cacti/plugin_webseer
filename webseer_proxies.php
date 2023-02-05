@@ -245,7 +245,7 @@ function proxies() {
 
 	if (get_request_var('rows') == '-1') {
 		$rows = read_config_option('num_rows_table');
-	}else{
+	} else {
 		$rows = get_request_var('rows');
 	}
 

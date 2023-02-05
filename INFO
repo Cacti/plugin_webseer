@@ -21,7 +21,7 @@
 
 [info]
 name = webseer
-version = 3.1
+version = 3.2
 longname = Web Service Monitor
 author = The Cacti Group
 email = jimmy@sqmail.org

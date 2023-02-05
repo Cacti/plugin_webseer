@@ -108,6 +108,10 @@ function plugin_webseer_upgrade() {
 				ADD COLUMN compression int(3) unsigned NOT NULL default "0" AFTER lastcheck');
 		}
 
+		if (!db_column_exists('plugin_webseer_urls', 'notify_list')) {
+			db_execute('ALTER TABLE plugin_webseer_urls ADD COLUMN notify_list int(10) unsigned NOT NULL default "0" AFTER checkcert');
+		}
+
 		db_execute_prepared('UPDATE plugin_config
 			SET version = ?
 			WHERE directory = "webseer"',
@@ -194,6 +198,7 @@ function plugin_webseer_setup_table() {
 		`requiresauth` char(2) NOT NULL default '',
 		`proxy_server` int(11) unsigned NOT NULL default '0',
 		`checkcert` char(2) NOT NULL default 'on',
+		`notify_list` int(10) unsigned NOT NULL default '0',
 		`notify_accounts` varchar(256) NOT NULL,
 		`notify_extra` varchar(256) NOT NULL,
 		`notify_format` int(3) unsigned NOT NULL default '0',

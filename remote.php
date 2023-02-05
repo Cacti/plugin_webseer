@@ -34,7 +34,7 @@ if (isset($_SERVER['X-Forwarded-For'])) {
 	$remoteip = $_SERVER['HTTP_X_FORWARDED_FOR'];
 } elseif (isset($_SERVER['REMOTE_ADDR'])) {
 	$remoteip = $_SERVER['REMOTE_ADDR'];
-}else {
+} else {
 	$remoteip = '127.0.0.1';
 }
 
@@ -83,22 +83,20 @@ foreach ($servers as $server) {
 			case 'UPDATEURL':
 			case 'ADDURL':
 				if (isset($_POST['id'])) {
-					get_filter_request_var('id',		FILTER_VALIDATE_INT);
-				//	get_filter_request_var('notify_accounts',	FILTER_VALIDATE_IS_NUMERIC_ARRAY);
-					get_filter_request_var('url',		FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => '/^([\w:/\.?=&-+]+)$/')));
-
-
-
-					get_filter_request_var('notify_extra',	FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => '/^([a-zA-Z0-9_@,\.\+]+)$/')));
-					get_filter_request_var('downtrigger',	FILTER_VALIDATE_INT);
-					get_filter_request_var('ip',		FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => '/^([\d]{1,3}\.[\d]{1,3}\.[\d]{1,3}\.[\d]{1,3})$/')));
-					get_filter_request_var('display_name',	FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => '/^([\w,\s]+)$/')));
+					get_filter_request_var('id', FILTER_VALIDATE_INT);
+					get_filter_request_var('url', FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => '/^([\w:/\.?=&-+]+)$/')));
+					get_filter_request_var('notify_list', FILTER_VALIDATE_INT);
+					get_filter_request_var('notify_extra', FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => '/^([a-zA-Z0-9_@,\.\+]+)$/')));
+					get_filter_request_var('downtrigger', FILTER_VALIDATE_INT);
+					get_filter_request_var('ip', FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => '/^([\d]{1,3}\.[\d]{1,3}\.[\d]{1,3}\.[\d]{1,3})$/')));
+					get_filter_request_var('display_name', FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => '/^([\w,\s]+)$/')));
 
 					$save['id']              = get_filter_request_var('id');
 					$save['enabled']         = get_nfilter_request_var('enabled', '');
 					$save['requiresauth']    = get_nfilter_request_var('requiresauth', '');
 					$save['proxy_server']    = get_nfilter_request_var('proxy_server', '');
 					$save['checkcert']       = get_nfilter_request_var('checkcert', '');
+					$save['notify_list']     = get_nfilter_request_var('notify_list', '');
 					$save['notify_accounts'] = get_nfilter_request_var('notify_accounts', '');
 					$save['url']             = get_nfilter_request_var('url');
 					$save['search']          = get_nfilter_request_var('search');
@@ -113,14 +111,14 @@ foreach ($servers as $server) {
 						$id = sql_save($save, 'plugin_webseer_urls', 'id');
 					} else {
 						db_execute_prepared('REPLACE INTO plugin_webseer_urls
-							(id, enabled, requiresauth, proxy_server, checkcert, ip, display_name, notify_accounts,
+							(id, enabled, requiresauth, proxy_server, checkcert, ip, display_name, notify_list, notify_accounts,
 							url, search, search_maint, search_failed, notify_extra, downtrigger)
-							VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)',
+							VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
 							array(
 								$save['id'], $save['enabled'], $save['requiresauth'], $save['proxy_server'],
-								$save['checkcert'], $save['ip'], $save['display_name'], $save['notify_accounts'],
-								$save['url'], $save['search'], $save['search_maint'], $save['search_failed'],
-								$save['notify_extra'], $save['downtrigger']
+								$save['checkcert'], $save['ip'], $save['display_name'], $save['notify_list'],
+								$save['notify_accounts'], $save['url'], $save['search'], $save['search_maint'],
+								$save['search_failed'], $save['notify_extra'], $save['downtrigger']
 							)
 						);
 					}

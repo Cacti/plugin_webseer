@@ -36,6 +36,16 @@ function webseer_show_tab($current_tab) {
 		'webseer_proxies.php' => __('Proxies', 'webseer')
 	);
 
+	if (get_request_var('action') == 'history') {
+		if ($current_tab == 'webseer.php') {
+			$current_tab = 'webseer.php?action=history&id=' . get_filter_request_var('id');
+			$tabs[$current_tab] = __('Log History', 'webeer');
+		} else {
+			$current_tab = 'webseer_servers.php?action=history&id=' . get_filter_request_var('id');
+			$tabs[$current_tab] = __('Log History', 'webeer');
+		}
+	}
+
 	print "<div class='tabs'><nav><ul>\n";
 
 	if (cacti_sizeof($tabs)) {
@@ -101,11 +111,11 @@ function plugin_webseer_refresh_urls () {
 
 				foreach ($urls as $save) {
 					db_execute_prepared('REPLACE INTO plugin_webseer_urls
-						(id, enabled, requiresauth, checkcert, ip, display_name, notify_accounts, url, search, search_maint, search_failed, notify_extra, downtrigger)
-						VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)',
+						(id, enabled, requiresauth, checkcert, ip, display_name, notify_list, notify_accounts, url, search, search_maint, search_failed, notify_extra, downtrigger)
+						VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
 						array(
 							$save['id'], $save['enabled'], $save['requiresauth'], $save['checkcert'],
-							$save['ip'], $save['display_name'], $save['notify_accounts'],
+							$save['ip'], $save['display_name'], $save['notify_list'], $save['notify_accounts'],
 							$save['url'], $save['search'], $save['search_maint'],
 							$save['search_failed'], $save['notify_extra'], $save['downtrigger']
 						)
@@ -310,7 +320,7 @@ function plugin_webseer_update_contacts() {
 
 			if ($cid) {
 				db_execute("REPLACE INTO plugin_webseer_contacts (id, user_id, type, data) VALUES ($cid, " . $u['id'] . ", 'email', '" . $u['email_address'] . "')");
-			}else{
+			} else {
 				db_execute("REPLACE INTO plugin_webseer_contacts (user_id, type, data) VALUES (" . $u['id'] . ", 'email', '" . $u['email_address'] . "')");
 			}
 		}
