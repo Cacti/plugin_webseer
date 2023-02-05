@@ -292,12 +292,12 @@ if ($url['url'] != '') {
 				$results['options']['redirect_count'], $results['options']['size_download'],
 				$results['options']['speed_download'])
 		);
-
-		db_execute_prepared('UPDATE plugin_webseer_servers
-			SET lastcheck=NOW()
-			WHERE id = ?',
-			array(plugin_webseer_whoami()));
 	}
+
+	db_execute_prepared('UPDATE plugin_webseer_servers
+		SET lastcheck=NOW()
+		WHERE id = ?',
+		array(plugin_webseer_whoami()));
 }
 
 /* register process end */
