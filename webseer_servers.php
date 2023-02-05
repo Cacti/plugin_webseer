@@ -41,9 +41,7 @@ case 'enable':
 	$id = get_request_var('id');
 
 	if ($id > 0) {
-		db_execute_prepared('UPDATE plugin_webseer_urls SET enabled = "" WHERE id = ?', array($id));
-
-		db_execute_prepared('UPDATE plugin_webseer_urls SET enabled = "on" WHERE id = ?', array($id));
+		db_execute_prepared('UPDATE plugin_webseer_servers SET enabled = "on" WHERE id = ?', array($id));
 		plugin_webseer_enable_remote_hosts($id, true);
 	}
 
@@ -55,7 +53,7 @@ case 'disable':
 	$id = get_request_var('id');
 
 	if ($id > 0) {
-		db_execute_prepared('UPDATE plugin_webseer_urls SET enabled = "" WHERE id = ?', array($id));
+		db_execute_prepared('UPDATE plugin_webseer_servers SET enabled = "" WHERE id = ?', array($id));
 		plugin_webseer_enable_remote_hosts($id, false);
 	}
 
@@ -670,6 +668,8 @@ function webseer_edit_server() {
 		$header_label = __('Query [edit: %s]', $server['ip'], 'webseer');
 	} else {
 		$header_label = __('Query [new]', 'webseer');
+                $server['isme'] = '';
+                $server['master'] = '';
 	}
 
 	$server['isme']   = $server['isme'] ? 'on' : '';
