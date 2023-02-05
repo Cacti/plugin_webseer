@@ -94,7 +94,8 @@ function form_actions() {
 				}
 			}
 
-			if (cacti_sizeof($urls)) {
+			if (cacti_sizeof($hosts)) {
+
 				if ($action == WEBSEER_ACTION_SERVER_DELETE) { // delete
 					foreach ($hosts as $host) {
 						db_execute_prepared('DELETE FROM plugin_webseer_servers WHERE id = ?', array($host));
@@ -102,14 +103,14 @@ function form_actions() {
 						plugin_webseer_delete_remote_server($host);
 					}
 				} elseif ($action == WEBSEER_ACTION_SERVER_DISABLE) { // disable
-					foreach ($urls as $id) {
-						db_execute_prepared('UPDATE plugin_webseer_urls SET enabled = "" WHERE id = ?', array($id));
-						plugin_webseer_enable_remote_hosts($id, false);
+					foreach ($hosts as $host) {
+						db_execute_prepared('UPDATE plugin_webseer_servers SET enabled = "" WHERE id = ?', array($host));
+						plugin_webseer_enable_remote_hosts($host, false);
 					}
 				} elseif ($action == WEBSEER_ACTION_SERVER_ENABLE) { // enable
-					foreach ($urls as $id) {
-						db_execute_prepared('UPDATE plugin_webseer_urls SET enabled = "on" WHERE id = ?', array($id));
-						plugin_webseer_enable_remote_hosts($id, true);
+					foreach ($hosts as $host) {
+						db_execute_prepared('UPDATE plugin_webseer_servers SET enabled = "on" WHERE id = ?', array($host));
+						plugin_webseer_enable_remote_hosts($host, true);
 					}
 				}
 			}
