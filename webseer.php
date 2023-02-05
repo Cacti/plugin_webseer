@@ -833,7 +833,9 @@ function list_urls() {
 
 	if (cacti_sizeof($result)) {
 		foreach ($result as $row) {
-			if ($row['result'] == 0 && strtotime($row['lastcheck']) > 0) {
+			if ($row['enabled'] == '') {
+				$style = "color:rgba(10,10,10,0.8);background-color:rgba(205, 207, 196, 0.6)";
+			} elseif ($row['result'] == 0 && strtotime($row['lastcheck']) > 0) {
 				$style = "color:rgba(10,10,10,0.8);background-color:rgba(242, 25, 36, 0.6);";
 			} else {
 				$style = "color:rgba(10,10,10,0.8);background-color:rgba(204, 255, 204, 0.6)";

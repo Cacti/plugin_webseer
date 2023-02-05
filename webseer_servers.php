@@ -526,7 +526,9 @@ function list_servers() {
 
 	if (cacti_sizeof($result)) {
 		foreach ($result as $row) {
-            if ($row['isme'] == 0 && $row['lastcheck'] < time() - 10) {
+			if ($row['enabled'] == '') {
+				$style = "color:rgba(10,10,10,0.8);background-color:rgba(205, 207, 196, 0.6)";
+            } elseif ($row['isme'] == 0 && $row['lastcheck'] < time() - 10) {
                 $style = "color:rgba(10,10,10,0.8);background-color:rgba(242, 25, 36, 0.6);";
             } else {
                 $style = "color:rgba(10,10,10,0.8);background-color:rgba(204, 255, 204, 0.6)";
