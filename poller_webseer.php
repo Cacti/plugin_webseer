@@ -44,6 +44,8 @@ $debug = false;
 $force = false;
 $start = microtime(true);
 
+$poller_id = $config['poller_id'];
+
 if (cacti_sizeof($parms)) {
 	foreach($parms as $parameter) {
 		if (strpos($parameter, '=')) {
@@ -93,49 +95,62 @@ plugin_webseer_register_server();
 // Remove old Logs (ADD A SETTING!!!!!!)
 $t = time() - (86400 * 30);
 
-db_execute_prepared('DELETE FROM plugin_webseer_urls_log
-	WHERE lastcheck < FROM_UNIXTIME(?)',
-	array($t));
+if ($poller_id == 1) {
+	db_execute_prepared('DELETE FROM plugin_webseer_urls_log
+		WHERE lastcheck < FROM_UNIXTIME(?)',
+		array($t));
 
-db_execute_prepared('DELETE FROM plugin_webseer_processes
-	WHERE time < FROM_UNIXTIME(?)',
-	array(time() - 15));
+	db_execute_prepared('DELETE FROM plugin_webseer_processes
+		WHERE time < FROM_UNIXTIME(?)',
+		array(time() - 15));
+}
 
-$urls = db_fetch_assoc('SELECT *
+$urls = db_fetch_assoc_prepared('SELECT *
 	FROM plugin_webseer_urls
-	WHERE enabled = "on"');
+	WHERE enabled = "on"
+	AND poller_id = ?',
+	array($poller_id));
 
 $max = 12;
 
-for ($x = 0; $x < cacti_count($urls); $x++) {
-	$url   = $urls[$x];
-	$total = db_fetch_cell('SELECT count(id)
-		FROM plugin_webseer_processes');
+if (cacti_sizeof($urls)) {
+	foreach($urls as $url) {
+		$total = db_fetch_cell_prepared('SELECT COUNT(id)
+			FROM plugin_webseer_processes
+			WHERE poller_id = ?',
+			array($poller_id));
 
-	if ($max - $total > 0) {
-		$url['debug_type'] = 'Url';
-		plugin_webseer_debug('Launching Service Check ' . $urls[$x]['url'], $url);
-		$command_string = read_config_option('path_php_binary');
-		$extra_args     = '-q "' . $config['base_path'] . '/plugins/webseer/webseer_process.php" --id=' . $url['id'] . ($debug ? ' --debug':'');
-		exec_background($command_string, $extra_args);
-		usleep(10000);
-	} else {
-		$x--;
-		usleep(10000);
+		if ($max - $total > 0) {
+			$url['debug_type'] = 'Url';
 
-		db_execute_prepared('DELETE FROM plugin_webseer_processes
-			WHERE time < FROM_UNIXTIME(?)',
-			array(time() - 15));
+			plugin_webseer_debug('Launching Service Check ' . $url['url'], $url);
+
+			$command_string = read_config_option('path_php_binary');
+			$extra_args     = '-q "' . $config['base_path'] . '/plugins/webseer/webseer_process.php" --id=' . $url['id'] . ($debug ? ' --debug':'');
+			exec_background($command_string, $extra_args);
+
+			usleep(10000);
+		} else {
+			usleep(10000);
+
+			db_execute_prepared('DELETE FROM plugin_webseer_processes
+				WHERE time < FROM_UNIXTIME(?)
+				AND poller_id = ?',
+				array(time() - 15, $poller_id));
+		}
 	}
 }
 
 while(true) {
 	db_execute_prepared('DELETE FROM plugin_webseer_processes
-		WHERE time < FROM_UNIXTIME(?)',
-		array(time() - 15));
+		WHERE time < FROM_UNIXTIME(?)
+		AND poller_id = ?',
+		array(time() - 15, $poller_id));
 
-	$running = db_fetch_cell('SELECT COUNT(*)
-		FROM plugin_webseer_processes');
+	$running = db_fetch_cell_prepared('SELECT COUNT(*)
+		FROM plugin_webseer_processes
+		WHERE poller_id = ?',
+		array($poller_id));
 
 	if ($running == 0) {
 		break;
@@ -150,8 +165,14 @@ $end   = microtime(true);
 $ttime = round($end - $start, 2);
 
 $stats = 'Time:' . $ttime . ' Checks:' . sizeof($urls) . ' Servers:' . $servers;
+
 cacti_log("WEBSEER STATS: $stats", false, 'SYSTEM');
-set_config_option('stats_webseer', $stats);
+
+if ($poller_id == 1) {
+	set_config_option('stats_webseer', $stats);
+}
+
+set_config_option('stats_webseer_' . $poller_id, $stats);
 
 function plugin_webseer_register_server() {
 	global $config;
@@ -173,6 +194,7 @@ function plugin_webseer_register_server() {
 
 	if (!$found) {
 		$found['debug_type'] = 'Server';
+
 		plugin_webseer_debug('Registering Server ' . $ipaddress, $found);
 
 		$save = array();
@@ -214,7 +236,9 @@ function plugin_webseer_update_servers() {
 	if ($servers !== false && cacti_sizeof($servers)) {
 		foreach ($servers as $server) {
 			$server['debug_type'] = 'Server';
+
 			$cc = new cURL(true, 'cookies.txt', $server['compression'], '', $server);;
+
 			$data = array();
 			$data['action'] = 'HEARTBEAT';
 			$results = $cc->post($server['url'], $data);
@@ -224,7 +248,9 @@ function plugin_webseer_update_servers() {
 	return cacti_sizeof($servers);
 }
 
-/*  display_version - displays version information */
+/**
+ * display_version - displays version information
+ */
 function display_version() {
 	global $config;
 
@@ -233,10 +259,13 @@ function display_version() {
 	}
 
     $info = plugin_webseer_version();
-    print "Cacti Web Service Check Master Process, Version " . $info['version'] . ", " . COPYRIGHT_YEARS . "\n";
+
+    print "Cacti Service Check Master Process, Version " . $info['version'] . ", " . COPYRIGHT_YEARS . "\n";
 }
 
-/*  display_help - displays the usage of the function */
+/**
+ * display_help - displays the usage of the function
+ */
 function display_help () {
     display_version();
 
@@ -245,3 +274,4 @@ function display_help () {
     print "--force    - Force all the service checks to run now\n";
     print "--debug    - Display verbose output during execution\n\n";
 }
+

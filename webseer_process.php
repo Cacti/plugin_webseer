@@ -484,16 +484,24 @@ function plugin_webseer_send_email($to, $subject, $message) {
 
 /*  display_version - displays version information */
 function display_version() {
-	$version = get_cacti_version();
-    print "Cacti Web Service Check Processor, Version $version, " . COPYRIGHT_YEARS . "\n";
+	global $config;
+
+	if (!function_exists('plugin_webseer_version')) {
+		include_once($config['base_path'] . '/plugins/webseer/setup.php');
+	}
+
+	$info = plugin_webseer_version();
+
+    print 'Cacti Web Service Check Processor, Version ' . $info['version'] . ', ' . COPYRIGHT_YEARS . PHP_EOL;
 }
 
 /*  display_help - displays the usage of the function */
 function display_help() {
     display_version();
 
-    print "\nusage: webseer_process.php --id=N [--debug]\n\n";
-	print "This binary will run the Web Service check for the WebSeer plugin.\n\n";
-    print "--id=N     - The url ID from the WebSeer database.\n";
-    print "--debug    - Display verbose output during execution\n\n";
+	print PHP_EOL;
+    print 'usage: webseer_process.php --id=N [--debug]' . PHP_EOL . PHP_EOL;
+	print 'This binary will run the Web Service check for the WebSeer plugin.' . PHP_EOL . PHP_EOL;
+    print '--id=N     - The url ID from the WebSeer database.' . PHP_EOL;
+    print '--debug    - Display verbose output during execution' . PHP_EOL . PHP_EOL;
 }

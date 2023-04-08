@@ -27,8 +27,9 @@ include_once(__DIR__ . '/includes/arrays.php');
 
 function plugin_webseer_install () {
 	api_plugin_register_hook('webseer', 'draw_navigation_text', 'plugin_webseer_draw_navigation_text', 'setup.php');
-	api_plugin_register_hook('webseer', 'config_arrays', 'plugin_webseer_config_arrays', 'setup.php');
-	api_plugin_register_hook('webseer', 'poller_bottom', 'plugin_webseer_poller_bottom', 'setup.php');
+	api_plugin_register_hook('webseer', 'config_arrays',        'plugin_webseer_config_arrays',        'setup.php');
+	api_plugin_register_hook('webseer', 'poller_bottom',        'plugin_webseer_poller_bottom',        'setup.php');
+	api_plugin_register_hook('webseer', 'replicate_out',        'webseer_replicate_out',               'setup.php');
 
 	api_plugin_register_realm('webseer', 'webseer.php,webseer_servers.php,webseer_proxies.php', __('Web Service Check Admin', 'webseer'), 1);
 
@@ -112,6 +113,10 @@ function plugin_webseer_upgrade() {
 			db_execute('ALTER TABLE plugin_webseer_urls ADD COLUMN notify_list int(10) unsigned NOT NULL default "0" AFTER checkcert');
 		}
 
+		if (!db_column_exists('plugin_webseer_urls', 'poller_id')) {
+			db_execute('ALTER TABLE plugin_webseer_urls ADD COLUMN poller_id int(10) unsigned NOT NULL default "1" AFTER id');
+		}
+
 		db_execute_prepared('UPDATE plugin_config
 			SET version = ?
 			WHERE directory = "webseer"',
@@ -133,6 +138,8 @@ function plugin_webseer_upgrade() {
 			SET file = ?
 			WHERE file LIKE "%webseer.php%"',
 			array('webseer.php,webseer_servers.php,webseer_proxies.php'));
+
+		api_plugin_register_hook('webseer', 'replicate_out', 'webseer_replicate_out', 'setup.php', '1');
 	}
 
 	return true;
@@ -187,6 +194,7 @@ function plugin_webseer_setup_table() {
 
 	db_execute("CREATE TABLE IF NOT EXISTS `plugin_webseer_urls` (
 		`id` int(11) unsigned NOT NULL auto_increment,
+		`poller_id` int(11) unsigned NOT NULL '1',
 		`enabled` char(2) NOT NULL default 'on',
 		`type` varchar(32) NOT NULL default 'http',
 		`display_name` varchar(64) NOT NULL default '',
@@ -306,7 +314,7 @@ function plugin_webseer_poller_bottom() {
 function plugin_webseer_config_arrays() {
 	global $menu, $user_auth_realms, $user_auth_realm_filenames;
 
-	$menu[__('Management')]['plugins/webseer/webseer.php'] = __('Web Service Checks', 'webseer');
+	$menu[__('Management')]['plugins/webseer/webseer.php'] = __('Service Checks', 'webseer');
 
 	$files = array('index.php', 'plugins.php', 'webseer.php');
 	if (in_array(get_current_page(), $files)) {
@@ -380,4 +388,29 @@ function plugin_webseer_draw_navigation_text($nav) {
 
 	return $nav;
 }
+
+function webseer_replicate_out($data) {
+	$remote_poller_id = $data['remote_poller_id'];
+	$rcnn_id          = $data['rcnn_id'];
+	$class            = $data['class'];
+
+	cacti_log('INFO: Replacting for the WebSeer Plugin', false, 'REPLICATE');
+
+	$tables = array(
+		'plugin_webseer_contacts',
+		'plugin_webseer_proxies',
+		'plugin_webseer_servers',
+		'plugin_webseer_urls'
+	);
+
+	if ($class == 'all') {
+		foreach($tables as $table) {
+			$tdata = syslog_db_fetch_assoc('SELECT * FROM ' . $table);
+			replicate_out_table($rcnn_id, $tdata, $table, $remote_poller_id);
+		}
+	}
+
+    return $data;
+}
+
 

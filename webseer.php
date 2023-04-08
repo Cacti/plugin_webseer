@@ -131,6 +131,7 @@ function form_actions() {
 						foreach ($urls as $id) {
 							$save = db_fetch_row_prepared('SELECT * FROM plugin_webseer_urls WHERE id = ?', array($id));
 							$save['id']              = 0;
+							$save['poller_id']       = 1;
 							$save['display_name']    = 'New Service Check (' . $newid . ')';
 							$save['lastcheck']       = '0000-00-00';
 							$save['result']          = 0;
@@ -249,6 +250,7 @@ function form_actions() {
 function form_save() {
 	/* ================= input validation ================= */
 	get_filter_request_var('id');
+	get_filter_request_var('poller_id');
 	get_filter_request_var('downtrigger');
 	get_filter_request_var('timeout_trigger');
 	get_filter_request_var('compression');
@@ -258,6 +260,12 @@ function form_save() {
 		$save['id'] = get_request_var('id');
 	} else {
 		$save['id'] = 0;
+	}
+
+	if (isset_request_var('poller_id')) {
+		$save['poller_id'] = get_request_var('poller_id');
+	} else {
+		$save['poller_id'] = 1;
 	}
 
 	if (isset_request_var('enabled')) {
