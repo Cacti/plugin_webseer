@@ -194,7 +194,7 @@ function plugin_webseer_setup_table() {
 
 	db_execute("CREATE TABLE IF NOT EXISTS `plugin_webseer_urls` (
 		`id` int(11) unsigned NOT NULL auto_increment,
-		`poller_id` int(11) unsigned NOT NULL '1',
+		`poller_id` int(11) unsigned NOT NULL default '1',
 		`enabled` char(2) NOT NULL default 'on',
 		`type` varchar(32) NOT NULL default 'http',
 		`display_name` varchar(64) NOT NULL default '',
