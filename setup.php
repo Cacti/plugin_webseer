@@ -117,6 +117,10 @@ function plugin_webseer_upgrade() {
 			db_execute('ALTER TABLE plugin_webseer_urls ADD COLUMN poller_id int(10) unsigned NOT NULL default "1" AFTER id');
 		}
 
+		if (!db_column_exists('plugin_webseer_processes', 'poller_id')) {
+			db_execute('ALTER TABLE plugin_webseer_processes ADD COLUMN poller_id int(10) unsigned NOT NULL default "1" AFTER id');
+		}
+
 		db_execute_prepared('UPDATE plugin_config
 			SET version = ?
 			WHERE directory = "webseer"',
@@ -259,6 +263,7 @@ function plugin_webseer_setup_table() {
 
 	db_execute("CREATE TABLE IF NOT EXISTS `plugin_webseer_processes` (
 		`id` bigint unsigned NOT NULL auto_increment,
+		`poller_id` int(11) unsigned NOT NULL default '1',
 		`url_id` int(11) unsigned NOT NULL,
 		`pid` int(11) unsigned NOT NULL,
 		`time` timestamp default CURRENT_TIMESTAMP,
