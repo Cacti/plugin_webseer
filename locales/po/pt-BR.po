@@ -4,19 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr ""
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2023-02-05 13:24-0500\n"
-"PO-Revision-Date: 2020-12-14 19:07-0500\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: pt_BR\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.2\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2023-02-05 13:24-0500\nPO-Revision-Date: 2023-04-20 18:53+0000\nLast-Translator: Ede Willians dos Santos Cavalcante <edewillians10@gmail.com>\nLanguage-Team: Portuguese (Brazil) <http://translate.cacti.net/projects/cacti/webseer/pt_BR/>\nLanguage: pt-BR\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n > 1;\nX-Generator: Weblate 4.8.1\n"
 
 #: includes/arrays.php:78 includes/arrays.php:324 includes/arrays.php:419
 #: webseer.php:400
@@ -665,11 +653,11 @@ msgstr "N/A"
 
 #: webseer.php:880 webseer_servers.php:436
 msgid "Down"
-msgstr "Baixo"
+msgstr "Down"
 
 #: webseer.php:880 webseer_servers.php:436
 msgid "Up"
-msgstr "Acima"
+msgstr "Up"
 
 #: webseer.php:883 webseer.php:886 webseer_servers.php:741
 msgid "Disabled"
@@ -849,7 +837,7 @@ msgstr "Servidores WebSeer"
 
 #: webseer_servers.php:741
 msgid "Triggered"
-msgstr "Provocado"
+msgstr "Acionado"
 
 #: webseer_servers.php:828
 #, fuzzy
