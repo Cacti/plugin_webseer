@@ -193,6 +193,7 @@ function plugin_webseer_register_server() {
 		array($ipaddress));
 
 	if (!$found) {
+		$found = array();
 		$found['debug_type'] = 'Server';
 
 		plugin_webseer_debug('Registering Server ' . $ipaddress, $found);
