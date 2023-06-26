@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2023-02-05 13:24-0500\nPO-Revision-Date: 2023-05-15 12:06+0000\nLast-Translator: Сергей <zersh@mail.ru>\nLanguage-Team: Russian <http://translate.cacti.net/projects/cacti/webseer/ru/>\nLanguage: ru-RU\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\nX-Generator: Weblate 4.8.1\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2023-02-05 13:24-0500\nPO-Revision-Date: 2023-06-26 13:06+0000\nLast-Translator: Coool (github.com/Coool) <coool@mail.lv>\nLanguage-Team: Russian <http://translate.cacti.net/projects/cacti/webseer/ru/>\nLanguage: ru-RU\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\nX-Generator: Weblate 4.8.1\n"
 
 #: includes/arrays.php:78 includes/arrays.php:324 includes/arrays.php:419
 #: webseer.php:400
@@ -53,7 +53,6 @@ msgid "Name"
 msgstr "Имя"
 
 #: includes/arrays.php:163
-#, fuzzy
 msgid "A Useful Name for this Proxy."
 msgstr "Полезное имя для этого прокси."
 
@@ -66,29 +65,24 @@ msgid "Hostname"
 msgstr "Имя хоста"
 
 #: includes/arrays.php:172
-#, fuzzy
 msgid "The Proxy Hostname."
 msgstr "Имя хоста прокси."
 
 #: includes/arrays.php:180
-#, fuzzy
 msgid "HTTP Port"
-msgstr "HTTP код"
+msgstr "HTTP Порт"
 
 #: includes/arrays.php:181
-#, fuzzy
 msgid "The HTTP Proxy Port."
-msgstr "Порт прокси-сервера HTTP."
+msgstr "Порт HTTP прокси-сервера."
 
 #: includes/arrays.php:189
-#, fuzzy
 msgid "HTTPS Port"
-msgstr "HTTP код"
+msgstr "HTTPS Порт"
 
 #: includes/arrays.php:190
-#, fuzzy
 msgid "The HTTPS Proxy Port."
-msgstr "Порт прокси-сервера HTTPS."
+msgstr "Порт HTTPS прокси-сервера."
 
 #: includes/arrays.php:198
 msgid "User Name"
@@ -110,7 +104,7 @@ msgstr "Пароль пользователя для аутентификаци�
 
 #: includes/arrays.php:227 includes/arrays.php:287
 msgid "General Settings"
-msgstr "Основные Настройки"
+msgstr "Общие Настройки"
 
 #: includes/arrays.php:232
 #, fuzzy
@@ -146,9 +140,8 @@ msgid "Master Server"
 msgstr "Главный сервер"
 
 #: includes/arrays.php:253
-#, fuzzy
 msgid "Sets this server to the Master server.  The Master server handles all Email operations"
-msgstr "Устанавливает этот сервер на главный сервер.  Главный сервер обрабатывает все операции с электронной почтой."
+msgstr "Устанавливает этот сервер как главный.  Главный сервер обрабатывает все операции с электронной почтой"
 
 #: includes/arrays.php:259 includes/arrays.php:313 webseer_servers.php:518
 msgid "IP Address"
@@ -303,7 +296,7 @@ msgstr "Это строка для поиска на странице Обслу
 #: includes/arrays.php:396
 #, fuzzy
 msgid "Response Search String - Failed"
-msgstr "Строка поиска ответа - Неудачно."
+msgstr "Строка поиска ответа - Неуспешный"
 
 #: includes/arrays.php:397
 #, fuzzy
@@ -380,9 +373,8 @@ msgid "Cacti Master"
 msgstr "Какти Мастер"
 
 #: poller_webseer.php:189
-#, fuzzy
 msgid "Cacti Remote Server"
-msgstr "Cacti Remote Server"
+msgstr "Cacti удаленный сервер"
 
 #: setup.php:33
 #, fuzzy
@@ -526,9 +518,9 @@ msgstr[1] "Дублировать"
 msgstr[2] "Дублировать"
 
 #: webseer.php:337
-#, php-format
+#, fuzzy, php-format
 msgid "The Service Check history was purged for %s"
-msgstr ""
+msgstr "История проверки услуг была очищена для %s"
 
 #: webseer.php:350 webseer_servers.php:670
 #, fuzzy, php-format
@@ -595,15 +587,15 @@ msgstr "Всего"
 
 #: webseer.php:620
 msgid "Urls"
-msgstr ""
+msgstr "Сайты URL"
 
 #: webseer.php:644
 msgid "Service Down"
-msgstr ""
+msgstr "Служба неактивна"
 
 #: webseer.php:644
 msgid "Service Restored"
-msgstr ""
+msgstr "Служба восстановлена"
 
 #: webseer.php:655
 #, fuzzy
@@ -721,11 +713,11 @@ msgstr "Поиск"
 
 #: webseer.php:1122 webseer_servers.php:842
 msgid "Entries"
-msgstr ""
+msgstr "Записи"
 
 #: webseer.php:1140
 msgid "Purge Events"
-msgstr ""
+msgstr "Очистить событий"
 
 #: webseer_proxies.php:103
 #, fuzzy
