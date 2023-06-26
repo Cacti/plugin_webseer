@@ -4,19 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr ""
-"Project-Id-Version: Cacti 1.2.16\n"
-"Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2023-02-05 13:24-0500\n"
-"PO-Revision-Date: 2022-12-30 06:32+0000\n"
-"Last-Translator: Coool (github.com/Coool) <coool@mail.lv>\n"
-"Language-Team: Latvian <http://translate.cacti.net/projects/cacti/webseer/lv/>\n"
-"Language: lv-LV\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n % 10 == 0 || n % 100 >= 11 && n % 100 <= 19) ? 0 : ((n % 10 == 1 && n % 100 != 11) ? 1 : 2);\n"
-"X-Generator: Weblate 4.8.1\n"
+msgstr "Project-Id-Version: Cacti 1.2.16\nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2023-02-05 13:24-0500\nPO-Revision-Date: 2023-06-26 13:06+0000\nLast-Translator: Coool (github.com/Coool) <coool@mail.lv>\nLanguage-Team: Latvian <http://translate.cacti.net/projects/cacti/webseer/lv/>\nLanguage: lv-LV\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=3; plural=(n % 10 == 0 || n % 100 >= 11 && n % 100 <= 19) ? 0 : ((n % 10 == 1 && n % 100 != 11) ? 1 : 2);\nX-Generator: Weblate 4.8.1\n"
 
 #: includes/arrays.php:78 includes/arrays.php:324 includes/arrays.php:419
 #: webseer.php:400
@@ -121,13 +109,11 @@ msgid "Display Name of this server"
 msgstr "Šī servera attēlojamais nosaukums"
 
 #: includes/arrays.php:238 webseer_servers.php:175 webseer_servers.php:544
-#, fuzzy
-#| msgid "Enable Server"
 msgid "Enable Server"
 msgid_plural "Enable Servers"
 msgstr[0] "Iespējot serveri"
 msgstr[1] "Iespējot serveri"
-msgstr[2] "Iespējot serveri"
+msgstr[2] "Iespējot serverus"
 
 #: includes/arrays.php:239
 msgid "Uncheck this box to disabled this server from checking urls."
@@ -295,20 +281,14 @@ msgid "This is the format to use when sending the notification email"
 msgstr "Formāts, kas jāizmanto, nosūtot e-pasta paziņojumu"
 
 #: includes/arrays.php:414
-#, fuzzy
-#| msgid "Notification Settings"
 msgid "Notification List"
-msgstr "Paziņojuma iestatījumi"
+msgstr "Paziņojumu saraksts"
 
 #: includes/arrays.php:416
-#, fuzzy
-#| msgid "This is a listing of accounts that will be notified when this website goes down."
 msgid "Use this Notification List for those to be notified when this website goes down."
-msgstr "Kontu saraksts, kuriem tiks paziņots, kad šī vietne nav sasniedzama."
+msgstr "Paziņojumu saraksts, kurš tiek izmantots, lai informētu, kad šī vietne nav sasniedzama."
 
 #: includes/arrays.php:422
-#, fuzzy
-#| msgid "Notify accounts"
 msgid "Notify Accounts"
 msgstr "Paziņošanas konti"
 
@@ -338,10 +318,8 @@ msgid "Proxies"
 msgstr "Starpniekserveri"
 
 #: includes/functions.php:42 includes/functions.php:45
-#, fuzzy
-#| msgid "View History"
 msgid "Log History"
-msgstr "Skatīt vēsturi"
+msgstr "Žurnālu vēsturi"
 
 #: poller_webseer.php:186
 msgid "Cacti Master"
@@ -365,59 +343,46 @@ msgstr "Tīmekļa pakalpojuma pārbaudes"
 
 #: setup.php:319
 msgid "WebSeer Service Checks"
-msgstr "WebSeer pakalpojuma pārbaudes"
+msgstr "Webseer pakalpojuma pārbaudes"
 
 #: setup.php:326
 msgid "Service Check Edit"
 msgstr "Pakalpojuma pārbaudes rediģēšana"
 
 #: setup.php:333
-#, fuzzy
-#| msgid "Service Check Name"
 msgid "Service Check Save"
-msgstr "Pakalpojuma pārbaudes nosaukums"
+msgstr "Pakalpojuma pārbaudes saglabāšana"
 
 #: setup.php:340
 msgid "WebSeer Servers"
-msgstr "WebSeer serveri"
+msgstr "Webseer serveri"
 
 #: setup.php:347
 msgid "Server Edit"
 msgstr "Servera rediģēšana"
 
 #: setup.php:354
-#, fuzzy
-#| msgid "Enable Server"
 msgid "Save Server"
-msgstr "Iespējot serveri"
+msgstr "Saglabāt serveri"
 
 #: setup.php:361
-#, fuzzy
-#| msgid "WebSeer Servers"
 msgid "WebSeer Proxies"
-msgstr "WebSeer serveri"
+msgstr "WebSeer starpniekserveri"
 
 #: setup.php:368
-#, fuzzy
-#| msgid "Proxies"
 msgid "Proxie Edit"
-msgstr "Starpniekserveri"
+msgstr "Starpniekservera rediģēšana"
 
 #: setup.php:375
-#, fuzzy
-#| msgid "New Proxy"
 msgid "Save Proxy"
-msgstr "Jauns starpniekserveris"
+msgstr "Saglabāt starpniekserveri"
 
 #: webseer.php:193
-#, fuzzy
-#| msgid "Click 'Continue' to delete the following Proxy."
-#| msgid_plural "Click 'Continue' to delete following Proxies."
 msgid "Click 'Continue' to Delete the following URL."
 msgid_plural "Click 'Continue' to Delete following URLs."
-msgstr[0] "Noklikšķiniet 'Turpināt', lai dzēstu norādīto starpniekserveri."
-msgstr[1] "Noklikšķiniet 'Turpināt', lai dzēstu norādīto starpniekserveri."
-msgstr[2] "Noklikšķiniet 'Turpināt', lai dzēstu norādītos starpniekserverus."
+msgstr[0] "Noklikšķiniet 'Turpināt', lai dzēstu norādīto URL vietni."
+msgstr[1] "Noklikšķiniet 'Turpināt', lai dzēstu norādīto URL vietni."
+msgstr[2] "Noklikšķiniet 'Turpināt', lai dzēstu norādītās URL vietnes."
 
 #: webseer.php:198 webseer.php:207 webseer.php:216 webseer.php:225
 #: webseer_proxies.php:108 webseer_servers.php:157 webseer_servers.php:166
@@ -432,75 +397,58 @@ msgid "Continue"
 msgstr "Turpināt"
 
 #: webseer.php:198
-#, fuzzy
-#| msgid "Delete"
 msgid "Delete URL"
 msgid_plural "Delete URLs"
-msgstr[0] "Dzēst"
-msgstr[1] "Dzēst"
-msgstr[2] "Dzēst"
+msgstr[0] "Dzēst URL vietni"
+msgstr[1] "Dzēst URL vietni"
+msgstr[2] "Dzēst URL vietnes"
 
 #: webseer.php:202
-#, fuzzy
-#| msgid "Click 'Continue' to delete the following Proxy."
-#| msgid_plural "Click 'Continue' to delete following Proxies."
 msgid "Click 'Continue' to Disable the following URL."
 msgid_plural "Click 'Continue' to Disable following URLs."
-msgstr[0] "Noklikšķiniet 'Turpināt', lai dzēstu norādīto starpniekserveri."
-msgstr[1] "Noklikšķiniet 'Turpināt', lai dzēstu norādīto starpniekserveri."
-msgstr[2] "Noklikšķiniet 'Turpināt', lai dzēstu norādītos starpniekserverus."
+msgstr[0] "Noklikšķiniet 'Turpināt', lai atspējotu norādīto URL vietni."
+msgstr[1] "Noklikšķiniet 'Turpināt', lai atspējotu norādīto URL vietni."
+msgstr[2] "Noklikšķiniet 'Turpināt', lai atspējotu norādītās URL vietnes."
 
 #: webseer.php:207
-#, fuzzy
-#| msgid "Disable"
 msgid "Disable URL"
 msgid_plural "Disable URLs"
-msgstr[0] "Atspējot"
-msgstr[1] "Atspējot"
-msgstr[2] "Atspējot"
+msgstr[0] "Atspējot URL vietni"
+msgstr[1] "Atspējot URL vietni"
+msgstr[2] "Atspējot URL vietnes"
 
 #: webseer.php:211
-#, fuzzy
-#| msgid "Click 'Continue' to delete the following Proxy."
-#| msgid_plural "Click 'Continue' to delete following Proxies."
 msgid "Click 'Continue' to Enable the following URL."
 msgid_plural "Click 'Continue' to Enable following URLs."
-msgstr[0] "Noklikšķiniet 'Turpināt', lai dzēstu norādīto starpniekserveri."
-msgstr[1] "Noklikšķiniet 'Turpināt', lai dzēstu norādīto starpniekserveri."
-msgstr[2] "Noklikšķiniet 'Turpināt', lai dzēstu norādītos starpniekserverus."
+msgstr[0] "Noklikšķiniet 'Turpināt', lai iespējotu norādīto URL vietni."
+msgstr[1] "Noklikšķiniet 'Turpināt', lai iespējotu norādīto URL vietni."
+msgstr[2] "Noklikšķiniet 'Turpināt', lai iespējotu norādītās URL vietnes."
 
 #: webseer.php:216
-#, fuzzy
-#| msgid "Enable"
 msgid "Enable URL"
 msgid_plural "Enable URLs"
-msgstr[0] "Iespējot"
-msgstr[1] "Iespējot"
-msgstr[2] "Iespējot"
+msgstr[0] "Iespējot URL vietni"
+msgstr[1] "Iespējot URL vietni"
+msgstr[2] "Iespējot URL vietnes"
 
 #: webseer.php:220
-#, fuzzy
-#| msgid "Click 'Continue' to delete the following Proxy."
-#| msgid_plural "Click 'Continue' to delete following Proxies."
 msgid "Click 'Continue' to Duplicate the following URL."
 msgid_plural "Click 'Continue' to Duplicate following URLs."
-msgstr[0] "Noklikšķiniet 'Turpināt', lai dzēstu norādīto starpniekserveri."
-msgstr[1] "Noklikšķiniet 'Turpināt', lai dzēstu norādīto starpniekserveri."
-msgstr[2] "Noklikšķiniet 'Turpināt', lai dzēstu norādītos starpniekserverus."
+msgstr[0] "Noklikšķiniet 'Turpināt', lai izveidotu norādīto URL vietnes kopiju."
+msgstr[1] "Noklikšķiniet 'Turpināt', lai izveidotu norādīto URL vietnes kopiju."
+msgstr[2] "Noklikšķiniet 'Turpināt', lai izveidotu norādītās URL vietņu kopijas."
 
 #: webseer.php:225
-#, fuzzy
-#| msgid "Duplicate"
 msgid "Duplicate URL"
 msgid_plural "Duplicate URLs"
-msgstr[0] "Dublēt"
-msgstr[1] "Dublēt"
-msgstr[2] "Dublēt"
+msgstr[0] "Izveidot URL vietnes kopiju"
+msgstr[1] "Izveidot URL vietnes kopiju"
+msgstr[2] "Izveidot URL vietņu kopijas"
 
 #: webseer.php:337
 #, php-format
 msgid "The Service Check history was purged for %s"
-msgstr ""
+msgstr "Pakalpojuma pārbaudes vēsture tika iztīrīta %s"
 
 #: webseer.php:350 webseer_servers.php:670
 #, php-format
@@ -561,21 +509,19 @@ msgstr "Kopā"
 
 #: webseer.php:620
 msgid "Urls"
-msgstr ""
+msgstr "URL vietnes"
 
 #: webseer.php:644
 msgid "Service Down"
-msgstr ""
+msgstr "Pakalpojums neaktīvs"
 
 #: webseer.php:644
 msgid "Service Restored"
-msgstr ""
+msgstr "Pakalpojums atjaunots"
 
 #: webseer.php:655
-#, fuzzy
-#| msgid "No Events in History"
 msgid "No Service Check Events in History"
-msgstr "Vēsturē nav notikumu"
+msgstr "Vēsturē nav pakalpojumu pārbaudes notikumu"
 
 #: webseer.php:756 webseer_servers.php:516
 msgid "Actions"
@@ -603,22 +549,16 @@ msgid "Last Check"
 msgstr "Pēdējā pārbaude"
 
 #: webseer.php:845
-#, fuzzy
-#| msgid "Enable Service Check"
 msgid "Edit Service Check"
-msgstr "Iespējot pakalpojuma pārbaudi"
+msgstr "Rediģēt pakalpojuma pārbaudi"
 
 #: webseer.php:854
-#, fuzzy
-#| msgid "Enable Service Check"
 msgid "Disable Service Check"
-msgstr "Iespējot pakalpojuma pārbaudi"
+msgstr "Atspējot pakalpojuma pārbaudi"
 
 #: webseer.php:859
-#, fuzzy
-#| msgid "Web Service Checks"
 msgid "View Service Check History"
-msgstr "Tīmekļa pakalpojuma pārbaudes"
+msgstr "Skatīt pakalpojuma pārbaudes vēsturi"
 
 #: webseer.php:868
 #, php-format
@@ -646,10 +586,8 @@ msgid "No Servers Found"
 msgstr "Nav atrasts neviens serveris"
 
 #: webseer.php:986
-#, fuzzy
-#| msgid "WebSeer Service Checks"
 msgid "Webseer Service Checks"
-msgstr "WebSeer pakalpojuma pārbaudes"
+msgstr "Webseer pakalpojuma pārbaudes"
 
 #: webseer.php:1001 webseer_servers.php:735
 msgid "State"
@@ -670,7 +608,6 @@ msgstr "Noklusējuma"
 
 #: webseer.php:1046 webseer.php:1138 webseer_proxies.php:365
 #: webseer_servers.php:858
-#, fuzzy
 msgid "Go"
 msgstr "Doties"
 
@@ -680,24 +617,20 @@ msgid "Clear"
 msgstr "Notīrīt"
 
 #: webseer.php:1108
-#, fuzzy
-#| msgid "WebSeer Service Checks"
 msgid "Webseer Service Check History"
-msgstr "WebSeer pakalpojuma pārbaudes"
+msgstr "Webseer pakalpojuma pārbaudes vēsture"
 
 #: webseer.php:1116 webseer_servers.php:836
-#, fuzzy
-#| msgid "Search"
 msgid "Date Search"
-msgstr "Meklēt"
+msgstr "Datuma meklēšana"
 
 #: webseer.php:1122 webseer_servers.php:842
 msgid "Entries"
-msgstr ""
+msgstr "Ieraksti"
 
 #: webseer.php:1140
 msgid "Purge Events"
-msgstr ""
+msgstr "Iztīrīt notikumus"
 
 #: webseer_proxies.php:103
 msgid "Click 'Continue' to delete the following Proxy."
@@ -739,52 +672,39 @@ msgid "Webseer Proxy Management"
 msgstr "Webseer starpniekserveru pārvaldība"
 
 #: webseer_servers.php:152
-#, fuzzy
-#| msgid "Click 'Continue' to delete the following Proxy."
-#| msgid_plural "Click 'Continue' to delete following Proxies."
 msgid "Click 'Continue' to Delete the following Server."
 msgid_plural "Click 'Continue' to Delete following Servers."
-msgstr[0] "Noklikšķiniet 'Turpināt', lai dzēstu norādīto starpniekserveri."
-msgstr[1] "Noklikšķiniet 'Turpināt', lai dzēstu norādīto starpniekserveri."
-msgstr[2] "Noklikšķiniet 'Turpināt', lai dzēstu norādītos starpniekserverus."
+msgstr[0] "Noklikšķiniet 'Turpināt', lai dzēstu norādīto serveri."
+msgstr[1] "Noklikšķiniet 'Turpināt', lai dzēstu norādīto serveri."
+msgstr[2] "Noklikšķiniet 'Turpināt', lai dzēstu norādītos serverus."
 
 #: webseer_servers.php:157
-#, fuzzy
-#| msgid "WebSeer Servers"
 msgid "Delete Server"
 msgid_plural "Delete Servers"
-msgstr[0] "WebSeer serveri"
-msgstr[1] "WebSeer serveri"
-msgstr[2] "WebSeer serveri"
+msgstr[0] "Dzēst serveri"
+msgstr[1] "Dzēst serveri"
+msgstr[2] "Dzēst serverus"
 
 #: webseer_servers.php:161
-#, fuzzy
-#| msgid "Click 'Continue' to delete the following Proxy."
-#| msgid_plural "Click 'Continue' to delete following Proxies."
 msgid "Click 'Continue' to Disable the following Server."
 msgid_plural "Click 'Continue' to Disable following Servers."
-msgstr[0] "Noklikšķiniet 'Turpināt', lai dzēstu norādīto starpniekserveri."
-msgstr[1] "Noklikšķiniet 'Turpināt', lai dzēstu norādīto starpniekserveri."
-msgstr[2] "Noklikšķiniet 'Turpināt', lai dzēstu norādītos starpniekserverus."
+msgstr[0] "Noklikšķiniet 'Turpināt', lai atspējotu norādīto serveri."
+msgstr[1] "Noklikšķiniet 'Turpināt', lai atspējotu norādīto serveri."
+msgstr[2] "Noklikšķiniet 'Turpināt', lai atspējotu norādītos serverus."
 
 #: webseer_servers.php:166 webseer_servers.php:548
-#, fuzzy
-#| msgid "Enable Server"
 msgid "Disable Server"
 msgid_plural "Disable Servers"
-msgstr[0] "Iespējot serveri"
-msgstr[1] "Iespējot serveri"
-msgstr[2] "Iespējot serveri"
+msgstr[0] "Atspējot serveri"
+msgstr[1] "Atspējot serveri"
+msgstr[2] "Atspējot serverus"
 
 #: webseer_servers.php:170
-#, fuzzy
-#| msgid "Click 'Continue' to delete the following Proxy."
-#| msgid_plural "Click 'Continue' to delete following Proxies."
 msgid "Click 'Continue' to Enable the following Server."
 msgid_plural "Click 'Continue' to Enable following Servers."
-msgstr[0] "Noklikšķiniet 'Turpināt', lai dzēstu norādīto starpniekserveri."
-msgstr[1] "Noklikšķiniet 'Turpināt', lai dzēstu norādīto starpniekserveri."
-msgstr[2] "Noklikšķiniet 'Turpināt', lai dzēstu norādītos starpniekserverus."
+msgstr[0] "Noklikšķiniet 'Turpināt', lai iespējotu norādīto serveri."
+msgstr[1] "Noklikšķiniet 'Turpināt', lai iespējotu norādīto serveri."
+msgstr[2] "Noklikšķiniet 'Turpināt', lai iespējotu norādītos serverus."
 
 #: webseer_servers.php:446
 msgid "No Events in History"
@@ -799,16 +719,12 @@ msgid "This Host"
 msgstr "Šis resursdators"
 
 #: webseer_servers.php:539
-#, fuzzy
-#| msgid "Edit Site"
 msgid "Edit Server"
-msgstr "Rediģēt vietni"
+msgstr "Rediģēt serveri"
 
 #: webseer_servers.php:553
-#, fuzzy
-#| msgid "View History"
 msgid "View Server History"
-msgstr "Skatīt vēsturi"
+msgstr "Skatīt servera vēsturi"
 
 #: webseer_servers.php:560 webseer_servers.php:563 webseer_servers.php:564
 msgid "No"
@@ -819,20 +735,16 @@ msgid "Yes"
 msgstr "Jā"
 
 #: webseer_servers.php:727
-#, fuzzy
-#| msgid "WebSeer Servers"
 msgid "Webseer Servers"
-msgstr "WebSeer serveri"
+msgstr "Webseer serveri"
 
 #: webseer_servers.php:741
 msgid "Triggered"
 msgstr "Nostrādājuši"
 
 #: webseer_servers.php:828
-#, fuzzy
-#| msgid "WebSeer Servers"
 msgid "Webseer Server History"
-msgstr "WebSeer serveri"
+msgstr "Webseer servera vēsture"
 
 #~ msgid "Edit Site"
 #~ msgstr "Rediģēt vietni"
