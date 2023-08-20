@@ -410,7 +410,7 @@ function webseer_replicate_out($data) {
 
 	if ($class == 'all') {
 		foreach($tables as $table) {
-			$tdata = syslog_db_fetch_assoc('SELECT * FROM ' . $table);
+			$tdata = db_fetch_assoc('SELECT * FROM ' . $table);
 			replicate_out_table($rcnn_id, $tdata, $table, $remote_poller_id);
 		}
 	}
