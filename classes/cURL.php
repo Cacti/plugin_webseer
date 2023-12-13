@@ -110,7 +110,7 @@ class cURL {
 		);
 
 		if (!empty($this->compression)) {
-			$options[CURLOPT_ENCODING] = $httpcompressions[$this->compresion];
+			$options[CURLOPT_ENCODING] = $httpcompressions[$this->compression];
 		}
 
 		$this->debug('cURL options: ' . clean_up_lines(var_export($options, true)));

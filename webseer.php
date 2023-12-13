@@ -448,7 +448,7 @@ function webseer_edit_url() {
 }
 
 /**
- *  This is a generic funtion for this page that makes sure that
+ *  This is a generic function for this page that makes sure that
  *  we have a good request.  We want to protect against people who
  *  like to create issues with Cacti.
 */
