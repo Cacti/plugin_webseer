@@ -34,5 +34,5 @@ you find a first search the Cacti forums for a solution before creating an issue
 in GitHub.
 
 -----------------------------------------------
-Copyright (c) 2004-2025 - The Cacti Group, Inc.
+Copyright (c) 2004-2026 - The Cacti Group, Inc.
 
