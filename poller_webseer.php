@@ -238,7 +238,7 @@ function plugin_webseer_update_servers() {
 		foreach ($servers as $server) {
 			$server['debug_type'] = 'Server';
 
-			$cc = new cURL(true, 'cookies.txt', $server['compression'], '', $server);;
+			$cc = new cURL(true, 'cookies.txt', $server['compression'], '', $server);
 
 			$data = array();
 			$data['action'] = 'HEARTBEAT';
