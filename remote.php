@@ -40,7 +40,7 @@ if (isset($_SERVER['X-Forwarded-For'])) {
 
 $servers = db_fetch_assoc('SELECT * FROM plugin_webseer_servers');
 
-$s = array();
+$s = [];
 
 foreach ($servers as $server) {
 	if ($server['ip'] == $remoteip) {
@@ -50,7 +50,7 @@ foreach ($servers as $server) {
 			case 'HEARTBEAT':
 				db_execute_prepared('UPDATE plugin_webseer_servers
 					SET lastcheck = ? WHERE ip = ?',
-					array(time(), $remoteip));
+					[time(), $remoteip]);
 
 				break;
 			case 'HOSTDOWN':
@@ -59,14 +59,14 @@ foreach ($servers as $server) {
 						(url_id, server, lastcheck, result, http_code, error, total_time, namelookup_time,
 						connect_time, redirect_time, redirect_count, size_download, speed_download)
 						VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)',
-						array(
+						[
 							get_nfilter_request_var('url_id'), get_nfilter_request_var('server'), get_nfilter_request_var('lastcheck'),
 							get_nfilter_request_var('result'), get_nfilter_request_var('http_code'),
 							get_nfilter_request_var('error'), get_nfilter_request_var('total_time'),
 							get_nfilter_request_var('namelookup_time'), get_nfilter_request_var('connect_time'),
 							get_nfilter_request_var('redirect_time'), get_nfilter_request_var('redirect_count'),
 							get_nfilter_request_var('size_download'), get_nfilter_request_var('speed_download')
-						)
+						]
 					);
 				}
 
@@ -76,7 +76,7 @@ foreach ($servers as $server) {
 					$id = get_filter_request_var('id');
 					db_execute_prepared('UPDATE plugin_webseer_urls
 						SET enabled = ? WHERE id = ?',
-						array(($action == 'ENABLEURL' ? 'on' : ''), $id));
+						[($action == 'ENABLEURL' ? 'on' : ''), $id]);
 				}
 
 				break;
@@ -84,12 +84,12 @@ foreach ($servers as $server) {
 			case 'ADDURL':
 				if (isset($_POST['id'])) {
 					get_filter_request_var('id', FILTER_VALIDATE_INT);
-					get_filter_request_var('url', FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => '/^([\w:/\.?=&-+]+)$/')));
+					get_filter_request_var('url', FILTER_VALIDATE_REGEXP, ['options' => ['regexp' => '/^([\w:/\.?=&-+]+)$/']]);
 					get_filter_request_var('notify_list', FILTER_VALIDATE_INT);
-					get_filter_request_var('notify_extra', FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => '/^([a-zA-Z0-9_@,\.\+]+)$/')));
+					get_filter_request_var('notify_extra', FILTER_VALIDATE_REGEXP, ['options' => ['regexp' => '/^([a-zA-Z0-9_@,\.\+]+)$/']]);
 					get_filter_request_var('downtrigger', FILTER_VALIDATE_INT);
-					get_filter_request_var('ip', FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => '/^([\d]{1,3}\.[\d]{1,3}\.[\d]{1,3}\.[\d]{1,3})$/')));
-					get_filter_request_var('display_name', FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => '/^([\w,\s]+)$/')));
+					get_filter_request_var('ip', FILTER_VALIDATE_REGEXP, ['options' => ['regexp' => '/^([\d]{1,3}\.[\d]{1,3}\.[\d]{1,3}\.[\d]{1,3})$/']]);
+					get_filter_request_var('display_name', FILTER_VALIDATE_REGEXP, ['options' => ['regexp' => '/^([\w,\s]+)$/']]);
 
 					$save['id']              = get_filter_request_var('id');
 					$save['enabled']         = get_nfilter_request_var('enabled', '');
@@ -114,12 +114,12 @@ foreach ($servers as $server) {
 							(id, enabled, requiresauth, proxy_server, checkcert, ip, display_name, notify_list, notify_accounts,
 							url, search, search_maint, search_failed, notify_extra, downtrigger)
 							VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
-							array(
+							[
 								$save['id'], $save['enabled'], $save['requiresauth'], $save['proxy_server'],
 								$save['checkcert'], $save['ip'], $save['display_name'], $save['notify_list'],
 								$save['notify_accounts'], $save['url'], $save['search'], $save['search_maint'],
 								$save['search_failed'], $save['notify_extra'], $save['downtrigger']
-							)
+							]
 						);
 					}
 				}
@@ -132,7 +132,7 @@ foreach ($servers as $server) {
 
 					db_execute_prepared('UPDATE plugin_webseer_servers
 						SET enabled = ? WHERE id = ?',
-						array(($action == 'ENABLESERVER' ? 1 : 0), $id));
+						[($action == 'ENABLESERVER' ? 1 : 0), $id]);
 				}
 
 				break;
@@ -141,7 +141,7 @@ foreach ($servers as $server) {
 				if (isset($_POST['id'])) {
 					$save['id']       = get_filter_request_var('id');
 					$save['enabled']  = (isset($_POST['enabled']) ? '1' : '0');
-					$save['master']   = (isset($_POST['master'])  ? '1' : '0');
+					$save['master']   = (isset($_POST['master']) ? '1' : '0');
 					$save['name']     = get_nfilter_request_var('name');
 					$save['url']      = get_nfilter_request_var('url');
 					$save['ip']       = get_nfilter_request_var('ip');
@@ -153,10 +153,10 @@ foreach ($servers as $server) {
 						db_execute_prepared('REPLACE INTO plugin_webseer_servers
 							(id, enabled, master, name, url, ip, location)
 							VALUES (?,?,?,?,?,?,?)',
-							array(
+							[
 								$save['id'], $save['enabled'], $save['master'],
 								$save['name'], $save['url'], $save['ip'], $save['location']
-							)
+							]
 						);
 					}
 				}
@@ -165,31 +165,36 @@ foreach ($servers as $server) {
 			case 'DELETEURL':
 				if (isset($_POST['id'])) {
 					$id = intval(get_filter_request_var('id'));
-					db_execute_prepared('DELETE FROM plugin_webseer_urls WHERE id = ?', array($id));
-					db_execute_prepared('DELETE FROM plugin_webseer_urls_log WHERE url_id = ?', array($id));
+					db_execute_prepared('DELETE FROM plugin_webseer_urls WHERE id = ?', [$id]);
+					db_execute_prepared('DELETE FROM plugin_webseer_urls_log WHERE url_id = ?', [$id]);
 				}
+
 				break;
 			case 'SETMASTER':
 				if (isset($_POST['ip'])) {
-					$ip = str_replace(array("'", '\\'), '', $_POST['ip']);
-					$row = db_fetch_row("SELECT * FROM plugin_webseer_servers WHERE ip = '$ip'");
+					$ip  = str_replace(["'", '\\'], '', $_POST['ip']);
+					$row = db_fetch_row_prepared('SELECT * FROM plugin_webseer_servers WHERE ip = ?', [$ip]);
+
 					if (isset($row['id'])) {
 						db_execute('UPDATE plugin_webseer_servers set master = 0');
-						db_execute_prepared('UPDATE plugin_webseer_servers set master = 1 WHERE ip = ?', array($ip));
+						db_execute_prepared('UPDATE plugin_webseer_servers set master = 1 WHERE ip = ?', [$ip]);
 					}
 				}
+
 				break;
 			case 'GETSERVERS':
 				print 'SERVERS=' . base64_encode(serialize($servers));
+
 				break;
 			case 'GETURLS':
 				$urls = db_fetch_assoc('SELECT * FROM plugin_webseer_urls');
+
 				foreach ($urls as $id => $u) {
 					$urls[$id]['debug'] = '';
 				}
 				print 'URLS=' . base64_encode(serialize($urls));
+
 				break;
 		}
 	}
 }
-

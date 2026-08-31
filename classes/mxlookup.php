@@ -23,12 +23,12 @@
 */
 
 class mxlookup {
-	var $dns_socket = NULL;
+	var $dns_socket = null;
 	var $QNAME      = '';
-	var $dns_packet = NULL;
+	var $dns_packet = null;
 	var $ANCOUNT    = 0;
 	var $cIx        = 0;
-	var $arrMX      = array();
+	var $arrMX      = [];
 	var $dns_repl_domain;
 
 	function __construct($domain, $dns = '4.2.2.1') {
@@ -55,6 +55,7 @@ class mxlookup {
 
 		for ($ic = 1; $ic <= $this->ANCOUNT; $ic++) {
 			$QTYPE = ord($this->gdi($this->cIx));
+
 			if ($QTYPE !== 1) {
 				print('[Record not returned]');
 				die();
@@ -62,13 +63,13 @@ class mxlookup {
 
 			$this->cIx += 8;
 
-			$ip = ord($this->gdi($this->cIx)) . '.' . ord($this->gdi($this->cIx)) . '.' . ord($this->gdi($this->cIx)) . '.' . ord($this->gdi($this->cIx));
+			$ip            = ord($this->gdi($this->cIx)) . '.' . ord($this->gdi($this->cIx)) . '.' . ord($this->gdi($this->cIx)) . '.' . ord($this->gdi($this->cIx));
 			$this->arrMX[] = $ip;
 
-			//$mxPref = ord($this->gdi($this->cIx));
-			//$this->parse_data($curmx);
-			//$this->arrMX[] = array('MX_Pref' => $mxPref, 'MX' => $curmx);
-			//$this->cIx += 3;
+			// $mxPref = ord($this->gdi($this->cIx));
+			// $this->parse_data($curmx);
+			// $this->arrMX[] = array('MX_Pref' => $mxPref, 'MX' => $curmx);
+			// $this->cIx += 3;
 		}
 	}
 
@@ -77,24 +78,25 @@ class mxlookup {
 	}
 
 	function parse_data(&$retval) {
-		$arName = array();
+		$arName = [];
 		$byte   = ord($this->gdi($this->cIx));
 
-		while($byte !== 0) {
-			if ($byte == 192) { //compressed
-				$tmpIx = $this->cIx;
+		while ($byte !== 0) {
+			if ($byte == 192) { // compressed
+				$tmpIx     = $this->cIx;
 				$this->cIx = ord($this->gdi($cIx));
-				$tmpName = $retval;
+				$tmpName   = $retval;
 				$this->parse_data($tmpName);
-				$retval=$retval . '.' . $tmpName;
-				$this->cIx = $tmpIx+1;
+				$retval    = $retval . '.' . $tmpName;
+				$this->cIx = $tmpIx + 1;
+
 				return;
 			}
 
-			$retval='';
+			$retval = '';
 			$bCount = $byte;
 
-			for($b=0;$b<$bCount;$b++) {
+			for ($b = 0; $b < $bCount; $b++) {
 				$retval .= $this->gdi($this->cIx);
 			}
 
@@ -105,29 +107,29 @@ class mxlookup {
 		$retval = join('.',$arName);
 	}
 
-	function gdi(&$cIx,$bytes=1) {
+	function gdi(&$cIx,$bytes = 1) {
 		$this->cIx++;
 
-		return(substr($this->dns_reply, $this->cIx-1, $bytes));
+		return (substr($this->dns_reply, $this->cIx - 1, $bytes));
 	}
 
 	function QNAME($domain) {
 		$dot_pos = 0;
 		$temp    = '';
 
-		while($dot_pos = strpos($domain, '.')) {
+		while ($dot_pos = strpos($domain, '.')) {
 			$temp         = substr($domain, 0, $dot_pos);
 			$domain       = substr($domain, $dot_pos + 1);
 			$this->QNAME .= chr(strlen($temp)) . $temp;
 		}
 
-		$this->QNAME .= chr(strlen($domain)) . $domain.chr(0);
+		$this->QNAME .= chr(strlen($domain)) . $domain . chr(0);
 	}
 
 	function gord($ln = 1) {
 		$reply = '';
 
-		for($i = 0; $i < $ln; $i++){
+		for ($i = 0; $i < $ln; $i++) {
 			$reply .= ord(substr($this->dns_reply, $this->cIx, 1));
 			$this->cIx++;
 		}
@@ -137,14 +139,14 @@ class mxlookup {
 
 	function pack_dns_packet() {
 		$this->dns_packet =
-			chr(0).chr(1).
-			chr(1).chr(0).
-			chr(0).chr(1).
-			chr(0).chr(0).
-			chr(0).chr(0).
-			chr(0).chr(0).
+			chr(0) . chr(1) .
+			chr(1) . chr(0) .
+			chr(0) . chr(1) .
+			chr(0) . chr(0) .
+			chr(0) . chr(0) .
+			chr(0) . chr(0) .
 			$this->QNAME .
-			chr(0).chr(1).
-			chr(0).chr(1);
+			chr(0) . chr(1) .
+			chr(0) . chr(1);
 	}
 }
