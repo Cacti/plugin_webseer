@@ -57,7 +57,7 @@ class cURL {
 		$this->cookies        = $cookies;
 		$this->debug          = $debug;
 
-		if ($this->cookies === true){
+		if ($this->cookies === true) {
 			$this->cookie($cookie);
 		}
 
@@ -67,7 +67,7 @@ class cURL {
 			$this->compression = 0;
 		}
 
-		$this->results        = array('result' => 0, 'time' => time(), 'error' => '');
+		$this->results        = ['result' => 0, 'time' => time(), 'error' => ''];
 		$this->bundle         = $config['base_path'] . '/plugins/webseer/ca-bundle.crt';
 	}
 
@@ -78,36 +78,38 @@ class cURL {
 			$this->cookie_file = $cookie_file;
 		} elseif (is_writable($cookie_file)) {
 			$this->cookie_file = $cookie_file;
-		}else{
+		} else {
 			$this->results['error'] = 'The cookie file could not be opened. Make sure this directory has the correct permissions';
 		}
 	}
 
-	function post($url, $data = array()) {
+	function post($url, $data = []) {
 		global $httpcompressions;
 
 		$this->debug('Executing Post Request');
 
-		$process = curl_init($url);
+		$process         = curl_init($url);
 		$this->headers[] = 'Content-type: application/x-www-form-urlencoded;charset=UTF-8';
 
-		$d = array();
+		$d = [];
+
 		foreach ($data as $i => $j) {
 			$d[] = "$i=$j";
 		}
 
 		$data = implode('&', $d);
 
-		$options = array(
-			CURLOPT_HTTPHEADER => $this->headers,
-			CURLOPT_HEADER => true,
-			CURLOPT_USERAGENT => $this->user_agent,
-			CURLOPT_TIMEOUT => 4,
-			CURLOPT_POSTFIELDS => $data,
-			CURLOPT_RETURNTRANSFER => true,
-			CURLOPT_FOLLOWLOCATION => true,
-			CURLOPT_POST => true,
-		);
+		$options = [
+			CURLOPT_HTTPHEADER      => $this->headers,
+			CURLOPT_HEADER          => true,
+			CURLOPT_USERAGENT       => $this->user_agent,
+			CURLOPT_TIMEOUT         => 4,
+			CURLOPT_POSTFIELDS      => $data,
+			CURLOPT_RETURNTRANSFER  => true,
+			CURLOPT_FOLLOWLOCATION  => true,
+			CURLOPT_REDIR_PROTOCOLS => CURLPROTO_HTTP | CURLPROTO_HTTPS,
+			CURLOPT_POST            => true,
+		];
 
 		if (!empty($this->compression)) {
 			$options[CURLOPT_ENCODING] = $httpcompressions[$this->compression];
@@ -135,15 +137,16 @@ class cURL {
 
 		$process = curl_init($url);
 
-		$options = array(
-			CURLOPT_HEADER         => true,
-			CURLOPT_USERAGENT      => $this->user_agent,
-			CURLOPT_RETURNTRANSFER => true,
-			CURLOPT_FOLLOWLOCATION => true,
-			CURLOPT_MAXREDIRS      => 4,
-			CURLOPT_TIMEOUT        => $this->host['timeout_trigger'],
-			CURLOPT_FAILONERROR    => ($this->host['requiresauth'] == '' ? true : false),
-		);
+		$options = [
+			CURLOPT_HEADER          => true,
+			CURLOPT_USERAGENT       => $this->user_agent,
+			CURLOPT_RETURNTRANSFER  => true,
+			CURLOPT_FOLLOWLOCATION  => true,
+			CURLOPT_REDIR_PROTOCOLS => CURLPROTO_HTTP | CURLPROTO_HTTPS,
+			CURLOPT_MAXREDIRS       => 4,
+			CURLOPT_TIMEOUT         => $this->host['timeout_trigger'],
+			CURLOPT_FAILONERROR     => ($this->host['requiresauth'] == '' ? true : false),
+		];
 
 		if (!empty($this->compression)) {
 			$options[CURLOPT_ENCODING] = $httpcompressions[$this->compression];
@@ -152,50 +155,50 @@ class cURL {
 		// CURLOPT_ENCODING  => $this->compression,
 		//     CURLOPT_VERBOSE => 1,
 
-
 		// if ($this->cookies == TRUE) CURLOPT_COOKIEFILE => $this->cookie_file,
 		// if ($this->cookies == TRUE) CURLOPT_COOKIEJAR => $this->cookie_file,
-
 
 		// CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_0,
 		// CURLOPT_SSLVERSION => 3,  // FORCE SSL v3
 
 		if ($this->proxy_hostname != '') {
 			$port_http = intval($this->proxy_http_port);
+
 			if ($port_http < 0 || $port_http > 65535) {
-				$port_http = 80;
+				$port_http             = 80;
 				$this->proxy_http_port = $port_http;
 			}
 
 			$port_https = intval($this->proxy_https_port);
+
 			if ($port_https < 0 || $port_https > 65535) {
-				$port_https = 443;
+				$port_https             = 443;
 				$this->proxy_https_port = $port_http;
 			}
 
 			$is_https = (substr(strtolower($url), 0, 5) == 'https');
 
-			$proxy_opts = array(
-				CURLOPT_UNRESTRICTED_AUTH => true,
+			$proxy_opts = [
+				CURLOPT_UNRESTRICTED_AUTH => false,
 				CURLOPT_PROXY             => $this->proxy_hostname,
 				CURLOPT_PROXYPORT         => $is_https ? $port_https : $port_http,
-			);
+			];
 
 			if ($this->proxy_username != '') {
 				$proxy_opts[CURLOPT_PROXYUSERPWD] = $this->proxy_username . ':' . $this->proxy_password;
 			}
 		} else {
-			$proxy_opts = array();
+			$proxy_opts = [];
 		}
 
 		// Disable Cert checking for now
 		if ($this->host['checkcert'] == '') {
-			$cert_opts = array(
-				CURLOPT_SSL_VERIFYPEER => FALSE,
-				CURLOPT_SSL_VERIFYHOST => FALSE,
-			);
+			$cert_opts = [
+				CURLOPT_SSL_VERIFYPEER => false,
+				CURLOPT_SSL_VERIFYHOST => false,
+			];
 		} else {
-			$cert_opts = array();
+			$cert_opts = [];
 		}
 
 		$options += $proxy_opts;
@@ -206,14 +209,15 @@ class cURL {
 
 		$data = curl_exec($process);
 
-		$this->data = str_replace(array("'", "\\"), array(''), $data);
+		$this->data = str_replace(["'", '\\'], [''], $data);
 
-		$this->results['options'] = curl_getinfo($process);
+		$this->results['options']                = curl_getinfo($process);
 		$this->results['options']['compression'] = $this->compression;
 
 		$errnum = curl_errno($process);
 
 		$this->debug('cURL errno: ' . $errnum);
+
 		if ($errnum) {
 			$this->debug('cURL error: ' . curl_error($process));
 		}
@@ -222,7 +226,7 @@ class cURL {
 			case 0:
 				break;
 			default:
-				$this->results['error'] = 'HTTP ERROR: ' . str_replace(array('"', "'"), '', (curl_error($process)));
+				$this->results['error'] = 'HTTP ERROR: ' . str_replace(['"', "'"], '', (curl_error($process)));
 
 				break;
 		}
@@ -236,10 +240,10 @@ class cURL {
 			if (strpos($data, $this->host['search_failed']) !== false) {
 				$this->results['error'] = 'Failure Search string found!';
 			} else {
-				$this->results['error'] = '';
+				$this->results['error']  = '';
 				$this->results['result'] = 1;
 			}
-		}elseif ($errnum == 0) {
+		} elseif ($errnum == 0) {
 			$this->debug('Processing search');
 
 			if ($this->host['search'] != '') {
