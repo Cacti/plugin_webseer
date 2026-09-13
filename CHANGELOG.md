@@ -2,6 +2,8 @@
 
 --- 3.2 ---
 
+* security: Identify remote webseer servers by their real connection address, not a forwarded header
+
 * issue: Correct issue with enable/disable service checks and servers
 
 * issue: Correct issues with page refresh

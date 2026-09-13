@@ -28,15 +28,10 @@ require_once('./include/cli_check.php');
 include_once($config['base_path'] . '/lib/functions.php');
 include_once($config['base_path'] . '/plugins/webseer/includes/functions.php');
 
-if (isset($_SERVER['X-Forwarded-For'])) {
-	$remoteip = $_SERVER['X-Forwarded-For'];
-} elseif (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-	$remoteip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-} elseif (isset($_SERVER['REMOTE_ADDR'])) {
-	$remoteip = $_SERVER['REMOTE_ADDR'];
-} else {
-	$remoteip = '127.0.0.1';
-}
+// Identify the peer by its real connection address. A forwarded header is set
+// by the client and must not be trusted to authorize the server-to-server
+// actions below.
+$remoteip = $_SERVER['REMOTE_ADDR'] ?? '127.0.0.1';
 
 $servers = db_fetch_assoc('SELECT * FROM plugin_webseer_servers');
 
