@@ -4,12 +4,12 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2023-02-05 13:24-0500\nPO-Revision-Date: 2026-03-16 13:18+0000\nLast-Translator: Daniel Nylander <daniel@danielnylander.se>\nLanguage-Team: Swedish <https://translate.cacti.net/projects/cacti/webseer/sv/>\nLanguage: sv-SE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2023-02-05 13:24-0500\nPO-Revision-Date: 2026-09-12 08:18+0000\nLast-Translator: Daniel Nylander <daniel@danielnylander.se>\nLanguage-Team: Swedish <https://translate.cacti.net/projects/cacti/webseer/sv/>\nLanguage: sv-SE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
 
 #: includes/arrays.php:78 includes/arrays.php:324 includes/arrays.php:419
 #: webseer.php:400
 msgid "None"
-msgstr "Ingen"
+msgstr "inget"
 
 #: includes/arrays.php:93 webseer_servers.php:753
 #, php-format
@@ -74,7 +74,7 @@ msgstr "HTTP-port"
 
 #: includes/arrays.php:181
 msgid "The HTTP Proxy Port."
-msgstr "Port för HTTP-proxy."
+msgstr "HTTP Proxy-port."
 
 #: includes/arrays.php:189
 msgid "HTTPS Port"
@@ -82,7 +82,7 @@ msgstr "HTTPS-port"
 
 #: includes/arrays.php:190
 msgid "The HTTPS Proxy Port."
-msgstr "Port för HTTPS-proxy."
+msgstr "HTTPS-proxyporten."
 
 #: includes/arrays.php:198
 msgid "User Name"
@@ -116,7 +116,7 @@ msgstr[1] "Aktivera servrar"
 
 #: includes/arrays.php:239
 msgid "Uncheck this box to disabled this server from checking urls."
-msgstr "Avmarkera den här rutan om du vill inaktivera servern från att kontrollera URLer."
+msgstr "Avmarkera den här rutan om du vill inaktivera servern från att kontrollera webbadresser."
 
 #: includes/arrays.php:245
 msgid "Is this server the local server?"
@@ -128,15 +128,15 @@ msgstr "Markera den här rutan om den aktuella servern du är ansluten till är 
 
 #: includes/arrays.php:252
 msgid "Master Server"
-msgstr "Huvudserver"
+msgstr "Master Server"
 
 #: includes/arrays.php:253
 msgid "Sets this server to the Master server.  The Master server handles all Email operations"
-msgstr "Gör den här servern till huvudserver.  Huvudservern hanterar alla e-poståtgärder"
+msgstr "Gör den här servern till Master-server.  Master-servern hanterar alla e-postoperationer"
 
 #: includes/arrays.php:259 includes/arrays.php:313 webseer_servers.php:518
 msgid "IP Address"
-msgstr "IP-adress"
+msgstr "IP adress"
 
 #: includes/arrays.php:260
 msgid "IP Address to connect to this server"
@@ -161,19 +161,19 @@ msgstr "Plats för denna server"
 
 #: includes/arrays.php:291
 msgid "Service Check Name"
-msgstr "Namn för tjänstekontroll"
+msgstr "Service Check Namn"
 
 #: includes/arrays.php:292
 msgid "The name that is displayed for this Service Check, and is included in any Alert notifications."
-msgstr "Det namn som visas för denna tjänstekontroll och som ingår i eventuella varningsmeddelanden."
+msgstr "Det namn som visas för denna servicekontroll och som ingår i eventuella varningsmeddelanden."
 
 #: includes/arrays.php:298 webseer.php:850
 msgid "Enable Service Check"
-msgstr "Aktivera tjänstekontroll"
+msgstr "Aktivera servicekontroll"
 
 #: includes/arrays.php:299
 msgid "Uncheck this box to disabled this url from being checked."
-msgstr "Avmarkera den här rutan för att förhindra att den här URLen kontrolleras."
+msgstr "Avmarkera den här rutan för att förhindra att den här webbadressen kontrolleras."
 
 #: includes/arrays.php:306
 msgid "The URL to Monitor"
@@ -181,7 +181,7 @@ msgstr "URL:en som ska övervakas"
 
 #: includes/arrays.php:314
 msgid "Enter an IP address to connect to.  Leaving blank will use DNS Resolution instead."
-msgstr "Ange en IP-adress att ansluta till.  Om du lämnar den tom används DNS-uppslag istället."
+msgstr "Ange en IP-adress att ansluta till.  Om du lämnar den tom används DNS Resolution istället."
 
 #: includes/arrays.php:321
 msgid "Proxy Server"
@@ -193,7 +193,7 @@ msgstr "Om denna anslutningstext kräver en proxy, välj den här.  Annars välj
 
 #: includes/arrays.php:329 webseer.php:776
 msgid "Compression"
-msgstr "Komprimering"
+msgstr "Kompression"
 
 #: includes/arrays.php:333
 msgid "What compression does the server require?  Most servers should not need this, but some will not redirect properly without it."
@@ -201,7 +201,7 @@ msgstr "Vilken komprimering kräver servern?  De flesta servrar bör inte behöv
 
 #: includes/arrays.php:338
 msgid "Available Checks"
-msgstr "Tillgängliga kontroller"
+msgstr "Tillgängliga checkar"
 
 #: includes/arrays.php:342
 msgid "Requires Authentication"
@@ -209,7 +209,7 @@ msgstr "Kräver autentisering"
 
 #: includes/arrays.php:343
 msgid "Check this box if the site will normally return a 401 Error as it requires a username and password."
-msgstr "Markera den här rutan om platsen normalt ska returnera ett 401-fel eftersom den kräver användarnamn och lösenord."
+msgstr "Markera den här rutan om webbplatsen normalt ska returnera ett 401-fel eftersom den kräver användarnamn och lösenord."
 
 #: includes/arrays.php:349
 msgid "Check Certificate"
@@ -221,7 +221,7 @@ msgstr "Om du använder SSL, markera den här rutan om du vill validera certifik
 
 #: includes/arrays.php:356
 msgid "Notification Timing"
-msgstr "Tidpunkt för notifiering"
+msgstr "Tidpunkt för anmälan"
 
 #: includes/arrays.php:359
 msgid "Trigger"
@@ -229,19 +229,19 @@ msgstr "Utlösare"
 
 #: includes/arrays.php:363
 msgid "How many minutes the URL must be down before it will send an alert.  After an alert is sent, in order for a 'Site Recovering' Email to be send, it must also be up this number of minutes."
-msgstr "Hur många minuter URLen måste vara nere innan den skickar en varning.  Efter att en varning har skickats måste den också vara uppe det här antalet minuter för att ett e-postmeddelande om att webbplatsen återhämtar sig ska kunna skickas."
+msgstr "Hur många minuter webbadressen måste vara nere innan den skickar en varning.  Efter att en varning har skickats måste den också vara uppe det här antalet minuter för att ett e-postmeddelande om att webbplatsen återhämtar sig ska kunna skickas."
 
 #: includes/arrays.php:367
 msgid "Time Out"
-msgstr "Tidsgräns"
+msgstr "Time Out"
 
 #: includes/arrays.php:371
 msgid "How many seconds to allow the page to timeout before reporting it as down."
-msgstr "Hur många sekunder ska sidan få överstiga tidsgränsen innan den rapporteras som nere."
+msgstr "Hur många sekunder ska sidan få ta timeout innan den rapporteras som nere."
 
 #: includes/arrays.php:376
 msgid "Verification Strings"
-msgstr "Verifieringssträngar"
+msgstr "Verifiering Strängar"
 
 #: includes/arrays.php:380
 msgid "Response Search String"
@@ -257,7 +257,7 @@ msgstr "Söksträng för svar - Underhållssida"
 
 #: includes/arrays.php:389
 msgid "This is the string to search for on the Maintenance Page.  The Service Check will check for this string if the above string is not found.  If found, it means that the Web Service is under maintenance."
-msgstr "Detta är den sträng som ska sökas efter på underhållssidan.  Tjänstekontrollen kommer att söka efter denna sträng om ovanstående sträng inte hittas.  Om den hittas betyder det att webbtjänsten är under underhåll."
+msgstr "Detta är den sträng som ska sökas efter på underhållssidan.  Service Check kommer att söka efter denna sträng om ovanstående sträng inte hittas.  Om den hittas betyder det att webbtjänsten är under underhåll."
 
 #: includes/arrays.php:396
 msgid "Response Search String - Failed"
@@ -265,15 +265,15 @@ msgstr "Söksträng för svar - Misslyckades"
 
 #: includes/arrays.php:397
 msgid "This is the string to search for a known failure in the Web Service response.  The Service Check will only alert if this string is found, ignoring any timeout issues and the search strings above."
-msgstr "Detta är den sträng som ska användas för att söka efter ett känt fel i webbtjänstens svar.  Tjänstekontrollen varnar endast om denna sträng hittas, och ignorerar eventuella tidsgränsproblem och söksträngarna ovan."
+msgstr "Detta är den sträng som ska användas för att söka efter ett känt fel i webbtjänstens svar.  Servicekontrollen varnar endast om denna sträng hittas, och ignorerar eventuella timeoutproblem och söksträngarna ovan."
 
 #: includes/arrays.php:404
 msgid "Notification Settings"
-msgstr "Aviseringsinställningar"
+msgstr "Inställningar för aviseringar"
 
 #: includes/arrays.php:407
 msgid "Notify Format"
-msgstr "Meddelandeformat"
+msgstr "Meddela format"
 
 #: includes/arrays.php:409
 msgid "This is the format to use when sending the notification email"
@@ -281,15 +281,15 @@ msgstr "Detta är det format som ska användas när du skickar e-postmeddelandet
 
 #: includes/arrays.php:414
 msgid "Notification List"
-msgstr "Aviseringslista"
+msgstr "Notifieringslista"
 
 #: includes/arrays.php:416
 msgid "Use this Notification List for those to be notified when this website goes down."
-msgstr "Använd denna aviseringslista för dem som ska meddelas när webbplatsen går ner."
+msgstr "Använd denna Notifieringslista för dem som ska meddelas när webbplatsen går ner."
 
 #: includes/arrays.php:422
 msgid "Notify Accounts"
-msgstr "Aviseringskonton"
+msgstr "Meddela konton"
 
 #: includes/arrays.php:424
 msgid "This is a listing of accounts that will be notified when this website goes down."
@@ -297,7 +297,7 @@ msgstr "Detta är en lista över konton som kommer att meddelas när denna webbp
 
 #: includes/arrays.php:429
 msgid "Extra Alert Emails"
-msgstr "Extra larmmeddelanden"
+msgstr "Extra varningsmejl"
 
 #: includes/arrays.php:433
 msgid "You may specify here extra Emails to receive alerts for this URL (comma separated)"
@@ -314,7 +314,7 @@ msgstr "Servrar"
 
 #: includes/functions.php:36 webseer_proxies.php:292 webseer_proxies.php:349
 msgid "Proxies"
-msgstr "Proxyservrar"
+msgstr "Proxies"
 
 #: includes/functions.php:42 includes/functions.php:45
 msgid "Log History"
@@ -322,15 +322,15 @@ msgstr "Logghistorik"
 
 #: poller_webseer.php:186
 msgid "Cacti Master"
-msgstr "Cacti-huvudserver"
+msgstr "Cacti-mästare"
 
 #: poller_webseer.php:189
 msgid "Cacti Remote Server"
-msgstr "Cacti-fjärrserver"
+msgstr "Cacti fjärrserver"
 
 #: setup.php:33
 msgid "Web Service Check Admin"
-msgstr "Administrera webbtjänstkontroll"
+msgstr "Web Service Check Admin"
 
 #: setup.php:309
 msgid "Management"
@@ -342,15 +342,15 @@ msgstr "Kontroller av webbtjänster"
 
 #: setup.php:319
 msgid "WebSeer Service Checks"
-msgstr "Kontroller av WebSeer-tjänster"
+msgstr "Webseer Service Checks"
 
 #: setup.php:326
 msgid "Service Check Edit"
-msgstr "Redigera tjänstekontroll"
+msgstr "Service Check Edit"
 
 #: setup.php:333
 msgid "Service Check Save"
-msgstr "Spara tjänstekontroll"
+msgstr "Service Kontrollera Spara"
 
 #: setup.php:340
 msgid "WebSeer Servers"
@@ -358,7 +358,7 @@ msgstr "WebSeer-servrar"
 
 #: setup.php:347
 msgid "Server Edit"
-msgstr "Serverredigering"
+msgstr "Server Redigera"
 
 #: setup.php:354
 msgid "Save Server"
@@ -370,7 +370,7 @@ msgstr "Proxyservrar för WebSeer"
 
 #: setup.php:368
 msgid "Proxie Edit"
-msgstr "Proxyredigering"
+msgstr "Proxie Edit"
 
 #: setup.php:375
 msgid "Save Proxy"
@@ -380,7 +380,7 @@ msgstr "Spara proxy"
 msgid "Click 'Continue' to Delete the following URL."
 msgid_plural "Click 'Continue' to Delete following URLs."
 msgstr[0] "Klicka på \"Fortsätt\" för att ta bort följande URL."
-msgstr[1] "Klicka på \"Fortsätt\" för att ta bort följande URLer."
+msgstr[1] "Klicka på \"Fortsätt\" för att ta bort följande webbadresser."
 
 #: webseer.php:198 webseer.php:207 webseer.php:216 webseer.php:225
 #: webseer_proxies.php:108 webseer_servers.php:157 webseer_servers.php:166
@@ -398,48 +398,48 @@ msgstr "Fortsätt"
 msgid "Delete URL"
 msgid_plural "Delete URLs"
 msgstr[0] "Ta bort URL"
-msgstr[1] "Ta bort URLer"
+msgstr[1] "Ta bort webbadresser"
 
 #: webseer.php:202
 msgid "Click 'Continue' to Disable the following URL."
 msgid_plural "Click 'Continue' to Disable following URLs."
 msgstr[0] "Klicka på \"Fortsätt\" för att inaktivera följande URL."
-msgstr[1] "Klicka på \"Fortsätt\" för att inaktivera följande URLer."
+msgstr[1] "Klicka på \"Fortsätt\" för att inaktivera följande webbadresser."
 
 #: webseer.php:207
 msgid "Disable URL"
 msgid_plural "Disable URLs"
 msgstr[0] "Inaktivera URL"
-msgstr[1] "Inaktivera URLer"
+msgstr[1] "Inaktivera webbadresser"
 
 #: webseer.php:211
 msgid "Click 'Continue' to Enable the following URL."
 msgid_plural "Click 'Continue' to Enable following URLs."
 msgstr[0] "Klicka på \"Fortsätt\" för att aktivera följande URL."
-msgstr[1] "Klicka på \"Fortsätt\" för att aktivera följande URLer."
+msgstr[1] "Klicka på \"Fortsätt\" för att aktivera följande webbadresser."
 
 #: webseer.php:216
 msgid "Enable URL"
 msgid_plural "Enable URLs"
 msgstr[0] "Aktivera URL"
-msgstr[1] "Aktivera URLer"
+msgstr[1] "Aktivera webbadresser"
 
 #: webseer.php:220
 msgid "Click 'Continue' to Duplicate the following URL."
 msgid_plural "Click 'Continue' to Duplicate following URLs."
 msgstr[0] "Klicka på \"Fortsätt\" för att duplicera följande URL."
-msgstr[1] "Klicka på \"Fortsätt\" för att duplicera följande URLer."
+msgstr[1] "Klicka på \"Fortsätt\" för att duplicera följande webbadresser."
 
 #: webseer.php:225
 msgid "Duplicate URL"
 msgid_plural "Duplicate URLs"
 msgstr[0] "Duplicerad URL"
-msgstr[1] "Duplicerade URLer"
+msgstr[1] "Duplicerade webbadresser"
 
 #: webseer.php:337
 #, php-format
 msgid "The Service Check history was purged for %s"
-msgstr "Tjänstekontrollens historik rensades för %s"
+msgstr "Servicekontrollens historik rensades för %s"
 
 #: webseer.php:350 webseer_servers.php:670
 #, php-format
@@ -500,19 +500,19 @@ msgstr "Totalt"
 
 #: webseer.php:620
 msgid "Urls"
-msgstr "URLer"
+msgstr "Urnor"
 
 #: webseer.php:644
 msgid "Service Down"
-msgstr "Tjänsten nere"
+msgstr "Service ned"
 
 #: webseer.php:644
 msgid "Service Restored"
-msgstr "Tjänsten återställd"
+msgstr "Service återställd"
 
 #: webseer.php:655
 msgid "No Service Check Events in History"
-msgstr "Inga tjänstekontrollhändelser i historiken"
+msgstr "Ingen servicekontroll Händelser i historien"
 
 #: webseer.php:756 webseer_servers.php:516
 msgid "Actions"
@@ -529,27 +529,27 @@ msgstr "Aktiverad"
 
 #: webseer.php:786
 msgid "Auth"
-msgstr "Autentisering"
+msgstr "Aut"
 
 #: webseer.php:811
 msgid "Timeout"
-msgstr "Tidsgräns"
+msgstr "Timeout"
 
 #: webseer.php:816 webseer_servers.php:521
 msgid "Last Check"
-msgstr "Senaste kontroll"
+msgstr "Senaste kontrollen"
 
 #: webseer.php:845
 msgid "Edit Service Check"
-msgstr "Redigera tjänstekontroll"
+msgstr "Redigera Service Check"
 
 #: webseer.php:854
 msgid "Disable Service Check"
-msgstr "Inaktivera tjänstekontroll"
+msgstr "Avaktivera servicekontroll"
 
 #: webseer.php:859
 msgid "View Service Check History"
-msgstr "Visa historik för tjänstekontroll"
+msgstr "Visa historik för servicekontroll"
 
 #: webseer.php:868
 #, php-format
@@ -558,7 +558,7 @@ msgstr "DNS: Server %s - A-post för %s"
 
 #: webseer.php:878
 msgid "N/A"
-msgstr "Inte tillgänglig"
+msgstr "N/A"
 
 #: webseer.php:880 webseer_servers.php:436
 msgid "Down"
@@ -578,15 +578,15 @@ msgstr "Inga servrar hittades"
 
 #: webseer.php:986
 msgid "Webseer Service Checks"
-msgstr "Kontroller av WebSeer-tjänster"
+msgstr "Webseer Service Checks"
 
 #: webseer.php:1001 webseer_servers.php:735
 msgid "State"
-msgstr "Tillstånd"
+msgstr "Län"
 
 #: webseer.php:1005 webseer_servers.php:739
 msgid "Any"
-msgstr "Alla"
+msgstr "Vilken som helst"
 
 #: webseer.php:1014 webseer_servers.php:748
 msgid "Refresh"
@@ -600,7 +600,7 @@ msgstr "Standard"
 #: webseer.php:1046 webseer.php:1138 webseer_proxies.php:365
 #: webseer_servers.php:858
 msgid "Go"
-msgstr "Start"
+msgstr "Utför"
 
 #: webseer.php:1047 webseer.php:1139 webseer_proxies.php:366
 #: webseer_servers.php:776 webseer_servers.php:859
@@ -609,11 +609,11 @@ msgstr "Rensa"
 
 #: webseer.php:1108
 msgid "Webseer Service Check History"
-msgstr "Historik för Webseer-tjänstekontroll"
+msgstr "Webseer Service Check Historik"
 
 #: webseer.php:1116 webseer_servers.php:836
 msgid "Date Search"
-msgstr "Datumsökning"
+msgstr "Datum sökning"
 
 #: webseer.php:1122 webseer_servers.php:842
 msgid "Entries"
@@ -621,18 +621,18 @@ msgstr "Poster"
 
 #: webseer.php:1140
 msgid "Purge Events"
-msgstr "Töm händelser"
+msgstr "Utrensning av händelser"
 
 #: webseer_proxies.php:103
 msgid "Click 'Continue' to delete the following Proxy."
 msgid_plural "Click 'Continue' to delete following Proxies."
-msgstr[0] "Klicka på \"Fortsätt\" för att ta bort följande proxyserver."
-msgstr[1] "Klicka på \"Fortsätt\" för att ta bort följande proxyservrar."
+msgstr[0] "Klicka på \"Fortsätt\" för att ta bort följande proxy."
+msgstr[1] "Klicka på \"Fortsätt\" för att ta bort följande Proxies."
 
 #: webseer_proxies.php:108
 msgid "Delete Proxy"
 msgid_plural "Delete Proxies"
-msgstr[0] "Ta bort proxyserver"
+msgstr[0] "Ta bort proxy"
 msgstr[1] "Ta bort proxyservrar"
 
 #: webseer_proxies.php:169
@@ -654,7 +654,7 @@ msgstr "Användarnamn"
 
 #: webseer_proxies.php:309
 msgid "Not Set"
-msgstr "Inte inställd"
+msgstr "Ej inställt"
 
 #: webseer_proxies.php:334
 msgid "Webseer Proxy Management"
@@ -669,7 +669,7 @@ msgstr[1] "Klicka på \"Fortsätt\" för att ta bort följande servrar."
 #: webseer_servers.php:157
 msgid "Delete Server"
 msgid_plural "Delete Servers"
-msgstr[0] "Ta bort server"
+msgstr[0] "Radera server"
 msgstr[1] "Ta bort servrar"
 
 #: webseer_servers.php:161
@@ -692,11 +692,11 @@ msgstr[1] "Klicka på \"Fortsätt\" för att aktivera följande servrar."
 
 #: webseer_servers.php:446
 msgid "No Events in History"
-msgstr "Inga händelser i historiken"
+msgstr "Inga händelser i historien"
 
 #: webseer_servers.php:522
 msgid "Master"
-msgstr "Huvudserver"
+msgstr "Säkerhetsansvarig"
 
 #: webseer_servers.php:523
 msgid "This Host"

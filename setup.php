@@ -25,7 +25,7 @@
 include_once(__DIR__ . '/includes/constants.php');
 include_once(__DIR__ . '/includes/arrays.php');
 
-function plugin_webseer_install () {
+function plugin_webseer_install() {
 	api_plugin_register_hook('webseer', 'draw_navigation_text', 'plugin_webseer_draw_navigation_text', 'setup.php');
 	api_plugin_register_hook('webseer', 'config_arrays',        'plugin_webseer_config_arrays',        'setup.php');
 	api_plugin_register_hook('webseer', 'poller_bottom',        'plugin_webseer_poller_bottom',        'setup.php');
@@ -36,7 +36,7 @@ function plugin_webseer_install () {
 	plugin_webseer_setup_table();
 }
 
-function plugin_webseer_uninstall () {
+function plugin_webseer_uninstall() {
 	db_execute('DROP TABLE IF EXISTS plugin_webseer_servers');
 	db_execute('DROP TABLE IF EXISTS plugin_webseer_servers_log');
 	db_execute('DROP TABLE IF EXISTS plugin_webseer_urls');
@@ -46,9 +46,10 @@ function plugin_webseer_uninstall () {
 	db_execute('DROP TABLE IF EXISTS plugin_webseer_contacts');
 }
 
-function plugin_webseer_check_config () {
+function plugin_webseer_check_config() {
 	// Here we will check to ensure everything is configured
 	plugin_webseer_upgrade();
+
 	return true;
 }
 
@@ -124,24 +125,24 @@ function plugin_webseer_upgrade() {
 		db_execute_prepared('UPDATE plugin_config
 			SET version = ?
 			WHERE directory = "webseer"',
-			array($new));
+			[$new]);
 
-		db_execute_prepared("UPDATE plugin_config SET
+		db_execute_prepared('UPDATE plugin_config SET
 			version = ?, name = ?, author = ?, webpage = ?
-			WHERE directory = ?",
-			array(
+			WHERE directory = ?',
+			[
 				$info['version'],
 				$info['longname'],
 				$info['author'],
 				$info['homepage'],
 				$info['name']
-			)
+			]
 		);
 
 		db_execute_prepared('UPDATE plugin_realms
 			SET file = ?
 			WHERE file LIKE "%webseer.php%"',
-			array('webseer.php,webseer_servers.php,webseer_proxies.php'));
+			['webseer.php,webseer_servers.php,webseer_proxies.php']);
 
 		api_plugin_register_hook('webseer', 'replicate_out', 'webseer_replicate_out', 'setup.php', '1');
 	}
@@ -152,6 +153,7 @@ function plugin_webseer_upgrade() {
 function plugin_webseer_version() {
 	global $config;
 	$info = parse_ini_file($config['base_path'] . '/plugins/webseer/INFO', true);
+
 	return $info['info'];
 }
 
@@ -309,8 +311,9 @@ function plugin_webseer_poller_bottom() {
 	$command_string = trim(read_config_option('path_php_binary'));
 
 	// If its not set, just assume its in the path
-	if (trim($command_string) == '')
+	if (trim($command_string) == '') {
 		$command_string = 'php';
+	}
 	$extra_args = ' -q ' . $config['base_path'] . '/plugins/webseer/poller_webseer.php';
 
 	exec_background($command_string, $extra_args);
@@ -321,75 +324,76 @@ function plugin_webseer_config_arrays() {
 
 	$menu[__('Management')]['plugins/webseer/webseer.php'] = __('Service Checks', 'webseer');
 
-	$files = array('index.php', 'plugins.php', 'webseer.php');
-	if (in_array(get_current_page(), $files)) {
+	$files = ['index.php', 'plugins.php', 'webseer.php'];
+
+	if (in_array(get_current_page(), $files, true)) {
 		plugin_webseer_check_config();
 	}
 }
 
 function plugin_webseer_draw_navigation_text($nav) {
-	$nav['webseer.php:'] = array(
-		'title' => __('WebSeer Service Checks', 'webseer'),
+	$nav['webseer.php:'] = [
+		'title'   => __('WebSeer Service Checks', 'webseer'),
 		'mapping' => 'index.php:',
-		'url' => 'webseer.php',
-		'level' => '1'
-	);
+		'url'     => 'webseer.php',
+		'level'   => '1'
+	];
 
-	$nav['webseer.php:edit'] = array(
-		'title' => __('Service Check Edit', 'webseer'),
+	$nav['webseer.php:edit'] = [
+		'title'   => __('Service Check Edit', 'webseer'),
 		'mapping' => 'index.php:',
-		'url' => 'webseer.php',
-		'level' => '1'
-	);
+		'url'     => 'webseer.php',
+		'level'   => '1'
+	];
 
-	$nav['webseer.php:save'] = array(
-		'title' => __('Service Check Save', 'webseer'),
+	$nav['webseer.php:save'] = [
+		'title'   => __('Service Check Save', 'webseer'),
 		'mapping' => 'index.php:',
-		'url' => 'webseer.php',
-		'level' => '1'
-	);
+		'url'     => 'webseer.php',
+		'level'   => '1'
+	];
 
-	$nav['webseer_servers.php:'] = array(
-		'title' => __('WebSeer Servers', 'webseer'),
+	$nav['webseer_servers.php:'] = [
+		'title'   => __('WebSeer Servers', 'webseer'),
 		'mapping' => 'index.php:',
-		'url' => 'webseer_servers.php',
-		'level' => '1'
-	);
+		'url'     => 'webseer_servers.php',
+		'level'   => '1'
+	];
 
-	$nav['webseer_servers.php:edit'] = array(
-		'title' => __('Server Edit', 'webseer'),
+	$nav['webseer_servers.php:edit'] = [
+		'title'   => __('Server Edit', 'webseer'),
 		'mapping' => 'index.php:',
-		'url' => 'webseer.php',
-		'level' => '1'
-	);
+		'url'     => 'webseer.php',
+		'level'   => '1'
+	];
 
-	$nav['webseer_servers.php:save'] = array(
-		'title' => __('Save Server', 'webseer'),
+	$nav['webseer_servers.php:save'] = [
+		'title'   => __('Save Server', 'webseer'),
 		'mapping' => 'index.php:',
-		'url' => 'webseer.php',
-		'level' => '1'
-	);
+		'url'     => 'webseer.php',
+		'level'   => '1'
+	];
 
-	$nav['webseer_proxies.php:'] = array(
-		'title' => __('WebSeer Proxies', 'webseer'),
+	$nav['webseer_proxies.php:'] = [
+		'title'   => __('WebSeer Proxies', 'webseer'),
 		'mapping' => 'index.php:',
-		'url' => 'webseer.php',
-		'level' => '1'
-	);
+		'url'     => 'webseer.php',
+		'level'   => '1'
+	];
 
-	$nav['webseer_proxies.php:edit'] = array(
-		'title' => __('Proxie Edit', 'webseer'),
+	$nav['webseer_proxies.php:edit'] = [
+		'title'   => __('Proxie Edit', 'webseer'),
 		'mapping' => 'index.php:',
-		'url' => 'webseer.php',
-		'level' => '1'
-	);
+		'url'     => 'webseer.php',
+		'level'   => '1'
+	];
 
-	$nav['webseer_proxies.php:save'] = array(
-		'title' => __('Save Proxy', 'webseer'),
+	$nav['webseer_proxies.php:save'] = [
+		'title'   => __('Save Proxy', 'webseer'),
 		'mapping' => 'index.php:',
-		'url' => 'webseer.php',
-		'level' => '1'
-	);
+		'url'     => 'webseer.php',
+		'level'   => '1'
+	];
 
 	return $nav;
 }
@@ -401,21 +405,19 @@ function webseer_replicate_out($data) {
 
 	cacti_log('INFO: Replicating for the WebSeer Plugin', false, 'REPLICATE');
 
-	$tables = array(
+	$tables = [
 		'plugin_webseer_contacts',
 		'plugin_webseer_proxies',
 		'plugin_webseer_servers',
 		'plugin_webseer_urls'
-	);
+	];
 
 	if ($class == 'all') {
-		foreach($tables as $table) {
+		foreach ($tables as $table) {
 			$tdata = db_fetch_assoc('SELECT * FROM ' . $table);
 			replicate_out_table($rcnn_id, $tdata, $table, $remote_poller_id);
 		}
 	}
 
-    return $data;
+	return $data;
 }
-
-

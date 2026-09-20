@@ -22,10 +22,10 @@
  +-------------------------------------------------------------------------+
 */
 
-/* let PHP run just as long as it has to */
+// let PHP run just as long as it has to
 ini_set('max_execution_time', '55');
 
-$dir = dirname(__FILE__);
+$dir = __DIR__;
 chdir($dir);
 
 if (strpos($dir, 'plugins') !== false) {
@@ -36,7 +36,7 @@ include('./include/cli_check.php');
 include_once($config['base_path'] . '/plugins/webseer/includes/functions.php');
 include_once($config['base_path'] . '/lib/poller.php');
 
-/* process calling arguments */
+// process calling arguments
 $parms = $_SERVER['argv'];
 array_shift($parms);
 
@@ -47,11 +47,11 @@ $start = microtime(true);
 $poller_id = $config['poller_id'];
 
 if (cacti_sizeof($parms)) {
-	foreach($parms as $parameter) {
+	foreach ($parms as $parameter) {
 		if (strpos($parameter, '=')) {
-			list($arg, $value) = explode('=', $parameter);
+			[$arg, $value] = explode('=', $parameter);
 		} else {
-			$arg = $parameter;
+			$arg   = $parameter;
 			$value = '';
 		}
 
@@ -59,10 +59,12 @@ if (cacti_sizeof($parms)) {
 			case '-f':
 			case '--force':
 				$force = true;
+
 				break;
 			case '-d':
 			case '--debug':
 				$debug = true;
+
 				break;
 			case '--version':
 			case '-V':
@@ -75,7 +77,7 @@ if (cacti_sizeof($parms)) {
 				display_help();
 				exit;
 			default:
-				print "ERROR: Invalid Parameter " . $parameter . "\n\n";
+				print 'ERROR: Invalid Parameter ' . $parameter . "\n\n";
 				display_help();
 				exit;
 		}
@@ -83,7 +85,7 @@ if (cacti_sizeof($parms)) {
 }
 
 if (!function_exists('curl_init')) {
-	print "FATAL: You must install php-curl to use this Plugin" . PHP_EOL;
+	print 'FATAL: You must install php-curl to use this Plugin' . PHP_EOL;
 }
 
 plugin_webseer_check_debug();
@@ -98,27 +100,27 @@ $t = time() - (86400 * 30);
 if ($poller_id == 1) {
 	db_execute_prepared('DELETE FROM plugin_webseer_urls_log
 		WHERE lastcheck < FROM_UNIXTIME(?)',
-		array($t));
+		[$t]);
 
 	db_execute_prepared('DELETE FROM plugin_webseer_processes
 		WHERE time < FROM_UNIXTIME(?)',
-		array(time() - 15));
+		[time() - 15]);
 }
 
 $urls = db_fetch_assoc_prepared('SELECT *
 	FROM plugin_webseer_urls
 	WHERE enabled = "on"
 	AND poller_id = ?',
-	array($poller_id));
+	[$poller_id]);
 
 $max = 12;
 
 if (cacti_sizeof($urls)) {
-	foreach($urls as $url) {
+	foreach ($urls as $url) {
 		$total = db_fetch_cell_prepared('SELECT COUNT(id)
 			FROM plugin_webseer_processes
 			WHERE poller_id = ?',
-			array($poller_id));
+			[$poller_id]);
 
 		if ($max - $total > 0) {
 			$url['debug_type'] = 'Url';
@@ -126,7 +128,7 @@ if (cacti_sizeof($urls)) {
 			plugin_webseer_debug('Launching Service Check ' . $url['url'], $url);
 
 			$command_string = read_config_option('path_php_binary');
-			$extra_args     = '-q "' . $config['base_path'] . '/plugins/webseer/webseer_process.php" --id=' . $url['id'] . ($debug ? ' --debug':'');
+			$extra_args     = '-q "' . $config['base_path'] . '/plugins/webseer/webseer_process.php" --id=' . $url['id'] . ($debug ? ' --debug' : '');
 			exec_background($command_string, $extra_args);
 
 			usleep(10000);
@@ -136,21 +138,21 @@ if (cacti_sizeof($urls)) {
 			db_execute_prepared('DELETE FROM plugin_webseer_processes
 				WHERE time < FROM_UNIXTIME(?)
 				AND poller_id = ?',
-				array(time() - 15, $poller_id));
+				[time() - 15, $poller_id]);
 		}
 	}
 }
 
-while(true) {
+while (true) {
 	db_execute_prepared('DELETE FROM plugin_webseer_processes
 		WHERE time < FROM_UNIXTIME(?)
 		AND poller_id = ?',
-		array(time() - 15, $poller_id));
+		[time() - 15, $poller_id]);
 
 	$running = db_fetch_cell_prepared('SELECT COUNT(*)
 		FROM plugin_webseer_processes
 		WHERE poller_id = ?',
-		array($poller_id));
+		[$poller_id]);
 
 	if ($running == 0) {
 		break;
@@ -190,15 +192,15 @@ function plugin_webseer_register_server() {
 	$found = db_fetch_cell_prepared('SELECT id
 		FROM plugin_webseer_servers
 		WHERE ip = ?',
-		array($ipaddress));
+		[$ipaddress]);
 
 	if (!$found) {
-		$found = array();
+		$found               = [];
 		$found['debug_type'] = 'Server';
 
 		plugin_webseer_debug('Registering Server ' . $ipaddress, $found);
 
-		$save = array();
+		$save              = [];
 		$save['enabled']   = 'on';
 		$save['isme']      = 1;
 		$save['lastcheck'] = $lastcheck;
@@ -219,7 +221,7 @@ function plugin_webseer_register_server() {
 		}
 
 		if (isset($config['url_path'])) {
-			$save['url'] = (read_config_option('force_https') == 'on' ? 'https://':'http://') . $urlhost . $config['url_path'] . 'index.php';
+			$save['url'] = (read_config_option('force_https') == 'on' ? 'https://' : 'http://') . $urlhost . $config['url_path'] . 'index.php';
 		} else {
 			$save['url'] = 'http://' . $urlhost;
 		}
@@ -240,9 +242,9 @@ function plugin_webseer_update_servers() {
 
 			$cc = new cURL(true, 'cookies.txt', $server['compression'], '', $server);
 
-			$data = array();
+			$data           = [];
 			$data['action'] = 'HEARTBEAT';
-			$results = $cc->post($server['url'], $data);
+			$results        = $cc->post($server['url'], $data);
 		}
 	}
 
@@ -259,20 +261,19 @@ function display_version() {
 		include_once($config['base_path'] . '/plugins/webseer/setup.php');
 	}
 
-    $info = plugin_webseer_version();
+	$info = plugin_webseer_version();
 
-    print "Cacti Service Check Master Process, Version " . $info['version'] . ", " . COPYRIGHT_YEARS . "\n";
+	print 'Cacti Service Check Master Process, Version ' . $info['version'] . ', ' . COPYRIGHT_YEARS . "\n";
 }
 
 /**
  * display_help - displays the usage of the function
  */
-function display_help () {
-    display_version();
+function display_help() {
+	display_version();
 
-    print "\nusage: poller_webseer.php [--debug] [--force]\n\n";
+	print "\nusage: poller_webseer.php [--debug] [--force]\n\n";
 	print "This binary will exec all the Web Service check child processes.\n\n";
-    print "--force    - Force all the service checks to run now\n";
-    print "--debug    - Display verbose output during execution\n\n";
+	print "--force    - Force all the service checks to run now\n";
+	print "--debug    - Display verbose output during execution\n\n";
 }
-
