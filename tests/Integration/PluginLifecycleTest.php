@@ -18,6 +18,13 @@
 
 require_once dirname(__DIR__, 2) . '/setup.php';
 
+// tests/Pest.php's beforeEach isn't reliably discovered under this plugin's CI
+// invocation (pest run from the cacti root via --configuration=plugins/...),
+// so register it here too to guarantee a clean call log between tests in this file.
+beforeEach(function () {
+	webseer_test_reset_db_mocks();
+});
+
 it('registers its hooks and admin realm on install', function () {
 	plugin_webseer_install();
 
