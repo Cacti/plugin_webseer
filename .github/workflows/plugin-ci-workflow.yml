@@ -91,7 +91,7 @@ jobs:
       run: sudo apt-get update
 
     - name: Install System Dependencies
-      run: sudo apt-get install -y apache2 snmp snmpd rrdtool fping
+      run: sudo apt-get install -y snmp snmpd rrdtool fping
 
     - name: Start SNMPD Agent and Test
       run: |
@@ -109,7 +109,7 @@ jobs:
     - name: Create MySQL Config
       run: |
         echo -e "[client]\nuser = root\npassword = cactiroot\nhost = 127.0.0.1\n" > ~/.my.cnf
-        cat ~/.my.cnf
+        chmod 600 ~/.my.cnf
 
     - name: Initialize Cacti Database
       run: |
@@ -150,26 +150,6 @@ jobs:
         sed -r "s/'cactiuser'/'cactiuser'/g" > ${{ github.workspace }}/cacti/include/config.php
         sudo chmod 664 ${{ github.workspace }}/cacti/include/config.php
 
-    - name: Configure Apache
-      run: |
-        cat << 'EOF' | sed 's#GITHUB_WORKSPACE#${{ github.workspace }}#g' > /tmp/cacti.conf
-        <VirtualHost *:80>
-          ServerAdmin webmaster@localhost
-          DocumentRoot GITHUB_WORKSPACE/cacti
-
-          <Directory GITHUB_WORKSPACE/cacti>
-            Options Indexes FollowSymLinks
-            AllowOverride All
-            Require all granted
-          </Directory>
-
-          ErrorLog ${APACHE_LOG_DIR}/error.log
-          CustomLog ${APACHE_LOG_DIR}/access.log combined
-        </VirtualHost>
-        EOF
-        sudo cp /tmp/cacti.conf /etc/apache2/sites-available/000-default.conf
-        sudo systemctl restart apache2
-
     - name: Install Cacti via CLI
       run: |
         cd ${{ github.workspace }}/cacti
@@ -183,10 +163,7 @@ jobs:
     - name: Check PHP Syntax for Plugin
       run: |
         cd ${{ github.workspace }}/cacti/plugins/webseer
-        if find . -name '*.php' -exec php -l {} 2>&1 \; | grep -iv 'no syntax errors detected'; then
-          echo "Syntax errors found!"
-          exit 1
-        fi
+        find . -path './vendor' -prune -o -type f -name '*.php' -print0 | xargs -0 -r -n1 php -l
 
     - name: Set expected Cacti version for unit tests
       run: echo -n "${{ env.CACTI }}" | sudo tee ${{ github.workspace }}/cacti/plugins/webseer/tests/.cacti-version > /dev/null
@@ -197,8 +174,7 @@ jobs:
       run: |
         cd ${{ github.workspace }}/cacti
         include/vendor/bin/pest --configuration=plugins/webseer/phpunit.xml \
-          --coverage-clover=plugins/webseer/coverage/clover.xml \
-          plugins/webseer/tests/Security plugins/webseer/tests/Unit plugins/webseer/tests/Integration
+          --coverage-clover=plugins/webseer/coverage/clover.xml
 
     - name: Upload coverage report
       if: always()
