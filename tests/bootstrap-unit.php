@@ -312,6 +312,17 @@ if (!function_exists('cacti_log')) {
 	}
 }
 
+if (!function_exists('replicate_out_table')) {
+	function replicate_out_table($rcnn_id, $tdata, $table, $remote_poller_id) {
+		$GLOBALS['__test_replicate_out_table_calls'][] = [
+			'rcnn_id'          => $rcnn_id,
+			'tdata'            => $tdata,
+			'table'            => $table,
+			'remote_poller_id' => $remote_poller_id,
+		];
+	}
+}
+
 if (!function_exists('cacti_sizeof')) {
 	function cacti_sizeof($array) {
 		return is_array($array) ? count($array) : 0;
