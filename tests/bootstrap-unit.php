@@ -108,6 +108,7 @@ function webseer_test_reset_db_mocks() {
 	$GLOBALS['__test_request']        = [];
 	$GLOBALS['__test_hook_calls']     = [];
 	$GLOBALS['__test_realm_calls']    = [];
+	$GLOBALS['__test_replicate_out_table_calls'] = [];
 }
 
 /**
