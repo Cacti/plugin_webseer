@@ -316,6 +316,16 @@ db_execute_prepared('DELETE FROM plugin_webseer_servers_log
 
 // exit
 
+/**
+ * Records this worker process's pid in plugin_webseer_processes so it
+ * can be tracked/detected as running. Called from this script's main
+ * flow before performing a URL's service check.
+ *
+ * @param int $url_id    The plugin_webseer_urls.id being checked.
+ * @param int $poller_id The poller id this check is running on.
+ *
+ * @return void
+ */
 function register_startup($url_id, $poller_id) {
 	db_execute_prepared('INSERT INTO plugin_webseer_processes
 		(url_id, poller_id, pid, time)
@@ -323,6 +333,16 @@ function register_startup($url_id, $poller_id) {
 		[$url_id, $poller_id, getmypid()]);
 }
 
+/**
+ * Removes this worker process's tracking row from
+ * plugin_webseer_processes. Called from this script's main flow after a
+ * URL's service check completes.
+ *
+ * @param int $url_id    The plugin_webseer_urls.id that was checked.
+ * @param int $poller_id The poller id this check ran on.
+ *
+ * @return void
+ */
 function register_shutdown($url_id, $poller_id) {
 	db_execute_prepared('DELETE FROM plugin_webseer_processes
 		WHERE url_id = ?
@@ -331,6 +351,25 @@ function register_shutdown($url_id, $poller_id) {
 		[$url_id, $poller_id, getmypid()], false);
 }
 
+/**
+ * Resolves a service check's configured notification recipients
+ * (individual contacts, extra addresses, and/or a notification list),
+ * builds a plain-text or HTML down/recovery message, and sends it to
+ * each recipient. Called from this script's main flow when a check's
+ * result triggers a down/recovery notification.
+ *
+ * @param array  $results The check result data (result code, error,
+ *                        timing/HTTP details) from the service check.
+ * @param array  $url     The plugin_webseer_urls row being checked,
+ *                        providing its notification configuration.
+ * @param string $type    'text' to send a plain-text message, anything
+ *                        else to send the richer HTML message.
+ *
+ * @return void
+ *
+ * @global array $httperrors Map of HTTP status codes to their
+ *                           descriptions, used in the HTML message body.
+ */
 function plugin_webseer_get_users($results, $url, $type) {
 	global $httperrors;
 
@@ -425,6 +464,15 @@ function plugin_webseer_get_users($results, $url, $type) {
 	}
 }
 
+/**
+ * Determines whether this poller is registered as the webseer master
+ * server (by matching its detected IP against plugin_webseer_servers).
+ * Called from this script's main flow to decide whether this process
+ * should send down/recovery notification emails.
+ *
+ * @return bool True if this poller is the registered master server,
+ *              false otherwise.
+ */
 function plugin_webseer_amimaster() {
 	if (function_exists('gethostname')) {
 		$hostname = gethostname();
@@ -447,6 +495,14 @@ function plugin_webseer_amimaster() {
 	return false;
 }
 
+/**
+ * Looks up this poller's own plugin_webseer_servers.id by matching its
+ * detected IP address. Called from this script's main flow to record
+ * which server performed a given check in the servers log.
+ *
+ * @return int The matching plugin_webseer_servers.id, or 0 if this
+ *             poller is not registered.
+ */
 function plugin_webseer_whoami() {
 	if (function_exists('gethostname')) {
 		$hostname = gethostname();
@@ -467,6 +523,20 @@ function plugin_webseer_whoami() {
 	return 0;
 }
 
+/**
+ * Sends a down/recovery notification email to a single recipient via
+ * Cacti's mailer(), tagging the User-Agent with the plugin/Cacti
+ * version. Called from plugin_webseer_get_users() for each resolved
+ * recipient address.
+ *
+ * @param string $to      The recipient email address.
+ * @param string $subject The email subject line.
+ * @param string $message The HTML (or plain-text) email body; a
+ *                        stripped-tags plain-text alternative is
+ *                        derived from it automatically.
+ *
+ * @return void
+ */
 function plugin_webseer_send_email($to, $subject, $message) {
 	$from_name  = read_config_option('settings_from_name');
 	$from_email = read_config_option('settings_from_email');
@@ -491,7 +561,19 @@ function plugin_webseer_send_email($to, $subject, $message) {
 	mailer($from, $to, '', '', '', $subject, $message, $message_text, '', $headers);
 }
 
-// display_version - displays version information
+/**
+ * display_version - displays version information
+ *
+ * Prints this script's name/plugin version/copyright. Called from the
+ * CLI argument parser for the '--version' flag, and from display_help()
+ * to prefix the usage text.
+ *
+ * @return void
+ *
+ * @global array $config Cacti global configuration array; used to
+ *                       locate and load setup.php for the version
+ *                       lookup.
+ */
 function display_version() {
 	global $config;
 
@@ -504,7 +586,15 @@ function display_version() {
 	print 'Cacti Web Service Check Processor, Version ' . $info['version'] . ', ' . COPYRIGHT_YEARS . PHP_EOL;
 }
 
-// display_help - displays the usage of the function
+/**
+ * display_help - displays the usage of the function
+ *
+ * Prints this script's version banner followed by its command-line
+ * usage/argument summary. Called from the CLI argument parser for the
+ * '--help' flag, and whenever an invalid argument is supplied.
+ *
+ * @return void
+ */
 function display_help() {
 	display_version();
 

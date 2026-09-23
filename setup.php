@@ -25,6 +25,15 @@
 include_once(__DIR__ . '/includes/constants.php');
 include_once(__DIR__ . '/includes/arrays.php');
 
+/**
+ * Registers this plugin's Cacti hooks (navigation breadcrumbs, config
+ * arrays/menu, poller_bottom, data source replication) and its
+ * webseer.php/webseer_servers.php/webseer_proxies.php realm, then
+ * creates the plugin's database tables. Invoked by the Cacti plugin
+ * framework when the plugin is installed/enabled.
+ *
+ * @return void
+ */
 function plugin_webseer_install() {
 	api_plugin_register_hook('webseer', 'draw_navigation_text', 'plugin_webseer_draw_navigation_text', 'setup.php');
 	api_plugin_register_hook('webseer', 'config_arrays',        'plugin_webseer_config_arrays',        'setup.php');
@@ -36,6 +45,12 @@ function plugin_webseer_install() {
 	plugin_webseer_setup_table();
 }
 
+/**
+ * Drops all of this plugin's database tables. Invoked by the Cacti
+ * plugin framework when the plugin is uninstalled.
+ *
+ * @return void
+ */
 function plugin_webseer_uninstall() {
 	db_execute('DROP TABLE IF EXISTS plugin_webseer_servers');
 	db_execute('DROP TABLE IF EXISTS plugin_webseer_servers_log');
@@ -46,6 +61,15 @@ function plugin_webseer_uninstall() {
 	db_execute('DROP TABLE IF EXISTS plugin_webseer_contacts');
 }
 
+/**
+ * Here we will check to ensure everything is configured
+ *
+ * Runs any pending database schema upgrades for this plugin. Invoked by
+ * the Cacti plugin framework on every page load to keep the plugin's
+ * schema current.
+ *
+ * @return bool Always true.
+ */
 function plugin_webseer_check_config() {
 	// Here we will check to ensure everything is configured
 	plugin_webseer_upgrade();
@@ -53,6 +77,21 @@ function plugin_webseer_check_config() {
 	return true;
 }
 
+/**
+ * Here we will upgrade to the newest version
+ *
+ * Applies version-gated schema migrations (adding the contacts and
+ * proxies tables, renaming the URL log table, adding compression/
+ * notify-format/poller-id columns) and updates the recorded plugin
+ * version/realm file list, based on comparing the installed version
+ * against the current INFO file version. Called from
+ * plugin_webseer_check_config() on every page load.
+ *
+ * @return bool Always true.
+ *
+ * @global array $config Cacti global configuration array (declared but
+ *                       not directly used here).
+ */
 function plugin_webseer_upgrade() {
 	// Here we will upgrade to the newest version
 	global $config;
@@ -150,6 +189,18 @@ function plugin_webseer_upgrade() {
 	return true;
 }
 
+/**
+ * Reads this plugin's version/author metadata from its INFO file.
+ * Invoked by the Cacti plugin framework to display plugin information,
+ * and called directly by plugin_webseer_upgrade() and
+ * poller_webseer.php's display_version().
+ *
+ * @return array The plugin's INFO file 'info' section (name, version,
+ *               author, etc.).
+ *
+ * @global array $config Cacti global configuration array; used to
+ *                       locate the plugin's INFO file.
+ */
 function plugin_webseer_version() {
 	global $config;
 	$info = parse_ini_file($config['base_path'] . '/plugins/webseer/INFO', true);
@@ -157,6 +208,14 @@ function plugin_webseer_version() {
 	return $info['info'];
 }
 
+/**
+ * Creates all of this plugin's database tables (servers and their check
+ * log, service check URLs and their check log, running-process
+ * tracking, notification contacts, HTTP proxies). Called from
+ * plugin_webseer_install() during plugin installation.
+ *
+ * @return void
+ */
 function plugin_webseer_setup_table() {
 	db_execute("CREATE TABLE IF NOT EXISTS `plugin_webseer_servers` (
 		`id` int(11) unsigned NOT NULL auto_increment,
@@ -303,6 +362,17 @@ function plugin_webseer_setup_table() {
 		COMMENT='Holds Proxy Information for Connections'");
 }
 
+/**
+ * Launches a background poller_webseer.php process to run the
+ * configured service checks. Invoked by the Cacti plugin framework via
+ * the 'poller_bottom' hook at the end of each poller cycle.
+ *
+ * @return void
+ *
+ * @global array $config Cacti global configuration array; used to
+ *                       resolve the PHP binary and this plugin's poller
+ *                       script path.
+ */
 function plugin_webseer_poller_bottom() {
 	global $config;
 
@@ -319,6 +389,27 @@ function plugin_webseer_poller_bottom() {
 	exec_background($command_string, $extra_args);
 }
 
+/**
+ * Adds this plugin's 'Service Checks' entry to the Management menu, and
+ * triggers a schema-upgrade check when the currently displayed page is
+ * one of this plugin's own pages (or the main index/plugins pages).
+ * Invoked by the Cacti plugin framework via the 'config_arrays' hook.
+ *
+ * @return void
+ *
+ * @global array $menu                       Cacti's registered admin
+ *                                           menu; a 'Service Checks'
+ *                                           entry is added under
+ *                                           'Management'.
+ * @global array $user_auth_realms           Reserved/declared for parity
+ *                                           with other hook
+ *                                           implementations; not used
+ *                                           directly here.
+ * @global array $user_auth_realm_filenames  Reserved/declared for parity
+ *                                           with other hook
+ *                                           implementations; not used
+ *                                           directly here.
+ */
 function plugin_webseer_config_arrays() {
 	global $menu, $user_auth_realms, $user_auth_realm_filenames;
 
@@ -331,6 +422,15 @@ function plugin_webseer_config_arrays() {
 	}
 }
 
+/**
+ * Adds this plugin's page breadcrumb/navigation entries (service check
+ * list/edit/save, server list/edit/save, proxy list/edit/save). Invoked
+ * by the Cacti plugin framework via the 'draw_navigation_text' hook.
+ *
+ * @param array $nav Cacti's registered navigation text entries.
+ *
+ * @return array The $nav array with this plugin's entries added.
+ */
 function plugin_webseer_draw_navigation_text($nav) {
 	$nav['webseer.php:'] = [
 		'title'   => __('WebSeer Service Checks', 'webseer'),
@@ -398,6 +498,18 @@ function plugin_webseer_draw_navigation_text($nav) {
 	return $nav;
 }
 
+/**
+ * Replicates this plugin's configuration tables (contacts, proxies,
+ * servers, service check URLs) out to a remote data collector poller.
+ * Invoked by the Cacti plugin framework via the 'replicate_out' hook
+ * during data collector replication.
+ *
+ * @param array $data Replication context, including 'remote_poller_id',
+ *                    'rcnn_id' (remote connection id), and 'class'
+ *                    (replication scope, e.g. 'all').
+ *
+ * @return void
+ */
 function webseer_replicate_out($data) {
 	$remote_poller_id = $data['remote_poller_id'];
 	$rcnn_id          = $data['rcnn_id'];
