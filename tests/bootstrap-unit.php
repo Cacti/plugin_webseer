@@ -108,6 +108,7 @@ function webseer_test_reset_db_mocks() {
 	$GLOBALS['__test_request']        = [];
 	$GLOBALS['__test_hook_calls']     = [];
 	$GLOBALS['__test_realm_calls']    = [];
+	$GLOBALS['__test_replicate_out_table_calls'] = [];
 }
 
 /**
@@ -309,6 +310,17 @@ $GLOBALS['__test_log_calls'] = [];
 if (!function_exists('cacti_log')) {
 	function cacti_log($message, $also_print = false, $log_type = '', $level = 0) {
 		$GLOBALS['__test_log_calls'][] = ['message' => $message, 'also_print' => $also_print, 'log_type' => $log_type, 'level' => $level];
+	}
+}
+
+if (!function_exists('replicate_out_table')) {
+	function replicate_out_table($rcnn_id, $tdata, $table, $remote_poller_id) {
+		$GLOBALS['__test_replicate_out_table_calls'][] = [
+			'rcnn_id'          => $rcnn_id,
+			'tdata'            => $tdata,
+			'table'            => $table,
+			'remote_poller_id' => $remote_poller_id,
+		];
 	}
 }
 
