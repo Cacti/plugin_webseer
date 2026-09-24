@@ -65,8 +65,9 @@ function plugin_webseer_uninstall() {
  * Here we will check to ensure everything is configured
  *
  * Runs any pending database schema upgrades for this plugin. Invoked by
- * the Cacti plugin framework on every page load to keep the plugin's
- * schema current.
+ * plugin_webseer_config_arrays() (the 'config_arrays' hook) only when
+ * the current page is index.php, plugins.php, or webseer.php - not on
+ * every page load.
  *
  * @return bool Always true.
  */
@@ -85,7 +86,8 @@ function plugin_webseer_check_config() {
  * notify-format/poller-id columns) and updates the recorded plugin
  * version/realm file list, based on comparing the installed version
  * against the current INFO file version. Called from
- * plugin_webseer_check_config() on every page load.
+ * plugin_webseer_check_config(), which is itself only invoked when the
+ * current page is index.php, plugins.php, or webseer.php.
  *
  * @return bool Always true.
  *
@@ -392,8 +394,9 @@ function plugin_webseer_poller_bottom() {
 /**
  * Adds this plugin's 'Service Checks' entry to the Management menu, and
  * triggers a schema-upgrade check when the currently displayed page is
- * one of this plugin's own pages (or the main index/plugins pages).
- * Invoked by the Cacti plugin framework via the 'config_arrays' hook.
+ * exactly index.php, plugins.php, or webseer.php (not the servers or
+ * proxies pages). Invoked by the Cacti plugin framework via the
+ * 'config_arrays' hook.
  *
  * @return void
  *

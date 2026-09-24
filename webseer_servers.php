@@ -287,9 +287,9 @@ function webseer_log_request_validation() {
 }
 
 /**
- * Renders the check-history log for a single webseer server: a
- * filterable, sortable, paginated table of the checks it performed (URL
- * checked, status, HTTP code, and DNS/connect/redirect/total timing,
+ * Renders the check-history log for a single service check URL: a
+ * filterable, sortable, paginated table of the checks performed against
+ * it (status, HTTP code, and DNS/connect/redirect/total timing,
  * color-coded by threshold). Invoked from this file's dispatcher when
  * the request's 'action' is 'history'.
  *

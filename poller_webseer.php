@@ -244,8 +244,8 @@ function plugin_webseer_register_server() {
 
 /**
  * Sends a HEARTBEAT request to every other registered, enabled webseer
- * server so they can record this server as still alive. Currently
- * unused/dead code: not called from anywhere else in this file.
+ * server so they can record this server as still alive. Called from
+ * this script's main flow after all service checks have run.
  *
  * @return int The number of remote servers a heartbeat was sent to.
  */

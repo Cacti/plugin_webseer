@@ -62,10 +62,10 @@ class cURL {
 	 * @param string $proxy_hostname  An optional HTTP proxy hostname to
 	 *                               route requests through; defaults to
 	 *                               ''.
-	 * @param array  $host            The service check/server row this
+	 * @param array|string $host      The service check/server row this
 	 *                               request is being made for, used for
 	 *                               debug logging context; defaults to
-	 *                               ''.
+	 *                               '' (empty string).
 	 *
 	 * @return void
 	 *
@@ -129,8 +129,10 @@ class cURL {
 
 	/**
 	 * Sends an HTTP POST request with the given form data to a URL.
-	 * Called from poller_webseer.php's plugin_webseer_update_servers() to
-	 * send a HEARTBEAT/HOSTDOWN notification to another webseer server.
+	 * Called from poller_webseer.php's plugin_webseer_update_servers()
+	 * (to send a HEARTBEAT notification) and from
+	 * plugin_webseer_down_remote_hosts() in includes/functions.php (to
+	 * send a HOSTDOWN notification) to another webseer server.
 	 *
 	 * @param string $url  The URL to POST to.
 	 * @param array  $data Key/value pairs to send as

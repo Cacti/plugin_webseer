@@ -198,8 +198,10 @@ function webseer_show_tab($current_tab) {
 /**
  * Fetches the current server list from the master webseer server (via a
  * GETSERVERS request) and replaces this poller's local
- * plugin_webseer_servers table with the result. Called from a remote
- * poller to synchronize its server list with the master.
+ * plugin_webseer_servers table with the result. Currently has no call
+ * site in this plugin; remote.php's own GETSERVERS case responds
+ * directly (serving its own $servers list) rather than invoking this
+ * function.
  *
  * @return void
  */
@@ -240,10 +242,10 @@ function plugin_webseer_refresh_servers() {
 /**
  * Fetches the current service check URL list from the master webseer
  * server (via a GETURLS request) and replaces this poller's local
- * plugin_webseer_urls table with the result. Called from setup.php's
- * plugin_webseer_config_arrays() (indirectly, via form_save() marking a
- * server as 'isme') to synchronize a remote poller's URL list with the
- * master.
+ * plugin_webseer_urls table with the result. Called from
+ * webseer_servers.php's form_save() when the saved server is marked as
+ * 'isme' (this poller), to synchronize a remote poller's URL list with
+ * the master.
  *
  * @return void
  */
@@ -312,7 +314,7 @@ function plugin_webseer_remove_old_users() {
 
 /**
  * Performs a 'dns' type service check: looks up the configured search
- * term as a DNS MX record via mxlookup, and considers the check
+ * term as a DNS A record via mxlookup, and considers the check
  * successful if the resolved IP matches the configured maintenance
  * value. Called from webseer_process.php's main flow for each 'dns'
  * type service check.
@@ -365,8 +367,8 @@ function plugin_webseer_check_dns($host) {
 /**
  * Notifies every other registered remote server of a new master server
  * IP (via a SETMASTER request), then updates this poller's local
- * plugin_webseer_servers table to reflect the new master. Called when
- * the master webseer server role changes to a different server.
+ * plugin_webseer_servers table to reflect the new master. Currently
+ * has no call site in this plugin.
  *
  * @param string $ip The IP address of the newly designated master
  *                   server.
@@ -431,8 +433,8 @@ function plugin_webseer_enable_remote_hosts($id, $value = true) {
 
 /**
  * Notifies every other registered remote server to delete a service
- * check URL (via a DELETEURL request). Currently unused/dead code: not
- * called from anywhere else in this file.
+ * check URL (via a DELETEURL request). Called from webseer.php's
+ * form_actions() when a URL is deleted.
  *
  * @param int $id The plugin_webseer_urls.id to delete remotely.
  *

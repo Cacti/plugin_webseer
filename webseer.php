@@ -981,8 +981,8 @@ function list_urls() {
 
 /**
  * Normalizes a null value to the string '0', leaving any other value
- * unchanged. Currently unused/dead code: not called from anywhere else
- * in this file.
+ * unchanged. Called from list_urls() when rendering each URL row's
+ * timing columns (namelookup/connect/redirect/total time).
  *
  * @param mixed $value The value to check.
  *

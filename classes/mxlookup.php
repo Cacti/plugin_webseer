@@ -32,13 +32,13 @@ class mxlookup {
 	var $dns_repl_domain;
 
 	/**
-	 * Performs a raw UDP DNS MX record lookup for a domain against a DNS
-	 * server, building and sending the query packet, then parsing the
-	 * reply into a list of resolved IP addresses. Called when a new
-	 * mxlookup object is constructed, e.g. from this plugin's 'dns' type
-	 * service checks.
+	 * Performs a raw UDP DNS A-record lookup for a domain against a DNS
+	 * server, building and sending a QTYPE 1 (A) query packet, then
+	 * parsing the reply into a list of resolved IPv4 addresses. Called
+	 * when a new mxlookup object is constructed, e.g. from this plugin's
+	 * 'dns' type service checks.
 	 *
-	 * @param string $domain The domain name to look up MX records for.
+	 * @param string $domain The domain name to look up.
 	 * @param string $dns    The DNS server IP address to query; defaults
 	 *                       to '4.2.2.1'.
 	 *
@@ -99,8 +99,9 @@ class mxlookup {
 	/**
 	 * Parses a DNS-encoded domain name (including compressed/pointer-
 	 * referenced labels) from the current position in the reply buffer,
-	 * recursing when a compression pointer is encountered. Called from the
-	 * constructor to decode the query name and each answer record's name.
+	 * recursing when a compression pointer is encountered. Called from
+	 * the constructor to decode the query name; the call to also decode
+	 * each answer record's name is currently commented out.
 	 *
 	 * @param string $retval Reference, set to the decoded dot-separated
 	 *                       domain name.
@@ -201,9 +202,9 @@ class mxlookup {
 
 	/**
 	 * Builds the raw outgoing DNS query packet (header flags/counts plus
-	 * the encoded question name and type/class) for an MX record query,
-	 * storing it on $this->dns_packet. Called from the constructor before
-	 * sending the query.
+	 * the encoded question name and type/class) for an A record (QTYPE 1)
+	 * query, storing it on $this->dns_packet. Called from the
+	 * constructor before sending the query.
 	 *
 	 * @return void
 	 */
