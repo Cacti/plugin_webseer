@@ -176,6 +176,18 @@ if ($poller_id == 1) {
 
 set_config_option('stats_webseer_' . $poller_id, $stats);
 
+/**
+ * Registers this Cacti poller (master or remote) as a webseer server in
+ * plugin_webseer_servers, if it is not already registered, recording its
+ * detected hostname/IP, master/remote role, and callback URL. Called
+ * from this script's main flow at the start of every poller run.
+ *
+ * @return void
+ *
+ * @global array $config Cacti global configuration array; used to
+ *                       determine this poller's id/role and to build
+ *                       its callback URL.
+ */
 function plugin_webseer_register_server() {
 	global $config;
 
@@ -230,6 +242,13 @@ function plugin_webseer_register_server() {
 	}
 }
 
+/**
+ * Sends a HEARTBEAT request to every other registered, enabled webseer
+ * server so they can record this server as still alive. Called from
+ * this script's main flow after all service checks have run.
+ *
+ * @return int The number of remote servers a heartbeat was sent to.
+ */
 function plugin_webseer_update_servers() {
 	$servers = db_fetch_assoc('SELECT *
 		FROM plugin_webseer_servers
@@ -253,6 +272,16 @@ function plugin_webseer_update_servers() {
 
 /**
  * display_version - displays version information
+ *
+ * Prints this poller script's name/plugin version/copyright. Called
+ * from the CLI argument parser for the '--version' flag, and from
+ * display_help() to prefix the usage text.
+ *
+ * @return void
+ *
+ * @global array $config Cacti global configuration array; used to
+ *                       locate and load setup.php for the version
+ *                       lookup.
  */
 function display_version() {
 	global $config;
@@ -268,6 +297,12 @@ function display_version() {
 
 /**
  * display_help - displays the usage of the function
+ *
+ * Prints this script's version banner followed by its command-line
+ * usage/argument summary. Called from the CLI argument parser for the
+ * '--help' flag, and whenever an invalid argument is supplied.
+ *
+ * @return void
  */
 function display_help() {
 	display_version();

@@ -47,6 +47,21 @@ switch (get_request_var('action')) {
 		proxies();
 }
 
+/**
+ * Handles the bulk-actions form for the Proxies list (currently only
+ * delete). On first display, renders the confirmation dialog listing
+ * the selected proxies; once confirmed, applies the chosen action to
+ * each selected row. Invoked from this file's dispatcher when the
+ * request's 'action' is 'actions'.
+ *
+ * @return void Either redirects back to this page after applying the
+ *              action, or prints the confirmation dialog and returns
+ *              nothing.
+ *
+ * @global array $webseer_actions_proxy Map of bulk-action ids to their
+ *                                      display labels, used for the
+ *                                      confirmation dialog title.
+ */
 function proxy_form_actions() {
 	global $webseer_actions_proxy;
 
@@ -129,6 +144,14 @@ function proxy_form_actions() {
 	bottom_footer();
 }
 
+/**
+ * Validates and saves a single HTTP proxy configuration (name, hostname,
+ * HTTP/HTTPS ports, optional username/password). Invoked from this
+ * file's dispatcher when the request's 'action' is 'save'.
+ *
+ * @return void Redirects back to the edit form for this proxy; does not
+ *              return a value.
+ */
 function proxy_form_save() {
 	if (isset_request_var('save_component_proxy')) {
 		$save['id']         = get_filter_request_var('id');
@@ -153,6 +176,17 @@ function proxy_form_save() {
 	}
 }
 
+/**
+ * Renders the add/edit form for a single HTTP proxy configuration,
+ * pre-populating its fields when editing an existing proxy. Invoked
+ * from this file's dispatcher when the request's 'action' is 'edit'.
+ *
+ * @return void Outputs the edit form HTML directly.
+ *
+ * @global array $webseer_proxy_fields The edit form's field
+ *                                     definitions, filled in here with
+ *                                     the proxy's current values.
+ */
 function proxy_edit() {
 	global $webseer_proxy_fields;
 
@@ -198,11 +232,29 @@ function proxy_edit() {
  *  This is a generic function for this page that makes sure that
  *  we have a good request.  We want to protect against people who
  *  like to create issues with Cacti.
+ *
+ * Validates and normalizes the current request's filter/sort/pagination
+ * variables for the Proxies list, persisting them to the session.
+ * Called from proxies() before rendering the list.
+ *
+ * @return void
  */
 function request_validation() {
 	webseer_validate_list_request('sess_ws_proxy', 'name', '20', false, false);
 }
 
+/**
+ * Renders the main Proxies list page: validates the request, draws the
+ * filter toolbar, and prints the paginated, sortable table of configured
+ * HTTP proxies. Invoked from this file's dispatcher for the default (no
+ * 'action') request.
+ *
+ * @return void Outputs the list page HTML directly.
+ *
+ * @global array $webseer_actions_proxy Map of bulk-action ids to their
+ *                                      display labels, used to populate
+ *                                      the actions dropdown.
+ */
 function proxies() {
 	global $webseer_actions_proxy;
 
@@ -299,6 +351,16 @@ function proxies() {
 	bottom_footer();
 }
 
+/**
+ * Renders the Proxies list's filter toolbar (free-text search,
+ * rows-per-page) and its client-side JavaScript. Called from proxies()
+ * before the proxies table itself is rendered.
+ *
+ * @return void Outputs HTML and JavaScript directly.
+ *
+ * @global array $item_rows Rows-per-page options offered by Cacti core,
+ *                          used to populate the 'rows' select list.
+ */
 function webseer_filter() {
 	global $item_rows;
 

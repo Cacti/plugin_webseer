@@ -79,6 +79,21 @@ switch (get_request_var('action')) {
 
 exit();
 
+/**
+ * Handles the bulk-actions form for the Servers list (delete/enable/
+ * disable). On first display, renders the confirmation dialog listing
+ * the selected servers; once confirmed, applies the chosen action to
+ * each selected row. Invoked from this file's dispatcher when the
+ * request's 'action' is 'actions'.
+ *
+ * @return void Either redirects back to this page after applying the
+ *              action, or prints the confirmation dialog and returns
+ *              nothing.
+ *
+ * @global array $webseer_actions_server Map of bulk-action ids to their
+ *                                       display labels, used for the
+ *                                       confirmation dialog title.
+ */
 function form_actions() {
 	global $webseer_actions_server;
 
@@ -194,6 +209,16 @@ function form_actions() {
 	bottom_footer();
 }
 
+/**
+ * Applies a bulk delete/enable/disable action directly to the servers
+ * selected via 'chk_*' request variables, without a confirmation step.
+ * Currently unused/dead code: not called from anywhere else in this
+ * file (form_actions() implements the actual, confirmed bulk-action
+ * flow used by the UI).
+ *
+ * @return void Redirects back to the Servers list; does not return a
+ *              value.
+ */
 function do_webseer() {
 	$hosts = [];
 
@@ -238,15 +263,45 @@ function do_webseer() {
  *  This is a generic function for this page that makes sure that
  *  we have a good request.  We want to protect against people who
  *  like to create issues with Cacti.
+ *
+ * Validates and normalizes the current request's filter/sort/pagination
+ * variables for the Servers list, persisting them to the session.
+ * Called from list_servers() before rendering the list.
+ *
+ * @return void
  */
 function webseer_request_validation() {
 	webseer_validate_list_request('sess_webseer', 'name', '20', true, false);
 }
 
+/**
+ * Validates and normalizes the current request's filter/sort/pagination
+ * variables for the server check history log view, persisting them to
+ * the session. Called from webseer_show_history() before rendering the
+ * history list.
+ *
+ * @return void
+ */
 function webseer_log_request_validation() {
 	webseer_validate_log_request('sess_weseer_server_log');
 }
 
+/**
+ * Renders the check-history log for a single service check URL: a
+ * filterable, sortable, paginated table of the checks performed against
+ * it (status, HTTP code, and DNS/connect/redirect/total timing,
+ * color-coded by threshold). Invoked from this file's dispatcher when
+ * the request's 'action' is 'history'.
+ *
+ * @return void Redirects back to the list if no 'id' was supplied;
+ *              otherwise outputs the history table HTML directly.
+ *
+ * @global array $config     Cacti global configuration array (declared
+ *                           but not directly used here).
+ * @global array $httperrors Map of HTTP status codes to their
+ *                           descriptions, used to display each check's
+ *                           result code.
+ */
 function webseer_show_history() {
 	global $config, $httperrors;
 
@@ -381,6 +436,25 @@ function webseer_show_history() {
 	}
 }
 
+/**
+ * Renders the main Servers list page: validates the request, draws the
+ * filter toolbar, and prints the paginated, sortable table of registered
+ * webseer servers with their current status. Invoked from this file's
+ * dispatcher for the default (no 'action') request.
+ *
+ * @return void Outputs the list page HTML directly.
+ *
+ * @global array $webseer_actions_server Map of bulk-action ids to their
+ *                                      display labels, used to populate
+ *                                      the actions dropdown.
+ * @global array $item_rows              Rows-per-page options offered
+ *                                      by Cacti core.
+ * @global array $config                 Cacti global configuration
+ *                                      array.
+ * @global int   $hostid                 Reserved/declared for parity
+ *                                      with other functions in this
+ *                                      file; not used directly here.
+ */
 function list_servers() {
 	global $webseer_actions_server, $item_rows, $config, $hostid;
 
@@ -539,6 +613,16 @@ function list_servers() {
 	bottom_footer();
 }
 
+/**
+ * Validates and saves a single webseer server configuration (name, IP,
+ * URL, location, master/isme flags), registering or updating the
+ * corresponding remote-poller server entry and refreshing this server's
+ * URL list when it is marked as 'isme'. Invoked from this file's
+ * dispatcher when the request's 'action' is 'save'.
+ *
+ * @return void Redirects back to the edit form for this server; does
+ *              not return a value.
+ */
 function form_save() {
 	// ================= input validation =================
 	get_filter_request_var('id');
@@ -596,6 +680,17 @@ function form_save() {
 	exit;
 }
 
+/**
+ * Renders the add/edit form for a single webseer server configuration,
+ * pre-populating its fields when editing an existing server. Invoked
+ * from this file's dispatcher when the request's 'action' is 'edit'.
+ *
+ * @return void Outputs the edit form HTML directly.
+ *
+ * @global array $webseer_server_fields The edit form's field
+ *                                     definitions, filled in here with
+ *                                     the server's current values.
+ */
 function webseer_edit_server() {
 	global $webseer_server_fields;
 
@@ -630,6 +725,16 @@ function webseer_edit_server() {
 	form_save_button('webseer_servers.php', 'return');
 }
 
+/**
+ * Renders the Servers list's filter toolbar (state, free-text filter,
+ * rows-per-page) and its client-side JavaScript. Called from
+ * list_servers() before the servers table itself is rendered.
+ *
+ * @return void Outputs HTML and JavaScript directly.
+ *
+ * @global array $item_rows Rows-per-page options offered by Cacti core,
+ *                          used to populate the 'rows' select list.
+ */
 function webseer_filter() {
 	global $item_rows;
 
@@ -733,6 +838,16 @@ function webseer_filter() {
 	html_end_box();
 }
 
+/**
+ * Renders the server check-history log's filter toolbar (rows-per-page,
+ * free-text filter) and its client-side JavaScript. Called from
+ * webseer_show_history() before the history table itself is rendered.
+ *
+ * @return void Outputs HTML and JavaScript directly.
+ *
+ * @global array $item_rows Rows-per-page options offered by Cacti core,
+ *                          used to populate the 'rows' select list.
+ */
 function webseer_log_filter() {
 	global $item_rows;
 

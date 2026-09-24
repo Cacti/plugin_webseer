@@ -22,4 +22,5 @@
 *.swp
 .DS_Store
 locales/po/*.mo
+locales/LC_MESSAGES/*.mo
 .omc/

@@ -43,6 +43,40 @@ class cURL {
 	var $debug;
 	var $cookies;
 
+	/**
+	 * Initializes a cURL wrapper instance for a single HTTP(S) service
+	 * check: sets the user agent, target host context, HTTP compression
+	 * option, and (optionally) prepares a cookie jar file. Called when a
+	 * new cURL object is constructed, e.g. from webseer_process.php and
+	 * poller_webseer.php's plugin_webseer_update_servers().
+	 *
+	 * @param bool   $cookies         Whether to use a cookie jar file for
+	 *                               this session; defaults to true.
+	 * @param string $cookie          The cookie jar file path to use when
+	 *                               $cookies is true; defaults to
+	 *                               'cookies.txt'.
+	 * @param int    $compression     The configured HTTP compression
+	 *                               option id (validated against
+	 *                               $httpcompressions); defaults to
+	 *                               WEBSEER_COMPRESSION_NONE.
+	 * @param string $proxy_hostname  An optional HTTP proxy hostname to
+	 *                               route requests through; defaults to
+	 *                               ''.
+	 * @param array|string $host      The service check/server row this
+	 *                               request is being made for, used for
+	 *                               debug logging context; defaults to
+	 *                               '' (empty string).
+	 *
+	 * @return void
+	 *
+	 * @global array $config            Cacti global configuration array;
+	 *                                  used to locate the CA bundle file.
+	 * @global array $httperrors        Map of HTTP status codes to their
+	 *                                  descriptions.
+	 * @global array $httpcompressions  Map of compression option ids to
+	 *                                  their cURL encoding values.
+	 * @global bool  $debug             Whether debug output is enabled.
+	 */
 	function __construct($cookies = true, $cookie = 'cookies.txt', $compression = WEBSEER_COMPRESSION_NONE, $proxy_hostname = '', $host = '') {
 		global $config, $httperrors, $httpcompressions, $debug;
 
@@ -71,6 +105,16 @@ class cURL {
 		$this->bundle         = $config['base_path'] . '/plugins/webseer/ca-bundle.crt';
 	}
 
+	/**
+	 * Validates that the cookie jar file exists or can be created, storing
+	 * its path for use by subsequent requests, or recording an error if
+	 * it is not accessible. Called from the constructor when cookies are
+	 * enabled.
+	 *
+	 * @param string $cookie_file The cookie jar file path to validate.
+	 *
+	 * @return void
+	 */
 	function cookie($cookie_file) {
 		$this->debug('Checking Cookie File');
 
@@ -83,6 +127,22 @@ class cURL {
 		}
 	}
 
+	/**
+	 * Sends an HTTP POST request with the given form data to a URL.
+	 * Called from poller_webseer.php's plugin_webseer_update_servers()
+	 * (to send a HEARTBEAT notification) and from
+	 * plugin_webseer_down_remote_hosts() in includes/functions.php (to
+	 * send a HOSTDOWN notification) to another webseer server.
+	 *
+	 * @param string $url  The URL to POST to.
+	 * @param array  $data Key/value pairs to send as
+	 *                     'application/x-www-form-urlencoded' POST data;
+	 *                     defaults to an empty array.
+	 *
+	 * @return string|false The raw response body (including headers,
+	 *                      since CURLOPT_HEADER is enabled), or false on
+	 *                      cURL failure.
+	 */
 	function post($url, $data = []) {
 		global $httpcompressions;
 
@@ -124,10 +184,36 @@ class cURL {
 		return $return;
 	}
 
+	/**
+	 * Forwards a debug message to the plugin's debug logging function,
+	 * tagged with this instance's target host context. Called throughout
+	 * this class to log request/option details.
+	 *
+	 * @param string $message The debug message to log.
+	 *
+	 * @return void
+	 */
 	function debug($message) {
 		plugin_webseer_debug($message, $this->host);
 	}
 
+	/**
+	 * Performs the HTTP(S) GET request for this instance's configured
+	 * target host/URL, applying its timeout, redirect, proxy, and
+	 * certificate-verification settings, and records the resulting
+	 * response data and cURL timing/status info. Called from
+	 * webseer_process.php's main flow for each 'http'/'https' type
+	 * service check.
+	 *
+	 * @return array The check result: 'result' (1 success, 0 failure),
+	 *               'time' (Unix timestamp), and 'error' (error message,
+	 *               if any); the raw/cleaned response body is also stored
+	 *               on $this->data and full cURL info on
+	 *               $this->results['options'].
+	 *
+	 * @global array $httpcompressions Map of compression option ids to
+	 *                                their cURL encoding values.
+	 */
 	function get() {
 		global $httpcompressions;
 

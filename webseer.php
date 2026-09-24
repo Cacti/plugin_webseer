@@ -92,6 +92,21 @@ switch (get_request_var('action')) {
 
 exit;
 
+/**
+ * Handles the bulk-actions form for the Service Checks list (delete/
+ * enable/disable/duplicate). On first display, renders the confirmation
+ * dialog listing the selected URLs; once confirmed, applies the chosen
+ * action to each selected row. Invoked from this file's dispatcher when
+ * the request's 'action' is 'actions'.
+ *
+ * @return void Either redirects back to this page after applying the
+ *              action, or prints the confirmation dialog and returns
+ *              nothing.
+ *
+ * @global array $webseer_actions_url Map of bulk-action ids to their
+ *                                    display labels, used for the
+ *                                    confirmation dialog title.
+ */
 function form_actions() {
 	global $webseer_actions_url;
 
@@ -247,6 +262,16 @@ function form_actions() {
 	bottom_footer();
 }
 
+/**
+ * Validates and saves a single service check URL configuration (target
+ * URL/IP, search patterns, auth/cert options, proxy, notification
+ * accounts/list, thresholds), registering or updating the corresponding
+ * remote-poller host entries as needed. Invoked from this file's
+ * dispatcher when the request's 'action' is 'save'.
+ *
+ * @return void Redirects back to the edit form for this URL; does not
+ *              return a value.
+ */
 function form_save() {
 	// ================= input validation =================
 	get_filter_request_var('id');
@@ -334,6 +359,15 @@ function form_save() {
 	exit;
 }
 
+/**
+ * Deletes all recorded check-history log entries for a single service
+ * check URL. Invoked from this file's dispatcher when the request's
+ * 'action' is 'purge'.
+ *
+ * @param int $id The plugin_webseer_urls.id whose log history to purge.
+ *
+ * @return void
+ */
 function purge_log_events($id) {
 	$name = db_fetch_cell_prepared('SELECT display_name
 		FROM plugin_webseer_urls
@@ -345,6 +379,20 @@ function purge_log_events($id) {
 	raise_message('url_log_purged', __('The Service Check history was purged for %s', $name, 'webseer'), MESSAGE_LEVEL_INFO);
 }
 
+/**
+ * Renders the add/edit form for a single service check URL definition,
+ * pre-populating its fields when editing an existing URL, hiding the
+ * legacy notification fields when Thold's legacy notifications are
+ * disabled, and initializing the notification-accounts multiselect
+ * widget. Invoked from this file's dispatcher when the request's
+ * 'action' is 'edit'.
+ *
+ * @return void Outputs the edit form HTML directly.
+ *
+ * @global array $webseer_url_fields The edit form's field definitions,
+ *                                   filled in here with the URL's
+ *                                   current values.
+ */
 function webseer_edit_url() {
 	global $webseer_url_fields;
 
@@ -452,15 +500,49 @@ function webseer_edit_url() {
  *  This is a generic function for this page that makes sure that
  *  we have a good request.  We want to protect against people who
  *  like to create issues with Cacti.
+ *
+ * Validates and normalizes the current request's filter/sort/pagination
+ * variables for the Service Checks list, persisting them to the session.
+ * Called from list_urls() before rendering the list.
+ *
+ * @return void
  */
 function webseer_request_validation() {
 	webseer_validate_list_request('sess_webseerurl', 'display_name', read_config_option('log_refresh_interval'), true, true);
 }
 
+/**
+ * Validates and normalizes the current request's filter/sort/pagination
+ * variables for the service check history log view, persisting them to
+ * the session. Called from webseer_show_history() before rendering the
+ * history list.
+ *
+ * @return void
+ */
 function webseer_log_request_validation() {
 	webseer_validate_log_request('sess_webseer_log');
 }
 
+/**
+ * Renders the check-history log for a single service check URL: a
+ * filterable, sortable, paginated table of past check results (date,
+ * URL, status, HTTP code, and DNS/connect/redirect/total timing,
+ * color-coded by threshold). Invoked from this file's dispatcher when
+ * the request's 'action' is 'history'.
+ *
+ * @return void Redirects back to the list if no 'id' was supplied;
+ *              otherwise outputs the history table HTML directly.
+ *
+ * @global array $config            Cacti global configuration array
+ *                                  (declared but not directly used
+ *                                  here).
+ * @global array $httperrors        Map of HTTP status codes to their
+ *                                  descriptions, used to display each
+ *                                  check's result code.
+ * @global array $httpcompressions  Reserved/declared for parity with
+ *                                  other functions in this file; not
+ *                                  used directly here.
+ */
 function webseer_show_history() {
 	global $config, $httperrors, $httpcompressions;
 
@@ -596,6 +678,30 @@ function webseer_show_history() {
 	}
 }
 
+/**
+ * Renders the main Service Checks list page: validates the request,
+ * draws the filter toolbar, and prints the paginated, sortable table of
+ * configured service check URLs with their current status. Invoked from
+ * this file's dispatcher for the default (no 'action') request.
+ *
+ * @return void Outputs the list page HTML directly.
+ *
+ * @global array $webseer_actions_url Map of bulk-action ids to their
+ *                                    display labels, used to populate
+ *                                    the actions dropdown.
+ * @global array $httperrors          Map of HTTP status codes to their
+ *                                    descriptions, used to display each
+ *                                    URL's last result code.
+ * @global array $config              Cacti global configuration array.
+ * @global int   $hostid               Reserved/declared for parity with
+ *                                    other functions in this file; not
+ *                                    used directly here.
+ * @global array $refresh              Set with the page auto-refresh
+ *                                    configuration for set_page_refresh().
+ * @global array $httpcompressions    Reserved/declared for parity with
+ *                                    other functions in this file; not
+ *                                    used directly here.
+ */
 function list_urls() {
 	global $webseer_actions_url, $httperrors, $config, $hostid, $refresh, $httpcompressions;
 
@@ -873,6 +979,15 @@ function list_urls() {
 	bottom_footer();
 }
 
+/**
+ * Normalizes a null value to the string '0', leaving any other value
+ * unchanged. Called from list_urls() when rendering each URL row's
+ * timing columns (namelookup/connect/redirect/total time).
+ *
+ * @param mixed $value The value to check.
+ *
+ * @return mixed '0' if $value is null, otherwise $value unchanged.
+ */
 function webseer_checknull($value) {
 	if ($value == null) {
 		return '0';
@@ -881,6 +996,21 @@ function webseer_checknull($value) {
 	}
 }
 
+/**
+ * Renders the Service Checks list's filter toolbar (state, refresh
+ * interval, rows-per-page, free-text filter) and its client-side
+ * JavaScript, and configures the page's auto-refresh. Called from
+ * list_urls() before the URLs table itself is rendered.
+ *
+ * @return void Outputs HTML and JavaScript directly.
+ *
+ * @global array $item_rows             Rows-per-page options offered by
+ *                                     Cacti core, used to populate the
+ *                                     'rows' select list.
+ * @global int   $page_refresh_interval Reserved/declared for parity with
+ *                                     other functions in this file; not
+ *                                     used directly here.
+ */
 function webseer_filter() {
 	global $item_rows, $page_refresh_interval;
 
@@ -1006,6 +1136,17 @@ function webseer_filter() {
 	html_end_box();
 }
 
+/**
+ * Renders the check-history log's filter toolbar (rows-per-page,
+ * free-text filter, purge-history button) and its client-side
+ * JavaScript. Called from webseer_show_history() before the history
+ * table itself is rendered.
+ *
+ * @return void Outputs HTML and JavaScript directly.
+ *
+ * @global array $item_rows Rows-per-page options offered by Cacti core,
+ *                          used to populate the 'rows' select list.
+ */
 function webseer_log_filter() {
 	global $item_rows;
 
