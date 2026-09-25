@@ -23,13 +23,22 @@
 */
 
 class mxlookup {
+	/** @var resource|false|null */
 	var $dns_socket = null;
+	/** @var string */
 	var $QNAME      = '';
-	var $dns_packet = null;
+	/** @var string */
+	var $dns_packet = '';
+	/** @var string|int */
 	var $ANCOUNT    = 0;
+	/** @var int */
 	var $cIx        = 0;
+	/** @var array<int,string> */
 	var $arrMX      = [];
+	/** @var string */
 	var $dns_repl_domain;
+	/** @var string */
+	var $dns_reply = '';
 
 	/**
 	 * Performs a raw UDP DNS A-record lookup for a domain against a DNS
@@ -50,11 +59,20 @@ class mxlookup {
 
 		$dns_socket = fsockopen("udp://$dns", 53);
 
+		if ($dns_socket === false) {
+			return;
+		}
+
 		fwrite($dns_socket, $this->dns_packet, strlen($this->dns_packet));
 
-		$this->dns_reply  = fread($dns_socket,1);
+		$reply            = fread($dns_socket, 1);
+		$this->dns_reply  = is_string($reply) ? $reply : '';
 		$bytes            = stream_get_meta_data($dns_socket);
-		$this->dns_reply .= fread($dns_socket,$bytes['unread_bytes']);
+
+		if ($bytes['unread_bytes'] > 0) {
+			$more = fread($dns_socket, $bytes['unread_bytes']);
+			$this->dns_reply .= is_string($more) ? $more : '';
+		}
 
 		fclose($dns_socket);
 
@@ -90,10 +108,9 @@ class mxlookup {
 	 * No-op destructor. Invoked automatically by PHP when the object is
 	 * destroyed.
 	 *
-	 * @return bool Always true.
+	 * @return void
 	 */
 	function __destruct() {
-		return true;
 	}
 
 	/**

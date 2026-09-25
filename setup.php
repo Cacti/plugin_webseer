@@ -99,6 +99,13 @@ function plugin_webseer_upgrade() {
 	global $config;
 
 	$info = plugin_webseer_version();
+
+	if (!isset($info['version'], $info['longname'], $info['author'], $info['homepage'], $info['name'])) {
+		cacti_log('ERROR: webseer plugin INFO file is missing required fields, skipping upgrade check', false, 'WEBSEER');
+
+		return true;
+	}
+
 	$new  = $info['version'];
 	$old  = db_fetch_cell('SELECT version FROM plugin_config WHERE directory="webseer"');
 
@@ -207,7 +214,7 @@ function plugin_webseer_version() {
 	global $config;
 	$info = parse_ini_file($config['base_path'] . '/plugins/webseer/INFO', true);
 
-	return $info['info'];
+	return isset($info['info']) && is_array($info['info']) ? $info['info'] : [];
 }
 
 /**
@@ -511,7 +518,7 @@ function plugin_webseer_draw_navigation_text($nav) {
  *                    'rcnn_id' (remote connection id), and 'class'
  *                    (replication scope, e.g. 'all').
  *
- * @return void
+ * @return array The $data array, passed through unchanged for hook chaining.
  */
 function webseer_replicate_out($data) {
 	$remote_poller_id = $data['remote_poller_id'];

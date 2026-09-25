@@ -23,24 +23,41 @@
 */
 
 class cURL {
+	/** @var array<int,string> */
 	var $headers;
+	/** @var string */
 	var $user_agent;
+	/** @var int */
 	var $compression;
+	/** @var string|null */
 	var $cookie_file;
 
+	/** @var string */
 	var $proxy_hostname;
+	/** @var mixed */
 	var $proxy_http_port;
+	/** @var mixed */
 	var $proxy_https_port;
+	/** @var string */
 	var $proxy_username;
+	/** @var string */
 	var $proxy_password;
 
+	/** @var array<string,mixed> */
 	var $results;
+	/** @var mixed */
 	var $error;
+	/** @var array<string,mixed>|string */
 	var $host;
+	/** @var string */
 	var $data;
+	/** @var string */
 	var $bundle;
+	/** @var array<int|string,mixed> */
 	var $httperrors;
+	/** @var bool */
 	var $debug;
+	/** @var bool */
 	var $cookies;
 
 	/**
@@ -50,22 +67,22 @@ class cURL {
 	 * new cURL object is constructed, e.g. from webseer_process.php and
 	 * poller_webseer.php's plugin_webseer_update_servers().
 	 *
-	 * @param bool   $cookies         Whether to use a cookie jar file for
-	 *                               this session; defaults to true.
-	 * @param string $cookie          The cookie jar file path to use when
-	 *                               $cookies is true; defaults to
-	 *                               'cookies.txt'.
-	 * @param int    $compression     The configured HTTP compression
-	 *                               option id (validated against
-	 *                               $httpcompressions); defaults to
-	 *                               WEBSEER_COMPRESSION_NONE.
-	 * @param string $proxy_hostname  An optional HTTP proxy hostname to
-	 *                               route requests through; defaults to
-	 *                               ''.
-	 * @param array|string $host      The service check/server row this
-	 *                               request is being made for, used for
-	 *                               debug logging context; defaults to
-	 *                               '' (empty string).
+	 * @param bool         $cookies        Whether to use a cookie jar file for
+	 *                                     this session; defaults to true.
+	 * @param string       $cookie         The cookie jar file path to use when
+	 *                                     $cookies is true; defaults to
+	 *                                     'cookies.txt'.
+	 * @param int          $compression    The configured HTTP compression
+	 *                                     option id (validated against
+	 *                                     $httpcompressions); defaults to
+	 *                                     WEBSEER_COMPRESSION_NONE.
+	 * @param string       $proxy_hostname An optional HTTP proxy hostname to
+	 *                                     route requests through; defaults to
+	 *                                     ''.
+	 * @param array|string $host           The service check/server row this
+	 *                                     request is being made for, used for
+	 *                                     debug logging context; defaults to
+	 *                                     '' (empty string).
 	 *
 	 * @return void
 	 *
@@ -139,9 +156,9 @@ class cURL {
 	 *                     'application/x-www-form-urlencoded' POST data;
 	 *                     defaults to an empty array.
 	 *
-	 * @return string|false The raw response body (including headers,
-	 *                      since CURLOPT_HEADER is enabled), or false on
-	 *                      cURL failure.
+	 * @return string|bool The raw response body (including headers,
+	 *                     since CURLOPT_HEADER is enabled), or false on
+	 *                     cURL failure.
 	 */
 	function post($url, $data = []) {
 		global $httpcompressions;
@@ -194,7 +211,7 @@ class cURL {
 	 * @return void
 	 */
 	function debug($message) {
-		plugin_webseer_debug($message, $this->host);
+		plugin_webseer_debug($message, is_array($this->host) ? $this->host : []);
 	}
 
 	/**
@@ -217,9 +234,11 @@ class cURL {
 	function get() {
 		global $httpcompressions;
 
-		$this->debug('Executing Get Request for URL:' . $this->host['url'] . ', IP:' . $this->host['ip']);
+		$host = is_array($this->host) ? $this->host : [];
 
-		$url = $this->host['url'];
+		$this->debug('Executing Get Request for URL:' . ($host['url'] ?? '') . ', IP:' . ($host['ip'] ?? ''));
+
+		$url = $host['url'] ?? '';
 
 		$process = curl_init($url);
 
@@ -230,8 +249,8 @@ class cURL {
 			CURLOPT_FOLLOWLOCATION  => true,
 			CURLOPT_REDIR_PROTOCOLS => CURLPROTO_HTTP | CURLPROTO_HTTPS,
 			CURLOPT_MAXREDIRS       => 4,
-			CURLOPT_TIMEOUT         => $this->host['timeout_trigger'],
-			CURLOPT_FAILONERROR     => ($this->host['requiresauth'] == '' ? true : false),
+			CURLOPT_TIMEOUT         => $host['timeout_trigger'] ?? 0,
+			CURLOPT_FAILONERROR     => (($host['requiresauth'] ?? '') == '' ? true : false),
 		];
 
 		if (!empty($this->compression)) {
@@ -278,7 +297,7 @@ class cURL {
 		}
 
 		// Disable Cert checking for now
-		if ($this->host['checkcert'] == '') {
+		if (($host['checkcert'] ?? '') == '') {
 			$cert_opts = [
 				CURLOPT_SSL_VERIFYPEER => false,
 				CURLOPT_SSL_VERIFYHOST => false,
@@ -294,6 +313,7 @@ class cURL {
 		curl_setopt_array($process,$options);
 
 		$data = curl_exec($process);
+		$data = is_string($data) ? $data : '';
 
 		$this->data = str_replace(["'", '\\'], [''], $data);
 
@@ -320,10 +340,10 @@ class cURL {
 		curl_close($process);
 
 		// If we have set a failed search string, then ignore the normal searches and only alert on it
-		if ($this->host['search_failed'] != '' && $errnum > 0) {
+		if (($host['search_failed'] ?? '') != '' && $errnum > 0) {
 			$this->debug('Processing search_failed');
 
-			if (strpos($data, $this->host['search_failed']) !== false) {
+			if (strpos($data, $host['search_failed']) !== false) {
 				$this->results['error'] = 'Failure Search string found!';
 			} else {
 				$this->results['error']  = '';
@@ -332,15 +352,15 @@ class cURL {
 		} elseif ($errnum == 0) {
 			$this->debug('Processing search');
 
-			if ($this->host['search'] != '') {
-				$found = (strpos($data, $this->host['search']) !== false);
+			if (($host['search'] ?? '') != '') {
+				$found = (strpos($data, $host['search']) !== false);
 			} else {
 				$found = false;
 			}
 
-			if (!$found && $this->host['search_maint'] != '') {
+			if (!$found && ($host['search_maint'] ?? '') != '') {
 				$this->debug('Processing search maint');
-				$found = (strpos($data, $this->host['search_maint']) !== false);
+				$found = (strpos($data, $host['search_maint']) !== false);
 			}
 
 			if (!$found) {
@@ -350,7 +370,7 @@ class cURL {
 			} else {
 				$this->debug('Processing search found');
 
-				if ($this->host['requiresauth'] == '') {
+				if (($host['requiresauth'] ?? '') == '') {
 					$this->debug('Processing requires authentication');
 
 					$this->results['result'] = 1;

@@ -196,6 +196,10 @@ function plugin_webseer_register_server() {
 	if (function_exists('gethostname')) {
 		$hostname = gethostname();
 	} else {
+		$hostname = false;
+	}
+
+	if ($hostname === false) {
 		$hostname = php_uname('n');
 	}
 
@@ -292,7 +296,7 @@ function display_version() {
 
 	$info = plugin_webseer_version();
 
-	print 'Cacti Service Check Master Process, Version ' . $info['version'] . ', ' . COPYRIGHT_YEARS . "\n";
+	print 'Cacti Service Check Master Process, Version ' . (isset($info['version']) ? $info['version'] : 'unknown') . ', ' . COPYRIGHT_YEARS . "\n";
 }
 
 /**
