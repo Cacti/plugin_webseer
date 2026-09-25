@@ -49,8 +49,6 @@ switch (get_request_var('action')) {
 
 		header('Location: webseer.php?header=false');
 		exit;
-
-		break;
 	case 'disable':
 		$id = get_filter_request_var('id');
 
@@ -61,8 +59,6 @@ switch (get_request_var('action')) {
 
 		header('Location: webseer.php?header=false');
 		exit;
-
-		break;
 	case 'purge':
 		$id = get_filter_request_var('id');
 
@@ -72,8 +68,6 @@ switch (get_request_var('action')) {
 
 		header('Location: webseer.php?header=false');
 		exit;
-
-		break;
 	case 'edit':
 		top_header();
 		webseer_edit_url();
@@ -116,6 +110,8 @@ function form_actions() {
 		$action         = get_nfilter_request_var('drp_action');
 
 		if ($selected_items != false) {
+			$urls = [];
+
 			if (cacti_sizeof($selected_items)) {
 				foreach ($selected_items as $url) {
 					$urls[] = $url;
@@ -145,6 +141,7 @@ function form_actions() {
 
 						foreach ($urls as $id) {
 							$save                    = db_fetch_row_prepared('SELECT * FROM plugin_webseer_urls WHERE id = ?', [$id]);
+							$save                    = is_array($save) ? $save : [];
 							$save['id']              = 0;
 							$save['poller_id']       = 1;
 							$save['display_name']    = 'New Service Check (' . $newid . ')';
@@ -194,13 +191,19 @@ function form_actions() {
 		}
 	}
 
+	if (!array_key_exists((int) get_nfilter_request_var('drp_action'), $webseer_actions_url)) {
+		header('Location: webseer.php');
+		exit;
+	}
+
 	top_header();
 
 	form_start('webseer.php');
 
-	html_start_box($webseer_actions_url[get_nfilter_request_var('drp_action')], '60%', '', '3', 'center', '');
+	html_start_box($webseer_actions_url[(int) get_nfilter_request_var('drp_action')], '60%', false, 3, 'center', '');
 
-	$action = get_nfilter_request_var('drp_action');
+	$action     = get_nfilter_request_var('drp_action');
+	$save_html  = '';
 
 	if (cacti_sizeof($url_array)) {
 		if ($action == WEBSEER_ACTION_URL_DELETE) { // delete
@@ -249,7 +252,7 @@ function form_actions() {
 	print "<tr>
 		<td class='saveRow'>
 			<input type='hidden' name='action' value='actions'>
-			<input type='hidden' name='selected_items' value='" . (isset($url_array) ? serialize($url_array) : '') . "'>
+			<input type='hidden' name='selected_items' value='" . serialize($url_array) . "'>
 			<input type='hidden' name='drp_action' value='" . html_escape(get_nfilter_request_var('drp_action')) . "'>
 			$save_html
 		</td>
@@ -404,6 +407,7 @@ function webseer_edit_url() {
 
 	if (!isempty_request_var('id')) {
 		$url          = db_fetch_row_prepared('SELECT * FROM plugin_webseer_urls WHERE id = ?', [get_request_var('id')], false);
+		$url          = is_array($url) ? $url : [];
 		$header_label = __('Query [edit: %s]', $url['url'], 'webseer');
 	} else {
 		$header_label = __('Query [new]', 'webseer');
@@ -416,7 +420,7 @@ function webseer_edit_url() {
 
 	form_start('webseer.php');
 
-	html_start_box($header_label, '100%', '', '3', 'center', '');
+	html_start_box($header_label, '100%', false, 3, 'center', '');
 
 	draw_edit_form(
 		[
@@ -641,7 +645,7 @@ function webseer_show_history() {
 
 	print $nav;
 
-	html_start_box('', '100%', '', '4', 'center', '');
+	html_start_box('', '100%', false, 4, 'center', '');
 
 	html_header_sort($display_text, get_request_var('sort_column'), get_request_var('sort_direction'), 1, 'webseer_servers.php?action=history&id=' . get_request_var('id'), 'main');
 
@@ -873,7 +877,7 @@ function list_urls() {
 
 	print $nav;
 
-	html_start_box('', '100%', '', '4', 'center', '');
+	html_start_box('', '100%', false, 4, 'center', '');
 
 	html_header_sort_checkbox($display_text, get_request_var('sort_column'), get_request_var('sort_direction'), false);
 
@@ -1056,7 +1060,7 @@ function webseer_filter() {
 	</script>
 	<?php
 
-	html_start_box(__('Webseer Service Checks', 'webseer') , '100%', '', '3', 'center', 'webseer.php?action=edit');
+	html_start_box(__('Webseer Service Checks', 'webseer') , '100%', false, 3, 'center', 'webseer.php?action=edit');
 	?>
 	<tr class='even noprint'>
 		<td class='noprint'>
@@ -1195,7 +1199,7 @@ function webseer_log_filter() {
 	</script>
 	<?php
 
-	html_start_box(__('Webseer Service Check History', 'webseer') , '100%', '', '3', 'center', '');
+	html_start_box(__('Webseer Service Check History', 'webseer') , '100%', false, 3, 'center', '');
 	?>
 	<tr class='even noprint'>
 		<td class='noprint'>

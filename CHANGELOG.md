@@ -1,5 +1,15 @@
 # ChangeLog
 
+--- 3.3 ---
+
+* issue: Fix bug where SERVERS/URLS refresh from a master server could pass a false base64_decode() result into unserialize(), and where refresh_urls() shared refresh_servers()'s bug of not narrowing db_fetch_row()/post() results before use
+
+* issue: Fix bug where the 'gzip' compression option was passed to the cURL class as a literal string instead of the expected WEBSEER_COMPRESSION_GZIP constant, silently disabling gzip compression on 12 call sites
+
+* issue: Fix bug where the bulk-actions forms for Service Checks and Servers did not validate the drp_action request value against the known action set before using it to index the actions-menu array
+
+* issue: Fix cURL class's proxy_port property being set but never read (correct properties are proxy_http_port/proxy_https_port)
+
 --- 3.2 ---
 
 * security: Identify remote webseer servers by their real connection address, not a forwarded header
