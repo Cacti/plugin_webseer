@@ -206,8 +206,13 @@ function webseer_show_tab($current_tab) {
  * @return void
  */
 function plugin_webseer_refresh_servers() {
-	$server               = db_fetch_row('SELECT * FROM plugin_webseer_servers WHERE master = 1');
-	$server               = is_array($server) ? $server : [];
+	$server = db_fetch_row('SELECT * FROM plugin_webseer_servers WHERE master = 1');
+	$server = is_array($server) ? $server : [];
+
+	if (empty($server['url'])) {
+		return;
+	}
+
 	$server['debug_type'] = 'Server';
 
 	$cc              = new cURL(true, 'cookies.txt', WEBSEER_COMPRESSION_GZIP, '', $server);
@@ -255,6 +260,10 @@ function plugin_webseer_refresh_servers() {
 function plugin_webseer_refresh_urls() {
 	$server = db_fetch_row('SELECT * FROM plugin_webseer_servers WHERE master = 1');
 	$server = is_array($server) ? $server : [];
+
+	if (empty($server['url'])) {
+		return;
+	}
 
 	$server['debug_type'] = 'Server';
 

@@ -191,14 +191,14 @@ function form_actions() {
 		}
 	}
 
-	top_header();
-
-	form_start('webseer.php');
-
 	if (!array_key_exists((int) get_nfilter_request_var('drp_action'), $webseer_actions_url)) {
 		header('Location: webseer.php');
 		exit;
 	}
+
+	top_header();
+
+	form_start('webseer.php');
 
 	html_start_box($webseer_actions_url[(int) get_nfilter_request_var('drp_action')], '60%', false, 3, 'center', '');
 

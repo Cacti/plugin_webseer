@@ -296,14 +296,22 @@ class cURL {
 			$proxy_opts = [];
 		}
 
-		// Disable Cert checking for now
-		if (($host['checkcert'] ?? '') == '') {
+		// Verify the certificate by default; only skip verification when
+		// the host explicitly opted out via an unchecked 'checkcert' field.
+		// A missing 'checkcert' key (malformed/legacy row) also verifies.
+		$checkcert = array_key_exists('checkcert', $host) ? $host['checkcert'] : 'on';
+
+		if ($checkcert == '') {
 			$cert_opts = [
 				CURLOPT_SSL_VERIFYPEER => false,
 				CURLOPT_SSL_VERIFYHOST => false,
 			];
 		} else {
-			$cert_opts = [];
+			$cert_opts = [
+				CURLOPT_SSL_VERIFYPEER => true,
+				CURLOPT_SSL_VERIFYHOST => 2,
+				CURLOPT_CAINFO         => $this->bundle,
+			];
 		}
 
 		$options += $proxy_opts;
