@@ -2,6 +2,7 @@
 
 --- 3.2 ---
 
+* security: Add a version-safe CSP nonce (`plugin_webseer_csp_nonce()`) to every inline `<script>` tag so pages stay compatible with Cacti's Content-Security-Policy nonce enforcement, while falling back cleanly on older Cacti releases that lack the `CactiSecureHeaders` class
 * security: Identify remote webseer servers by their real connection address, not a forwarded header
 
 * issue: Correct issue with enable/disable service checks and servers
