@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2026-09-25 12:47-0400\n"
+"POT-Creation-Date: 2026-09-28 09:04-0400\n"
 "PO-Revision-Date: 2020-12-14 19:06-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -399,61 +399,61 @@ msgstr "कैक्टि मास्टर"
 msgid "Cacti Remote Server"
 msgstr "Cacti रिमोट सर्वर"
 
-#: setup.php:43
+#: setup.php:59
 #, fuzzy
 msgid "Web Service Check Admin"
 msgstr "वेब सेवा की जाँच व्यवस्थापक"
 
-#: setup.php:426
+#: setup.php:442
 msgid "Management"
 msgstr "प्रबंधन"
 
-#: setup.php:426
+#: setup.php:442
 #, fuzzy
 msgid "Service Checks"
 msgstr "वेब सेवा की जाँच"
 
-#: setup.php:446
+#: setup.php:462
 #, fuzzy
 msgid "WebSeer Service Checks"
 msgstr "WebSeer सेवा चेक"
 
-#: setup.php:453
+#: setup.php:469
 #, fuzzy
 msgid "Service Check Edit"
 msgstr "सेवा की जाँच संपादित करें"
 
-#: setup.php:460
+#: setup.php:476
 #, fuzzy
 msgid "Service Check Save"
 msgstr "सेवा की जाँच का नाम"
 
-#: setup.php:467
+#: setup.php:483
 #, fuzzy
 msgid "WebSeer Servers"
 msgstr "वेबसर्वर सर्वर"
 
-#: setup.php:474
+#: setup.php:490
 #, fuzzy
 msgid "Server Edit"
 msgstr "सर्वर संपादित करें"
 
-#: setup.php:481
+#: setup.php:497
 #, fuzzy
 msgid "Save Server"
 msgstr "सर्वर सक्षम करें"
 
-#: setup.php:488
+#: setup.php:504
 #, fuzzy
 msgid "WebSeer Proxies"
 msgstr "वेबसर्वर सर्वर"
 
-#: setup.php:495
+#: setup.php:511
 #, fuzzy
 msgid "Proxie Edit"
 msgstr "प्रॉक्सी"
 
-#: setup.php:502
+#: setup.php:518
 #, fuzzy
 msgid "Save Proxy"
 msgstr "नई प्रॉक्सी"
