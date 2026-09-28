@@ -56,7 +56,7 @@ if (cacti_sizeof($parms)) {
 
 		switch ($arg) {
 			case '--id':
-				$url_id = $value;
+				$url_id = (int) $value;
 
 				break;
 			case '-d':
@@ -99,6 +99,8 @@ $url = db_fetch_row_prepared('SELECT *
 	AND id = ?',
 	[$url_id]);
 
+$url = is_array($url) ? $url : [];
+
 if (!cacti_sizeof($url)) {
 	print "ERROR: URL is not Found\n";
 	exit(1);
@@ -120,7 +122,8 @@ register_startup($url_id, $url['poller_id']);
 
 if ($url['url'] != '') {
 	// attempt to get results 3 times before exiting
-	$x = 0;
+	$x       = 0;
+	$results = [];
 
 	while ($x < 3) {
 		plugin_webseer_debug('Service Check Number ' . $x, $url);
@@ -136,13 +139,15 @@ if ($url['url'] != '') {
 						WHERE id = ?',
 						[$url['proxy_server']]);
 
+					$proxy = is_array($proxy) ? $proxy : [];
+
 					if (cacti_sizeof($proxy)) {
 						$cc->proxy_hostname = $proxy['hostname'];
 
 						if ($url['type'] == 'http') {
-							$cc->proxy_port     = $proxy['http_port'];
+							$cc->proxy_http_port  = $proxy['http_port'];
 						} else {
-							$cc->proxy_port     = $proxy['https_port'];
+							$cc->proxy_https_port = $proxy['https_port'];
 						}
 
 						if ($proxy['username'] != '') {
@@ -157,7 +162,7 @@ if ($url['url'] != '') {
 					}
 				}
 
-				$results         = $cc->get($url['url']);
+				$results         = $cc->get();
 				$results['data'] = $cc->data;
 
 				break;
@@ -166,6 +171,8 @@ if ($url['url'] != '') {
 
 				break;
 		}
+
+		$results = is_array($results) ? $results : [];
 
 		if ($results['result']) {
 			break;
@@ -477,6 +484,10 @@ function plugin_webseer_amimaster() {
 	if (function_exists('gethostname')) {
 		$hostname = gethostname();
 	} else {
+		$hostname = false;
+	}
+
+	if ($hostname === false) {
 		$hostname = php_uname('n');
 	}
 
@@ -507,6 +518,10 @@ function plugin_webseer_whoami() {
 	if (function_exists('gethostname')) {
 		$hostname = gethostname();
 	} else {
+		$hostname = false;
+	}
+
+	if ($hostname === false) {
 		$hostname = php_uname('n');
 	}
 
@@ -583,7 +598,7 @@ function display_version() {
 
 	$info = plugin_webseer_version();
 
-	print 'Cacti Web Service Check Processor, Version ' . $info['version'] . ', ' . COPYRIGHT_YEARS . PHP_EOL;
+	print 'Cacti Web Service Check Processor, Version ' . (isset($info['version']) ? $info['version'] : 'unknown') . ', ' . COPYRIGHT_YEARS . PHP_EOL;
 }
 
 /**

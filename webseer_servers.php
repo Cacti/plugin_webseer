@@ -47,8 +47,6 @@ switch (get_request_var('action')) {
 
 		header('Location: webseer_servers.php?header=false');
 		exit;
-
-		break;
 	case 'disable':
 		$id = get_request_var('id');
 
@@ -59,8 +57,6 @@ switch (get_request_var('action')) {
 
 		header('Location: webseer_servers.php?header=false');
 		exit;
-
-		break;
 	case 'history':
 		webseer_show_history();
 
@@ -103,6 +99,8 @@ function form_actions() {
 		$action         = get_nfilter_request_var('drp_action');
 
 		if ($selected_items != false) {
+			$hosts = [];
+
 			if (cacti_sizeof($selected_items)) {
 				foreach ($selected_items as $host) {
 					$hosts[] = $host;
@@ -150,13 +148,19 @@ function form_actions() {
 		}
 	}
 
+	if (!array_key_exists((int) get_nfilter_request_var('drp_action'), $webseer_actions_server)) {
+		header('Location: webseer_servers.php');
+		exit;
+	}
+
 	top_header();
 
 	form_start('webseer_servers.php');
 
-	html_start_box($webseer_actions_server[get_nfilter_request_var('drp_action')], '60%', '', '3', 'center', '');
+	html_start_box($webseer_actions_server[(int) get_nfilter_request_var('drp_action')], '60%', false, 3, 'center', '');
 
-	$action = get_nfilter_request_var('drp_action');
+	$action     = get_nfilter_request_var('drp_action');
+	$save_html  = '';
 
 	if (cacti_sizeof($server_array)) {
 		if ($action == WEBSEER_ACTION_SERVER_DELETE) { // delete
@@ -196,7 +200,7 @@ function form_actions() {
 	print "<tr>
 		<td class='saveRow'>
 			<input type='hidden' name='action' value='actions'>
-			<input type='hidden' name='selected_items' value='" . (isset($server_array) ? serialize($server_array) : '') . "'>
+			<input type='hidden' name='selected_items' value='" . serialize($server_array) . "'>
 			<input type='hidden' name='drp_action' value='" . html_escape(get_nfilter_request_var('drp_action')) . "'>
 			$save_html
 		</td>
@@ -235,21 +239,21 @@ function do_webseer() {
 			foreach ($hosts as $host) {
 				db_execute_prepared('DELETE FROM plugin_webseer_servers WHERE id = ?', [$host]);
 				db_execute_prepared('DELETE FROM plugin_webseer_servers_log WHERE server= ?', [$host]);
-				plugin_webseer_delete_remote_server($host);
+				plugin_webseer_delete_remote_server((int) $host);
 			}
 
 			break;
 		case WEBSEER_ACTION_SERVER_DISABLE: // Disabled
 			foreach ($hosts as $host) {
 				db_execute_prepared("UPDATE plugin_webseer_servers SET enabled = '' WHERE id = ?", [$host]);
-				plugin_webseer_enable_remote_server($host, false);
+				plugin_webseer_enable_remote_server((int) $host, false);
 			}
 
 			break;
 		case WEBSEER_ACTION_SERVER_ENABLE: // Enabled
 			foreach ($hosts as $host) {
 				db_execute_prepared("UPDATE plugin_webseer_servers SET enabled = 'on' WHERE id = ?", [$host]);
-				plugin_webseer_enable_remote_server($host, true);
+				plugin_webseer_enable_remote_server((int) $host, true);
 			}
 
 			break;
@@ -271,7 +275,7 @@ function do_webseer() {
  * @return void
  */
 function webseer_request_validation() {
-	webseer_validate_list_request('sess_webseer', 'name', '20', true, false);
+	webseer_validate_list_request('sess_webseer', 'name', 20, true, false);
 }
 
 /**
@@ -363,7 +367,7 @@ function webseer_show_history() {
 
 	print $nav;
 
-	html_start_box('', '100%', '', '4', 'center', '');
+	html_start_box('', '100%', false, 4, 'center', '');
 
 	$display_text = [
 		'lastcheck' => [
@@ -521,7 +525,7 @@ function list_servers() {
 
 	print $nav;
 
-	html_start_box('', '100%', '', '4', 'center', '');
+	html_start_box('', '100%', false, 4, 'center', '');
 
 	$display_text = [
 		'nosort'    => [__('Actions', 'webseer'), 'ASC'],
@@ -702,6 +706,7 @@ function webseer_edit_server() {
 
 	if (!isempty_request_var('id')) {
 		$server       = db_fetch_row_prepared('SELECT * FROM plugin_webseer_servers WHERE id = ?', [get_request_var('id')], false);
+		$server       = is_array($server) ? $server : [];
 		$header_label = __('Query [edit: %s]', $server['ip'], 'webseer');
 	} else {
 		$header_label     = __('Query [new]', 'webseer');
@@ -713,7 +718,7 @@ function webseer_edit_server() {
 	$server['master'] = $server['master'] ? 'on' : '';
 
 	form_start('webseer_servers.php');
-	html_start_box($header_label, '100%', '', '3', 'center', '');
+	html_start_box($header_label, '100%', false, 3, 'center', '');
 	draw_edit_form([
 		'config' => ['form_name' => 'chk'],
 		'fields' => inject_form_variables($webseer_server_fields, $server)
@@ -771,7 +776,7 @@ function webseer_filter() {
 	</script>
 	<?php
 
-	html_start_box(__('Webseer Servers', 'webseer') , '100%', '', '3', 'center', 'webseer_servers.php?action=edit');
+	html_start_box(__('Webseer Servers', 'webseer') , '100%', false, 3, 'center', 'webseer_servers.php?action=edit');
 	?>
 	<tr class='even noprint'>
 		<td class='noprint'>
@@ -887,7 +892,7 @@ function webseer_log_filter() {
 	</script>
 	<?php
 
-	html_start_box(__('Webseer Server History', 'webseer') , '100%', '', '3', 'center', '');
+	html_start_box(__('Webseer Server History', 'webseer') , '100%', false, 3, 'center', '');
 	?>
 	<tr class='even noprint'>
 		<td class='noprint'>

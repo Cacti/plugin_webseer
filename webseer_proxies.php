@@ -72,6 +72,8 @@ function proxy_form_actions() {
 		if ($selected_items != false) {
 			if (get_nfilter_request_var('drp_action') == WEBSEER_ACTION_PROXY_DELETE) { // delete
 				// do a referential integrity check
+				$proxies = [];
+
 				if (cacti_sizeof($selected_items)) {
 					foreach ($selected_items as $proxy) {
 						$proxies[] = $proxy;
@@ -105,11 +107,18 @@ function proxy_form_actions() {
 		}
 	}
 
+	if (!array_key_exists((int) get_nfilter_request_var('drp_action'), $webseer_actions_proxy)) {
+		header('Location: webseer_proxies.php');
+		exit;
+	}
+
 	top_header();
 
 	form_start('webseer_proxies.php');
 
-	html_start_box($webseer_actions_proxy[get_nfilter_request_var('drp_action')], '60%', '', '3', 'center', '');
+	html_start_box($webseer_actions_proxy[(int) get_nfilter_request_var('drp_action')], '60%', false, 3, 'center', '');
+
+	$save_html = '';
 
 	if (cacti_sizeof($proxy_array) > 0) {
 		if (get_nfilter_request_var('drp_action') == WEBSEER_ACTION_PROXY_DELETE) { // delete
@@ -131,7 +140,7 @@ function proxy_form_actions() {
 	print "<tr>
 		<td class='saveRow'>
 			<input type='hidden' name='action' value='actions'>
-			<input type='hidden' name='selected_items' value='" . (isset($proxy_array) ? serialize($proxy_array) : '') . "'>
+			<input type='hidden' name='selected_items' value='" . serialize($proxy_array) . "'>
 			<input type='hidden' name='drp_action' value='" . html_escape(get_nfilter_request_var('drp_action')) . "'>
 			$save_html
 		</td>
@@ -200,7 +209,8 @@ function proxy_edit() {
 			WHERE id = ?',
 			[get_request_var('id')]);
 
-		$header_label = __('Proxy [edit: %s]', $proxy['name']);
+		$proxy        = is_array($proxy) ? $proxy : [];
+		$header_label = __('Proxy [edit: %s]', $proxy['name'] ?? '');
 	} else {
 		$header_label = __('Proxy [new]');
 	}
@@ -209,7 +219,7 @@ function proxy_edit() {
 
 	form_start('webseer_proxies.php');
 
-	html_start_box($header_label, '100%', true, '3', 'center', '');
+	html_start_box($header_label, '100%', true, 3, 'center', '');
 
 	draw_edit_form(
 		[
@@ -240,7 +250,7 @@ function proxy_edit() {
  * @return void
  */
 function request_validation() {
-	webseer_validate_list_request('sess_ws_proxy', 'name', '20', false, false);
+	webseer_validate_list_request('sess_ws_proxy', 'name', 20, false, false);
 }
 
 /**
@@ -318,7 +328,7 @@ function proxies() {
 
 	print $nav;
 
-	html_start_box('', '100%', '', '3', 'center', '');
+	html_start_box('', '100%', false, 3, 'center', '');
 
 	html_header_sort_checkbox($display_text, get_request_var('sort_column'), get_request_var('sort_direction'), false);
 
@@ -364,7 +374,7 @@ function proxies() {
 function webseer_filter() {
 	global $item_rows;
 
-	html_start_box(__('Webseer Proxy Management', 'webseer') , '100%', '', '3', 'center', 'webseer_proxies.php?action=edit&header=false');
+	html_start_box(__('Webseer Proxy Management', 'webseer') , '100%', false, 3, 'center', 'webseer_proxies.php?action=edit&header=false');
 
 	?>
 	<tr class='even noprint'>
