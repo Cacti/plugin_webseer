@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2026-09-25 12:47-0400\n"
+"POT-Creation-Date: 2026-09-28 09:04-0400\n"
 "PO-Revision-Date: 2026-09-12 08:18+0000\n"
 "Last-Translator: Daniel Nylander <daniel@danielnylander.se>\n"
 "Language-Team: Swedish <https://translate.cacti.net/projects/cacti/webseer/sv/>\n"
@@ -339,53 +339,53 @@ msgstr "Cacti-mästare"
 msgid "Cacti Remote Server"
 msgstr "Cacti fjärrserver"
 
-#: setup.php:43
+#: setup.php:59
 msgid "Web Service Check Admin"
 msgstr "Web Service Check Admin"
 
-#: setup.php:426
+#: setup.php:442
 msgid "Management"
 msgstr "Hantering"
 
-#: setup.php:426
+#: setup.php:442
 #, fuzzy
 #| msgid "Web Service Checks"
 msgid "Service Checks"
 msgstr "Kontroller av webbtjänster"
 
-#: setup.php:446
+#: setup.php:462
 msgid "WebSeer Service Checks"
 msgstr "Webseer Service Checks"
 
-#: setup.php:453
+#: setup.php:469
 msgid "Service Check Edit"
 msgstr "Service Check Edit"
 
-#: setup.php:460
+#: setup.php:476
 msgid "Service Check Save"
 msgstr "Service Kontrollera Spara"
 
-#: setup.php:467
+#: setup.php:483
 msgid "WebSeer Servers"
 msgstr "WebSeer-servrar"
 
-#: setup.php:474
+#: setup.php:490
 msgid "Server Edit"
 msgstr "Server Redigera"
 
-#: setup.php:481
+#: setup.php:497
 msgid "Save Server"
 msgstr "Spara server"
 
-#: setup.php:488
+#: setup.php:504
 msgid "WebSeer Proxies"
 msgstr "Proxyservrar för WebSeer"
 
-#: setup.php:495
+#: setup.php:511
 msgid "Proxie Edit"
 msgstr "Proxie Edit"
 
-#: setup.php:502
+#: setup.php:518
 msgid "Save Proxy"
 msgstr "Spara proxy"
 
