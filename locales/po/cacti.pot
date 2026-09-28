@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Cacti \n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2026-09-25 12:47-0400\n"
+"POT-Creation-Date: 2026-09-28 09:04-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Cacti Developers <developers@cacti.net>>\n"
 "Language-Team: Cacti Developers <developers@cacti.net>\n"
@@ -339,51 +339,51 @@ msgstr ""
 msgid "Cacti Remote Server"
 msgstr ""
 
-#: setup.php:43
+#: setup.php:59
 msgid "Web Service Check Admin"
 msgstr ""
 
-#: setup.php:426
+#: setup.php:442
 msgid "Management"
 msgstr ""
 
-#: setup.php:426
+#: setup.php:442
 msgid "Service Checks"
 msgstr ""
 
-#: setup.php:446
+#: setup.php:462
 msgid "WebSeer Service Checks"
 msgstr ""
 
-#: setup.php:453
+#: setup.php:469
 msgid "Service Check Edit"
 msgstr ""
 
-#: setup.php:460
+#: setup.php:476
 msgid "Service Check Save"
 msgstr ""
 
-#: setup.php:467
+#: setup.php:483
 msgid "WebSeer Servers"
 msgstr ""
 
-#: setup.php:474
+#: setup.php:490
 msgid "Server Edit"
 msgstr ""
 
-#: setup.php:481
+#: setup.php:497
 msgid "Save Server"
 msgstr ""
 
-#: setup.php:488
+#: setup.php:504
 msgid "WebSeer Proxies"
 msgstr ""
 
-#: setup.php:495
+#: setup.php:511
 msgid "Proxie Edit"
 msgstr ""
 
-#: setup.php:502
+#: setup.php:518
 msgid "Save Proxy"
 msgstr ""
 

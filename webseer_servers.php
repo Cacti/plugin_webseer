@@ -598,7 +598,7 @@ function list_servers() {
 	form_end();
 
 	?>
-	<script type='text/javascript'>
+	<script type='text/javascript' <?php print plugin_webseer_csp_nonce(); ?>>
 	$(function() {
 		$('#webseer2_child').find('.cactiTooltipHint').each(function() {
 			title = $(this).attr('title');
@@ -744,7 +744,7 @@ function webseer_filter() {
 	global $item_rows;
 
 	?>
-	<script type='text/javascript'>
+	<script type='text/javascript' <?php print plugin_webseer_csp_nonce(); ?>>
 
 	function applyFilter() {
 		strURL  = 'webseer_servers.php?header=false&state=' + $('#state').val();
@@ -857,7 +857,7 @@ function webseer_log_filter() {
 	global $item_rows;
 
 	?>
-	<script type='text/javascript'>
+	<script type='text/javascript' <?php print plugin_webseer_csp_nonce(); ?>>
 
 	refreshMSeconds=99999999;
 

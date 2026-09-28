@@ -417,7 +417,7 @@ function webseer_filter() {
 				</tr>
 			</table>
 		</form>
-		<script type='text/javascript'>
+		<script type='text/javascript' <?php print plugin_webseer_csp_nonce(); ?>>
 
 		function applyFilter() {
 			strURL  = 'webseer_proxies.php?header=false';

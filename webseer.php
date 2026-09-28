@@ -434,7 +434,7 @@ function webseer_edit_url() {
 	form_save_button('webseer.php', 'return');
 
 	?>
-	<script type='text/javascript'>
+	<script type='text/javascript' <?php print plugin_webseer_csp_nonce(); ?>>
 
 	$(function() {
 		var msWidth = 100;
@@ -964,7 +964,7 @@ function list_urls() {
 	form_end();
 
 	?>
-	<script type='text/javascript'>
+	<script type='text/javascript' <?php print plugin_webseer_csp_nonce(); ?>>
 	$(function() {
 		$('#webseer2_child').find('.cactiTooltipHint').each(function() {
 			var title = $(this).attr('title');
@@ -1025,7 +1025,7 @@ function webseer_filter() {
 	set_page_refresh($refresh);
 
 	?>
-	<script type='text/javascript'>
+	<script type='text/javascript' <?php print plugin_webseer_csp_nonce(); ?>>
 	function applyFilter() {
 		strURL  = 'webseer.php?header=false&state=' + $('#state').val();
 		strURL += '&refresh=' + $('#refresh').val();
@@ -1155,7 +1155,7 @@ function webseer_log_filter() {
 	global $item_rows;
 
 	?>
-	<script type='text/javascript'>
+	<script type='text/javascript' <?php print plugin_webseer_csp_nonce(); ?>>
 
 	refreshMSeconds=99999999;
 
