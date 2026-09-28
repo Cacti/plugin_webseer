@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2026-09-25 12:47-0400\n"
+"POT-Creation-Date: 2026-09-28 09:04-0400\n"
 "PO-Revision-Date: 2023-04-20 18:53+0000\n"
 "Last-Translator: Ede Willians dos Santos Cavalcante <edewillians10@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <http://translate.cacti.net/projects/cacti/webseer/pt_BR/>\n"
@@ -395,62 +395,62 @@ msgstr "Mestre de Cactos"
 msgid "Cacti Remote Server"
 msgstr "Cacti Remote Server"
 
-#: setup.php:43
+#: setup.php:59
 #, fuzzy
 msgid "Web Service Check Admin"
 msgstr "Web Service Check Admin"
 
-#: setup.php:426
+#: setup.php:442
 msgid "Management"
 msgstr "Gerenciamento"
 
-#: setup.php:426
+#: setup.php:442
 #, fuzzy
 msgid "Service Checks"
 msgstr "Verificações de serviços Web"
 
-#: setup.php:446
+#: setup.php:462
 #, fuzzy
 msgid "WebSeer Service Checks"
 msgstr "Verificações de serviço WebSeer"
 
-#: setup.php:453
+#: setup.php:469
 #, fuzzy
 msgid "Service Check Edit"
 msgstr "Editar verificação de serviço"
 
-#: setup.php:460
+#: setup.php:476
 #, fuzzy
 msgid "Service Check Save"
 msgstr "Nome da Verificação de Serviço"
 
-#: setup.php:467
+#: setup.php:483
 #, fuzzy
 msgid "WebSeer Servers"
 msgstr "Servidores WebSeer"
 
-#: setup.php:474
+#: setup.php:490
 #, fuzzy
 msgid "Server Edit"
 msgstr "Edição do Servidor"
 
-#: setup.php:481
+#: setup.php:497
 #, fuzzy
 msgid "Save Server"
 msgstr "Ativar servidor"
 
-#: setup.php:488
+#: setup.php:504
 #, fuzzy
 msgid "WebSeer Proxies"
 msgstr "Servidores WebSeer"
 
-#: setup.php:495
+#: setup.php:511
 #, fuzzy
 #| msgid "Proxies"
 msgid "Proxie Edit"
 msgstr "Proxys"
 
-#: setup.php:502
+#: setup.php:518
 #, fuzzy
 msgid "Save Proxy"
 msgstr "Novo Proxy"
