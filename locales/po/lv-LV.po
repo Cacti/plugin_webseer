@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Cacti 1.2.16\n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2026-09-25 12:47-0400\n"
+"POT-Creation-Date: 2026-09-28 09:04-0400\n"
 "PO-Revision-Date: 2024-10-17 16:22+0000\n"
 "Last-Translator: Coool (github.com/Coool) <coool@mail.lv>\n"
 "Language-Team: Latvian <http://translate.cacti.net/projects/cacti/webseer/lv/>\n"
@@ -340,53 +340,53 @@ msgstr "Galvenais Cacti"
 msgid "Cacti Remote Server"
 msgstr "Cacti attālais serveris"
 
-#: setup.php:43
+#: setup.php:59
 msgid "Web Service Check Admin"
 msgstr "Tīmekļa pakalpojuma pārbaudes administrators"
 
-#: setup.php:426
+#: setup.php:442
 msgid "Management"
 msgstr "Vadība"
 
-#: setup.php:426
+#: setup.php:442
 #, fuzzy
 #| msgid "Web Service Checks"
 msgid "Service Checks"
 msgstr "Tīmekļa pakalpojuma pārbaudes"
 
-#: setup.php:446
+#: setup.php:462
 msgid "WebSeer Service Checks"
 msgstr "Webseer pakalpojuma pārbaudes"
 
-#: setup.php:453
+#: setup.php:469
 msgid "Service Check Edit"
 msgstr "Pakalpojuma pārbaudes rediģēšana"
 
-#: setup.php:460
+#: setup.php:476
 msgid "Service Check Save"
 msgstr "Pakalpojuma pārbaudes saglabāšana"
 
-#: setup.php:467
+#: setup.php:483
 msgid "WebSeer Servers"
 msgstr "Webseer serveri"
 
-#: setup.php:474
+#: setup.php:490
 msgid "Server Edit"
 msgstr "Servera rediģēšana"
 
-#: setup.php:481
+#: setup.php:497
 msgid "Save Server"
 msgstr "Saglabāt serveri"
 
-#: setup.php:488
+#: setup.php:504
 msgid "WebSeer Proxies"
 msgstr "WebSeer starpniekserveri"
 
-#: setup.php:495
+#: setup.php:511
 msgid "Proxie Edit"
 msgstr "Starpniekservera rediģēšana"
 
-#: setup.php:502
+#: setup.php:518
 msgid "Save Proxy"
 msgstr "Saglabāt starpniekserveri"
 
