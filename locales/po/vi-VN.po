@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2026-09-25 12:47-0400\n"
+"POT-Creation-Date: 2026-09-28 09:04-0400\n"
 "PO-Revision-Date: 2020-12-14 19:09-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -395,61 +395,61 @@ msgstr "Cacti Master"
 msgid "Cacti Remote Server"
 msgstr "Máy chủ từ xa Cacti"
 
-#: setup.php:43
+#: setup.php:59
 #, fuzzy
 msgid "Web Service Check Admin"
 msgstr "Quản trị dịch vụ web"
 
-#: setup.php:426
+#: setup.php:442
 msgid "Management"
 msgstr "Sự quản lý"
 
-#: setup.php:426
+#: setup.php:442
 #, fuzzy
 msgid "Service Checks"
 msgstr "Kiểm tra dịch vụ web"
 
-#: setup.php:446
+#: setup.php:462
 #, fuzzy
 msgid "WebSeer Service Checks"
 msgstr "Kiểm tra dịch vụ WebSeer"
 
-#: setup.php:453
+#: setup.php:469
 #, fuzzy
 msgid "Service Check Edit"
 msgstr "Kiểm tra dịch vụ Chỉnh sửa"
 
-#: setup.php:460
+#: setup.php:476
 #, fuzzy
 msgid "Service Check Save"
 msgstr "Tên kiểm tra dịch vụ"
 
-#: setup.php:467
+#: setup.php:483
 #, fuzzy
 msgid "WebSeer Servers"
 msgstr "Máy chủ WebSeer"
 
-#: setup.php:474
+#: setup.php:490
 #, fuzzy
 msgid "Server Edit"
 msgstr "Chỉnh sửa máy chủ"
 
-#: setup.php:481
+#: setup.php:497
 #, fuzzy
 msgid "Save Server"
 msgstr "Kích hoạt máy chủ"
 
-#: setup.php:488
+#: setup.php:504
 #, fuzzy
 msgid "WebSeer Proxies"
 msgstr "Máy chủ WebSeer"
 
-#: setup.php:495
+#: setup.php:511
 #, fuzzy
 msgid "Proxie Edit"
 msgstr "Proxy"
 
-#: setup.php:502
+#: setup.php:518
 #, fuzzy
 msgid "Save Proxy"
 msgstr "Proxy mới"
