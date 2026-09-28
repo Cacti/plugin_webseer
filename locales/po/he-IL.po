@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2026-09-25 12:47-0400\n"
+"POT-Creation-Date: 2026-09-28 09:04-0400\n"
 "PO-Revision-Date: 2020-12-14 19:05-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -397,62 +397,62 @@ msgstr "מאסטר קקטוסים"
 msgid "Cacti Remote Server"
 msgstr "שרת מרוחק"
 
-#: setup.php:43
+#: setup.php:59
 #, fuzzy
 msgid "Web Service Check Admin"
 msgstr "שירות אינטרנט בדוק מנהל"
 
-#: setup.php:426
+#: setup.php:442
 msgid "Management"
 msgstr "ניהול"
 
-#: setup.php:426
+#: setup.php:442
 #, fuzzy
 msgid "Service Checks"
 msgstr "בדיקות שירות אינטרנט"
 
-#: setup.php:446
+#: setup.php:462
 #, fuzzy
 msgid "WebSeer Service Checks"
 msgstr "בדיקות שירות WebSeer"
 
-#: setup.php:453
+#: setup.php:469
 #, fuzzy
 msgid "Service Check Edit"
 msgstr "בדוק שירות עריכה"
 
-#: setup.php:460
+#: setup.php:476
 #, fuzzy
 msgid "Service Check Save"
 msgstr "שם בדיקת שירות"
 
-#: setup.php:467
+#: setup.php:483
 #, fuzzy
 msgid "WebSeer Servers"
 msgstr "שרתים WebSeer"
 
-#: setup.php:474
+#: setup.php:490
 #, fuzzy
 msgid "Server Edit"
 msgstr "עריכת שרת"
 
-#: setup.php:481
+#: setup.php:497
 #, fuzzy
 msgid "Save Server"
 msgstr "הפעל שרת"
 
-#: setup.php:488
+#: setup.php:504
 #, fuzzy
 msgid "WebSeer Proxies"
 msgstr "שרתים WebSeer"
 
-#: setup.php:495
+#: setup.php:511
 #, fuzzy
 #| msgid "Proxies"
 msgid "Proxie Edit"
 msgstr "פרוקסים"
 
-#: setup.php:502
+#: setup.php:518
 #, fuzzy
 #| msgid "New Proxy"
 msgid "Save Proxy"
