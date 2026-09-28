@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Cacti\n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2026-09-25 12:47-0400\n"
+"POT-Creation-Date: 2026-09-28 09:04-0400\n"
 "PO-Revision-Date: 2026-09-24 21:04+0000\n"
 "Last-Translator: Ekaterine papava <papava.e@gtu.ge>\n"
 "Language-Team: Georgian <https://translate.cacti.net/projects/cacti/webseer/ka/>\n"
@@ -339,51 +339,51 @@ msgstr "Cacti - ძირითადი"
 msgid "Cacti Remote Server"
 msgstr ""
 
-#: setup.php:43
+#: setup.php:59
 msgid "Web Service Check Admin"
 msgstr ""
 
-#: setup.php:426
+#: setup.php:442
 msgid "Management"
 msgstr "მართვა"
 
-#: setup.php:426
+#: setup.php:442
 msgid "Service Checks"
 msgstr "სერვისის შემოწმებები"
 
-#: setup.php:446
+#: setup.php:462
 msgid "WebSeer Service Checks"
 msgstr ""
 
-#: setup.php:453
+#: setup.php:469
 msgid "Service Check Edit"
 msgstr "სერვისის შემოწმების ჩასწორება"
 
-#: setup.php:460
+#: setup.php:476
 msgid "Service Check Save"
 msgstr "სერვისის შემოწმების შენახვა"
 
-#: setup.php:467
+#: setup.php:483
 msgid "WebSeer Servers"
 msgstr "Webseer-ის სერვერები"
 
-#: setup.php:474
+#: setup.php:490
 msgid "Server Edit"
 msgstr "სერვერის ჩასწორება"
 
-#: setup.php:481
+#: setup.php:497
 msgid "Save Server"
 msgstr "სერვერის შენახვა"
 
-#: setup.php:488
+#: setup.php:504
 msgid "WebSeer Proxies"
 msgstr "WebSeer-ის პროქსიები"
 
-#: setup.php:495
+#: setup.php:511
 msgid "Proxie Edit"
 msgstr "პროქსის ჩასწორება"
 
-#: setup.php:502
+#: setup.php:518
 msgid "Save Proxy"
 msgstr "პროქსის შენახვა"
 
