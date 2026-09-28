@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2026-09-21 13:15-0400\n"
+"POT-Creation-Date: 2026-09-25 12:47-0400\n"
 "PO-Revision-Date: 2020-12-14 19:04-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Generator: Poedit 2.4.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: includes/arrays.php:93 webseer_servers.php:695
+#: includes/arrays.php:93 webseer_servers.php:805
 #, php-format
 msgid "%d Minute"
 msgstr "%d Minute"
@@ -26,14 +26,14 @@ msgstr "%d Minute"
 #: includes/arrays.php:94 includes/arrays.php:95 includes/arrays.php:96
 #: includes/arrays.php:97 includes/arrays.php:98 includes/arrays.php:99
 #: includes/arrays.php:100 includes/arrays.php:101 includes/arrays.php:102
-#: webseer_servers.php:695
+#: webseer_servers.php:805
 #, php-format
 msgid "%d Minutes"
 msgstr "%d Minuten"
 
 #: includes/arrays.php:106 includes/arrays.php:107 includes/arrays.php:108
 #: includes/arrays.php:109 includes/arrays.php:110 includes/arrays.php:111
-#: includes/arrays.php:112 includes/arrays.php:113 webseer_servers.php:695
+#: includes/arrays.php:112 includes/arrays.php:113 webseer_servers.php:805
 #, php-format
 msgid "%d Seconds"
 msgstr "%d Sekunden"
@@ -54,8 +54,8 @@ msgstr "Aktivieren"
 msgid "Duplicate"
 msgstr "Duplizieren"
 
-#: includes/arrays.php:163 includes/arrays.php:232 webseer.php:701
-#: webseer_proxies.php:244 webseer_servers.php:454
+#: includes/arrays.php:163 includes/arrays.php:232 webseer.php:811
+#: webseer_proxies.php:306 webseer_servers.php:532
 msgid "Name"
 msgstr "Name"
 
@@ -69,7 +69,7 @@ msgstr "Ein nützlicher Name für diesen Proxy."
 msgid "New Proxy"
 msgstr "Neuer Proxy"
 
-#: includes/arrays.php:172 webseer_proxies.php:248
+#: includes/arrays.php:172 webseer_proxies.php:310
 msgid "Hostname"
 msgstr "Zielsystemname"
 
@@ -124,7 +124,7 @@ msgstr "Basis Einstellungen"
 msgid "Display Name of this server"
 msgstr "Anzeigename dieses Servers"
 
-#: includes/arrays.php:239 webseer_servers.php:173 webseer_servers.php:483
+#: includes/arrays.php:239 webseer_servers.php:192 webseer_servers.php:561
 #, fuzzy
 msgid "Enable Server"
 msgid_plural "Enable Servers"
@@ -156,7 +156,7 @@ msgstr "Master-Server"
 msgid "Sets this server to the Master server.  The Master server handles all Email operations"
 msgstr "Setzt diesen Server auf den Master-Server.  Der Master-Server übernimmt alle E-Mail-Operationen."
 
-#: includes/arrays.php:260 includes/arrays.php:314 webseer_servers.php:455
+#: includes/arrays.php:260 includes/arrays.php:314 webseer_servers.php:533
 msgid "IP Address"
 msgstr "IP Adresse"
 
@@ -165,8 +165,8 @@ msgstr "IP Adresse"
 msgid "IP Address to connect to this server"
 msgstr "IP-Adresse für die Verbindung zu diesem Server"
 
-#: includes/arrays.php:267 includes/arrays.php:306 webseer.php:522
-#: webseer_servers.php:318
+#: includes/arrays.php:267 includes/arrays.php:306 webseer.php:608
+#: webseer_servers.php:377
 msgid "URL"
 msgstr "URL"
 
@@ -175,7 +175,7 @@ msgstr "URL"
 msgid "This is the URL to connect to remote.php on this server."
 msgstr "Dies ist die URL, um eine Verbindung zu remote.php auf diesem Server herzustellen."
 
-#: includes/arrays.php:274 webseer_servers.php:457
+#: includes/arrays.php:274 webseer_servers.php:535
 msgid "Location"
 msgstr "Standort"
 
@@ -194,7 +194,7 @@ msgstr "Name der Serviceprüfung"
 msgid "The name that is displayed for this Service Check, and is included in any Alert notifications."
 msgstr "Der Name, der für diesen Service Check angezeigt wird und in allen Alarmmeldungen enthalten ist."
 
-#: includes/arrays.php:299 webseer.php:792
+#: includes/arrays.php:299 webseer.php:902
 #, fuzzy
 msgid "Enable Service Check"
 msgstr "Serviceprüfung aktivieren"
@@ -223,11 +223,11 @@ msgstr "Proxy Server"
 msgid "If this connection text requires a proxy, select it here.  Otherwise choose 'None'."
 msgstr "Wenn für diesen Verbindungstext ein Proxy erforderlich ist, wählen Sie ihn hier aus. Andernfalls wählen Sie \"Keine\"."
 
-#: includes/arrays.php:325 includes/arrays.php:420 webseer.php:409
+#: includes/arrays.php:325 includes/arrays.php:420 webseer.php:461
 msgid "None"
 msgstr "Nichts"
 
-#: includes/arrays.php:330 webseer.php:716
+#: includes/arrays.php:330 webseer.php:826
 msgid "Compression"
 msgstr "Kompression"
 
@@ -365,115 +365,115 @@ msgstr "Zusätzliche Benachrichtigungs-E-Mails"
 msgid "You may specify here extra Emails to receive alerts for this URL (comma separated)"
 msgstr "Sie können hier zusätzliche E-Mails angeben, um Benachrichtigungen für diese URL zu erhalten (durch Komma getrennt)."
 
-#: includes/functions.php:136 webseer.php:764 webseer.php:974
+#: includes/functions.php:171 webseer.php:874 webseer.php:1108
 msgid "Checks"
 msgstr "Checks"
 
-#: includes/functions.php:137 webseer_servers.php:303 webseer_servers.php:444
-#: webseer_servers.php:702
+#: includes/functions.php:172 webseer_servers.php:362 webseer_servers.php:522
+#: webseer_servers.php:812
 msgid "Servers"
 msgstr "Server"
 
-#: includes/functions.php:138 webseer_proxies.php:263 webseer_proxies.php:320
+#: includes/functions.php:173 webseer_proxies.php:325 webseer_proxies.php:392
 #, fuzzy
 msgid "Proxies"
 msgstr "Proxies"
 
-#: includes/functions.php:144 includes/functions.php:147
+#: includes/functions.php:179 includes/functions.php:182
 #, fuzzy
 #| msgid "View History"
 msgid "Log History"
 msgstr "Verlauf ansehen"
 
-#: poller_webseer.php:211
+#: poller_webseer.php:227
 #, fuzzy
 msgid "Cacti Master"
 msgstr "Kakteenmeister"
 
-#: poller_webseer.php:214
+#: poller_webseer.php:230
 #, fuzzy
 msgid "Cacti Remote Server"
 msgstr "Cacti Remote Server"
 
-#: setup.php:34
+#: setup.php:43
 #, fuzzy
 msgid "Web Service Check Admin"
 msgstr "Web Service Check Admin"
 
-#: setup.php:325
+#: setup.php:426
 msgid "Management"
 msgstr "Verwaltung"
 
-#: setup.php:325
+#: setup.php:426
 #, fuzzy
 msgid "Service Checks"
 msgstr "Web Service Prüfungen"
 
-#: setup.php:336
+#: setup.php:446
 #, fuzzy
 msgid "WebSeer Service Checks"
 msgstr "WebSeer Service Prüfungen"
 
-#: setup.php:343
+#: setup.php:453
 #, fuzzy
 msgid "Service Check Edit"
 msgstr "Service Check Bearbeitung"
 
-#: setup.php:350
+#: setup.php:460
 #, fuzzy
 msgid "Service Check Save"
 msgstr "Name der Serviceprüfung"
 
-#: setup.php:357
+#: setup.php:467
 #, fuzzy
 msgid "WebSeer Servers"
 msgstr "WebSeer-Server"
 
-#: setup.php:364
+#: setup.php:474
 #, fuzzy
 msgid "Server Edit"
 msgstr "Server bearbeiten"
 
-#: setup.php:371
+#: setup.php:481
 #, fuzzy
 msgid "Save Server"
 msgstr "Server aktivieren"
 
-#: setup.php:378
+#: setup.php:488
 #, fuzzy
 msgid "WebSeer Proxies"
 msgstr "WebSeer-Server"
 
-#: setup.php:385
+#: setup.php:495
 #, fuzzy
 msgid "Proxie Edit"
 msgstr "Proxies"
 
-#: setup.php:392
+#: setup.php:502
 #, fuzzy
 msgid "Save Proxy"
 msgstr "Neuer Proxy"
 
-#: webseer.php:194
+#: webseer.php:212
 #, fuzzy
 msgid "Click 'Continue' to Delete the following URL."
 msgid_plural "Click 'Continue' to Delete following URLs."
 msgstr[0] "Klicken Sie auf \"Weiter\", um den folgenden Proxy zu löschen."
 msgstr[1] "Klicken Sie auf \"Weiter\", um die folgenden Proxies zu löschen."
 
-#: webseer.php:199 webseer.php:208 webseer.php:217 webseer.php:226
-#: webseer_proxies.php:108 webseer_servers.php:155 webseer_servers.php:164
-#: webseer_servers.php:173
+#: webseer.php:217 webseer.php:226 webseer.php:235 webseer.php:244
+#: webseer_proxies.php:132 webseer_servers.php:174 webseer_servers.php:183
+#: webseer_servers.php:192
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: webseer.php:199 webseer.php:208 webseer.php:217 webseer.php:226
-#: webseer_proxies.php:108 webseer_servers.php:155 webseer_servers.php:164
-#: webseer_servers.php:173
+#: webseer.php:217 webseer.php:226 webseer.php:235 webseer.php:244
+#: webseer_proxies.php:132 webseer_servers.php:174 webseer_servers.php:183
+#: webseer_servers.php:192
 msgid "Continue"
 msgstr "Fortsetzen"
 
-#: webseer.php:199
+#: webseer.php:217
 #, fuzzy
 #| msgid "Delete"
 msgid "Delete URL"
@@ -481,14 +481,14 @@ msgid_plural "Delete URLs"
 msgstr[0] "Löschen"
 msgstr[1] "Löschen"
 
-#: webseer.php:203
+#: webseer.php:221
 #, fuzzy
 msgid "Click 'Continue' to Disable the following URL."
 msgid_plural "Click 'Continue' to Disable following URLs."
 msgstr[0] "Klicken Sie auf \"Weiter\", um den folgenden Proxy zu löschen."
 msgstr[1] "Klicken Sie auf \"Weiter\", um die folgenden Proxies zu löschen."
 
-#: webseer.php:208
+#: webseer.php:226
 #, fuzzy
 #| msgid "Disable"
 msgid "Disable URL"
@@ -496,14 +496,14 @@ msgid_plural "Disable URLs"
 msgstr[0] "Deaktivieren"
 msgstr[1] "Deaktivieren"
 
-#: webseer.php:212
+#: webseer.php:230
 #, fuzzy
 msgid "Click 'Continue' to Enable the following URL."
 msgid_plural "Click 'Continue' to Enable following URLs."
 msgstr[0] "Klicken Sie auf \"Weiter\", um den folgenden Proxy zu löschen."
 msgstr[1] "Klicken Sie auf \"Weiter\", um die folgenden Proxies zu löschen."
 
-#: webseer.php:217
+#: webseer.php:235
 #, fuzzy
 #| msgid "Enable"
 msgid "Enable URL"
@@ -511,14 +511,14 @@ msgid_plural "Enable URLs"
 msgstr[0] "Aktivieren"
 msgstr[1] "Aktivieren"
 
-#: webseer.php:221
+#: webseer.php:239
 #, fuzzy
 msgid "Click 'Continue' to Duplicate the following URL."
 msgid_plural "Click 'Continue' to Duplicate following URLs."
 msgstr[0] "Klicken Sie auf \"Weiter\", um den folgenden Proxy zu löschen."
 msgstr[1] "Klicken Sie auf \"Weiter\", um die folgenden Proxies zu löschen."
 
-#: webseer.php:226
+#: webseer.php:244
 #, fuzzy
 #| msgid "Duplicate"
 msgid "Duplicate URL"
@@ -526,329 +526,329 @@ msgid_plural "Duplicate URLs"
 msgstr[0] "Duplizieren"
 msgstr[1] "Duplizieren"
 
-#: webseer.php:345
+#: webseer.php:382
 #, php-format
 msgid "The Service Check history was purged for %s"
 msgstr ""
 
-#: webseer.php:359 webseer_servers.php:610
+#: webseer.php:411 webseer_servers.php:710
 #, fuzzy, php-format
 msgid "Query [edit: %s]"
 msgstr "Abfrage [bearbeiten: %s]"
 
-#: webseer.php:361 webseer_servers.php:612
+#: webseer.php:413 webseer_servers.php:712
 #, fuzzy
 msgid "Query [new]"
 msgstr "Abfrage[neu]"
 
-#: webseer.php:397
+#: webseer.php:449
 #, fuzzy
 msgid "No Users Selected"
 msgstr "Keine Benutzer ausgewählt"
 
-#: webseer.php:399
+#: webseer.php:451
 #, fuzzy
 msgid "Users Selected"
 msgstr "Ausgewählte Benutzer"
 
-#: webseer.php:402
+#: webseer.php:454
 #, fuzzy
 msgid "All Users Selected"
 msgstr "Alle ausgewählten Benutzer"
 
-#: webseer.php:408
+#: webseer.php:460
 msgid "All"
 msgstr "Alle"
 
-#: webseer.php:442 webseer.php:938 webseer_proxies.php:314
+#: webseer.php:494 webseer.php:1072 webseer_proxies.php:386
 msgid "Search"
 msgstr "Suche"
 
-#: webseer.php:519 webseer_servers.php:315
+#: webseer.php:605 webseer_servers.php:374
 msgid "Date"
 msgstr "Datum"
 
-#: webseer.php:525 webseer.php:828 webseer_servers.php:321
+#: webseer.php:611 webseer.php:938 webseer_servers.php:380
 msgid "Error"
 msgstr "Fehler"
 
-#: webseer.php:528 webseer.php:721 webseer_servers.php:324
+#: webseer.php:614 webseer.php:831 webseer_servers.php:383
 #, fuzzy
 msgid "HTTP Code"
 msgstr "HTTP-Code"
 
-#: webseer.php:533 webseer.php:731 webseer_servers.php:329
+#: webseer.php:619 webseer.php:841 webseer_servers.php:388
 msgid "DNS"
 msgstr "DNS"
 
-#: webseer.php:538 webseer.php:736 webseer_servers.php:334
+#: webseer.php:624 webseer.php:846 webseer_servers.php:393
 msgid "Connect"
 msgstr "Verbinden"
 
-#: webseer.php:543 webseer.php:741 webseer_servers.php:339
+#: webseer.php:629 webseer.php:851 webseer_servers.php:398
 msgid "Redirect"
 msgstr "Umleitung"
 
-#: webseer.php:548 webseer.php:746 webseer_servers.php:344
+#: webseer.php:634 webseer.php:856 webseer_servers.php:403
 msgid "Total"
 msgstr "Gesamt"
 
-#: webseer.php:554
+#: webseer.php:640
 msgid "Urls"
 msgstr ""
 
-#: webseer.php:578
+#: webseer.php:664
 msgid "Service Down"
 msgstr ""
 
-#: webseer.php:578
+#: webseer.php:664
 msgid "Service Restored"
 msgstr ""
 
-#: webseer.php:589
+#: webseer.php:675
 #, fuzzy
 msgid "No Service Check Events in History"
 msgstr "Keine Ereignisse in der Historie"
 
-#: webseer.php:696 webseer_servers.php:453
+#: webseer.php:806 webseer_servers.php:531
 msgid "Actions"
 msgstr "Aktionen"
 
-#: webseer.php:706
+#: webseer.php:816
 msgid "Status"
 msgstr "Status"
 
-#: webseer.php:711 webseer.php:826 webseer.php:829 webseer_servers.php:456
-#: webseer_servers.php:683
+#: webseer.php:821 webseer.php:936 webseer.php:939 webseer_servers.php:534
+#: webseer_servers.php:793
 msgid "Enabled"
 msgstr "Aktiviert"
 
-#: webseer.php:726
+#: webseer.php:836
 msgid "Auth"
 msgstr "Auth"
 
-#: webseer.php:751
+#: webseer.php:861
 msgid "Timeout"
 msgstr "Timeout"
 
-#: webseer.php:756 webseer_servers.php:458
+#: webseer.php:866 webseer_servers.php:536
 #, fuzzy
 msgid "Last Check"
 msgstr "Letzte Überprüfung"
 
-#: webseer.php:787
+#: webseer.php:897
 #, fuzzy
 msgid "Edit Service Check"
 msgstr "Serviceprüfung aktivieren"
 
-#: webseer.php:796
+#: webseer.php:906
 #, fuzzy
 msgid "Disable Service Check"
 msgstr "Serviceprüfung aktivieren"
 
-#: webseer.php:801
+#: webseer.php:911
 #, fuzzy
 msgid "View Service Check History"
 msgstr "Web Service Prüfungen"
 
-#: webseer.php:811
+#: webseer.php:921
 #, fuzzy, php-format
 msgid "DNS: Server %s - A Record for %s"
 msgstr "DNS: Server %s - Ein Rekord für %s"
 
-#: webseer.php:821
+#: webseer.php:931
 msgid "N/A"
 msgstr "Nicht verfügbar"
 
-#: webseer.php:823 webseer_servers.php:364
+#: webseer.php:933 webseer_servers.php:423
 msgid "Down"
 msgstr "Runter"
 
-#: webseer.php:823 webseer_servers.php:364
+#: webseer.php:933 webseer_servers.php:423
 msgid "Up"
 msgstr "Hoch"
 
-#: webseer.php:826 webseer.php:829 webseer_servers.php:683
+#: webseer.php:936 webseer.php:939 webseer_servers.php:793
 msgid "Disabled"
 msgstr "Deaktiviert"
 
-#: webseer.php:843 webseer_proxies.php:286 webseer_servers.php:509
+#: webseer.php:953 webseer_proxies.php:348 webseer_servers.php:587
 #, fuzzy
 msgid "No Servers Found"
 msgstr "Keine Server gefunden"
 
-#: webseer.php:929
+#: webseer.php:1063
 #, fuzzy
 msgid "Webseer Service Checks"
 msgstr "WebSeer Service Prüfungen"
 
-#: webseer.php:944 webseer_servers.php:677
+#: webseer.php:1078 webseer_servers.php:787
 msgid "State"
 msgstr "Zustand"
 
-#: webseer.php:948 webseer_servers.php:681
+#: webseer.php:1082 webseer_servers.php:791
 msgid "Any"
 msgstr "Beliebig"
 
-#: webseer.php:957 webseer_servers.php:690
+#: webseer.php:1091 webseer_servers.php:800
 msgid "Refresh"
 msgstr "Aktualisieren"
 
-#: webseer.php:979 webseer.php:1076 webseer_proxies.php:325
-#: webseer_servers.php:707 webseer_servers.php:794
+#: webseer.php:1113 webseer.php:1221 webseer_proxies.php:397
+#: webseer_servers.php:817 webseer_servers.php:914
 msgid "Default"
 msgstr "Voreinstellung"
 
-#: webseer.php:995 webseer.php:1092 webseer_proxies.php:341
-#: webseer_servers.php:810
+#: webseer.php:1129 webseer.php:1237 webseer_proxies.php:413
+#: webseer_servers.php:930
 msgid "Go"
 msgstr "Anwenden"
 
-#: webseer.php:996 webseer.php:1093 webseer_proxies.php:342
-#: webseer_servers.php:723 webseer_servers.php:811
+#: webseer.php:1130 webseer.php:1238 webseer_proxies.php:414
+#: webseer_servers.php:833 webseer_servers.php:931
 msgid "Clear"
 msgstr "Löschen"
 
-#: webseer.php:1057
+#: webseer.php:1202
 #, fuzzy
 msgid "Webseer Service Check History"
 msgstr "WebSeer Service Prüfungen"
 
-#: webseer.php:1065 webseer_servers.php:783
+#: webseer.php:1210 webseer_servers.php:903
 #, fuzzy
 #| msgid "Search"
 msgid "Date Search"
 msgstr "Suche"
 
-#: webseer.php:1071 webseer_servers.php:789
+#: webseer.php:1216 webseer_servers.php:909
 msgid "Entries"
 msgstr ""
 
-#: webseer.php:1094
+#: webseer.php:1239
 msgid "Purge Events"
 msgstr ""
 
-#: webseer_proxies.php:103
+#: webseer_proxies.php:127
 #, fuzzy
 msgid "Click 'Continue' to delete the following Proxy."
 msgid_plural "Click 'Continue' to delete following Proxies."
 msgstr[0] "Klicken Sie auf \"Weiter\", um den folgenden Proxy zu löschen."
 msgstr[1] "Klicken Sie auf \"Weiter\", um die folgenden Proxies zu löschen."
 
-#: webseer_proxies.php:108
+#: webseer_proxies.php:132
 #, fuzzy
 msgid "Delete Proxy"
 msgid_plural "Delete Proxies"
 msgstr[0] "Löschen"
 msgstr[1] "Löschen"
 
-#: webseer_proxies.php:169
+#: webseer_proxies.php:213
 #, fuzzy, php-format
 msgid "Proxy [edit: %s]"
 msgstr "Abfrage [bearbeiten: %s]"
 
-#: webseer_proxies.php:171
+#: webseer_proxies.php:215
 #, fuzzy
 msgid "Proxy [new]"
 msgstr "Abfrage[neu]"
 
-#: webseer_proxies.php:252
+#: webseer_proxies.php:314
 #, fuzzy
 msgid "Ports (http/https)"
 msgstr "Ports (http / https)"
 
-#: webseer_proxies.php:256
+#: webseer_proxies.php:318
 msgid "Username"
 msgstr "Benutzername"
 
-#: webseer_proxies.php:280
+#: webseer_proxies.php:342
 msgid "Not Set"
 msgstr "Nicht gesetzt"
 
-#: webseer_proxies.php:305
+#: webseer_proxies.php:377
 #, fuzzy
 msgid "Webseer Proxy Management"
 msgstr "Webseer Server Management"
 
-#: webseer_servers.php:150
+#: webseer_servers.php:169
 #, fuzzy
 msgid "Click 'Continue' to Delete the following Server."
 msgid_plural "Click 'Continue' to Delete following Servers."
 msgstr[0] "Klicken Sie auf \"Weiter\", um den folgenden Proxy zu löschen."
 msgstr[1] "Klicken Sie auf \"Weiter\", um die folgenden Proxies zu löschen."
 
-#: webseer_servers.php:155
+#: webseer_servers.php:174
 #, fuzzy
 msgid "Delete Server"
 msgid_plural "Delete Servers"
 msgstr[0] "WebSeer-Server"
 msgstr[1] "WebSeer-Server"
 
-#: webseer_servers.php:159
+#: webseer_servers.php:178
 #, fuzzy
 msgid "Click 'Continue' to Disable the following Server."
 msgid_plural "Click 'Continue' to Disable following Servers."
 msgstr[0] "Klicken Sie auf \"Weiter\", um den folgenden Proxy zu löschen."
 msgstr[1] "Klicken Sie auf \"Weiter\", um die folgenden Proxies zu löschen."
 
-#: webseer_servers.php:164 webseer_servers.php:487
+#: webseer_servers.php:183 webseer_servers.php:565
 #, fuzzy
 msgid "Disable Server"
 msgid_plural "Disable Servers"
 msgstr[0] "Server aktivieren"
 msgstr[1] "Server aktivieren"
 
-#: webseer_servers.php:168
+#: webseer_servers.php:187
 #, fuzzy
 msgid "Click 'Continue' to Enable the following Server."
 msgid_plural "Click 'Continue' to Enable following Servers."
 msgstr[0] "Klicken Sie auf \"Weiter\", um den folgenden Proxy zu löschen."
 msgstr[1] "Klicken Sie auf \"Weiter\", um die folgenden Proxies zu löschen."
 
-#: webseer_servers.php:374
+#: webseer_servers.php:433
 #, fuzzy
 msgid "No Events in History"
 msgstr "Keine Ereignisse in der Historie"
 
-#: webseer_servers.php:459
+#: webseer_servers.php:537
 msgid "Master"
 msgstr "Master"
 
-#: webseer_servers.php:460
+#: webseer_servers.php:538
 #, fuzzy
 msgid "This Host"
 msgstr "Dieser Host"
 
-#: webseer_servers.php:478
+#: webseer_servers.php:556
 #, fuzzy
 #| msgid "Edit Site"
 msgid "Edit Server"
 msgstr "Seite bearbeiten"
 
-#: webseer_servers.php:492
+#: webseer_servers.php:570
 #, fuzzy
 #| msgid "View History"
 msgid "View Server History"
 msgstr "Verlauf ansehen"
 
-#: webseer_servers.php:499 webseer_servers.php:502 webseer_servers.php:503
+#: webseer_servers.php:577 webseer_servers.php:580 webseer_servers.php:581
 msgid "No"
 msgstr "Nein"
 
-#: webseer_servers.php:499 webseer_servers.php:502 webseer_servers.php:503
+#: webseer_servers.php:577 webseer_servers.php:580 webseer_servers.php:581
 msgid "Yes"
 msgstr "Ja"
 
-#: webseer_servers.php:669
+#: webseer_servers.php:779
 #, fuzzy
 msgid "Webseer Servers"
 msgstr "WebSeer-Server"
 
-#: webseer_servers.php:683
+#: webseer_servers.php:793
 msgid "Triggered"
 msgstr "Getriggert"
 
-#: webseer_servers.php:775
+#: webseer_servers.php:895
 #, fuzzy
 msgid "Webseer Server History"
 msgstr "WebSeer-Server"
