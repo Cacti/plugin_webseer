@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webseer on cacti 1.1.34\n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2026-09-25 12:47-0400\n"
+"POT-Creation-Date: 2026-09-28 09:04-0400\n"
 "PO-Revision-Date: 2024-06-23 01:40+0000\n"
 "Last-Translator: tql <fttx31@126.com>\n"
 "Language-Team: Chinese (Simplified) <http://translate.cacti.net/projects/cacti/webseer/zh_Hans/>\n"
@@ -362,61 +362,61 @@ msgstr "Cacti 主控"
 msgid "Cacti Remote Server"
 msgstr "Cacti远程服务器"
 
-#: setup.php:43
+#: setup.php:59
 msgid "Web Service Check Admin"
 msgstr "Web服务检查管理员"
 
-#: setup.php:426
+#: setup.php:442
 msgid "Management"
 msgstr "管理"
 
-#: setup.php:426
+#: setup.php:442
 #, fuzzy
 #| msgid "Web Service Checks"
 msgid "Service Checks"
 msgstr "Web服务检查"
 
-#: setup.php:446
+#: setup.php:462
 msgid "WebSeer Service Checks"
 msgstr "WebSeer服务检查"
 
-#: setup.php:453
+#: setup.php:469
 msgid "Service Check Edit"
 msgstr "服务检查编辑"
 
-#: setup.php:460
+#: setup.php:476
 #, fuzzy
 #| msgid "Service Check Name"
 msgid "Service Check Save"
 msgstr "服务检查名称"
 
-#: setup.php:467
+#: setup.php:483
 msgid "WebSeer Servers"
 msgstr "WebSeer服务器"
 
-#: setup.php:474
+#: setup.php:490
 msgid "Server Edit"
 msgstr "服务器编辑"
 
-#: setup.php:481
+#: setup.php:497
 #, fuzzy
 #| msgid "Enable Server"
 msgid "Save Server"
 msgstr "启用服务器"
 
-#: setup.php:488
+#: setup.php:504
 #, fuzzy
 #| msgid "WebSeer Servers"
 msgid "WebSeer Proxies"
 msgstr "WebSeer服务器"
 
-#: setup.php:495
+#: setup.php:511
 #, fuzzy
 #| msgid "Proxies"
 msgid "Proxie Edit"
 msgstr "代表权"
 
-#: setup.php:502
+#: setup.php:518
 #, fuzzy
 msgid "Save Proxy"
 msgstr "新代理"
