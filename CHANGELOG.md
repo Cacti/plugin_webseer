@@ -2,6 +2,7 @@
 
 --- 3.3 ---
 
+* dev: Enforce patch coverage of changed lines in CI and remove the inert COMPOSER_ROOT_VERSION env from the Pest step
 * issue: Fix bug where SERVERS/URLS refresh from a master server could pass a false base64_decode() result into unserialize(), and where refresh_urls() shared refresh_servers()'s bug of not narrowing db_fetch_row()/post() results before use
 
 * issue: Fix bug where the 'gzip' compression option was passed to the cURL class as a literal string instead of the expected WEBSEER_COMPRESSION_GZIP constant, silently disabling gzip compression on 12 call sites
