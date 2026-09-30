@@ -2,6 +2,7 @@
 
 --- 3.3 ---
 
+* dev: Measure CI coverage with xdebug instead of pcov so the plugin's own sources are instrumented (pcov auto-scopes to the Composer root and skipped cacti/plugins/, leaving the patch-coverage gate with nothing to measure)
 * dev: Enforce patch coverage of changed lines in CI and remove the inert COMPOSER_ROOT_VERSION env from the Pest step
 * issue: Fix bug where SERVERS/URLS refresh from a master server could pass a false base64_decode() result into unserialize(), and where refresh_urls() shared refresh_servers()'s bug of not narrowing db_fetch_row()/post() results before use
 
