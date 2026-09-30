@@ -103,7 +103,9 @@ function plugin_webseer_check_config() {
  * proxies tables, renaming the URL log table, adding compression/
  * notify-format/poller-id columns) and updates the recorded plugin
  * version/realm file list, based on comparing the installed version
- * against the current INFO file version. Called from
+ * against the current INFO file version. If webseer_upgrade_tables()
+ * reports a failed compensating UNIQUE-key repair, the recorded version is
+ * left unchanged so the repair retries on a later request. Called from
  * plugin_webseer_check_config(), which is itself only invoked when the
  * current page is index.php, plugins.php, or webseer.php.
  *
@@ -134,7 +136,14 @@ function plugin_webseer_upgrade() {
 		// create any missing tables, db_update_table() diff the rest. The historical
 		// plugin_webseer_url_log -> plugin_webseer_urls_log rename (and the column
 		// additions that were previously hand-written ALTERs) are handled there.
-		webseer_upgrade_tables();
+		if (!webseer_upgrade_tables()) {
+			// A compensating repair (re-adding a UNIQUE key that Cacti
+			// 1.2.29-1.2.31 dropped) failed - almost always because of
+			// pre-existing duplicate rows. Leave the stored version unchanged
+			// so the upgrade retries on the next request once the operator
+			// de-duplicates; the actionable details are already in the Cacti log.
+			return true;
+		}
 
 		db_execute_prepared('UPDATE plugin_config SET
 			version = ?, name = ?, author = ?, webpage = ?

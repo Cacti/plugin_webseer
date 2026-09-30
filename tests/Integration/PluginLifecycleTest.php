@@ -158,3 +158,21 @@ it('records the new version against plugin_config after a migration', function (
 
 	expect($version_updates)->not->toBeEmpty();
 });
+
+it('leaves the recorded version unchanged when a unique-key repair fails on upgrade', function () {
+	// Drift plus a Cacti 1.2.29-1.2.31 run where the compensating UNIQUE-key
+	// re-add fails (as it would against pre-existing duplicate rows).
+	webseer_test_mock_db('db_fetch_cell', 'plugin_config', '1.0');
+	webseer_test_mock_db('db_fetch_cell', 'SELECT cacti FROM version', '1.2.30');
+	webseer_test_mock_db('db_add_index', 'plugin_webseer_contacts', false);
+
+	plugin_webseer_upgrade();
+
+	$version_updates = array_filter(
+		$GLOBALS['__test_db_calls'],
+		fn ($call) => $call['fn'] === 'db_execute_prepared' && strpos($call['sql'], 'UPDATE plugin_config') !== false
+	);
+
+	expect($version_updates)->toBeEmpty();
+	expect(implode("\n", $GLOBALS['__test_cacti_log'] ?? []))->toContain('could not re-add UNIQUE key');
+});
