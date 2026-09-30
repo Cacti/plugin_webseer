@@ -296,6 +296,38 @@ function webseer_upgrade_tables() {
 			api_plugin_db_table_create('webseer', $table, $data);
 		}
 	}
+
+	webseer_reintroduce_unique_keys();
+}
+
+/**
+ * Cacti 1.2.29 through 1.2.31 shipped a db_update_table() that silently
+ * dropped UNIQUE keys declared via a table definition's 'unique_keys' (it
+ * rebuilds indexes only from 'keys'). Re-add this plugin's unique keys when
+ * running on one of those releases; 1.2.32+ preserves them, so this is a
+ * no-op there.
+ *
+ * @return void
+ */
+function webseer_reintroduce_unique_keys(): void {
+	$running = trim((string) db_fetch_cell('SELECT cacti FROM version LIMIT 1'));
+
+	if ($running === '' ||
+		!cacti_version_compare($running, '1.2.29', '>=') ||
+		!cacti_version_compare($running, '1.2.32', '<')) {
+		return;
+	}
+
+	$unique_keys = [
+		['table' => 'plugin_webseer_contacts', 'name' => 'user_id_type', 'columns' => ['user_id', 'type']],
+	];
+
+	foreach ($unique_keys as $uk) {
+		if (!db_index_exists($uk['table'], $uk['name'])) {
+			db_execute('ALTER TABLE `' . $uk['table'] . '` ADD UNIQUE KEY `' .
+				$uk['name'] . '` (`' . implode('`,`', $uk['columns']) . '`)');
+		}
+	}
 }
 
 /**
