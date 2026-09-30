@@ -219,7 +219,19 @@ if (!function_exists('api_plugin_db_add_column')) {
 
 if (!function_exists('api_plugin_db_table_create')) {
 	function api_plugin_db_table_create($plugin, $table, $data) {
-		return true;
+		return webseer_test_db_result('api_plugin_db_table_create', (string) $table, [$plugin, $data], true);
+	}
+}
+
+if (!function_exists('db_update_table')) {
+	function db_update_table($table, $data) {
+		return webseer_test_db_result('db_update_table', (string) $table, [$data], true);
+	}
+}
+
+if (!function_exists('api_plugin_drop_table')) {
+	function api_plugin_drop_table($table) {
+		return webseer_test_db_result('api_plugin_drop_table', (string) $table, [], true);
 	}
 }
 

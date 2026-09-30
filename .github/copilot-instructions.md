@@ -25,20 +25,24 @@ When generating code for this repository:
 
 ```
 webseer/                  # Repository root (install to plugins/webseer/ in Cacti)
-├── classes/                # Supporting PHP classes
-├── includes/                  # Shared includes
+├── classes/                # Supporting PHP classes (cURL, mxlookup)
+├── includes/                  # Library/helper files, require_once'd from the entry points
+│   ├── database.php             # Schema management: table defs + create/upgrade/drop helpers
+│   ├── functions.php            # Shared plugin functions
+│   ├── arrays.php               # Shared option/label arrays
+│   └── constants.php            # Shared constants
 ├── locales/                      # Internationalization files
 ├── tests/                          # Test suite
-├── ca-bundle.crt                      # CA bundle for HTTPS endpoint verification
-├── poller_webseer.php                    # Background poller entry point (CLI)
-├── remote.php                              # Remote poller support endpoint
-├── webseer.php                               # Main viewer/administration UI
-├── webseer_process.php                         # Check execution logic
-├── webseer_proxies.php                           # Proxy administration
-├── webseer_servers.php                             # Monitored server/service administration
-├── INFO                                              # Plugin metadata (name, version, compat)
+├── ca-bundle.crt                     # CA bundle for HTTPS endpoint verification
+├── poller_webseer.php                  # Background poller entry point (CLI)
+├── remote.php                            # Remote poller support endpoint
+├── webseer.php                             # Main viewer/administration UI
+├── webseer_process.php                       # Check execution logic
+├── webseer_proxies.php                         # Proxy administration
+├── webseer_servers.php                           # Monitored server/service administration
+├── INFO                                            # Plugin metadata (name, version, compat)
 ├── README.md
-└── setup.php                                           # Plugin install/uninstall/upgrade hooks
+└── setup.php                                         # Plugin install/uninstall/upgrade hooks
 ```
 
 ## Naming Conventions
@@ -102,7 +106,17 @@ All `unserialize()` calls must use `array('allowed_classes' => false)`.
 
 ## Database Operations
 
-Use Cacti's `db_*`/`db_*_prepared()` functions; keep schema creation/upgrades in `setup.php`'s install/upgrade lifecycle.
+All schema management lives in `includes/database.php` (the thold model), not in `setup.php`. `setup.php`'s
+install/uninstall/upgrade paths `require_once($config['base_path'] . '/plugins/webseer/includes/database.php')`
+and delegate to `plugin_webseer_setup_table()`, `webseer_upgrade_tables()`, and `plugin_webseer_drop_tables()`.
+Each of the seven `plugin_webseer_*` tables is defined once in a `webseer_*_table_data()` helper and created
+via `api_plugin_db_table_create('webseer', ...)` - preserve each table's engine (`plugin_webseer_processes`
+is `MEMORY`, the rest `InnoDB`). On upgrade, `webseer_upgrade_tables()` refreshes each existing table via
+`db_update_table()` (create fallback when missing), which replaces the old hand-written `ALTER TABLE ... ADD
+COLUMN` migrations; only the historical `plugin_webseer_url_log` -> `plugin_webseer_urls_log` rename (which
+`db_update_table()` can not express) is kept as a guarded pre-step. `plugin_webseer_upgrade()` also updates
+the full `plugin_config` row (`version`, `name`, `author`, `webpage`) on a version change. Never write raw
+`CREATE TABLE`/`ALTER TABLE` for a plugin-owned table.
 
 ## Internationalization
 
@@ -186,10 +200,21 @@ existing code or adding new code, not just in dedicated cleanup passes:
 - **i18n text domain.** Every `__()`/`__esc()` call must include this plugin's text domain as the
   final argument, except when deliberately comparing against a literal, untranslated Cacti-core
   label.
-- **Plugin table-creation API.** Use `api_plugin_db_table_create()`/`api_plugin_db_add_column()`
-  (from Cacti core's `lib/plugins.php`) instead of raw `CREATE TABLE`/`ALTER TABLE ... ADD COLUMN`.
-  Both are idempotent (safe no-ops when already applied), so the same call can run unconditionally
-  from both the install AND upgrade paths.
+- **File inclusion uses `require`/`require_once`.** Always use `require`/`require_once` (never
+  `include`/`include_once`) so a missing dependency fails fast and loudly. Keep library/helper files
+  under `includes/` (e.g. `database.php`, `functions.php`, `arrays.php`, `constants.php`) and
+  reference them from that path; entry points (the `webseer*.php` pages, `poller_webseer.php`,
+  `remote.php`, `setup.php`) stay in the plugin root. The one deliberate exception is a genuinely
+  optional cross-plugin include already guarded by an enablement check (e.g. the maint plugin).
+- **Plugin schema management.** Keep every schema function (table definitions, create, upgrade,
+  drop) in `includes/database.php` (the thold model), required from `setup.php`. Create with
+  `api_plugin_db_table_create()`; refresh an existing plugin table with `db_update_table($table, $data)`
+  from the SAME definition (create fallback when missing). Prefer this over
+  `api_plugin_db_add_column()`/`api_plugin_db_drop_*`/raw `CREATE TABLE`/`ALTER`; a true table/column
+  rename that `db_update_table()` can not express stays a guarded pre-step. Both
+  `api_plugin_db_table_create()` and `db_update_table()` are idempotent.
+- **Plugin upgrade bookkeeping.** On a version change, update the FULL `plugin_config` row
+  (`version`, `name`, `author`, `webpage`) from the INFO file, not just the version column.
 - **PHPDoc shape.** Every function gets a PHPDoc block: a one-line description, a blank comment
   line, `@param` lines, a blank comment line, then `@return`. Infer parameter/return types from
   actual usage; don't change the function's real type-hints in the same pass (let static analysis

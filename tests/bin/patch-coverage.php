@@ -160,6 +160,21 @@ foreach ($clover->xpath('//file') as $file) {
  * Empty by default; add entries per repository as the need arises.
  */
 $unmeasured_allowlist = [
+	// Web UI/CLI entry points: each does a top-level chdir + require of
+	// include/auth.php or include/cli_check.php and dispatches on request/CLI
+	// args, so it cannot be loaded into the isolated unit process. Only their
+	// extracted helpers (includes/*.php) are unit-tested and measured.
+	'webseer.php',
+	'webseer_servers.php',
+	'webseer_proxies.php',
+	'webseer_process.php',
+	'poller_webseer.php',
+	'remote.php',
+	// Pure option/label data declarations (no functions). Its only executable
+	// statement is a top-level require, which every suite pulls in at Pest's
+	// test-collection phase (before any coverage window opens), so it can never
+	// be attributed to a test. Excluded from the coverage <source> set.
+	'includes/arrays.php',
 ];
 $unmeasured            = array_values(array_diff(array_keys($changed), array_keys($measured)));
 $unexpected_unmeasured = array_values(array_diff($unmeasured, $unmeasured_allowlist));

@@ -41,7 +41,10 @@ it('registers its hooks and admin realm on install', function () {
 it('creates every plugin table on install', function () {
 	plugin_webseer_install();
 
-	$sql = implode("\n", array_column($GLOBALS['__test_db_calls'], 'sql'));
+	$created = array_column(
+		array_filter($GLOBALS['__test_db_calls'], fn ($call) => $call['fn'] === 'api_plugin_db_table_create'),
+		'sql'
+	);
 
 	foreach ([
 		'plugin_webseer_servers',
@@ -52,14 +55,17 @@ it('creates every plugin table on install', function () {
 		'plugin_webseer_contacts',
 		'plugin_webseer_proxies',
 	] as $table) {
-		expect($sql)->toContain("`$table`");
+		expect($created)->toContain($table);
 	}
 });
 
 it('drops every plugin table on uninstall', function () {
 	plugin_webseer_uninstall();
 
-	$sql = implode("\n", array_column($GLOBALS['__test_db_calls'], 'sql'));
+	$dropped = array_column(
+		array_filter($GLOBALS['__test_db_calls'], fn ($call) => $call['fn'] === 'api_plugin_drop_table'),
+		'sql'
+	);
 
 	foreach ([
 		'plugin_webseer_servers',
@@ -70,7 +76,7 @@ it('drops every plugin table on uninstall', function () {
 		'plugin_webseer_processes',
 		'plugin_webseer_contacts',
 	] as $table) {
-		expect($sql)->toContain('DROP TABLE IF EXISTS ' . $table);
+		expect($dropped)->toContain($table);
 	}
 });
 
@@ -84,26 +90,38 @@ it('does not migrate the schema when the installed version already matches', fun
 	expect($writes)->toBe([]);
 });
 
-it('creates the contacts table when upgrading from a pre-1.1 install', function () {
+it('provisions missing tables via the plugin table API on upgrade', function () {
 	webseer_test_mock_db('db_fetch_cell', 'plugin_config', '1.0');
 
 	plugin_webseer_upgrade();
 
-	$sql = implode("\n", array_column($GLOBALS['__test_db_calls'], 'sql'));
+	$created = array_column(
+		array_filter($GLOBALS['__test_db_calls'], fn ($call) => $call['fn'] === 'api_plugin_db_table_create'),
+		'sql'
+	);
 
-	expect($sql)->toContain('CREATE TABLE IF NOT EXISTS `plugin_webseer_contacts`');
-	expect($sql)->toContain('CREATE TABLE `plugin_webseer_proxies`');
+	expect($created)->toContain('plugin_webseer_contacts');
+	expect($created)->toContain('plugin_webseer_proxies');
 });
 
-it('does not recreate already-migrated tables when upgrading from a post-2.0 install', function () {
+it('refreshes existing tables via db_update_table instead of recreating them on upgrade', function () {
 	webseer_test_mock_db('db_fetch_cell', 'plugin_config', '2.5');
+	webseer_test_mock_db('db_table_exists', 'plugin_webseer_', true);
 
 	plugin_webseer_upgrade();
 
-	$sql = implode("\n", array_column($GLOBALS['__test_db_calls'], 'sql'));
+	$created = array_column(
+		array_filter($GLOBALS['__test_db_calls'], fn ($call) => $call['fn'] === 'api_plugin_db_table_create'),
+		'sql'
+	);
+	$updated = array_column(
+		array_filter($GLOBALS['__test_db_calls'], fn ($call) => $call['fn'] === 'db_update_table'),
+		'sql'
+	);
 
-	expect($sql)->not->toContain('CREATE TABLE IF NOT EXISTS `plugin_webseer_contacts`');
-	expect($sql)->not->toContain('CREATE TABLE `plugin_webseer_proxies`');
+	expect($created)->toBe([]);
+	expect($updated)->toContain('plugin_webseer_contacts');
+	expect($updated)->toContain('plugin_webseer_proxies');
 });
 
 it('records the new version against plugin_config after a migration', function () {

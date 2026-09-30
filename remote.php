@@ -25,8 +25,8 @@
 chdir('../../');
 
 require_once('./include/cli_check.php');
-include_once($config['base_path'] . '/lib/functions.php');
-include_once($config['base_path'] . '/plugins/webseer/includes/functions.php');
+require_once($config['base_path'] . '/lib/functions.php');
+require_once($config['base_path'] . '/plugins/webseer/includes/functions.php');
 
 // Identify the peer by its real connection address. A forwarded header is set
 // by the client and must not be trusted to authorize the server-to-server

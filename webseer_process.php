@@ -31,7 +31,7 @@ if (strpos($dir, 'plugins') !== false) {
 }
 
 require('./include/cli_check.php');
-include_once($config['base_path'] . '/plugins/webseer/includes/functions.php');
+require_once($config['base_path'] . '/plugins/webseer/includes/functions.php');
 
 ini_set('max_execution_time', '21');
 
@@ -107,7 +107,7 @@ if (!cacti_sizeof($url)) {
 }
 
 if (api_plugin_is_enabled('maint')) {
-	include_once($config['base_path'] . '/plugins/maint/functions.php');
+	require_once($config['base_path'] . '/plugins/maint/functions.php');
 }
 
 if (function_exists('plugin_maint_check_webseer_url')) {
@@ -593,7 +593,7 @@ function display_version() {
 	global $config;
 
 	if (!function_exists('plugin_webseer_version')) {
-		include_once($config['base_path'] . '/plugins/webseer/setup.php');
+		require_once($config['base_path'] . '/plugins/webseer/setup.php');
 	}
 
 	$info = plugin_webseer_version();

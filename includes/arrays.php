@@ -22,7 +22,7 @@
  +-------------------------------------------------------------------------+
 */
 
-include_once(__DIR__ . '/constants.php');
+require_once(__DIR__ . '/constants.php');
 
 global $webseer_actions_proxy, $webseer_actions_url, $webseer_actions_server,
 $webseer_proxy_fields, $webseer_server_fields, $webseer_url_fields,
