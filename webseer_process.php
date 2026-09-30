@@ -593,7 +593,7 @@ function display_version() {
 	global $config;
 
 	if (!function_exists('plugin_webseer_version')) {
-			require_once($config['base_path'] . '/plugins/webseer/setup.php');
+		require_once($config['base_path'] . '/plugins/webseer/setup.php');
 	}
 
 	$info = plugin_webseer_version();

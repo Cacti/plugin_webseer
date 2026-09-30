@@ -155,3 +155,19 @@ it('replicates every owned table when the class is "all"', function () {
 		expect($call['remote_poller_id'])->toBe(1);
 	}
 });
+
+it('renames the historical url_log table before refreshing the schema on upgrade', function () {
+	// Only the legacy plugin_webseer_url_log exists; the renamed
+	// plugin_webseer_urls_log does not yet, so the guarded pre-step must fire.
+	webseer_test_mock_db('db_table_exists', 'plugin_webseer_url_log', true);
+
+	webseer_upgrade_tables();
+
+	$renames = array_values(array_filter($GLOBALS['__test_db_calls'], function ($call) {
+		return $call['fn'] === 'db_execute' && stripos($call['sql'], 'RENAME TABLE') !== false;
+	}));
+
+	expect($renames)->toHaveCount(1);
+	expect($renames[0]['sql'])->toContain('plugin_webseer_url_log')
+		->and($renames[0]['sql'])->toContain('plugin_webseer_urls_log');
+});
