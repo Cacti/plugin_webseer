@@ -13,6 +13,7 @@
 
 beforeAll(function () {
 	require_once __DIR__ . '/../../setup.php';
+	require_once __DIR__ . '/../../includes/database.php';
 
 	$stubLibraryPath = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'webseer-test-lib-stub';
 
@@ -51,14 +52,13 @@ it('always reports success and updates plugin_config to the current version', fu
 	]);
 });
 
-it('creates every webseer table via raw CREATE TABLE statements', function () {
+it('creates every webseer table via the plugin table API', function () {
 	plugin_webseer_setup_table();
 
 	$createdTables = array_values(array_map(function ($call) {
-		preg_match('/CREATE TABLE(?: IF NOT EXISTS)? `([^`]+)`/i', $call['sql'], $matches);
-		return $matches[1] ?? null;
+		return $call['sql'];
 	}, array_filter($GLOBALS['__test_db_calls'], function ($call) {
-		return $call['fn'] === 'db_execute' && stripos($call['sql'], 'CREATE TABLE') !== false;
+		return $call['fn'] === 'api_plugin_db_table_create';
 	})));
 
 	expect($createdTables)->toEqualCanonicalizing([

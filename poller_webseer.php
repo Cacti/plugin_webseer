@@ -32,9 +32,9 @@ if (strpos($dir, 'plugins') !== false) {
 	chdir('../../');
 }
 
-include('./include/cli_check.php');
-include_once($config['base_path'] . '/plugins/webseer/includes/functions.php');
-include_once($config['base_path'] . '/lib/poller.php');
+require('./include/cli_check.php');
+require_once($config['base_path'] . '/plugins/webseer/includes/functions.php');
+require_once($config['base_path'] . '/lib/poller.php');
 
 // process calling arguments
 $parms = $_SERVER['argv'];
@@ -291,7 +291,7 @@ function display_version() {
 	global $config;
 
 	if (!function_exists('plugin_webseer_version')) {
-		include_once($config['base_path'] . '/plugins/webseer/setup.php');
+			require_once($config['base_path'] . '/plugins/webseer/setup.php');
 	}
 
 	$info = plugin_webseer_version();

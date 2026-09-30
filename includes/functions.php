@@ -22,10 +22,10 @@
  +-------------------------------------------------------------------------+
 */
 
-include_once(__DIR__ . '/constants.php');
-include_once(__DIR__ . '/arrays.php');
-include_once(__DIR__ . '/../classes/cURL.php');
-include_once(__DIR__ . '/../classes/mxlookup.php');
+require_once(__DIR__ . '/constants.php');
+require_once(__DIR__ . '/arrays.php');
+require_once(__DIR__ . '/../classes/cURL.php');
+require_once(__DIR__ . '/../classes/mxlookup.php');
 
 /**
  * Validate and store the shared list-page request variables (rows, page,

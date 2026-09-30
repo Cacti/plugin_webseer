@@ -23,8 +23,8 @@
 */
 
 chdir('../../');
-include_once('./include/auth.php');
-include_once($config['base_path'] . '/plugins/webseer/includes/functions.php');
+require_once('./include/auth.php');
+require_once($config['base_path'] . '/plugins/webseer/includes/functions.php');
 
 global $refresh;
 
