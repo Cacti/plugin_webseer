@@ -3,6 +3,7 @@
 --- 3.3 ---
 
 * refactor: Move all schema management into includes/database.php (the thold model) and manage the seven plugin_webseer_* tables through Cacti's plugin table API - create with api_plugin_db_table_create() and refresh existing tables with db_update_table() from a single shared definition, replacing the raw CREATE TABLE/version-gated ALTER TABLE migrations (the historical plugin_webseer_url_log -> plugin_webseer_urls_log rename is kept as a guarded pre-step); the upgrade path now also updates the full plugin_config row. Also switches every file inclusion from include/include_once to require/require_once
+* dev: Measure CI coverage with xdebug instead of pcov so the plugin's own sources are instrumented (pcov auto-scopes to the Composer root and skipped cacti/plugins/, leaving the patch-coverage gate with nothing to measure)
 * dev: Enforce patch coverage of changed lines in CI and remove the inert COMPOSER_ROOT_VERSION env from the Pest step
 * issue: Fix bug where SERVERS/URLS refresh from a master server could pass a false base64_decode() result into unserialize(), and where refresh_urls() shared refresh_servers()'s bug of not narrowing db_fetch_row()/post() results before use
 
