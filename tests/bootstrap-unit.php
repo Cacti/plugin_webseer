@@ -328,6 +328,7 @@ $GLOBALS['__test_log_calls'] = [];
 if (!function_exists('cacti_log')) {
 	function cacti_log($message, $also_print = false, $log_type = '', $level = 0) {
 		$GLOBALS['__test_log_calls'][] = ['message' => $message, 'also_print' => $also_print, 'log_type' => $log_type, 'level' => $level];
+		$GLOBALS['__test_cacti_log'][] = (string) $message;
 	}
 }
 

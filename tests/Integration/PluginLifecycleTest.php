@@ -17,12 +17,34 @@
  */
 
 require_once dirname(__DIR__, 2) . '/setup.php';
+// Define webseer_upgrade_tables() from the real checkout so
+// plugin_webseer_upgrade() runs while base_path is sandboxed below.
+require_once dirname(__DIR__, 2) . '/includes/database.php';
 
 // tests/Pest.php's beforeEach isn't reliably discovered under this plugin's CI
 // invocation (pest run from the cacti root via --configuration=plugins/...),
 // so register it here too to guarantee a clean call log between tests in this file.
 beforeEach(function () {
 	webseer_test_reset_db_mocks();
+
+	// Sandbox base_path so the version-drift branch runs
+	// plugin_webseer_prune_files() against a throwaway tree with no
+	// manifest.json (prune no-ops), never the real checkout. The temp tree
+	// carries a copy of the real INFO (so plugin_webseer_version() still
+	// matches) and an empty includes/database.php the upgrade's top-level
+	// require_once can load harmlessly.
+	$GLOBALS['__webseer_base_restore'] = $GLOBALS['config']['base_path'];
+	$base = sys_get_temp_dir() . '/webseer-itest-' . uniqid();
+	mkdir($base . '/plugins/webseer/includes', 0777, true);
+	copy(dirname(__DIR__, 2) . '/INFO', $base . '/plugins/webseer/INFO');
+	file_put_contents($base . '/plugins/webseer/includes/database.php', "<?php\n");
+	$GLOBALS['config']['base_path'] = $base;
+});
+
+afterEach(function () {
+	if (isset($GLOBALS['__webseer_base_restore'])) {
+		$GLOBALS['config']['base_path'] = $GLOBALS['__webseer_base_restore'];
+	}
 });
 
 it('registers its hooks and admin realm on install', function () {

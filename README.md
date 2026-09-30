@@ -27,6 +27,16 @@ this, goto Cacti's Plugin Management page, Install and Enable the webseer. Once
 this is complete, you can grant users permission to create service checks for
 various Web Sites and Services.
 
+## Upgrading
+
+`poller_webseer.php` runs as a long-lived background process, so a running copy
+keeps the old code in memory across a plugin upgrade. After upgrading the plugin
+files, restart the webseer background process (stop the running
+`poller_webseer.php`; Cacti's poller relaunches it on the next cycle) so it
+picks up the new code. On upgrade the plugin also prunes its own bundled
+development-only files (for example the `tests/` directory) from the installed
+tree.
+
 ## Bugs and Feature Enhancements
 
 Bug and feature enhancements for the webseer plugin are handled in GitHub. If
