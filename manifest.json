@@ -12,7 +12,6 @@
         "index.php",
         "locales/",
         "manifest.json",
-        "phpunit.xml",
         "poller_webseer.php",
         "remote.php",
         "setup.php",
