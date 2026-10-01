@@ -24,25 +24,25 @@ When generating code for this repository:
 ## Project Structure
 
 ```
-webseer/                  # Repository root (install to plugins/webseer/ in Cacti)
-├── classes/                # Supporting PHP classes (cURL, mxlookup)
-├── includes/                  # Library/helper files, require_once'd from the entry points
-│   ├── database.php             # Schema management: table defs + create/upgrade/drop helpers
-│   ├── functions.php            # Shared plugin functions
-│   ├── arrays.php               # Shared option/label arrays
-│   └── constants.php            # Shared constants
-├── locales/                      # Internationalization files
-├── tests/                          # Test suite
-├── ca-bundle.crt                     # CA bundle for HTTPS endpoint verification
-├── poller_webseer.php                  # Background poller entry point (CLI)
-├── remote.php                            # Remote poller support endpoint
-├── webseer.php                             # Main viewer/administration UI
-├── webseer_process.php                       # Check execution logic
-├── webseer_proxies.php                         # Proxy administration
-├── webseer_servers.php                           # Monitored server/service administration
-├── INFO                                            # Plugin metadata (name, version, compat)
+webseer/                # Repository root (install to plugins/webseer/ in Cacti)
+├── classes/            # Supporting PHP classes (cURL, mxlookup)
+├── includes/           # Library/helper files, require_once'd from the entry points
+│   ├── database.php    # Schema management: table defs + create/upgrade/drop helpers
+│   ├── functions.php   # Shared plugin functions
+│   ├── arrays.php      # Shared option/label arrays
+│   └── constants.php   # Shared constants
+├── locales/            # Internationalization files
+├── tests/              # Test suite
+├── ca-bundle.crt       # CA bundle for HTTPS endpoint verification
+├── poller_webseer.php  # Background poller entry point (CLI)
+├── remote.php          # Remote poller support endpoint
+├── webseer.php         # Main viewer/administration UI
+├── webseer_process.php # Check execution logic
+├── webseer_proxies.php # Proxy administration
+├── webseer_servers.php # Monitored server/service administration
+├── INFO                # Plugin metadata (name, version, compat)
 ├── README.md
-└── setup.php                                         # Plugin install/uninstall/upgrade hooks
+└── setup.php           # Plugin install/uninstall/upgrade hooks
 ```
 
 ## Naming Conventions
