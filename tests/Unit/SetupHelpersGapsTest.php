@@ -29,6 +29,25 @@ beforeAll(function () {
 beforeEach(function () {
 	webseer_test_reset_db_mocks();
 	$GLOBALS['__test_exec_calls'] = [];
+
+	// Sandbox base_path so the version-drift branch runs
+	// webseer_prune_files() against a throwaway tree with no
+	// manifest.json (prune no-ops), never the real checkout. The temp tree
+	// carries a copy of the real INFO (so plugin_webseer_version() still
+	// matches) and an empty includes/database.php the upgrade's top-level
+	// require_once can load harmlessly.
+	$GLOBALS['__webseer_base_restore'] = $GLOBALS['config']['base_path'];
+	$base = sys_get_temp_dir() . '/webseer-test-' . uniqid();
+	mkdir($base . '/plugins/webseer/includes', 0777, true);
+	copy(__DIR__ . '/../../INFO', $base . '/plugins/webseer/INFO');
+	file_put_contents($base . '/plugins/webseer/includes/database.php', "<?php\n");
+	$GLOBALS['config']['base_path'] = $base;
+});
+
+afterEach(function () {
+	if (isset($GLOBALS['__webseer_base_restore'])) {
+		$GLOBALS['config']['base_path'] = $GLOBALS['__webseer_base_restore'];
+	}
 });
 
 it('always reports success and updates plugin_config to the current version', function () {

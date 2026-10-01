@@ -195,7 +195,19 @@ if (!function_exists('db_fetch_cell_prepared')) {
 
 if (!function_exists('db_index_exists')) {
 	function db_index_exists($table, $index) {
-		return false;
+		return webseer_test_db_result('db_index_exists', (string) $table . '.' . (string) $index, [], false);
+	}
+}
+
+if (!function_exists('db_add_index')) {
+	function db_add_index($table, $type, $key, $columns, $log = true, $db_conn = false) {
+		return webseer_test_db_result('db_add_index', (string) $table . '.' . (string) $key, ['type' => $type, 'columns' => $columns], true);
+	}
+}
+
+if (!function_exists('cacti_version_compare')) {
+	function cacti_version_compare($version1, $version2, $operator = '>') {
+		return version_compare($version1, $version2, $operator);
 	}
 }
 
@@ -322,6 +334,7 @@ $GLOBALS['__test_log_calls'] = [];
 if (!function_exists('cacti_log')) {
 	function cacti_log($message, $also_print = false, $log_type = '', $level = 0) {
 		$GLOBALS['__test_log_calls'][] = ['message' => $message, 'also_print' => $also_print, 'log_type' => $log_type, 'level' => $level];
+		$GLOBALS['__test_cacti_log'][] = (string) $message;
 	}
 }
 

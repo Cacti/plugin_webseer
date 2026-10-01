@@ -17,12 +17,34 @@
  */
 
 require_once dirname(__DIR__, 2) . '/setup.php';
+// Define webseer_upgrade_tables() from the real checkout so
+// plugin_webseer_upgrade() runs while base_path is sandboxed below.
+require_once dirname(__DIR__, 2) . '/includes/database.php';
 
 // tests/Pest.php's beforeEach isn't reliably discovered under this plugin's CI
 // invocation (pest run from the cacti root via --configuration=plugins/...),
 // so register it here too to guarantee a clean call log between tests in this file.
 beforeEach(function () {
 	webseer_test_reset_db_mocks();
+
+	// Sandbox base_path so the version-drift branch runs
+	// webseer_prune_files() against a throwaway tree with no
+	// manifest.json (prune no-ops), never the real checkout. The temp tree
+	// carries a copy of the real INFO (so plugin_webseer_version() still
+	// matches) and an empty includes/database.php the upgrade's top-level
+	// require_once can load harmlessly.
+	$GLOBALS['__webseer_base_restore'] = $GLOBALS['config']['base_path'];
+	$base = sys_get_temp_dir() . '/webseer-itest-' . uniqid();
+	mkdir($base . '/plugins/webseer/includes', 0777, true);
+	copy(dirname(__DIR__, 2) . '/INFO', $base . '/plugins/webseer/INFO');
+	file_put_contents($base . '/plugins/webseer/includes/database.php', "<?php\n");
+	$GLOBALS['config']['base_path'] = $base;
+});
+
+afterEach(function () {
+	if (isset($GLOBALS['__webseer_base_restore'])) {
+		$GLOBALS['config']['base_path'] = $GLOBALS['__webseer_base_restore'];
+	}
 });
 
 it('registers its hooks and admin realm on install', function () {
@@ -135,4 +157,22 @@ it('records the new version against plugin_config after a migration', function (
 	);
 
 	expect($version_updates)->not->toBeEmpty();
+});
+
+it('leaves the recorded version unchanged when a unique-key repair fails on upgrade', function () {
+	// Drift plus a Cacti 1.2.29-1.2.31 run where the compensating UNIQUE-key
+	// re-add fails (as it would against pre-existing duplicate rows).
+	webseer_test_mock_db('db_fetch_cell', 'plugin_config', '1.0');
+	webseer_test_mock_db('db_fetch_cell', 'SELECT cacti FROM version', '1.2.30');
+	webseer_test_mock_db('db_add_index', 'plugin_webseer_contacts', false);
+
+	plugin_webseer_upgrade();
+
+	$version_updates = array_filter(
+		$GLOBALS['__test_db_calls'],
+		fn ($call) => $call['fn'] === 'db_execute_prepared' && strpos($call['sql'], 'UPDATE plugin_config') !== false
+	);
+
+	expect($version_updates)->toBeEmpty();
+	expect(implode("\n", $GLOBALS['__test_cacti_log'] ?? []))->toContain('could not re-add UNIQUE key');
 });

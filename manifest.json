@@ -1,0 +1,24 @@
+{
+    "tombstones": [],
+    "expected": [
+        "CHANGELOG.md",
+        "INFO",
+        "LICENSE",
+        "README.md",
+        "ca-bundle.crt",
+        "classes/",
+        "images/",
+        "includes/",
+        "index.php",
+        "locales/",
+        "manifest.json",
+        "poller_webseer.php",
+        "remote.php",
+        "setup.php",
+        "webseer.php",
+        "webseer_process.php",
+        "webseer_proxies.php",
+        "webseer_servers.php"
+    ],
+    "whitelist": []
+}

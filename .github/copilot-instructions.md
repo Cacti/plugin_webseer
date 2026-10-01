@@ -24,25 +24,25 @@ When generating code for this repository:
 ## Project Structure
 
 ```
-webseer/                  # Repository root (install to plugins/webseer/ in Cacti)
-├── classes/                # Supporting PHP classes (cURL, mxlookup)
-├── includes/                  # Library/helper files, require_once'd from the entry points
-│   ├── database.php             # Schema management: table defs + create/upgrade/drop helpers
-│   ├── functions.php            # Shared plugin functions
-│   ├── arrays.php               # Shared option/label arrays
-│   └── constants.php            # Shared constants
-├── locales/                      # Internationalization files
-├── tests/                          # Test suite
-├── ca-bundle.crt                     # CA bundle for HTTPS endpoint verification
-├── poller_webseer.php                  # Background poller entry point (CLI)
-├── remote.php                            # Remote poller support endpoint
-├── webseer.php                             # Main viewer/administration UI
-├── webseer_process.php                       # Check execution logic
-├── webseer_proxies.php                         # Proxy administration
-├── webseer_servers.php                           # Monitored server/service administration
-├── INFO                                            # Plugin metadata (name, version, compat)
+webseer/                # Repository root (install to plugins/webseer/ in Cacti)
+├── classes/            # Supporting PHP classes (cURL, mxlookup)
+├── includes/           # Library/helper files, require_once'd from the entry points
+│   ├── database.php    # Schema management: table defs + create/upgrade/drop helpers
+│   ├── functions.php   # Shared plugin functions
+│   ├── arrays.php      # Shared option/label arrays
+│   └── constants.php   # Shared constants
+├── locales/            # Internationalization files
+├── tests/              # Test suite
+├── ca-bundle.crt       # CA bundle for HTTPS endpoint verification
+├── poller_webseer.php  # Background poller entry point (CLI)
+├── remote.php          # Remote poller support endpoint
+├── webseer.php         # Main viewer/administration UI
+├── webseer_process.php # Check execution logic
+├── webseer_proxies.php # Proxy administration
+├── webseer_servers.php # Monitored server/service administration
+├── INFO                # Plugin metadata (name, version, compat)
 ├── README.md
-└── setup.php                                         # Plugin install/uninstall/upgrade hooks
+└── setup.php           # Plugin install/uninstall/upgrade hooks
 ```
 
 ## Naming Conventions
@@ -219,3 +219,7 @@ existing code or adding new code, not just in dedicated cleanup passes:
   line, `@param` lines, a blank comment line, then `@return`. Infer parameter/return types from
   actual usage; don't change the function's real type-hints in the same pass (let static analysis
   flag mismatches separately). Skip vendored third-party library files.
+
+## File manifest & upgrade pruning
+
+The plugin ships a root `manifest.json` with three arrays: `tombstones` (files/directories older versions shipped that have since moved or been removed), `expected` (the top-level files and directories that ship today, directories written with a trailing `/`), and `whitelist` (paths holding user data that must never be touched). Keep `expected` current: CI runs `tests/bin/validate-manifest.php`, which fails on any drift between `expected` and the real top-level tree (it ignores `tests/`, `phpunit.xml`, `.git*`, `.md*`, and whitelisted paths). Custom customer CSS/theme files belong in `expected`, and stylesheets live in `css/` (not `themes/`). On upgrade, `webseer_prune_files()` deletes the tombstoned paths, the dev-only `tests/` tree, and the `phpunit.xml` test config, leaves `whitelist`, `.git*`, and `.md*` alone, and logs (without removing) any top-level entry the manifest does not account for. As a safety measure it refuses any tombstone that resolves outside the plugin directory (a tampered manifest.json) and logs a warning for any file or directory it cannot remove. When you move or delete a shipped file, add its old path to `tombstones` and update `expected` in the same change.

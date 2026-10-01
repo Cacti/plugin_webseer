@@ -280,9 +280,11 @@ function plugin_webseer_setup_table() {
  * is applied as a guarded pre-step first. Called from
  * plugin_webseer_upgrade() when the stored version changes.
  *
- * @return void
+ * @return bool True if the refresh (including any compensating UNIQUE-key
+ *              re-add) fully succeeded; false if a unique key could not be
+ *              restored, so the caller can defer version bookkeeping.
  */
-function webseer_upgrade_tables() {
+function webseer_upgrade_tables(): bool {
 	// db_update_table() can not rename, so carry the historical URL-log
 	// table rename (and its data) forward before the schema refresh.
 	if (db_table_exists('plugin_webseer_url_log') && !db_table_exists('plugin_webseer_urls_log')) {
@@ -296,6 +298,57 @@ function webseer_upgrade_tables() {
 			api_plugin_db_table_create('webseer', $table, $data);
 		}
 	}
+
+	return webseer_reintroduce_unique_keys();
+}
+
+/**
+ * Cacti 1.2.29 through 1.2.31 shipped a db_update_table() that silently
+ * dropped UNIQUE keys declared via a table definition's 'unique_keys' (it
+ * rebuilds indexes only from 'keys'). Re-add this plugin's unique keys when
+ * running on one of those releases; 1.2.32+ preserves them, so this is a
+ * no-op there. Uses Cacti's db_add_index() (available since 1.2.29) and
+ * skips any key that already exists. When a key cannot be re-added - almost
+ * always because duplicate rows were inserted while the constraint was
+ * absent - the failure is logged with remediation steps and reported to the
+ * caller so version bookkeeping can be deferred and the repair retried.
+ *
+ * @return bool True if every applicable unique key is present (or the gate
+ *              does not apply); false if any key could not be re-added.
+ */
+function webseer_reintroduce_unique_keys(): bool {
+	$running = trim((string) db_fetch_cell('SELECT cacti FROM version LIMIT 1'));
+
+	if ($running === '' ||
+		!cacti_version_compare($running, '1.2.29', '>=') ||
+		!cacti_version_compare($running, '1.2.32', '<')) {
+		return true;
+	}
+
+	$unique_keys = [
+		['table' => 'plugin_webseer_contacts', 'name' => 'user_id_type', 'columns' => ['user_id', 'type']],
+	];
+
+	$ok = true;
+
+	foreach ($unique_keys as $uk) {
+		if (db_index_exists($uk['table'], $uk['name'])) {
+			continue;
+		}
+
+		if (!db_add_index($uk['table'], 'UNIQUE', $uk['name'], $uk['columns'])) {
+			$ok = false;
+
+			cacti_log(sprintf('ERROR: webseer could not re-add UNIQUE key `%s` on `%s` (%s). '
+				. 'This happens only when duplicate (%s) rows were inserted while the constraint '
+				. 'was absent on Cacti 1.2.29-1.2.31; de-duplicate the table, then re-run the upgrade '
+				. 'to restore it.',
+				$uk['name'], $uk['table'], implode(', ', $uk['columns']), implode(', ', $uk['columns'])),
+				false, 'WEBSEER');
+		}
+	}
+
+	return $ok;
 }
 
 /**
