@@ -28,7 +28,7 @@ beforeEach(function () {
 	webseer_test_reset_db_mocks();
 
 	// Sandbox base_path so the version-drift branch runs
-	// plugin_webseer_prune_files() against a throwaway tree with no
+	// webseer_prune_files() against a throwaway tree with no
 	// manifest.json (prune no-ops), never the real checkout. The temp tree
 	// carries a copy of the real INFO (so plugin_webseer_version() still
 	// matches) and an empty includes/database.php the upgrade's top-level

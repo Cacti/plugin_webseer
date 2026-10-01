@@ -164,7 +164,7 @@ function plugin_webseer_upgrade() {
 
 		api_plugin_register_hook('webseer', 'replicate_out', 'webseer_replicate_out', 'setup.php', '1');
 
-		plugin_webseer_prune_files();
+		webseer_prune_files();
 	}
 
 	return true;
@@ -378,7 +378,7 @@ function webseer_replicate_out($data) {
  * @global array $config Cacti global configuration array; used to resolve
  *                       the plugin directory.
  */
-function plugin_webseer_prune_files(): void {
+function webseer_prune_files(): void {
 	global $config;
 
 	$plugin_dir    = $config['base_path'] . '/plugins/webseer';
@@ -464,7 +464,7 @@ function plugin_webseer_prune_files(): void {
 		}
 
 		if (is_dir($path) && !is_link($path)) {
-			$removed = plugin_webseer_rmtree($path);
+			$removed = webseer_rmtree($path);
 		} else {
 			$removed = @unlink($path);
 		}
@@ -498,14 +498,14 @@ function plugin_webseer_prune_files(): void {
 
 /**
  * Recursively deletes a directory and its contents. Symlinks are removed
- * without being followed. Helper for plugin_webseer_prune_files().
+ * without being followed. Helper for webseer_prune_files().
  *
  * @param string $dir Absolute path to the directory to remove.
  *
  * @return bool True if the directory and everything under it was removed;
  *              false if any entry could not be deleted.
  */
-function plugin_webseer_rmtree(string $dir): bool {
+function webseer_rmtree(string $dir): bool {
 	$entries = scandir($dir);
 	$ok      = true;
 
@@ -517,7 +517,7 @@ function plugin_webseer_rmtree(string $dir): bool {
 		$path = $dir . '/' . $entry;
 
 		if (is_dir($path) && !is_link($path)) {
-			if (!plugin_webseer_rmtree($path)) {
+			if (!webseer_rmtree($path)) {
 				$ok = false;
 			}
 		} elseif (!@unlink($path)) {
