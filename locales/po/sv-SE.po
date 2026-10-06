@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-28 16:09-0400\nPO-Revision-Date: 2026-10-05 08:32+0000\nLast-Translator: Daniel Nylander <daniel@danielnylander.se>\nLanguage-Team: Swedish <https://translate.cacti.net/projects/cacti/webseer/sv/>\nLanguage: sv-SE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-28 16:09-0400\nPO-Revision-Date: 2026-10-06 09:18+0000\nLast-Translator: Daniel Nylander <daniel@danielnylander.se>\nLanguage-Team: Swedish <https://translate.cacti.net/projects/cacti/webseer/sv/>\nLanguage: sv-SE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
 
 #: includes/arrays.php webseer_servers.php
 #, php-format
@@ -23,7 +23,7 @@ msgstr "%d sekunder"
 
 #: includes/arrays.php
 msgid "Delete"
-msgstr "Ta bort"
+msgstr "Radera"
 
 #: includes/arrays.php
 msgid "Disable"
@@ -59,7 +59,7 @@ msgstr "Proxyns värdnamn."
 
 #: includes/arrays.php
 msgid "HTTP Port"
-msgstr "HTTP-port"
+msgstr "HTTP-proxyport"
 
 #: includes/arrays.php
 msgid "The HTTP Proxy Port."
@@ -125,7 +125,7 @@ msgstr "Gör den här servern till Master-server.  Master-servern hanterar alla 
 
 #: includes/arrays.php webseer_servers.php
 msgid "IP Address"
-msgstr "IP adress"
+msgstr "IP-adress"
 
 #: includes/arrays.php
 msgid "IP Address to connect to this server"
@@ -181,7 +181,7 @@ msgstr "Om denna anslutningstext kräver en proxy, välj den här.  Annars välj
 
 #: includes/arrays.php webseer.php
 msgid "None"
-msgstr "inget"
+msgstr "Ingen"
 
 #: includes/arrays.php webseer.php
 msgid "Compression"
@@ -249,15 +249,15 @@ msgstr "Söksträng för svar - Underhållssida"
 
 #: includes/arrays.php
 msgid "This is the string to search for on the Maintenance Page.  The Service Check will check for this string if the above string is not found.  If found, it means that the Web Service is under maintenance."
-msgstr "Detta är den sträng som ska sökas efter på underhållssidan.  Service Check kommer att söka efter denna sträng om ovanstående sträng inte hittas.  Om den hittas betyder det att webbtjänsten är under underhåll."
+msgstr "Detta är den sträng som ska sökas efter på underhållssidan. Tjänstekontrollen söker efter denna sträng om ovanstående sträng inte hittas. Om den hittas betyder det att webbtjänsten är under underhåll."
 
 #: includes/arrays.php
 msgid "Response Search String - Failed"
-msgstr "Söksträng för svar - Misslyckades"
+msgstr "Söksträng för felaktigt svar"
 
 #: includes/arrays.php
 msgid "This is the string to search for a known failure in the Web Service response.  The Service Check will only alert if this string is found, ignoring any timeout issues and the search strings above."
-msgstr "Detta är den sträng som ska användas för att söka efter ett känt fel i webbtjänstens svar.  Servicekontrollen varnar endast om denna sträng hittas, och ignorerar eventuella timeoutproblem och söksträngarna ovan."
+msgstr "Detta är den sträng som ska användas för att söka efter ett känt fel i webbtjänstens svar. Tjänstekontrollen varnar endast om denna sträng hittas och ignorerar eventuella timeoutproblem och söksträngarna ovan."
 
 #: includes/arrays.php
 msgid "Notification Settings"
@@ -321,21 +321,19 @@ msgstr "Cacti fjärrserver"
 
 #: setup.php
 msgid "Web Service Check Admin"
-msgstr "Web Service Check Admin"
+msgstr "Administratör för webbtjänstkontroller"
 
 #: setup.php
 msgid "Management"
 msgstr "Hantering"
 
 #: setup.php
-#, fuzzy
-#| msgid "Web Service Checks"
 msgid "Service Checks"
-msgstr "Kontroller av webbtjänster"
+msgstr "Tjänstekontroller"
 
 #: setup.php
 msgid "WebSeer Service Checks"
-msgstr "Webseer Service Checks"
+msgstr "Webseer-tjänstekontroller"
 
 #: setup.php
 msgid "Service Check Edit"
@@ -489,7 +487,7 @@ msgstr "Totalt"
 
 #: webseer.php
 msgid "Urls"
-msgstr "Urnor"
+msgstr "Webbadresser"
 
 #: webseer.php
 msgid "Service Down"
@@ -546,7 +544,7 @@ msgstr "DNS: Server %s - A-post för %s"
 
 #: webseer.php
 msgid "N/A"
-msgstr "N/A"
+msgstr "Ej tillämpligt"
 
 #: webseer.php webseer_servers.php
 msgid "Down"
@@ -566,11 +564,11 @@ msgstr "Inga servrar hittades"
 
 #: webseer.php
 msgid "Webseer Service Checks"
-msgstr "Webseer Service Checks"
+msgstr "Webseer-tjänstekontroller"
 
 #: webseer.php webseer_servers.php
 msgid "State"
-msgstr "Län"
+msgstr "Status"
 
 #: webseer.php webseer_servers.php
 msgid "Any"
@@ -586,7 +584,7 @@ msgstr "Standard"
 
 #: webseer.php webseer_proxies.php webseer_servers.php
 msgid "Go"
-msgstr "Utför"
+msgstr "Start"
 
 #: webseer.php webseer_proxies.php webseer_servers.php
 msgid "Clear"
