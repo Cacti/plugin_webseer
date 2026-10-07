@@ -214,7 +214,7 @@ function form_actions() {
 					</td>
 				</tr>\n";
 
-			$save_html = "<input type='button' value='" . __esc('Cancel') . "' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Delete URL', 'Delete URLs', cacti_sizeof($url_array)) . "'>";
+			$save_html = "<input type='button' class='cactiReturnTo' value='" . __esc('Cancel') . "'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Delete URL', 'Delete URLs', cacti_sizeof($url_array)) . "'>";
 		} elseif ($action == WEBSEER_ACTION_URL_DISABLE) {
 			print "	<tr>
 					<td class='topBoxAlt'>
@@ -223,7 +223,7 @@ function form_actions() {
 					</td>
 				</tr>\n";
 
-			$save_html = "<input type='button' value='" . __esc('Cancel') . "' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Disable URL', 'Disable URLs', cacti_sizeof($url_array)) . "'>";
+			$save_html = "<input type='button' class='cactiReturnTo' value='" . __esc('Cancel') . "'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Disable URL', 'Disable URLs', cacti_sizeof($url_array)) . "'>";
 		} elseif ($action == WEBSEER_ACTION_URL_ENABLE) {
 			print "	<tr>
 					<td class='topBoxAlt'>
@@ -232,7 +232,7 @@ function form_actions() {
 					</td>
 				</tr>\n";
 
-			$save_html = "<input type='button' value='" . __esc('Cancel') . "' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Enable URL', 'Enable URLs', cacti_sizeof($url_array)) . "'>";
+			$save_html = "<input type='button' class='cactiReturnTo' value='" . __esc('Cancel') . "'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Enable URL', 'Enable URLs', cacti_sizeof($url_array)) . "'>";
 		} elseif ($action == WEBSEER_ACTION_URL_DUPLICATE) {
 			print "	<tr>
 					<td class='topBoxAlt'>
@@ -241,7 +241,7 @@ function form_actions() {
 					</td>
 				</tr>\n";
 
-			$save_html = "<input type='button' value='" . __esc('Cancel') . "' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Duplicate URL', 'Duplicate URLs', cacti_sizeof($url_array)) . "'>";
+			$save_html = "<input type='button' class='cactiReturnTo' value='" . __esc('Cancel') . "'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Duplicate URL', 'Duplicate URLs', cacti_sizeof($url_array)) . "'>";
 		}
 	} else {
 		raise_message(40);

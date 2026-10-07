@@ -129,7 +129,7 @@ function proxy_form_actions() {
 					</td>
 				</tr>\n";
 
-			$save_html = "<input type='button' value='" . __esc('Cancel') . "' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Delete Proxy', 'Delete Proxies', cacti_sizeof($proxy_array)) . "'>";
+			$save_html = "<input type='button' class='cactiReturnTo' value='" . __esc('Cancel') . "'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Delete Proxy', 'Delete Proxies', cacti_sizeof($proxy_array)) . "'>";
 		}
 	} else {
 		raise_message(40);
