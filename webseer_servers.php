@@ -171,7 +171,7 @@ function form_actions() {
 					</td>
 				</tr>";
 
-			$save_html = "<input type='button' value='" . __esc('Cancel') . "' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Delete Server', 'Delete Servers', cacti_sizeof($server_array)) . "'>";
+			$save_html = "<input type='button' class='cactiReturnTo' value='" . __esc('Cancel') . "'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Delete Server', 'Delete Servers', cacti_sizeof($server_array)) . "'>";
 		} elseif ($action == WEBSEER_ACTION_SERVER_DISABLE) {
 			print "	<tr>
 					<td class='topBoxAlt'>
@@ -180,7 +180,7 @@ function form_actions() {
 					</td>
 				</tr>";
 
-			$save_html = "<input type='button' value='" . __esc('Cancel') . "' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Disable Server', 'Disable Servers', cacti_sizeof($server_array)) . "'>";
+			$save_html = "<input type='button' class='cactiReturnTo' value='" . __esc('Cancel') . "'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Disable Server', 'Disable Servers', cacti_sizeof($server_array)) . "'>";
 		} elseif ($action == WEBSEER_ACTION_SERVER_ENABLE) {
 			print "	<tr>
 					<td class='topBoxAlt'>
@@ -189,7 +189,7 @@ function form_actions() {
 					</td>
 				</tr>";
 
-			$save_html = "<input type='button' value='" . __esc('Cancel') . "' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Enable Server', 'Enable Servers', cacti_sizeof($server_array)) . "'>";
+			$save_html = "<input type='button' class='cactiReturnTo' value='" . __esc('Cancel') . "'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Enable Server', 'Enable Servers', cacti_sizeof($server_array)) . "'>";
 		}
 	} else {
 		raise_message(40);
