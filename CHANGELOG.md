@@ -1,6 +1,7 @@
 # ChangeLog
 
 --- 3.3 ---
+* security: Pin CI fixtures and shared test dependencies, disable persisted checkout credentials, and limit workflow permissions and runtime
 
 * security: Replace the confirmation-page Cancel buttons' inline `onClick='cactiReturnTo()'` with the CSP-safe `cactiReturnTo` class so the pages no longer trip Cacti's Content-Security-Policy script-src-attr directive; see the README for the one-time `applySkin()` snippet needed when running Cacti below 1.2.31 (1.2.31+ binds the class automatically)
 * compat: Lower the minimum Cacti compatibility floor from 1.2.32 to 1.2.29
