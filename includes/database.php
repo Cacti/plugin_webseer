@@ -258,6 +258,26 @@ function webseer_table_map(): array {
 }
 
 /**
+ * Returns a copy of a table definition with an array-valued 'primary'
+ * flattened to the backtick-joined scalar form api_plugin_db_table_create()
+ * expects. Down to this plugin's Cacti 1.2.29 compat floor that API
+ * interpolates $data['primary'] straight into PRIMARY KEY (`...`), so an
+ * array would render as PRIMARY KEY (`Array`) and fail the create. The array
+ * form is kept in the *_table_data() definitions for db_update_table().
+ *
+ * @param array<string, mixed> $data The table definition (array primary).
+ *
+ * @return array<string, mixed> The definition with a scalar primary key.
+ */
+function webseer_create_definition(array $data): array {
+	if (isset($data['primary']) && is_array($data['primary'])) {
+		$data['primary'] = implode('`,`', $data['primary']);
+	}
+
+	return $data;
+}
+
+/**
  * Creates all of this plugin's database tables through Cacti's tracked
  * plugin table API. Called from plugin_webseer_install() during
  * installation, and re-run (safely, as a no-op for already-applied
@@ -267,7 +287,7 @@ function webseer_table_map(): array {
  */
 function plugin_webseer_setup_table() {
 	foreach (webseer_table_map() as $table => $data) {
-		api_plugin_db_table_create('webseer', $table, $data);
+		api_plugin_db_table_create('webseer', $table, webseer_create_definition($data));
 	}
 }
 
@@ -295,7 +315,7 @@ function webseer_upgrade_tables(): bool {
 		if (db_table_exists($table)) {
 			db_update_table($table, $data);
 		} else {
-			api_plugin_db_table_create('webseer', $table, $data);
+			api_plugin_db_table_create('webseer', $table, webseer_create_definition($data));
 		}
 	}
 
