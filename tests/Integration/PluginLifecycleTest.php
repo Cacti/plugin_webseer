@@ -81,6 +81,25 @@ it('creates every plugin table on install', function () {
 	}
 });
 
+it('hands api_plugin_db_table_create a scalar primary key while keeping the array form for db_update_table', function () {
+	// api_plugin_db_table_create() interpolates data['primary'] straight into
+	// PRIMARY KEY (`...`) down to the 1.2.29 compat floor, so an array would
+	// render as PRIMARY KEY (`Array`) and fail the create on a fresh install.
+	// db_update_table() needs the array form, so the shared definitions keep it.
+	plugin_webseer_install();
+
+	$creates = array_filter($GLOBALS['__test_db_calls'], fn ($call) => $call['fn'] === 'api_plugin_db_table_create');
+
+	expect($creates)->not->toBeEmpty();
+
+	foreach ($creates as $call) {
+		// params = [$plugin, $data]
+		expect($call['params'][1]['primary'])->toBeString();
+	}
+
+	expect(webseer_servers_table_data()['primary'])->toBeArray();
+});
+
 it('drops every plugin table on uninstall', function () {
 	plugin_webseer_uninstall();
 
