@@ -107,7 +107,13 @@ if (!cacti_sizeof($url)) {
 }
 
 if (api_plugin_is_enabled('maint')) {
-	require_once($config['base_path'] . '/plugins/maint/functions.php');
+	if (file_exists($config['base_path'] . '/plugins/maint/includes/functions.php')) {
+		require_once($config['base_path'] . '/plugins/maint/includes/functions.php');
+	} else if (file_exists($config['base_path'] . '/plugins/maint/functions.php')) {
+		require_once($config['base_path'] . '/plugins/maint/functions.php');
+	} else {
+		cacti_log('ERROR: cannot include maint functions', false, 'WEBSEER');
+	}
 }
 
 if (function_exists('plugin_maint_check_webseer_url')) {
