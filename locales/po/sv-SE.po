@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-28 16:09-0400\nPO-Revision-Date: 2026-10-06 09:18+0000\nLast-Translator: Daniel Nylander <daniel@danielnylander.se>\nLanguage-Team: Swedish <https://translate.cacti.net/projects/cacti/webseer/sv/>\nLanguage: sv-SE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-28 16:09-0400\nPO-Revision-Date: 2026-10-19 08:56+0000\nLast-Translator: Daniel Nylander <daniel@danielnylander.se>\nLanguage-Team: Swedish <https://translate.cacti.net/projects/cacti/webseer/sv/>\nLanguage: sv-SE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
 
 #: includes/arrays.php webseer_servers.php
 #, php-format
@@ -225,7 +225,7 @@ msgstr "Hur många minuter webbadressen måste vara nere innan den skickar en va
 
 #: includes/arrays.php
 msgid "Time Out"
-msgstr "Time Out"
+msgstr "Tidsgräns"
 
 #: includes/arrays.php
 msgid "How many seconds to allow the page to timeout before reporting it as down."
@@ -544,7 +544,7 @@ msgstr "DNS: Server %s - A-post för %s"
 
 #: webseer.php
 msgid "N/A"
-msgstr "Ej tillämpligt"
+msgstr "Inte tillämpligt"
 
 #: webseer.php webseer_servers.php
 msgid "Down"
@@ -637,7 +637,7 @@ msgstr "Användarnamn"
 
 #: webseer_proxies.php
 msgid "Not Set"
-msgstr "Ej inställt"
+msgstr "Inte angiven"
 
 #: webseer_proxies.php
 msgid "Webseer Proxy Management"
