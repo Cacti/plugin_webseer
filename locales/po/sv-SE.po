@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-28 16:09-0400\nPO-Revision-Date: 2026-10-19 08:56+0000\nLast-Translator: Daniel Nylander <daniel@danielnylander.se>\nLanguage-Team: Swedish <https://translate.cacti.net/projects/cacti/webseer/sv/>\nLanguage: sv-SE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-28 16:09-0400\nPO-Revision-Date: 2026-10-20 09:18+0000\nLast-Translator: Daniel Nylander <daniel@danielnylander.se>\nLanguage-Team: Swedish <https://translate.cacti.net/projects/cacti/webseer/sv/>\nLanguage: sv-SE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
 
 #: includes/arrays.php webseer_servers.php
 #, php-format
@@ -59,11 +59,11 @@ msgstr "Proxyns värdnamn."
 
 #: includes/arrays.php
 msgid "HTTP Port"
-msgstr "HTTP-proxyport"
+msgstr "HTTP-port"
 
 #: includes/arrays.php
 msgid "The HTTP Proxy Port."
-msgstr "HTTP Proxy-port."
+msgstr "HTTP-proxyporten."
 
 #: includes/arrays.php
 msgid "HTTPS Port"
@@ -149,15 +149,15 @@ msgstr "Plats för denna server"
 
 #: includes/arrays.php
 msgid "Service Check Name"
-msgstr "Service Check Namn"
+msgstr "Namn på tjänstekontroll"
 
 #: includes/arrays.php
 msgid "The name that is displayed for this Service Check, and is included in any Alert notifications."
-msgstr "Det namn som visas för denna servicekontroll och som ingår i eventuella varningsmeddelanden."
+msgstr "Namnet som visas för den här tjänstekontrollen och ingår i eventuella varningsaviseringar."
 
 #: includes/arrays.php webseer.php
 msgid "Enable Service Check"
-msgstr "Aktivera servicekontroll"
+msgstr "Aktivera tjänstekontroll"
 
 #: includes/arrays.php
 msgid "Uncheck this box to disabled this url from being checked."
@@ -225,7 +225,7 @@ msgstr "Hur många minuter webbadressen måste vara nere innan den skickar en va
 
 #: includes/arrays.php
 msgid "Time Out"
-msgstr "Tidsgräns"
+msgstr "Tidsgränsen överskreds"
 
 #: includes/arrays.php
 msgid "How many seconds to allow the page to timeout before reporting it as down."
@@ -233,7 +233,7 @@ msgstr "Hur många sekunder ska sidan få ta timeout innan den rapporteras som n
 
 #: includes/arrays.php
 msgid "Verification Strings"
-msgstr "Verifiering Strängar"
+msgstr "Verifieringssträngar"
 
 #: includes/arrays.php
 msgid "Response Search String"
@@ -273,7 +273,7 @@ msgstr "Detta är det format som ska användas när du skickar e-postmeddelandet
 
 #: includes/arrays.php
 msgid "Notification List"
-msgstr "Notifieringslista"
+msgstr "Aviseringslista"
 
 #: includes/arrays.php
 msgid "Use this Notification List for those to be notified when this website goes down."
@@ -305,7 +305,7 @@ msgstr "Servrar"
 
 #: includes/functions.php webseer_proxies.php
 msgid "Proxies"
-msgstr "Proxies"
+msgstr "Proxyservrar"
 
 #: includes/functions.php
 msgid "Log History"
@@ -361,7 +361,7 @@ msgstr "Proxyservrar för WebSeer"
 
 #: setup.php
 msgid "Proxie Edit"
-msgstr "Proxie Edit"
+msgstr "Redigera proxy"
 
 #: setup.php
 msgid "Save Proxy"
@@ -519,7 +519,7 @@ msgstr "Aut"
 
 #: webseer.php
 msgid "Timeout"
-msgstr "Timeout"
+msgstr "Tidsgräns"
 
 #: webseer.php webseer_servers.php
 msgid "Last Check"
@@ -527,15 +527,15 @@ msgstr "Senaste kontrollen"
 
 #: webseer.php
 msgid "Edit Service Check"
-msgstr "Redigera Service Check"
+msgstr "Redigera tjänstekontroll"
 
 #: webseer.php
 msgid "Disable Service Check"
-msgstr "Avaktivera servicekontroll"
+msgstr "Inaktivera tjänstekontroll"
 
 #: webseer.php
 msgid "View Service Check History"
-msgstr "Visa historik för servicekontroll"
+msgstr "Visa historik för tjänstekontroller"
 
 #: webseer.php
 #, php-format
@@ -596,7 +596,7 @@ msgstr "Webseer Service Check Historik"
 
 #: webseer.php webseer_servers.php
 msgid "Date Search"
-msgstr "Datum sökning"
+msgstr "Datumsökning"
 
 #: webseer.php webseer_servers.php
 msgid "Entries"
