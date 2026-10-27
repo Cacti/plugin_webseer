@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-28 16:09-0400\nPO-Revision-Date: 2026-10-22 06:18+0000\nLast-Translator: Daniel Nylander <daniel@danielnylander.se>\nLanguage-Team: Swedish <https://translate.cacti.net/projects/cacti/webseer/sv/>\nLanguage: sv-SE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-28 16:09-0400\nPO-Revision-Date: 2026-10-27 11:18+0000\nLast-Translator: Daniel Nylander <daniel@danielnylander.se>\nLanguage-Team: Swedish <https://translate.cacti.net/projects/cacti/webseer/sv/>\nLanguage: sv-SE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
 
 #: includes/arrays.php webseer_servers.php
 #, php-format
@@ -23,7 +23,7 @@ msgstr "%d sekunder"
 
 #: includes/arrays.php
 msgid "Delete"
-msgstr "Radera"
+msgstr "Ta bort"
 
 #: includes/arrays.php
 msgid "Disable"
@@ -105,7 +105,7 @@ msgstr[1] "Aktivera servrar"
 
 #: includes/arrays.php
 msgid "Uncheck this box to disabled this server from checking urls."
-msgstr "Avmarkera den här rutan om du vill inaktivera servern från att kontrollera webbadresser."
+msgstr "Avmarkera rutan om servern inte ska kontrollera webbadresser."
 
 #: includes/arrays.php
 msgid "Is this server the local server?"
@@ -117,11 +117,11 @@ msgstr "Markera den här rutan om den aktuella servern du är ansluten till är 
 
 #: includes/arrays.php
 msgid "Master Server"
-msgstr "Master Server"
+msgstr "Huvudserver"
 
 #: includes/arrays.php
 msgid "Sets this server to the Master server.  The Master server handles all Email operations"
-msgstr "Gör den här servern till Master-server.  Master-servern hanterar alla e-postoperationer"
+msgstr "Gör den här servern till huvudserver. Huvudservern hanterar all e-post."
 
 #: includes/arrays.php webseer_servers.php
 msgid "IP Address"
@@ -141,7 +141,7 @@ msgstr "Detta är URL:en för att ansluta till remote.php på den här servern."
 
 #: includes/arrays.php webseer_servers.php
 msgid "Location"
-msgstr "Plats"
+msgstr "Placering"
 
 #: includes/arrays.php
 msgid "Location of this server"
@@ -169,7 +169,7 @@ msgstr "URL:en som ska övervakas"
 
 #: includes/arrays.php
 msgid "Enter an IP address to connect to.  Leaving blank will use DNS Resolution instead."
-msgstr "Ange en IP-adress att ansluta till.  Om du lämnar den tom används DNS Resolution istället."
+msgstr "Ange en IP-adress att ansluta till. Lämna fältet tomt för att använda DNS-uppslagning i stället."
 
 #: includes/arrays.php
 msgid "Proxy Server"
@@ -177,7 +177,7 @@ msgstr "Proxyserver"
 
 #: includes/arrays.php
 msgid "If this connection text requires a proxy, select it here.  Otherwise choose 'None'."
-msgstr "Om denna anslutningstext kräver en proxy, välj den här.  Annars väljer du \"Ingen\"."
+msgstr "Om anslutningstestet kräver en proxy väljer du den här. Välj annars ”Ingen”."
 
 #: includes/arrays.php webseer.php
 msgid "None"
@@ -193,7 +193,7 @@ msgstr "Vilken komprimering kräver servern?  De flesta servrar bör inte behöv
 
 #: includes/arrays.php
 msgid "Available Checks"
-msgstr "Tillgängliga checkar"
+msgstr "Tillgängliga kontroller"
 
 #: includes/arrays.php
 msgid "Requires Authentication"
@@ -209,11 +209,11 @@ msgstr "Kontrollera certifikat"
 
 #: includes/arrays.php
 msgid "If using SSL, check this box if you want to validate the certificate. Default on, turn off if you the site uses a self-signed certificate."
-msgstr "Om du använder SSL, markera den här rutan om du vill validera certifikatet. Standardinställningen är på, stäng av om webbplatsen använder ett självsignerat certifikat."
+msgstr "Markera rutan om SSL-certifikatet ska valideras. Alternativet är aktiverat som standard; inaktivera det om webbplatsen använder ett självsignerat certifikat."
 
 #: includes/arrays.php
 msgid "Notification Timing"
-msgstr "Tidpunkt för anmälan"
+msgstr "Tidpunkt för avisering"
 
 #: includes/arrays.php
 msgid "Trigger"
@@ -225,11 +225,11 @@ msgstr "Hur många minuter webbadressen måste vara nere innan den skickar en va
 
 #: includes/arrays.php
 msgid "Time Out"
-msgstr "Tidsgränsen överskreds"
+msgstr "Tidsgräns"
 
 #: includes/arrays.php
 msgid "How many seconds to allow the page to timeout before reporting it as down."
-msgstr "Hur många sekunder ska sidan få ta timeout innan den rapporteras som nere."
+msgstr "Hur många sekunder sidan får ta på sig att svara innan den rapporteras som nere."
 
 #: includes/arrays.php
 msgid "Verification Strings"
@@ -265,7 +265,7 @@ msgstr "Inställningar för aviseringar"
 
 #: includes/arrays.php
 msgid "Notify Format"
-msgstr "Meddela format"
+msgstr "Aviseringsformat"
 
 #: includes/arrays.php
 msgid "This is the format to use when sending the notification email"
@@ -277,7 +277,7 @@ msgstr "Aviseringslista"
 
 #: includes/arrays.php
 msgid "Use this Notification List for those to be notified when this website goes down."
-msgstr "Använd denna Notifieringslista för dem som ska meddelas när webbplatsen går ner."
+msgstr "Använd den här aviseringslistan för att meddela mottagarna när webbplatsen ligger nere."
 
 #: includes/arrays.php
 msgid "Notify Accounts"
@@ -289,11 +289,11 @@ msgstr "Detta är en lista över konton som kommer att meddelas när denna webbp
 
 #: includes/arrays.php
 msgid "Extra Alert Emails"
-msgstr "Extra varningsmejl"
+msgstr "Ytterligare e-postadresser för larm"
 
 #: includes/arrays.php
 msgid "You may specify here extra Emails to receive alerts for this URL (comma separated)"
-msgstr "Här kan du ange extra e-postmeddelanden för att få aviseringar för denna URL (kommaseparerade)"
+msgstr "Ange ytterligare e-postadresser som ska få larm för den här webbadressen, åtskilda med kommatecken"
 
 #: includes/functions.php webseer.php
 msgid "Checks"
@@ -313,7 +313,7 @@ msgstr "Logghistorik"
 
 #: poller_webseer.php
 msgid "Cacti Master"
-msgstr "Cacti-mästare"
+msgstr "Cactis huvudserver"
 
 #: poller_webseer.php
 msgid "Cacti Remote Server"
@@ -349,7 +349,7 @@ msgstr "WebSeer-servrar"
 
 #: setup.php
 msgid "Server Edit"
-msgstr "Server Redigera"
+msgstr "Redigera server"
 
 #: setup.php
 msgid "Save Server"
@@ -420,8 +420,8 @@ msgstr[1] "Klicka på \"Fortsätt\" för att duplicera följande webbadresser."
 #: webseer.php
 msgid "Duplicate URL"
 msgid_plural "Duplicate URLs"
-msgstr[0] "Duplicerad URL"
-msgstr[1] "Duplicerade webbadresser"
+msgstr[0] "Duplicera webbadress"
+msgstr[1] "Duplicera webbadresser"
 
 #: webseer.php
 #, php-format
@@ -495,11 +495,11 @@ msgstr "Tjänsten är nere"
 
 #: webseer.php
 msgid "Service Restored"
-msgstr "Service återställd"
+msgstr "Tjänsten är återställd"
 
 #: webseer.php
 msgid "No Service Check Events in History"
-msgstr "Ingen servicekontroll Händelser i historien"
+msgstr "Inga tjänstekontrollhändelser finns i historiken"
 
 #: webseer.php webseer_servers.php
 msgid "Actions"
@@ -568,7 +568,7 @@ msgstr "Webseer-tjänstekontroller"
 
 #: webseer.php webseer_servers.php
 msgid "State"
-msgstr "Status"
+msgstr "Delstat/region"
 
 #: webseer.php webseer_servers.php
 msgid "Any"
@@ -592,7 +592,7 @@ msgstr "Rensa"
 
 #: webseer.php
 msgid "Webseer Service Check History"
-msgstr "Webseer Service Check Historik"
+msgstr "Historik för WebSeers tjänstekontroller"
 
 #: webseer.php webseer_servers.php
 msgid "Date Search"
@@ -609,8 +609,8 @@ msgstr "Rensa händelser"
 #: webseer_proxies.php
 msgid "Click 'Continue' to delete the following Proxy."
 msgid_plural "Click 'Continue' to delete following Proxies."
-msgstr[0] "Klicka på \"Fortsätt\" för att ta bort följande proxy."
-msgstr[1] "Klicka på \"Fortsätt\" för att ta bort följande Proxies."
+msgstr[0] "Klicka på ”Fortsätt” för att ta bort följande proxyserver."
+msgstr[1] "Klicka på ”Fortsätt” för att ta bort följande proxyservrar."
 
 #: webseer_proxies.php
 msgid "Delete Proxy"
@@ -641,7 +641,7 @@ msgstr "Ej inställt"
 
 #: webseer_proxies.php
 msgid "Webseer Proxy Management"
-msgstr "Webseer Proxy-hantering"
+msgstr "Proxyhantering för WebSeer"
 
 #: webseer_servers.php
 msgid "Click 'Continue' to Delete the following Server."
@@ -652,7 +652,7 @@ msgstr[1] "Klicka på \"Fortsätt\" för att ta bort följande servrar."
 #: webseer_servers.php
 msgid "Delete Server"
 msgid_plural "Delete Servers"
-msgstr[0] "Radera server"
+msgstr[0] "Ta bort server"
 msgstr[1] "Ta bort servrar"
 
 #: webseer_servers.php
@@ -675,11 +675,11 @@ msgstr[1] "Klicka på \"Fortsätt\" för att aktivera följande servrar."
 
 #: webseer_servers.php
 msgid "No Events in History"
-msgstr "Inga händelser i historien"
+msgstr "Inga händelser i historiken"
 
 #: webseer_servers.php
 msgid "Master"
-msgstr "Säkerhetsansvarig"
+msgstr "Huvudserver"
 
 #: webseer_servers.php
 msgid "This Host"
@@ -711,7 +711,7 @@ msgstr "Utlöst"
 
 #: webseer_servers.php
 msgid "Webseer Server History"
-msgstr "Webseer Serverhistorik"
+msgstr "Serverhistorik för WebSeer"
 
 #~ msgid "Edit Site"
 #~ msgstr "Redigera webbplats"
