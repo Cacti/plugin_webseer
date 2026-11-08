@@ -2,6 +2,7 @@
 
 --- 3.3 ---
 
+* dev: Run the CI poller with the shared runner group so RRD files and structured directories pass permission verification
 * security: Replace the confirmation-page Cancel buttons' inline `onClick='cactiReturnTo()'` with the CSP-safe `cactiReturnTo` class so the pages no longer trip Cacti's Content-Security-Policy script-src-attr directive; see the README for the one-time `applySkin()` snippet needed when running Cacti below 1.2.31 (1.2.31+ binds the class automatically)
 * compat: Lower the minimum Cacti compatibility floor from 1.2.32 to 1.2.29
 * issue: Re-introduce the `plugin_webseer_contacts` `user_id_type` UNIQUE key (on `user_id`, `type`) that Cacti 1.2.29-1.2.31's `db_update_table()` silently dropped - those releases rebuild a table's indexes only from its `keys` definition and ignore `unique_keys`. The repair runs automatically on upgrade when running one of those releases and is a no-op on 1.2.32+. WARNING: if duplicate `(user_id, type)` contact rows were inserted while the constraint was absent, re-adding the key fails; the upgrade logs the affected table and leaves the recorded version unchanged so it retries on the next request. To recover, de-duplicate `plugin_webseer_contacts` (keep a single row per `user_id`/`type`) and re-run the upgrade. Sites already upgraded to 1.2.32+ that lost the key on an earlier 1.2.29-1.2.31 run are not auto-repaired
