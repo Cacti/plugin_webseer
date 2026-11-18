@@ -52,6 +52,16 @@ this, goto Cacti's Plugin Management page, Install and Enable the webseer. Once
 this is complete, you can grant users permission to create service checks for
 various Web Sites and Services.
 
+Service checks are managed under **Management > Service Checks**. Grant the
+**Web Service Check Admin** realm to users who need to create or edit service
+checks, servers and proxies.
+
+## Remote collection
+
+Additional servers can be registered on the Servers page. A registered server
+reports back to the main installation through `remote.php`, which accepts
+heartbeat and result requests only from the IP address of a registered server.
+
 ## Upgrading
 
 `poller_webseer.php` runs as a long-lived background process, so a running copy
