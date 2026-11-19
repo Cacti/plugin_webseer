@@ -18,7 +18,7 @@ This README describes the `develop` source branch.
 
 | Code | Plugin version | Minimum Cacti declared in `INFO` |
 | --- | --- | --- |
-| [Source branch](INFO) | 3.3 | 1.2.29 |
+| [Source branch](https://github.com/Cacti/plugin_webseer/blob/develop/INFO) | 3.3 | 1.2.29 |
 | [Published v3.2](https://github.com/Cacti/plugin_webseer/releases/tag/v3.2) | 3.2 | 1.2.24 |
 
 Use the published release’s assets and tagged documentation when installing that
@@ -28,7 +28,7 @@ matches the release. Cacti’s own PHP and database requirements also apply.
 Install this plugin in **`<cacti-root>/plugins/webseer`**, using the directory
 name `webseer` rather than `plugin_webseer`.
 
-See [CHANGELOG.md](CHANGELOG.md) for the version history.
+See [CHANGELOG.md](https://github.com/Cacti/plugin_webseer/blob/develop/CHANGELOG.md) for the version history.
 
 ## Cacti compatibility
 
