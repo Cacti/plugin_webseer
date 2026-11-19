@@ -1,7 +1,5 @@
 # webseer
 
-## Cacti Web Services Monitoring Plugin
-
 This is Cacti's Web Services monitoring plugin. This plugin allows you to add
 Web Site service monitoring to Cacti. You simply add service checks, the desired
 service check URL, and the expected response from it's interface, as well as any
@@ -9,15 +7,28 @@ escallation required if a service check fails. The plugin records statistics
 about the connection to the website, it's response, and can alert when the
 status changes.
 
-This plugin has existed for years, but up until this year, has never been made
-public. It can be an asset used to address some monitoring requirements for
-customers who not only monitor servers, but need to know that the Web Services
-on those servers are operating as expected.
-
 This plugin, like many others, integrates with Cacti's Maintenance or 'maint'
 plugin so you can setup maintenance schedules so that known times when a service
 is going to be down can be configured so that escallation does not needlessly
 take place during maintenance periods.
+
+## Versions and compatibility
+
+This README describes the `develop` source branch.
+
+| Code | Plugin version | Minimum Cacti declared in `INFO` |
+| --- | --- | --- |
+| [Source branch](https://github.com/Cacti/plugin_webseer/blob/develop/INFO) | 3.3 | 1.2.29 |
+| [Published v3.2](https://github.com/Cacti/plugin_webseer/releases/tag/v3.2) | 3.2 | 1.2.24 |
+
+Use the published release’s assets and tagged documentation when installing that
+package. Branch code can include later changes, even when its version number
+matches the release. Cacti’s own PHP and database requirements also apply.
+
+Install this plugin in **`<cacti-root>/plugins/webseer`**, using the directory
+name `webseer` rather than `plugin_webseer`.
+
+See [CHANGELOG.md](https://github.com/Cacti/plugin_webseer/blob/develop/CHANGELOG.md) for the version history.
 
 ## Cacti compatibility
 
@@ -40,6 +51,16 @@ Cacti's plugins directory and rename it to simply 'webseer'. Once you have done
 this, goto Cacti's Plugin Management page, Install and Enable the webseer. Once
 this is complete, you can grant users permission to create service checks for
 various Web Sites and Services.
+
+Service checks are managed under **Management > Service Checks**. Grant the
+**Web Service Check Admin** realm to users who need to create or edit service
+checks, servers and proxies.
+
+## Remote collection
+
+Additional servers can be registered on the Servers page. A registered server
+reports back to the main installation through `remote.php`, which accepts
+heartbeat and result requests only from the IP address of a registered server.
 
 ## Upgrading
 
