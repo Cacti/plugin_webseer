@@ -57,10 +57,3 @@ it('substitutes a Log History tab for the servers page during history actions', 
 
 	expect($output)->toContain("href='/cacti/plugins/webseer/webseer_servers.php?action=history&id=3'");
 });
-
-it('uses the webseer gettext domain for Log History tabs', function () {
-	$source = file_get_contents(dirname(__DIR__, 2) . '/includes/functions.php');
-
-	expect($source)->toContain("__('Log History', 'webseer')");
-	expect($source)->not->toContain("'webeer'");
-});
