@@ -176,10 +176,10 @@ function webseer_show_tab($current_tab) {
 	if (get_request_var('action') == 'history') {
 		if ($current_tab == 'webseer.php') {
 			$current_tab        = 'webseer.php?action=history&id=' . get_filter_request_var('id');
-			$tabs[$current_tab] = __('Log History', 'webeer');
+			$tabs[$current_tab] = __('Log History', 'webseer');
 		} else {
 			$current_tab        = 'webseer_servers.php?action=history&id=' . get_filter_request_var('id');
-			$tabs[$current_tab] = __('Log History', 'webeer');
+			$tabs[$current_tab] = __('Log History', 'webseer');
 		}
 	}
 
