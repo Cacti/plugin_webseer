@@ -1,0 +1,726 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR The Cacti Group
+# This file is distributed under the same license as the Cacti package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Cacti\n"
+"Report-Msgid-Bugs-To: developers@cacti.net\n"
+"POT-Creation-Date: 2026-09-28 16:09-0400\n"
+"PO-Revision-Date: 2026-11-24 19:00+0000\n"
+"Last-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\n"
+"Language-Team: Malagasy\n"
+"Language: mg-MG\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: includes/arrays.php webseer_servers.php
+#, php-format
+msgid "%d Minute"
+msgstr "%d minitra"
+
+#: includes/arrays.php webseer_servers.php
+#, php-format
+msgid "%d Minutes"
+msgstr "%d minitra"
+
+#: includes/arrays.php webseer_servers.php
+#, php-format
+msgid "%d Seconds"
+msgstr "%d Segondra"
+
+#: includes/arrays.php
+msgid "Delete"
+msgstr "Fafao"
+
+#: includes/arrays.php
+msgid "Disable"
+msgstr "Ajanony"
+
+#: includes/arrays.php
+msgid "Enable"
+msgstr "Alefa"
+
+#: includes/arrays.php
+msgid "Duplicate"
+msgstr "Dika mitovy"
+
+#: includes/arrays.php webseer.php webseer_proxies.php webseer_servers.php
+msgid "Name"
+msgstr "Anarana"
+
+#: includes/arrays.php
+msgid "A Useful Name for this Proxy."
+msgstr "Anarana ilaina ho an'ity Proxy ity."
+
+#: includes/arrays.php
+msgid "New Proxy"
+msgstr "Proxy vaovao"
+
+#: includes/arrays.php webseer_proxies.php
+msgid "Hostname"
+msgstr "Anaran'ny mpampiantrano"
+
+#: includes/arrays.php
+msgid "The Proxy Hostname."
+msgstr "Ny Anaran'ny Mpampiantrano Proxy."
+
+#: includes/arrays.php
+msgid "HTTP Port"
+msgstr "Seranana HTTP"
+
+#: includes/arrays.php
+msgid "The HTTP Proxy Port."
+msgstr "Ny seranana Proxy HTTP."
+
+#: includes/arrays.php
+msgid "HTTPS Port"
+msgstr "Seranana HTTPS"
+
+#: includes/arrays.php
+msgid "The HTTPS Proxy Port."
+msgstr "Ny seranana Proxy HTTPS."
+
+#: includes/arrays.php
+msgid "User Name"
+msgstr "Anaran'ny mpampiasa"
+
+#: includes/arrays.php
+msgid "The user to use to authenticate with the Proxy if any."
+msgstr "Ny mpampiasa hampiasaina hanamarinana miaraka amin'ny Proxy raha misy."
+
+#: includes/arrays.php
+msgid "Password"
+msgstr "Tenimiafina"
+
+#: includes/arrays.php
+msgid "The user password to use to authenticate with the Proxy if any."
+msgstr "Ny tenimiafin'ny mpampiasa hampiasaina hanamarinana miaraka amin'ny Proxy raha misy."
+
+#: includes/arrays.php
+msgid "General Settings"
+msgstr "Fikirana ankapobeny"
+
+#: includes/arrays.php
+msgid "Display Name of this server"
+msgstr "Anarana aseho ho an'ity mpizara ity"
+
+#: includes/arrays.php webseer_servers.php
+msgid "Enable Server"
+msgid_plural "Enable Servers"
+msgstr[0] "Ataovy mavitrika ny lohamilina"
+msgstr[1] "Ataovy mavitrika ireo lohamilina"
+
+#: includes/arrays.php
+msgid "Uncheck this box to disabled this server from checking urls."
+msgstr "Esory ny marika amin'ity boaty ity mba tsy hanamarina URL intsony ity mpizara ity."
+
+#: includes/arrays.php
+msgid "Is this server the local server?"
+msgstr "Ity mpizara ity ve no mpizara eo an-toerana?"
+
+#: includes/arrays.php
+msgid "Check this box if the current server you are connected to is this entry."
+msgstr "Mariho ity boaty ity raha ity fidirana ity ny lohamilina ifandraisanao amin'izao fotoana izao."
+
+#: includes/arrays.php
+msgid "Master Server"
+msgstr "Mpizara lohany"
+
+#: includes/arrays.php
+msgid "Sets this server to the Master server.  The Master server handles all Email operations"
+msgstr "Mametraka ity lohamilina ity ho lohamilina Master.  Ny lohamilina Master no mitantana ny asa Mailaka rehetra"
+
+#: includes/arrays.php webseer_servers.php
+msgid "IP Address"
+msgstr "Adiresy IP"
+
+#: includes/arrays.php
+msgid "IP Address to connect to this server"
+msgstr "Adiresy IP hifandraisana amin'ity lohamilina ity"
+
+#: includes/arrays.php webseer.php webseer_servers.php
+msgid "URL"
+msgstr "URL"
+
+#: includes/arrays.php
+msgid "This is the URL to connect to remote.php on this server."
+msgstr "Ity ny URL hifandraisana amin'ny remote.php ao amin'ity mpizara ity."
+
+#: includes/arrays.php webseer_servers.php
+msgid "Location"
+msgstr "Toerana"
+
+#: includes/arrays.php
+msgid "Location of this server"
+msgstr "Toerana misy ity lohamilina ity"
+
+#: includes/arrays.php
+msgid "Service Check Name"
+msgstr "Anaran'ny fanamarinana tolotra"
+
+#: includes/arrays.php
+msgid "The name that is displayed for this Service Check, and is included in any Alert notifications."
+msgstr "Ny anarana aseho ho an'ity Fanamarinana Serivisy ity, ary ampidirina ao amin'ny fampandrenesana Fanairana rehetra."
+
+#: includes/arrays.php webseer.php
+msgid "Enable Service Check"
+msgstr "Alefaso ny fanamarinana tolotra"
+
+#: includes/arrays.php
+msgid "Uncheck this box to disabled this url from being checked."
+msgstr "Esory ny marika amin'ity boaty ity mba tsy ho voamarina intsony ity URL ity."
+
+#: includes/arrays.php
+msgid "The URL to Monitor"
+msgstr "Ny URL arahi-maso"
+
+#: includes/arrays.php
+msgid "Enter an IP address to connect to.  Leaving blank will use DNS Resolution instead."
+msgstr "Ampidiro adiresy IP hifandraisana.  Raha avela ho banga dia ny Famahana DNS no hampiasaina."
+
+#: includes/arrays.php
+msgid "Proxy Server"
+msgstr "Mpizara mpanelanelana"
+
+#: includes/arrays.php
+msgid "If this connection text requires a proxy, select it here.  Otherwise choose 'None'."
+msgstr "Raha mitaky proxy ity lahatsoratra fifandraisana ity, dia fidio eto izany. Raha tsy izany, fidio ny 'Tsy misy'."
+
+#: includes/arrays.php webseer.php
+msgid "None"
+msgstr "Tsy misy"
+
+#: includes/arrays.php webseer.php
+msgid "Compression"
+msgstr "Fangejana"
+
+#: includes/arrays.php
+msgid "What compression does the server require?  Most servers should not need this, but some will not redirect properly without it."
+msgstr "Inona ny fanerena takian'ny mpizara?  Ny ankamaroan'ny mpizara dia tsy tokony hila izany, saingy ny sasany dia tsy hampitodika araka ny tokony ho izy raha tsy misy izany."
+
+#: includes/arrays.php
+msgid "Available Checks"
+msgstr "Fanamarinana misy"
+
+#: includes/arrays.php
+msgid "Requires Authentication"
+msgstr "Mitaky fanamarinana"
+
+#: includes/arrays.php
+msgid "Check this box if the site will normally return a 401 Error as it requires a username and password."
+msgstr "Mariho ity boaty ity raha mamerina hadisoana 401 matetika ny toerana satria mitaky anaran'ny mpampiasa sy tenimiafina."
+
+#: includes/arrays.php
+msgid "Check Certificate"
+msgstr "Hamarino ny taratasy fanamarinana"
+
+#: includes/arrays.php
+msgid "If using SSL, check this box if you want to validate the certificate. Default on, turn off if you the site uses a self-signed certificate."
+msgstr "Raha mampiasa SSL, mariho ity boaty ity raha te hanamarina ny mari-pankatoavana ianao. Mandeha amin'ny fomba mahazatra, vonoy raha mampiasa mari-pankatoavana nosoniaviny manokana ny toerana."
+
+#: includes/arrays.php
+msgid "Notification Timing"
+msgstr "Fotoana fandefasana fampandrenesana"
+
+#: includes/arrays.php
+msgid "Trigger"
+msgstr "Mpandrisika"
+
+#: includes/arrays.php
+msgid "How many minutes the URL must be down before it will send an alert.  After an alert is sent, in order for a 'Site Recovering' Email to be send, it must also be up this number of minutes."
+msgstr "Firy minitra no tsy maintsy ho maty ny URL alohan'ny handefasana fanairana.  Rehefa lasa ny fanairana, mba handefasana Mailaka 'Toerana miverina mandeha', dia tsy maintsy mandeha mandritra io isan'ny minitra io koa izy."
+
+#: includes/arrays.php
+msgid "Time Out"
+msgstr "Lany ny fe-potoana"
+
+#: includes/arrays.php
+msgid "How many seconds to allow the page to timeout before reporting it as down."
+msgstr "Firy segondra no omena alohan'ny hiheverana fa tapaka ny fe-potoana (timeout) amin'ny pejy ary hitaterana azy ho maty."
+
+#: includes/arrays.php
+msgid "Verification Strings"
+msgstr "Teny fanamarinana"
+
+#: includes/arrays.php
+msgid "Response Search String"
+msgstr "Teny fikarohana amin'ny valiny"
+
+#: includes/arrays.php
+msgid "This is the string to search for in the URL response for a live and working Web Service."
+msgstr "Ity no laha-tsoratra karohina ao amin'ny valin'ny URL ho an'ny Sampan-draharaha Web velona sy miasa."
+
+#: includes/arrays.php
+msgid "Response Search String - Maintenance Page"
+msgstr "Teny fikarohana amin'ny valiny - Pejy fikojakojana"
+
+#: includes/arrays.php
+msgid "This is the string to search for on the Maintenance Page.  The Service Check will check for this string if the above string is not found.  If found, it means that the Web Service is under maintenance."
+msgstr "Ity no laha-tsoratra karohina ao amin'ny Pejy Fikojakojana. Hanamarina ity laha-tsoratra ity ny Fanamarinana Sampan-draharaha raha tsy hita ilay laha-tsoratra etsy ambony. Raha hita izany dia midika fa eo am-pikojakojana ilay Sampan-draharaha Web."
+
+#: includes/arrays.php
+msgid "Response Search String - Failed"
+msgstr "Teny fikarohana amin'ny valiny - Tsy nahomby"
+
+#: includes/arrays.php
+msgid "This is the string to search for a known failure in the Web Service response.  The Service Check will only alert if this string is found, ignoring any timeout issues and the search strings above."
+msgstr "Ity no laha-tsoratra karohina mba hahitana tsy fahombiazana fantatra ao amin'ny valin'ny Sampan-draharaha Web. Hanao fampandrenesana ihany ny Fanamarinana Sampan-draharaha raha hita ity laha-tsoratra ity, ary tsy hiraharaha ny olan'ny fahataperan'ny fotoana sy ireo laha-tsoratra fikarohana etsy ambony."
+
+#: includes/arrays.php
+msgid "Notification Settings"
+msgstr "Fikirana fampandrenesana"
+
+#: includes/arrays.php
+msgid "Notify Format"
+msgstr "Endriky ny fampandrenesana"
+
+#: includes/arrays.php
+msgid "This is the format to use when sending the notification email"
+msgstr "Ity ny endrika hampiasaina rehefa mandefa ny mailaka fampahafantarana"
+
+#: includes/arrays.php
+msgid "Notification List"
+msgstr "Lisitry ny Fampandrenesana"
+
+#: includes/arrays.php
+msgid "Use this Notification List for those to be notified when this website goes down."
+msgstr "Ampiasao ity Lisitry ny fampandrenesana ity ho an'ireo hampandrenesina rehefa maty ity tranonkala ity."
+
+#: includes/arrays.php
+msgid "Notify Accounts"
+msgstr "Kaonty ampandrenesina"
+
+#: includes/arrays.php
+msgid "This is a listing of accounts that will be notified when this website goes down."
+msgstr "Ity ny lisitry ny kaonty izay hampahafantarina rehefa maty ity tranonkala ity."
+
+#: includes/arrays.php
+msgid "Extra Alert Emails"
+msgstr "Mailaka fampandrenesana fanampiny"
+
+#: includes/arrays.php
+msgid "You may specify here extra Emails to receive alerts for this URL (comma separated)"
+msgstr "Azonao faritana eto ireo Mailaka fanampiny handraisana fanairana ho an'ity URL ity (sarahina faingo)"
+
+#: includes/functions.php webseer.php
+msgid "Checks"
+msgstr "Fanamarinana"
+
+#: includes/functions.php webseer_servers.php
+msgid "Servers"
+msgstr "Mpizara"
+
+#: includes/functions.php webseer_proxies.php
+msgid "Proxies"
+msgstr "Ireo Proxy"
+
+#: includes/functions.php
+msgid "Log History"
+msgstr "Tantaran'ny firaketana"
+
+#: poller_webseer.php
+msgid "Cacti Master"
+msgstr "Cacti Mpitarika"
+
+#: poller_webseer.php
+msgid "Cacti Remote Server"
+msgstr "Mpizara Lavitra Cacti"
+
+#: setup.php
+msgid "Web Service Check Admin"
+msgstr "Fitantanana fanamarinana serivisy tranonkala"
+
+#: setup.php
+msgid "Management"
+msgstr "Fitantanana"
+
+#: setup.php
+msgid "Service Checks"
+msgstr "Fanamarinana tolotra"
+
+#: setup.php
+msgid "WebSeer Service Checks"
+msgstr "Fanamarinana serivisy WebSeer"
+
+#: setup.php
+msgid "Service Check Edit"
+msgstr "Ovao ny fanamarinana tolotra"
+
+#: setup.php
+msgid "Service Check Save"
+msgstr "Tehirizo ny fanamarinana tolotra"
+
+#: setup.php
+msgid "WebSeer Servers"
+msgstr "Mpizara WebSeer"
+
+#: setup.php
+msgid "Server Edit"
+msgstr "Fanovana ny Mpizara"
+
+#: setup.php
+msgid "Save Server"
+msgstr "Tehirizo ny Mpizara"
+
+#: setup.php
+msgid "WebSeer Proxies"
+msgstr "Proxy WebSeer"
+
+#: setup.php
+msgid "Proxie Edit"
+msgstr "Fanovana Proxy"
+
+#: setup.php
+msgid "Save Proxy"
+msgstr "Tehirizo ny Proxy"
+
+#: webseer.php
+msgid "Click 'Continue' to Delete the following URL."
+msgid_plural "Click 'Continue' to Delete following URLs."
+msgstr[0] "Tsindrio ny 'Tohizo' mba hamafana ity URL manaraka ity."
+msgstr[1] "Tsindrio ny 'Tohizo' mba hamafana ireto URL manaraka ireto."
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Cancel"
+msgstr "Foano"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Continue"
+msgstr "Tohizo"
+
+#: webseer.php
+msgid "Delete URL"
+msgid_plural "Delete URLs"
+msgstr[0] "Fafao ny URL"
+msgstr[1] "Fafao ireo URL"
+
+#: webseer.php
+msgid "Click 'Continue' to Disable the following URL."
+msgid_plural "Click 'Continue' to Disable following URLs."
+msgstr[0] "Tsindrio ny 'Tohizo' mba hanao ho tsy mavitrika ity URL manaraka ity."
+msgstr[1] "Tsindrio ny 'Tohizo' mba hanao ho tsy mavitrika ireto URL manaraka ireto."
+
+#: webseer.php
+msgid "Disable URL"
+msgid_plural "Disable URLs"
+msgstr[0] "Ataovy tsy mavitrika ny URL"
+msgstr[1] "Ataovy tsy mavitrika ireo URL"
+
+#: webseer.php
+msgid "Click 'Continue' to Enable the following URL."
+msgid_plural "Click 'Continue' to Enable following URLs."
+msgstr[0] "Tsindrio ny 'Tohizo' mba hanao ho mavitrika ity URL manaraka ity."
+msgstr[1] "Tsindrio ny 'Tohizo' mba hanao ho mavitrika ireto URL manaraka ireto."
+
+#: webseer.php
+msgid "Enable URL"
+msgid_plural "Enable URLs"
+msgstr[0] "Ataovy mavitrika ny URL"
+msgstr[1] "Ataovy mavitrika ireo URL"
+
+#: webseer.php
+msgid "Click 'Continue' to Duplicate the following URL."
+msgid_plural "Click 'Continue' to Duplicate following URLs."
+msgstr[0] "Tsindrio ny 'Tohizo' mba hamoronana dika mitovy amin'ity URL manaraka ity."
+msgstr[1] "Tsindrio ny 'Tohizo' mba hamoronana dika mitovy amin'ireto URL manaraka ireto."
+
+#: webseer.php
+msgid "Duplicate URL"
+msgid_plural "Duplicate URLs"
+msgstr[0] "Mamoròna dika mitovy amin'ny URL"
+msgstr[1] "Mamoròna dika mitovy amin'ireo URL"
+
+#: webseer.php
+#, php-format
+msgid "The Service Check history was purged for %s"
+msgstr "Voafafa tanteraka ny tantaran'ny Fanamarinana Tolotra ho an'ny %s"
+
+#: webseer.php webseer_servers.php
+#, php-format
+msgid "Query [edit: %s]"
+msgstr "Fangatahana [ovao: %s]"
+
+#: webseer.php webseer_servers.php
+msgid "Query [new]"
+msgstr "Fangatahana [vaovao]"
+
+#: webseer.php
+msgid "No Users Selected"
+msgstr "Tsy misy mpampiasa voafantina"
+
+#: webseer.php
+msgid "Users Selected"
+msgstr "Mpampiasa voafidy"
+
+#: webseer.php
+msgid "All Users Selected"
+msgstr "Mpampiasa rehetra voafidy"
+
+#: webseer.php
+msgid "All"
+msgstr "Rehetra"
+
+#: webseer.php webseer_proxies.php
+msgid "Search"
+msgstr "Fikarohana"
+
+#: webseer.php webseer_servers.php
+msgid "Date"
+msgstr "Daty"
+
+#: webseer.php webseer_servers.php
+msgid "Error"
+msgstr "Hadisoana"
+
+#: webseer.php webseer_servers.php
+msgid "HTTP Code"
+msgstr "Kaody HTTP"
+
+#: webseer.php webseer_servers.php
+msgid "DNS"
+msgstr "DNS"
+
+#: webseer.php webseer_servers.php
+msgid "Connect"
+msgstr "Mifandraisa"
+
+#: webseer.php webseer_servers.php
+msgid "Redirect"
+msgstr "Fampifindrana lalana"
+
+#: webseer.php webseer_servers.php
+msgid "Total"
+msgstr "Fitambarany"
+
+#: webseer.php
+msgid "Urls"
+msgstr "Adiresy URL"
+
+#: webseer.php
+msgid "Service Down"
+msgstr "Tsy mandeha ny tolotra"
+
+#: webseer.php
+msgid "Service Restored"
+msgstr "Naverina tamin'ny laoniny ny tolotra"
+
+#: webseer.php
+msgid "No Service Check Events in History"
+msgstr "Tsy misy hetsika fanamarinana serivisy ao amin'ny tantara"
+
+#: webseer.php webseer_servers.php
+msgid "Actions"
+msgstr "Hetsika"
+
+#: webseer.php
+msgid "Status"
+msgstr "Sata"
+
+#: webseer.php webseer_servers.php
+msgid "Enabled"
+msgstr "Mavitrika"
+
+#: webseer.php
+msgid "Auth"
+msgstr "Fanamarinana"
+
+#: webseer.php
+msgid "Timeout"
+msgstr "Fetr'andro"
+
+#: webseer.php webseer_servers.php
+msgid "Last Check"
+msgstr "Fanamarinana farany"
+
+#: webseer.php
+msgid "Edit Service Check"
+msgstr "Ovao ny fanamarinana tolotra"
+
+#: webseer.php
+msgid "Disable Service Check"
+msgstr "Ataovy tsy mavitrika ny fanamarinana tolotra"
+
+#: webseer.php
+msgid "View Service Check History"
+msgstr "Jereo ny tantaran'ny fanamarinana serivisy"
+
+#: webseer.php
+#, php-format
+msgid "DNS: Server %s - A Record for %s"
+msgstr "DNS: Mpizara %s - Firaketana A ho an'ny %s"
+
+#: webseer.php
+msgid "N/A"
+msgstr "Tsy misy"
+
+#: webseer.php webseer_servers.php
+msgid "Down"
+msgstr "Tsy mandeha"
+
+#: webseer.php webseer_servers.php
+msgid "Up"
+msgstr "Mandeha"
+
+#: webseer.php webseer_servers.php
+msgid "Disabled"
+msgstr "Tsy mavitrika"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "No Servers Found"
+msgstr "Tsy misy lohamilina hita"
+
+#: webseer.php
+msgid "Webseer Service Checks"
+msgstr "Fanamarinana serivisy Webseer"
+
+#: webseer.php webseer_servers.php
+msgid "State"
+msgstr "Faritany"
+
+#: webseer.php webseer_servers.php
+msgid "Any"
+msgstr "Na inona na inona"
+
+#: webseer.php webseer_servers.php
+msgid "Refresh"
+msgstr "Havaozy"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Default"
+msgstr "Voafaritra mialoha"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Go"
+msgstr "Alefa"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Clear"
+msgstr "Fafao"
+
+#: webseer.php
+msgid "Webseer Service Check History"
+msgstr "Tantaran'ny fanamarinana serivisy Webseer"
+
+#: webseer.php webseer_servers.php
+msgid "Date Search"
+msgstr "Fikarohana daty"
+
+#: webseer.php webseer_servers.php
+msgid "Entries"
+msgstr "Andininy"
+
+#: webseer.php
+msgid "Purge Events"
+msgstr "Fafao tanteraka ireo hetsika"
+
+#: webseer_proxies.php
+msgid "Click 'Continue' to delete the following Proxy."
+msgid_plural "Click 'Continue' to delete following Proxies."
+msgstr[0] "Tsindrio ny 'Tohizo' mba hamafana ity proxy manaraka ity."
+msgstr[1] "Tsindrio ny 'Tohizo' mba hamafana ireto proxy manaraka ireto."
+
+#: webseer_proxies.php
+msgid "Delete Proxy"
+msgid_plural "Delete Proxies"
+msgstr[0] "Fafao ny proxy"
+msgstr[1] "Fafao ireo proxy"
+
+#: webseer_proxies.php
+#, php-format
+msgid "Proxy [edit: %s]"
+msgstr "Proxy [ovao: %s]"
+
+#: webseer_proxies.php
+msgid "Proxy [new]"
+msgstr "Proxy [vaovao]"
+
+#: webseer_proxies.php
+msgid "Ports (http/https)"
+msgstr "Seranana (http/https)"
+
+#: webseer_proxies.php
+msgid "Username"
+msgstr "Anaran'ny mpampiasa"
+
+#: webseer_proxies.php
+msgid "Not Set"
+msgstr "Tsy voafaritra"
+
+#: webseer_proxies.php
+msgid "Webseer Proxy Management"
+msgstr "Fitantanana Proxy Webseer"
+
+#: webseer_servers.php
+msgid "Click 'Continue' to Delete the following Server."
+msgid_plural "Click 'Continue' to Delete following Servers."
+msgstr[0] "Tsindrio ny 'Tohizo' mba hamafana ity lohamilina manaraka ity."
+msgstr[1] "Tsindrio ny 'Tohizo' mba hamafana ireto lohamilina manaraka ireto."
+
+#: webseer_servers.php
+msgid "Delete Server"
+msgid_plural "Delete Servers"
+msgstr[0] "Fafao ny lohamilina"
+msgstr[1] "Fafao ireo lohamilina"
+
+#: webseer_servers.php
+msgid "Click 'Continue' to Disable the following Server."
+msgid_plural "Click 'Continue' to Disable following Servers."
+msgstr[0] "Tsindrio ny 'Tohizo' mba hanao ho tsy mavitrika ity lohamilina manaraka ity."
+msgstr[1] "Tsindrio ny 'Tohizo' mba hanao ho tsy mavitrika ireto lohamilina manaraka ireto."
+
+#: webseer_servers.php
+msgid "Disable Server"
+msgid_plural "Disable Servers"
+msgstr[0] "Ataovy tsy mavitrika ny lohamilina"
+msgstr[1] "Ataovy tsy mavitrika ireo lohamilina"
+
+#: webseer_servers.php
+msgid "Click 'Continue' to Enable the following Server."
+msgid_plural "Click 'Continue' to Enable following Servers."
+msgstr[0] "Tsindrio ny 'Tohizo' mba hanao ho mavitrika ity lohamilina manaraka ity."
+msgstr[1] "Tsindrio ny 'Tohizo' mba hanao ho mavitrika ireto lohamilina manaraka ireto."
+
+#: webseer_servers.php
+msgid "No Events in History"
+msgstr "Tsy misy hetsika ao amin'ny tantara"
+
+#: webseer_servers.php
+msgid "Master"
+msgstr "Lohany"
+
+#: webseer_servers.php
+msgid "This Host"
+msgstr "Ity Mpampiantrano Ity"
+
+#: webseer_servers.php
+msgid "Edit Server"
+msgstr "Ovao ny lohamilina"
+
+#: webseer_servers.php
+msgid "View Server History"
+msgstr "Jereo ny tantaran'ny mpizara"
+
+#: webseer_servers.php
+msgid "No"
+msgstr "Tsia"
+
+#: webseer_servers.php
+msgid "Yes"
+msgstr "Eny"
+
+#: webseer_servers.php
+msgid "Webseer Servers"
+msgstr "Mpizara Webseer"
+
+#: webseer_servers.php
+msgid "Triggered"
+msgstr "Voahetsika"
+
+#: webseer_servers.php
+msgid "Webseer Server History"
+msgstr "Tantaran'ny mpizara Webseer"
+

@@ -1,0 +1,726 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR The Cacti Group
+# This file is distributed under the same license as the Cacti package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Cacti\n"
+"Report-Msgid-Bugs-To: developers@cacti.net\n"
+"POT-Creation-Date: 2026-09-28 16:09-0400\n"
+"PO-Revision-Date: 2026-11-24 19:00+0000\n"
+"Last-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\n"
+"Language-Team: Afrikaans\n"
+"Language: af-ZA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: includes/arrays.php webseer_servers.php
+#, php-format
+msgid "%d Minute"
+msgstr "%d minuut"
+
+#: includes/arrays.php webseer_servers.php
+#, php-format
+msgid "%d Minutes"
+msgstr "%d minute"
+
+#: includes/arrays.php webseer_servers.php
+#, php-format
+msgid "%d Seconds"
+msgstr "%d Sekondes"
+
+#: includes/arrays.php
+msgid "Delete"
+msgstr "Skrap"
+
+#: includes/arrays.php
+msgid "Disable"
+msgstr "Deaktiveer"
+
+#: includes/arrays.php
+msgid "Enable"
+msgstr "Aktiveer"
+
+#: includes/arrays.php
+msgid "Duplicate"
+msgstr "Dupliseer"
+
+#: includes/arrays.php webseer.php webseer_proxies.php webseer_servers.php
+msgid "Name"
+msgstr "Naam"
+
+#: includes/arrays.php
+msgid "A Useful Name for this Proxy."
+msgstr "'n Nuttige naam vir hierdie instaanbediener."
+
+#: includes/arrays.php
+msgid "New Proxy"
+msgstr "Nuwe instaanbediener"
+
+#: includes/arrays.php webseer_proxies.php
+msgid "Hostname"
+msgstr "Gasheernaam"
+
+#: includes/arrays.php
+msgid "The Proxy Hostname."
+msgstr "Die proxy-gasheernaam."
+
+#: includes/arrays.php
+msgid "HTTP Port"
+msgstr "HTTP-poort"
+
+#: includes/arrays.php
+msgid "The HTTP Proxy Port."
+msgstr "Die HTTP-instaanpoort."
+
+#: includes/arrays.php
+msgid "HTTPS Port"
+msgstr "HTTPS-poort"
+
+#: includes/arrays.php
+msgid "The HTTPS Proxy Port."
+msgstr "Die HTTPS-instaanpoort."
+
+#: includes/arrays.php
+msgid "User Name"
+msgstr "Gebruikersnaam"
+
+#: includes/arrays.php
+msgid "The user to use to authenticate with the Proxy if any."
+msgstr "Die gebruiker wat gebruik moet word om met die Proxy te verifieer, indien enige."
+
+#: includes/arrays.php
+msgid "Password"
+msgstr "Wagwoord"
+
+#: includes/arrays.php
+msgid "The user password to use to authenticate with the Proxy if any."
+msgstr "Die gebruikerswagwoord wat gebruik moet word om met die Proxy te verifieer, indien enige."
+
+#: includes/arrays.php
+msgid "General Settings"
+msgstr "Algemene instellings"
+
+#: includes/arrays.php
+msgid "Display Name of this server"
+msgstr "Vertoonnaam van hierdie bediener"
+
+#: includes/arrays.php webseer_servers.php
+msgid "Enable Server"
+msgid_plural "Enable Servers"
+msgstr[0] "Aktiveer bediener"
+msgstr[1] "Aktiveer bedieners"
+
+#: includes/arrays.php
+msgid "Uncheck this box to disabled this server from checking urls."
+msgstr "Ontmerk hierdie blokkie om te deaktiveer dat hierdie bediener URL'e nagaan."
+
+#: includes/arrays.php
+msgid "Is this server the local server?"
+msgstr "Is hierdie bediener die plaaslike bediener?"
+
+#: includes/arrays.php
+msgid "Check this box if the current server you are connected to is this entry."
+msgstr "Merk hierdie blokkie as die huidige bediener waarmee jy verbind is, hierdie inskrywing is."
+
+#: includes/arrays.php
+msgid "Master Server"
+msgstr "Meesterbediener"
+
+#: includes/arrays.php
+msgid "Sets this server to the Master server.  The Master server handles all Email operations"
+msgstr "Stel hierdie bediener as die hoofbediener.  Die hoofbediener hanteer alle E-pos-bewerkings"
+
+#: includes/arrays.php webseer_servers.php
+msgid "IP Address"
+msgstr "IP-adres"
+
+#: includes/arrays.php
+msgid "IP Address to connect to this server"
+msgstr "IP-adres om aan hierdie bediener te koppel"
+
+#: includes/arrays.php webseer.php webseer_servers.php
+msgid "URL"
+msgstr "URL"
+
+#: includes/arrays.php
+msgid "This is the URL to connect to remote.php on this server."
+msgstr "Dit is die URL om aan remote.php op hierdie bediener te koppel."
+
+#: includes/arrays.php webseer_servers.php
+msgid "Location"
+msgstr "Ligging"
+
+#: includes/arrays.php
+msgid "Location of this server"
+msgstr "Ligging van hierdie bediener"
+
+#: includes/arrays.php
+msgid "Service Check Name"
+msgstr "Dienskontrolenaam"
+
+#: includes/arrays.php
+msgid "The name that is displayed for this Service Check, and is included in any Alert notifications."
+msgstr "Die naam wat vir hierdie Dienskontrole vertoon word, en in enige Alarmkennisgewings ingesluit word."
+
+#: includes/arrays.php webseer.php
+msgid "Enable Service Check"
+msgstr "Aktiveer dienstoets"
+
+#: includes/arrays.php
+msgid "Uncheck this box to disabled this url from being checked."
+msgstr "Ontmerk hierdie blokkie om kontrolering van hierdie URL te deaktiveer."
+
+#: includes/arrays.php
+msgid "The URL to Monitor"
+msgstr "Die URL om te monitor"
+
+#: includes/arrays.php
+msgid "Enter an IP address to connect to.  Leaving blank will use DNS Resolution instead."
+msgstr "Voer 'n IP-adres in om mee te verbind. As dit leeg gelaat word, sal DNS-oplossing eerder gebruik word."
+
+#: includes/arrays.php
+msgid "Proxy Server"
+msgstr "Instaanbediener"
+
+#: includes/arrays.php
+msgid "If this connection text requires a proxy, select it here.  Otherwise choose 'None'."
+msgstr "Indien hierdie verbindingsteks 'n instaanbediener (proxy) vereis, kies dit hier.  Andersins kies 'Geen'."
+
+#: includes/arrays.php webseer.php
+msgid "None"
+msgstr "Geen"
+
+#: includes/arrays.php webseer.php
+msgid "Compression"
+msgstr "Kompressie"
+
+#: includes/arrays.php
+msgid "What compression does the server require?  Most servers should not need this, but some will not redirect properly without it."
+msgstr "Watter kompressie vereis die bediener?  Die meeste bedieners behoort dit nie nodig te hê nie, maar sommige sal nie behoorlik herlei daarsonder nie."
+
+#: includes/arrays.php
+msgid "Available Checks"
+msgstr "Beskikbare kontroles"
+
+#: includes/arrays.php
+msgid "Requires Authentication"
+msgstr "Vereis verifikasie"
+
+#: includes/arrays.php
+msgid "Check this box if the site will normally return a 401 Error as it requires a username and password."
+msgstr "Merk hierdie blokkie as die terrein normaalweg 'n 401-fout terugstuur omdat dit 'n gebruikersnaam en wagwoord vereis."
+
+#: includes/arrays.php
+msgid "Check Certificate"
+msgstr "Kontroleer Sertifikaat"
+
+#: includes/arrays.php
+msgid "If using SSL, check this box if you want to validate the certificate. Default on, turn off if you the site uses a self-signed certificate."
+msgstr "Indien SSL gebruik word, merk hierdie blokkie as u die sertifikaat wil valideer. By verstek aan; skakel af as die terrein 'n selfondertekende sertifikaat gebruik."
+
+#: includes/arrays.php
+msgid "Notification Timing"
+msgstr "Kennisgewingtydsberekening"
+
+#: includes/arrays.php
+msgid "Trigger"
+msgstr "Sneller"
+
+#: includes/arrays.php
+msgid "How many minutes the URL must be down before it will send an alert.  After an alert is sent, in order for a 'Site Recovering' Email to be send, it must also be up this number of minutes."
+msgstr "Hoeveel minute die URL af moet wees voordat dit 'n waarskuwing stuur. Nadat 'n waarskuwing gestuur is, moet dit ook vir hierdie aantal minute op wees voordat 'n 'Terrein herstel'-e-pos gestuur word."
+
+#: includes/arrays.php
+msgid "Time Out"
+msgstr "Uitteltyd"
+
+#: includes/arrays.php
+msgid "How many seconds to allow the page to timeout before reporting it as down."
+msgstr "Hoeveel sekondes om toe te laat vir die bladsy se tydsverstreking voordat dit as af gerapporteer word."
+
+#: includes/arrays.php
+msgid "Verification Strings"
+msgstr "Verifikasiestringe"
+
+#: includes/arrays.php
+msgid "Response Search String"
+msgstr "Antwoordsoekstring"
+
+#: includes/arrays.php
+msgid "This is the string to search for in the URL response for a live and working Web Service."
+msgstr "Dit is die string om in die URL-reaksie na te soek vir 'n aktiewe en werkende webdiens."
+
+#: includes/arrays.php
+msgid "Response Search String - Maintenance Page"
+msgstr "Antwoordsoekstring - Onderhoudsbladsy"
+
+#: includes/arrays.php
+msgid "This is the string to search for on the Maintenance Page.  The Service Check will check for this string if the above string is not found.  If found, it means that the Web Service is under maintenance."
+msgstr "Dit is die string om op die Onderhoudsbladsy na te soek. Die dienskontrole sal vir hierdie string kontroleer as bogenoemde string nie gevind word nie. Indien gevind, beteken dit dat die webdiens onder onderhoud is."
+
+#: includes/arrays.php
+msgid "Response Search String - Failed"
+msgstr "Antwoordsoekstring - Misluk"
+
+#: includes/arrays.php
+msgid "This is the string to search for a known failure in the Web Service response.  The Service Check will only alert if this string is found, ignoring any timeout issues and the search strings above."
+msgstr "Dit is die string om na te soek vir 'n bekende mislukking in die webdiensreaksie. Die dienskontrole sal slegs 'n alarm gee as hierdie string gevind word, en enige tydsverstrekingsprobleme en die soekstringe hierbo ignoreer."
+
+#: includes/arrays.php
+msgid "Notification Settings"
+msgstr "Kennisgewinginstellings"
+
+#: includes/arrays.php
+msgid "Notify Format"
+msgstr "Kennisgewingformaat"
+
+#: includes/arrays.php
+msgid "This is the format to use when sending the notification email"
+msgstr "Dit is die formaat wat gebruik moet word wanneer die kennisgewing-e-pos gestuur word"
+
+#: includes/arrays.php
+msgid "Notification List"
+msgstr "Kennisgewingslys"
+
+#: includes/arrays.php
+msgid "Use this Notification List for those to be notified when this website goes down."
+msgstr "Gebruik hierdie kennisgewingslys vir diegene wat in kennis gestel moet word wanneer hierdie webwerf afgaan."
+
+#: includes/arrays.php
+msgid "Notify Accounts"
+msgstr "Stel rekeninge in kennis"
+
+#: includes/arrays.php
+msgid "This is a listing of accounts that will be notified when this website goes down."
+msgstr "Dit is 'n lys van rekeninge wat in kennis gestel sal word wanneer hierdie webwerf afgaan."
+
+#: includes/arrays.php
+msgid "Extra Alert Emails"
+msgstr "Ekstra waarskuwings-e-posse"
+
+#: includes/arrays.php
+msgid "You may specify here extra Emails to receive alerts for this URL (comma separated)"
+msgstr "Jy kan hier ekstra E-posse spesifiseer om alarms vir hierdie URL te ontvang (komma-geskei)"
+
+#: includes/functions.php webseer.php
+msgid "Checks"
+msgstr "Kontroles"
+
+#: includes/functions.php webseer_servers.php
+msgid "Servers"
+msgstr "Bedieners"
+
+#: includes/functions.php webseer_proxies.php
+msgid "Proxies"
+msgstr "Instaanbedieners"
+
+#: includes/functions.php
+msgid "Log History"
+msgstr "Loggeskiedenis"
+
+#: poller_webseer.php
+msgid "Cacti Master"
+msgstr "Cacti-meester"
+
+#: poller_webseer.php
+msgid "Cacti Remote Server"
+msgstr "Cacti-afstandbediener"
+
+#: setup.php
+msgid "Web Service Check Admin"
+msgstr "Webdienskontrole-administrasie"
+
+#: setup.php
+msgid "Management"
+msgstr "Bestuur"
+
+#: setup.php
+msgid "Service Checks"
+msgstr "Dienskontroles"
+
+#: setup.php
+msgid "WebSeer Service Checks"
+msgstr "WebSeer-dienskontroles"
+
+#: setup.php
+msgid "Service Check Edit"
+msgstr "Wysig dienskontrole"
+
+#: setup.php
+msgid "Service Check Save"
+msgstr "Stoor dienskontrole"
+
+#: setup.php
+msgid "WebSeer Servers"
+msgstr "WebSeer-bedieners"
+
+#: setup.php
+msgid "Server Edit"
+msgstr "Wysig Bediener"
+
+#: setup.php
+msgid "Save Server"
+msgstr "Stoor bediener"
+
+#: setup.php
+msgid "WebSeer Proxies"
+msgstr "WebSeer-instaanbedieners"
+
+#: setup.php
+msgid "Proxie Edit"
+msgstr "Wysig instaanbediener"
+
+#: setup.php
+msgid "Save Proxy"
+msgstr "Stoor instaanbediener"
+
+#: webseer.php
+msgid "Click 'Continue' to Delete the following URL."
+msgid_plural "Click 'Continue' to Delete following URLs."
+msgstr[0] "Klik 'Gaan voort' om die volgende URL te skrap."
+msgstr[1] "Klik 'Gaan voort' om die volgende URL's te skrap."
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Cancel"
+msgstr "Kanselleer"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Continue"
+msgstr "Gaan voort"
+
+#: webseer.php
+msgid "Delete URL"
+msgid_plural "Delete URLs"
+msgstr[0] "Skrap URL"
+msgstr[1] "Skrap URL's"
+
+#: webseer.php
+msgid "Click 'Continue' to Disable the following URL."
+msgid_plural "Click 'Continue' to Disable following URLs."
+msgstr[0] "Klik 'Gaan voort' om die volgende URL te deaktiveer."
+msgstr[1] "Klik 'Gaan voort' om die volgende URL's te deaktiveer."
+
+#: webseer.php
+msgid "Disable URL"
+msgid_plural "Disable URLs"
+msgstr[0] "Deaktiveer URL"
+msgstr[1] "Deaktiveer URL's"
+
+#: webseer.php
+msgid "Click 'Continue' to Enable the following URL."
+msgid_plural "Click 'Continue' to Enable following URLs."
+msgstr[0] "Klik 'Gaan voort' om die volgende URL te aktiveer."
+msgstr[1] "Klik 'Gaan voort' om die volgende URL's te aktiveer."
+
+#: webseer.php
+msgid "Enable URL"
+msgid_plural "Enable URLs"
+msgstr[0] "Aktiveer URL"
+msgstr[1] "Aktiveer URL's"
+
+#: webseer.php
+msgid "Click 'Continue' to Duplicate the following URL."
+msgid_plural "Click 'Continue' to Duplicate following URLs."
+msgstr[0] "Klik 'Gaan voort' om die volgende URL te dupliseer."
+msgstr[1] "Klik 'Gaan voort' om die volgende URL's te dupliseer."
+
+#: webseer.php
+msgid "Duplicate URL"
+msgid_plural "Duplicate URLs"
+msgstr[0] "Dupliseer URL"
+msgstr[1] "Dupliseer URL's"
+
+#: webseer.php
+#, php-format
+msgid "The Service Check history was purged for %s"
+msgstr "Die dienskontrole-geskiedenis is gesuiwer vir %s"
+
+#: webseer.php webseer_servers.php
+#, php-format
+msgid "Query [edit: %s]"
+msgstr "Navraag [wysig: %s]"
+
+#: webseer.php webseer_servers.php
+msgid "Query [new]"
+msgstr "Navraag [nuut]"
+
+#: webseer.php
+msgid "No Users Selected"
+msgstr "Geen gebruikers gekies nie"
+
+#: webseer.php
+msgid "Users Selected"
+msgstr "Gebruikers gekies"
+
+#: webseer.php
+msgid "All Users Selected"
+msgstr "Alle gebruikers gekies"
+
+#: webseer.php
+msgid "All"
+msgstr "Almal"
+
+#: webseer.php webseer_proxies.php
+msgid "Search"
+msgstr "Soek"
+
+#: webseer.php webseer_servers.php
+msgid "Date"
+msgstr "Datum"
+
+#: webseer.php webseer_servers.php
+msgid "Error"
+msgstr "Fout"
+
+#: webseer.php webseer_servers.php
+msgid "HTTP Code"
+msgstr "HTTP-kode"
+
+#: webseer.php webseer_servers.php
+msgid "DNS"
+msgstr "DNS"
+
+#: webseer.php webseer_servers.php
+msgid "Connect"
+msgstr "Verbind"
+
+#: webseer.php webseer_servers.php
+msgid "Redirect"
+msgstr "Herlei"
+
+#: webseer.php webseer_servers.php
+msgid "Total"
+msgstr "Totaal"
+
+#: webseer.php
+msgid "Urls"
+msgstr "URL'e"
+
+#: webseer.php
+msgid "Service Down"
+msgstr "Diens af"
+
+#: webseer.php
+msgid "Service Restored"
+msgstr "Diens herstel"
+
+#: webseer.php
+msgid "No Service Check Events in History"
+msgstr "Geen dienskontrole-gebeurtenisse in geskiedenis nie"
+
+#: webseer.php webseer_servers.php
+msgid "Actions"
+msgstr "Aksies"
+
+#: webseer.php
+msgid "Status"
+msgstr "Status"
+
+#: webseer.php webseer_servers.php
+msgid "Enabled"
+msgstr "Geaktiveer"
+
+#: webseer.php
+msgid "Auth"
+msgstr "Stawing"
+
+#: webseer.php
+msgid "Timeout"
+msgstr "Uitteltyd"
+
+#: webseer.php webseer_servers.php
+msgid "Last Check"
+msgstr "Laaste kontrole"
+
+#: webseer.php
+msgid "Edit Service Check"
+msgstr "Wysig dienstoets"
+
+#: webseer.php
+msgid "Disable Service Check"
+msgstr "Deaktiveer dienskontrole"
+
+#: webseer.php
+msgid "View Service Check History"
+msgstr "Bekyk dienskontrolegeskiedenis"
+
+#: webseer.php
+#, php-format
+msgid "DNS: Server %s - A Record for %s"
+msgstr "DNS: Bediener %s - A-rekord vir %s"
+
+#: webseer.php
+msgid "N/A"
+msgstr "N.v.t"
+
+#: webseer.php webseer_servers.php
+msgid "Down"
+msgstr "Af"
+
+#: webseer.php webseer_servers.php
+msgid "Up"
+msgstr "Op"
+
+#: webseer.php webseer_servers.php
+msgid "Disabled"
+msgstr "Gedeaktiveer"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "No Servers Found"
+msgstr "Geen bedieners gevind nie"
+
+#: webseer.php
+msgid "Webseer Service Checks"
+msgstr "Webseer-dienskontroles"
+
+#: webseer.php webseer_servers.php
+msgid "State"
+msgstr "Staat"
+
+#: webseer.php webseer_servers.php
+msgid "Any"
+msgstr "Enige"
+
+#: webseer.php webseer_servers.php
+msgid "Refresh"
+msgstr "Verfris"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Default"
+msgstr "Verstek"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Go"
+msgstr "Gaan"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Clear"
+msgstr "Maak skoon"
+
+#: webseer.php
+msgid "Webseer Service Check History"
+msgstr "Webseer-dienskontrolegeskiedenis"
+
+#: webseer.php webseer_servers.php
+msgid "Date Search"
+msgstr "Datumsoektog"
+
+#: webseer.php webseer_servers.php
+msgid "Entries"
+msgstr "Inskrywings"
+
+#: webseer.php
+msgid "Purge Events"
+msgstr "Wis gebeure uit"
+
+#: webseer_proxies.php
+msgid "Click 'Continue' to delete the following Proxy."
+msgid_plural "Click 'Continue' to delete following Proxies."
+msgstr[0] "Klik 'Gaan voort' om die volgende instaanbediener te skrap."
+msgstr[1] "Klik 'Gaan voort' om die volgende instaanbedieners te skrap."
+
+#: webseer_proxies.php
+msgid "Delete Proxy"
+msgid_plural "Delete Proxies"
+msgstr[0] "Skrap instaanbediener"
+msgstr[1] "Skrap instaanbedieners"
+
+#: webseer_proxies.php
+#, php-format
+msgid "Proxy [edit: %s]"
+msgstr "Instaanbediener [wysig: %s]"
+
+#: webseer_proxies.php
+msgid "Proxy [new]"
+msgstr "Instaanbediener [nuut]"
+
+#: webseer_proxies.php
+msgid "Ports (http/https)"
+msgstr "Poorte (http/https)"
+
+#: webseer_proxies.php
+msgid "Username"
+msgstr "Gebruikersnaam"
+
+#: webseer_proxies.php
+msgid "Not Set"
+msgstr "Nie gestel nie"
+
+#: webseer_proxies.php
+msgid "Webseer Proxy Management"
+msgstr "Webseer-instaanbedienerbestuur"
+
+#: webseer_servers.php
+msgid "Click 'Continue' to Delete the following Server."
+msgid_plural "Click 'Continue' to Delete following Servers."
+msgstr[0] "Klik 'Gaan voort' om die volgende bediener te skrap."
+msgstr[1] "Klik 'Gaan voort' om die volgende bedieners te skrap."
+
+#: webseer_servers.php
+msgid "Delete Server"
+msgid_plural "Delete Servers"
+msgstr[0] "Skrap bediener"
+msgstr[1] "Skrap bedieners"
+
+#: webseer_servers.php
+msgid "Click 'Continue' to Disable the following Server."
+msgid_plural "Click 'Continue' to Disable following Servers."
+msgstr[0] "Klik 'Gaan voort' om die volgende bediener te deaktiveer."
+msgstr[1] "Klik 'Gaan voort' om die volgende bedieners te deaktiveer."
+
+#: webseer_servers.php
+msgid "Disable Server"
+msgid_plural "Disable Servers"
+msgstr[0] "Deaktiveer bediener"
+msgstr[1] "Deaktiveer bedieners"
+
+#: webseer_servers.php
+msgid "Click 'Continue' to Enable the following Server."
+msgid_plural "Click 'Continue' to Enable following Servers."
+msgstr[0] "Klik 'Gaan voort' om die volgende bediener te aktiveer."
+msgstr[1] "Klik 'Gaan voort' om die volgende bedieners te aktiveer."
+
+#: webseer_servers.php
+msgid "No Events in History"
+msgstr "Geen gebeurtenisse in geskiedenis nie"
+
+#: webseer_servers.php
+msgid "Master"
+msgstr "Meester"
+
+#: webseer_servers.php
+msgid "This Host"
+msgstr "Hierdie Gasheer"
+
+#: webseer_servers.php
+msgid "Edit Server"
+msgstr "Wysig bediener"
+
+#: webseer_servers.php
+msgid "View Server History"
+msgstr "Bekyk bedienergeskiedenis"
+
+#: webseer_servers.php
+msgid "No"
+msgstr "Nee"
+
+#: webseer_servers.php
+msgid "Yes"
+msgstr "Ja"
+
+#: webseer_servers.php
+msgid "Webseer Servers"
+msgstr "Webseer-bedieners"
+
+#: webseer_servers.php
+msgid "Triggered"
+msgstr "Uitgelok"
+
+#: webseer_servers.php
+msgid "Webseer Server History"
+msgstr "Webseer-bedienergeskiedenis"
+

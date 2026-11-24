@@ -1,0 +1,726 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR The Cacti Group
+# This file is distributed under the same license as the Cacti package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Cacti\n"
+"Report-Msgid-Bugs-To: developers@cacti.net\n"
+"POT-Creation-Date: 2026-09-28 16:09-0400\n"
+"PO-Revision-Date: 2026-11-24 19:00+0000\n"
+"Last-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\n"
+"Language-Team: Swahili\n"
+"Language: sw-KE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: includes/arrays.php webseer_servers.php
+#, php-format
+msgid "%d Minute"
+msgstr "Dakika %d"
+
+#: includes/arrays.php webseer_servers.php
+#, php-format
+msgid "%d Minutes"
+msgstr "Dakika %d"
+
+#: includes/arrays.php webseer_servers.php
+#, php-format
+msgid "%d Seconds"
+msgstr "Sekunde %d"
+
+#: includes/arrays.php
+msgid "Delete"
+msgstr "Futa"
+
+#: includes/arrays.php
+msgid "Disable"
+msgstr "Lemaza"
+
+#: includes/arrays.php
+msgid "Enable"
+msgstr "Wezesha"
+
+#: includes/arrays.php
+msgid "Duplicate"
+msgstr "Rudufu"
+
+#: includes/arrays.php webseer.php webseer_proxies.php webseer_servers.php
+msgid "Name"
+msgstr "Jina"
+
+#: includes/arrays.php
+msgid "A Useful Name for this Proxy."
+msgstr "Jina Linalofaa kwa Wakala huyu."
+
+#: includes/arrays.php
+msgid "New Proxy"
+msgstr "Proksi Mpya"
+
+#: includes/arrays.php webseer_proxies.php
+msgid "Hostname"
+msgstr "Jina la Mpangishi"
+
+#: includes/arrays.php
+msgid "The Proxy Hostname."
+msgstr "Jina la Kipangishi cha Proksi."
+
+#: includes/arrays.php
+msgid "HTTP Port"
+msgstr "Mlango wa HTTP"
+
+#: includes/arrays.php
+msgid "The HTTP Proxy Port."
+msgstr "Mlango wa Proksi ya HTTP."
+
+#: includes/arrays.php
+msgid "HTTPS Port"
+msgstr "Mlango wa HTTPS"
+
+#: includes/arrays.php
+msgid "The HTTPS Proxy Port."
+msgstr "Mlango wa Proksi ya HTTPS."
+
+#: includes/arrays.php
+msgid "User Name"
+msgstr "Jina la Mtumiaji"
+
+#: includes/arrays.php
+msgid "The user to use to authenticate with the Proxy if any."
+msgstr "Mtumiaji wa kutumia kuthibitisha na Proksi ikiwa ipo."
+
+#: includes/arrays.php
+msgid "Password"
+msgstr "Nenosiri"
+
+#: includes/arrays.php
+msgid "The user password to use to authenticate with the Proxy if any."
+msgstr "Nenosiri la mtumiaji la kutumia kuthibitisha na Proksi ikiwa ipo."
+
+#: includes/arrays.php
+msgid "General Settings"
+msgstr "Mipangilio ya Jumla"
+
+#: includes/arrays.php
+msgid "Display Name of this server"
+msgstr "Jina la Kuonyesha la seva hii"
+
+#: includes/arrays.php webseer_servers.php
+msgid "Enable Server"
+msgid_plural "Enable Servers"
+msgstr[0] "Washa Seva"
+msgstr[1] "Washa Seva"
+
+#: includes/arrays.php
+msgid "Uncheck this box to disabled this server from checking urls."
+msgstr "Ondoa tiki kwenye kisanduku hiki ili kuzima seva hii isikague URL."
+
+#: includes/arrays.php
+msgid "Is this server the local server?"
+msgstr "Je, seva hii ni seva ya ndani?"
+
+#: includes/arrays.php
+msgid "Check this box if the current server you are connected to is this entry."
+msgstr "Tiki kisanduku hiki ikiwa seva ya sasa uliyounganishwa nayo ni ingizo hili."
+
+#: includes/arrays.php
+msgid "Master Server"
+msgstr "Seva Kuu"
+
+#: includes/arrays.php
+msgid "Sets this server to the Master server.  The Master server handles all Email operations"
+msgstr "Huweka seva hii kuwa Seva Kuu.  Seva Kuu hushughulikia shughuli zote za Barua Pepe"
+
+#: includes/arrays.php webseer_servers.php
+msgid "IP Address"
+msgstr "Anwani ya IP"
+
+#: includes/arrays.php
+msgid "IP Address to connect to this server"
+msgstr "Anwani ya IP ya kuunganisha kwenye seva hii"
+
+#: includes/arrays.php webseer.php webseer_servers.php
+msgid "URL"
+msgstr "URL"
+
+#: includes/arrays.php
+msgid "This is the URL to connect to remote.php on this server."
+msgstr "Hii ni URL ya kuunganisha na remote.php kwenye seva hii."
+
+#: includes/arrays.php webseer_servers.php
+msgid "Location"
+msgstr "Mahali"
+
+#: includes/arrays.php
+msgid "Location of this server"
+msgstr "Mahali ilipo seva hii"
+
+#: includes/arrays.php
+msgid "Service Check Name"
+msgstr "Jina la Ukaguzi wa Huduma"
+
+#: includes/arrays.php
+msgid "The name that is displayed for this Service Check, and is included in any Alert notifications."
+msgstr "Jina linaloonyeshwa kwa Ukaguzi huu wa Huduma, na linajumuishwa katika arifa zozote za Tahadhari."
+
+#: includes/arrays.php webseer.php
+msgid "Enable Service Check"
+msgstr "Washa Ukaguzi wa Huduma"
+
+#: includes/arrays.php
+msgid "Uncheck this box to disabled this url from being checked."
+msgstr "Ondoa tiki kwenye kisanduku hiki ili kuzima URL hii isikaguliwe."
+
+#: includes/arrays.php
+msgid "The URL to Monitor"
+msgstr "URL ya Kufuatilia"
+
+#: includes/arrays.php
+msgid "Enter an IP address to connect to.  Leaving blank will use DNS Resolution instead."
+msgstr "Ingiza anwani ya IP ya kuunganisha kwayo.  Kuacha wazi kutatumia Utatuzi wa DNS badala yake."
+
+#: includes/arrays.php
+msgid "Proxy Server"
+msgstr "Seva ya Proksi"
+
+#: includes/arrays.php
+msgid "If this connection text requires a proxy, select it here.  Otherwise choose 'None'."
+msgstr "Ikiwa maandishi haya ya muunganisho yanahitaji proksi, ichague hapa. Vinginevyo chagua 'Hakuna'."
+
+#: includes/arrays.php webseer.php
+msgid "None"
+msgstr "Hakuna"
+
+#: includes/arrays.php webseer.php
+msgid "Compression"
+msgstr "Mfinyazo"
+
+#: includes/arrays.php
+msgid "What compression does the server require?  Most servers should not need this, but some will not redirect properly without it."
+msgstr "Je, seva inahitaji mbano gani?  Seva nyingi hazipaswi kuhitaji hili, lakini baadhi hazitaelekeza kwingine ipasavyo bila hilo."
+
+#: includes/arrays.php
+msgid "Available Checks"
+msgstr "Ukaguzi Uliopo"
+
+#: includes/arrays.php
+msgid "Requires Authentication"
+msgstr "Inahitaji Uthibitishaji"
+
+#: includes/arrays.php
+msgid "Check this box if the site will normally return a 401 Error as it requires a username and password."
+msgstr "Tiki kisanduku hiki ikiwa eneo kwa kawaida litarudisha Hitilafu ya 401 kwani linahitaji jina la mtumiaji na nenosiri."
+
+#: includes/arrays.php
+msgid "Check Certificate"
+msgstr "Kagua Cheti"
+
+#: includes/arrays.php
+msgid "If using SSL, check this box if you want to validate the certificate. Default on, turn off if you the site uses a self-signed certificate."
+msgstr "Ikiwa unatumia SSL, teua kisanduku hiki ikiwa unataka kuthibitisha cheti. Chaguo-msingi imewashwa, zima ikiwa eneo linatumia cheti kilichosainiwa chenyewe."
+
+#: includes/arrays.php
+msgid "Notification Timing"
+msgstr "Muda wa Arifa"
+
+#: includes/arrays.php
+msgid "Trigger"
+msgstr "Kichocheo"
+
+#: includes/arrays.php
+msgid "How many minutes the URL must be down before it will send an alert.  After an alert is sent, in order for a 'Site Recovering' Email to be send, it must also be up this number of minutes."
+msgstr "Dakika ngapi URL lazima iwe chini kabla haijatuma tahadhari. Baada ya tahadhari kutumwa, ili Barua Pepe ya 'Eneo Linarejea' itumwe, lazima pia iwe juu kwa idadi hii ya dakika."
+
+#: includes/arrays.php
+msgid "Time Out"
+msgstr "Muda Umeisha"
+
+#: includes/arrays.php
+msgid "How many seconds to allow the page to timeout before reporting it as down."
+msgstr "Sekunde ngapi za kuruhusu ukurasa upitishe muda kabla ya kuuripoti kuwa chini."
+
+#: includes/arrays.php
+msgid "Verification Strings"
+msgstr "Mifuatano ya Uthibitishaji"
+
+#: includes/arrays.php
+msgid "Response Search String"
+msgstr "Mfuatano wa Kutafuta Jibu"
+
+#: includes/arrays.php
+msgid "This is the string to search for in the URL response for a live and working Web Service."
+msgstr "Hii ni tungo ya kutafuta katika jibu la URL kwa Huduma ya Wavuti iliyo hai na inayofanya kazi."
+
+#: includes/arrays.php
+msgid "Response Search String - Maintenance Page"
+msgstr "Mfuatano wa Kutafuta Jibu - Ukurasa wa Matengenezo"
+
+#: includes/arrays.php
+msgid "This is the string to search for on the Maintenance Page.  The Service Check will check for this string if the above string is not found.  If found, it means that the Web Service is under maintenance."
+msgstr "Hii ni tungo ya kutafuta kwenye Ukurasa wa Matengenezo. Ukaguzi wa Huduma utatafuta tungo hii ikiwa tungo iliyo hapo juu haitapatikana. Ikipatikana, inamaanisha kuwa Huduma ya Wavuti iko chini ya matengenezo."
+
+#: includes/arrays.php
+msgid "Response Search String - Failed"
+msgstr "Mfuatano wa Kutafuta Jibu - Imeshindwa"
+
+#: includes/arrays.php
+msgid "This is the string to search for a known failure in the Web Service response.  The Service Check will only alert if this string is found, ignoring any timeout issues and the search strings above."
+msgstr "Hii ni tungo ya kutafuta hitilafu inayojulikana katika jibu la Huduma ya Wavuti. Ukaguzi wa Huduma utatoa arifa tu ikiwa tungo hii itapatikana, ukipuuza matatizo yoyote ya muda kuisha na tungo za utafutaji zilizo hapo juu."
+
+#: includes/arrays.php
+msgid "Notification Settings"
+msgstr "Mipangilio ya Arifa"
+
+#: includes/arrays.php
+msgid "Notify Format"
+msgstr "Muundo wa Arifa"
+
+#: includes/arrays.php
+msgid "This is the format to use when sending the notification email"
+msgstr "Huu ni muundo wa kutumia wakati wa kutuma barua pepe ya arifa"
+
+#: includes/arrays.php
+msgid "Notification List"
+msgstr "Orodha ya Arifa"
+
+#: includes/arrays.php
+msgid "Use this Notification List for those to be notified when this website goes down."
+msgstr "Tumia Orodha hii ya Arifa kwa wale watakaoarifiwa tovuti hii ikizima."
+
+#: includes/arrays.php
+msgid "Notify Accounts"
+msgstr "Akaunti za Kuarifu"
+
+#: includes/arrays.php
+msgid "This is a listing of accounts that will be notified when this website goes down."
+msgstr "Hii ni orodha ya akaunti zitakazoarifiwa tovuti hii inapoacha kufanya kazi."
+
+#: includes/arrays.php
+msgid "Extra Alert Emails"
+msgstr "Barua Pepe za Ziada za Tahadhari"
+
+#: includes/arrays.php
+msgid "You may specify here extra Emails to receive alerts for this URL (comma separated)"
+msgstr "Unaweza kubainisha hapa Barua Pepe za ziada za kupokea arifa za URL hii (zimetenganishwa kwa koma)"
+
+#: includes/functions.php webseer.php
+msgid "Checks"
+msgstr "Ukaguzi"
+
+#: includes/functions.php webseer_servers.php
+msgid "Servers"
+msgstr "Seva"
+
+#: includes/functions.php webseer_proxies.php
+msgid "Proxies"
+msgstr "Proksi"
+
+#: includes/functions.php
+msgid "Log History"
+msgstr "Historia ya Kumbukumbu"
+
+#: poller_webseer.php
+msgid "Cacti Master"
+msgstr "Cacti Kuu"
+
+#: poller_webseer.php
+msgid "Cacti Remote Server"
+msgstr "Seva ya Mbali ya Cacti"
+
+#: setup.php
+msgid "Web Service Check Admin"
+msgstr "Msimamizi wa Ukaguzi wa Huduma ya Wavuti"
+
+#: setup.php
+msgid "Management"
+msgstr "Usimamizi"
+
+#: setup.php
+msgid "Service Checks"
+msgstr "Ukaguzi wa Huduma"
+
+#: setup.php
+msgid "WebSeer Service Checks"
+msgstr "Ukaguzi wa Huduma za WebSeer"
+
+#: setup.php
+msgid "Service Check Edit"
+msgstr "Hariri Ukaguzi wa Huduma"
+
+#: setup.php
+msgid "Service Check Save"
+msgstr "Hifadhi Ukaguzi wa Huduma"
+
+#: setup.php
+msgid "WebSeer Servers"
+msgstr "Seva za WebSeer"
+
+#: setup.php
+msgid "Server Edit"
+msgstr "Hariri Seva"
+
+#: setup.php
+msgid "Save Server"
+msgstr "Hifadhi Seva"
+
+#: setup.php
+msgid "WebSeer Proxies"
+msgstr "Proksi za WebSeer"
+
+#: setup.php
+msgid "Proxie Edit"
+msgstr "Hariri Proksi"
+
+#: setup.php
+msgid "Save Proxy"
+msgstr "Hifadhi Proksi"
+
+#: webseer.php
+msgid "Click 'Continue' to Delete the following URL."
+msgid_plural "Click 'Continue' to Delete following URLs."
+msgstr[0] "Bofya 'Endelea' ili kufuta URL ifuatayo."
+msgstr[1] "Bofya 'Endelea' ili kufuta URL zifuatazo."
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Cancel"
+msgstr "Ghairi"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Continue"
+msgstr "Endelea"
+
+#: webseer.php
+msgid "Delete URL"
+msgid_plural "Delete URLs"
+msgstr[0] "Futa URL"
+msgstr[1] "Futa URL"
+
+#: webseer.php
+msgid "Click 'Continue' to Disable the following URL."
+msgid_plural "Click 'Continue' to Disable following URLs."
+msgstr[0] "Bofya 'Endelea' ili kuzima URL ifuatayo."
+msgstr[1] "Bofya 'Endelea' ili kuzima URL zifuatazo."
+
+#: webseer.php
+msgid "Disable URL"
+msgid_plural "Disable URLs"
+msgstr[0] "Zima URL"
+msgstr[1] "Zima URL"
+
+#: webseer.php
+msgid "Click 'Continue' to Enable the following URL."
+msgid_plural "Click 'Continue' to Enable following URLs."
+msgstr[0] "Bofya 'Endelea' ili kuwasha URL ifuatayo."
+msgstr[1] "Bofya 'Endelea' ili kuwasha URL zifuatazo."
+
+#: webseer.php
+msgid "Enable URL"
+msgid_plural "Enable URLs"
+msgstr[0] "Washa URL"
+msgstr[1] "Washa URL"
+
+#: webseer.php
+msgid "Click 'Continue' to Duplicate the following URL."
+msgid_plural "Click 'Continue' to Duplicate following URLs."
+msgstr[0] "Bofya 'Endelea' ili kurudufu URL ifuatayo."
+msgstr[1] "Bofya 'Endelea' ili kurudufu URL zifuatazo."
+
+#: webseer.php
+msgid "Duplicate URL"
+msgid_plural "Duplicate URLs"
+msgstr[0] "Rudufu URL"
+msgstr[1] "Rudufu URL"
+
+#: webseer.php
+#, php-format
+msgid "The Service Check history was purged for %s"
+msgstr "Historia ya Ukaguzi wa Huduma ilifutwa kwa %s"
+
+#: webseer.php webseer_servers.php
+#, php-format
+msgid "Query [edit: %s]"
+msgstr "Hoja [hariri: %s]"
+
+#: webseer.php webseer_servers.php
+msgid "Query [new]"
+msgstr "Hoja [mpya]"
+
+#: webseer.php
+msgid "No Users Selected"
+msgstr "Hakuna Watumiaji Waliochaguliwa"
+
+#: webseer.php
+msgid "Users Selected"
+msgstr "Watumiaji Waliochaguliwa"
+
+#: webseer.php
+msgid "All Users Selected"
+msgstr "Watumiaji Wote Wamechaguliwa"
+
+#: webseer.php
+msgid "All"
+msgstr "Zote"
+
+#: webseer.php webseer_proxies.php
+msgid "Search"
+msgstr "Tafuta"
+
+#: webseer.php webseer_servers.php
+msgid "Date"
+msgstr "Tarehe"
+
+#: webseer.php webseer_servers.php
+msgid "Error"
+msgstr "Hitilafu"
+
+#: webseer.php webseer_servers.php
+msgid "HTTP Code"
+msgstr "Msimbo wa HTTP"
+
+#: webseer.php webseer_servers.php
+msgid "DNS"
+msgstr "DNS"
+
+#: webseer.php webseer_servers.php
+msgid "Connect"
+msgstr "Unganisha"
+
+#: webseer.php webseer_servers.php
+msgid "Redirect"
+msgstr "Elekeza Upya"
+
+#: webseer.php webseer_servers.php
+msgid "Total"
+msgstr "Jumla"
+
+#: webseer.php
+msgid "Urls"
+msgstr "Anwani za URL"
+
+#: webseer.php
+msgid "Service Down"
+msgstr "Huduma Haifanyi Kazi"
+
+#: webseer.php
+msgid "Service Restored"
+msgstr "Huduma Imerejeshwa"
+
+#: webseer.php
+msgid "No Service Check Events in History"
+msgstr "Hakuna Matukio ya Ukaguzi wa Huduma katika Historia"
+
+#: webseer.php webseer_servers.php
+msgid "Actions"
+msgstr "Vitendo"
+
+#: webseer.php
+msgid "Status"
+msgstr "Hali"
+
+#: webseer.php webseer_servers.php
+msgid "Enabled"
+msgstr "Imewashwa"
+
+#: webseer.php
+msgid "Auth"
+msgstr "Uthibitishaji"
+
+#: webseer.php
+msgid "Timeout"
+msgstr "Muda wa Kuisha"
+
+#: webseer.php webseer_servers.php
+msgid "Last Check"
+msgstr "Ukaguzi wa Mwisho"
+
+#: webseer.php
+msgid "Edit Service Check"
+msgstr "Hariri Ukaguzi wa Huduma"
+
+#: webseer.php
+msgid "Disable Service Check"
+msgstr "Zima Ukaguzi wa Huduma"
+
+#: webseer.php
+msgid "View Service Check History"
+msgstr "Tazama Historia ya Ukaguzi wa Huduma"
+
+#: webseer.php
+#, php-format
+msgid "DNS: Server %s - A Record for %s"
+msgstr "DNS: Seva %s - Rekodi ya A kwa %s"
+
+#: webseer.php
+msgid "N/A"
+msgstr "Haipatikani"
+
+#: webseer.php webseer_servers.php
+msgid "Down"
+msgstr "Chini"
+
+#: webseer.php webseer_servers.php
+msgid "Up"
+msgstr "Juu"
+
+#: webseer.php webseer_servers.php
+msgid "Disabled"
+msgstr "Imezimwa"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "No Servers Found"
+msgstr "Hakuna Seva Zilizopatikana"
+
+#: webseer.php
+msgid "Webseer Service Checks"
+msgstr "Ukaguzi wa Huduma za Webseer"
+
+#: webseer.php webseer_servers.php
+msgid "State"
+msgstr "Jimbo"
+
+#: webseer.php webseer_servers.php
+msgid "Any"
+msgstr "Yoyote"
+
+#: webseer.php webseer_servers.php
+msgid "Refresh"
+msgstr "Onyesha Upya"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Default"
+msgstr "Chaguo-msingi"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Go"
+msgstr "Nenda"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Clear"
+msgstr "Futa"
+
+#: webseer.php
+msgid "Webseer Service Check History"
+msgstr "Historia ya Ukaguzi wa Huduma ya Webseer"
+
+#: webseer.php webseer_servers.php
+msgid "Date Search"
+msgstr "Utafutaji wa Tarehe"
+
+#: webseer.php webseer_servers.php
+msgid "Entries"
+msgstr "Maingizo"
+
+#: webseer.php
+msgid "Purge Events"
+msgstr "Safisha Matukio"
+
+#: webseer_proxies.php
+msgid "Click 'Continue' to delete the following Proxy."
+msgid_plural "Click 'Continue' to delete following Proxies."
+msgstr[0] "Bofya 'Endelea' ili kufuta Proksi ifuatayo."
+msgstr[1] "Bofya 'Endelea' ili kufuta Proksi zifuatazo."
+
+#: webseer_proxies.php
+msgid "Delete Proxy"
+msgid_plural "Delete Proxies"
+msgstr[0] "Futa Proksi"
+msgstr[1] "Futa Proksi"
+
+#: webseer_proxies.php
+#, php-format
+msgid "Proxy [edit: %s]"
+msgstr "Proksi [hariri: %s]"
+
+#: webseer_proxies.php
+msgid "Proxy [new]"
+msgstr "Proksi [mpya]"
+
+#: webseer_proxies.php
+msgid "Ports (http/https)"
+msgstr "Malango (http/https)"
+
+#: webseer_proxies.php
+msgid "Username"
+msgstr "Jina la mtumiaji"
+
+#: webseer_proxies.php
+msgid "Not Set"
+msgstr "Haijawekwa"
+
+#: webseer_proxies.php
+msgid "Webseer Proxy Management"
+msgstr "Usimamizi wa Proksi ya Webseer"
+
+#: webseer_servers.php
+msgid "Click 'Continue' to Delete the following Server."
+msgid_plural "Click 'Continue' to Delete following Servers."
+msgstr[0] "Bofya 'Endelea' ili kufuta Seva ifuatayo."
+msgstr[1] "Bofya 'Endelea' ili kufuta Seva zifuatazo."
+
+#: webseer_servers.php
+msgid "Delete Server"
+msgid_plural "Delete Servers"
+msgstr[0] "Futa Seva"
+msgstr[1] "Futa Seva"
+
+#: webseer_servers.php
+msgid "Click 'Continue' to Disable the following Server."
+msgid_plural "Click 'Continue' to Disable following Servers."
+msgstr[0] "Bofya 'Endelea' ili kuzima Seva ifuatayo."
+msgstr[1] "Bofya 'Endelea' ili kuzima Seva zifuatazo."
+
+#: webseer_servers.php
+msgid "Disable Server"
+msgid_plural "Disable Servers"
+msgstr[0] "Zima Seva"
+msgstr[1] "Zima Seva"
+
+#: webseer_servers.php
+msgid "Click 'Continue' to Enable the following Server."
+msgid_plural "Click 'Continue' to Enable following Servers."
+msgstr[0] "Bofya 'Endelea' ili kuwasha Seva ifuatayo."
+msgstr[1] "Bofya 'Endelea' ili kuwasha Seva zifuatazo."
+
+#: webseer_servers.php
+msgid "No Events in History"
+msgstr "Hakuna Matukio katika Historia"
+
+#: webseer_servers.php
+msgid "Master"
+msgstr "Kuu"
+
+#: webseer_servers.php
+msgid "This Host"
+msgstr "Kipangishi Hiki"
+
+#: webseer_servers.php
+msgid "Edit Server"
+msgstr "Hariri Seva"
+
+#: webseer_servers.php
+msgid "View Server History"
+msgstr "Tazama Historia ya Seva"
+
+#: webseer_servers.php
+msgid "No"
+msgstr "Hapana"
+
+#: webseer_servers.php
+msgid "Yes"
+msgstr "Ndiyo"
+
+#: webseer_servers.php
+msgid "Webseer Servers"
+msgstr "Seva za Webseer"
+
+#: webseer_servers.php
+msgid "Triggered"
+msgstr "Imechochewa"
+
+#: webseer_servers.php
+msgid "Webseer Server History"
+msgstr "Historia ya Seva ya Webseer"
+

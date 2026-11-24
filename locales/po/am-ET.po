@@ -1,0 +1,726 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR The Cacti Group
+# This file is distributed under the same license as the Cacti package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Cacti\n"
+"Report-Msgid-Bugs-To: developers@cacti.net\n"
+"POT-Creation-Date: 2026-09-28 16:09-0400\n"
+"PO-Revision-Date: 2026-11-24 19:00+0000\n"
+"Last-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\n"
+"Language-Team: Amharic\n"
+"Language: am-ET\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: includes/arrays.php webseer_servers.php
+#, php-format
+msgid "%d Minute"
+msgstr "%d ደቂቃ"
+
+#: includes/arrays.php webseer_servers.php
+#, php-format
+msgid "%d Minutes"
+msgstr "%d ደቂቃዎች"
+
+#: includes/arrays.php webseer_servers.php
+#, php-format
+msgid "%d Seconds"
+msgstr "%d ሰከንዶች"
+
+#: includes/arrays.php
+msgid "Delete"
+msgstr "ሰርዝ"
+
+#: includes/arrays.php
+msgid "Disable"
+msgstr "አሰናክል"
+
+#: includes/arrays.php
+msgid "Enable"
+msgstr "አንቃ"
+
+#: includes/arrays.php
+msgid "Duplicate"
+msgstr "አባዛ"
+
+#: includes/arrays.php webseer.php webseer_proxies.php webseer_servers.php
+msgid "Name"
+msgstr "ስም"
+
+#: includes/arrays.php
+msgid "A Useful Name for this Proxy."
+msgstr "ለዚህ Proxy ጠቃሚ ስም።"
+
+#: includes/arrays.php
+msgid "New Proxy"
+msgstr "አዲስ ፕሮክሲ"
+
+#: includes/arrays.php webseer_proxies.php
+msgid "Hostname"
+msgstr "የአስተናጋጅ ስም"
+
+#: includes/arrays.php
+msgid "The Proxy Hostname."
+msgstr "የተኪ (Proxy) አስተናጋጅ ስም።"
+
+#: includes/arrays.php
+msgid "HTTP Port"
+msgstr "የHTTP ወደብ"
+
+#: includes/arrays.php
+msgid "The HTTP Proxy Port."
+msgstr "የHTTP ተኪ ወደብ።"
+
+#: includes/arrays.php
+msgid "HTTPS Port"
+msgstr "የHTTPS ወደብ"
+
+#: includes/arrays.php
+msgid "The HTTPS Proxy Port."
+msgstr "የHTTPS ተኪ ወደብ።"
+
+#: includes/arrays.php
+msgid "User Name"
+msgstr "የተጠቃሚ ስም"
+
+#: includes/arrays.php
+msgid "The user to use to authenticate with the Proxy if any."
+msgstr "ካለ ከProxy ጋር ለማረጋገጥ የሚያገለግል ተጠቃሚ።"
+
+#: includes/arrays.php
+msgid "Password"
+msgstr "የይለፍ ቃል"
+
+#: includes/arrays.php
+msgid "The user password to use to authenticate with the Proxy if any."
+msgstr "ካለ ከProxy ጋር ለማረጋገጥ የሚያገለግል የተጠቃሚ የይለፍ ቃል።"
+
+#: includes/arrays.php
+msgid "General Settings"
+msgstr "አጠቃላይ ቅንብሮች"
+
+#: includes/arrays.php
+msgid "Display Name of this server"
+msgstr "የዚህ አገልጋይ የሚታይ ስም"
+
+#: includes/arrays.php webseer_servers.php
+msgid "Enable Server"
+msgid_plural "Enable Servers"
+msgstr[0] "አገልጋይ አንቃ"
+msgstr[1] "አገልጋዮችን አንቃ"
+
+#: includes/arrays.php
+msgid "Uncheck this box to disabled this server from checking urls."
+msgstr "ይህ አገልጋይ URLዎችን እንዳይፈትሽ ለማሰናከል የዚህን ሳጥን ምልክት ያንሱ።"
+
+#: includes/arrays.php
+msgid "Is this server the local server?"
+msgstr "ይህ አገልጋይ የአካባቢ አገልጋይ ነው?"
+
+#: includes/arrays.php
+msgid "Check this box if the current server you are connected to is this entry."
+msgstr "አሁን የተገናኙበት አገልጋይ ይህ ግቤት ከሆነ ይህን ሳጥን ይምረጡ።"
+
+#: includes/arrays.php
+msgid "Master Server"
+msgstr "ዋና አገልጋይ"
+
+#: includes/arrays.php
+msgid "Sets this server to the Master server.  The Master server handles all Email operations"
+msgstr "ይህን አገልጋይ እንደ ዋና አገልጋይ ያዘጋጃል። ዋናው አገልጋይ ሁሉንም የኢሜይል ክንውኖች ያስተናግዳል"
+
+#: includes/arrays.php webseer_servers.php
+msgid "IP Address"
+msgstr "የIP አድራሻ"
+
+#: includes/arrays.php
+msgid "IP Address to connect to this server"
+msgstr "ከዚህ አገልጋይ ጋር ለመገናኘት የሚያገለግል IP አድራሻ"
+
+#: includes/arrays.php webseer.php webseer_servers.php
+msgid "URL"
+msgstr "URL"
+
+#: includes/arrays.php
+msgid "This is the URL to connect to remote.php on this server."
+msgstr "ይህ በዚህ አገልጋይ ላይ ከremote.php ጋር ለመገናኘት የሚያገለግል URL ነው።"
+
+#: includes/arrays.php webseer_servers.php
+msgid "Location"
+msgstr "ቦታ"
+
+#: includes/arrays.php
+msgid "Location of this server"
+msgstr "የዚህ አገልጋይ መገኛ"
+
+#: includes/arrays.php
+msgid "Service Check Name"
+msgstr "የአገልግሎት ፍተሻ ስም"
+
+#: includes/arrays.php
+msgid "The name that is displayed for this Service Check, and is included in any Alert notifications."
+msgstr "ለዚህ የአገልግሎት ፍተሻ የሚታየው እና በማንኛውም የማንቂያ ማሳወቂያዎች ውስጥ የሚካተተው ስም።"
+
+#: includes/arrays.php webseer.php
+msgid "Enable Service Check"
+msgstr "የአገልግሎት ፍተሻን አንቃ"
+
+#: includes/arrays.php
+msgid "Uncheck this box to disabled this url from being checked."
+msgstr "ይህ URL እንዳይፈተሽ ለማሰናከል የዚህን ሳጥን ምልክት ያንሱ።"
+
+#: includes/arrays.php
+msgid "The URL to Monitor"
+msgstr "ክትትል የሚደረግበት URL"
+
+#: includes/arrays.php
+msgid "Enter an IP address to connect to.  Leaving blank will use DNS Resolution instead."
+msgstr "የሚገናኙበትን IP አድራሻ ያስገቡ።  ባዶ መተው በምትኩ DNS አፈታትን ይጠቀማል።"
+
+#: includes/arrays.php
+msgid "Proxy Server"
+msgstr "ተኪ አገልጋይ"
+
+#: includes/arrays.php
+msgid "If this connection text requires a proxy, select it here.  Otherwise choose 'None'."
+msgstr "ይህ የግንኙነት ጽሑፍ ፕሮክሲ የሚፈልግ ከሆነ፣ እዚህ ይምረጡት። አለበለዚያ 'None' ይምረጡ።"
+
+#: includes/arrays.php webseer.php
+msgid "None"
+msgstr "ምንም"
+
+#: includes/arrays.php webseer.php
+msgid "Compression"
+msgstr "መጭመቅ"
+
+#: includes/arrays.php
+msgid "What compression does the server require?  Most servers should not need this, but some will not redirect properly without it."
+msgstr "አገልጋዩ ምን ዓይነት መጭመቂያ ይፈልጋል? አብዛኛዎቹ አገልጋዮች ይህን አይፈልጉም፣ ነገር ግን አንዳንዶቹ ያለ እሱ በትክክል አይመሩም።"
+
+#: includes/arrays.php
+msgid "Available Checks"
+msgstr "ያሉ ፍተሻዎች"
+
+#: includes/arrays.php
+msgid "Requires Authentication"
+msgstr "ማረጋገጫ ያስፈልገዋል"
+
+#: includes/arrays.php
+msgid "Check this box if the site will normally return a 401 Error as it requires a username and password."
+msgstr "ጣቢያው የተጠቃሚ ስም እና የይለፍ ቃል ስለሚጠይቅ በተለምዶ 401 ስህተት የሚመልስ ከሆነ ይህን ሳጥን ይምረጡ።"
+
+#: includes/arrays.php
+msgid "Check Certificate"
+msgstr "የምስክር ወረቀት አረጋግጥ"
+
+#: includes/arrays.php
+msgid "If using SSL, check this box if you want to validate the certificate. Default on, turn off if you the site uses a self-signed certificate."
+msgstr "SSLን የሚጠቀሙ ከሆነ፣ የምስክር ወረቀቱን ማረጋገጥ ከፈለጉ ይህን ሳጥን ይምረጡ። በነባሪ በርቷል፣ ጣቢያው በራሱ የተፈረመ የምስክር ወረቀት የሚጠቀም ከሆነ ያጥፉት።"
+
+#: includes/arrays.php
+msgid "Notification Timing"
+msgstr "የማሳወቂያ ጊዜ አጠባበቅ"
+
+#: includes/arrays.php
+msgid "Trigger"
+msgstr "ቀስቃሽ"
+
+#: includes/arrays.php
+msgid "How many minutes the URL must be down before it will send an alert.  After an alert is sent, in order for a 'Site Recovering' Email to be send, it must also be up this number of minutes."
+msgstr "ማንቂያ ከመላኩ በፊት URL ለስንት ደቂቃዎች መውረድ አለበት። ማንቂያ ከተላከ በኋላ 'ጣቢያ በማገገም ላይ' ኢሜይል እንዲላክ ደግሞ ለዚህን ያህል ደቂቃዎች መስራት አለበት።"
+
+#: includes/arrays.php
+msgid "Time Out"
+msgstr "የጊዜ ማለቅ"
+
+#: includes/arrays.php
+msgid "How many seconds to allow the page to timeout before reporting it as down."
+msgstr "ገጹ እንደወረደ ሪፖርት ከመደረጉ በፊት የጊዜ ማብቂያው ለስንት ሰከንዶች እንዲፈቀድ።"
+
+#: includes/arrays.php
+msgid "Verification Strings"
+msgstr "የማረጋገጫ ሕብረቁምፊዎች"
+
+#: includes/arrays.php
+msgid "Response Search String"
+msgstr "የምላሽ ፍለጋ ሕብረቁምፊ"
+
+#: includes/arrays.php
+msgid "This is the string to search for in the URL response for a live and working Web Service."
+msgstr "ይህ ቀጥታ እና በመሥራት ላይ ላለ የድር አገልግሎት በURL ምላሽ ውስጥ የሚፈለግ ሕብረቁምፊ ነው።"
+
+#: includes/arrays.php
+msgid "Response Search String - Maintenance Page"
+msgstr "የምላሽ ፍለጋ ሕብረቁምፊ - የጥገና ገጽ"
+
+#: includes/arrays.php
+msgid "This is the string to search for on the Maintenance Page.  The Service Check will check for this string if the above string is not found.  If found, it means that the Web Service is under maintenance."
+msgstr "ይህ በጥገና ገጹ ላይ የሚፈለግ ሕብረቁምፊ ነው። ከላይ ያለው ሕብረቁምፊ ካልተገኘ የአገልግሎት ፍተሻው ይህን ሕብረቁምፊ ይፈትሻል። ከተገኘ የድር አገልግሎቱ በጥገና ላይ ነው ማለት ነው።"
+
+#: includes/arrays.php
+msgid "Response Search String - Failed"
+msgstr "የምላሽ ፍለጋ ሕብረቁምፊ - አልተሳካም"
+
+#: includes/arrays.php
+msgid "This is the string to search for a known failure in the Web Service response.  The Service Check will only alert if this string is found, ignoring any timeout issues and the search strings above."
+msgstr "ይህ በድር አገልግሎት ምላሽ ውስጥ የታወቀ ውድቀትን ለመፈለግ የሚያገለግል ሕብረቁምፊ ነው። የአገልግሎት ፍተሻው የጊዜ ማለፊያ ችግሮችን እና ከላይ ያሉትን የፍለጋ ሕብረቁምፊዎች ችላ በማለት ይህ ሕብረቁምፊ ከተገኘ ብቻ ያሳውቃል።"
+
+#: includes/arrays.php
+msgid "Notification Settings"
+msgstr "የማሳወቂያ ቅንብሮች"
+
+#: includes/arrays.php
+msgid "Notify Format"
+msgstr "የማሳወቂያ ቅርጸት"
+
+#: includes/arrays.php
+msgid "This is the format to use when sending the notification email"
+msgstr "ይህ የማሳወቂያ ኢሜይሉን በሚልኩበት ጊዜ የሚጠቀሙበት ቅርጸት ነው"
+
+#: includes/arrays.php
+msgid "Notification List"
+msgstr "የማሳወቂያ ዝርዝር"
+
+#: includes/arrays.php
+msgid "Use this Notification List for those to be notified when this website goes down."
+msgstr "ይህ ድረ-ገጽ ሲቆም ማሳወቂያ ለሚደርሳቸው ሰዎች ይህን የማሳወቂያ ዝርዝር ይጠቀሙ።"
+
+#: includes/arrays.php
+msgid "Notify Accounts"
+msgstr "መለያዎችን አሳውቅ"
+
+#: includes/arrays.php
+msgid "This is a listing of accounts that will be notified when this website goes down."
+msgstr "ይህ ድር ጣቢያ ሲቋረጥ ማሳወቂያ የሚደርሳቸው መለያዎች ዝርዝር ነው።"
+
+#: includes/arrays.php
+msgid "Extra Alert Emails"
+msgstr "ተጨማሪ የማንቂያ ኢሜይሎች"
+
+#: includes/arrays.php
+msgid "You may specify here extra Emails to receive alerts for this URL (comma separated)"
+msgstr "ለዚህ URL ማንቂያዎችን የሚቀበሉ ተጨማሪ ኢሜይሎችን እዚህ መግለጽ ይችላሉ (በኮማ የተለዩ)"
+
+#: includes/functions.php webseer.php
+msgid "Checks"
+msgstr "ፍተሻዎች"
+
+#: includes/functions.php webseer_servers.php
+msgid "Servers"
+msgstr "አገልጋዮች"
+
+#: includes/functions.php webseer_proxies.php
+msgid "Proxies"
+msgstr "ፕሮክሲዎች"
+
+#: includes/functions.php
+msgid "Log History"
+msgstr "የምዝግብ ታሪክ"
+
+#: poller_webseer.php
+msgid "Cacti Master"
+msgstr "Cacti ዋና (Master)"
+
+#: poller_webseer.php
+msgid "Cacti Remote Server"
+msgstr "የ Cacti የርቀት አገልጋይ"
+
+#: setup.php
+msgid "Web Service Check Admin"
+msgstr "የድር አገልግሎት ፍተሻ አስተዳዳሪ"
+
+#: setup.php
+msgid "Management"
+msgstr "አስተዳደር"
+
+#: setup.php
+msgid "Service Checks"
+msgstr "የአገልግሎት ፍተሻዎች"
+
+#: setup.php
+msgid "WebSeer Service Checks"
+msgstr "የWebSeer አገልግሎት ፍተሻዎች"
+
+#: setup.php
+msgid "Service Check Edit"
+msgstr "የአገልግሎት ፍተሻ አርትዕ"
+
+#: setup.php
+msgid "Service Check Save"
+msgstr "የአገልግሎት ፍተሻ አስቀምጥ"
+
+#: setup.php
+msgid "WebSeer Servers"
+msgstr "የWebSeer አገልጋዮች"
+
+#: setup.php
+msgid "Server Edit"
+msgstr "አገልጋይ አርትዕ"
+
+#: setup.php
+msgid "Save Server"
+msgstr "አገልጋይ አስቀምጥ"
+
+#: setup.php
+msgid "WebSeer Proxies"
+msgstr "የWebSeer ፕሮክሲዎች"
+
+#: setup.php
+msgid "Proxie Edit"
+msgstr "ፕሮክሲ አርትዕ"
+
+#: setup.php
+msgid "Save Proxy"
+msgstr "ፕሮክሲ አስቀምጥ"
+
+#: webseer.php
+msgid "Click 'Continue' to Delete the following URL."
+msgid_plural "Click 'Continue' to Delete following URLs."
+msgstr[0] "የሚከተለውን URL ለመሰረዝ 'ቀጥል' የሚለውን ጠቅ ያድርጉ።"
+msgstr[1] "የሚከተሉትን URLዎች ለመሰረዝ 'ቀጥል' የሚለውን ጠቅ ያድርጉ።"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Cancel"
+msgstr "ይቅር"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Continue"
+msgstr "ቀጥል"
+
+#: webseer.php
+msgid "Delete URL"
+msgid_plural "Delete URLs"
+msgstr[0] "URL ሰርዝ"
+msgstr[1] "URLዎችን ሰርዝ"
+
+#: webseer.php
+msgid "Click 'Continue' to Disable the following URL."
+msgid_plural "Click 'Continue' to Disable following URLs."
+msgstr[0] "የሚከተለውን URL ለማሰናከል 'ቀጥል' የሚለውን ጠቅ ያድርጉ።"
+msgstr[1] "የሚከተሉትን URLዎች ለማሰናከል 'ቀጥል' የሚለውን ጠቅ ያድርጉ።"
+
+#: webseer.php
+msgid "Disable URL"
+msgid_plural "Disable URLs"
+msgstr[0] "URL አሰናክል"
+msgstr[1] "URLዎችን አሰናክል"
+
+#: webseer.php
+msgid "Click 'Continue' to Enable the following URL."
+msgid_plural "Click 'Continue' to Enable following URLs."
+msgstr[0] "የሚከተለውን URL ለማንቃት 'ቀጥል' የሚለውን ጠቅ ያድርጉ።"
+msgstr[1] "የሚከተሉትን URLዎች ለማንቃት 'ቀጥል' የሚለውን ጠቅ ያድርጉ።"
+
+#: webseer.php
+msgid "Enable URL"
+msgid_plural "Enable URLs"
+msgstr[0] "URL አንቃ"
+msgstr[1] "URLዎችን አንቃ"
+
+#: webseer.php
+msgid "Click 'Continue' to Duplicate the following URL."
+msgid_plural "Click 'Continue' to Duplicate following URLs."
+msgstr[0] "የሚከተለውን URL ለማባዛት 'ቀጥል' የሚለውን ጠቅ ያድርጉ።"
+msgstr[1] "የሚከተሉትን URLዎች ለማባዛት 'ቀጥል' የሚለውን ጠቅ ያድርጉ።"
+
+#: webseer.php
+msgid "Duplicate URL"
+msgid_plural "Duplicate URLs"
+msgstr[0] "URL አባዛ"
+msgstr[1] "URLዎችን አባዛ"
+
+#: webseer.php
+#, php-format
+msgid "The Service Check history was purged for %s"
+msgstr "ለ %s የአገልግሎት ፍተሻ ታሪክ ጸድቷል"
+
+#: webseer.php webseer_servers.php
+#, php-format
+msgid "Query [edit: %s]"
+msgstr "መጠይቅ [አርትዕ: %s]"
+
+#: webseer.php webseer_servers.php
+msgid "Query [new]"
+msgstr "መጠይቅ [አዲስ]"
+
+#: webseer.php
+msgid "No Users Selected"
+msgstr "ምንም ተጠቃሚዎች አልተመረጡም"
+
+#: webseer.php
+msgid "Users Selected"
+msgstr "የተመረጡ ተጠቃሚዎች"
+
+#: webseer.php
+msgid "All Users Selected"
+msgstr "ሁሉም ተጠቃሚዎች ተመርጠዋል"
+
+#: webseer.php
+msgid "All"
+msgstr "ሁሉም"
+
+#: webseer.php webseer_proxies.php
+msgid "Search"
+msgstr "ፈልግ"
+
+#: webseer.php webseer_servers.php
+msgid "Date"
+msgstr "ቀን"
+
+#: webseer.php webseer_servers.php
+msgid "Error"
+msgstr "ስህተት"
+
+#: webseer.php webseer_servers.php
+msgid "HTTP Code"
+msgstr "የHTTP ኮድ"
+
+#: webseer.php webseer_servers.php
+msgid "DNS"
+msgstr "DNS"
+
+#: webseer.php webseer_servers.php
+msgid "Connect"
+msgstr "ተገናኝ"
+
+#: webseer.php webseer_servers.php
+msgid "Redirect"
+msgstr "አቅጣጫ ቀይር"
+
+#: webseer.php webseer_servers.php
+msgid "Total"
+msgstr "ጠቅላላ"
+
+#: webseer.php
+msgid "Urls"
+msgstr "URLዎች"
+
+#: webseer.php
+msgid "Service Down"
+msgstr "አገልግሎት ቆሟል"
+
+#: webseer.php
+msgid "Service Restored"
+msgstr "አገልግሎት ተመልሷል"
+
+#: webseer.php
+msgid "No Service Check Events in History"
+msgstr "በታሪክ ውስጥ ምንም የአገልግሎት ፍተሻ ክስተቶች የሉም"
+
+#: webseer.php webseer_servers.php
+msgid "Actions"
+msgstr "ድርጊቶች"
+
+#: webseer.php
+msgid "Status"
+msgstr "ሁኔታ"
+
+#: webseer.php webseer_servers.php
+msgid "Enabled"
+msgstr "ነቅቷል"
+
+#: webseer.php
+msgid "Auth"
+msgstr "ማረጋገጫ"
+
+#: webseer.php
+msgid "Timeout"
+msgstr "የጊዜ ማብቂያ"
+
+#: webseer.php webseer_servers.php
+msgid "Last Check"
+msgstr "የመጨረሻ ፍተሻ"
+
+#: webseer.php
+msgid "Edit Service Check"
+msgstr "የአገልግሎት ፍተሻ አርትዕ"
+
+#: webseer.php
+msgid "Disable Service Check"
+msgstr "የአገልግሎት ፍተሻን አሰናክል"
+
+#: webseer.php
+msgid "View Service Check History"
+msgstr "የአገልግሎት ፍተሻ ታሪክን ተመልከት"
+
+#: webseer.php
+#, php-format
+msgid "DNS: Server %s - A Record for %s"
+msgstr "DNS፦ አገልጋይ %s - ለ%s የA መዝገብ"
+
+#: webseer.php
+msgid "N/A"
+msgstr "አይመለከትም"
+
+#: webseer.php webseer_servers.php
+msgid "Down"
+msgstr "የወረደ"
+
+#: webseer.php webseer_servers.php
+msgid "Up"
+msgstr "በመስመር ላይ"
+
+#: webseer.php webseer_servers.php
+msgid "Disabled"
+msgstr "ተሰናክሏል"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "No Servers Found"
+msgstr "ምንም አገልጋዮች አልተገኙም"
+
+#: webseer.php
+msgid "Webseer Service Checks"
+msgstr "የWebseer አገልግሎት ፍተሻዎች"
+
+#: webseer.php webseer_servers.php
+msgid "State"
+msgstr "ግዛት"
+
+#: webseer.php webseer_servers.php
+msgid "Any"
+msgstr "ማንኛውም"
+
+#: webseer.php webseer_servers.php
+msgid "Refresh"
+msgstr "አድስ"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Default"
+msgstr "ነባሪ"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Go"
+msgstr "ሂድ"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Clear"
+msgstr "አጽዳ"
+
+#: webseer.php
+msgid "Webseer Service Check History"
+msgstr "የWebseer አገልግሎት ፍተሻ ታሪክ"
+
+#: webseer.php webseer_servers.php
+msgid "Date Search"
+msgstr "የቀን ፍለጋ"
+
+#: webseer.php webseer_servers.php
+msgid "Entries"
+msgstr "ግቤቶች"
+
+#: webseer.php
+msgid "Purge Events"
+msgstr "ክስተቶችን አጥፋ"
+
+#: webseer_proxies.php
+msgid "Click 'Continue' to delete the following Proxy."
+msgid_plural "Click 'Continue' to delete following Proxies."
+msgstr[0] "የሚከተለውን ፕሮክሲ ለመሰረዝ 'ቀጥል' የሚለውን ጠቅ ያድርጉ።"
+msgstr[1] "የሚከተሉትን ፕሮክሲዎች ለመሰረዝ 'ቀጥል' የሚለውን ጠቅ ያድርጉ።"
+
+#: webseer_proxies.php
+msgid "Delete Proxy"
+msgid_plural "Delete Proxies"
+msgstr[0] "ፕሮክሲ ሰርዝ"
+msgstr[1] "ፕሮክሲዎችን ሰርዝ"
+
+#: webseer_proxies.php
+#, php-format
+msgid "Proxy [edit: %s]"
+msgstr "ፕሮክሲ [አርትዕ: %s]"
+
+#: webseer_proxies.php
+msgid "Proxy [new]"
+msgstr "ፕሮክሲ [አዲስ]"
+
+#: webseer_proxies.php
+msgid "Ports (http/https)"
+msgstr "ወደቦች (http/https)"
+
+#: webseer_proxies.php
+msgid "Username"
+msgstr "የተጠቃሚ ስም"
+
+#: webseer_proxies.php
+msgid "Not Set"
+msgstr "አልተዘጋጀም"
+
+#: webseer_proxies.php
+msgid "Webseer Proxy Management"
+msgstr "የWebseer ፕሮክሲ አስተዳደር"
+
+#: webseer_servers.php
+msgid "Click 'Continue' to Delete the following Server."
+msgid_plural "Click 'Continue' to Delete following Servers."
+msgstr[0] "የሚከተለውን አገልጋይ ለመሰረዝ 'ቀጥል' የሚለውን ጠቅ ያድርጉ።"
+msgstr[1] "የሚከተሉትን አገልጋዮች ለመሰረዝ 'ቀጥል' የሚለውን ጠቅ ያድርጉ።"
+
+#: webseer_servers.php
+msgid "Delete Server"
+msgid_plural "Delete Servers"
+msgstr[0] "አገልጋይ ሰርዝ"
+msgstr[1] "አገልጋዮችን ሰርዝ"
+
+#: webseer_servers.php
+msgid "Click 'Continue' to Disable the following Server."
+msgid_plural "Click 'Continue' to Disable following Servers."
+msgstr[0] "የሚከተለውን አገልጋይ ለማሰናከል 'ቀጥል' የሚለውን ጠቅ ያድርጉ።"
+msgstr[1] "የሚከተሉትን አገልጋዮች ለማሰናከል 'ቀጥል' የሚለውን ጠቅ ያድርጉ።"
+
+#: webseer_servers.php
+msgid "Disable Server"
+msgid_plural "Disable Servers"
+msgstr[0] "አገልጋይ አሰናክል"
+msgstr[1] "አገልጋዮችን አሰናክል"
+
+#: webseer_servers.php
+msgid "Click 'Continue' to Enable the following Server."
+msgid_plural "Click 'Continue' to Enable following Servers."
+msgstr[0] "የሚከተለውን አገልጋይ ለማንቃት 'ቀጥል' የሚለውን ጠቅ ያድርጉ።"
+msgstr[1] "የሚከተሉትን አገልጋዮች ለማንቃት 'ቀጥል' የሚለውን ጠቅ ያድርጉ።"
+
+#: webseer_servers.php
+msgid "No Events in History"
+msgstr "በታሪክ ውስጥ ምንም ክስተቶች የሉም"
+
+#: webseer_servers.php
+msgid "Master"
+msgstr "ዋና"
+
+#: webseer_servers.php
+msgid "This Host"
+msgstr "ይህ አስተናጋጅ"
+
+#: webseer_servers.php
+msgid "Edit Server"
+msgstr "አገልጋይ አርትዕ"
+
+#: webseer_servers.php
+msgid "View Server History"
+msgstr "የአገልጋይ ታሪክን ተመልከት"
+
+#: webseer_servers.php
+msgid "No"
+msgstr "አይ"
+
+#: webseer_servers.php
+msgid "Yes"
+msgstr "አዎ"
+
+#: webseer_servers.php
+msgid "Webseer Servers"
+msgstr "የWebseer አገልጋዮች"
+
+#: webseer_servers.php
+msgid "Triggered"
+msgstr "ተቀስቅሷል"
+
+#: webseer_servers.php
+msgid "Webseer Server History"
+msgstr "የWebseer አገልጋይ ታሪክ"
+
