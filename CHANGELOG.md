@@ -5,7 +5,7 @@ installation guidance and source-checked behavior.
 
 --- 3.3 ---
 
-* issue#103: Fix misspelled `'webeer'` gettext text domain to `'webseer'` for `'Log History'` tabs in `includes/functions.php` and add a test that every translation helper call passes the plugin text domain
+* issue#103: Fix misspelled `'webeer'` gettext text domain to `'webseer'` for `'Log History'` tabs in `includes/functions.php` and add a test that every translation helper call passes the plugin text domain, and remove orphan `locales/LC_MESSAGES/ka.mo`
 * dev: Run the CI poller with the shared runner group so RRD files and structured directories pass permission verification
 * security: Replace the confirmation-page Cancel buttons' inline `onClick='cactiReturnTo()'` with the CSP-safe `cactiReturnTo` class so the pages no longer trip Cacti's Content-Security-Policy script-src-attr directive; see the README for the one-time `applySkin()` snippet needed when running Cacti below 1.2.31 (1.2.31+ binds the class automatically)
 * compat: Lower the minimum Cacti compatibility floor from 1.2.32 to 1.2.29
