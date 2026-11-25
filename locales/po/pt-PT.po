@@ -4,34 +4,22 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr ""
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2026-09-28 16:09-0400\n"
-"PO-Revision-Date: 2021-01-18 18:17+0000\n"
-"Last-Translator: Luís Silva <luis.m.ribeiro.silva@tecnico.ulisboa.pt>\n"
-"Language-Team: Portuguese (Portugal) <http://translate.cacti.net/projects/cacti/webseer/pt_PT/>\n"
-"Language: pt-PT\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 4.3.2\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-28 16:09-0400\nPO-Revision-Date: 2026-11-25 02:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Portuguese (Portugal) <https://translate.cacti.net/projects/cacti/webseer/pt_PT/>\nLanguage: pt-PT\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\nX-Generator: Weblate 5.11.4\n"
 
 #: includes/arrays.php webseer_servers.php
-#, fuzzy, php-format
+#, php-format
 msgid "%d Minute"
 msgstr "%d Minuto"
 
 #: includes/arrays.php webseer_servers.php
-#, fuzzy, php-format
+#, php-format
 msgid "%d Minutes"
 msgstr "%d minutos"
 
 #: includes/arrays.php webseer_servers.php
-#, fuzzy, php-format
+#, php-format
 msgid "%d Seconds"
-msgstr "% d segundos"
+msgstr "%d Segundos"
 
 #: includes/arrays.php
 msgid "Delete"
@@ -54,12 +42,10 @@ msgid "Name"
 msgstr "Nome"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "A Useful Name for this Proxy."
 msgstr "Um nome útil para este proxy."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "New Proxy"
 msgstr "Novo Proxy"
 
@@ -68,56 +54,48 @@ msgid "Hostname"
 msgstr "Hostname"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The Proxy Hostname."
-msgstr "O nome do host proxy."
+msgstr "O nome de anfitrião do proxy."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "HTTP Port"
-msgstr "Código HTTP"
+msgstr "Porta HTTP"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The HTTP Proxy Port."
-msgstr "A porta proxy HTTP."
+msgstr "A porta do proxy HTTP."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "HTTPS Port"
-msgstr "Código HTTP"
+msgstr "Porta HTTPS"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The HTTPS Proxy Port."
-msgstr "A porta proxy HTTPS."
+msgstr "A porta do proxy HTTPS."
 
 #: includes/arrays.php
 msgid "User Name"
 msgstr "Utilizador"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The user to use to authenticate with the Proxy if any."
-msgstr "O usuário a ser usado para autenticação com o Proxy, se houver."
+msgstr "O utilizador a utilizar para autenticação com o Proxy, se existir."
 
 #: includes/arrays.php
 msgid "Password"
 msgstr "Senha"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The user password to use to authenticate with the Proxy if any."
-msgstr "A senha do usuário a ser usada para autenticação no Proxy, se houver."
+msgstr "A palavra-passe do utilizador a utilizar para autenticação com o Proxy, se existir."
 
 #: includes/arrays.php
 msgid "General Settings"
 msgstr "Configurações Gerais"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Display Name of this server"
-msgstr "Nome de exibição deste servidor"
+msgstr "Nome a apresentar deste servidor"
 
 #: includes/arrays.php webseer_servers.php
 #, fuzzy
@@ -127,326 +105,268 @@ msgstr[0] "Ativar servidor"
 msgstr[1] "Ativar servidor"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Uncheck this box to disabled this server from checking urls."
-msgstr "Desmarque esta caixa para desabilitar este servidor de marcar urls."
+msgstr "Desmarque esta caixa para desativar a verificação de URLs por este servidor."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Is this server the local server?"
 msgstr "Este servidor é o servidor local?"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Check this box if the current server you are connected to is this entry."
-msgstr "Marque esta caixa se o servidor atual ao qual você está conectado for esta entrada."
+msgstr "Marque esta caixa se o servidor atual ao qual está ligado corresponder a esta entrada."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Master Server"
-msgstr "Servidor Master"
+msgstr "Servidor mestre"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Sets this server to the Master server.  The Master server handles all Email operations"
-msgstr "Define este servidor para o servidor Master.  O servidor Master trata de todas as operações de e-mail"
+msgstr "Define este servidor como o servidor Master. O servidor Master trata de todas as operações de e-mail"
 
 #: includes/arrays.php webseer_servers.php
 msgid "IP Address"
 msgstr "Endereço de IP"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "IP Address to connect to this server"
-msgstr "Endereço IP para conectar a este servidor"
+msgstr "Endereço IP para ligar a este servidor"
 
 #: includes/arrays.php webseer.php webseer_servers.php
 msgid "URL"
 msgstr "URL"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "This is the URL to connect to remote.php on this server."
-msgstr "Este é o URL para se conectar ao remote.php neste servidor."
+msgstr "Este é o URL para estabelecer ligação a remote.php neste servidor."
 
 #: includes/arrays.php webseer_servers.php
 msgid "Location"
 msgstr "Localização"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Location of this server"
 msgstr "Localização deste servidor"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Service Check Name"
-msgstr "Nome da Verificação de Serviço"
+msgstr "Nome da verificação de serviço"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The name that is displayed for this Service Check, and is included in any Alert notifications."
-msgstr "O nome que é exibido para esta Verificação de serviço e está incluído em quaisquer notificações de alerta."
+msgstr "O nome apresentado para esta verificação de serviço e incluído em quaisquer notificações de alerta."
 
 #: includes/arrays.php webseer.php
-#, fuzzy
 msgid "Enable Service Check"
 msgstr "Ativar verificação de serviço"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Uncheck this box to disabled this url from being checked."
-msgstr "Desmarque esta caixa para desabilitar este aplicativo de ser marcado."
+msgstr "Desmarque esta caixa para desativar a verificação deste URL."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The URL to Monitor"
-msgstr "O URL para Monitorar"
+msgstr "O URL a monitorizar"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Enter an IP address to connect to.  Leaving blank will use DNS Resolution instead."
-msgstr "Digite um endereço IP para se conectar.  Deixando em branco usará Resolução DNS em vez disso."
+msgstr "Introduza um endereço IP para estabelecer ligação. Se deixar em branco, será utilizada a resolução DNS."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Proxy Server"
-msgstr "Servidor Master"
+msgstr "Servidor Proxy"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "If this connection text requires a proxy, select it here.  Otherwise choose 'None'."
-msgstr "Se este texto de conexão requer um proxy, selecione-o aqui. Caso contrário, escolha 'Nenhum'."
+msgstr "Se este texto de ligação necessitar de um proxy, selecione-o aqui. Caso contrário, escolha 'Nenhum'."
 
 #: includes/arrays.php webseer.php
 msgid "None"
 msgstr "Nenhum"
 
 #: includes/arrays.php webseer.php
-#, fuzzy
 msgid "Compression"
 msgstr "Compressão"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "What compression does the server require?  Most servers should not need this, but some will not redirect properly without it."
-msgstr "Qual compactação o servidor exige? A maioria dos servidores não deve precisar disso, mas alguns não redirecionarão corretamente sem ele."
+msgstr "Que compressão exige o servidor? A maioria dos servidores não deverá precisar disto, mas alguns não redirecionarão corretamente sem ela."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Available Checks"
-msgstr "Cheques Disponíveis"
+msgstr "Verificações disponíveis"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Requires Authentication"
-msgstr "Requer Autenticação"
+msgstr "Requer autenticação"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Check this box if the site will normally return a 401 Error as it requires a username and password."
-msgstr "Marque esta caixa se o site normalmente retornará um Erro 401, pois requer um nome de usuário e senha."
+msgstr "Marque esta caixa se o site devolver normalmente um erro 401 por requerer um nome de utilizador e palavra-passe."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Check Certificate"
 msgstr "Verificar certificado"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "If using SSL, check this box if you want to validate the certificate. Default on, turn off if you the site uses a self-signed certificate."
-msgstr "Se estiver usando SSL, marque esta caixa se quiser validar o certificado. Default on, desligar se o site usa um certificado autoassinado."
+msgstr "Se estiver a utilizar SSL, assinale esta caixa se pretender validar o certificado. Ativado por predefinição; desative se o site utilizar um certificado autoassinado."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Notification Timing"
-msgstr "Tempo de Notificação"
+msgstr "Temporização das notificações"
 
 #: includes/arrays.php
 msgid "Trigger"
 msgstr "Desencadear"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "How many minutes the URL must be down before it will send an alert.  After an alert is sent, in order for a 'Site Recovering' Email to be send, it must also be up this number of minutes."
-msgstr "Quantos minutos a URL deve estar desativada antes de enviar um alerta.  Após o envio de um alerta, para que um e-mail de 'Recuperação de Site' seja enviado, ele também deve ter esse número de minutos."
+msgstr "Quantos minutos o URL tem de estar inativo antes de enviar um alerta. Após o envio de um alerta, para que seja enviado um e-mail de 'Recuperação do site', tem também de permanecer ativo durante este número de minutos."
 
 #: includes/arrays.php
 msgid "Time Out"
 msgstr "Intervalo"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "How many seconds to allow the page to timeout before reporting it as down."
-msgstr "Quantos segundos para permitir que a página perca tempo antes de a reportar como desativada."
+msgstr "Quantos segundos aguardar pelo tempo limite da página antes de a reportar como inativa."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Verification Strings"
-msgstr "Strings de verificação"
+msgstr "Cadeias de Verificação"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Response Search String"
-msgstr "String de pesquisa de resposta"
+msgstr "Cadeia de pesquisa na resposta"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "This is the string to search for in the URL response for a live and working Web Service."
-msgstr "Esta é a string a ser pesquisada na resposta de URL para um Web Service ativo e funcional."
+msgstr "Esta é a cadeia de texto a pesquisar na resposta do URL para um serviço Web ativo e em funcionamento."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Response Search String - Maintenance Page"
-msgstr "Cadeia de pesquisa de respostas - Página de manutenção"
+msgstr "Cadeia de pesquisa na resposta - Página de manutenção"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "This is the string to search for on the Maintenance Page.  The Service Check will check for this string if the above string is not found.  If found, it means that the Web Service is under maintenance."
-msgstr "Esta é a cadeia a ser pesquisada na Página de manutenção.  A Verificação de serviço verificará esta string se a string acima não for encontrada.  Se encontrado, significa que o Serviço Web está em manutenção."
+msgstr "Esta é a cadeia de texto a pesquisar na página de manutenção. A verificação de serviço verificará esta cadeia se a cadeia acima não for encontrada. Se encontrada, significa que o serviço Web está em manutenção."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Response Search String - Failed"
-msgstr "String de pesquisa de resposta - Falha"
+msgstr "Cadeia de pesquisa na resposta - Falha"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "This is the string to search for a known failure in the Web Service response.  The Service Check will only alert if this string is found, ignoring any timeout issues and the search strings above."
-msgstr "Esta é a string para procurar por uma falha conhecida na resposta do Web Service.  A Verificação de serviço só alertará se esta string for encontrada, ignorando qualquer problema de timeout e as cadeias de pesquisa acima."
+msgstr "Esta é a cadeia de texto a pesquisar para detetar uma falha conhecida na resposta do serviço Web. A verificação de serviço só alertará se esta cadeia for encontrada, ignorando quaisquer problemas de tempo limite e as cadeias de pesquisa acima."
 
 #: includes/arrays.php
 msgid "Notification Settings"
 msgstr "Configurações das Notificações"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Notify Format"
-msgstr "Notificar contas"
+msgstr "Formato de notificação"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "This is the format to use when sending the notification email"
-msgstr "Este é o formato a ser usado ao enviar o e-mail de notificação"
+msgstr "Este é o formato a utilizar ao enviar o e-mail de notificação"
 
 #: includes/arrays.php
-#, fuzzy
-#| msgid "Notification Settings"
 msgid "Notification List"
-msgstr "Configurações das Notificações"
+msgstr "Lista de notificações"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Use this Notification List for those to be notified when this website goes down."
-msgstr "Esta é uma lista dos clientes que serão notificados quando este Web site vai para baixo."
+msgstr "Utilize esta Lista de Notificações para os destinatários a notificar quando este website ficar inativo."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Notify Accounts"
-msgstr "Notificar contas"
+msgstr "Contas a notificar"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "This is a listing of accounts that will be notified when this website goes down."
-msgstr "Esta é uma lista dos clientes que serão notificados quando este Web site vai para baixo."
+msgstr "Esta é uma lista das contas que serão notificadas quando este website ficar inativo."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Extra Alert Emails"
-msgstr "Emails de Alerta Extra"
+msgstr "E-mails de alerta adicionais"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "You may specify here extra Emails to receive alerts for this URL (comma separated)"
-msgstr "Você pode especificar aqui Emails extras para receber alertas para esta URL (separados por vírgulas)"
+msgstr "Pode especificar aqui e-mails adicionais para receber alertas deste URL (separados por vírgulas)"
 
 #: includes/functions.php webseer.php
-#, fuzzy
 msgid "Checks"
-msgstr "Cheques"
+msgstr "Verificações"
 
 #: includes/functions.php webseer_servers.php
 msgid "Servers"
 msgstr "Servidores"
 
 #: includes/functions.php webseer_proxies.php
-#, fuzzy
 msgid "Proxies"
 msgstr "Proxies"
 
 #: includes/functions.php
-#, fuzzy
 msgid "Log History"
-msgstr "Ver histórico"
+msgstr "Histórico de registos"
 
 #: poller_webseer.php
-#, fuzzy
 msgid "Cacti Master"
-msgstr "Mestre de Cactos"
+msgstr "Cacti Principal"
 
 #: poller_webseer.php
-#, fuzzy
 msgid "Cacti Remote Server"
-msgstr "Cacti Remote Server"
+msgstr "Servidor remoto do Cacti"
 
 #: setup.php
-#, fuzzy
 msgid "Web Service Check Admin"
-msgstr "Web Service Check Admin"
+msgstr "Administração de verificações de serviços Web"
 
 #: setup.php
 msgid "Management"
 msgstr "Gestão"
 
 #: setup.php
-#, fuzzy
 msgid "Service Checks"
-msgstr "Verificações de serviços Web"
+msgstr "Verificações de serviço"
 
 #: setup.php
-#, fuzzy
 msgid "WebSeer Service Checks"
 msgstr "Verificações de serviço WebSeer"
 
 #: setup.php
-#, fuzzy
 msgid "Service Check Edit"
 msgstr "Editar verificação de serviço"
 
 #: setup.php
-#, fuzzy
 msgid "Service Check Save"
-msgstr "Nome da Verificação de Serviço"
+msgstr "Guardar verificação de serviço"
 
 #: setup.php
-#, fuzzy
 msgid "WebSeer Servers"
 msgstr "Servidores WebSeer"
 
 #: setup.php
-#, fuzzy
 msgid "Server Edit"
-msgstr "Edição do Servidor"
+msgstr "Edição do servidor"
 
 #: setup.php
-#, fuzzy
 msgid "Save Server"
-msgstr "Ativar servidor"
+msgstr "Guardar servidor"
 
 #: setup.php
-#, fuzzy
 msgid "WebSeer Proxies"
-msgstr "Servidores WebSeer"
+msgstr "Proxies WebSeer"
 
 #: setup.php
-#, fuzzy
 msgid "Proxie Edit"
-msgstr "Proxies"
+msgstr "Edição de proxy"
 
 #: setup.php
-#, fuzzy
 msgid "Save Proxy"
-msgstr "Novo Proxy"
+msgstr "Guardar proxy"
 
 #: webseer.php
 #, fuzzy
@@ -519,32 +439,28 @@ msgstr[1] "Duplicar"
 #: webseer.php
 #, php-format
 msgid "The Service Check history was purged for %s"
-msgstr ""
+msgstr "O histórico de verificação de serviço foi purgado para %s"
 
 #: webseer.php webseer_servers.php
-#, fuzzy, php-format
+#, php-format
 msgid "Query [edit: %s]"
 msgstr "Consulta [editar: %s]"
 
 #: webseer.php webseer_servers.php
-#, fuzzy
 msgid "Query [new]"
 msgstr "Consulta [nova]"
 
 #: webseer.php
-#, fuzzy
 msgid "No Users Selected"
-msgstr "Nenhum usuário selecionado"
+msgstr "Nenhum utilizador selecionado"
 
 #: webseer.php
-#, fuzzy
 msgid "Users Selected"
-msgstr "Usuários selecionados"
+msgstr "Utilizadores selecionados"
 
 #: webseer.php
-#, fuzzy
 msgid "All Users Selected"
-msgstr "Todos os usuários selecionados"
+msgstr "Todos os utilizadores selecionados"
 
 #: webseer.php
 msgid "All"
@@ -563,12 +479,10 @@ msgid "Error"
 msgstr "Erro"
 
 #: webseer.php webseer_servers.php
-#, fuzzy
 msgid "HTTP Code"
 msgstr "Código HTTP"
 
 #: webseer.php webseer_servers.php
-#, fuzzy
 msgid "DNS"
 msgstr "DNS"
 
@@ -586,20 +500,19 @@ msgstr "Total"
 
 #: webseer.php
 msgid "Urls"
-msgstr ""
+msgstr "URLs"
 
 #: webseer.php
 msgid "Service Down"
-msgstr ""
+msgstr "Serviço inativo"
 
 #: webseer.php
 msgid "Service Restored"
-msgstr ""
+msgstr "Serviço restaurado"
 
 #: webseer.php
-#, fuzzy
 msgid "No Service Check Events in History"
-msgstr "Nenhum evento na história"
+msgstr "Sem eventos de verificação de serviço no histórico"
 
 #: webseer.php webseer_servers.php
 msgid "Actions"
@@ -614,9 +527,8 @@ msgid "Enabled"
 msgstr "Activado"
 
 #: webseer.php
-#, fuzzy
 msgid "Auth"
-msgstr "Auth"
+msgstr "Autenticação"
 
 #: webseer.php
 msgid "Timeout"
@@ -627,24 +539,21 @@ msgid "Last Check"
 msgstr "Última Verificação"
 
 #: webseer.php
-#, fuzzy
 msgid "Edit Service Check"
-msgstr "Ativar verificação de serviço"
+msgstr "Editar verificação de serviço"
 
 #: webseer.php
-#, fuzzy
 msgid "Disable Service Check"
-msgstr "Ativar verificação de serviço"
+msgstr "Desativar verificação de serviço"
 
 #: webseer.php
-#, fuzzy
 msgid "View Service Check History"
-msgstr "Verificações de serviços Web"
+msgstr "Ver Histórico de Verificações de Serviços"
 
 #: webseer.php
-#, fuzzy, php-format
+#, php-format
 msgid "DNS: Server %s - A Record for %s"
-msgstr "DNS: Servidor %s - Um recorde para %s"
+msgstr "DNS: Servidor %s - Registo A para %s"
 
 #: webseer.php
 msgid "N/A"
@@ -652,23 +561,21 @@ msgstr "N/D"
 
 #: webseer.php webseer_servers.php
 msgid "Down"
-msgstr "Widget movido para baixo"
+msgstr "Inativo"
 
 #: webseer.php webseer_servers.php
 msgid "Up"
-msgstr "Procure"
+msgstr "Ativo"
 
 #: webseer.php webseer_servers.php
 msgid "Disabled"
 msgstr "Desativado"
 
 #: webseer.php webseer_proxies.php webseer_servers.php
-#, fuzzy
 msgid "No Servers Found"
-msgstr "Nenhum Servidor Encontrado"
+msgstr "Nenhum servidor encontrado"
 
 #: webseer.php
-#, fuzzy
 msgid "Webseer Service Checks"
 msgstr "Verificações de serviço WebSeer"
 
@@ -697,23 +604,20 @@ msgid "Clear"
 msgstr "Limpar"
 
 #: webseer.php
-#, fuzzy
 msgid "Webseer Service Check History"
-msgstr "Verificações de serviço WebSeer"
+msgstr "Histórico de verificações de serviço WebSeer"
 
 #: webseer.php webseer_servers.php
-#, fuzzy
-#| msgid "Search"
 msgid "Date Search"
-msgstr "Pesquisar"
+msgstr "Pesquisa por data"
 
 #: webseer.php webseer_servers.php
 msgid "Entries"
-msgstr ""
+msgstr "Registos"
 
 #: webseer.php
 msgid "Purge Events"
-msgstr ""
+msgstr "Purgar eventos"
 
 #: webseer_proxies.php
 #, fuzzy
@@ -730,19 +634,17 @@ msgstr[0] "Apagar"
 msgstr[1] "Apagar"
 
 #: webseer_proxies.php
-#, fuzzy, php-format
+#, php-format
 msgid "Proxy [edit: %s]"
-msgstr "Consulta [editar: %s]"
+msgstr "Proxy [editar: %s]"
 
 #: webseer_proxies.php
-#, fuzzy
 msgid "Proxy [new]"
-msgstr "Consulta [nova]"
+msgstr "Proxy [novo]"
 
 #: webseer_proxies.php
-#, fuzzy
 msgid "Ports (http/https)"
-msgstr "Portas (http / https)"
+msgstr "Portas (http/https)"
 
 #: webseer_proxies.php
 msgid "Username"
@@ -750,12 +652,11 @@ msgstr "Nome de utilizador"
 
 #: webseer_proxies.php
 msgid "Not Set"
-msgstr "[Conjunto de Utilizadsore]"
+msgstr "Não definido"
 
 #: webseer_proxies.php
-#, fuzzy
 msgid "Webseer Proxy Management"
-msgstr "Gestão de Servidores Webseer"
+msgstr "Gestão de proxies WebSeer"
 
 #: webseer_servers.php
 #, fuzzy
@@ -793,29 +694,24 @@ msgstr[0] "Clique em 'Continuar' para excluir o seguinte Proxy."
 msgstr[1] "Clique em 'Continuar' para excluir os proxies seguintes."
 
 #: webseer_servers.php
-#, fuzzy
 msgid "No Events in History"
-msgstr "Nenhum evento na história"
+msgstr "Sem eventos no histórico"
 
 #: webseer_servers.php
 msgid "Master"
 msgstr "Mestre"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "This Host"
-msgstr "Este Anfitrião"
+msgstr "Este anfitrião"
 
 #: webseer_servers.php
-#, fuzzy
-#| msgid "Edit Site"
 msgid "Edit Server"
-msgstr "Editar site"
+msgstr "Editar servidor"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "View Server History"
-msgstr "Ver histórico"
+msgstr "Ver Histórico do Servidor"
 
 #: webseer_servers.php
 msgid "No"
@@ -826,18 +722,16 @@ msgid "Yes"
 msgstr "Sim"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Webseer Servers"
 msgstr "Servidores WebSeer"
 
 #: webseer_servers.php
 msgid "Triggered"
-msgstr "Provocado"
+msgstr "Acionado"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Webseer Server History"
-msgstr "Servidores WebSeer"
+msgstr "Histórico de servidores WebSeer"
 
 #~ msgid "Edit Site"
 #~ msgstr "Editar site"
