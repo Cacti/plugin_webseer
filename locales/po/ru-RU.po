@@ -4,19 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr ""
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2026-09-28 16:09-0400\n"
-"PO-Revision-Date: 2024-12-06 19:24+0000\n"
-"Last-Translator: Anton Zhuravlev <baka109g@gmail.com>\n"
-"Language-Team: Russian <http://translate.cacti.net/projects/cacti/webseer/ru/>\n"
-"Language: ru-RU\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.8.1\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-28 16:09-0400\nPO-Revision-Date: 2026-11-25 02:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Russian <https://translate.cacti.net/projects/cacti/webseer/ru/>\nLanguage: ru-RU\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\nX-Generator: Weblate 5.11.4\n"
 
 #: includes/arrays.php webseer_servers.php
 #, php-format
@@ -90,25 +78,22 @@ msgid "User Name"
 msgstr "Имя Пользователя"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The user to use to authenticate with the Proxy if any."
-msgstr "Пользователь, который будет использоваться для аутентификации через прокси, если таковой имеется."
+msgstr "Имя пользователя для аутентификации на прокси-сервере (если требуется)."
 
 #: includes/arrays.php
 msgid "Password"
 msgstr "Пароль"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The user password to use to authenticate with the Proxy if any."
-msgstr "Пароль пользователя для аутентификации через прокси, если таковой имеется."
+msgstr "Пароль пользователя для аутентификации на прокси-сервере (если требуется)."
 
 #: includes/arrays.php
 msgid "General Settings"
 msgstr "Общие Настройки"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Display Name of this server"
 msgstr "Отображаемое имя этого сервера"
 
@@ -121,22 +106,18 @@ msgstr[1] "Включить сервер"
 msgstr[2] "Включить сервер"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Uncheck this box to disabled this server from checking urls."
-msgstr "Снимите этот флажок, чтобы отключить этот сервер от проверки urls."
+msgstr "Снимите этот флажок, чтобы отключить проверку URL-адресов этим сервером."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Is this server the local server?"
-msgstr "Это локальный сервер?"
+msgstr "Является ли этот сервер локальным?"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Check this box if the current server you are connected to is this entry."
-msgstr "Установите этот флажок, если текущим сервером, к которому вы подключены, является именно эта запись."
+msgstr "Установите этот флажок, если эта запись соответствует текущему серверу, к которому вы подключены."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Master Server"
 msgstr "Главный сервер"
 
@@ -149,7 +130,6 @@ msgid "IP Address"
 msgstr "IP адрес"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "IP Address to connect to this server"
 msgstr "IP-адрес для подключения к этому серверу"
 
@@ -158,57 +138,48 @@ msgid "URL"
 msgstr "URL"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "This is the URL to connect to remote.php on this server."
-msgstr "Это URL-адрес для подключения к remote.php на этом сервере."
+msgstr "URL-адрес для подключения к remote.php на этом сервере."
 
 #: includes/arrays.php webseer_servers.php
 msgid "Location"
 msgstr "Местоположение"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Location of this server"
-msgstr "Местоположение этого сервера"
+msgstr "Расположение этого сервера"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Service Check Name"
-msgstr "Имя проверки сервиса"
+msgstr "Название проверки сервиса"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The name that is displayed for this Service Check, and is included in any Alert notifications."
-msgstr "Имя, отображаемое для данной проверки обслуживания, и включенное в любые уведомления об Алерт-уведомлениях."
+msgstr "Имя, отображаемое для данной проверки службы и включаемое во все уведомления об оповещениях."
 
 #: includes/arrays.php webseer.php
-#, fuzzy
 msgid "Enable Service Check"
-msgstr "Включить проверку обслуживания"
+msgstr "Включить проверку сервиса"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Uncheck this box to disabled this url from being checked."
-msgstr "Снимите этот флажок, чтобы отключить этот урл от проверки."
+msgstr "Снимите этот флажок, чтобы отключить проверку этого URL-адреса."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The URL to Monitor"
 msgstr "URL-адрес для мониторинга"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Enter an IP address to connect to.  Leaving blank will use DNS Resolution instead."
-msgstr "Введите IP-адрес для подключения.  Если оставить пустым, то вместо этого будет использоваться DNS разрешение."
+msgstr "Введите IP-адрес для подключения. Если оставить пустым, будет использоваться разрешение DNS."
 
 #: includes/arrays.php
 msgid "Proxy Server"
 msgstr "Прокси Сервер"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "If this connection text requires a proxy, select it here.  Otherwise choose 'None'."
-msgstr "Если для этого текста подключения требуется прокси, выберите его здесь. В противном случае выберите «Нет»."
+msgstr "Если для этого подключения требуется прокси, выберите его здесь. В противном случае выберите «Нет»."
 
 #: includes/arrays.php webseer.php
 msgid "None"
@@ -219,17 +190,14 @@ msgid "Compression"
 msgstr "Сжатие"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "What compression does the server require?  Most servers should not need this, but some will not redirect properly without it."
-msgstr "Какое сжатие требуется серверу? Большинству серверов это не нужно, но некоторые без него не будут правильно перенаправлять."
+msgstr "Какое сжатие требуется серверу? Большинству серверов оно не нужно, но некоторые не будут корректно перенаправлять без него."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Available Checks"
-msgstr "Доступные чеки"
+msgstr "Доступные проверки"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Requires Authentication"
 msgstr "Требуется аутентификация"
 
@@ -242,9 +210,8 @@ msgid "Check Certificate"
 msgstr "Проверить сертификат"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "If using SSL, check this box if you want to validate the certificate. Default on, turn off if you the site uses a self-signed certificate."
-msgstr "Если вы используете SSL, отметьте этот флажок, если хотите проверить сертификат. По умолчанию включено, отключено, если вы используете самоподписной сертификат."
+msgstr "При использовании SSL установите этот флажок, чтобы проверять подлинность сертификата. По умолчанию включено; отключите, если сайт использует самоподписанный сертификат."
 
 #: includes/arrays.php
 msgid "Notification Timing"
@@ -255,53 +222,44 @@ msgid "Trigger"
 msgstr "Триггер"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "How many minutes the URL must be down before it will send an alert.  After an alert is sent, in order for a 'Site Recovering' Email to be send, it must also be up this number of minutes."
-msgstr "Сколько минут URL-адрес должен быть опущен, прежде чем будет отправлено предупреждение.  После отправки уведомления для отправки сообщения по электронной почте \"Восстановление сайта\" необходимо также увеличить это количество минут."
+msgstr "Сколько минут URL-адрес должен быть недоступен перед отправкой оповещения. После отправки оповещения, чтобы было отправлено письмо «Восстановление сайта», он также должен быть доступен в течение этого количества минут."
 
 #: includes/arrays.php
 msgid "Time Out"
 msgstr "Тайм-аут"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "How many seconds to allow the page to timeout before reporting it as down."
-msgstr "Сколько секунд, чтобы дать странице время ожидания, прежде чем сообщать о том, что она опущена."
+msgstr "Время ожидания ответа страницы в секундах перед тем, как сообщить о её недоступности."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Verification Strings"
 msgstr "Строки проверки"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Response Search String"
-msgstr "Строка поиска ответа"
+msgstr "Строка поиска в ответе"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "This is the string to search for in the URL response for a live and working Web Service."
-msgstr "Это строка для поиска в ответе URL-адреса живой и работающей веб-службы."
+msgstr "Это строка для поиска в ответе URL для активной и работающей веб-службы."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Response Search String - Maintenance Page"
-msgstr "Строка поиска ответа - страница обслуживания"
+msgstr "Строка поиска в ответе - Страница обслуживания"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "This is the string to search for on the Maintenance Page.  The Service Check will check for this string if the above string is not found.  If found, it means that the Web Service is under maintenance."
-msgstr "Это строка для поиска на странице Обслуживание.  Проверка службы проверит наличие этой строки, если она не найдена.  В случае обнаружения это означает, что веб-сервис находится в процессе обслуживания."
+msgstr "Это строка для поиска на странице обслуживания. Проверка службы выполнит поиск этой строки, если указанная выше строка не найдена. Если строка найдена, это означает, что веб-служба находится на обслуживании."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Response Search String - Failed"
-msgstr "Строка поиска ответа - Неуспешный"
+msgstr "Строка поиска в ответе - Сбой"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "This is the string to search for a known failure in the Web Service response.  The Service Check will only alert if this string is found, ignoring any timeout issues and the search strings above."
-msgstr "Это строка для поиска известной ошибки в ответе веб-службы.  Service Check будет оповещать только в том случае, если эта строка найдена, игнорируя любые проблемы таймаута и поисковые строки, приведенные выше."
+msgstr "Это строка для поиска известного сбоя в ответе веб-службы. Проверка службы отправит оповещение только в том случае, если эта строка найдена, игнорируя любые проблемы с таймаутом и указанные выше строки поиска."
 
 #: includes/arrays.php
 msgid "Notification Settings"
@@ -312,40 +270,32 @@ msgid "Notify Format"
 msgstr "Формат оповещений"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "This is the format to use when sending the notification email"
-msgstr "Это формат, который следует использовать при отправке электронного письма с уведомлением."
+msgstr "Формат, используемый при отправке письма с уведомлением"
 
 #: includes/arrays.php
-#, fuzzy
-#| msgid "Notification Settings"
 msgid "Notification List"
-msgstr "Настройки уведомлений"
+msgstr "Список уведомлений"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Use this Notification List for those to be notified when this website goes down."
-msgstr "Это список учетных записей, которые будут уведомлены, когда этот сайт зайдет вниз."
+msgstr "Используйте этот список уведомлений для оповещения получателей, когда этот веб-сайт становится недоступным."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Notify Accounts"
-msgstr "Уведомить счета"
+msgstr "Учётные записи для уведомлений"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "This is a listing of accounts that will be notified when this website goes down."
-msgstr "Это список учетных записей, которые будут уведомлены, когда этот сайт зайдет вниз."
+msgstr "Список учетных записей, которые получат уведомление, когда этот веб-сайт станет недоступным."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Extra Alert Emails"
-msgstr "Электронные письма с дополнительными предупреждениями"
+msgstr "Дополнительные адреса email для оповещений"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "You may specify here extra Emails to receive alerts for this URL (comma separated)"
-msgstr "Вы можете указать здесь дополнительные адреса электронной почты для получения оповещений по этому URL-адресу (запятая разделена запятыми)"
+msgstr "Здесь можно указать дополнительные адреса электронной почты для получения оповещений по этому URL (через запятую)"
 
 #: includes/functions.php webseer.php
 msgid "Checks"
@@ -360,80 +310,64 @@ msgid "Proxies"
 msgstr "Прокси"
 
 #: includes/functions.php
-#, fuzzy
-#| msgid "View History"
 msgid "Log History"
-msgstr "Посмотреть историю"
+msgstr "История журнала"
 
 #: poller_webseer.php
-#, fuzzy
 msgid "Cacti Master"
-msgstr "Какти Мастер"
+msgstr "Cacti Master"
 
 #: poller_webseer.php
 msgid "Cacti Remote Server"
 msgstr "Cacti удаленный сервер"
 
 #: setup.php
-#, fuzzy
 msgid "Web Service Check Admin"
-msgstr "Администратор проверки веб-услуг"
+msgstr "Администрирование проверки веб-сервисов"
 
 #: setup.php
 msgid "Management"
 msgstr "Управление"
 
 #: setup.php
-#, fuzzy
 msgid "Service Checks"
-msgstr "Проверки веб-служб"
+msgstr "Проверки служб"
 
 #: setup.php
-#, fuzzy
 msgid "WebSeer Service Checks"
-msgstr "Проверки сервиса WebSeer"
+msgstr "Проверки сервисов WebSeer"
 
 #: setup.php
-#, fuzzy
 msgid "Service Check Edit"
-msgstr "Редактирование проверки обслуживания"
+msgstr "Редактирование проверки сервиса"
 
 #: setup.php
-#, fuzzy
 msgid "Service Check Save"
-msgstr "Имя проверки сервиса"
+msgstr "Сохранение проверки сервиса"
 
 #: setup.php
-#, fuzzy
 msgid "WebSeer Servers"
 msgstr "Серверы WebSeer"
 
 #: setup.php
-#, fuzzy
 msgid "Server Edit"
 msgstr "Редактирование сервера"
 
 #: setup.php
-#, fuzzy
 msgid "Save Server"
-msgstr "Включить сервер"
+msgstr "Сохранить сервер"
 
 #: setup.php
-#, fuzzy
 msgid "WebSeer Proxies"
-msgstr "Серверы WebSeer"
+msgstr "Прокси-серверы WebSeer"
 
 #: setup.php
-#, fuzzy
-#| msgid "Proxies"
 msgid "Proxie Edit"
-msgstr "Прокси"
+msgstr "Редактирование прокси"
 
 #: setup.php
-#, fuzzy
-#| msgid "New Proxy"
 msgid "Save Proxy"
-msgstr "Новый прокси"
+msgstr "Сохранить прокси"
 
 #: webseer.php
 #, fuzzy
@@ -512,9 +446,9 @@ msgstr[1] "Дублировать"
 msgstr[2] "Дублировать"
 
 #: webseer.php
-#, fuzzy, php-format
+#, php-format
 msgid "The Service Check history was purged for %s"
-msgstr "История проверки услуг была очищена для %s"
+msgstr "История проверки службы была очищена для %s"
 
 #: webseer.php webseer_servers.php
 #, php-format
@@ -554,14 +488,12 @@ msgid "Error"
 msgstr "Ошибка"
 
 #: webseer.php webseer_servers.php
-#, fuzzy
 msgid "HTTP Code"
-msgstr "HTTP код"
+msgstr "Код HTTP"
 
 #: webseer.php webseer_servers.php
-#, fuzzy
 msgid "DNS"
-msgstr "СЛУЖБА DNS"
+msgstr "DNS"
 
 #: webseer.php webseer_servers.php
 msgid "Connect"
@@ -577,7 +509,7 @@ msgstr "Всего"
 
 #: webseer.php
 msgid "Urls"
-msgstr "Сайты URL"
+msgstr "URL-адреса"
 
 #: webseer.php
 msgid "Service Down"
@@ -588,9 +520,8 @@ msgid "Service Restored"
 msgstr "Служба восстановлена"
 
 #: webseer.php
-#, fuzzy
 msgid "No Service Check Events in History"
-msgstr "Нет событий в истории"
+msgstr "В истории нет событий проверки служб"
 
 #: webseer.php webseer_servers.php
 msgid "Actions"
@@ -617,24 +548,21 @@ msgid "Last Check"
 msgstr "Последняя проверка"
 
 #: webseer.php
-#, fuzzy
 msgid "Edit Service Check"
-msgstr "Включить проверку обслуживания"
+msgstr "Редактировать проверку сервиса"
 
 #: webseer.php
-#, fuzzy
 msgid "Disable Service Check"
-msgstr "Включить проверку обслуживания"
+msgstr "Отключить проверку сервиса"
 
 #: webseer.php
-#, fuzzy
 msgid "View Service Check History"
-msgstr "Проверки веб-служб"
+msgstr "Просмотр истории проверок служб"
 
 #: webseer.php
-#, fuzzy, php-format
+#, php-format
 msgid "DNS: Server %s - A Record for %s"
-msgstr "DNS Сервер %s - Запись для %s"
+msgstr "DNS: сервер %s — A-запись для %s"
 
 #: webseer.php
 msgid "N/A"
@@ -657,9 +585,8 @@ msgid "No Servers Found"
 msgstr "Сервера не найдены"
 
 #: webseer.php
-#, fuzzy
 msgid "Webseer Service Checks"
-msgstr "Проверки сервиса WebSeer"
+msgstr "Проверки сервисов Webseer"
 
 #: webseer.php webseer_servers.php
 msgid "State"
@@ -679,22 +606,19 @@ msgstr "Стандартно"
 
 #: webseer.php webseer_proxies.php webseer_servers.php
 msgid "Go"
-msgstr "Перейти"
+msgstr "Выполнить"
 
 #: webseer.php webseer_proxies.php webseer_servers.php
 msgid "Clear"
 msgstr "Очистить"
 
 #: webseer.php
-#, fuzzy
 msgid "Webseer Service Check History"
-msgstr "Проверки сервиса WebSeer"
+msgstr "История проверок сервисов Webseer"
 
 #: webseer.php webseer_servers.php
-#, fuzzy
-#| msgid "Search"
 msgid "Date Search"
-msgstr "Поиск"
+msgstr "Поиск по дате"
 
 #: webseer.php webseer_servers.php
 msgid "Entries"
@@ -721,14 +645,13 @@ msgstr[1] "Удалить"
 msgstr[2] ""
 
 #: webseer_proxies.php
-#, fuzzy, php-format
+#, php-format
 msgid "Proxy [edit: %s]"
-msgstr "Запрос [Редактировать: %s]"
+msgstr "Прокси [редактирование: %s]"
 
 #: webseer_proxies.php
-#, fuzzy
 msgid "Proxy [new]"
-msgstr "Запрос [новый]"
+msgstr "Прокси [новый]"
 
 #: webseer_proxies.php
 msgid "Ports (http/https)"
@@ -743,9 +666,8 @@ msgid "Not Set"
 msgstr "Не задано"
 
 #: webseer_proxies.php
-#, fuzzy
 msgid "Webseer Proxy Management"
-msgstr "Управление сервером Webseer Server Management"
+msgstr "Управление прокси-серверами Webseer"
 
 #: webseer_servers.php
 #, fuzzy
@@ -788,30 +710,24 @@ msgstr[1] ""
 msgstr[2] ""
 
 #: webseer_servers.php
-#, fuzzy
 msgid "No Events in History"
-msgstr "Нет событий в истории"
+msgstr "В истории нет событий"
 
 #: webseer_servers.php
 msgid "Master"
 msgstr "Мастер"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "This Host"
-msgstr "Этот хозяин"
+msgstr "Этот хост"
 
 #: webseer_servers.php
-#, fuzzy
-#| msgid "Edit Site"
 msgid "Edit Server"
-msgstr "Редактировать Обьект"
+msgstr "Редактировать сервер"
 
 #: webseer_servers.php
-#, fuzzy
-#| msgid "View History"
 msgid "View Server History"
-msgstr "Посмотреть историю"
+msgstr "Просмотр истории сервера"
 
 #: webseer_servers.php
 msgid "No"
@@ -822,18 +738,16 @@ msgid "Yes"
 msgstr "Да"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Webseer Servers"
-msgstr "Серверы WebSeer"
+msgstr "Серверы Webseer"
 
 #: webseer_servers.php
 msgid "Triggered"
-msgstr "Просмотренный"
+msgstr "Сработало"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Webseer Server History"
-msgstr "Серверы WebSeer"
+msgstr "История серверов Webseer"
 
 #~ msgid "Edit Site"
 #~ msgstr "Редактировать Обьект"
