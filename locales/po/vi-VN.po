@@ -4,19 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr ""
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2026-09-28 16:09-0400\n"
-"PO-Revision-Date: 2020-12-14 19:09-0500\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: vi_VN\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.2\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-28 16:09-0400\nPO-Revision-Date: 2026-11-25 02:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Vietnamese <https://translate.cacti.net/projects/cacti/webseer/vi/>\nLanguage: vi-VN\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=1; plural=0;\nX-Generator: Weblate 5.11.4\n"
 
 #: includes/arrays.php webseer_servers.php
 #, php-format
@@ -29,9 +17,9 @@ msgid "%d Minutes"
 msgstr "%d phút"
 
 #: includes/arrays.php webseer_servers.php
-#, fuzzy, php-format
+#, php-format
 msgid "%d Seconds"
-msgstr "% d Giây"
+msgstr "%d Giây"
 
 #: includes/arrays.php
 msgid "Delete"
@@ -54,12 +42,10 @@ msgid "Name"
 msgstr "Tên"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "A Useful Name for this Proxy."
 msgstr "Tên hữu ích cho Proxy này."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "New Proxy"
 msgstr "Proxy mới"
 
@@ -68,27 +54,22 @@ msgid "Hostname"
 msgstr "Tên máy chủ"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The Proxy Hostname."
-msgstr "Tên máy chủ proxy."
+msgstr "Tên máy chủ Proxy."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "HTTP Port"
-msgstr "Mã HTTP"
+msgstr "Cổng HTTP"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The HTTP Proxy Port."
-msgstr "Cổng proxy HTTP."
+msgstr "Cổng Proxy HTTP."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "HTTPS Port"
-msgstr "Mã HTTP"
+msgstr "Cổng HTTPS"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The HTTPS Proxy Port."
 msgstr "Cổng Proxy HTTPS."
 
@@ -97,25 +78,22 @@ msgid "User Name"
 msgstr "Tên người dùng"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The user to use to authenticate with the Proxy if any."
-msgstr "Người dùng sử dụng để xác thực với Proxy nếu có."
+msgstr "Tên người dùng sử dụng để xác thực với Proxy (nếu có)."
 
 #: includes/arrays.php
 msgid "Password"
 msgstr "Mật khẩu"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The user password to use to authenticate with the Proxy if any."
-msgstr "Mật khẩu người dùng sử dụng để xác thực với Proxy nếu có."
+msgstr "Mật khẩu người dùng sử dụng để xác thực với Proxy (nếu có)."
 
 #: includes/arrays.php
 msgid "General Settings"
 msgstr "Cài đặt chung"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Display Name of this server"
 msgstr "Tên hiển thị của máy chủ này"
 
@@ -126,95 +104,80 @@ msgid_plural "Enable Servers"
 msgstr[0] "Kích hoạt máy chủ"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Uncheck this box to disabled this server from checking urls."
-msgstr "Bỏ chọn hộp này để vô hiệu hóa máy chủ này khỏi việc kiểm tra các url."
+msgstr "Bỏ chọn ô này để tắt việc kiểm tra URL trên máy chủ này."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Is this server the local server?"
 msgstr "Đây có phải là máy chủ cục bộ không?"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Check this box if the current server you are connected to is this entry."
-msgstr "Chọn hộp này nếu máy chủ hiện tại bạn được kết nối là mục này."
+msgstr "Chọn hộp này nếu máy chủ hiện tại bạn đang kết nối là mục này."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Master Server"
 msgstr "Máy chủ chính"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Sets this server to the Master server.  The Master server handles all Email operations"
-msgstr "Đặt máy chủ này thành máy chủ chính. Máy chủ chính xử lý tất cả các hoạt động Email"
+msgstr "Đặt máy chủ này làm máy chủ chính. Máy chủ chính xử lý tất cả các tác vụ Email"
 
 #: includes/arrays.php webseer_servers.php
 msgid "IP Address"
 msgstr "Địa chỉ IP"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "IP Address to connect to this server"
-msgstr "Địa chỉ IP để kết nối với máy chủ này"
+msgstr "Địa chỉ IP để kết nối tới máy chủ này"
 
 #: includes/arrays.php webseer.php webseer_servers.php
 msgid "URL"
 msgstr "URL"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "This is the URL to connect to remote.php on this server."
-msgstr "Đây là URL để kết nối với remote.php trên máy chủ này."
+msgstr "Đây là URL để kết nối đến remote.php trên máy chủ này."
 
 #: includes/arrays.php webseer_servers.php
 msgid "Location"
 msgstr "Vị trí"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Location of this server"
 msgstr "Vị trí của máy chủ này"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Service Check Name"
 msgstr "Tên kiểm tra dịch vụ"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The name that is displayed for this Service Check, and is included in any Alert notifications."
-msgstr "Tên được hiển thị cho Kiểm tra dịch vụ này và được bao gồm trong mọi thông báo Thông báo."
+msgstr "Tên được hiển thị cho Kiểm tra dịch vụ này và được đưa vào mọi thông báo cảnh báo."
 
 #: includes/arrays.php webseer.php
-#, fuzzy
 msgid "Enable Service Check"
-msgstr "Cho phép kiểm tra dịch vụ"
+msgstr "Bật kiểm tra dịch vụ"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Uncheck this box to disabled this url from being checked."
-msgstr "Bỏ chọn hộp này để vô hiệu hóa url này khỏi bị kiểm tra."
+msgstr "Bỏ chọn ô này để tắt việc kiểm tra URL này."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The URL to Monitor"
-msgstr "URL để theo dõi"
+msgstr "URL cần giám sát"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Enter an IP address to connect to.  Leaving blank will use DNS Resolution instead."
-msgstr "Nhập địa chỉ IP để kết nối. Để trống sẽ sử dụng Độ phân giải DNS thay thế."
+msgstr "Nhập địa chỉ IP để kết nối tới. Để trống sẽ sử dụng phân giải DNS thông thường."
 
 #: includes/arrays.php
 msgid "Proxy Server"
 msgstr "Proxy server"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "If this connection text requires a proxy, select it here.  Otherwise choose 'None'."
-msgstr "Nếu văn bản kết nối này yêu cầu proxy, hãy chọn nó ở đây. Nếu không, hãy chọn 'Không có'."
+msgstr "Nếu chuỗi kết nối này yêu cầu proxy, hãy chọn tại đây. Nếu không, hãy chọn 'Không có'."
 
 #: includes/arrays.php webseer.php
 msgid "None"
@@ -222,40 +185,33 @@ msgstr "Không"
 
 #: includes/arrays.php webseer.php
 msgid "Compression"
-msgstr ""
+msgstr "Nén dữ liệu"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "What compression does the server require?  Most servers should not need this, but some will not redirect properly without it."
-msgstr "Máy chủ yêu cầu nén gì? Hầu hết các máy chủ không cần điều này, nhưng một số sẽ không chuyển hướng đúng cách nếu không có nó."
+msgstr "Máy chủ yêu cầu phương thức nén nào? Hầu hết các máy chủ không cần tùy chọn này, nhưng một số sẽ không chuyển hướng đúng cách nếu thiếu nó."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Available Checks"
-msgstr "Séc có sẵn"
+msgstr "Các kiểm tra khả dụng"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Requires Authentication"
 msgstr "Yêu cầu xác thực"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Check this box if the site will normally return a 401 Error as it requires a username and password."
-msgstr "Chọn hộp này nếu trang web thường trả về Lỗi 401 vì nó yêu cầu tên người dùng và mật khẩu."
+msgstr "Chọn hộp này nếu trang web thường trả về Lỗi 401 do yêu cầu tên người dùng và mật khẩu."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Check Certificate"
-msgstr "Kiểm tra giấy chứng nhận"
+msgstr "Kiểm tra chứng chỉ"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "If using SSL, check this box if you want to validate the certificate. Default on, turn off if you the site uses a self-signed certificate."
-msgstr "Nếu sử dụng SSL, hãy chọn hộp này nếu bạn muốn xác thực chứng chỉ. Mặc định bật, tắt nếu trang web của bạn sử dụng chứng chỉ tự ký."
+msgstr "Nếu sử dụng SSL, hãy chọn hộp kiểm này nếu bạn muốn xác thực chứng chỉ. Mặc định bật; hãy tắt nếu trang web sử dụng chứng chỉ tự ký."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Notification Timing"
 msgstr "Thời gian thông báo"
 
@@ -264,99 +220,80 @@ msgid "Trigger"
 msgstr "Nút kích hoạt"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "How many minutes the URL must be down before it will send an alert.  After an alert is sent, in order for a 'Site Recovering' Email to be send, it must also be up this number of minutes."
-msgstr "URL phải ngừng hoạt động bao nhiêu phút trước khi nó gửi thông báo. Sau khi một cảnh báo được gửi, để gửi Email 'Phục hồi trang web', nó cũng phải lên số phút này."
+msgstr "URL phải ngừng hoạt động bao nhiêu phút trước khi gửi cảnh báo. Sau khi cảnh báo được gửi, để gửi email 'Trang web đang khôi phục', URL cũng phải hoạt động trong bấy nhiêu phút."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Time Out"
-msgstr "Hết giờ"
+msgstr "Hết thời gian chờ"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "How many seconds to allow the page to timeout before reporting it as down."
-msgstr "Có bao nhiêu giây để cho phép trang hết thời gian chờ trước khi báo cáo xuống."
+msgstr "Số giây tối đa cho phép trang hết thời gian chờ trước khi báo cáo là ngừng hoạt động."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Verification Strings"
 msgstr "Chuỗi xác minh"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Response Search String"
 msgstr "Chuỗi tìm kiếm phản hồi"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "This is the string to search for in the URL response for a live and working Web Service."
-msgstr "Đây là chuỗi để tìm kiếm trong phản hồi URL cho Dịch vụ web trực tiếp và đang hoạt động."
+msgstr "Đây là chuỗi cần tìm trong phản hồi URL để xác định Dịch vụ Web đang hoạt động bình thường."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Response Search String - Maintenance Page"
 msgstr "Chuỗi tìm kiếm phản hồi - Trang bảo trì"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "This is the string to search for on the Maintenance Page.  The Service Check will check for this string if the above string is not found.  If found, it means that the Web Service is under maintenance."
-msgstr "Đây là chuỗi để tìm kiếm trên Trang Bảo trì. Kiểm tra dịch vụ sẽ kiểm tra chuỗi này nếu không tìm thấy chuỗi trên. Nếu được tìm thấy, điều đó có nghĩa là Dịch vụ Web đang được bảo trì."
+msgstr "Đây là chuỗi cần tìm trên Trang Bảo trì. Kiểm tra dịch vụ sẽ kiểm tra chuỗi này nếu không tìm thấy chuỗi ở trên. Nếu tìm thấy, điều đó có nghĩa là Dịch vụ Web đang được bảo trì."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Response Search String - Failed"
-msgstr "Chuỗi tìm kiếm phản hồi - Không thành công"
+msgstr "Chuỗi tìm kiếm phản hồi - Thất bại"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "This is the string to search for a known failure in the Web Service response.  The Service Check will only alert if this string is found, ignoring any timeout issues and the search strings above."
-msgstr "Đây là chuỗi để tìm kiếm một lỗi đã biết trong phản hồi của Dịch vụ web. Kiểm tra dịch vụ sẽ chỉ cảnh báo nếu chuỗi này được tìm thấy, bỏ qua mọi vấn đề về thời gian chờ và chuỗi tìm kiếm ở trên."
+msgstr "Đây là chuỗi cần tìm để phát hiện lỗi đã biết trong phản hồi của Dịch vụ Web. Kiểm tra dịch vụ sẽ chỉ cảnh báo nếu tìm thấy chuỗi này, bỏ qua mọi vấn đề hết thời gian chờ và các chuỗi tìm kiếm ở trên."
 
 #: includes/arrays.php
 msgid "Notification Settings"
 msgstr "Thiết lập Thông báo"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Notify Format"
-msgstr "Thông báo tài khoản"
+msgstr "Định dạng thông báo"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "This is the format to use when sending the notification email"
-msgstr "Đây là định dạng để sử dụng khi gửi email thông báo"
+msgstr "Đây là định dạng được sử dụng khi gửi email thông báo"
 
 #: includes/arrays.php
-#, fuzzy
-#| msgid "Notification Settings"
 msgid "Notification List"
-msgstr "Thiết lập Thông báo"
+msgstr "Danh sách thông báo"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Use this Notification List for those to be notified when this website goes down."
-msgstr "Đây là danh sách các tài khoản sẽ được thông báo khi trang web này bị sập."
+msgstr "Sử dụng Danh sách thông báo này cho những người sẽ được thông báo khi trang web này ngừng hoạt động."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Notify Accounts"
-msgstr "Thông báo tài khoản"
+msgstr "Tài khoản nhận thông báo"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "This is a listing of accounts that will be notified when this website goes down."
-msgstr "Đây là danh sách các tài khoản sẽ được thông báo khi trang web này bị sập."
+msgstr "Đây là danh sách các tài khoản sẽ được thông báo khi trang web này ngừng hoạt động."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Extra Alert Emails"
-msgstr "Email thông báo thêm"
+msgstr "Email cảnh báo bổ sung"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "You may specify here extra Emails to receive alerts for this URL (comma separated)"
-msgstr "Bạn có thể chỉ định ở đây thêm Email để nhận thông báo cho URL này (được phân tách bằng dấu phẩy)"
+msgstr "Bạn có thể chỉ định thêm các địa chỉ Email tại đây để nhận cảnh báo cho URL này (phân tách bằng dấu phẩy)"
 
 #: includes/functions.php webseer.php
 msgid "Checks"
@@ -367,84 +304,68 @@ msgid "Servers"
 msgstr "May chu"
 
 #: includes/functions.php webseer_proxies.php
-#, fuzzy
 msgid "Proxies"
 msgstr "Proxy"
 
 #: includes/functions.php
-#, fuzzy
-#| msgid "View History"
 msgid "Log History"
-msgstr "Xem lịch sử"
+msgstr "Lịch sử nhật ký"
 
 #: poller_webseer.php
-#, fuzzy
 msgid "Cacti Master"
-msgstr "Cacti Master"
+msgstr "Máy chủ chính Cacti"
 
 #: poller_webseer.php
-#, fuzzy
 msgid "Cacti Remote Server"
 msgstr "Máy chủ từ xa Cacti"
 
 #: setup.php
-#, fuzzy
 msgid "Web Service Check Admin"
-msgstr "Quản trị dịch vụ web"
+msgstr "Quản trị kiểm tra dịch vụ Web"
 
 #: setup.php
 msgid "Management"
 msgstr "Sự quản lý"
 
 #: setup.php
-#, fuzzy
 msgid "Service Checks"
-msgstr "Kiểm tra dịch vụ web"
+msgstr "Kiểm tra dịch vụ"
 
 #: setup.php
-#, fuzzy
 msgid "WebSeer Service Checks"
 msgstr "Kiểm tra dịch vụ WebSeer"
 
 #: setup.php
-#, fuzzy
 msgid "Service Check Edit"
-msgstr "Kiểm tra dịch vụ Chỉnh sửa"
+msgstr "Chỉnh sửa kiểm tra dịch vụ"
 
 #: setup.php
-#, fuzzy
 msgid "Service Check Save"
-msgstr "Tên kiểm tra dịch vụ"
+msgstr "Lưu kiểm tra dịch vụ"
 
 #: setup.php
-#, fuzzy
 msgid "WebSeer Servers"
 msgstr "Máy chủ WebSeer"
 
 #: setup.php
-#, fuzzy
 msgid "Server Edit"
 msgstr "Chỉnh sửa máy chủ"
 
 #: setup.php
-#, fuzzy
 msgid "Save Server"
-msgstr "Kích hoạt máy chủ"
+msgstr "Lưu máy chủ"
 
 #: setup.php
-#, fuzzy
 msgid "WebSeer Proxies"
-msgstr "Máy chủ WebSeer"
+msgstr "Proxy WebSeer"
 
 #: setup.php
-#, fuzzy
 msgid "Proxie Edit"
-msgstr "Proxy"
+msgstr "Chỉnh sửa Proxy"
 
 #: setup.php
-#, fuzzy
 msgid "Save Proxy"
-msgstr "Proxy mới"
+msgstr "Lưu Proxy"
 
 #: webseer.php
 #, fuzzy
@@ -509,32 +430,28 @@ msgstr[0] "Bản sao"
 #: webseer.php
 #, php-format
 msgid "The Service Check history was purged for %s"
-msgstr ""
+msgstr "Lịch sử kiểm tra dịch vụ đã được xóa sạch cho %s"
 
 #: webseer.php webseer_servers.php
-#, fuzzy, php-format
+#, php-format
 msgid "Query [edit: %s]"
 msgstr "Truy vấn [chỉnh sửa: %s]"
 
 #: webseer.php webseer_servers.php
-#, fuzzy
 msgid "Query [new]"
 msgstr "Truy vấn [mới]"
 
 #: webseer.php
-#, fuzzy
 msgid "No Users Selected"
-msgstr "Không có người dùng nào được chọn"
+msgstr "Chưa chọn người dùng nào"
 
 #: webseer.php
-#, fuzzy
 msgid "Users Selected"
 msgstr "Người dùng đã chọn"
 
 #: webseer.php
-#, fuzzy
 msgid "All Users Selected"
-msgstr "Tất cả người dùng đã chọn"
+msgstr "Đã chọn tất cả người dùng"
 
 #: webseer.php
 msgid "All"
@@ -553,12 +470,10 @@ msgid "Error"
 msgstr "Lỗi"
 
 #: webseer.php webseer_servers.php
-#, fuzzy
 msgid "HTTP Code"
 msgstr "Mã HTTP"
 
 #: webseer.php webseer_servers.php
-#, fuzzy
 msgid "DNS"
 msgstr "DNS"
 
@@ -576,20 +491,19 @@ msgstr "Tổng"
 
 #: webseer.php
 msgid "Urls"
-msgstr ""
+msgstr "Các URL"
 
 #: webseer.php
 msgid "Service Down"
-msgstr ""
+msgstr "Dịch vụ ngừng hoạt động"
 
 #: webseer.php
 msgid "Service Restored"
-msgstr ""
+msgstr "Dịch vụ đã khôi phục"
 
 #: webseer.php
-#, fuzzy
 msgid "No Service Check Events in History"
-msgstr "Không có sự kiện trong lịch sử"
+msgstr "Không có sự kiện kiểm tra dịch vụ nào trong lịch sử"
 
 #: webseer.php webseer_servers.php
 msgid "Actions"
@@ -604,7 +518,6 @@ msgid "Enabled"
 msgstr "Bật"
 
 #: webseer.php
-#, fuzzy
 msgid "Auth"
 msgstr "Xác thực"
 
@@ -613,29 +526,25 @@ msgid "Timeout"
 msgstr "Hết giờ"
 
 #: webseer.php webseer_servers.php
-#, fuzzy
 msgid "Last Check"
 msgstr "Lần cuối kiểm tra vào"
 
 #: webseer.php
-#, fuzzy
 msgid "Edit Service Check"
-msgstr "Cho phép kiểm tra dịch vụ"
+msgstr "Chỉnh sửa kiểm tra dịch vụ"
 
 #: webseer.php
-#, fuzzy
 msgid "Disable Service Check"
-msgstr "Cho phép kiểm tra dịch vụ"
+msgstr "Tắt kiểm tra dịch vụ"
 
 #: webseer.php
-#, fuzzy
 msgid "View Service Check History"
-msgstr "Kiểm tra dịch vụ web"
+msgstr "Xem lịch sử kiểm tra dịch vụ"
 
 #: webseer.php
-#, fuzzy, php-format
+#, php-format
 msgid "DNS: Server %s - A Record for %s"
-msgstr "DNS: Máy chủ %s - Bản ghi cho %s"
+msgstr "DNS: Máy chủ %s - Bản ghi A cho %s"
 
 #: webseer.php
 msgid "N/A"
@@ -654,12 +563,10 @@ msgid "Disabled"
 msgstr "Vô hiệu hóa"
 
 #: webseer.php webseer_proxies.php webseer_servers.php
-#, fuzzy
 msgid "No Servers Found"
-msgstr "Không tìm thấy máy chủ"
+msgstr "Không tìm thấy máy chủ nào"
 
 #: webseer.php
-#, fuzzy
 msgid "Webseer Service Checks"
 msgstr "Kiểm tra dịch vụ WebSeer"
 
@@ -688,23 +595,20 @@ msgid "Clear"
 msgstr "Xóa"
 
 #: webseer.php
-#, fuzzy
 msgid "Webseer Service Check History"
-msgstr "Kiểm tra dịch vụ WebSeer"
+msgstr "Lịch sử kiểm tra dịch vụ WebSeer"
 
 #: webseer.php webseer_servers.php
-#, fuzzy
-#| msgid "Search"
 msgid "Date Search"
-msgstr "Tìm kiếm"
+msgstr "Tìm kiếm theo ngày"
 
 #: webseer.php webseer_servers.php
 msgid "Entries"
-msgstr ""
+msgstr "Mục"
 
 #: webseer.php
 msgid "Purge Events"
-msgstr ""
+msgstr "Xóa sạch sự kiện"
 
 #: webseer_proxies.php
 #, fuzzy
@@ -719,19 +623,17 @@ msgid_plural "Delete Proxies"
 msgstr[0] "Xóa"
 
 #: webseer_proxies.php
-#, fuzzy, php-format
+#, php-format
 msgid "Proxy [edit: %s]"
-msgstr "Truy vấn [chỉnh sửa: %s]"
+msgstr "Proxy [chỉnh sửa: %s]"
 
 #: webseer_proxies.php
-#, fuzzy
 msgid "Proxy [new]"
-msgstr "Truy vấn [mới]"
+msgstr "Proxy [mới]"
 
 #: webseer_proxies.php
-#, fuzzy
 msgid "Ports (http/https)"
-msgstr "Cổng (http / https)"
+msgstr "Cổng (http/https)"
 
 #: webseer_proxies.php
 msgid "Username"
@@ -742,9 +644,8 @@ msgid "Not Set"
 msgstr "Chưa thiết lập"
 
 #: webseer_proxies.php
-#, fuzzy
 msgid "Webseer Proxy Management"
-msgstr "Quản lý máy chủ Webseer"
+msgstr "Quản lý Proxy WebSeer"
 
 #: webseer_servers.php
 #, fuzzy
@@ -777,30 +678,24 @@ msgid_plural "Click 'Continue' to Enable following Servers."
 msgstr[0] "Nhấp vào 'Tiếp tục' để xóa Proxy sau."
 
 #: webseer_servers.php
-#, fuzzy
 msgid "No Events in History"
-msgstr "Không có sự kiện trong lịch sử"
+msgstr "Không có sự kiện nào trong lịch sử"
 
 #: webseer_servers.php
 msgid "Master"
 msgstr "Master"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "This Host"
 msgstr "Máy chủ này"
 
 #: webseer_servers.php
-#, fuzzy
-#| msgid "Edit Site"
 msgid "Edit Server"
-msgstr "Sửa Site"
+msgstr "Chỉnh sửa máy chủ"
 
 #: webseer_servers.php
-#, fuzzy
-#| msgid "View History"
 msgid "View Server History"
-msgstr "Xem lịch sử"
+msgstr "Xem lịch sử máy chủ"
 
 #: webseer_servers.php
 msgid "No"
@@ -811,19 +706,16 @@ msgid "Yes"
 msgstr "Có"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Webseer Servers"
 msgstr "Máy chủ WebSeer"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Triggered"
-msgstr "Kích hoạt"
+msgstr "Đã kích hoạt"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Webseer Server History"
-msgstr "Máy chủ WebSeer"
+msgstr "Lịch sử máy chủ WebSeer"
 
 #~ msgid "Edit Site"
 #~ msgstr "Sửa Site"
