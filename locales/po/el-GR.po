@@ -4,32 +4,20 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr ""
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2026-09-28 16:09-0400\n"
-"PO-Revision-Date: 2020-12-14 19:05-0500\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: el_GR\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.2\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-28 16:09-0400\nPO-Revision-Date: 2026-11-25 02:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Greek <https://translate.cacti.net/projects/cacti/webseer/el/>\nLanguage: el-GR\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
 
 #: includes/arrays.php webseer_servers.php
-#, fuzzy, php-format
+#, php-format
 msgid "%d Minute"
-msgstr "% d λεπτά"
+msgstr "%d Λεπτό"
 
 #: includes/arrays.php webseer_servers.php
-#, fuzzy, php-format
+#, php-format
 msgid "%d Minutes"
 msgstr "%d λεπτά"
 
 #: includes/arrays.php webseer_servers.php
-#, fuzzy, php-format
+#, php-format
 msgid "%d Seconds"
 msgstr "%d δευτερόλεπτα"
 
@@ -54,12 +42,10 @@ msgid "Name"
 msgstr "Όνομα"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "A Useful Name for this Proxy."
 msgstr "Ένα χρήσιμο όνομα για αυτόν τον διακομιστή μεσολάβησης."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "New Proxy"
 msgstr "Νέος διακομιστής μεσολάβησης"
 
@@ -68,27 +54,22 @@ msgid "Hostname"
 msgstr "Νέο όνομα φιλοξενίας"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The Proxy Hostname."
-msgstr "Το όνομα κεντρικού υπολογιστή διακομιστή μεσολάβησης."
+msgstr "Το όνομα κεντρικού υπολογιστή του διακομιστή μεσολάβησης."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "HTTP Port"
-msgstr "Κωδικός HTTP"
+msgstr "Θύρα HTTP"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The HTTP Proxy Port."
 msgstr "Η θύρα διακομιστή μεσολάβησης HTTP."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "HTTPS Port"
-msgstr "Κωδικός HTTP"
+msgstr "Θύρα HTTPS"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The HTTPS Proxy Port."
 msgstr "Η θύρα διακομιστή μεσολάβησης HTTPS."
 
@@ -97,27 +78,24 @@ msgid "User Name"
 msgstr "Όνομα Χρήστη"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The user to use to authenticate with the Proxy if any."
-msgstr "Ο χρήστης που θα χρησιμοποιήσει για έλεγχο ταυτότητας με τον διακομιστή μεσολάβησης εάν υπάρχει."
+msgstr "Ο χρήστης για έλεγχο ταυτότητας με τον διακομιστή μεσολάβησης, εάν υπάρχει."
 
 #: includes/arrays.php
 msgid "Password"
 msgstr "Κωδικός"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The user password to use to authenticate with the Proxy if any."
-msgstr "Ο κωδικός πρόσβασης χρήστη για χρήση για έλεγχο ταυτότητας με τον διακομιστή μεσολάβησης, εάν υπάρχει."
+msgstr "Ο κωδικός πρόσβασης χρήστη για έλεγχο ταυτότητας με τον διακομιστή μεσολάβησης, εάν υπάρχει."
 
 #: includes/arrays.php
 msgid "General Settings"
 msgstr "Γενικές Ρυθμίσεις"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Display Name of this server"
-msgstr "Εμφάνιση ονόματος αυτού του διακομιστή"
+msgstr "Εμφανιζόμενο όνομα αυτού του διακομιστή"
 
 #: includes/arrays.php webseer_servers.php
 #, fuzzy
@@ -127,36 +105,30 @@ msgstr[0] "Ενεργοποίηση διακομιστή"
 msgstr[1] "Ενεργοποίηση διακομιστή"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Uncheck this box to disabled this server from checking urls."
-msgstr "Καταργήστε την επιλογή αυτού του κουμπιού ώστε να απενεργοποιηθεί αυτός ο διακομιστής από τον έλεγχο των urls."
+msgstr "Αποεπιλέξτε αυτό το πλαίσιο για να απενεργοποιήσετε τον έλεγχο διευθύνσεων URL από αυτόν τον διακομιστή."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Is this server the local server?"
 msgstr "Είναι αυτός ο διακομιστής ο τοπικός διακομιστής;"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Check this box if the current server you are connected to is this entry."
-msgstr "Επιλέξτε αυτό το πλαίσιο εάν ο τρέχων διακομιστής στον οποίο είστε συνδεδεμένοι είναι αυτή η καταχώρηση."
+msgstr "Επιλέξτε αυτό το πλαίσιο εάν ο τρέχων διακομιστής στον οποίο είστε συνδεδεμένοι αντιστοιχεί σε αυτήν την καταχώρηση."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Master Server"
-msgstr "Master Server"
+msgstr "Κύριος διακομιστής"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Sets this server to the Master server.  The Master server handles all Email operations"
-msgstr "Ορίζει αυτό το διακομιστή στον κεντρικό διακομιστή. Ο κύριος διακομιστής χειρίζεται όλες τις λειτουργίες του ηλεκτρονικού ταχυδρομείου"
+msgstr "Ορίζει αυτόν τον διακομιστή ως κύριο (Master) διακομιστή. Ο κύριος διακομιστής διαχειρίζεται όλες τις λειτουργίες email"
 
 #: includes/arrays.php webseer_servers.php
 msgid "IP Address"
 msgstr "IP Address"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "IP Address to connect to this server"
 msgstr "Διεύθυνση IP για σύνδεση σε αυτόν τον διακομιστή"
 
@@ -165,204 +137,166 @@ msgid "URL"
 msgstr "URL"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "This is the URL to connect to remote.php on this server."
-msgstr "Αυτή είναι η διεύθυνση URL για σύνδεση με το remote.php σε αυτόν τον διακομιστή."
+msgstr "Αυτή είναι η διεύθυνση URL για σύνδεση στο remote.php σε αυτόν τον διακομιστή."
 
 #: includes/arrays.php webseer_servers.php
 msgid "Location"
 msgstr "Τοποθεσία"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Location of this server"
 msgstr "Τοποθεσία αυτού του διακομιστή"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Service Check Name"
-msgstr "Όνομα υπηρεσίας ελέγχου"
+msgstr "Όνομα ελέγχου υπηρεσίας"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The name that is displayed for this Service Check, and is included in any Alert notifications."
-msgstr "Το όνομα που εμφανίζεται για αυτόν τον έλεγχο υπηρεσίας και περιλαμβάνεται σε όλες τις ειδοποιήσεις ειδοποιήσεων."
+msgstr "Το όνομα που εμφανίζεται για αυτόν τον έλεγχο υπηρεσίας και περιλαμβάνεται σε τυχόν ειδοποιήσεις συναγερμού."
 
 #: includes/arrays.php webseer.php
-#, fuzzy
 msgid "Enable Service Check"
 msgstr "Ενεργοποίηση ελέγχου υπηρεσίας"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Uncheck this box to disabled this url from being checked."
-msgstr "Καταργήστε την επιλογή αυτού του πλαισίου για να απενεργοποιηθεί αυτή η διεύθυνση URL."
+msgstr "Αποεπιλέξτε αυτό το πλαίσιο για να απενεργοποιήσετε τον έλεγχο αυτής της διεύθυνσης URL."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The URL to Monitor"
-msgstr "Η διεύθυνση URL για την παρακολούθηση"
+msgstr "Η διεύθυνση URL προς παρακολούθηση"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Enter an IP address to connect to.  Leaving blank will use DNS Resolution instead."
-msgstr "Καταχωρίστε μια διεύθυνση IP για σύνδεση. Αν αφήσετε κενό, αντί να χρησιμοποιήσετε την ανάλυση DNS."
+msgstr "Εισαγάγετε μια διεύθυνση IP για σύνδεση. Αν το αφήσετε κενό, θα χρησιμοποιηθεί ανάλυση DNS."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Proxy Server"
-msgstr "Master Server"
+msgstr "Διακομιστής διαμεσολάβησης"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "If this connection text requires a proxy, select it here.  Otherwise choose 'None'."
-msgstr "Εάν αυτό το κείμενο σύνδεσης απαιτεί διακομιστή μεσολάβησης, επιλέξτε το εδώ. Διαφορετικά επιλέξτε \"Κανένα\"."
+msgstr "Εάν αυτό το κείμενο σύνδεσης απαιτεί διακομιστή μεσολάβησης, επιλέξτε τον εδώ. Διαφορετικά επιλέξτε «Κανένας»."
 
 #: includes/arrays.php webseer.php
 msgid "None"
 msgstr "Κανένα"
 
 #: includes/arrays.php webseer.php
-#, fuzzy
 msgid "Compression"
 msgstr "Συμπίεση"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "What compression does the server require?  Most servers should not need this, but some will not redirect properly without it."
-msgstr "Τι συμπίεση απαιτεί ο διακομιστής; Οι περισσότεροι διακομιστές δεν πρέπει να το χρειάζονται, αλλά ορισμένοι δεν θα ανακατευθύνουν σωστά χωρίς αυτό."
+msgstr "Τι συμπίεση απαιτεί ο διακομιστής; Οι περισσότεροι διακομιστές δεν θα τη χρειάζονται, αλλά ορισμένοι δεν θα ανακατευθύνουν σωστά χωρίς αυτή."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Available Checks"
 msgstr "Διαθέσιμοι έλεγχοι"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Requires Authentication"
 msgstr "Απαιτεί έλεγχο ταυτότητας"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Check this box if the site will normally return a 401 Error as it requires a username and password."
-msgstr "Επιλέξτε αυτό το πλαίσιο εάν ο ιστότοπος θα επιστρέψει κανονικά ένα σφάλμα 401, καθώς απαιτεί όνομα χρήστη και κωδικό πρόσβασης."
+msgstr "Επιλέξτε αυτό το πλαίσιο εάν ο ιστότοπος επιστρέφει κανονικά σφάλμα 401, καθώς απαιτεί όνομα χρήστη και κωδικό πρόσβασης."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Check Certificate"
-msgstr "Ελέγξτε το πιστοποιητικό"
+msgstr "Έλεγχος πιστοποιητικού"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "If using SSL, check this box if you want to validate the certificate. Default on, turn off if you the site uses a self-signed certificate."
-msgstr "Αν χρησιμοποιείτε SSL, επιλέξτε αυτό το πλαίσιο εάν θέλετε να επικυρώσετε το πιστοποιητικό. Η προεπιλογή είναι ενεργοποιημένη, απενεργοποιήστε εάν ο ιστότοπος χρησιμοποιεί πιστοποιητικό που έχει υπογράψει αυτόματα."
+msgstr "Εάν χρησιμοποιείτε SSL, επιλέξτε αυτό το πλαίσιο εάν θέλετε να επικυρώνεται το πιστοποιητικό. Προεπιλεγμένα ενεργό· απενεργοποιήστε το εάν ο ιστότοπος χρησιμοποιεί αυτοϋπογεγραμμένο πιστοποιητικό."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Notification Timing"
-msgstr "Χρόνος ειδοποίησης"
+msgstr "Χρονισμός ειδοποιήσεων"
 
 #: includes/arrays.php
 msgid "Trigger"
 msgstr "Ενεργοποίηση"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "How many minutes the URL must be down before it will send an alert.  After an alert is sent, in order for a 'Site Recovering' Email to be send, it must also be up this number of minutes."
-msgstr "Πόσες φορές η διεύθυνση URL πρέπει να βρίσκεται κάτω, πριν να στείλει μια ειδοποίηση. Μετά την αποστολή μιας ειδοποίησης, για να στείλετε ένα μήνυμα ηλεκτρονικού ταχυδρομείου \"Ανάκτηση ιστότοπου\", πρέπει επίσης να είναι αυτός ο αριθμός των λεπτών."
+msgstr "Πόσα λεπτά πρέπει η διεύθυνση URL να είναι ανενεργή προτού αποσταλεί ειδοποίηση. Αφού αποσταλεί ειδοποίηση, για να σταλεί email «Ανάκτηση ιστότοπου», πρέπει επίσης να παραμείνει ενεργή για αυτόν τον αριθμό λεπτών."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Time Out"
-msgstr "Τέλος χρόνου"
+msgstr "Λήξη χρονικού ορίου"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "How many seconds to allow the page to timeout before reporting it as down."
-msgstr "Πόσες δευτερόλεπτα επιτρέπετε στη σελίδα να λήξει χρονικό όριο πριν την αναγγελία της ως κάτω."
+msgstr "Πόσα δευτερόλεπτα αναμονής για λήξη χρονικού ορίου της σελίδας προτού αναφερθεί ως ανενεργή."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Verification Strings"
 msgstr "Συμβολοσειρές επαλήθευσης"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Response Search String"
-msgstr "Ακολουθία αναζήτησης"
+msgstr "Συμβολοσειρά αναζήτησης απόκρισης"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "This is the string to search for in the URL response for a live and working Web Service."
-msgstr "Αυτή είναι η συμβολοσειρά που αναζητά στην απάντηση URL για μια υπηρεσία Web Live και Work."
+msgstr "Αυτή είναι η συμβολοσειρά αναζήτησης στην απόκριση του URL για μια ενεργή και λειτουργική υπηρεσία Web."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Response Search String - Maintenance Page"
-msgstr "Σειρά αναζήτησης απόκρισης - Σελίδα συντήρησης"
+msgstr "Συμβολοσειρά αναζήτησης απόκρισης - Σελίδα συντήρησης"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "This is the string to search for on the Maintenance Page.  The Service Check will check for this string if the above string is not found.  If found, it means that the Web Service is under maintenance."
-msgstr "Αυτή είναι η συμβολοσειρά που θέλετε να αναζητήσετε στη σελίδα συντήρησης. Ο έλεγχος υπηρεσίας θα ελέγξει για αυτήν την συμβολοσειρά αν δεν βρέθηκε η παραπάνω συμβολοσειρά. Αν βρεθεί, σημαίνει ότι η υπηρεσία Web βρίσκεται υπό συντήρηση."
+msgstr "Αυτή είναι η συμβολοσειρά αναζήτησης στη σελίδα συντήρησης. Ο έλεγχος υπηρεσίας θα ελέγξει για αυτή τη συμβολοσειρά εάν δεν βρεθεί η παραπάνω συμβολοσειρά. Εάν βρεθεί, σημαίνει ότι η υπηρεσία Web βρίσκεται υπό συντήρηση."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Response Search String - Failed"
-msgstr "Επαναληπτική αναζήτηση - Αποτυχία"
+msgstr "Συμβολοσειρά αναζήτησης απόκρισης - Αποτυχία"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "This is the string to search for a known failure in the Web Service response.  The Service Check will only alert if this string is found, ignoring any timeout issues and the search strings above."
-msgstr "Αυτή είναι η συμβολοσειρά για να αναζητήσετε μια γνωστή αποτυχία στην απάντηση υπηρεσίας Web. Ο έλεγχος υπηρεσίας θα ειδοποιεί μόνο εάν αυτή η συμβολοσειρά βρίσκεται, αγνοώντας τυχόν προβλήματα χρονικού ορίου και τις παραπάνω συμβολοσειρές αναζήτησης."
+msgstr "Αυτή είναι η συμβολοσειρά αναζήτησης για μια γνωστή αποτυχία στην απόκριση της υπηρεσίας Web. Ο έλεγχος υπηρεσίας θα ειδοποιεί μόνο εάν βρεθεί αυτή η συμβολοσειρά, αγνοώντας τυχόν ζητήματα λήξης χρονικού ορίου και τις παραπάνω συμβολοσειρές αναζήτησης."
 
 #: includes/arrays.php
 msgid "Notification Settings"
 msgstr "Ρυθμίσεις ειδοποιήσεων"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Notify Format"
-msgstr "Ειδοποιήστε τους λογαριασμούς"
+msgstr "Μορφή ειδοποίησης"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "This is the format to use when sending the notification email"
-msgstr "Αυτή είναι η μορφή που πρέπει να χρησιμοποιείτε κατά την αποστολή του email ειδοποίησης"
+msgstr "Αυτή είναι η μορφή που θα χρησιμοποιείται κατά την αποστολή του email ειδοποίησης"
 
 #: includes/arrays.php
-#, fuzzy
-#| msgid "Notification Settings"
 msgid "Notification List"
-msgstr "Ρυθμίσεις ειδοποιήσεων"
+msgstr "Λίστα ειδοποιήσεων"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Use this Notification List for those to be notified when this website goes down."
-msgstr "Πρόκειται για μια λίστα λογαριασμών που θα ειδοποιούνται όταν ο ιστότοπος αυτός κατεβαίνει."
+msgstr "Χρησιμοποιήστε αυτή τη λίστα ειδοποιήσεων για όσους πρέπει να ειδοποιούνται όταν αυτός ο ιστότοπος τεθεί εκτός λειτουργίας."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Notify Accounts"
-msgstr "Ειδοποιήστε τους λογαριασμούς"
+msgstr "Λογαριασμοί ειδοποίησης"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "This is a listing of accounts that will be notified when this website goes down."
-msgstr "Πρόκειται για μια λίστα λογαριασμών που θα ειδοποιούνται όταν ο ιστότοπος αυτός κατεβαίνει."
+msgstr "Αυτή είναι μια λίστα λογαριασμών που θα ειδοποιούνται όταν αυτός ο ιστότοπος καταστεί ανενεργός."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Extra Alert Emails"
-msgstr "Ειδοποιήσεις με επιπλέον ειδοποιήσεις"
+msgstr "Επιπλέον διευθύνσεις email ειδοποιήσεων"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "You may specify here extra Emails to receive alerts for this URL (comma separated)"
-msgstr "Μπορείτε να ορίσετε επιπλέον μηνύματα ηλεκτρονικού ταχυδρομείου για να λαμβάνετε ειδοποιήσεις για αυτήν τη διεύθυνση URL (διαχωρισμένα με κόμμα)"
+msgstr "Μπορείτε να ορίσετε εδώ επιπλέον διευθύνσεις email για τη λήψη ειδοποιήσεων για αυτό το URL (διαχωρισμένες με κόμμα)"
 
 #: includes/functions.php webseer.php
-#, fuzzy
 msgid "Checks"
 msgstr "Έλεγχοι"
 
@@ -371,84 +305,68 @@ msgid "Servers"
 msgstr "Διακομιστές"
 
 #: includes/functions.php webseer_proxies.php
-#, fuzzy
 msgid "Proxies"
-msgstr "Πληρεξούσιοι"
+msgstr "Διακομιστές μεσολάβησης"
 
 #: includes/functions.php
-#, fuzzy
-#| msgid "View History"
 msgid "Log History"
-msgstr "Προβολή Ιστορικού"
+msgstr "Ιστορικό καταγραφής"
 
 #: poller_webseer.php
-#, fuzzy
 msgid "Cacti Master"
 msgstr "Cacti Master"
 
 #: poller_webseer.php
-#, fuzzy
 msgid "Cacti Remote Server"
-msgstr "Cacti Remote Server"
+msgstr "Απομακρυσμένος διακομιστής Cacti"
 
 #: setup.php
-#, fuzzy
 msgid "Web Service Check Admin"
-msgstr "Web Service Check Admin"
+msgstr "Διαχείριση ελέγχων υπηρεσίας Web"
 
 #: setup.php
 msgid "Management"
 msgstr "Διοίκηση"
 
 #: setup.php
-#, fuzzy
 msgid "Service Checks"
-msgstr "Έλεγχοι υπηρεσίας Web"
+msgstr "Έλεγχοι υπηρεσιών"
 
 #: setup.php
-#, fuzzy
 msgid "WebSeer Service Checks"
 msgstr "Έλεγχοι υπηρεσίας WebSeer"
 
 #: setup.php
-#, fuzzy
 msgid "Service Check Edit"
 msgstr "Επεξεργασία ελέγχου υπηρεσίας"
 
 #: setup.php
-#, fuzzy
 msgid "Service Check Save"
-msgstr "Όνομα υπηρεσίας ελέγχου"
+msgstr "Αποθήκευση ελέγχου υπηρεσίας"
 
 #: setup.php
-#, fuzzy
 msgid "WebSeer Servers"
-msgstr "WebServer Servers"
+msgstr "Διακομιστές WebSeer"
 
 #: setup.php
-#, fuzzy
 msgid "Server Edit"
 msgstr "Επεξεργασία διακομιστή"
 
 #: setup.php
-#, fuzzy
 msgid "Save Server"
-msgstr "Ενεργοποίηση διακομιστή"
+msgstr "Αποθήκευση διακομιστή"
 
 #: setup.php
-#, fuzzy
 msgid "WebSeer Proxies"
-msgstr "WebServer Servers"
+msgstr "Διακομιστές μεσολάβησης WebSeer"
 
 #: setup.php
-#, fuzzy
 msgid "Proxie Edit"
-msgstr "Πληρεξούσιοι"
+msgstr "Επεξεργασία διακομιστή μεσολάβησης"
 
 #: setup.php
-#, fuzzy
 msgid "Save Proxy"
-msgstr "Νέος διακομιστής μεσολάβησης"
+msgstr "Αποθήκευση διακομιστή μεσολάβησης"
 
 #: webseer.php
 #, fuzzy
@@ -521,30 +439,26 @@ msgstr[1] "Αντιγραφή"
 #: webseer.php
 #, php-format
 msgid "The Service Check history was purged for %s"
-msgstr ""
+msgstr "Το ιστορικό ελέγχου υπηρεσίας εκκαθαρίστηκε για το %s"
 
 #: webseer.php webseer_servers.php
-#, fuzzy, php-format
+#, php-format
 msgid "Query [edit: %s]"
 msgstr "Ερώτημα [επεξεργασία: %s]"
 
 #: webseer.php webseer_servers.php
-#, fuzzy
 msgid "Query [new]"
 msgstr "Ερώτημα [νέο]"
 
 #: webseer.php
-#, fuzzy
 msgid "No Users Selected"
 msgstr "Δεν έχουν επιλεγεί χρήστες"
 
 #: webseer.php
-#, fuzzy
 msgid "Users Selected"
-msgstr "Οι χρήστες επιλέχθηκαν"
+msgstr "Επιλεγμένοι χρήστες"
 
 #: webseer.php
-#, fuzzy
 msgid "All Users Selected"
 msgstr "Όλοι οι χρήστες έχουν επιλεγεί"
 
@@ -565,12 +479,10 @@ msgid "Error"
 msgstr "Σφάλμα"
 
 #: webseer.php webseer_servers.php
-#, fuzzy
 msgid "HTTP Code"
 msgstr "Κωδικός HTTP"
 
 #: webseer.php webseer_servers.php
-#, fuzzy
 msgid "DNS"
 msgstr "DNS"
 
@@ -588,20 +500,19 @@ msgstr "Σύνολο"
 
 #: webseer.php
 msgid "Urls"
-msgstr ""
+msgstr "Διευθύνσεις URL"
 
 #: webseer.php
 msgid "Service Down"
-msgstr ""
+msgstr "Υπηρεσία ανενεργή"
 
 #: webseer.php
 msgid "Service Restored"
-msgstr ""
+msgstr "Αποκατάσταση υπηρεσίας"
 
 #: webseer.php
-#, fuzzy
 msgid "No Service Check Events in History"
-msgstr "Δεν υπάρχουν συμβάντα στο ιστορικό"
+msgstr "Δεν υπάρχουν συμβάντα ελέγχου υπηρεσιών στο ιστορικό"
 
 #: webseer.php webseer_servers.php
 msgid "Actions"
@@ -616,38 +527,33 @@ msgid "Enabled"
 msgstr "Ενεργοποιημένο"
 
 #: webseer.php
-#, fuzzy
 msgid "Auth"
-msgstr "Auth"
+msgstr "Ταυτοποίηση"
 
 #: webseer.php
 msgid "Timeout"
 msgstr "Τέλος χρόνου"
 
 #: webseer.php webseer_servers.php
-#, fuzzy
 msgid "Last Check"
-msgstr "Τελευταία Έλεγχος"
+msgstr "Τελευταίος έλεγχος"
 
 #: webseer.php
-#, fuzzy
 msgid "Edit Service Check"
-msgstr "Ενεργοποίηση ελέγχου υπηρεσίας"
+msgstr "Επεξεργασία ελέγχου υπηρεσίας"
 
 #: webseer.php
-#, fuzzy
 msgid "Disable Service Check"
-msgstr "Ενεργοποίηση ελέγχου υπηρεσίας"
+msgstr "Απενεργοποίηση ελέγχου υπηρεσίας"
 
 #: webseer.php
-#, fuzzy
 msgid "View Service Check History"
-msgstr "Έλεγχοι υπηρεσίας Web"
+msgstr "Προβολή ιστορικού ελέγχου υπηρεσίας"
 
 #: webseer.php
-#, fuzzy, php-format
+#, php-format
 msgid "DNS: Server %s - A Record for %s"
-msgstr "DNS: Διακομιστής %s - Μια εγγραφή για %s"
+msgstr "DNS: Διακομιστής %s - Εγγραφή A για %s"
 
 #: webseer.php
 msgid "N/A"
@@ -666,12 +572,10 @@ msgid "Disabled"
 msgstr "Απενεργοποιημένο"
 
 #: webseer.php webseer_proxies.php webseer_servers.php
-#, fuzzy
 msgid "No Servers Found"
 msgstr "Δεν βρέθηκαν διακομιστές"
 
 #: webseer.php
-#, fuzzy
 msgid "Webseer Service Checks"
 msgstr "Έλεγχοι υπηρεσίας WebSeer"
 
@@ -700,23 +604,20 @@ msgid "Clear"
 msgstr "Καθαρισμός"
 
 #: webseer.php
-#, fuzzy
 msgid "Webseer Service Check History"
-msgstr "Έλεγχοι υπηρεσίας WebSeer"
+msgstr "Ιστορικό ελέγχου υπηρεσίας WebSeer"
 
 #: webseer.php webseer_servers.php
-#, fuzzy
-#| msgid "Search"
 msgid "Date Search"
-msgstr "Αναζήτηση"
+msgstr "Αναζήτηση ημερομηνίας"
 
 #: webseer.php webseer_servers.php
 msgid "Entries"
-msgstr ""
+msgstr "Εγγραφές"
 
 #: webseer.php
 msgid "Purge Events"
-msgstr ""
+msgstr "Εκκαθάριση συμβάντων"
 
 #: webseer_proxies.php
 #, fuzzy
@@ -733,33 +634,29 @@ msgstr[0] "Διαγραφή"
 msgstr[1] "Διαγραφή"
 
 #: webseer_proxies.php
-#, fuzzy, php-format
+#, php-format
 msgid "Proxy [edit: %s]"
-msgstr "Ερώτημα [επεξεργασία: %s]"
+msgstr "Διακομιστής μεσολάβησης [επεξεργασία: %s]"
 
 #: webseer_proxies.php
-#, fuzzy
 msgid "Proxy [new]"
-msgstr "Ερώτημα [νέο]"
+msgstr "Διακομιστής μεσολάβησης [νέος]"
 
 #: webseer_proxies.php
-#, fuzzy
 msgid "Ports (http/https)"
-msgstr "Θύρες (http / https)"
+msgstr "Θύρες (http/https)"
 
 #: webseer_proxies.php
 msgid "Username"
 msgstr "Όνομα Χρήστη"
 
 #: webseer_proxies.php
-#, fuzzy
 msgid "Not Set"
-msgstr "Ορισμός ως Προεπιλογή"
+msgstr "Μη Ορισμένο"
 
 #: webseer_proxies.php
-#, fuzzy
 msgid "Webseer Proxy Management"
-msgstr "Διαχείριση διακομιστή WebSEer"
+msgstr "Διαχείριση διακομιστών μεσολάβησης WebSeer"
 
 #: webseer_servers.php
 #, fuzzy
@@ -797,30 +694,24 @@ msgstr[0] "Κάντε κλικ στο «Συνέχεια» για να διαγ�
 msgstr[1] "Κάντε κλικ στο «Συνέχεια» για να διαγράψετε τους ακόλουθους διακομιστές μεσολάβησης."
 
 #: webseer_servers.php
-#, fuzzy
 msgid "No Events in History"
 msgstr "Δεν υπάρχουν συμβάντα στο ιστορικό"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Master"
 msgstr "Κύριος"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "This Host"
-msgstr "Αυτή η υποδοχή"
+msgstr "Αυτός ο κεντρικός υπολογιστής"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Edit Server"
-msgstr "Επεξεργασία ιστότοπου"
+msgstr "Επεξεργασία διακομιστή"
 
 #: webseer_servers.php
-#, fuzzy
-#| msgid "View History"
 msgid "View Server History"
-msgstr "Προβολή Ιστορικού"
+msgstr "Προβολή ιστορικού διακομιστή"
 
 #: webseer_servers.php
 msgid "No"
@@ -831,19 +722,16 @@ msgid "Yes"
 msgstr "Ναι"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Webseer Servers"
-msgstr "WebServer Servers"
+msgstr "Διακομιστές WebSeer"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Triggered"
-msgstr "Ξεκίνησε"
+msgstr "Ενεργοποιημένο"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Webseer Server History"
-msgstr "WebServer Servers"
+msgstr "Ιστορικό διακομιστή WebSeer"
 
 #, fuzzy
 #~ msgid "Edit Site"
