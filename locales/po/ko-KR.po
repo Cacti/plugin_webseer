@@ -4,19 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr ""
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2026-09-28 16:09-0400\n"
-"PO-Revision-Date: 2020-12-14 19:07-0500\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: ko_KR\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.2\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-28 16:09-0400\nPO-Revision-Date: 2026-11-25 02:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Korean <https://translate.cacti.net/projects/cacti/webseer/ko/>\nLanguage: ko-KR\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=1; plural=0;\nX-Generator: Weblate 5.11.4\n"
 
 #: includes/arrays.php webseer_servers.php
 #, php-format
@@ -29,7 +17,7 @@ msgid "%d Minutes"
 msgstr "%d 분"
 
 #: includes/arrays.php webseer_servers.php
-#, fuzzy, php-format
+#, php-format
 msgid "%d Seconds"
 msgstr "%d 초"
 
@@ -54,12 +42,10 @@ msgid "Name"
 msgstr "이름"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "A Useful Name for this Proxy."
-msgstr "이 프록시에 대한 유용한 이름."
+msgstr "이 프록시의 식별용 이름입니다."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "New Proxy"
 msgstr "새 프록시"
 
@@ -68,54 +54,46 @@ msgid "Hostname"
 msgstr "호스트명"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The Proxy Hostname."
-msgstr "프록시 호스트 이름."
+msgstr "프록시 호스트 이름입니다."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "HTTP Port"
-msgstr "HTTP 코드"
+msgstr "HTTP 포트"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The HTTP Proxy Port."
-msgstr "HTTP 프록시 포트."
+msgstr "HTTP 프록시 포트입니다."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "HTTPS Port"
-msgstr "HTTP 코드"
+msgstr "HTTPS 포트"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The HTTPS Proxy Port."
-msgstr "HTTPS 프록시 포트."
+msgstr "HTTPS 프록시 포트입니다."
 
 #: includes/arrays.php
 msgid "User Name"
 msgstr "사용자 이름"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The user to use to authenticate with the Proxy if any."
-msgstr "프록시가있는 경우 인증하는 데 사용할 사용자입니다."
+msgstr "프록시 인증에 사용할 사용자입니다(해당하는 경우)."
 
 #: includes/arrays.php
 msgid "Password"
 msgstr "비밀번호"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The user password to use to authenticate with the Proxy if any."
-msgstr "프록시 인증에 사용할 사용자 비밀번호입니다 (있는 경우)."
+msgstr "프록시 인증에 사용할 사용자 비밀번호입니다(해당하는 경우)."
 
 #: includes/arrays.php
 msgid "General Settings"
 msgstr "일반 설정"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Display Name of this server"
 msgstr "이 서버의 표시 이름"
 
@@ -126,35 +104,30 @@ msgid_plural "Enable Servers"
 msgstr[0] "서버 사용"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Uncheck this box to disabled this server from checking urls."
-msgstr "이 체크 박스를 선택 취소하면이 서버의 URL 확인이 비활성화됩니다."
+msgstr "이 서버에서 URL 확인을 비활성화하려면 이 상자의 선택을 해제하십시오."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Is this server the local server?"
 msgstr "이 서버가 로컬 서버입니까?"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Check this box if the current server you are connected to is this entry."
-msgstr "현재 연결된 서버가이 항목 인 경우이 상자를 선택하십시오."
+msgstr "현재 연결된 서버가 이 항목에 해당하면 이 확인란을 선택하십시오."
 
 #: includes/arrays.php
 msgid "Master Server"
 msgstr "Master 서버"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Sets this server to the Master server.  The Master server handles all Email operations"
-msgstr "이 서버를 마스터 서버로 설정합니다. 마스터 서버가 모든 전자 메일 작업을 처리합니다."
+msgstr "이 서버를 마스터 서버로 설정합니다. 마스터 서버는 모든 이메일 작업을 처리합니다."
 
 #: includes/arrays.php webseer_servers.php
 msgid "IP Address"
 msgstr "IP 주소"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "IP Address to connect to this server"
 msgstr "이 서버에 연결할 IP 주소"
 
@@ -163,7 +136,6 @@ msgid "URL"
 msgstr "URL"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "This is the URL to connect to remote.php on this server."
 msgstr "이 서버의 remote.php에 연결하는 URL입니다."
 
@@ -172,46 +144,38 @@ msgid "Location"
 msgstr "위치"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Location of this server"
 msgstr "이 서버의 위치"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Service Check Name"
-msgstr "서비스 확인 이름"
+msgstr "서비스 점검 이름"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The name that is displayed for this Service Check, and is included in any Alert notifications."
-msgstr "이 서비스 확인을 위해 표시되는 이름이며 경고 알림에 포함됩니다."
+msgstr "이 서비스 검사에 표시되며 모든 경보 알림에 포함되는 이름입니다."
 
 #: includes/arrays.php webseer.php
-#, fuzzy
 msgid "Enable Service Check"
-msgstr "서비스 확인 사용"
+msgstr "서비스 확인 활성화"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Uncheck this box to disabled this url from being checked."
-msgstr "이 확인란의 선택을 취소하면이 URL이 선택되지 않습니다."
+msgstr "이 URL의 확인을 비활성화하려면 이 상자의 선택을 해제하십시오."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The URL to Monitor"
-msgstr "모니터 할 URL"
+msgstr "모니터링할 URL"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Enter an IP address to connect to.  Leaving blank will use DNS Resolution instead."
-msgstr "연결할 IP 주소를 입력하십시오. 비워두면 대신 DNS 확인을 사용합니다."
+msgstr "연결할 IP 주소를 입력하십시오. 비워 두면 대신 DNS 확인을 사용합니다."
 
 #: includes/arrays.php
 msgid "Proxy Server"
 msgstr "프록시 서버"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "If this connection text requires a proxy, select it here.  Otherwise choose 'None'."
 msgstr "이 연결 텍스트에 프록시가 필요한 경우 여기에서 선택하십시오. 그렇지 않으면 '없음'을 선택하십시오."
 
@@ -224,37 +188,30 @@ msgid "Compression"
 msgstr "컴프레션"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "What compression does the server require?  Most servers should not need this, but some will not redirect properly without it."
-msgstr "서버에는 어떤 압축이 필요합니까? 대부분의 서버는이 기능이 필요하지 않지만 일부 서버는이 기능이 없으면 제대로 리디렉션되지 않습니다."
+msgstr "서버에 필요한 압축 방식은 무엇입니까? 대부분의 서버에서는 필요하지 않지만, 일부 서버는 이 설정이 없으면 제대로 리디렉션되지 않습니다."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Available Checks"
-msgstr "사용 가능한 수표"
+msgstr "사용 가능한 검사"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Requires Authentication"
 msgstr "인증 필요"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Check this box if the site will normally return a 401 Error as it requires a username and password."
-msgstr "사이트가 일반적으로 사용자 이름과 암호가 필요하므로 401 오류를 반환하는 경우이 확인란을 선택하십시오."
+msgstr "사이트에서 사용자 이름과 암호가 필요하여 일반적으로 401 오류를 반환하는 경우 이 확인란을 선택하십시오."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Check Certificate"
 msgstr "인증서 확인"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "If using SSL, check this box if you want to validate the certificate. Default on, turn off if you the site uses a self-signed certificate."
-msgstr "SSL을 사용하는 경우 인증서의 유효성을 검사하려면이 상자를 선택하십시오. 기본 설정은 사이트에서 자체 서명 된 인증서를 사용하는 경우 해제하십시오."
+msgstr "SSL을 사용하는 경우 인증서의 유효성을 검사하려면 이 상자를 선택하십시오. 기본값은 사용이며, 사이트에서 자체 서명된 인증서를 사용하는 경우 해제하십시오."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Notification Timing"
 msgstr "알림 타이밍"
 
@@ -263,188 +220,152 @@ msgid "Trigger"
 msgstr "트리거"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "How many minutes the URL must be down before it will send an alert.  After an alert is sent, in order for a 'Site Recovering' Email to be send, it must also be up this number of minutes."
-msgstr "경고를 보내기 전에 URL이 몇 분 이내에 있어야합니다. 경고가 전송 된 후 '사이트 복구'전자 메일을 보내려면이 시간 (분) 이상이어야합니다."
+msgstr "경고를 보내기 전에 URL이 다운 상태여야 하는 시간(분)입니다. 경고가 전송된 후 '사이트 복구' 이메일을 보내려면 해당 시간(분) 동안 정상 상태가 유지되어야 합니다."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Time Out"
-msgstr "타임 아웃"
+msgstr "시간 초과"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "How many seconds to allow the page to timeout before reporting it as down."
-msgstr "페이지가 중단 된 것으로보고하기 전에 페이지가 시간 초과되도록 허용하는 데 걸린 시간 (초)입니다."
+msgstr "페이지를 다운으로 보고하기 전에 시간 초과를 허용할 시간(초)입니다."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Verification Strings"
 msgstr "확인 문자열"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Response Search String"
 msgstr "응답 검색 문자열"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "This is the string to search for in the URL response for a live and working Web Service."
-msgstr "이것은 작동중인 웹 서비스에 대한 URL 응답에서 검색 할 문자열입니다."
+msgstr "정상 작동 중인 웹 서비스의 URL 응답에서 검색할 문자열입니다."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Response Search String - Maintenance Page"
 msgstr "응답 검색 문자열 - 유지 관리 페이지"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "This is the string to search for on the Maintenance Page.  The Service Check will check for this string if the above string is not found.  If found, it means that the Web Service is under maintenance."
-msgstr "유지 관리 페이지에서 검색 할 문자열입니다. 위의 문자열을 찾을 수없는 경우 Service Check는이 문자열을 확인합니다. 발견되면 웹 서비스가 유지 보수 중임을 의미합니다."
+msgstr "유지 관리 페이지에서 검색할 문자열입니다. 위 문자열을 찾지 못한 경우 서비스 검사가 이 문자열을 확인합니다. 발견되면 웹 서비스가 유지 관리 중임을 의미합니다."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Response Search String - Failed"
 msgstr "응답 검색 문자열 - 실패"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "This is the string to search for a known failure in the Web Service response.  The Service Check will only alert if this string is found, ignoring any timeout issues and the search strings above."
-msgstr "이 문자열은 웹 서비스 응답에서 알려진 오류를 검색합니다. 서비스 검사는이 문자열이 발견되면 경고하고 시간 초과 문제와 위의 검색 문자열을 무시합니다."
+msgstr "웹 서비스 응답에서 알려진 실패를 검색할 문자열입니다. 이 문자열이 발견되면 시간 초과 문제와 위의 검색 문자열을 무시하고 서비스 검사가 경보를 발생시킵니다."
 
 #: includes/arrays.php
 msgid "Notification Settings"
 msgstr "알림 설정"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Notify Format"
-msgstr "계정에 알림"
+msgstr "알림 형식"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "This is the format to use when sending the notification email"
-msgstr "알림 이메일을 보낼 때 사용하는 형식입니다."
+msgstr "알림 이메일을 보낼 때 사용할 형식입니다."
 
 #: includes/arrays.php
-#, fuzzy
-#| msgid "Notification Settings"
 msgid "Notification List"
-msgstr "알림 설정"
+msgstr "알림 목록"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Use this Notification List for those to be notified when this website goes down."
-msgstr "이 웹 사이트가 다운 될 때 통보 될 계정 목록입니다."
+msgstr "이 웹사이트가 다운될 때 알림을 받을 대상에 대해 이 알림 목록을 사용합니다."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Notify Accounts"
-msgstr "계정에 알림"
+msgstr "알림 대상 계정"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "This is a listing of accounts that will be notified when this website goes down."
-msgstr "이 웹 사이트가 다운 될 때 통보 될 계정 목록입니다."
+msgstr "이 웹사이트가 다운될 때 알림을 받을 계정 목록입니다."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Extra Alert Emails"
 msgstr "추가 경고 이메일"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "You may specify here extra Emails to receive alerts for this URL (comma separated)"
-msgstr "이 URL에 대한 알림을 받으려면 추가 이메일을 여기에서 지정할 수 있습니다 (쉼표로 구분)."
+msgstr "이 URL에 대한 알림을 받을 추가 이메일을 여기에 지정할 수 있습니다 (쉼표로 구분)."
 
 #: includes/functions.php webseer.php
-#, fuzzy
 msgid "Checks"
-msgstr "체크 무늬"
+msgstr "검사"
 
 #: includes/functions.php webseer_servers.php
 msgid "Servers"
 msgstr "서버"
 
 #: includes/functions.php webseer_proxies.php
-#, fuzzy
 msgid "Proxies"
 msgstr "프록시"
 
 #: includes/functions.php
-#, fuzzy
-#| msgid "View History"
 msgid "Log History"
-msgstr "기록 보기"
+msgstr "로그 기록"
 
 #: poller_webseer.php
-#, fuzzy
 msgid "Cacti Master"
-msgstr "선인장 마스터"
+msgstr "Cacti 마스터"
 
 #: poller_webseer.php
-#, fuzzy
 msgid "Cacti Remote Server"
-msgstr "선인장 원격 서버"
+msgstr "Cacti 원격 서버"
 
 #: setup.php
-#, fuzzy
 msgid "Web Service Check Admin"
-msgstr "웹 서비스 관리자 확인"
+msgstr "웹 서비스 점검 관리"
 
 #: setup.php
 msgid "Management"
 msgstr "관리"
 
 #: setup.php
-#, fuzzy
 msgid "Service Checks"
-msgstr "웹 서비스 점검"
+msgstr "서비스 점검"
 
 #: setup.php
-#, fuzzy
 msgid "WebSeer Service Checks"
 msgstr "WebSeer 서비스 점검"
 
 #: setup.php
-#, fuzzy
 msgid "Service Check Edit"
-msgstr "서비스 확인 편집"
+msgstr "서비스 점검 편집"
 
 #: setup.php
-#, fuzzy
 msgid "Service Check Save"
-msgstr "서비스 확인 이름"
+msgstr "서비스 점검 저장"
 
 #: setup.php
-#, fuzzy
 msgid "WebSeer Servers"
 msgstr "WebSeer 서버"
 
 #: setup.php
-#, fuzzy
 msgid "Server Edit"
 msgstr "서버 편집"
 
 #: setup.php
-#, fuzzy
 msgid "Save Server"
-msgstr "서버 사용"
+msgstr "서버 저장"
 
 #: setup.php
-#, fuzzy
 msgid "WebSeer Proxies"
-msgstr "WebSeer 서버"
+msgstr "WebSeer 프록시"
 
 #: setup.php
-#, fuzzy
 msgid "Proxie Edit"
-msgstr "프록시"
+msgstr "프록시 편집"
 
 #: setup.php
-#, fuzzy
 msgid "Save Proxy"
-msgstr "새 프록시"
+msgstr "프록시 저장"
 
 #: webseer.php
 #, fuzzy
@@ -509,32 +430,28 @@ msgstr[0] "복사"
 #: webseer.php
 #, php-format
 msgid "The Service Check history was purged for %s"
-msgstr ""
+msgstr "%s의 서비스 검사 기록이 삭제되었습니다"
 
 #: webseer.php webseer_servers.php
-#, fuzzy, php-format
+#, php-format
 msgid "Query [edit: %s]"
-msgstr "쿼리 [편집 :  %s]"
+msgstr "쿼리 [편집: %s]"
 
 #: webseer.php webseer_servers.php
-#, fuzzy
 msgid "Query [new]"
-msgstr "검색어 [신규]"
+msgstr "쿼리 [신규]"
 
 #: webseer.php
-#, fuzzy
 msgid "No Users Selected"
 msgstr "선택된 사용자 없음"
 
 #: webseer.php
-#, fuzzy
 msgid "Users Selected"
 msgstr "선택된 사용자"
 
 #: webseer.php
-#, fuzzy
 msgid "All Users Selected"
-msgstr "모든 사용자 선택"
+msgstr "모든 사용자 선택됨"
 
 #: webseer.php
 msgid "All"
@@ -553,12 +470,10 @@ msgid "Error"
 msgstr "오류"
 
 #: webseer.php webseer_servers.php
-#, fuzzy
 msgid "HTTP Code"
 msgstr "HTTP 코드"
 
 #: webseer.php webseer_servers.php
-#, fuzzy
 msgid "DNS"
 msgstr "DNS"
 
@@ -576,20 +491,19 @@ msgstr "합계"
 
 #: webseer.php
 msgid "Urls"
-msgstr ""
+msgstr "URL"
 
 #: webseer.php
 msgid "Service Down"
-msgstr ""
+msgstr "서비스 다운"
 
 #: webseer.php
 msgid "Service Restored"
-msgstr ""
+msgstr "서비스 복구됨"
 
 #: webseer.php
-#, fuzzy
 msgid "No Service Check Events in History"
-msgstr "역사상의 사건 없음"
+msgstr "기록에 서비스 확인 이벤트 없음"
 
 #: webseer.php webseer_servers.php
 msgid "Actions"
@@ -604,9 +518,8 @@ msgid "Enabled"
 msgstr "활성화"
 
 #: webseer.php
-#, fuzzy
 msgid "Auth"
-msgstr "Auth"
+msgstr "인증"
 
 #: webseer.php
 msgid "Timeout"
@@ -617,24 +530,21 @@ msgid "Last Check"
 msgstr "마지막 확인"
 
 #: webseer.php
-#, fuzzy
 msgid "Edit Service Check"
-msgstr "서비스 확인 사용"
+msgstr "서비스 확인 편집"
 
 #: webseer.php
-#, fuzzy
 msgid "Disable Service Check"
-msgstr "서비스 확인 사용"
+msgstr "서비스 확인 비활성화"
 
 #: webseer.php
-#, fuzzy
 msgid "View Service Check History"
-msgstr "웹 서비스 점검"
+msgstr "서비스 점검 기록 보기"
 
 #: webseer.php
-#, fuzzy, php-format
+#, php-format
 msgid "DNS: Server %s - A Record for %s"
-msgstr "DNS : 서버  %s -  %s의 레코드"
+msgstr "DNS: 서버 %s - %s의 A 레코드"
 
 #: webseer.php
 msgid "N/A"
@@ -642,7 +552,7 @@ msgstr "N/A"
 
 #: webseer.php webseer_servers.php
 msgid "Down"
-msgstr "아래로"
+msgstr "다운"
 
 #: webseer.php webseer_servers.php
 msgid "Up"
@@ -653,14 +563,12 @@ msgid "Disabled"
 msgstr "비활성화"
 
 #: webseer.php webseer_proxies.php webseer_servers.php
-#, fuzzy
 msgid "No Servers Found"
 msgstr "서버를 찾을 수 없음"
 
 #: webseer.php
-#, fuzzy
 msgid "Webseer Service Checks"
-msgstr "WebSeer 서비스 점검"
+msgstr "Webseer 서비스 점검"
 
 #: webseer.php webseer_servers.php
 msgid "State"
@@ -687,23 +595,20 @@ msgid "Clear"
 msgstr "지우기"
 
 #: webseer.php
-#, fuzzy
 msgid "Webseer Service Check History"
-msgstr "WebSeer 서비스 점검"
+msgstr "Webseer 서비스 점검 기록"
 
 #: webseer.php webseer_servers.php
-#, fuzzy
-#| msgid "Search"
 msgid "Date Search"
-msgstr "검색"
+msgstr "날짜 검색"
 
 #: webseer.php webseer_servers.php
 msgid "Entries"
-msgstr ""
+msgstr "입력 항목"
 
 #: webseer.php
 msgid "Purge Events"
-msgstr ""
+msgstr "이벤트 영구 삭제"
 
 #: webseer_proxies.php
 #, fuzzy
@@ -718,19 +623,17 @@ msgid_plural "Delete Proxies"
 msgstr[0] "삭제"
 
 #: webseer_proxies.php
-#, fuzzy, php-format
+#, php-format
 msgid "Proxy [edit: %s]"
-msgstr "쿼리 [편집 :  %s]"
+msgstr "프록시 [편집: %s]"
 
 #: webseer_proxies.php
-#, fuzzy
 msgid "Proxy [new]"
-msgstr "검색어 [신규]"
+msgstr "프록시 [신규]"
 
 #: webseer_proxies.php
-#, fuzzy
 msgid "Ports (http/https)"
-msgstr "포트 (http / https)"
+msgstr "포트 (http/https)"
 
 #: webseer_proxies.php
 msgid "Username"
@@ -741,9 +644,8 @@ msgid "Not Set"
 msgstr "설정되지 않음"
 
 #: webseer_proxies.php
-#, fuzzy
 msgid "Webseer Proxy Management"
-msgstr "웹 서버 관리"
+msgstr "Webseer 프록시 관리"
 
 #: webseer_servers.php
 #, fuzzy
@@ -776,29 +678,24 @@ msgid_plural "Click 'Continue' to Enable following Servers."
 msgstr[0] "다음 프록시를 삭제하려면 '계속'을 클릭하십시오."
 
 #: webseer_servers.php
-#, fuzzy
 msgid "No Events in History"
-msgstr "역사상의 사건 없음"
+msgstr "기록에 이벤트 없음"
 
 #: webseer_servers.php
 msgid "Master"
 msgstr "마스터"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "This Host"
 msgstr "이 호스트"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Edit Server"
-msgstr "사이트 편집"
+msgstr "서버 편집"
 
 #: webseer_servers.php
-#, fuzzy
-#| msgid "View History"
 msgid "View Server History"
-msgstr "기록 보기"
+msgstr "서버 기록 보기"
 
 #: webseer_servers.php
 msgid "No"
@@ -809,18 +706,16 @@ msgid "Yes"
 msgstr "예"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Webseer Servers"
-msgstr "WebSeer 서버"
+msgstr "Webseer 서버"
 
 #: webseer_servers.php
 msgid "Triggered"
-msgstr "발동"
+msgstr "트리거됨"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Webseer Server History"
-msgstr "WebSeer 서버"
+msgstr "Webseer 서버 기록"
 
 #, fuzzy
 #~ msgid "Edit Site"
