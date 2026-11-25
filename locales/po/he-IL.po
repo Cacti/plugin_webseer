@@ -4,19 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr ""
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2026-09-28 16:09-0400\n"
-"PO-Revision-Date: 2020-12-14 19:05-0500\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: he_IL\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.2\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? 2 : 3);\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-28 16:09-0400\nPO-Revision-Date: 2026-11-25 02:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Hebrew (Israel) <https://translate.cacti.net/projects/cacti/webseer/he_IL/>\nLanguage: he-IL\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && n % 10 == 0) ? 2 : 3));\nX-Generator: Weblate 5.11.4\n"
 
 #: includes/arrays.php webseer_servers.php
 #, php-format
@@ -24,12 +12,12 @@ msgid "%d Minute"
 msgstr "‫%d דקה"
 
 #: includes/arrays.php webseer_servers.php
-#, fuzzy, php-format
+#, php-format
 msgid "%d Minutes"
 msgstr "דקות %d"
 
 #: includes/arrays.php webseer_servers.php
-#, fuzzy, php-format
+#, php-format
 msgid "%d Seconds"
 msgstr "%d שניות"
 
@@ -54,9 +42,8 @@ msgid "Name"
 msgstr "שם"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "A Useful Name for this Proxy."
-msgstr "שם שימושי לפרוקסי זה."
+msgstr "שם שימושי עבור שרת פרוקסי זה."
 
 #: includes/arrays.php
 msgid "New Proxy"
@@ -67,56 +54,48 @@ msgid "Hostname"
 msgstr "Hostname"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The Proxy Hostname."
-msgstr "שם המארח של ה- Proxy."
+msgstr "שם המארח של ה-Proxy."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "HTTP Port"
-msgstr "קוד HTTP"
+msgstr "יציאת HTTP"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The HTTP Proxy Port."
-msgstr "יציאת ה- proxy של HTTP."
+msgstr "יציאת ה-Proxy של HTTP."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "HTTPS Port"
-msgstr "קוד HTTP"
+msgstr "יציאת HTTPS"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The HTTPS Proxy Port."
-msgstr "יציאת ה- proxy של HTTPS."
+msgstr "יציאת ה-Proxy של HTTPS."
 
 #: includes/arrays.php
 msgid "User Name"
 msgstr "שם משתמש"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The user to use to authenticate with the Proxy if any."
-msgstr "המשתמש להשתמש בו כדי לאמת עם ה- Proxy אם יש."
+msgstr "שם המשתמש לאימות מול ה-Proxy, אם קיים."
 
 #: includes/arrays.php
 msgid "Password"
 msgstr "סיסמה"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The user password to use to authenticate with the Proxy if any."
-msgstr "סיסמת המשתמש שבה ניתן להשתמש כדי לאמת עם ה- Proxy, אם בכלל."
+msgstr "סיסמת המשתמש לאימות מול ה-Proxy, אם קיימת."
 
 #: includes/arrays.php
 msgid "General Settings"
 msgstr "הגדרות כלליות"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Display Name of this server"
-msgstr "שם תצוגה של שרת זה"
+msgstr "שם התצוגה של שרת זה"
 
 #: includes/arrays.php webseer_servers.php
 #, fuzzy
@@ -128,94 +107,78 @@ msgstr[2] "הפעל שרת"
 msgstr[3] "הפעל שרת"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Uncheck this box to disabled this server from checking urls."
-msgstr "בטל את סימון התיבה הזו כדי להשבית שרת זה מבדיקת כתובות אתר."
+msgstr "בטל את סימון תיבה זו כדי להשבית שרת זה מבדיקת כתובות URL."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Is this server the local server?"
-msgstr "האם השרת הזה הוא השרת המקומי?"
+msgstr "האם שרת זה הוא השרת המקומי?"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Check this box if the current server you are connected to is this entry."
-msgstr "סמן תיבה זו אם השרת הנוכחי שאליו אתה מחובר הוא ערך זה."
+msgstr "סמן תיבה זו אם השרת הנוכחי שאליו אתה מחובר הוא רשומה זו."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Master Server"
 msgstr "שרת ראשי"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Sets this server to the Master server.  The Master server handles all Email operations"
-msgstr "מגדיר שרת זה לשרת הראשי. שרת המאסטר מטפל בכל פעולות הדואר האלקטרוני"
+msgstr "מגדיר שרת זה כשרת הראשי. השרת הראשי מטפל בכל פעולות הדוא\"ל"
 
 #: includes/arrays.php webseer_servers.php
 msgid "IP Address"
 msgstr "כתובת IP"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "IP Address to connect to this server"
-msgstr "כתובת IP כדי להתחבר לשרת זה"
+msgstr "כתובת IP להתחברות לשרת זה"
 
 #: includes/arrays.php webseer.php webseer_servers.php
 msgid "URL"
 msgstr "URL"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "This is the URL to connect to remote.php on this server."
-msgstr "זוהי כתובת האתר להתחבר ל- remote.php בשרת זה."
+msgstr "זוהי כתובת ה-URL להתחברות אל remote.php בשרת זה."
 
 #: includes/arrays.php webseer_servers.php
 msgid "Location"
 msgstr "מיקום"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Location of this server"
-msgstr "מיקום השרת"
+msgstr "מיקום שרת זה"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Service Check Name"
 msgstr "שם בדיקת שירות"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The name that is displayed for this Service Check, and is included in any Alert notifications."
-msgstr "השם שמוצג עבור בדיקת שירות זו, ונכלל בהודעות התראה."
+msgstr "השם המוצג עבור בדיקת שירות זו, ונכלל בכל הודעות ההתראה."
 
 #: includes/arrays.php webseer.php
-#, fuzzy
 msgid "Enable Service Check"
 msgstr "הפעל בדיקת שירות"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Uncheck this box to disabled this url from being checked."
-msgstr "בטל את סימון התיבה הזו כדי להשבית את כתובת האתר הזו מסומנת."
+msgstr "בטל את סימון תיבה זו כדי להשבית את בדיקת כתובת ה-URL הזו."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "The URL to Monitor"
-msgstr "כתובת האתר לפקח"
+msgstr "כתובת ה-URL לניטור"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Enter an IP address to connect to.  Leaving blank will use DNS Resolution instead."
-msgstr "הזן כתובת IP להתחברות אליה. השארת ריק תשתמש במקום זאת ברזולוציה של DNS."
+msgstr "הזן כתובת IP להתחברות אליה. השארת שדה זה ריק תשתמש בפענוח DNS רגיל."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Proxy Server"
-msgstr "שרת ראשי"
+msgstr "שרת פרוקסי"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "If this connection text requires a proxy, select it here.  Otherwise choose 'None'."
 msgstr "אם טקסט חיבור זה דורש שרת proxy, בחר אותו כאן. אחרת בחר 'ללא'."
 
@@ -224,41 +187,34 @@ msgid "None"
 msgstr "ללא"
 
 #: includes/arrays.php webseer.php
-#, fuzzy
 msgid "Compression"
-msgstr "דְחִיסָה"
+msgstr "דחיסה"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "What compression does the server require?  Most servers should not need this, but some will not redirect properly without it."
-msgstr "איזה דחיסה השרת דורש? רוב השרתים לא צריכים להזדקק לכך, אך חלקם לא ינתבו מחדש כראוי בלעדיו."
+msgstr "איזו דחיסה השרת דורש? רוב השרתים אינם זקוקים לכך, אך חלקם לא יבצעו הפניה מחדש כראוי בלעדיה."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Available Checks"
-msgstr "צ'קים זמינים"
+msgstr "בדיקות זמינות"
 
 #: includes/arrays.php
 msgid "Requires Authentication"
 msgstr "מסמכים נדרשים"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Check this box if the site will normally return a 401 Error as it requires a username and password."
-msgstr "סמן תיבה זו אם האתר בדרך כלל יחזיר שגיאת 401 מכיוון שהוא דורש שם משתמש וסיסמה."
+msgstr "סמן תיבה זו אם האתר מחזיר בדרך כלל שגיאת 401 מכיוון שהוא דורש שם משתמש וסיסמה."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Check Certificate"
-msgstr "בדוק את התעודה"
+msgstr "בדוק תעודה"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "If using SSL, check this box if you want to validate the certificate. Default on, turn off if you the site uses a self-signed certificate."
-msgstr "אם אתה משתמש ב- SSL, סמן תיבה זו אם ברצונך לאמת את האישור. כברירת מחדל, כבה אם האתר משתמש באישור חתום."
+msgstr "אם משתמשים ב-SSL, סמן תיבה זו אם ברצונך לאמת את האישור. פעיל כברירת מחדל; כבה אם האתר משתמש באישור בחתימה עצמית."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Notification Timing"
 msgstr "תזמון התראות"
 
@@ -267,188 +223,152 @@ msgid "Trigger"
 msgstr "טריגר"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "How many minutes the URL must be down before it will send an alert.  After an alert is sent, in order for a 'Site Recovering' Email to be send, it must also be up this number of minutes."
-msgstr "כמה דקות כתובת האתר חייבת להיות מושבתת לפני שהיא תשלח התראה. לאחר שנשלח התראה, על מנת לשלוח הודעת אימייל 'שחזור אתר', היא חייבת להיות גם מספר דקות זה."
+msgstr "כמה דקות כתובת ה-URL חייבת להיות לא פעילה לפני שתישלח התראה. לאחר שליחת התראה, כדי שיישלח דוא\"ל 'התאוששות אתר', עליה להיות פעילה גם במשך מספר דקות זה."
 
 #: includes/arrays.php
 msgid "Time Out"
 msgstr "פסק זמן"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "How many seconds to allow the page to timeout before reporting it as down."
-msgstr "כמה שניות כדי לאפשר לדף לפסק זמן לפני הדיווח על זה למטה."
+msgstr "כמה שניות להמתין לזמן קצוב של הדף לפני דיווחו כלא פעיל."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Verification Strings"
 msgstr "מחרוזות אימות"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Response Search String"
-msgstr "מחרוזת תגובה"
+msgstr "מחרוזת חיפוש בתגובה"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "This is the string to search for in the URL response for a live and working Web Service."
-msgstr "זהו המחרוזת שתחפש בתגובת כתובת האתר עבור שירות אינטרנט פעיל ועובד."
+msgstr "זוהי המחרוזת לחיפוש בתגובת כתובת ה-URL עבור שירות אינטרנט פעיל ותקין."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Response Search String - Maintenance Page"
-msgstr "תגובה מחרוזת חיפוש - תחזוקה עמוד"
+msgstr "מחרוזת חיפוש בתגובה - דף תחזוקה"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "This is the string to search for on the Maintenance Page.  The Service Check will check for this string if the above string is not found.  If found, it means that the Web Service is under maintenance."
-msgstr "זה מחרוזת לחפש בדף תחזוקה. בדיקת השירות תבדוק אם מחרוזת זו לא נמצאה. אם נמצא, משמעות הדבר היא כי שירות האינטרנט נמצא תחת תחזוקה."
+msgstr "זוהי המחרוזת לחיפוש בדף התחזוקה. בדיקת השירות תבדוק מחרוזת זו אם המחרוזת שלמעלה לא נמצאה. אם היא נמצאת, המשמעות היא ששירות האינטרנט נמצא בתחזוקה."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Response Search String - Failed"
-msgstr "מחרוזת תגובה - נכשלה"
+msgstr "מחרוזת חיפוש בתגובה - נכשל"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "This is the string to search for a known failure in the Web Service response.  The Service Check will only alert if this string is found, ignoring any timeout issues and the search strings above."
-msgstr "זוהי המחרוזת לחפש כשל ידוע בתגובת שירות האינטרנט. בדיקת השירות תתריע רק אם מחרוזת זו תימצא, תוך התעלמות מבעיות זמן קצוב ומחרוזות החיפוש שלמעלה."
+msgstr "זוהי המחרוזת לחיפוש כשל ידוע בתגובת שירות האינטרנט. בדיקת השירות תתריע רק אם מחרוזת זו תימצא, תוך התעלמות מבעיות זמן קצוב וממחרוזות החיפוש שלמעלה."
 
 #: includes/arrays.php
 msgid "Notification Settings"
 msgstr "הגדרות התראות"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Notify Format"
-msgstr "יידע חשבונות"
+msgstr "פורמט התראה"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "This is the format to use when sending the notification email"
-msgstr "זהו הפורמט לשימוש בעת שליחת דוא\"ל ההודעה"
+msgstr "זהו הפורמט לשימוש בעת שליחת דוא\"ל ההתראה"
 
 #: includes/arrays.php
-#, fuzzy
-#| msgid "Notification Settings"
 msgid "Notification List"
-msgstr "הגדרות התראות"
+msgstr "רשימת התראות"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Use this Notification List for those to be notified when this website goes down."
-msgstr "זהו רשימה של חשבונות אשר יקבלו הודעה כאשר אתר זה יורד."
+msgstr "השתמש ברשימת התראות זו עבור מי שיקבל התראה כאשר אתר זה יהפוך ללא פעיל."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Notify Accounts"
-msgstr "יידע חשבונות"
+msgstr "חשבונות להתראה"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "This is a listing of accounts that will be notified when this website goes down."
-msgstr "זהו רשימה של חשבונות אשר יקבלו הודעה כאשר אתר זה יורד."
+msgstr "זוהי רשימת החשבונות שיקבלו התראה כאשר אתר זה הופך ללא פעיל."
 
 #: includes/arrays.php
-#, fuzzy
 msgid "Extra Alert Emails"
-msgstr "הודעות התראה נוספות"
+msgstr "כתובות דוא\"ל נוספות להתראות"
 
 #: includes/arrays.php
-#, fuzzy
 msgid "You may specify here extra Emails to receive alerts for this URL (comma separated)"
-msgstr "תוכל לציין כאן הודעות אימייל נוספות כדי לקבל התראות עבור כתובת אתר זו (מופרד באמצעות פסיק)"
+msgstr "ניתן לציין כאן כתובות דוא\"ל נוספות לקבלת התראות עבור כתובת URL זו (מופרדות בפסיק)"
 
 #: includes/functions.php webseer.php
-#, fuzzy
 msgid "Checks"
-msgstr "המחאות"
+msgstr "בדיקות"
 
 #: includes/functions.php webseer_servers.php
 msgid "Servers"
-msgstr "Serveurs"
+msgstr "שרתים"
 
 #: includes/functions.php webseer_proxies.php
 msgid "Proxies"
 msgstr "פרוקסים"
 
 #: includes/functions.php
-#, fuzzy
-#| msgid "View History"
 msgid "Log History"
-msgstr "צפה בהיסטוריה"
+msgstr "היסטוריית יומן"
 
 #: poller_webseer.php
-#, fuzzy
 msgid "Cacti Master"
-msgstr "מאסטר קקטוסים"
+msgstr "Cacti ראשי"
 
 #: poller_webseer.php
-#, fuzzy
 msgid "Cacti Remote Server"
-msgstr "שרת מרוחק"
+msgstr "שרת Cacti מרוחק"
 
 #: setup.php
-#, fuzzy
 msgid "Web Service Check Admin"
-msgstr "שירות אינטרנט בדוק מנהל"
+msgstr "ניהול בדיקות שירות אינטרנט"
 
 #: setup.php
 msgid "Management"
 msgstr "ניהול"
 
 #: setup.php
-#, fuzzy
 msgid "Service Checks"
-msgstr "בדיקות שירות אינטרנט"
+msgstr "בדיקות שירות"
 
 #: setup.php
-#, fuzzy
 msgid "WebSeer Service Checks"
 msgstr "בדיקות שירות WebSeer"
 
 #: setup.php
-#, fuzzy
 msgid "Service Check Edit"
-msgstr "בדוק שירות עריכה"
+msgstr "עריכת בדיקת שירות"
 
 #: setup.php
-#, fuzzy
 msgid "Service Check Save"
-msgstr "שם בדיקת שירות"
+msgstr "שמירת בדיקת שירות"
 
 #: setup.php
-#, fuzzy
 msgid "WebSeer Servers"
-msgstr "שרתים WebSeer"
+msgstr "שרתי WebSeer"
 
 #: setup.php
-#, fuzzy
 msgid "Server Edit"
 msgstr "עריכת שרת"
 
 #: setup.php
-#, fuzzy
 msgid "Save Server"
-msgstr "הפעל שרת"
+msgstr "שמור שרת"
 
 #: setup.php
-#, fuzzy
 msgid "WebSeer Proxies"
-msgstr "שרתים WebSeer"
+msgstr "שרתי פרוקסי של WebSeer"
 
 #: setup.php
-#, fuzzy
-#| msgid "Proxies"
 msgid "Proxie Edit"
-msgstr "פרוקסים"
+msgstr "עריכת Proxy"
 
 #: setup.php
-#, fuzzy
-#| msgid "New Proxy"
 msgid "Save Proxy"
-msgstr "פרוקסי חדש"
+msgstr "שמור פרוקסי"
 
 #: webseer.php
 #, fuzzy
@@ -537,30 +457,26 @@ msgstr[3] "שכפל"
 #: webseer.php
 #, php-format
 msgid "The Service Check history was purged for %s"
-msgstr ""
+msgstr "היסטוריית בדיקת השירות נוקתה עבור %s"
 
 #: webseer.php webseer_servers.php
-#, fuzzy, php-format
+#, php-format
 msgid "Query [edit: %s]"
 msgstr "שאילתה [עריכה: %s]"
 
 #: webseer.php webseer_servers.php
-#, fuzzy
 msgid "Query [new]"
 msgstr "שאילתה [חדש]"
 
 #: webseer.php
-#, fuzzy
 msgid "No Users Selected"
 msgstr "לא נבחרו משתמשים"
 
 #: webseer.php
-#, fuzzy
 msgid "Users Selected"
 msgstr "משתמשים נבחרו"
 
 #: webseer.php
-#, fuzzy
 msgid "All Users Selected"
 msgstr "כל המשתמשים נבחרו"
 
@@ -581,14 +497,12 @@ msgid "Error"
 msgstr "שגיאה"
 
 #: webseer.php webseer_servers.php
-#, fuzzy
 msgid "HTTP Code"
 msgstr "קוד HTTP"
 
 #: webseer.php webseer_servers.php
-#, fuzzy
 msgid "DNS"
-msgstr "‫DNS"
+msgstr "DNS"
 
 #: webseer.php webseer_servers.php
 msgid "Connect"
@@ -604,20 +518,19 @@ msgstr "סה\"כ"
 
 #: webseer.php
 msgid "Urls"
-msgstr ""
+msgstr "כתובות URL"
 
 #: webseer.php
 msgid "Service Down"
-msgstr ""
+msgstr "השירות לא פעיל"
 
 #: webseer.php
 msgid "Service Restored"
-msgstr ""
+msgstr "השירות שוחזר"
 
 #: webseer.php
-#, fuzzy
 msgid "No Service Check Events in History"
-msgstr "אין אירועים בהיסטוריה"
+msgstr "אין אירועי בדיקת שירות בהיסטוריה"
 
 #: webseer.php webseer_servers.php
 msgid "Actions"
@@ -640,29 +553,25 @@ msgid "Timeout"
 msgstr "פסק זמן"
 
 #: webseer.php webseer_servers.php
-#, fuzzy
 msgid "Last Check"
 msgstr "בדיקה אחרונה"
 
 #: webseer.php
-#, fuzzy
 msgid "Edit Service Check"
-msgstr "הפעל בדיקת שירות"
+msgstr "ערוך בדיקת שירות"
 
 #: webseer.php
-#, fuzzy
 msgid "Disable Service Check"
-msgstr "הפעל בדיקת שירות"
+msgstr "השבת בדיקת שירות"
 
 #: webseer.php
-#, fuzzy
 msgid "View Service Check History"
-msgstr "בדיקות שירות אינטרנט"
+msgstr "הצג היסטוריית בדיקות שירות"
 
 #: webseer.php
-#, fuzzy, php-format
+#, php-format
 msgid "DNS: Server %s - A Record for %s"
-msgstr "DNS: שרת %s - רשומה עבור %s"
+msgstr "DNS: שרת %s - רשומת A עבור %s"
 
 #: webseer.php
 msgid "N/A"
@@ -670,7 +579,7 @@ msgstr "לא זמין"
 
 #: webseer.php webseer_servers.php
 msgid "Down"
-msgstr "למטה"
+msgstr "מושבת"
 
 #: webseer.php webseer_servers.php
 msgid "Up"
@@ -681,12 +590,10 @@ msgid "Disabled"
 msgstr "לא זמין"
 
 #: webseer.php webseer_proxies.php webseer_servers.php
-#, fuzzy
 msgid "No Servers Found"
 msgstr "לא נמצאו שרתים"
 
 #: webseer.php
-#, fuzzy
 msgid "Webseer Service Checks"
 msgstr "בדיקות שירות WebSeer"
 
@@ -715,23 +622,20 @@ msgid "Clear"
 msgstr "נקה"
 
 #: webseer.php
-#, fuzzy
 msgid "Webseer Service Check History"
-msgstr "בדיקות שירות WebSeer"
+msgstr "היסטוריית בדיקות שירות WebSeer"
 
 #: webseer.php webseer_servers.php
-#, fuzzy
-#| msgid "Search"
 msgid "Date Search"
-msgstr "חיפוש"
+msgstr "חיפוש לפי תאריך"
 
 #: webseer.php webseer_servers.php
 msgid "Entries"
-msgstr ""
+msgstr "רשומות"
 
 #: webseer.php
 msgid "Purge Events"
-msgstr ""
+msgstr "נקה אירועים לצמיתות"
 
 #: webseer_proxies.php
 #, fuzzy
@@ -752,19 +656,17 @@ msgstr[2] ""
 msgstr[3] ""
 
 #: webseer_proxies.php
-#, fuzzy, php-format
+#, php-format
 msgid "Proxy [edit: %s]"
-msgstr "שאילתה [עריכה: %s]"
+msgstr "Proxy [עריכה: %s]"
 
 #: webseer_proxies.php
-#, fuzzy
 msgid "Proxy [new]"
-msgstr "שאילתה [חדש]"
+msgstr "Proxy [חדש]"
 
 #: webseer_proxies.php
-#, fuzzy
 msgid "Ports (http/https)"
-msgstr "יציאות (http / https)"
+msgstr "יציאות (http/https)"
 
 #: webseer_proxies.php
 msgid "Username"
@@ -775,9 +677,8 @@ msgid "Not Set"
 msgstr "לא מוגדר"
 
 #: webseer_proxies.php
-#, fuzzy
 msgid "Webseer Proxy Management"
-msgstr "ניהול שרת Webseer"
+msgstr "ניהול שרתי פרוקסי של WebSeer"
 
 #: webseer_servers.php
 #, fuzzy
@@ -825,30 +726,24 @@ msgstr[2] ""
 msgstr[3] ""
 
 #: webseer_servers.php
-#, fuzzy
 msgid "No Events in History"
 msgstr "אין אירועים בהיסטוריה"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Master"
-msgstr "מאסטר"
+msgstr "ראשי"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "This Host"
 msgstr "מארח זה"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Edit Server"
-msgstr "ערוך אתר"
+msgstr "ערוך שרת"
 
 #: webseer_servers.php
-#, fuzzy
-#| msgid "View History"
 msgid "View Server History"
-msgstr "צפה בהיסטוריה"
+msgstr "הצג היסטוריית שרת"
 
 #: webseer_servers.php
 msgid "No"
@@ -859,19 +754,16 @@ msgid "Yes"
 msgstr "כן"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Webseer Servers"
-msgstr "שרתים WebSeer"
+msgstr "שרתי WebSeer"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Triggered"
-msgstr "טריגר"
+msgstr "הופעל"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Webseer Server History"
-msgstr "שרתים WebSeer"
+msgstr "היסטוריית שרתי WebSeer"
 
 #, fuzzy
 #~ msgid "Edit Site"
