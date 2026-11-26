@@ -33,17 +33,15 @@ it('passes the webseer text domain to every translation helper call', function (
 	 */
 	$known = [
 		// option labels
-		'includes/arrays.php' => 13,
-		// poller messages
-		'poller_webseer.php' => 2,
+		'includes/arrays.php' => 4,
 		// 'Cacti Master' label
 		'setup.php' => 1,
 		// delete confirmation
-		'webseer.php' => 16,
+		'webseer.php' => 8,
 		// proxy list and edit labels, delete confirmation
-		'webseer_proxies.php' => 6,
+		'webseer_proxies.php' => 2,
 		// delete confirmation
-		'webseer_servers.php' => 12,
+		'webseer_servers.php' => 6,
 	];
 
 	$found = [];

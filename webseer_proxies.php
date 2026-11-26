@@ -124,12 +124,12 @@ function proxy_form_actions() {
 		if (get_nfilter_request_var('drp_action') == WEBSEER_ACTION_PROXY_DELETE) { // delete
 			print "	<tr>
 					<td class='topBoxAlt'>
-						<p>" . __n('Click \'Continue\' to delete the following Proxy.', 'Click \'Continue\' to delete following Proxies.', cacti_sizeof($proxy_array)) . "</p>
+						<p>" . __n('Click \'Continue\' to delete the following Proxy.', 'Click \'Continue\' to delete following Proxies.', cacti_sizeof($proxy_array), 'webseer') . "</p>
 						<div class='itemlist'><ul>$proxy_list</ul></div>
 					</td>
 				</tr>\n";
 
-			$save_html = "<input type='button' class='cactiReturnTo' value='" . __esc('Cancel') . "'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Delete Proxy', 'Delete Proxies', cacti_sizeof($proxy_array)) . "'>";
+			$save_html = "<input type='button' class='cactiReturnTo' value='" . __esc('Cancel') . "'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Delete Proxy', 'Delete Proxies', cacti_sizeof($proxy_array), 'webseer') . "'>";
 		}
 	} else {
 		raise_message(40);
@@ -210,9 +210,9 @@ function proxy_edit() {
 			[get_request_var('id')]);
 
 		$proxy        = is_array($proxy) ? $proxy : [];
-		$header_label = __('Proxy [edit: %s]', $proxy['name'] ?? '');
+		$header_label = __('Proxy [edit: %s]', $proxy['name'] ?? '', 'webseer');
 	} else {
-		$header_label = __('Proxy [new]');
+		$header_label = __('Proxy [new]', 'webseer');
 	}
 
 	top_header();

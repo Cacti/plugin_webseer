@@ -166,30 +166,30 @@ function form_actions() {
 		if ($action == WEBSEER_ACTION_SERVER_DELETE) { // delete
 			print "	<tr>
 					<td class='topBoxAlt'>
-						<p>" . __n('Click \'Continue\' to Delete the following Server.', 'Click \'Continue\' to Delete following Servers.', cacti_sizeof($server_array)) . "</p>
+						<p>" . __n('Click \'Continue\' to Delete the following Server.', 'Click \'Continue\' to Delete following Servers.', cacti_sizeof($server_array), 'webseer') . "</p>
 						<div class='itemlist'><ul>$server_list</ul></div>
 					</td>
 				</tr>";
 
-			$save_html = "<input type='button' class='cactiReturnTo' value='" . __esc('Cancel') . "'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Delete Server', 'Delete Servers', cacti_sizeof($server_array)) . "'>";
+			$save_html = "<input type='button' class='cactiReturnTo' value='" . __esc('Cancel') . "'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Delete Server', 'Delete Servers', cacti_sizeof($server_array), 'webseer') . "'>";
 		} elseif ($action == WEBSEER_ACTION_SERVER_DISABLE) {
 			print "	<tr>
 					<td class='topBoxAlt'>
-						<p>" . __n('Click \'Continue\' to Disable the following Server.', 'Click \'Continue\' to Disable following Servers.', cacti_sizeof($server_array)) . "</p>
+						<p>" . __n('Click \'Continue\' to Disable the following Server.', 'Click \'Continue\' to Disable following Servers.', cacti_sizeof($server_array), 'webseer') . "</p>
 						<div class='itemlist'><ul>$server_list</ul></div>
 					</td>
 				</tr>";
 
-			$save_html = "<input type='button' class='cactiReturnTo' value='" . __esc('Cancel') . "'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Disable Server', 'Disable Servers', cacti_sizeof($server_array)) . "'>";
+			$save_html = "<input type='button' class='cactiReturnTo' value='" . __esc('Cancel') . "'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Disable Server', 'Disable Servers', cacti_sizeof($server_array), 'webseer') . "'>";
 		} elseif ($action == WEBSEER_ACTION_SERVER_ENABLE) {
 			print "	<tr>
 					<td class='topBoxAlt'>
-						<p>" . __n('Click \'Continue\' to Enable the following Server.', 'Click \'Continue\' to Enable following Servers.', cacti_sizeof($server_array)) . "</p>
+						<p>" . __n('Click \'Continue\' to Enable the following Server.', 'Click \'Continue\' to Enable following Servers.', cacti_sizeof($server_array), 'webseer') . "</p>
 						<div class='itemlist'><ul>$server_list</ul></div>
 					</td>
 				</tr>";
 
-			$save_html = "<input type='button' class='cactiReturnTo' value='" . __esc('Cancel') . "'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Enable Server', 'Enable Servers', cacti_sizeof($server_array)) . "'>";
+			$save_html = "<input type='button' class='cactiReturnTo' value='" . __esc('Cancel') . "'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Enable Server', 'Enable Servers', cacti_sizeof($server_array), 'webseer') . "'>";
 		}
 	} else {
 		raise_message(40);

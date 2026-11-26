@@ -224,10 +224,10 @@ function plugin_webseer_register_server() {
 
 		if (isset($config['poller_id']) && $config['poller_id'] == 1) {
 			$save['master'] = 1;
-			$save['name']   = __('Cacti Master');
+			$save['name']   = __('Cacti Master', 'webseer');
 		} else {
 			$save['master'] = 0;
-			$save['name']   = __('Cacti Remote Server');
+			$save['name']   = __('Cacti Remote Server', 'webseer');
 		}
 
 		if (substr_count($hostname, '.') > 0) {
