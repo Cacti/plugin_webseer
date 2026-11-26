@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-28 16:09-0400\nPO-Revision-Date: 2026-11-25 02:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Hebrew (Israel) <https://translate.cacti.net/projects/cacti/webseer/he_IL/>\nLanguage: he-IL\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && n % 10 == 0) ? 2 : 3));\nX-Generator: Weblate 5.11.4\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-28 16:09-0400\nPO-Revision-Date: 2026-11-26 03:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Hebrew (Israel) <https://translate.cacti.net/projects/cacti/webseer/he_IL/>\nLanguage: he-IL\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && n % 10 == 0) ? 2 : 3));\nX-Generator: Weblate 5.11.4\n"
 
 #: includes/arrays.php webseer_servers.php
 #, php-format
@@ -98,13 +98,12 @@ msgid "Display Name of this server"
 msgstr "שם התצוגה של שרת זה"
 
 #: includes/arrays.php webseer_servers.php
-#, fuzzy
 msgid "Enable Server"
 msgid_plural "Enable Servers"
-msgstr[0] "הפעל שרת"
-msgstr[1] "הפעל שרת"
-msgstr[2] "הפעל שרת"
-msgstr[3] "הפעל שרת"
+msgstr[0] "הפעלת שרת"
+msgstr[1] "הפעלת שרתים"
+msgstr[2] "הפעלת שרתים"
+msgstr[3] "הפעלת שרתים"
 
 #: includes/arrays.php
 msgid "Uncheck this box to disabled this server from checking urls."
@@ -371,13 +370,12 @@ msgid "Save Proxy"
 msgstr "שמור פרוקסי"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Delete the following URL."
 msgid_plural "Click 'Continue' to Delete following URLs."
-msgstr[0] "לחץ על 'המשך' כדי למחוק את ה- Proxy הבא."
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "לחץ על 'המשך' כדי למחוק את כתובת ה-URL הבאה."
+msgstr[1] "לחץ על 'המשך' כדי למחוק את כתובות ה-URL הבאות."
+msgstr[2] "לחץ על 'המשך' כדי למחוק את כתובות ה-URL הבאות."
+msgstr[3] "לחץ על 'המשך' כדי למחוק את כתובות ה-URL הבאות."
 
 #: webseer.php webseer_proxies.php webseer_servers.php
 msgid "Cancel"
@@ -388,71 +386,60 @@ msgid "Continue"
 msgstr "המשך"
 
 #: webseer.php
-#, fuzzy
-#| msgid "Delete"
 msgid "Delete URL"
 msgid_plural "Delete URLs"
-msgstr[0] "מחק"
-msgstr[1] "מחק"
-msgstr[2] "מחק"
-msgstr[3] "מחק"
+msgstr[0] "מחיקת כתובת URL"
+msgstr[1] "מחיקת כתובות URL"
+msgstr[2] "מחיקת כתובות URL"
+msgstr[3] "מחיקת כתובות URL"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Disable the following URL."
 msgid_plural "Click 'Continue' to Disable following URLs."
-msgstr[0] "לחץ על 'המשך' כדי למחוק את ה- Proxy הבא."
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "לחץ על 'המשך' כדי להשבית את כתובת ה-URL הבאה."
+msgstr[1] "לחץ על 'המשך' כדי להשבית את כתובות ה-URL הבאות."
+msgstr[2] "לחץ על 'המשך' כדי להשבית את כתובות ה-URL הבאות."
+msgstr[3] "לחץ על 'המשך' כדי להשבית את כתובות ה-URL הבאות."
 
 #: webseer.php
-#, fuzzy
-#| msgid "Disable"
 msgid "Disable URL"
 msgid_plural "Disable URLs"
-msgstr[0] "כיבוי"
-msgstr[1] "כיבוי"
-msgstr[2] "כיבוי"
-msgstr[3] "כיבוי"
+msgstr[0] "השבתת כתובת URL"
+msgstr[1] "השבתת כתובות URL"
+msgstr[2] "השבתת כתובות URL"
+msgstr[3] "השבתת כתובות URL"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Enable the following URL."
 msgid_plural "Click 'Continue' to Enable following URLs."
-msgstr[0] "לחץ על 'המשך' כדי למחוק את ה- Proxy הבא."
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "לחץ על 'המשך' כדי להפעיל את כתובת ה-URL הבאה."
+msgstr[1] "לחץ על 'המשך' כדי להפעיל את כתובות ה-URL הבאות."
+msgstr[2] "לחץ על 'המשך' כדי להפעיל את כתובות ה-URL הבאות."
+msgstr[3] "לחץ על 'המשך' כדי להפעיל את כתובות ה-URL הבאות."
 
 #: webseer.php
-#, fuzzy
-#| msgid "Enable"
 msgid "Enable URL"
 msgid_plural "Enable URLs"
-msgstr[0] "אפשר"
-msgstr[1] "אפשר"
-msgstr[2] "אפשר"
-msgstr[3] "אפשר"
+msgstr[0] "הפעלת כתובת URL"
+msgstr[1] "הפעלת כתובות URL"
+msgstr[2] "הפעלת כתובות URL"
+msgstr[3] "הפעלת כתובות URL"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Duplicate the following URL."
 msgid_plural "Click 'Continue' to Duplicate following URLs."
-msgstr[0] "לחץ על 'המשך' כדי למחוק את ה- Proxy הבא."
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "לחץ על 'המשך' כדי לשכפל את כתובת ה-URL הבאה."
+msgstr[1] "לחץ על 'המשך' כדי לשכפל את כתובות ה-URL הבאות."
+msgstr[2] "לחץ על 'המשך' כדי לשכפל את כתובות ה-URL הבאות."
+msgstr[3] "לחץ על 'המשך' כדי לשכפל את כתובות ה-URL הבאות."
 
 #: webseer.php
-#, fuzzy
-#| msgid "Duplicate"
 msgid "Duplicate URL"
 msgid_plural "Duplicate URLs"
-msgstr[0] "שכפל"
-msgstr[1] "שכפל"
-msgstr[2] "שכפל"
-msgstr[3] "שכפל"
+msgstr[0] "שכפול כתובת URL"
+msgstr[1] "שכפול כתובות URL"
+msgstr[2] "שכפול כתובות URL"
+msgstr[3] "שכפול כתובות URL"
 
 #: webseer.php
 #, php-format
@@ -575,7 +562,7 @@ msgstr "DNS: שרת %s - רשומת A עבור %s"
 
 #: webseer.php
 msgid "N/A"
-msgstr "לא זמין"
+msgstr "לא רלוונטי"
 
 #: webseer.php webseer_servers.php
 msgid "Down"
@@ -587,7 +574,7 @@ msgstr "למעלה"
 
 #: webseer.php webseer_servers.php
 msgid "Disabled"
-msgstr "לא זמין"
+msgstr "מושבת"
 
 #: webseer.php webseer_proxies.php webseer_servers.php
 msgid "No Servers Found"
@@ -603,7 +590,7 @@ msgstr "מדינה"
 
 #: webseer.php webseer_servers.php
 msgid "Any"
-msgstr "הכל"
+msgstr "כלשהו"
 
 #: webseer.php webseer_servers.php
 msgid "Refresh"
@@ -638,22 +625,20 @@ msgid "Purge Events"
 msgstr "נקה אירועים לצמיתות"
 
 #: webseer_proxies.php
-#, fuzzy
 msgid "Click 'Continue' to delete the following Proxy."
 msgid_plural "Click 'Continue' to delete following Proxies."
-msgstr[0] "לחץ על 'המשך' כדי למחוק את ה- Proxy הבא."
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "לחץ על 'המשך' כדי למחוק את ה-Proxy הבא."
+msgstr[1] "לחץ על 'המשך' כדי למחוק את שרתי ה-Proxy הבאים."
+msgstr[2] "לחץ על 'המשך' כדי למחוק את שרתי ה-Proxy הבאים."
+msgstr[3] "לחץ על 'המשך' כדי למחוק את שרתי ה-Proxy הבאים."
 
 #: webseer_proxies.php
-#, fuzzy
 msgid "Delete Proxy"
 msgid_plural "Delete Proxies"
-msgstr[0] "מחק"
-msgstr[1] "מחק"
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "מחיקת Proxy"
+msgstr[1] "מחיקת שרתי Proxy"
+msgstr[2] "מחיקת שרתי Proxy"
+msgstr[3] "מחיקת שרתי Proxy"
 
 #: webseer_proxies.php
 #, php-format
@@ -681,49 +666,44 @@ msgid "Webseer Proxy Management"
 msgstr "ניהול שרתי פרוקסי של WebSeer"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Click 'Continue' to Delete the following Server."
 msgid_plural "Click 'Continue' to Delete following Servers."
-msgstr[0] "לחץ על 'המשך' כדי למחוק את ה- Proxy הבא."
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "לחץ על 'המשך' כדי למחוק את השרת הבא."
+msgstr[1] "לחץ על 'המשך' כדי למחוק את השרתים הבאים."
+msgstr[2] "לחץ על 'המשך' כדי למחוק את השרתים הבאים."
+msgstr[3] "לחץ על 'המשך' כדי למחוק את השרתים הבאים."
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Delete Server"
 msgid_plural "Delete Servers"
-msgstr[0] "שרתים WebSeer"
-msgstr[1] "שרתים WebSeer"
-msgstr[2] "שרתים WebSeer"
-msgstr[3] "שרתים WebSeer"
+msgstr[0] "מחיקת שרת"
+msgstr[1] "מחיקת שרתים"
+msgstr[2] "מחיקת שרתים"
+msgstr[3] "מחיקת שרתים"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Click 'Continue' to Disable the following Server."
 msgid_plural "Click 'Continue' to Disable following Servers."
-msgstr[0] "לחץ על 'המשך' כדי למחוק את ה- Proxy הבא."
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "לחץ על 'המשך' כדי להשבית את השרת הבא."
+msgstr[1] "לחץ על 'המשך' כדי להשבית את השרתים הבאים."
+msgstr[2] "לחץ על 'המשך' כדי להשבית את השרתים הבאים."
+msgstr[3] "לחץ על 'המשך' כדי להשבית את השרתים הבאים."
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Disable Server"
 msgid_plural "Disable Servers"
-msgstr[0] "הפעל שרת"
-msgstr[1] "הפעל שרת"
-msgstr[2] "הפעל שרת"
-msgstr[3] "הפעל שרת"
+msgstr[0] "השבתת שרת"
+msgstr[1] "השבתת שרתים"
+msgstr[2] "השבתת שרתים"
+msgstr[3] "השבתת שרתים"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Click 'Continue' to Enable the following Server."
 msgid_plural "Click 'Continue' to Enable following Servers."
-msgstr[0] "לחץ על 'המשך' כדי למחוק את ה- Proxy הבא."
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "לחץ על 'המשך' כדי להפעיל את השרת הבא."
+msgstr[1] "לחץ על 'המשך' כדי להפעיל את השרתים הבאים."
+msgstr[2] "לחץ על 'המשך' כדי להפעיל את השרתים הבאים."
+msgstr[3] "לחץ על 'המשך' כדי להפעיל את השרתים הבאים."
 
 #: webseer_servers.php
 msgid "No Events in History"
