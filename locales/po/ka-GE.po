@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: Cacti\nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-28 16:09-0400\nPO-Revision-Date: 2026-10-24 02:18+0000\nLast-Translator: Ekaterine papava <papava.e@gtu.ge>\nLanguage-Team: Georgian <https://translate.cacti.net/projects/cacti/webseer/ka/>\nLanguage: ka-GE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
+msgstr "Project-Id-Version: Cacti\nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-28 16:09-0400\nPO-Revision-Date: 2026-11-26 03:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Georgian <https://translate.cacti.net/projects/cacti/webseer/ka/>\nLanguage: ka-GE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
 
 #: includes/arrays.php webseer_servers.php
 #, php-format
@@ -43,7 +43,7 @@ msgstr "სახელი"
 
 #: includes/arrays.php
 msgid "A Useful Name for this Proxy."
-msgstr ""
+msgstr "ამ პროქსისთვის გამოსადეგი სახელი."
 
 #: includes/arrays.php
 msgid "New Proxy"
@@ -79,7 +79,7 @@ msgstr "მომხმარებლის სახელი"
 
 #: includes/arrays.php
 msgid "The user to use to authenticate with the Proxy if any."
-msgstr ""
+msgstr "მომხმარებელი პროქსისთან ავთენტიფიკაციისთვის, ასეთის არსებობის შემთხვევაში."
 
 #: includes/arrays.php
 msgid "Password"
@@ -87,7 +87,7 @@ msgstr "პაროლი"
 
 #: includes/arrays.php
 msgid "The user password to use to authenticate with the Proxy if any."
-msgstr ""
+msgstr "მომხმარებლის პაროლი პროქსისთან ავთენტიფიკაციისთვის, ასეთის არსებობის შემთხვევაში."
 
 #: includes/arrays.php
 msgid "General Settings"
@@ -95,25 +95,25 @@ msgstr "ზოგადი პარამეტრები"
 
 #: includes/arrays.php
 msgid "Display Name of this server"
-msgstr ""
+msgstr "ამ სერვერის საჩვენებელი სახელი"
 
 #: includes/arrays.php webseer_servers.php
 msgid "Enable Server"
 msgid_plural "Enable Servers"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "სერვერის ჩართვა"
+msgstr[1] "სერვერების ჩართვა"
 
 #: includes/arrays.php
 msgid "Uncheck this box to disabled this server from checking urls."
-msgstr ""
+msgstr "მოხსენით მონიშვნა, რათა ამ სერვერს აეკრძალოს URL-ების შემოწმება."
 
 #: includes/arrays.php
 msgid "Is this server the local server?"
-msgstr ""
+msgstr "არის თუ არა ეს სერვერი ლოკალური სერვერი?"
 
 #: includes/arrays.php
 msgid "Check this box if the current server you are connected to is this entry."
-msgstr ""
+msgstr "მონიშნეთ ეს ველი, თუ მიმდინარე სერვერი, რომელსაც უკავშირდებით, სწორედ ეს ჩანაწერია."
 
 #: includes/arrays.php
 msgid "Master Server"
@@ -121,7 +121,7 @@ msgstr "მთავარი სერვერი"
 
 #: includes/arrays.php
 msgid "Sets this server to the Master server.  The Master server handles all Email operations"
-msgstr ""
+msgstr "აყენებს ამ სერვერს მთავარ სერვერად. მთავარი სერვერი ასრულებს ელფოსტის ყველა ოპერაციას"
 
 #: includes/arrays.php webseer_servers.php
 msgid "IP Address"
@@ -129,7 +129,7 @@ msgstr "IP მისამართი"
 
 #: includes/arrays.php
 msgid "IP Address to connect to this server"
-msgstr ""
+msgstr "IP მისამართი ამ სერვერთან დასაკავშირებლად"
 
 #: includes/arrays.php webseer.php webseer_servers.php
 msgid "URL"
@@ -137,7 +137,7 @@ msgstr "URL"
 
 #: includes/arrays.php
 msgid "This is the URL to connect to remote.php on this server."
-msgstr ""
+msgstr "ეს არის URL ამ სერვერზე remote.php-სთან დასაკავშირებლად."
 
 #: includes/arrays.php webseer_servers.php
 msgid "Location"
@@ -145,7 +145,7 @@ msgstr "მდებარეობა"
 
 #: includes/arrays.php
 msgid "Location of this server"
-msgstr ""
+msgstr "ამ სერვერის მდებარეობა"
 
 #: includes/arrays.php
 msgid "Service Check Name"
@@ -153,7 +153,7 @@ msgstr "სერვისის შემოწმების სახელ�
 
 #: includes/arrays.php
 msgid "The name that is displayed for this Service Check, and is included in any Alert notifications."
-msgstr ""
+msgstr "სახელი, რომელიც გამოჩნდება ამ სერვისის შემოწმებისთვის და ჩაირთვება განგაშის ყველა შეტყობინებაში."
 
 #: includes/arrays.php webseer.php
 msgid "Enable Service Check"
@@ -161,15 +161,15 @@ msgstr "სერვისის შემოწმებების ჩარ�
 
 #: includes/arrays.php
 msgid "Uncheck this box to disabled this url from being checked."
-msgstr ""
+msgstr "მოხსენით მონიშვნა ამ URL-ის შემოწმების გასათიშად."
 
 #: includes/arrays.php
 msgid "The URL to Monitor"
-msgstr ""
+msgstr "მონიტორინგისთვის განკუთვნილი URL"
 
 #: includes/arrays.php
 msgid "Enter an IP address to connect to.  Leaving blank will use DNS Resolution instead."
-msgstr ""
+msgstr "შეიყვანეთ IP მისამართი დასაკავშირებლად. ცარიელად დატოვების შემთხვევაში გამოყენებული იქნება DNS გარჩევა."
 
 #: includes/arrays.php
 msgid "Proxy Server"
@@ -177,7 +177,7 @@ msgstr "პროქსი სერვერი"
 
 #: includes/arrays.php
 msgid "If this connection text requires a proxy, select it here.  Otherwise choose 'None'."
-msgstr ""
+msgstr "თუ ამ კავშირს პროქსი სჭირდება, აირჩიეთ აქ. წინააღმდეგ შემთხვევაში აირჩიეთ 'არცერთი'."
 
 #: includes/arrays.php webseer.php
 msgid "None"
@@ -189,7 +189,7 @@ msgstr "შეკუმშვა"
 
 #: includes/arrays.php
 msgid "What compression does the server require?  Most servers should not need this, but some will not redirect properly without it."
-msgstr ""
+msgstr "რა შეკუმშვას საჭიროებს სერვერი? სერვერების უმეტესობას ეს არ უნდა დასჭირდეს, მაგრამ ზოგიერთი მის გარეშე გადამისამართებას სწორად ვერ შეასრულებს."
 
 #: includes/arrays.php
 msgid "Available Checks"
@@ -201,7 +201,7 @@ msgstr "ითხოვს ავთენტიკაციას"
 
 #: includes/arrays.php
 msgid "Check this box if the site will normally return a 401 Error as it requires a username and password."
-msgstr ""
+msgstr "მონიშნეთ ეს ველი, თუ საიტი ჩვეულებრივ აბრუნებს 401 შეცდომას, რადგან მომხმარებლის სახელსა და პაროლს ითხოვს."
 
 #: includes/arrays.php
 msgid "Check Certificate"
@@ -209,7 +209,7 @@ msgstr "სერტიფიკატის შემოწმება"
 
 #: includes/arrays.php
 msgid "If using SSL, check this box if you want to validate the certificate. Default on, turn off if you the site uses a self-signed certificate."
-msgstr ""
+msgstr "SSL-ის გამოყენებისას მონიშნეთ ეს ველი, თუ გსურთ სერტიფიკატის ვალიდაცია. ნაგულისხმევად ჩართულია; გამორთეთ, თუ საიტი თვითხელმოწერილ სერტიფიკატს იყენებს."
 
 #: includes/arrays.php
 msgid "Notification Timing"
@@ -221,7 +221,7 @@ msgstr "ტრიგერი"
 
 #: includes/arrays.php
 msgid "How many minutes the URL must be down before it will send an alert.  After an alert is sent, in order for a 'Site Recovering' Email to be send, it must also be up this number of minutes."
-msgstr ""
+msgstr "რამდენი წუთი უნდა იყოს URL მიუწვდომელი გაფრთხილების გაგზავნამდე. გაფრთხილების გაგზავნის შემდეგ, 'საიტის აღდგენა' წერილის გასაგზავნად, ის ასევე უნდა იყოს ხელმისაწვდომი ამდენივე წუთის განმავლობაში."
 
 #: includes/arrays.php
 msgid "Time Out"
@@ -229,7 +229,7 @@ msgstr "მოლოდინის ვადა"
 
 #: includes/arrays.php
 msgid "How many seconds to allow the page to timeout before reporting it as down."
-msgstr ""
+msgstr "რამდენი წამი დაელოდოს გვერდის მოლოდინის დროის ამოწურვას, სანამ მიუწვდომლად გამოაცხადებს."
 
 #: includes/arrays.php
 msgid "Verification Strings"
@@ -241,23 +241,23 @@ msgstr "პასუხის ძებნის სტრიქონი"
 
 #: includes/arrays.php
 msgid "This is the string to search for in the URL response for a live and working Web Service."
-msgstr ""
+msgstr "ეს არის სტრიქონი, რომელიც უნდა მოიძებნოს URL-ის პასუხში მოქმედი და გამართული ვებსერვისის დასადასტურებლად."
 
 #: includes/arrays.php
 msgid "Response Search String - Maintenance Page"
-msgstr ""
+msgstr "პასუხში საძიებო სტრიქონი - ტექნიკური მომსახურების გვერდი"
 
 #: includes/arrays.php
 msgid "This is the string to search for on the Maintenance Page.  The Service Check will check for this string if the above string is not found.  If found, it means that the Web Service is under maintenance."
-msgstr ""
+msgstr "ეს არის სტრიქონი, რომელიც უნდა მოიძებნოს ტექნიკური მომსახურების გვერდზე. სერვისის შემოწმება ამ სტრიქონს მოძებნის, თუ ზემოთ მითითებული სტრიქონი ვერ მოიძებნა. პოვნის შემთხვევაში ეს ნიშნავს, რომ ვებსერვისი ტექნიკურ მომსახურებაზეა."
 
 #: includes/arrays.php
 msgid "Response Search String - Failed"
-msgstr ""
+msgstr "პასუხში საძიებო სტრიქონი - წარუმატებელი"
 
 #: includes/arrays.php
 msgid "This is the string to search for a known failure in the Web Service response.  The Service Check will only alert if this string is found, ignoring any timeout issues and the search strings above."
-msgstr ""
+msgstr "ეს არის სტრიქონი ვებსერვისის პასუხში ცნობილი შეცდომის მოსაძებნად. სერვისის შემოწმება გაფრთხილებას გაგზავნის მხოლოდ ამ სტრიქონის პოვნისას და უგულებელყოფს მოლოდინის დროის ამოწურვასა და ზემოთ მოცემულ საძიებო სტრიქონებს."
 
 #: includes/arrays.php
 msgid "Notification Settings"
@@ -269,7 +269,7 @@ msgstr "გაფრთხილების ფორმატი"
 
 #: includes/arrays.php
 msgid "This is the format to use when sending the notification email"
-msgstr ""
+msgstr "ეს არის ფორმატი, რომელიც გამოიყენება შეტყობინების ელფოსტის გაგზავნისას"
 
 #: includes/arrays.php
 msgid "Notification List"
@@ -277,7 +277,7 @@ msgstr "გაფრთხილებების სია"
 
 #: includes/arrays.php
 msgid "Use this Notification List for those to be notified when this website goes down."
-msgstr ""
+msgstr "გამოიყენეთ შეტყობინებების ეს სია იმ პირების გასაფრთხილებლად, ვისაც ამ ვებსაიტის გათიშვისას უნდა ეცნობოს."
 
 #: includes/arrays.php
 msgid "Notify Accounts"
@@ -285,7 +285,7 @@ msgstr "გაფრთხილება ანგარიშებისთ�
 
 #: includes/arrays.php
 msgid "This is a listing of accounts that will be notified when this website goes down."
-msgstr ""
+msgstr "ეს არის ანგარიშების ჩამონათვალი, რომლებსაც ეცნობებათ ამ ვებსაიტის გათიშვისას."
 
 #: includes/arrays.php
 msgid "Extra Alert Emails"
@@ -293,7 +293,7 @@ msgstr "დამატებითი განგაშის ელფოს�
 
 #: includes/arrays.php
 msgid "You may specify here extra Emails to receive alerts for this URL (comma separated)"
-msgstr ""
+msgstr "აქ შეგიძლიათ მიუთითოთ დამატებითი ელფოსტის მისამართები ამ URL-ის შეტყობინებების მისაღებად (მძიმით გამოყოფილი)"
 
 #: includes/functions.php webseer.php
 msgid "Checks"
@@ -317,11 +317,11 @@ msgstr "Cacti - ძირითადი"
 
 #: poller_webseer.php
 msgid "Cacti Remote Server"
-msgstr ""
+msgstr "Cacti-ს დაშორებული სერვერი"
 
 #: setup.php
 msgid "Web Service Check Admin"
-msgstr ""
+msgstr "ვებსერვისის შემოწმების ადმინისტრატორი"
 
 #: setup.php
 msgid "Management"
@@ -333,7 +333,7 @@ msgstr "სერვისის შემოწმებები"
 
 #: setup.php
 msgid "WebSeer Service Checks"
-msgstr ""
+msgstr "WebSeer სერვისის შემოწმებები"
 
 #: setup.php
 msgid "Service Check Edit"
@@ -370,8 +370,8 @@ msgstr "პროქსის შენახვა"
 #: webseer.php
 msgid "Click 'Continue' to Delete the following URL."
 msgid_plural "Click 'Continue' to Delete following URLs."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "დააწკაპუნეთ 'გაგრძელება'-ზე შემდეგი URL-ის წასაშლელად."
+msgstr[1] "დააწკაპუნეთ 'გაგრძელება'-ზე შემდეგი URL-ების წასაშლელად."
 
 #: webseer.php webseer_proxies.php webseer_servers.php
 msgid "Cancel"
@@ -384,49 +384,49 @@ msgstr "გაგრძელება"
 #: webseer.php
 msgid "Delete URL"
 msgid_plural "Delete URLs"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "URL-ის წაშლა"
+msgstr[1] "URL-ების წაშლა"
 
 #: webseer.php
 msgid "Click 'Continue' to Disable the following URL."
 msgid_plural "Click 'Continue' to Disable following URLs."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "დააწკაპუნეთ 'გაგრძელება'-ზე შემდეგი URL-ის გასათიშად."
+msgstr[1] "დააწკაპუნეთ 'გაგრძელება'-ზე შემდეგი URL-ების გასათიშად."
 
 #: webseer.php
 msgid "Disable URL"
 msgid_plural "Disable URLs"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "URL-ის გათიშვა"
+msgstr[1] "URL-ების გათიშვა"
 
 #: webseer.php
 msgid "Click 'Continue' to Enable the following URL."
 msgid_plural "Click 'Continue' to Enable following URLs."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "დააწკაპუნეთ 'გაგრძელება'-ზე შემდეგი URL-ის ჩასართავად."
+msgstr[1] "დააწკაპუნეთ 'გაგრძელება'-ზე შემდეგი URL-ების ჩასართავად."
 
 #: webseer.php
 msgid "Enable URL"
 msgid_plural "Enable URLs"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "URL-ის ჩართვა"
+msgstr[1] "URL-ების ჩართვა"
 
 #: webseer.php
 msgid "Click 'Continue' to Duplicate the following URL."
 msgid_plural "Click 'Continue' to Duplicate following URLs."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "დააწკაპუნეთ 'გაგრძელება'-ზე შემდეგი URL-ის დუბლირებისთვის."
+msgstr[1] "დააწკაპუნეთ 'გაგრძელება'-ზე შემდეგი URL-ების დუბლირებისთვის."
 
 #: webseer.php
 msgid "Duplicate URL"
 msgid_plural "Duplicate URLs"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "URL-ის დუბლირება"
+msgstr[1] "URL-ების დუბლირება"
 
 #: webseer.php
 #, php-format
 msgid "The Service Check history was purged for %s"
-msgstr ""
+msgstr "სერვისის შემოწმების ისტორია გასუფთავდა %s-სთვის"
 
 #: webseer.php webseer_servers.php
 #, php-format
@@ -499,7 +499,7 @@ msgstr "სერვისი აღდგენილია"
 
 #: webseer.php
 msgid "No Service Check Events in History"
-msgstr ""
+msgstr "ისტორიაში სერვისის შემოწმების მოვლენები არ არის"
 
 #: webseer.php webseer_servers.php
 msgid "Actions"
@@ -540,7 +540,7 @@ msgstr "სერვისის შემოწმების ისტორ�
 #: webseer.php
 #, php-format
 msgid "DNS: Server %s - A Record for %s"
-msgstr ""
+msgstr "DNS: სერვერი %s - A ჩანაწერი %s-სთვის"
 
 #: webseer.php
 msgid "N/A"
@@ -564,7 +564,7 @@ msgstr "სერვერები აღმოჩენილი არაა"
 
 #: webseer.php
 msgid "Webseer Service Checks"
-msgstr ""
+msgstr "Webseer სერვისის შემოწმებები"
 
 #: webseer.php webseer_servers.php
 msgid "State"
@@ -592,7 +592,7 @@ msgstr "გასუფთავება"
 
 #: webseer.php
 msgid "Webseer Service Check History"
-msgstr ""
+msgstr "Webseer სერვისის შემოწმების ისტორია"
 
 #: webseer.php webseer_servers.php
 msgid "Date Search"
@@ -609,8 +609,8 @@ msgstr "მოვლენების გასუფთავება"
 #: webseer_proxies.php
 msgid "Click 'Continue' to delete the following Proxy."
 msgid_plural "Click 'Continue' to delete following Proxies."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "დააწკაპუნეთ 'გაგრძელება'-ზე შემდეგი პროქსის წასაშლელად."
+msgstr[1] "დააწკაპუნეთ 'გაგრძელება'-ზე შემდეგი პროქსების წასაშლელად."
 
 #: webseer_proxies.php
 msgid "Delete Proxy"
@@ -646,36 +646,36 @@ msgstr "WebSeer-ის პროქსის მართვა"
 #: webseer_servers.php
 msgid "Click 'Continue' to Delete the following Server."
 msgid_plural "Click 'Continue' to Delete following Servers."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "დააწკაპუნეთ 'გაგრძელება'-ზე შემდეგი სერვერის წასაშლელად."
+msgstr[1] "დააწკაპუნეთ 'გაგრძელება'-ზე შემდეგი სერვერების წასაშლელად."
 
 #: webseer_servers.php
 msgid "Delete Server"
 msgid_plural "Delete Servers"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "სერვერის წაშლა"
+msgstr[1] "სერვერების წაშლა"
 
 #: webseer_servers.php
 msgid "Click 'Continue' to Disable the following Server."
 msgid_plural "Click 'Continue' to Disable following Servers."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "დააწკაპუნეთ 'გაგრძელება'-ზე შემდეგი სერვერის გასათიშად."
+msgstr[1] "დააწკაპუნეთ 'გაგრძელება'-ზე შემდეგი სერვერების გასათიშად."
 
 #: webseer_servers.php
 msgid "Disable Server"
 msgid_plural "Disable Servers"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "სერვერის გათიშვა"
+msgstr[1] "სერვერების გათიშვა"
 
 #: webseer_servers.php
 msgid "Click 'Continue' to Enable the following Server."
 msgid_plural "Click 'Continue' to Enable following Servers."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "დააწკაპუნეთ 'გაგრძელება'-ზე შემდეგი სერვერის ჩასართავად."
+msgstr[1] "დააწკაპუნეთ 'გაგრძელება'-ზე შემდეგი სერვერების ჩასართავად."
 
 #: webseer_servers.php
 msgid "No Events in History"
-msgstr ""
+msgstr "ისტორიაში მოვლენები არ არის"
 
 #: webseer_servers.php
 msgid "Master"
@@ -691,7 +691,7 @@ msgstr "სერვერის ჩასწორება"
 
 #: webseer_servers.php
 msgid "View Server History"
-msgstr ""
+msgstr "სერვერის ისტორიის ნახვა"
 
 #: webseer_servers.php
 msgid "No"
@@ -699,7 +699,7 @@ msgstr "არა"
 
 #: webseer_servers.php
 msgid "Yes"
-msgstr "კი"
+msgstr "დიახ"
 
 #: webseer_servers.php
 msgid "Webseer Servers"
