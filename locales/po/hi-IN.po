@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-28 16:09-0400\nPO-Revision-Date: 2026-11-25 02:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Hindi <https://translate.cacti.net/projects/cacti/webseer/hi/>\nLanguage: hi-IN\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n==0 || n==1);\nX-Generator: Weblate 5.11.4\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-28 16:09-0400\nPO-Revision-Date: 2026-11-26 03:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Hindi <https://translate.cacti.net/projects/cacti/webseer/hi/>\nLanguage: hi-IN\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n==0 || n==1);\nX-Generator: Weblate 5.11.4\n"
 
 #: includes/arrays.php webseer_servers.php
 #, php-format
@@ -98,11 +98,10 @@ msgid "Display Name of this server"
 msgstr "इस सर्वर का प्रदर्शन नाम"
 
 #: includes/arrays.php webseer_servers.php
-#, fuzzy
 msgid "Enable Server"
 msgid_plural "Enable Servers"
 msgstr[0] "सर्वर सक्षम करें"
-msgstr[1] "सर्वर सक्षम करें"
+msgstr[1] "सर्वरों को सक्षम करें"
 
 #: includes/arrays.php
 msgid "Uncheck this box to disabled this server from checking urls."
@@ -369,11 +368,10 @@ msgid "Save Proxy"
 msgstr "प्रॉक्सी सहेजें"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Delete the following URL."
 msgid_plural "Click 'Continue' to Delete following URLs."
-msgstr[0] "निम्नलिखित प्रॉक्सी को हटाने के लिए 'जारी रखें' पर क्लिक करें।"
-msgstr[1] "निम्नलिखित प्रॉक्सी को हटाने के लिए 'जारी रखें' पर क्लिक करें।"
+msgstr[0] "निम्नलिखित URL को हटाने के लिए 'जारी रखें' पर क्लिक करें।"
+msgstr[1] "निम्नलिखित URLs को हटाने के लिए 'जारी रखें' पर क्लिक करें।"
 
 #: webseer.php webseer_proxies.php webseer_servers.php
 msgid "Cancel"
@@ -384,57 +382,46 @@ msgid "Continue"
 msgstr "जारी रखें"
 
 #: webseer.php
-#, fuzzy
-#| msgid "Delete"
 msgid "Delete URL"
 msgid_plural "Delete URLs"
-msgstr[0] "हटाएं"
-msgstr[1] "हटाएं"
+msgstr[0] "URL हटाएं"
+msgstr[1] "URLs हटाएं"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Disable the following URL."
 msgid_plural "Click 'Continue' to Disable following URLs."
-msgstr[0] "निम्नलिखित प्रॉक्सी को हटाने के लिए 'जारी रखें' पर क्लिक करें।"
-msgstr[1] "निम्नलिखित प्रॉक्सी को हटाने के लिए 'जारी रखें' पर क्लिक करें।"
+msgstr[0] "निम्नलिखित URL को अक्षम करने के लिए 'जारी रखें' पर क्लिक करें।"
+msgstr[1] "निम्नलिखित URLs को अक्षम करने के लिए 'जारी रखें' पर क्लिक करें।"
 
 #: webseer.php
-#, fuzzy
-#| msgid "Disable"
 msgid "Disable URL"
 msgid_plural "Disable URLs"
-msgstr[0] "अक्षम करें"
-msgstr[1] "अक्षम करें"
+msgstr[0] "URL अक्षम करें"
+msgstr[1] "URLs अक्षम करें"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Enable the following URL."
 msgid_plural "Click 'Continue' to Enable following URLs."
-msgstr[0] "निम्नलिखित प्रॉक्सी को हटाने के लिए 'जारी रखें' पर क्लिक करें।"
-msgstr[1] "निम्नलिखित प्रॉक्सी को हटाने के लिए 'जारी रखें' पर क्लिक करें।"
+msgstr[0] "निम्नलिखित URL को सक्षम करने के लिए 'जारी रखें' पर क्लिक करें।"
+msgstr[1] "निम्नलिखित URLs को सक्षम करने के लिए 'जारी रखें' पर क्लिक करें।"
 
 #: webseer.php
-#, fuzzy
-#| msgid "Enable"
 msgid "Enable URL"
 msgid_plural "Enable URLs"
-msgstr[0] "सक्षम करें"
-msgstr[1] "सक्षम करें"
+msgstr[0] "URL सक्षम करें"
+msgstr[1] "URLs सक्षम करें"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Duplicate the following URL."
 msgid_plural "Click 'Continue' to Duplicate following URLs."
-msgstr[0] "निम्नलिखित प्रॉक्सी को हटाने के लिए 'जारी रखें' पर क्लिक करें।"
-msgstr[1] "निम्नलिखित प्रॉक्सी को हटाने के लिए 'जारी रखें' पर क्लिक करें।"
+msgstr[0] "निम्नलिखित URL को डुप्लिकेट करने के लिए 'जारी रखें' पर क्लिक करें।"
+msgstr[1] "निम्नलिखित URLs को डुप्लिकेट करने के लिए 'जारी रखें' पर क्लिक करें।"
 
 #: webseer.php
-#, fuzzy
-#| msgid "Duplicate"
 msgid "Duplicate URL"
 msgid_plural "Duplicate URLs"
-msgstr[0] "डुप्लीकेट"
-msgstr[1] "डुप्लीकेट"
+msgstr[0] "URL डुप्लिकेट करें"
+msgstr[1] "URLs डुप्लिकेट करें"
 
 #: webseer.php
 #, php-format
@@ -620,18 +607,16 @@ msgid "Purge Events"
 msgstr "ईवेंट पर्ज करें"
 
 #: webseer_proxies.php
-#, fuzzy
 msgid "Click 'Continue' to delete the following Proxy."
 msgid_plural "Click 'Continue' to delete following Proxies."
 msgstr[0] "निम्नलिखित प्रॉक्सी को हटाने के लिए 'जारी रखें' पर क्लिक करें।"
-msgstr[1] "निम्नलिखित प्रॉक्सी को हटाने के लिए 'जारी रखें' पर क्लिक करें।"
+msgstr[1] "निम्नलिखित प्रॉक्सियों को हटाने के लिए 'जारी रखें' पर क्लिक करें।"
 
 #: webseer_proxies.php
-#, fuzzy
 msgid "Delete Proxy"
 msgid_plural "Delete Proxies"
-msgstr[0] "हटाना"
-msgstr[1] "हटाना"
+msgstr[0] "प्रॉक्सी हटाएं"
+msgstr[1] "प्रॉक्सियों को हटाएं"
 
 #: webseer_proxies.php
 #, php-format
@@ -659,39 +644,34 @@ msgid "Webseer Proxy Management"
 msgstr "Webseer प्रॉक्सी प्रबंधन"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Click 'Continue' to Delete the following Server."
 msgid_plural "Click 'Continue' to Delete following Servers."
-msgstr[0] "निम्नलिखित प्रॉक्सी को हटाने के लिए 'जारी रखें' पर क्लिक करें।"
-msgstr[1] "निम्नलिखित प्रॉक्सी को हटाने के लिए 'जारी रखें' पर क्लिक करें।"
+msgstr[0] "निम्नलिखित सर्वर को हटाने के लिए 'जारी रखें' पर क्लिक करें।"
+msgstr[1] "निम्नलिखित सर्वरों को हटाने के लिए 'जारी रखें' पर क्लिक करें।"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Delete Server"
 msgid_plural "Delete Servers"
-msgstr[0] "वेबसर्वर सर्वर"
-msgstr[1] "वेबसर्वर सर्वर"
+msgstr[0] "सर्वर हटाएं"
+msgstr[1] "सर्वर्स हटाएं"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Click 'Continue' to Disable the following Server."
 msgid_plural "Click 'Continue' to Disable following Servers."
-msgstr[0] "निम्नलिखित प्रॉक्सी को हटाने के लिए 'जारी रखें' पर क्लिक करें।"
-msgstr[1] "निम्नलिखित प्रॉक्सी को हटाने के लिए 'जारी रखें' पर क्लिक करें।"
+msgstr[0] "निम्नलिखित सर्वर को अक्षम करने के लिए 'जारी रखें' पर क्लिक करें।"
+msgstr[1] "निम्नलिखित सर्वर्स को अक्षम करने के लिए 'जारी रखें' पर क्लिक करें।"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Disable Server"
 msgid_plural "Disable Servers"
-msgstr[0] "सर्वर सक्षम करें"
-msgstr[1] "सर्वर सक्षम करें"
+msgstr[0] "सर्वर अक्षम करें"
+msgstr[1] "सर्वर्स अक्षम करें"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Click 'Continue' to Enable the following Server."
 msgid_plural "Click 'Continue' to Enable following Servers."
-msgstr[0] "निम्नलिखित प्रॉक्सी को हटाने के लिए 'जारी रखें' पर क्लिक करें।"
-msgstr[1] "निम्नलिखित प्रॉक्सी को हटाने के लिए 'जारी रखें' पर क्लिक करें।"
+msgstr[0] "निम्नलिखित सर्वर को सक्षम करने के लिए 'जारी रखें' पर क्लिक करें।"
+msgstr[1] "निम्नलिखित सर्वरों को सक्षम करने के लिए 'जारी रखें' पर क्लिक करें।"
 
 #: webseer_servers.php
 msgid "No Events in History"
