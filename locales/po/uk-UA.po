@@ -1,0 +1,742 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR The Cacti Group
+# This file is distributed under the same license as the Cacti package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Cacti\n"
+"Report-Msgid-Bugs-To: developers@cacti.net\n"
+"POT-Creation-Date: 2026-09-28 16:09-0400\n"
+"PO-Revision-Date: 2026-11-25 06:55+0000\n"
+"Last-Translator: Thomas Vincent <thomasvincent@gmail.com>\n"
+"Language-Team: Ukrainian\n"
+"Language: uk-UA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: includes/arrays.php webseer_servers.php
+#, php-format
+msgid "%d Minute"
+msgstr "%d Хвилина"
+
+#: includes/arrays.php webseer_servers.php
+#, php-format
+msgid "%d Minutes"
+msgstr "%d хвилин"
+
+#: includes/arrays.php webseer_servers.php
+#, php-format
+msgid "%d Seconds"
+msgstr "%d секунд"
+
+#: includes/arrays.php
+msgid "Delete"
+msgstr "Видалити"
+
+#: includes/arrays.php
+msgid "Disable"
+msgstr "Вимкнути"
+
+#: includes/arrays.php
+msgid "Enable"
+msgstr "Увімкнути"
+
+#: includes/arrays.php
+msgid "Duplicate"
+msgstr "Дублювати"
+
+#: includes/arrays.php webseer.php webseer_proxies.php webseer_servers.php
+msgid "Name"
+msgstr "Ім'я"
+
+#: includes/arrays.php
+msgid "A Useful Name for this Proxy."
+msgstr "Зручна назва для цього проксі-сервера."
+
+#: includes/arrays.php
+msgid "New Proxy"
+msgstr "Новий проксі"
+
+#: includes/arrays.php webseer_proxies.php
+msgid "Hostname"
+msgstr "Ім'я хоста"
+
+#: includes/arrays.php
+msgid "The Proxy Hostname."
+msgstr "Ім'я вузла проксі-сервера."
+
+#: includes/arrays.php
+msgid "HTTP Port"
+msgstr "Порт HTTP"
+
+#: includes/arrays.php
+msgid "The HTTP Proxy Port."
+msgstr "Порт HTTP-проксі."
+
+#: includes/arrays.php
+msgid "HTTPS Port"
+msgstr "Порт HTTPS"
+
+#: includes/arrays.php
+msgid "The HTTPS Proxy Port."
+msgstr "Порт HTTPS-проксі."
+
+#: includes/arrays.php
+msgid "User Name"
+msgstr "Ім'я користувача"
+
+#: includes/arrays.php
+msgid "The user to use to authenticate with the Proxy if any."
+msgstr "Користувач для автентифікації на проксі-сервері, якщо вона потрібна."
+
+#: includes/arrays.php
+msgid "Password"
+msgstr "Пароль"
+
+#: includes/arrays.php
+msgid "The user password to use to authenticate with the Proxy if any."
+msgstr "Пароль користувача для автентифікації на проксі-сервері, якщо вона потрібна."
+
+#: includes/arrays.php
+msgid "General Settings"
+msgstr "Загальні налаштування"
+
+#: includes/arrays.php
+msgid "Display Name of this server"
+msgstr "Відображуване ім'я цього сервера"
+
+#: includes/arrays.php webseer_servers.php
+msgid "Enable Server"
+msgid_plural "Enable Servers"
+msgstr[0] "Увімкнути сервер"
+msgstr[1] "Увімкнути сервери"
+msgstr[2] "Увімкнути сервери"
+
+#: includes/arrays.php
+msgid "Uncheck this box to disabled this server from checking urls."
+msgstr "Зніміть цей прапорець, щоб вимкнути перевірку URL-адрес цим сервером."
+
+#: includes/arrays.php
+msgid "Is this server the local server?"
+msgstr "Чи є цей сервер локальним сервером?"
+
+#: includes/arrays.php
+msgid "Check this box if the current server you are connected to is this entry."
+msgstr "Позначте цей прапорець, якщо поточний сервер, до якого ви підключені, відповідає цьому запису."
+
+#: includes/arrays.php
+msgid "Master Server"
+msgstr "Головний сервер"
+
+#: includes/arrays.php
+msgid "Sets this server to the Master server.  The Master server handles all Email operations"
+msgstr "Призначає цей сервер головним сервером. Головний сервер обробляє всі операції електронної пошти"
+
+#: includes/arrays.php webseer_servers.php
+msgid "IP Address"
+msgstr "IP адреса"
+
+#: includes/arrays.php
+msgid "IP Address to connect to this server"
+msgstr "IP-адреса для підключення до цього сервера"
+
+#: includes/arrays.php webseer.php webseer_servers.php
+msgid "URL"
+msgstr "URL"
+
+#: includes/arrays.php
+msgid "This is the URL to connect to remote.php on this server."
+msgstr "Це URL-адреса для підключення до remote.php на цьому сервері."
+
+#: includes/arrays.php webseer_servers.php
+msgid "Location"
+msgstr "Місцезнаходження"
+
+#: includes/arrays.php
+msgid "Location of this server"
+msgstr "Розташування цього сервера"
+
+#: includes/arrays.php
+msgid "Service Check Name"
+msgstr "Назва перевірки сервісу"
+
+#: includes/arrays.php
+msgid "The name that is displayed for this Service Check, and is included in any Alert notifications."
+msgstr "Назва, що відображається для цієї перевірки сервісу та включається до всіх сповіщень про тривогу."
+
+#: includes/arrays.php webseer.php
+msgid "Enable Service Check"
+msgstr "Увімкнути перевірку сервісу"
+
+#: includes/arrays.php
+msgid "Uncheck this box to disabled this url from being checked."
+msgstr "Зніміть цей прапорець, щоб вимкнути перевірку цієї URL-адреси."
+
+#: includes/arrays.php
+msgid "The URL to Monitor"
+msgstr "URL для моніторингу"
+
+#: includes/arrays.php
+msgid "Enter an IP address to connect to.  Leaving blank will use DNS Resolution instead."
+msgstr "Введіть IP-адресу для підключення. Якщо залишити порожнім, використовуватиметься DNS-розв'язання."
+
+#: includes/arrays.php
+msgid "Proxy Server"
+msgstr "Проксі-сервер"
+
+#: includes/arrays.php
+msgid "If this connection text requires a proxy, select it here.  Otherwise choose 'None'."
+msgstr "Якщо ця перевірка з'єднання потребує проксі-сервера, виберіть його тут. Інакше виберіть «Немає»."
+
+#: includes/arrays.php webseer.php
+msgid "None"
+msgstr "Немає"
+
+#: includes/arrays.php webseer.php
+msgid "Compression"
+msgstr "Стиснення"
+
+#: includes/arrays.php
+msgid "What compression does the server require?  Most servers should not need this, but some will not redirect properly without it."
+msgstr "Яке стиснення вимагає сервер? Більшості серверів це не потрібно, але деякі не виконуватимуть перенаправлення належним чином без нього."
+
+#: includes/arrays.php
+msgid "Available Checks"
+msgstr "Доступні перевірки"
+
+#: includes/arrays.php
+msgid "Requires Authentication"
+msgstr "Потрібна автентифікація"
+
+#: includes/arrays.php
+msgid "Check this box if the site will normally return a 401 Error as it requires a username and password."
+msgstr "Позначте цей прапорець, якщо сайт зазвичай повертає помилку 401, оскільки вимагає ім'я користувача та пароль."
+
+#: includes/arrays.php
+msgid "Check Certificate"
+msgstr "Перевіряти сертифікат"
+
+#: includes/arrays.php
+msgid "If using SSL, check this box if you want to validate the certificate. Default on, turn off if you the site uses a self-signed certificate."
+msgstr "Якщо використовується SSL, встановіть цей прапорець, щоб перевіряти дійсність сертифіката. Увімкнено за замовчуванням; вимкніть, якщо сайт використовує самопідписаний сертифікат."
+
+#: includes/arrays.php
+msgid "Notification Timing"
+msgstr "Час сповіщень"
+
+#: includes/arrays.php
+msgid "Trigger"
+msgstr "Тригер"
+
+#: includes/arrays.php
+msgid "How many minutes the URL must be down before it will send an alert.  After an alert is sent, in order for a 'Site Recovering' Email to be send, it must also be up this number of minutes."
+msgstr "Скільки хвилин URL-адреса має бути недоступною перед надсиланням сповіщення. Після надсилання сповіщення, щоб було надіслано лист «Відновлення сайту», вона також має бути доступною протягом цієї кількості хвилин."
+
+#: includes/arrays.php
+msgid "Time Out"
+msgstr "Час очікування"
+
+#: includes/arrays.php
+msgid "How many seconds to allow the page to timeout before reporting it as down."
+msgstr "Скільки секунд чекати до перевищення часу очікування сторінки, перш ніж повідомити про її недоступність."
+
+#: includes/arrays.php
+msgid "Verification Strings"
+msgstr "Рядки перевірки"
+
+#: includes/arrays.php
+msgid "Response Search String"
+msgstr "Рядок пошуку у відповіді"
+
+#: includes/arrays.php
+msgid "This is the string to search for in the URL response for a live and working Web Service."
+msgstr "Це рядок для пошуку у відповіді за URL-адресою, що свідчить про активність і працездатність вебсервісу."
+
+#: includes/arrays.php
+msgid "Response Search String - Maintenance Page"
+msgstr "Рядок пошуку у відповіді — Сторінка обслуговування"
+
+#: includes/arrays.php
+msgid "This is the string to search for on the Maintenance Page.  The Service Check will check for this string if the above string is not found.  If found, it means that the Web Service is under maintenance."
+msgstr "Це рядок для пошуку на сторінці технічного обслуговування. Перевірка сервісу шукатиме цей рядок, якщо не знайдено наведений вище рядок. Якщо його знайдено, це означає, що вебсервіс перебуває на технічному обслуговуванні."
+
+#: includes/arrays.php
+msgid "Response Search String - Failed"
+msgstr "Рядок пошуку у відповіді — Помилка"
+
+#: includes/arrays.php
+msgid "This is the string to search for a known failure in the Web Service response.  The Service Check will only alert if this string is found, ignoring any timeout issues and the search strings above."
+msgstr "Це рядок для пошуку відомої помилки у відповіді вебсервісу. Перевірка сервісу надсилатиме сповіщення лише в разі виявлення цього рядка, ігноруючи будь-які проблеми з часом очікування та наведені вище рядки пошуку."
+
+#: includes/arrays.php
+msgid "Notification Settings"
+msgstr "Настройки сповіщення"
+
+#: includes/arrays.php
+msgid "Notify Format"
+msgstr "Формат сповіщень"
+
+#: includes/arrays.php
+msgid "This is the format to use when sending the notification email"
+msgstr "Це формат, який використовуватиметься під час надсилання листа сповіщення"
+
+#: includes/arrays.php
+msgid "Notification List"
+msgstr "Список сповіщень"
+
+#: includes/arrays.php
+msgid "Use this Notification List for those to be notified when this website goes down."
+msgstr "Використовувати цей список сповіщень для тих, кого потрібно сповістити, коли цей вебсайт стане недоступним."
+
+#: includes/arrays.php
+msgid "Notify Accounts"
+msgstr "Облікові записи для сповіщень"
+
+#: includes/arrays.php
+msgid "This is a listing of accounts that will be notified when this website goes down."
+msgstr "Це перелік облікових записів, які отримають сповіщення, коли цей вебсайт стане недоступним."
+
+#: includes/arrays.php
+msgid "Extra Alert Emails"
+msgstr "Додаткові адреси для сповіщень"
+
+#: includes/arrays.php
+msgid "You may specify here extra Emails to receive alerts for this URL (comma separated)"
+msgstr "Тут можна вказати додаткові адреси електронної пошти для отримання сповіщень для цієї URL-адреси (через кому)"
+
+#: includes/functions.php webseer.php
+msgid "Checks"
+msgstr "Перевірки"
+
+#: includes/functions.php webseer_servers.php
+msgid "Servers"
+msgstr "Сервери"
+
+#: includes/functions.php webseer_proxies.php
+msgid "Proxies"
+msgstr "Проксі-сервери"
+
+#: includes/functions.php
+msgid "Log History"
+msgstr "Історія журналу"
+
+#: poller_webseer.php
+msgid "Cacti Master"
+msgstr "Головний сервер Cacti"
+
+#: poller_webseer.php
+msgid "Cacti Remote Server"
+msgstr "Віддалений сервер Cacti"
+
+#: setup.php
+msgid "Web Service Check Admin"
+msgstr "Адміністрування перевірок веб-сервісів"
+
+#: setup.php
+msgid "Management"
+msgstr "Управління"
+
+#: setup.php
+msgid "Service Checks"
+msgstr "Перевірки сервісів"
+
+#: setup.php
+msgid "WebSeer Service Checks"
+msgstr "Перевірки сервісів WebSeer"
+
+#: setup.php
+msgid "Service Check Edit"
+msgstr "Редагування перевірки сервісу"
+
+#: setup.php
+msgid "Service Check Save"
+msgstr "Збереження перевірки сервісу"
+
+#: setup.php
+msgid "WebSeer Servers"
+msgstr "Сервери WebSeer"
+
+#: setup.php
+msgid "Server Edit"
+msgstr "Редагування сервера"
+
+#: setup.php
+msgid "Save Server"
+msgstr "Зберегти сервер"
+
+#: setup.php
+msgid "WebSeer Proxies"
+msgstr "Проксі WebSeer"
+
+#: setup.php
+msgid "Proxie Edit"
+msgstr "Редагування проксі"
+
+#: setup.php
+msgid "Save Proxy"
+msgstr "Зберегти проксі"
+
+#: webseer.php
+msgid "Click 'Continue' to Delete the following URL."
+msgid_plural "Click 'Continue' to Delete following URLs."
+msgstr[0] "Натисніть 'Продовжити', щоб видалити наступну URL-адресу."
+msgstr[1] "Натисніть 'Продовжити', щоб видалити наступні URL-адреси."
+msgstr[2] "Натисніть 'Продовжити', щоб видалити наступні URL-адреси."
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Cancel"
+msgstr "Скасувати"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Continue"
+msgstr "Продовжити"
+
+#: webseer.php
+msgid "Delete URL"
+msgid_plural "Delete URLs"
+msgstr[0] "Видалити URL-адресу"
+msgstr[1] "Видалити URL-адреси"
+msgstr[2] "Видалити URL-адреси"
+
+#: webseer.php
+msgid "Click 'Continue' to Disable the following URL."
+msgid_plural "Click 'Continue' to Disable following URLs."
+msgstr[0] "Натисніть 'Продовжити', щоб вимкнути наступну URL-адресу."
+msgstr[1] "Натисніть 'Продовжити', щоб вимкнути наступні URL-адреси."
+msgstr[2] "Натисніть 'Продовжити', щоб вимкнути наступні URL-адреси."
+
+#: webseer.php
+msgid "Disable URL"
+msgid_plural "Disable URLs"
+msgstr[0] "Вимкнути URL-адресу"
+msgstr[1] "Вимкнути URL-адреси"
+msgstr[2] "Вимкнути URL-адреси"
+
+#: webseer.php
+msgid "Click 'Continue' to Enable the following URL."
+msgid_plural "Click 'Continue' to Enable following URLs."
+msgstr[0] "Натисніть 'Продовжити', щоб увімкнути наступну URL-адресу."
+msgstr[1] "Натисніть 'Продовжити', щоб увімкнути наступні URL-адреси."
+msgstr[2] "Натисніть 'Продовжити', щоб увімкнути наступні URL-адреси."
+
+#: webseer.php
+msgid "Enable URL"
+msgid_plural "Enable URLs"
+msgstr[0] "Увімкнути URL-адресу"
+msgstr[1] "Увімкнути URL-адреси"
+msgstr[2] "Увімкнути URL-адреси"
+
+#: webseer.php
+msgid "Click 'Continue' to Duplicate the following URL."
+msgid_plural "Click 'Continue' to Duplicate following URLs."
+msgstr[0] "Натисніть 'Продовжити', щоб дублювати наступну URL-адресу."
+msgstr[1] "Натисніть 'Продовжити', щоб дублювати наступні URL-адреси."
+msgstr[2] "Натисніть 'Продовжити', щоб дублювати наступні URL-адреси."
+
+#: webseer.php
+msgid "Duplicate URL"
+msgid_plural "Duplicate URLs"
+msgstr[0] "Дублювати URL-адресу"
+msgstr[1] "Дублювати URL-адреси"
+msgstr[2] "Дублювати URL-адреси"
+
+#: webseer.php
+#, php-format
+msgid "The Service Check history was purged for %s"
+msgstr "Історію перевірок сервісу очищено для %s"
+
+#: webseer.php webseer_servers.php
+#, php-format
+msgid "Query [edit: %s]"
+msgstr "Запит [редагування: %s]"
+
+#: webseer.php webseer_servers.php
+msgid "Query [new]"
+msgstr "Запит [новий]"
+
+#: webseer.php
+msgid "No Users Selected"
+msgstr "Користувачів не вибрано"
+
+#: webseer.php
+msgid "Users Selected"
+msgstr "Вибрано користувачів"
+
+#: webseer.php
+msgid "All Users Selected"
+msgstr "Вибрано всіх користувачів"
+
+#: webseer.php
+msgid "All"
+msgstr "Всі"
+
+#: webseer.php webseer_proxies.php
+msgid "Search"
+msgstr "Пошук"
+
+#: webseer.php webseer_servers.php
+msgid "Date"
+msgstr "Дата"
+
+#: webseer.php webseer_servers.php
+msgid "Error"
+msgstr "Помилка"
+
+#: webseer.php webseer_servers.php
+msgid "HTTP Code"
+msgstr "HTTP-код"
+
+#: webseer.php webseer_servers.php
+msgid "DNS"
+msgstr "DNS"
+
+#: webseer.php webseer_servers.php
+msgid "Connect"
+msgstr "Підключення"
+
+#: webseer.php webseer_servers.php
+msgid "Redirect"
+msgstr "Перенаправлення"
+
+#: webseer.php webseer_servers.php
+msgid "Total"
+msgstr "Всього"
+
+#: webseer.php
+msgid "Urls"
+msgstr "URL-адреси"
+
+#: webseer.php
+msgid "Service Down"
+msgstr "Сервіс недоступний"
+
+#: webseer.php
+msgid "Service Restored"
+msgstr "Сервіс відновлено"
+
+#: webseer.php
+msgid "No Service Check Events in History"
+msgstr "Немає подій перевірки сервісів в історії"
+
+#: webseer.php webseer_servers.php
+msgid "Actions"
+msgstr "Дії"
+
+#: webseer.php
+msgid "Status"
+msgstr "Статус"
+
+#: webseer.php webseer_servers.php
+msgid "Enabled"
+msgstr "Увімкнено"
+
+#: webseer.php
+msgid "Auth"
+msgstr "Автентифікація"
+
+#: webseer.php
+msgid "Timeout"
+msgstr "Час вийшов"
+
+#: webseer.php webseer_servers.php
+msgid "Last Check"
+msgstr "Остання перевірка"
+
+#: webseer.php
+msgid "Edit Service Check"
+msgstr "Редагувати перевірку сервісу"
+
+#: webseer.php
+msgid "Disable Service Check"
+msgstr "Вимкнути перевірку сервісу"
+
+#: webseer.php
+msgid "View Service Check History"
+msgstr "Перегляд історії перевірок сервісів"
+
+#: webseer.php
+#, php-format
+msgid "DNS: Server %s - A Record for %s"
+msgstr "DNS: Сервер %s — запис A для %s"
+
+#: webseer.php
+msgid "N/A"
+msgstr "(відсутній)"
+
+#: webseer.php webseer_servers.php
+msgid "Down"
+msgstr "Оффлайн"
+
+#: webseer.php webseer_servers.php
+msgid "Up"
+msgstr "Онлайн"
+
+#: webseer.php webseer_servers.php
+msgid "Disabled"
+msgstr "Вимкнен"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "No Servers Found"
+msgstr "Серверів не знайдено"
+
+#: webseer.php
+msgid "Webseer Service Checks"
+msgstr "Перевірки сервісів WebSeer"
+
+#: webseer.php webseer_servers.php
+msgid "State"
+msgstr "Область"
+
+#: webseer.php webseer_servers.php
+msgid "Any"
+msgstr "Будь-який"
+
+#: webseer.php webseer_servers.php
+msgid "Refresh"
+msgstr "Оновити"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Default"
+msgstr "За замовчуванням"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Go"
+msgstr "Перейти"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Clear"
+msgstr "Очистити"
+
+#: webseer.php
+msgid "Webseer Service Check History"
+msgstr "Історія перевірок сервісів WebSeer"
+
+#: webseer.php webseer_servers.php
+msgid "Date Search"
+msgstr "Пошук за датою"
+
+#: webseer.php webseer_servers.php
+msgid "Entries"
+msgstr "Записи"
+
+#: webseer.php
+msgid "Purge Events"
+msgstr "Очистити події"
+
+#: webseer_proxies.php
+msgid "Click 'Continue' to delete the following Proxy."
+msgid_plural "Click 'Continue' to delete following Proxies."
+msgstr[0] "Натисніть 'Продовжити', щоб видалити наступний проксі-сервер."
+msgstr[1] "Натисніть 'Продовжити', щоб видалити наступні проксі-сервери."
+msgstr[2] "Натисніть 'Продовжити', щоб видалити наступні проксі-сервери."
+
+#: webseer_proxies.php
+msgid "Delete Proxy"
+msgid_plural "Delete Proxies"
+msgstr[0] "Видалити проксі-сервер"
+msgstr[1] "Видалити проксі-сервери"
+msgstr[2] "Видалити проксі-сервери"
+
+#: webseer_proxies.php
+#, php-format
+msgid "Proxy [edit: %s]"
+msgstr "Проксі [редагування: %s]"
+
+#: webseer_proxies.php
+msgid "Proxy [new]"
+msgstr "Проксі [новий]"
+
+#: webseer_proxies.php
+msgid "Ports (http/https)"
+msgstr "Порти (http/https)"
+
+#: webseer_proxies.php
+msgid "Username"
+msgstr "Ім'я користувача"
+
+#: webseer_proxies.php
+msgid "Not Set"
+msgstr "Не встановлено"
+
+#: webseer_proxies.php
+msgid "Webseer Proxy Management"
+msgstr "Керування проксі WebSeer"
+
+#: webseer_servers.php
+msgid "Click 'Continue' to Delete the following Server."
+msgid_plural "Click 'Continue' to Delete following Servers."
+msgstr[0] "Натисніть 'Продовжити', щоб видалити наступний сервер."
+msgstr[1] "Натисніть 'Продовжити', щоб видалити наступні сервери."
+msgstr[2] "Натисніть 'Продовжити', щоб видалити наступні сервери."
+
+#: webseer_servers.php
+msgid "Delete Server"
+msgid_plural "Delete Servers"
+msgstr[0] "Видалити сервер"
+msgstr[1] "Видалити сервери"
+msgstr[2] "Видалити сервери"
+
+#: webseer_servers.php
+msgid "Click 'Continue' to Disable the following Server."
+msgid_plural "Click 'Continue' to Disable following Servers."
+msgstr[0] "Натисніть 'Продовжити', щоб вимкнути наступний сервер."
+msgstr[1] "Натисніть 'Продовжити', щоб вимкнути наступні сервери."
+msgstr[2] "Натисніть 'Продовжити', щоб вимкнути наступні сервери."
+
+#: webseer_servers.php
+msgid "Disable Server"
+msgid_plural "Disable Servers"
+msgstr[0] "Вимкнути сервер"
+msgstr[1] "Вимкнути сервери"
+msgstr[2] "Вимкнути сервери"
+
+#: webseer_servers.php
+msgid "Click 'Continue' to Enable the following Server."
+msgid_plural "Click 'Continue' to Enable following Servers."
+msgstr[0] "Натисніть 'Продовжити', щоб увімкнути наступний сервер."
+msgstr[1] "Натисніть 'Продовжити', щоб увімкнути наступні сервери."
+msgstr[2] "Натисніть 'Продовжити', щоб увімкнути наступні сервери."
+
+#: webseer_servers.php
+msgid "No Events in History"
+msgstr "Немає подій в історії"
+
+#: webseer_servers.php
+msgid "Master"
+msgstr "Головний"
+
+#: webseer_servers.php
+msgid "This Host"
+msgstr "Цей вузол"
+
+#: webseer_servers.php
+msgid "Edit Server"
+msgstr "Редагувати сервер"
+
+#: webseer_servers.php
+msgid "View Server History"
+msgstr "Перегляд історії сервера"
+
+#: webseer_servers.php
+msgid "No"
+msgstr "Ні"
+
+#: webseer_servers.php
+msgid "Yes"
+msgstr "Так"
+
+#: webseer_servers.php
+msgid "Webseer Servers"
+msgstr "Сервери WebSeer"
+
+#: webseer_servers.php
+msgid "Triggered"
+msgstr "Спрацювало"
+
+#: webseer_servers.php
+msgid "Webseer Server History"
+msgstr "Історія серверів WebSeer"
+
