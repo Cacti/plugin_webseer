@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-28 16:09-0400\nPO-Revision-Date: 2026-11-25 02:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Korean <https://translate.cacti.net/projects/cacti/webseer/ko/>\nLanguage: ko-KR\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=1; plural=0;\nX-Generator: Weblate 5.11.4\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-28 16:09-0400\nPO-Revision-Date: 2026-11-26 03:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Korean <https://translate.cacti.net/projects/cacti/webseer/ko/>\nLanguage: ko-KR\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=1; plural=0;\nX-Generator: Weblate 5.11.4\n"
 
 #: includes/arrays.php webseer_servers.php
 #, php-format
@@ -98,10 +98,9 @@ msgid "Display Name of this server"
 msgstr "이 서버의 표시 이름"
 
 #: includes/arrays.php webseer_servers.php
-#, fuzzy
 msgid "Enable Server"
 msgid_plural "Enable Servers"
-msgstr[0] "서버 사용"
+msgstr[0] "서버 활성화"
 
 #: includes/arrays.php
 msgid "Uncheck this box to disabled this server from checking urls."
@@ -121,7 +120,7 @@ msgstr "Master 서버"
 
 #: includes/arrays.php
 msgid "Sets this server to the Master server.  The Master server handles all Email operations"
-msgstr "이 서버를 마스터 서버로 설정합니다. 마스터 서버는 모든 이메일 작업을 처리합니다."
+msgstr "이 서버를 마스터 서버로 설정합니다. 마스터 서버는 모든 이메일 작업을 처리합니다"
 
 #: includes/arrays.php webseer_servers.php
 msgid "IP Address"
@@ -269,7 +268,7 @@ msgstr "알림 형식"
 
 #: includes/arrays.php
 msgid "This is the format to use when sending the notification email"
-msgstr "알림 이메일을 보낼 때 사용할 형식입니다."
+msgstr "알림 이메일을 보낼 때 사용할 형식입니다"
 
 #: includes/arrays.php
 msgid "Notification List"
@@ -293,7 +292,7 @@ msgstr "추가 경고 이메일"
 
 #: includes/arrays.php
 msgid "You may specify here extra Emails to receive alerts for this URL (comma separated)"
-msgstr "이 URL에 대한 알림을 받을 추가 이메일을 여기에 지정할 수 있습니다 (쉼표로 구분)."
+msgstr "이 URL에 대한 알림을 받을 추가 이메일을 여기에 지정할 수 있습니다 (쉼표로 구분)"
 
 #: includes/functions.php webseer.php
 msgid "Checks"
@@ -368,10 +367,9 @@ msgid "Save Proxy"
 msgstr "프록시 저장"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Delete the following URL."
 msgid_plural "Click 'Continue' to Delete following URLs."
-msgstr[0] "다음 프록시를 삭제하려면 '계속'을 클릭하십시오."
+msgstr[0] "다음 URL을 삭제하려면 '계속'을 클릭하십시오."
 
 #: webseer.php webseer_proxies.php webseer_servers.php
 msgid "Cancel"
@@ -382,50 +380,39 @@ msgid "Continue"
 msgstr "계속"
 
 #: webseer.php
-#, fuzzy
-#| msgid "Delete"
 msgid "Delete URL"
 msgid_plural "Delete URLs"
-msgstr[0] "삭제"
+msgstr[0] "URL 삭제"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Disable the following URL."
 msgid_plural "Click 'Continue' to Disable following URLs."
-msgstr[0] "다음 프록시를 삭제하려면 '계속'을 클릭하십시오."
+msgstr[0] "다음 URL을 비활성화하려면 '계속'을 클릭하십시오."
 
 #: webseer.php
-#, fuzzy
-#| msgid "Disable"
 msgid "Disable URL"
 msgid_plural "Disable URLs"
-msgstr[0] "비활성화"
+msgstr[0] "URL 비활성화"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Enable the following URL."
 msgid_plural "Click 'Continue' to Enable following URLs."
-msgstr[0] "다음 프록시를 삭제하려면 '계속'을 클릭하십시오."
+msgstr[0] "다음 URL을 활성화하려면 '계속'을 클릭하십시오."
 
 #: webseer.php
-#, fuzzy
-#| msgid "Enable"
 msgid "Enable URL"
 msgid_plural "Enable URLs"
-msgstr[0] "활성화"
+msgstr[0] "URL 활성화"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Duplicate the following URL."
 msgid_plural "Click 'Continue' to Duplicate following URLs."
-msgstr[0] "다음 프록시를 삭제하려면 '계속'을 클릭하십시오."
+msgstr[0] "다음 URL을 복제하려면 '계속'을 클릭하십시오."
 
 #: webseer.php
-#, fuzzy
-#| msgid "Duplicate"
 msgid "Duplicate URL"
 msgid_plural "Duplicate URLs"
-msgstr[0] "복사"
+msgstr[0] "URL 복제"
 
 #: webseer.php
 #, php-format
@@ -611,16 +598,14 @@ msgid "Purge Events"
 msgstr "이벤트 영구 삭제"
 
 #: webseer_proxies.php
-#, fuzzy
 msgid "Click 'Continue' to delete the following Proxy."
 msgid_plural "Click 'Continue' to delete following Proxies."
 msgstr[0] "다음 프록시를 삭제하려면 '계속'을 클릭하십시오."
 
 #: webseer_proxies.php
-#, fuzzy
 msgid "Delete Proxy"
 msgid_plural "Delete Proxies"
-msgstr[0] "삭제"
+msgstr[0] "프록시 삭제"
 
 #: webseer_proxies.php
 #, php-format
@@ -648,34 +633,29 @@ msgid "Webseer Proxy Management"
 msgstr "Webseer 프록시 관리"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Click 'Continue' to Delete the following Server."
 msgid_plural "Click 'Continue' to Delete following Servers."
-msgstr[0] "다음 프록시를 삭제하려면 '계속'을 클릭하십시오."
+msgstr[0] "다음 서버를 삭제하려면 '계속'을 클릭하십시오."
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Delete Server"
 msgid_plural "Delete Servers"
-msgstr[0] "WebSeer 서버"
+msgstr[0] "서버 삭제"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Click 'Continue' to Disable the following Server."
 msgid_plural "Click 'Continue' to Disable following Servers."
-msgstr[0] "다음 프록시를 삭제하려면 '계속'을 클릭하십시오."
+msgstr[0] "다음 서버를 비활성화하려면 '계속'을 클릭하십시오."
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Disable Server"
 msgid_plural "Disable Servers"
-msgstr[0] "서버 사용"
+msgstr[0] "서버 비활성화"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Click 'Continue' to Enable the following Server."
 msgid_plural "Click 'Continue' to Enable following Servers."
-msgstr[0] "다음 프록시를 삭제하려면 '계속'을 클릭하십시오."
+msgstr[0] "다음 서버를 활성화하려면 '계속'을 클릭하십시오."
 
 #: webseer_servers.php
 msgid "No Events in History"
