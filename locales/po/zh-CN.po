@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: webseer on cacti 1.1.34\nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-28 16:09-0400\nPO-Revision-Date: 2026-11-25 02:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Chinese (Simplified Han script) <https://translate.cacti.net/projects/cacti/webseer/zh_Hans/>\nLanguage: zh-CN\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=1; plural=0;\nX-Generator: Weblate 5.11.4\n"
+msgstr "Project-Id-Version: webseer on cacti 1.1.34\nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-28 16:09-0400\nPO-Revision-Date: 2026-11-26 03:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Chinese (Simplified Han script) <https://translate.cacti.net/projects/cacti/webseer/zh_Hans/>\nLanguage: zh-CN\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=1; plural=0;\nX-Generator: Weblate 5.11.4\n"
 
 #: includes/arrays.php webseer_servers.php
 #, php-format
@@ -98,8 +98,6 @@ msgid "Display Name of this server"
 msgstr "显示此服务器的名称"
 
 #: includes/arrays.php webseer_servers.php
-#, fuzzy
-#| msgid "Enable Server"
 msgid "Enable Server"
 msgid_plural "Enable Servers"
 msgstr[0] "启用服务器"
@@ -369,10 +367,9 @@ msgid "Save Proxy"
 msgstr "保存代理"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Delete the following URL."
 msgid_plural "Click 'Continue' to Delete following URLs."
-msgstr[0] "单击“继续”以删除以下代理。"
+msgstr[0] "点击“继续”以删除以下 URL。"
 
 #: webseer.php webseer_proxies.php webseer_servers.php
 msgid "Cancel"
@@ -383,50 +380,39 @@ msgid "Continue"
 msgstr "继续"
 
 #: webseer.php
-#, fuzzy
-#| msgid "Delete"
 msgid "Delete URL"
 msgid_plural "Delete URLs"
-msgstr[0] "删除"
+msgstr[0] "删除 URL"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Disable the following URL."
 msgid_plural "Click 'Continue' to Disable following URLs."
-msgstr[0] "单击“继续”以删除以下代理。"
+msgstr[0] "点击“继续”以禁用以下 URL。"
 
 #: webseer.php
-#, fuzzy
-#| msgid "Disable"
 msgid "Disable URL"
 msgid_plural "Disable URLs"
-msgstr[0] "禁用"
+msgstr[0] "禁用 URL"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Enable the following URL."
 msgid_plural "Click 'Continue' to Enable following URLs."
-msgstr[0] "单击“继续”以删除以下代理。"
+msgstr[0] "点击“继续”以启用以下 URL。"
 
 #: webseer.php
-#, fuzzy
-#| msgid "Enable"
 msgid "Enable URL"
 msgid_plural "Enable URLs"
-msgstr[0] "启用"
+msgstr[0] "启用 URL"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Duplicate the following URL."
 msgid_plural "Click 'Continue' to Duplicate following URLs."
-msgstr[0] "单击“继续”以删除以下代理。"
+msgstr[0] "点击“继续”以复制以下 URL。"
 
 #: webseer.php
-#, fuzzy
-#| msgid "Duplicate"
 msgid "Duplicate URL"
 msgid_plural "Duplicate URLs"
-msgstr[0] "重复"
+msgstr[0] "复制 URL"
 
 #: webseer.php
 #, php-format
@@ -612,10 +598,9 @@ msgid "Purge Events"
 msgstr "清空事件"
 
 #: webseer_proxies.php
-#, fuzzy
 msgid "Click 'Continue' to delete the following Proxy."
 msgid_plural "Click 'Continue' to delete following Proxies."
-msgstr[0] "单击“继续”以删除以下代理。"
+msgstr[0] "点击“继续”以删除以下代理。"
 
 #: webseer_proxies.php
 msgid "Delete Proxy"
@@ -648,36 +633,29 @@ msgid "Webseer Proxy Management"
 msgstr "Webseer 代理管理"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Click 'Continue' to Delete the following Server."
 msgid_plural "Click 'Continue' to Delete following Servers."
-msgstr[0] "单击“继续”以删除以下代理。"
+msgstr[0] "点击“继续”以删除以下服务器。"
 
 #: webseer_servers.php
-#, fuzzy
-#| msgid "WebSeer Servers"
 msgid "Delete Server"
 msgid_plural "Delete Servers"
-msgstr[0] "WebSeer服务器"
+msgstr[0] "删除服务器"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Click 'Continue' to Disable the following Server."
 msgid_plural "Click 'Continue' to Disable following Servers."
-msgstr[0] "单击“继续”以删除以下代理。"
+msgstr[0] "点击“继续”以禁用以下服务器。"
 
 #: webseer_servers.php
-#, fuzzy
-#| msgid "Enable Server"
 msgid "Disable Server"
 msgid_plural "Disable Servers"
-msgstr[0] "启用服务器"
+msgstr[0] "禁用服务器"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Click 'Continue' to Enable the following Server."
 msgid_plural "Click 'Continue' to Enable following Servers."
-msgstr[0] "单击“继续”以删除以下代理。"
+msgstr[0] "点击“继续”以启用以下服务器。"
 
 #: webseer_servers.php
 msgid "No Events in History"
