@@ -4,12 +4,12 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-28 16:09-0400\nPO-Revision-Date: 2026-11-25 02:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Arabic (Saudi Arabia) <https://translate.cacti.net/projects/cacti/webseer/ar_SA/>\nLanguage: ar-SA\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\nX-Generator: Weblate 5.11.4\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-28 16:09-0400\nPO-Revision-Date: 2026-11-26 03:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Arabic (Saudi Arabia) <https://translate.cacti.net/projects/cacti/webseer/ar_SA/>\nLanguage: ar-SA\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\nX-Generator: Weblate 5.11.4\n"
 
 #: includes/arrays.php webseer_servers.php
 #, php-format
 msgid "%d Minute"
-msgstr "دقيقة %d"
+msgstr "%d دقيقة"
 
 #: includes/arrays.php webseer_servers.php
 #, php-format
@@ -98,15 +98,14 @@ msgid "Display Name of this server"
 msgstr "اسم العرض لهذا الخادم"
 
 #: includes/arrays.php webseer_servers.php
-#, fuzzy
 msgid "Enable Server"
 msgid_plural "Enable Servers"
-msgstr[0] "تمكين الخادم"
+msgstr[0] "تمكين الخوادم"
 msgstr[1] "تمكين الخادم"
-msgstr[2] "تمكين الخادم"
-msgstr[3] "تمكين الخادم"
-msgstr[4] "تمكين الخادم"
-msgstr[5] "تمكين الخادم"
+msgstr[2] "تمكين الخادمين"
+msgstr[3] "تمكين الخوادم"
+msgstr[4] "تمكين الخوادم"
+msgstr[5] "تمكين الخوادم"
 
 #: includes/arrays.php
 msgid "Uncheck this box to disabled this server from checking urls."
@@ -373,15 +372,14 @@ msgid "Save Proxy"
 msgstr "حفظ الوكيل"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Delete the following URL."
 msgid_plural "Click 'Continue' to Delete following URLs."
-msgstr[0] "انقر فوق \"متابعة\" لحذف الوكيل التالي."
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "انقر فوق 'متابعة' لحذف عناوين URL التالية."
+msgstr[1] "انقر فوق 'متابعة' لحذف عنوان URL التالي."
+msgstr[2] "انقر فوق 'متابعة' لحذف عنواني URL التاليين."
+msgstr[3] "انقر فوق 'متابعة' لحذف عناوين URL التالية."
+msgstr[4] "انقر فوق 'متابعة' لحذف عناوين URL التالية."
+msgstr[5] "انقر فوق 'متابعة' لحذف عناوين URL التالية."
 
 #: webseer.php webseer_proxies.php webseer_servers.php
 msgid "Cancel"
@@ -392,85 +390,74 @@ msgid "Continue"
 msgstr "إستمرار"
 
 #: webseer.php
-#, fuzzy
-#| msgid "Delete"
 msgid "Delete URL"
 msgid_plural "Delete URLs"
-msgstr[0] "حذف"
-msgstr[1] "حذف"
-msgstr[2] "حذف"
-msgstr[3] "حذف"
-msgstr[4] "حذف"
-msgstr[5] "حذف"
+msgstr[0] "حذف عناوين URL"
+msgstr[1] "حذف عنوان URL"
+msgstr[2] "حذف عنواني URL"
+msgstr[3] "حذف عناوين URL"
+msgstr[4] "حذف عناوين URL"
+msgstr[5] "حذف عناوين URL"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Disable the following URL."
 msgid_plural "Click 'Continue' to Disable following URLs."
-msgstr[0] "انقر فوق \"متابعة\" لحذف الوكيل التالي."
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "انقر فوق 'متابعة' لتعطيل عناوين URL التالية."
+msgstr[1] "انقر فوق 'متابعة' لتعطيل عنوان URL التالي."
+msgstr[2] "انقر فوق 'متابعة' لتعطيل عنواني URL التاليين."
+msgstr[3] "انقر فوق 'متابعة' لتعطيل عناوين URL التالية."
+msgstr[4] "انقر فوق 'متابعة' لتعطيل عناوين URL التالية."
+msgstr[5] "انقر فوق 'متابعة' لتعطيل عناوين URL التالية."
 
 #: webseer.php
-#, fuzzy
-#| msgid "Disable"
 msgid "Disable URL"
 msgid_plural "Disable URLs"
-msgstr[0] "تعطيل"
-msgstr[1] "تعطيل"
-msgstr[2] "تعطيل"
-msgstr[3] "تعطيل"
-msgstr[4] "تعطيل"
-msgstr[5] "تعطيل"
+msgstr[0] "تعطيل عناوين URL"
+msgstr[1] "تعطيل عنوان URL"
+msgstr[2] "تعطيل عنواني URL"
+msgstr[3] "تعطيل عناوين URL"
+msgstr[4] "تعطيل عناوين URL"
+msgstr[5] "تعطيل عناوين URL"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Enable the following URL."
 msgid_plural "Click 'Continue' to Enable following URLs."
-msgstr[0] "انقر فوق \"متابعة\" لحذف الوكيل التالي."
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "انقر فوق 'متابعة' لتمكين عناوين URL التالية."
+msgstr[1] "انقر فوق 'متابعة' لتمكين عنوان URL التالي."
+msgstr[2] "انقر فوق 'متابعة' لتمكين عنواني URL التاليين."
+msgstr[3] "انقر فوق 'متابعة' لتمكين عناوين URL التالية."
+msgstr[4] "انقر فوق 'متابعة' لتمكين عناوين URL التالية."
+msgstr[5] "انقر فوق 'متابعة' لتمكين عناوين URL التالية."
 
 #: webseer.php
-#, fuzzy
-#| msgid "Enable"
 msgid "Enable URL"
 msgid_plural "Enable URLs"
-msgstr[0] "تفعيل"
-msgstr[1] "تفعيل"
-msgstr[2] "تفعيل"
-msgstr[3] "تفعيل"
-msgstr[4] "تفعيل"
-msgstr[5] "تفعيل"
+msgstr[0] "تمكين عناوين URL"
+msgstr[1] "تمكين عنوان URL"
+msgstr[2] "تمكين عنواني URL"
+msgstr[3] "تمكين عناوين URL"
+msgstr[4] "تمكين عناوين URL"
+msgstr[5] "تمكين عناوين URL"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Duplicate the following URL."
 msgid_plural "Click 'Continue' to Duplicate following URLs."
-msgstr[0] "انقر فوق \"متابعة\" لحذف الوكيل التالي."
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "انقر فوق 'متابعة' لتكرار عناوين URL التالية."
+msgstr[1] "انقر فوق 'متابعة' لتكرار عنوان URL التالي."
+msgstr[2] "انقر فوق 'متابعة' لتكرار عنواني URL التاليين."
+msgstr[3] "انقر فوق 'متابعة' لتكرار عناوين URL التالية."
+msgstr[4] "انقر فوق 'متابعة' لتكرار عناوين URL التالية."
+msgstr[5] "انقر فوق 'متابعة' لتكرار عناوين URL التالية."
 
 #: webseer.php
-#, fuzzy
-#| msgid "Duplicate"
 msgid "Duplicate URL"
 msgid_plural "Duplicate URLs"
-msgstr[0] "تكرار"
-msgstr[1] "تكرار"
-msgstr[2] "تكرار"
-msgstr[3] "تكرار"
-msgstr[4] "تكرار"
-msgstr[5] "تكرار"
+msgstr[0] "تكرار عناوين URL"
+msgstr[1] "تكرار عنوان URL"
+msgstr[2] "تكرار عنواني URL"
+msgstr[3] "تكرار عناوين URL"
+msgstr[4] "تكرار عناوين URL"
+msgstr[5] "تكرار عناوين URL"
 
 #: webseer.php
 #, php-format
@@ -625,7 +612,7 @@ msgstr "الجميع"
 
 #: webseer.php webseer_servers.php
 msgid "Refresh"
-msgstr "تحديث"
+msgstr "إنعاش"
 
 #: webseer.php webseer_proxies.php webseer_servers.php
 msgid "Default"
@@ -656,26 +643,24 @@ msgid "Purge Events"
 msgstr "تطهير الأحداث"
 
 #: webseer_proxies.php
-#, fuzzy
 msgid "Click 'Continue' to delete the following Proxy."
 msgid_plural "Click 'Continue' to delete following Proxies."
-msgstr[0] "انقر فوق \"متابعة\" لحذف الوكيل التالي."
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "انقر فوق 'متابعة' لحذف الوكلاء التاليين."
+msgstr[1] "انقر فوق 'متابعة' لحذف الوكيل التالي."
+msgstr[2] "انقر فوق 'متابعة' لحذف الوكيلين التاليين."
+msgstr[3] "انقر فوق 'متابعة' لحذف الوكلاء التاليين."
+msgstr[4] "انقر فوق 'متابعة' لحذف الوكلاء التاليين."
+msgstr[5] "انقر فوق 'متابعة' لحذف الوكلاء التاليين."
 
 #: webseer_proxies.php
-#, fuzzy
 msgid "Delete Proxy"
 msgid_plural "Delete Proxies"
-msgstr[0] "حذف"
-msgstr[1] "حذف"
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "حذف الوكلاء"
+msgstr[1] "حذف الوكيل"
+msgstr[2] "حذف الوكيلين"
+msgstr[3] "حذف الوكلاء"
+msgstr[4] "حذف الوكلاء"
+msgstr[5] "حذف الوكلاء"
 
 #: webseer_proxies.php
 #, php-format
@@ -696,66 +681,61 @@ msgstr "اسم المستخدم"
 
 #: webseer_proxies.php
 msgid "Not Set"
-msgstr "غير مضبوط"
+msgstr "غير معين"
 
 #: webseer_proxies.php
 msgid "Webseer Proxy Management"
 msgstr "إدارة وكلاء WebSeer"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Click 'Continue' to Delete the following Server."
 msgid_plural "Click 'Continue' to Delete following Servers."
-msgstr[0] "انقر فوق \"متابعة\" لحذف الوكيل التالي."
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "انقر فوق 'متابعة' لحذف الخوادم التالية."
+msgstr[1] "انقر فوق 'متابعة' لحذف الخادم التالي."
+msgstr[2] "انقر فوق 'متابعة' لحذف الخادمين التاليين."
+msgstr[3] "انقر فوق 'متابعة' لحذف الخوادم التالية."
+msgstr[4] "انقر فوق 'متابعة' لحذف الخوادم التالية."
+msgstr[5] "انقر فوق 'متابعة' لحذف الخوادم التالية."
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Delete Server"
 msgid_plural "Delete Servers"
-msgstr[0] "خوادم الويب"
-msgstr[1] "خوادم الويب"
-msgstr[2] "خوادم الويب"
-msgstr[3] "خوادم الويب"
-msgstr[4] "خوادم الويب"
-msgstr[5] "خوادم الويب"
+msgstr[0] "حذف الخوادم"
+msgstr[1] "حذف الخادم"
+msgstr[2] "حذف الخادمين"
+msgstr[3] "حذف الخوادم"
+msgstr[4] "حذف الخوادم"
+msgstr[5] "حذف الخوادم"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Click 'Continue' to Disable the following Server."
 msgid_plural "Click 'Continue' to Disable following Servers."
-msgstr[0] "انقر فوق \"متابعة\" لحذف الوكيل التالي."
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "انقر فوق 'متابعة' لتعطيل الخوادم التالية."
+msgstr[1] "انقر فوق 'متابعة' لتعطيل الخادم التالي."
+msgstr[2] "انقر فوق 'متابعة' لتعطيل الخادمين التاليين."
+msgstr[3] "انقر فوق 'متابعة' لتعطيل الخوادم التالية."
+msgstr[4] "انقر فوق 'متابعة' لتعطيل الخوادم التالية."
+msgstr[5] "انقر فوق 'متابعة' لتعطيل الخوادم التالية."
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Disable Server"
 msgid_plural "Disable Servers"
-msgstr[0] "تمكين الخادم"
-msgstr[1] "تمكين الخادم"
-msgstr[2] "تمكين الخادم"
-msgstr[3] "تمكين الخادم"
-msgstr[4] "تمكين الخادم"
-msgstr[5] "تمكين الخادم"
+msgstr[0] "تعطيل الخوادم"
+msgstr[1] "تعطيل الخادم"
+msgstr[2] "تعطيل الخادمين"
+msgstr[3] "تعطيل الخوادم"
+msgstr[4] "تعطيل الخوادم"
+msgstr[5] "تعطيل الخوادم"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Click 'Continue' to Enable the following Server."
 msgid_plural "Click 'Continue' to Enable following Servers."
-msgstr[0] "انقر فوق \"متابعة\" لحذف الوكيل التالي."
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "انقر فوق 'متابعة' لتمكين الخوادم التالية."
+msgstr[1] "انقر فوق 'متابعة' لتمكين الخادم التالي."
+msgstr[2] "انقر فوق 'متابعة' لتمكين الخادمين التاليين."
+msgstr[3] "انقر فوق 'متابعة' لتمكين الخوادم التالية."
+msgstr[4] "انقر فوق 'متابعة' لتمكين الخوادم التالية."
+msgstr[5] "انقر فوق 'متابعة' لتمكين الخوادم التالية."
 
 #: webseer_servers.php
 msgid "No Events in History"
