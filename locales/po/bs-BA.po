@@ -1,0 +1,740 @@
+# Bosnian translation for Cacti.
+# Copyright (C) 2004-2026 The Cacti Group
+# This file is distributed under the same license as the Cacti package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Cacti\n"
+"Report-Msgid-Bugs-To: developers@cacti.net\n"
+"POT-Creation-Date: 2026-09-28 16:09-0400\n"
+"PO-Revision-Date: 2026-11-26 18:57+0000\n"
+"Last-Translator: Thomas Vincent <thomasvincent@gmail.com>\n"
+"Language-Team: Bosnian <developers@cacti.net>\n"
+"Language: bs-BA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+
+#: includes/arrays.php webseer_servers.php
+#, php-format
+msgid "%d Minute"
+msgstr "%d minuta"
+
+#: includes/arrays.php webseer_servers.php
+#, php-format
+msgid "%d Minutes"
+msgstr "%d minuta"
+
+#: includes/arrays.php webseer_servers.php
+#, php-format
+msgid "%d Seconds"
+msgstr "%d sekundi"
+
+#: includes/arrays.php
+msgid "Delete"
+msgstr "Obriši"
+
+#: includes/arrays.php
+msgid "Disable"
+msgstr "Onemogući"
+
+#: includes/arrays.php
+msgid "Enable"
+msgstr "Omogući"
+
+#: includes/arrays.php
+msgid "Duplicate"
+msgstr "Dupliciraj"
+
+#: includes/arrays.php webseer.php webseer_proxies.php webseer_servers.php
+msgid "Name"
+msgstr "Naziv"
+
+#: includes/arrays.php
+msgid "A Useful Name for this Proxy."
+msgstr "Koristan naziv za ovaj proxy."
+
+#: includes/arrays.php
+msgid "New Proxy"
+msgstr "Novi proxy"
+
+#: includes/arrays.php webseer_proxies.php
+msgid "Hostname"
+msgstr "Naziv hosta"
+
+#: includes/arrays.php
+msgid "The Proxy Hostname."
+msgstr "Ime hosta za proxy."
+
+#: includes/arrays.php
+msgid "HTTP Port"
+msgstr "HTTP port"
+
+#: includes/arrays.php
+msgid "The HTTP Proxy Port."
+msgstr "Port za HTTP proxy."
+
+#: includes/arrays.php
+msgid "HTTPS Port"
+msgstr "HTTPS port"
+
+#: includes/arrays.php
+msgid "The HTTPS Proxy Port."
+msgstr "Port za HTTPS proxy."
+
+#: includes/arrays.php
+msgid "User Name"
+msgstr "Korisničko ime"
+
+#: includes/arrays.php
+msgid "The user to use to authenticate with the Proxy if any."
+msgstr "Korisnik koji se koristi za autentifikaciju na proxy serveru, ako postoji."
+
+#: includes/arrays.php
+msgid "Password"
+msgstr "Lozinka"
+
+#: includes/arrays.php
+msgid "The user password to use to authenticate with the Proxy if any."
+msgstr "Lozinka korisnika koja se koristi za autentifikaciju na proxy serveru, ako postoji."
+
+#: includes/arrays.php
+msgid "General Settings"
+msgstr "Opće postavke"
+
+#: includes/arrays.php
+msgid "Display Name of this server"
+msgstr "Prikazni naziv ovog servera"
+
+#: includes/arrays.php webseer_servers.php
+msgid "Enable Server"
+msgid_plural "Enable Servers"
+msgstr[0] "Omogući server"
+msgstr[1] "Omogući servere"
+msgstr[2] "Omogući servere"
+
+#: includes/arrays.php
+msgid "Uncheck this box to disabled this server from checking urls."
+msgstr "Odznačite ovo polje da onemogućite ovom serveru provjeru URL-ova."
+
+#: includes/arrays.php
+msgid "Is this server the local server?"
+msgstr "Da li je ovaj server lokalni server?"
+
+#: includes/arrays.php
+msgid "Check this box if the current server you are connected to is this entry."
+msgstr "Označite ovo polje ako je trenutni server na koji ste povezani upravo ovaj unos."
+
+#: includes/arrays.php
+msgid "Master Server"
+msgstr "Glavni server"
+
+#: includes/arrays.php
+msgid "Sets this server to the Master server.  The Master server handles all Email operations"
+msgstr "Postavlja ovaj server kao glavni server. Glavni server upravlja svim operacijama e-pošte"
+
+#: includes/arrays.php webseer_servers.php
+msgid "IP Address"
+msgstr "IP adresa"
+
+#: includes/arrays.php
+msgid "IP Address to connect to this server"
+msgstr "IP adresa za povezivanje s ovim serverom"
+
+#: includes/arrays.php webseer.php webseer_servers.php
+msgid "URL"
+msgstr "URL"
+
+#: includes/arrays.php
+msgid "This is the URL to connect to remote.php on this server."
+msgstr "Ovo je URL za povezivanje s datotekom remote.php na ovom serveru."
+
+#: includes/arrays.php webseer_servers.php
+msgid "Location"
+msgstr "Lokacija"
+
+#: includes/arrays.php
+msgid "Location of this server"
+msgstr "Lokacija ovog servera"
+
+#: includes/arrays.php
+msgid "Service Check Name"
+msgstr "Naziv provjere servisa"
+
+#: includes/arrays.php
+msgid "The name that is displayed for this Service Check, and is included in any Alert notifications."
+msgstr "Naziv koji se prikazuje za ovu provjeru servisa i koji je uključen u sva obavještenja o upozorenjima."
+
+#: includes/arrays.php webseer.php
+msgid "Enable Service Check"
+msgstr "Omogući provjeru servisa"
+
+#: includes/arrays.php
+msgid "Uncheck this box to disabled this url from being checked."
+msgstr "Odznačite ovo polje da onemogućite provjeru ovog URL-a."
+
+#: includes/arrays.php
+msgid "The URL to Monitor"
+msgstr "URL za nadzor"
+
+#: includes/arrays.php
+msgid "Enter an IP address to connect to.  Leaving blank will use DNS Resolution instead."
+msgstr "Unesite IP adresu na koju se želite povezati. Ako ostavite prazno, koristit će se DNS razrješavanje."
+
+#: includes/arrays.php
+msgid "Proxy Server"
+msgstr "Proxy server"
+
+#: includes/arrays.php
+msgid "If this connection text requires a proxy, select it here.  Otherwise choose 'None'."
+msgstr "Ako ova konekcija zahtijeva proxy, odaberite ga ovdje. U suprotnom odaberite 'Ništa'."
+
+#: includes/arrays.php webseer.php
+msgid "None"
+msgstr "Nijedan"
+
+#: includes/arrays.php webseer.php
+msgid "Compression"
+msgstr "Kompresija"
+
+#: includes/arrays.php
+msgid "What compression does the server require?  Most servers should not need this, but some will not redirect properly without it."
+msgstr "Koju kompresiju server zahtijeva? Većini servera ovo ne bi trebalo biti potrebno, ali neki se neće pravilno preusmjeriti bez toga."
+
+#: includes/arrays.php
+msgid "Available Checks"
+msgstr "Dostupne provjere"
+
+#: includes/arrays.php
+msgid "Requires Authentication"
+msgstr "Zahtijeva autentifikaciju"
+
+#: includes/arrays.php
+msgid "Check this box if the site will normally return a 401 Error as it requires a username and password."
+msgstr "Označite ovo polje ako stranica obično vraća grešku 401 jer zahtijeva korisničko ime i lozinku."
+
+#: includes/arrays.php
+msgid "Check Certificate"
+msgstr "Provjeri certifikat"
+
+#: includes/arrays.php
+msgid "If using SSL, check this box if you want to validate the certificate. Default on, turn off if you the site uses a self-signed certificate."
+msgstr "Ako koristite SSL, označite ovo polje ako želite provjeriti valjanost certifikata. Podrazumijevano uključeno, isključite ako stranica koristi samopotpisani certifikat."
+
+#: includes/arrays.php
+msgid "Notification Timing"
+msgstr "Vremensko podešavanje obavještenja"
+
+#: includes/arrays.php
+msgid "Trigger"
+msgstr "Okidač"
+
+#: includes/arrays.php
+msgid "How many minutes the URL must be down before it will send an alert.  After an alert is sent, in order for a 'Site Recovering' Email to be send, it must also be up this number of minutes."
+msgstr "Koliko minuta URL mora biti nedostupan prije nego što se pošalje alarm. Nakon što je alarm poslan, da bi bila poslana e-poruka 'Oporavak stranice', mora biti dostupan isti broj minuta."
+
+#: includes/arrays.php
+msgid "Time Out"
+msgstr "Istek vremena"
+
+#: includes/arrays.php
+msgid "How many seconds to allow the page to timeout before reporting it as down."
+msgstr "Koliko sekundi dozvoliti stranici da istekne prije nego što se prijavi kao nedostupna."
+
+#: includes/arrays.php
+msgid "Verification Strings"
+msgstr "Stringovi za provjeru"
+
+#: includes/arrays.php
+msgid "Response Search String"
+msgstr "String za pretragu u odgovoru"
+
+#: includes/arrays.php
+msgid "This is the string to search for in the URL response for a live and working Web Service."
+msgstr "Ovo je tekstualni niz koji se traži u odgovoru URL-a za aktivan i ispravan web servis."
+
+#: includes/arrays.php
+msgid "Response Search String - Maintenance Page"
+msgstr "Tekstualni niz za pretragu u odgovoru - Stranica održavanja"
+
+#: includes/arrays.php
+msgid "This is the string to search for on the Maintenance Page.  The Service Check will check for this string if the above string is not found.  If found, it means that the Web Service is under maintenance."
+msgstr "Ovo je tekstualni niz koji se traži na stranici održavanja. Provjera servisa će potražiti ovaj niz ako gornji niz nije pronađen. Ako se pronađe, to znači da je web servis u fazi održavanja."
+
+#: includes/arrays.php
+msgid "Response Search String - Failed"
+msgstr "String za pretragu u odgovoru - Neuspješno"
+
+#: includes/arrays.php
+msgid "This is the string to search for a known failure in the Web Service response.  The Service Check will only alert if this string is found, ignoring any timeout issues and the search strings above."
+msgstr "Ovo je tekstualni niz koji se traži radi prepoznavanja poznate greške u odgovoru web servisa. Provjera servisa će poslati upozorenje samo ako se ovaj niz pronađe, ignorišući sve probleme sa istekom vremena i gore navedene nizove za pretragu."
+
+#: includes/arrays.php
+msgid "Notification Settings"
+msgstr "Postavke obavještenja"
+
+#: includes/arrays.php
+msgid "Notify Format"
+msgstr "Format obavještenja"
+
+#: includes/arrays.php
+msgid "This is the format to use when sending the notification email"
+msgstr "Ovo je format koji se koristi prilikom slanja e-maila sa obavještenjem"
+
+#: includes/arrays.php
+msgid "Notification List"
+msgstr "Lista obavještenja"
+
+#: includes/arrays.php
+msgid "Use this Notification List for those to be notified when this website goes down."
+msgstr "Koristite ovu listu obavještenja za korisnike koji će biti obaviješteni kada ova web stranica bude nedostupna."
+
+#: includes/arrays.php
+msgid "Notify Accounts"
+msgstr "Nalozi za obavještavanje"
+
+#: includes/arrays.php
+msgid "This is a listing of accounts that will be notified when this website goes down."
+msgstr "Ovo je spisak naloga koji će biti obaviješteni kada ova web stranica bude nedostupna."
+
+#: includes/arrays.php
+msgid "Extra Alert Emails"
+msgstr "Dodatne email adrese za upozorenja"
+
+#: includes/arrays.php
+msgid "You may specify here extra Emails to receive alerts for this URL (comma separated)"
+msgstr "Ovdje možete navesti dodatne e-mail adrese za primanje upozorenja za ovaj URL (odvojene zarezom)"
+
+#: includes/functions.php webseer.php
+msgid "Checks"
+msgstr "Provjere"
+
+#: includes/functions.php webseer_servers.php
+msgid "Servers"
+msgstr "Serveri"
+
+#: includes/functions.php webseer_proxies.php
+msgid "Proxies"
+msgstr "Proxy serveri"
+
+#: includes/functions.php
+msgid "Log History"
+msgstr "Historija dnevnika"
+
+#: poller_webseer.php
+msgid "Cacti Master"
+msgstr "Glavni Cacti"
+
+#: poller_webseer.php
+msgid "Cacti Remote Server"
+msgstr "Udaljeni Cacti server"
+
+#: setup.php
+msgid "Web Service Check Admin"
+msgstr "Administracija provjere web servisa"
+
+#: setup.php
+msgid "Management"
+msgstr "Upravljanje"
+
+#: setup.php
+msgid "Service Checks"
+msgstr "Provjere servisa"
+
+#: setup.php
+msgid "WebSeer Service Checks"
+msgstr "WebSeer provjere servisa"
+
+#: setup.php
+msgid "Service Check Edit"
+msgstr "Uređivanje provjere servisa"
+
+#: setup.php
+msgid "Service Check Save"
+msgstr "Čuvanje provjere servisa"
+
+#: setup.php
+msgid "WebSeer Servers"
+msgstr "WebSeer serveri"
+
+#: setup.php
+msgid "Server Edit"
+msgstr "Uređivanje servera"
+
+#: setup.php
+msgid "Save Server"
+msgstr "Sačuvaj server"
+
+#: setup.php
+msgid "WebSeer Proxies"
+msgstr "WebSeer proxyji"
+
+#: setup.php
+msgid "Proxie Edit"
+msgstr "Uređivanje proxyja"
+
+#: setup.php
+msgid "Save Proxy"
+msgstr "Sačuvaj proxy"
+
+#: webseer.php
+msgid "Click 'Continue' to Delete the following URL."
+msgid_plural "Click 'Continue' to Delete following URLs."
+msgstr[0] "Kliknite na 'Nastavi' da obrišete sljedeći URL."
+msgstr[1] "Kliknite na 'Nastavi' da obrišete sljedeće URL-ove."
+msgstr[2] "Kliknite na 'Nastavi' da obrišete sljedeće URL-ove."
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Cancel"
+msgstr "Otkaži"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Continue"
+msgstr "Nastavi"
+
+#: webseer.php
+msgid "Delete URL"
+msgid_plural "Delete URLs"
+msgstr[0] "Obriši URL"
+msgstr[1] "Obriši URL-ove"
+msgstr[2] "Obriši URL-ove"
+
+#: webseer.php
+msgid "Click 'Continue' to Disable the following URL."
+msgid_plural "Click 'Continue' to Disable following URLs."
+msgstr[0] "Kliknite na 'Nastavi' da onemogućite sljedeći URL."
+msgstr[1] "Kliknite na 'Nastavi' da onemogućite sljedeće URL-ove."
+msgstr[2] "Kliknite na 'Nastavi' da onemogućite sljedeće URL-ove."
+
+#: webseer.php
+msgid "Disable URL"
+msgid_plural "Disable URLs"
+msgstr[0] "Onemogući URL"
+msgstr[1] "Onemogući URL-ove"
+msgstr[2] "Onemogući URL-ove"
+
+#: webseer.php
+msgid "Click 'Continue' to Enable the following URL."
+msgid_plural "Click 'Continue' to Enable following URLs."
+msgstr[0] "Kliknite na 'Nastavi' da omogućite sljedeći URL."
+msgstr[1] "Kliknite na 'Nastavi' da omogućite sljedeće URL-ove."
+msgstr[2] "Kliknite na 'Nastavi' da omogućite sljedeće URL-ove."
+
+#: webseer.php
+msgid "Enable URL"
+msgid_plural "Enable URLs"
+msgstr[0] "Omogući URL"
+msgstr[1] "Omogući URL-ove"
+msgstr[2] "Omogući URL-ove"
+
+#: webseer.php
+msgid "Click 'Continue' to Duplicate the following URL."
+msgid_plural "Click 'Continue' to Duplicate following URLs."
+msgstr[0] "Kliknite na 'Nastavi' da duplicirate sljedeći URL."
+msgstr[1] "Kliknite na 'Nastavi' da duplicirate sljedeće URL-ove."
+msgstr[2] "Kliknite na 'Nastavi' da duplicirate sljedeće URL-ove."
+
+#: webseer.php
+msgid "Duplicate URL"
+msgid_plural "Duplicate URLs"
+msgstr[0] "Dupliciraj URL"
+msgstr[1] "Dupliciraj URL-ove"
+msgstr[2] "Dupliciraj URL-ove"
+
+#: webseer.php
+#, php-format
+msgid "The Service Check history was purged for %s"
+msgstr "Historija provjere servisa je očišćena za %s"
+
+#: webseer.php webseer_servers.php
+#, php-format
+msgid "Query [edit: %s]"
+msgstr "Upit [uredi: %s]"
+
+#: webseer.php webseer_servers.php
+msgid "Query [new]"
+msgstr "Upit [novi]"
+
+#: webseer.php
+msgid "No Users Selected"
+msgstr "Nijedan korisnik nije odabran"
+
+#: webseer.php
+msgid "Users Selected"
+msgstr "Odabrani korisnici"
+
+#: webseer.php
+msgid "All Users Selected"
+msgstr "Svi korisnici su odabrani"
+
+#: webseer.php
+msgid "All"
+msgstr "Sve"
+
+#: webseer.php webseer_proxies.php
+msgid "Search"
+msgstr "Pretraži"
+
+#: webseer.php webseer_servers.php
+msgid "Date"
+msgstr "Datum"
+
+#: webseer.php webseer_servers.php
+msgid "Error"
+msgstr "Greška"
+
+#: webseer.php webseer_servers.php
+msgid "HTTP Code"
+msgstr "HTTP kod"
+
+#: webseer.php webseer_servers.php
+msgid "DNS"
+msgstr "DNS"
+
+#: webseer.php webseer_servers.php
+msgid "Connect"
+msgstr "Povezivanje"
+
+#: webseer.php webseer_servers.php
+msgid "Redirect"
+msgstr "Preusmjeravanje"
+
+#: webseer.php webseer_servers.php
+msgid "Total"
+msgstr "Ukupno"
+
+#: webseer.php
+msgid "Urls"
+msgstr "URL-ovi"
+
+#: webseer.php
+msgid "Service Down"
+msgstr "Servis nedostupan"
+
+#: webseer.php
+msgid "Service Restored"
+msgstr "Servis ponovo dostupan"
+
+#: webseer.php
+msgid "No Service Check Events in History"
+msgstr "Nema događaja provjere servisa u historiji"
+
+#: webseer.php webseer_servers.php
+msgid "Actions"
+msgstr "Radnje"
+
+#: webseer.php
+msgid "Status"
+msgstr "Status"
+
+#: webseer.php webseer_servers.php
+msgid "Enabled"
+msgstr "Omogućeno"
+
+#: webseer.php
+msgid "Auth"
+msgstr "Autentifikacija"
+
+#: webseer.php
+msgid "Timeout"
+msgstr "Vremensko ograničenje"
+
+#: webseer.php webseer_servers.php
+msgid "Last Check"
+msgstr "Posljednja provjera"
+
+#: webseer.php
+msgid "Edit Service Check"
+msgstr "Uredi provjeru servisa"
+
+#: webseer.php
+msgid "Disable Service Check"
+msgstr "Onemogući provjeru servisa"
+
+#: webseer.php
+msgid "View Service Check History"
+msgstr "Prikaži historiju provjere servisa"
+
+#: webseer.php
+#, php-format
+msgid "DNS: Server %s - A Record for %s"
+msgstr "DNS: Server %s - A zapis za %s"
+
+#: webseer.php
+msgid "N/A"
+msgstr "N/D"
+
+#: webseer.php webseer_servers.php
+msgid "Down"
+msgstr "Nedostupan"
+
+#: webseer.php webseer_servers.php
+msgid "Up"
+msgstr "Dostupan"
+
+#: webseer.php webseer_servers.php
+msgid "Disabled"
+msgstr "Onemogućeno"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "No Servers Found"
+msgstr "Nije pronađen nijedan server"
+
+#: webseer.php
+msgid "Webseer Service Checks"
+msgstr "Webseer provjere servisa"
+
+#: webseer.php webseer_servers.php
+msgid "State"
+msgstr "Savezna država"
+
+#: webseer.php webseer_servers.php
+msgid "Any"
+msgstr "Bilo koji"
+
+#: webseer.php webseer_servers.php
+msgid "Refresh"
+msgstr "Osvježi"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Default"
+msgstr "Podrazumijevano"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Go"
+msgstr "Idi"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Clear"
+msgstr "Očisti"
+
+#: webseer.php
+msgid "Webseer Service Check History"
+msgstr "Historija Webseer provjera servisa"
+
+#: webseer.php webseer_servers.php
+msgid "Date Search"
+msgstr "Pretraga po datumu"
+
+#: webseer.php webseer_servers.php
+msgid "Entries"
+msgstr "Unosi"
+
+#: webseer.php
+msgid "Purge Events"
+msgstr "Očisti događaje"
+
+#: webseer_proxies.php
+msgid "Click 'Continue' to delete the following Proxy."
+msgid_plural "Click 'Continue' to delete following Proxies."
+msgstr[0] "Kliknite na 'Nastavi' da obrišete sljedeći proksi."
+msgstr[1] "Kliknite na 'Nastavi' da obrišete sljedeće proksije."
+msgstr[2] "Kliknite na 'Nastavi' da obrišete sljedeće proksije."
+
+#: webseer_proxies.php
+msgid "Delete Proxy"
+msgid_plural "Delete Proxies"
+msgstr[0] "Obriši proksi"
+msgstr[1] "Obriši proksije"
+msgstr[2] "Obriši proksije"
+
+#: webseer_proxies.php
+#, php-format
+msgid "Proxy [edit: %s]"
+msgstr "Proxy [uredi: %s]"
+
+#: webseer_proxies.php
+msgid "Proxy [new]"
+msgstr "Proxy [novi]"
+
+#: webseer_proxies.php
+msgid "Ports (http/https)"
+msgstr "Portovi (http/https)"
+
+#: webseer_proxies.php
+msgid "Username"
+msgstr "Korisničko ime"
+
+#: webseer_proxies.php
+msgid "Not Set"
+msgstr "Nije postavljeno"
+
+#: webseer_proxies.php
+msgid "Webseer Proxy Management"
+msgstr "Upravljanje Webseer proxyjima"
+
+#: webseer_servers.php
+msgid "Click 'Continue' to Delete the following Server."
+msgid_plural "Click 'Continue' to Delete following Servers."
+msgstr[0] "Kliknite na 'Nastavi' da obrišete sljedeći server."
+msgstr[1] "Kliknite na 'Nastavi' da obrišete sljedeće servere."
+msgstr[2] "Kliknite na 'Nastavi' da obrišete sljedeće servere."
+
+#: webseer_servers.php
+msgid "Delete Server"
+msgid_plural "Delete Servers"
+msgstr[0] "Obriši server"
+msgstr[1] "Obriši servere"
+msgstr[2] "Obriši servere"
+
+#: webseer_servers.php
+msgid "Click 'Continue' to Disable the following Server."
+msgid_plural "Click 'Continue' to Disable following Servers."
+msgstr[0] "Kliknite na 'Nastavi' da onemogućite sljedeći server."
+msgstr[1] "Kliknite na 'Nastavi' da onemogućite sljedeće servere."
+msgstr[2] "Kliknite na 'Nastavi' da onemogućite sljedeće servere."
+
+#: webseer_servers.php
+msgid "Disable Server"
+msgid_plural "Disable Servers"
+msgstr[0] "Onemogući server"
+msgstr[1] "Onemogući servere"
+msgstr[2] "Onemogući servere"
+
+#: webseer_servers.php
+msgid "Click 'Continue' to Enable the following Server."
+msgid_plural "Click 'Continue' to Enable following Servers."
+msgstr[0] "Kliknite na 'Nastavi' da omogućite sljedeći server."
+msgstr[1] "Kliknite na 'Nastavi' da omogućite sljedeće servere."
+msgstr[2] "Kliknite na 'Nastavi' da omogućite sljedeće servere."
+
+#: webseer_servers.php
+msgid "No Events in History"
+msgstr "Nema događaja u historiji"
+
+#: webseer_servers.php
+msgid "Master"
+msgstr "Glavni"
+
+#: webseer_servers.php
+msgid "This Host"
+msgstr "Ovaj host"
+
+#: webseer_servers.php
+msgid "Edit Server"
+msgstr "Uredi server"
+
+#: webseer_servers.php
+msgid "View Server History"
+msgstr "Pregledaj historiju servera"
+
+#: webseer_servers.php
+msgid "No"
+msgstr "Ne"
+
+#: webseer_servers.php
+msgid "Yes"
+msgstr "Da"
+
+#: webseer_servers.php
+msgid "Webseer Servers"
+msgstr "Webseer serveri"
+
+#: webseer_servers.php
+msgid "Triggered"
+msgstr "Aktivirano"
+
+#: webseer_servers.php
+msgid "Webseer Server History"
+msgstr "Historija Webseer servera"
