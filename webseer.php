@@ -209,39 +209,39 @@ function form_actions() {
 		if ($action == WEBSEER_ACTION_URL_DELETE) { // delete
 			print "	<tr>
 					<td class='topBoxAlt'>
-						<p>" . __n('Click \'Continue\' to Delete the following URL.', 'Click \'Continue\' to Delete following URLs.', cacti_sizeof($url_array)) . "</p>
+						<p>" . __n('Click \'Continue\' to Delete the following URL.', 'Click \'Continue\' to Delete following URLs.', cacti_sizeof($url_array), 'webseer') . "</p>
 						<div class='itemlist'><ul>$url_list</ul></div>
 					</td>
 				</tr>\n";
 
-			$save_html = "<input type='button' class='cactiReturnTo' value='" . __esc('Cancel') . "'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Delete URL', 'Delete URLs', cacti_sizeof($url_array)) . "'>";
+			$save_html = "<input type='button' class='cactiReturnTo' value='" . __esc('Cancel') . "'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Delete URL', 'Delete URLs', cacti_sizeof($url_array), 'webseer') . "'>";
 		} elseif ($action == WEBSEER_ACTION_URL_DISABLE) {
 			print "	<tr>
 					<td class='topBoxAlt'>
-						<p>" . __n('Click \'Continue\' to Disable the following URL.', 'Click \'Continue\' to Disable following URLs.', cacti_sizeof($url_array)) . "</p>
+						<p>" . __n('Click \'Continue\' to Disable the following URL.', 'Click \'Continue\' to Disable following URLs.', cacti_sizeof($url_array), 'webseer') . "</p>
 						<div class='itemlist'><ul>$url_list</ul></div>
 					</td>
 				</tr>\n";
 
-			$save_html = "<input type='button' class='cactiReturnTo' value='" . __esc('Cancel') . "'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Disable URL', 'Disable URLs', cacti_sizeof($url_array)) . "'>";
+			$save_html = "<input type='button' class='cactiReturnTo' value='" . __esc('Cancel') . "'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Disable URL', 'Disable URLs', cacti_sizeof($url_array), 'webseer') . "'>";
 		} elseif ($action == WEBSEER_ACTION_URL_ENABLE) {
 			print "	<tr>
 					<td class='topBoxAlt'>
-						<p>" . __n('Click \'Continue\' to Enable the following URL.', 'Click \'Continue\' to Enable following URLs.', cacti_sizeof($url_array)) . "</p>
+						<p>" . __n('Click \'Continue\' to Enable the following URL.', 'Click \'Continue\' to Enable following URLs.', cacti_sizeof($url_array), 'webseer') . "</p>
 						<div class='itemlist'><ul>$url_list</ul></div>
 					</td>
 				</tr>\n";
 
-			$save_html = "<input type='button' class='cactiReturnTo' value='" . __esc('Cancel') . "'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Enable URL', 'Enable URLs', cacti_sizeof($url_array)) . "'>";
+			$save_html = "<input type='button' class='cactiReturnTo' value='" . __esc('Cancel') . "'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Enable URL', 'Enable URLs', cacti_sizeof($url_array), 'webseer') . "'>";
 		} elseif ($action == WEBSEER_ACTION_URL_DUPLICATE) {
 			print "	<tr>
 					<td class='topBoxAlt'>
-						<p>" . __n('Click \'Continue\' to Duplicate the following URL.', 'Click \'Continue\' to Duplicate following URLs.', cacti_sizeof($url_array)) . "</p>
+						<p>" . __n('Click \'Continue\' to Duplicate the following URL.', 'Click \'Continue\' to Duplicate following URLs.', cacti_sizeof($url_array), 'webseer') . "</p>
 						<div class='itemlist'><ul>$url_list</ul></div>
 					</td>
 				</tr>\n";
 
-			$save_html = "<input type='button' class='cactiReturnTo' value='" . __esc('Cancel') . "'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Duplicate URL', 'Duplicate URLs', cacti_sizeof($url_array)) . "'>";
+			$save_html = "<input type='button' class='cactiReturnTo' value='" . __esc('Cancel') . "'>&nbsp;<input type='submit' value='" . __esc('Continue') . "' title='" . __esc_n('Duplicate URL', 'Duplicate URLs', cacti_sizeof($url_array), 'webseer') . "'>";
 		}
 	} else {
 		raise_message(40);
@@ -446,19 +446,19 @@ function webseer_edit_url() {
 		});
 
 		$('#notify_accounts').hide().multiselect({
-			noneSelectedText: '<?php print __('No Users Selected', 'webseer'); ?>',
+			noneSelectedText: <?php print json_encode(__('No Users Selected', 'webseer')); ?>,
 			selectedText: function(numChecked, numTotal, checkedItems) {
-				myReturn = numChecked + ' <?php print __('Users Selected', 'webseer'); ?>';
+				myReturn = numChecked + ' ' + <?php print json_encode(__('Users Selected', 'webseer')); ?>;
 				$.each(checkedItems, function(index, value) {
 					if (value.value == '0') {
-						myReturn='<?php print __('All Users Selected', 'webseer'); ?>';
+						myReturn=<?php print json_encode(__('All Users Selected', 'webseer')); ?>;
 						return false;
 					}
 				});
 				return myReturn;
 			},
-			checkAllText: '<?php print __('All', 'webseer'); ?>',
-			uncheckAllText: '<?php print __('None', 'webseer'); ?>',
+			checkAllText: <?php print json_encode(__('All', 'webseer')); ?>,
+			uncheckAllText: <?php print json_encode(__('None', 'webseer')); ?>,
 			uncheckall: function() {
 				$(this).multiselect('widget').find(':checkbox:first').each(function() {
 					$(this).prop('checked', true);
@@ -491,7 +491,7 @@ function webseer_edit_url() {
 				}
 			}
 		}).multiselectfilter({
-			label: '<?php print __('Search', 'webseer'); ?>',
+			label: <?php print json_encode(__('Search', 'webseer')); ?>,
 			width: msWidth
 		});
 	});
