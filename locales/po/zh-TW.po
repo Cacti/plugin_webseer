@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-28 16:09-0400\nPO-Revision-Date: 2026-11-25 02:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Chinese (Traditional Han script) <https://translate.cacti.net/projects/cacti/webseer/zh_Hant/>\nLanguage: zh-TW\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=1; plural=0;\nX-Generator: Weblate 5.11.4\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-28 16:09-0400\nPO-Revision-Date: 2026-11-26 03:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Chinese (Traditional Han script) <https://translate.cacti.net/projects/cacti/webseer/zh_Hant/>\nLanguage: zh-TW\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=1; plural=0;\nX-Generator: Weblate 5.11.4\n"
 
 #: includes/arrays.php webseer_servers.php
 #, php-format
@@ -98,10 +98,9 @@ msgid "Display Name of this server"
 msgstr "此伺服器的顯示名稱"
 
 #: includes/arrays.php webseer_servers.php
-#, fuzzy
 msgid "Enable Server"
 msgid_plural "Enable Servers"
-msgstr[0] "啟用服務器"
+msgstr[0] "啟用伺服器"
 
 #: includes/arrays.php
 msgid "Uncheck this box to disabled this server from checking urls."
@@ -141,7 +140,7 @@ msgstr "這是連線到此伺服器上 remote.php 的 URL。"
 
 #: includes/arrays.php webseer_servers.php
 msgid "Location"
-msgstr "位置"
+msgstr "地點"
 
 #: includes/arrays.php
 msgid "Location of this server"
@@ -173,7 +172,7 @@ msgstr "輸入要連線的 IP 位址。留空則會改用 DNS 解析。"
 
 #: includes/arrays.php
 msgid "Proxy Server"
-msgstr "Proxy 伺服器"
+msgstr "代理服務器"
 
 #: includes/arrays.php
 msgid "If this connection text requires a proxy, select it here.  Otherwise choose 'None'."
@@ -368,10 +367,9 @@ msgid "Save Proxy"
 msgstr "儲存代理伺服器"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Delete the following URL."
 msgid_plural "Click 'Continue' to Delete following URLs."
-msgstr[0] "單擊“繼續”以刪除以下代理。"
+msgstr[0] "按一下「繼續」以刪除下列 URL。"
 
 #: webseer.php webseer_proxies.php webseer_servers.php
 msgid "Cancel"
@@ -382,50 +380,39 @@ msgid "Continue"
 msgstr "繼續"
 
 #: webseer.php
-#, fuzzy
-#| msgid "Delete"
 msgid "Delete URL"
 msgid_plural "Delete URLs"
-msgstr[0] "刪除"
+msgstr[0] "刪除 URL"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Disable the following URL."
 msgid_plural "Click 'Continue' to Disable following URLs."
-msgstr[0] "單擊“繼續”以刪除以下代理。"
+msgstr[0] "按一下「繼續」以停用下列 URL。"
 
 #: webseer.php
-#, fuzzy
-#| msgid "Disable"
 msgid "Disable URL"
 msgid_plural "Disable URLs"
-msgstr[0] "停用"
+msgstr[0] "停用 URL"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Enable the following URL."
 msgid_plural "Click 'Continue' to Enable following URLs."
-msgstr[0] "單擊“繼續”以刪除以下代理。"
+msgstr[0] "按一下「繼續」以啟用下列 URL。"
 
 #: webseer.php
-#, fuzzy
-#| msgid "Enable"
 msgid "Enable URL"
 msgid_plural "Enable URLs"
-msgstr[0] "啟用"
+msgstr[0] "啟用 URL"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Duplicate the following URL."
 msgid_plural "Click 'Continue' to Duplicate following URLs."
-msgstr[0] "單擊“繼續”以刪除以下代理。"
+msgstr[0] "按一下「繼續」以複製下列 URL。"
 
 #: webseer.php
-#, fuzzy
-#| msgid "Duplicate"
 msgid "Duplicate URL"
 msgid_plural "Duplicate URLs"
-msgstr[0] "複製"
+msgstr[0] "複製 URL"
 
 #: webseer.php
 #, php-format
@@ -515,7 +502,7 @@ msgstr "狀態"
 
 #: webseer.php webseer_servers.php
 msgid "Enabled"
-msgstr "已啟用"
+msgstr "啟用"
 
 #: webseer.php
 msgid "Auth"
@@ -523,11 +510,11 @@ msgstr "驗證"
 
 #: webseer.php
 msgid "Timeout"
-msgstr "逾時"
+msgstr "已逾時"
 
 #: webseer.php webseer_servers.php
 msgid "Last Check"
-msgstr "上次檢查"
+msgstr "最後檢查"
 
 #: webseer.php
 msgid "Edit Service Check"
@@ -552,15 +539,15 @@ msgstr "N/A"
 
 #: webseer.php webseer_servers.php
 msgid "Down"
-msgstr "離線"
+msgstr "向下"
 
 #: webseer.php webseer_servers.php
 msgid "Up"
-msgstr "運作中"
+msgstr "向上"
 
 #: webseer.php webseer_servers.php
 msgid "Disabled"
-msgstr "已停用"
+msgstr "停用"
 
 #: webseer.php webseer_proxies.php webseer_servers.php
 msgid "No Servers Found"
@@ -572,7 +559,7 @@ msgstr "Webseer 服務檢查"
 
 #: webseer.php webseer_servers.php
 msgid "State"
-msgstr "狀態"
+msgstr "州"
 
 #: webseer.php webseer_servers.php
 msgid "Any"
@@ -611,16 +598,14 @@ msgid "Purge Events"
 msgstr "清除事件"
 
 #: webseer_proxies.php
-#, fuzzy
 msgid "Click 'Continue' to delete the following Proxy."
 msgid_plural "Click 'Continue' to delete following Proxies."
-msgstr[0] "單擊“繼續”以刪除以下代理。"
+msgstr[0] "按一下「繼續」以刪除下列代理伺服器。"
 
 #: webseer_proxies.php
-#, fuzzy
 msgid "Delete Proxy"
 msgid_plural "Delete Proxies"
-msgstr[0] "刪除"
+msgstr[0] "刪除代理伺服器"
 
 #: webseer_proxies.php
 #, php-format
@@ -637,45 +622,40 @@ msgstr "連接埠 (http/https)"
 
 #: webseer_proxies.php
 msgid "Username"
-msgstr "使用者名稱"
+msgstr "用戶名"
 
 #: webseer_proxies.php
 msgid "Not Set"
-msgstr "未設定"
+msgstr "未選擇"
 
 #: webseer_proxies.php
 msgid "Webseer Proxy Management"
 msgstr "Webseer 代理伺服器管理"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Click 'Continue' to Delete the following Server."
 msgid_plural "Click 'Continue' to Delete following Servers."
-msgstr[0] "單擊“繼續”以刪除以下代理。"
+msgstr[0] "按一下「繼續」以刪除下列伺服器。"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Delete Server"
 msgid_plural "Delete Servers"
-msgstr[0] "WebSeer服務器"
+msgstr[0] "刪除伺服器"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Click 'Continue' to Disable the following Server."
 msgid_plural "Click 'Continue' to Disable following Servers."
-msgstr[0] "單擊“繼續”以刪除以下代理。"
+msgstr[0] "按一下「繼續」以停用下列伺服器。"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Disable Server"
 msgid_plural "Disable Servers"
-msgstr[0] "啟用服務器"
+msgstr[0] "停用伺服器"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Click 'Continue' to Enable the following Server."
 msgid_plural "Click 'Continue' to Enable following Servers."
-msgstr[0] "單擊“繼續”以刪除以下代理。"
+msgstr[0] "按一下「繼續」以啟用下列伺服器。"
 
 #: webseer_servers.php
 msgid "No Events in History"
