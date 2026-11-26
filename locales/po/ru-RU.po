@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-28 16:09-0400\nPO-Revision-Date: 2026-11-25 02:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Russian <https://translate.cacti.net/projects/cacti/webseer/ru/>\nLanguage: ru-RU\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\nX-Generator: Weblate 5.11.4\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-28 16:09-0400\nPO-Revision-Date: 2026-11-26 03:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Russian <https://translate.cacti.net/projects/cacti/webseer/ru/>\nLanguage: ru-RU\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\nX-Generator: Weblate 5.11.4\n"
 
 #: includes/arrays.php webseer_servers.php
 #, php-format
@@ -98,12 +98,11 @@ msgid "Display Name of this server"
 msgstr "Отображаемое имя этого сервера"
 
 #: includes/arrays.php webseer_servers.php
-#, fuzzy
 msgid "Enable Server"
 msgid_plural "Enable Servers"
 msgstr[0] "Включить сервер"
-msgstr[1] "Включить сервер"
-msgstr[2] "Включить сервер"
+msgstr[1] "Включить серверы"
+msgstr[2] "Включить серверы"
 
 #: includes/arrays.php
 msgid "Uncheck this box to disabled this server from checking urls."
@@ -370,12 +369,11 @@ msgid "Save Proxy"
 msgstr "Сохранить прокси"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Delete the following URL."
 msgid_plural "Click 'Continue' to Delete following URLs."
-msgstr[0] "Нажмите «Продолжить», чтобы удалить следующий прокси."
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Нажмите «Продолжить», чтобы удалить следующий URL."
+msgstr[1] "Нажмите «Продолжить», чтобы удалить следующие URL."
+msgstr[2] "Нажмите «Продолжить», чтобы удалить следующие URL."
 
 #: webseer.php webseer_proxies.php webseer_servers.php
 msgid "Cancel"
@@ -386,64 +384,53 @@ msgid "Continue"
 msgstr "Продолжить"
 
 #: webseer.php
-#, fuzzy
-#| msgid "Delete"
 msgid "Delete URL"
 msgid_plural "Delete URLs"
-msgstr[0] "Удалить"
-msgstr[1] "Удалить"
-msgstr[2] "Удалить"
+msgstr[0] "Удалить URL"
+msgstr[1] "Удалить URL"
+msgstr[2] "Удалить URL"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Disable the following URL."
 msgid_plural "Click 'Continue' to Disable following URLs."
-msgstr[0] "Нажмите «Продолжить», чтобы удалить следующий прокси."
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Нажмите «Продолжить», чтобы отключить следующий URL."
+msgstr[1] "Нажмите «Продолжить», чтобы отключить следующие URL."
+msgstr[2] "Нажмите «Продолжить», чтобы отключить следующие URL."
 
 #: webseer.php
-#, fuzzy
-#| msgid "Disable"
 msgid "Disable URL"
 msgid_plural "Disable URLs"
-msgstr[0] "Выключить"
-msgstr[1] "Выключить"
-msgstr[2] "Выключить"
+msgstr[0] "Отключить URL"
+msgstr[1] "Отключить URL"
+msgstr[2] "Отключить URL"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Enable the following URL."
 msgid_plural "Click 'Continue' to Enable following URLs."
-msgstr[0] "Нажмите «Продолжить», чтобы удалить следующий прокси."
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Нажмите «Продолжить», чтобы включить следующий URL."
+msgstr[1] "Нажмите «Продолжить», чтобы включить следующие URL."
+msgstr[2] "Нажмите «Продолжить», чтобы включить следующие URL."
 
 #: webseer.php
-#, fuzzy
-#| msgid "Enable"
 msgid "Enable URL"
 msgid_plural "Enable URLs"
-msgstr[0] "Включить"
-msgstr[1] "Включить"
-msgstr[2] "Включить"
+msgstr[0] "Включить URL"
+msgstr[1] "Включить URL"
+msgstr[2] "Включить URL"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Duplicate the following URL."
 msgid_plural "Click 'Continue' to Duplicate following URLs."
-msgstr[0] "Нажмите «Продолжить», чтобы удалить следующий прокси."
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Нажмите «Продолжить», чтобы дублировать следующий URL."
+msgstr[1] "Нажмите «Продолжить», чтобы дублировать следующие URL."
+msgstr[2] "Нажмите «Продолжить», чтобы дублировать следующие URL."
 
 #: webseer.php
-#, fuzzy
-#| msgid "Duplicate"
 msgid "Duplicate URL"
 msgid_plural "Duplicate URLs"
-msgstr[0] "Дублировать"
-msgstr[1] "Дублировать"
-msgstr[2] "Дублировать"
+msgstr[0] "Дублировать URL"
+msgstr[1] "Дублировать URL"
+msgstr[2] "Дублировать URL"
 
 #: webseer.php
 #, php-format
@@ -590,7 +577,7 @@ msgstr "Проверки сервисов Webseer"
 
 #: webseer.php webseer_servers.php
 msgid "State"
-msgstr "Область"
+msgstr "Состояние"
 
 #: webseer.php webseer_servers.php
 msgid "Any"
@@ -629,20 +616,18 @@ msgid "Purge Events"
 msgstr "Очистить событий"
 
 #: webseer_proxies.php
-#, fuzzy
 msgid "Click 'Continue' to delete the following Proxy."
 msgid_plural "Click 'Continue' to delete following Proxies."
 msgstr[0] "Нажмите «Продолжить», чтобы удалить следующий прокси."
-msgstr[1] ""
-msgstr[2] ""
+msgstr[1] "Нажмите «Продолжить», чтобы удалить следующие прокси."
+msgstr[2] "Нажмите «Продолжить», чтобы удалить следующие прокси."
 
 #: webseer_proxies.php
-#, fuzzy
 msgid "Delete Proxy"
 msgid_plural "Delete Proxies"
-msgstr[0] "Удалить"
-msgstr[1] "Удалить"
-msgstr[2] ""
+msgstr[0] "Удалить прокси"
+msgstr[1] "Удалить прокси"
+msgstr[2] "Удалить прокси"
 
 #: webseer_proxies.php
 #, php-format
@@ -670,44 +655,39 @@ msgid "Webseer Proxy Management"
 msgstr "Управление прокси-серверами Webseer"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Click 'Continue' to Delete the following Server."
 msgid_plural "Click 'Continue' to Delete following Servers."
-msgstr[0] "Нажмите «Продолжить», чтобы удалить следующий прокси."
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Нажмите «Продолжить», чтобы удалить следующий сервер."
+msgstr[1] "Нажмите «Продолжить», чтобы удалить следующие серверы."
+msgstr[2] "Нажмите «Продолжить», чтобы удалить следующие серверы."
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Delete Server"
 msgid_plural "Delete Servers"
-msgstr[0] "Серверы WebSeer"
-msgstr[1] "Серверы WebSeer"
-msgstr[2] "Серверы WebSeer"
+msgstr[0] "Удалить сервер"
+msgstr[1] "Удалить серверы"
+msgstr[2] "Удалить серверы"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Click 'Continue' to Disable the following Server."
 msgid_plural "Click 'Continue' to Disable following Servers."
-msgstr[0] "Нажмите «Продолжить», чтобы удалить следующий прокси."
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Нажмите «Продолжить», чтобы отключить следующий сервер."
+msgstr[1] "Нажмите «Продолжить», чтобы отключить следующие серверы."
+msgstr[2] "Нажмите «Продолжить», чтобы отключить следующие серверы."
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Disable Server"
 msgid_plural "Disable Servers"
-msgstr[0] "Включить сервер"
-msgstr[1] "Включить сервер"
-msgstr[2] "Включить сервер"
+msgstr[0] "Отключить сервер"
+msgstr[1] "Отключить серверы"
+msgstr[2] "Отключить серверы"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Click 'Continue' to Enable the following Server."
 msgid_plural "Click 'Continue' to Enable following Servers."
-msgstr[0] "Нажмите «Продолжить», чтобы удалить следующий прокси."
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Нажмите «Продолжить», чтобы включить следующий сервер."
+msgstr[1] "Нажмите «Продолжить», чтобы включить следующие серверы."
+msgstr[2] "Нажмите «Продолжить», чтобы включить следующие серверы."
 
 #: webseer_servers.php
 msgid "No Events in History"
