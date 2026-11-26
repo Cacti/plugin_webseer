@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-28 16:09-0400\nPO-Revision-Date: 2026-11-25 02:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Vietnamese <https://translate.cacti.net/projects/cacti/webseer/vi/>\nLanguage: vi-VN\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=1; plural=0;\nX-Generator: Weblate 5.11.4\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-28 16:09-0400\nPO-Revision-Date: 2026-11-26 03:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Vietnamese <https://translate.cacti.net/projects/cacti/webseer/vi/>\nLanguage: vi-VN\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=1; plural=0;\nX-Generator: Weblate 5.11.4\n"
 
 #: includes/arrays.php webseer_servers.php
 #, php-format
@@ -98,7 +98,6 @@ msgid "Display Name of this server"
 msgstr "Tên hiển thị của máy chủ này"
 
 #: includes/arrays.php webseer_servers.php
-#, fuzzy
 msgid "Enable Server"
 msgid_plural "Enable Servers"
 msgstr[0] "Kích hoạt máy chủ"
@@ -368,10 +367,9 @@ msgid "Save Proxy"
 msgstr "Lưu Proxy"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Delete the following URL."
 msgid_plural "Click 'Continue' to Delete following URLs."
-msgstr[0] "Nhấp vào 'Tiếp tục' để xóa Proxy sau."
+msgstr[0] "Nhấp vào 'Tiếp tục' để xóa (các) URL sau."
 
 #: webseer.php webseer_proxies.php webseer_servers.php
 msgid "Cancel"
@@ -382,50 +380,39 @@ msgid "Continue"
 msgstr "Tiếp tục"
 
 #: webseer.php
-#, fuzzy
-#| msgid "Delete"
 msgid "Delete URL"
 msgid_plural "Delete URLs"
-msgstr[0] "Xóa"
+msgstr[0] "Xóa URL"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Disable the following URL."
 msgid_plural "Click 'Continue' to Disable following URLs."
-msgstr[0] "Nhấp vào 'Tiếp tục' để xóa Proxy sau."
+msgstr[0] "Nhấp vào 'Tiếp tục' để vô hiệu hóa (các) URL sau."
 
 #: webseer.php
-#, fuzzy
-#| msgid "Disable"
 msgid "Disable URL"
 msgid_plural "Disable URLs"
-msgstr[0] "Vô hiệu hóa"
+msgstr[0] "Vô hiệu hóa URL"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Enable the following URL."
 msgid_plural "Click 'Continue' to Enable following URLs."
-msgstr[0] "Nhấp vào 'Tiếp tục' để xóa Proxy sau."
+msgstr[0] "Nhấp vào 'Tiếp tục' để kích hoạt (các) URL sau."
 
 #: webseer.php
-#, fuzzy
-#| msgid "Enable"
 msgid "Enable URL"
 msgid_plural "Enable URLs"
-msgstr[0] "Bật"
+msgstr[0] "Kích hoạt URL"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Duplicate the following URL."
 msgid_plural "Click 'Continue' to Duplicate following URLs."
-msgstr[0] "Nhấp vào 'Tiếp tục' để xóa Proxy sau."
+msgstr[0] "Nhấp vào 'Tiếp tục' để nhân bản (các) URL sau."
 
 #: webseer.php
-#, fuzzy
-#| msgid "Duplicate"
 msgid "Duplicate URL"
 msgid_plural "Duplicate URLs"
-msgstr[0] "Bản sao"
+msgstr[0] "Nhân bản URL"
 
 #: webseer.php
 #, php-format
@@ -611,16 +598,14 @@ msgid "Purge Events"
 msgstr "Xóa sạch sự kiện"
 
 #: webseer_proxies.php
-#, fuzzy
 msgid "Click 'Continue' to delete the following Proxy."
 msgid_plural "Click 'Continue' to delete following Proxies."
-msgstr[0] "Nhấp vào 'Tiếp tục' để xóa Proxy sau."
+msgstr[0] "Nhấp vào 'Tiếp tục' để xóa (các) Proxy sau."
 
 #: webseer_proxies.php
-#, fuzzy
 msgid "Delete Proxy"
 msgid_plural "Delete Proxies"
-msgstr[0] "Xóa"
+msgstr[0] "Xóa Proxy"
 
 #: webseer_proxies.php
 #, php-format
@@ -648,34 +633,29 @@ msgid "Webseer Proxy Management"
 msgstr "Quản lý Proxy WebSeer"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Click 'Continue' to Delete the following Server."
 msgid_plural "Click 'Continue' to Delete following Servers."
-msgstr[0] "Nhấp vào 'Tiếp tục' để xóa Proxy sau."
+msgstr[0] "Nhấp vào 'Tiếp tục' để xóa (các) Máy chủ sau."
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Delete Server"
 msgid_plural "Delete Servers"
-msgstr[0] "Máy chủ WebSeer"
+msgstr[0] "Xóa máy chủ"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Click 'Continue' to Disable the following Server."
 msgid_plural "Click 'Continue' to Disable following Servers."
-msgstr[0] "Nhấp vào 'Tiếp tục' để xóa Proxy sau."
+msgstr[0] "Nhấp vào 'Tiếp tục' để vô hiệu hóa (các) Máy chủ sau."
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Disable Server"
 msgid_plural "Disable Servers"
-msgstr[0] "Kích hoạt máy chủ"
+msgstr[0] "Vô hiệu hóa máy chủ"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Click 'Continue' to Enable the following Server."
 msgid_plural "Click 'Continue' to Enable following Servers."
-msgstr[0] "Nhấp vào 'Tiếp tục' để xóa Proxy sau."
+msgstr[0] "Nhấp vào 'Tiếp tục' để kích hoạt (các) Máy chủ sau."
 
 #: webseer_servers.php
 msgid "No Events in History"
