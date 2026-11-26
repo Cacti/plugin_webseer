@@ -1,0 +1,710 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR The Cacti Group
+# This file is distributed under the same license as the Cacti package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Cacti\n"
+"Report-Msgid-Bugs-To: developers@cacti.net\n"
+"POT-Creation-Date: 2026-09-28 16:09-0400\n"
+"PO-Revision-Date: 2026-11-24 19:00+0000\n"
+"Last-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\n"
+"Language-Team: Igbo\n"
+"Language: ig-NG\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: includes/arrays.php webseer_servers.php
+#, php-format
+msgid "%d Minute"
+msgstr "Nkeji %d"
+
+#: includes/arrays.php webseer_servers.php
+#, php-format
+msgid "%d Minutes"
+msgstr "Nkeji %d"
+
+#: includes/arrays.php webseer_servers.php
+#, php-format
+msgid "%d Seconds"
+msgstr "Sekọnd %d"
+
+#: includes/arrays.php
+msgid "Delete"
+msgstr "Hichapụ"
+
+#: includes/arrays.php
+msgid "Disable"
+msgstr "Gbanyụọ"
+
+#: includes/arrays.php
+msgid "Enable"
+msgstr "Gbanye"
+
+#: includes/arrays.php
+msgid "Duplicate"
+msgstr "Oyiri"
+
+#: includes/arrays.php webseer.php webseer_proxies.php webseer_servers.php
+msgid "Name"
+msgstr "Aha"
+
+#: includes/arrays.php
+msgid "A Useful Name for this Proxy."
+msgstr "Aha bara uru maka Proxy a."
+
+#: includes/arrays.php
+msgid "New Proxy"
+msgstr "Proxy Ọhụrụ"
+
+#: includes/arrays.php webseer_proxies.php
+msgid "Hostname"
+msgstr "Aha Host"
+
+#: includes/arrays.php
+msgid "The Proxy Hostname."
+msgstr "Aha Onye nnabata Proxy."
+
+#: includes/arrays.php
+msgid "HTTP Port"
+msgstr "Pọtụ HTTP"
+
+#: includes/arrays.php
+msgid "The HTTP Proxy Port."
+msgstr "Ọdụ Proxy HTTP."
+
+#: includes/arrays.php
+msgid "HTTPS Port"
+msgstr "Pọtụ HTTPS"
+
+#: includes/arrays.php
+msgid "The HTTPS Proxy Port."
+msgstr "Ọdụ Proxy HTTPS."
+
+#: includes/arrays.php
+msgid "User Name"
+msgstr "Aha Onye Ọrụ"
+
+#: includes/arrays.php
+msgid "The user to use to authenticate with the Proxy if any."
+msgstr "Onye ọrụ a ga-eji kwado njirimara na Proxy ma ọ bụrụ na ọ dị."
+
+#: includes/arrays.php
+msgid "Password"
+msgstr "Okwuntụghe"
+
+#: includes/arrays.php
+msgid "The user password to use to authenticate with the Proxy if any."
+msgstr "Okwuntụghe onye ọrụ a ga-eji kwado njirimara na Proxy ma ọ bụrụ na ọ dị."
+
+#: includes/arrays.php
+msgid "General Settings"
+msgstr "Ntọala Izugbe"
+
+#: includes/arrays.php
+msgid "Display Name of this server"
+msgstr "Aha Ngosi nke sava a"
+
+#: includes/arrays.php webseer_servers.php
+msgid "Enable Server"
+msgid_plural "Enable Servers"
+msgstr[0] "Gbanye Sava Gasị"
+
+#: includes/arrays.php
+msgid "Uncheck this box to disabled this server from checking urls."
+msgstr "Wepụ akara n'igbe a iji gbanyụọ sava a ka ọ ghara ilele URL gasị."
+
+#: includes/arrays.php
+msgid "Is this server the local server?"
+msgstr "Sava a ọ bụ sava mpaghara?"
+
+#: includes/arrays.php
+msgid "Check this box if the current server you are connected to is this entry."
+msgstr "Kaa akara n'igbe a ma ọ bụrụ na sava dị ugbu a nke i jikọrọ na ya bụ ntinye a."
+
+#: includes/arrays.php
+msgid "Master Server"
+msgstr "Sava Isi"
+
+#: includes/arrays.php
+msgid "Sets this server to the Master server.  The Master server handles all Email operations"
+msgstr "Na-atọ sava a ka ọ bụrụ Sava Isi.  Sava Isi na-ahụ maka ọrụ Ozi-e niile"
+
+#: includes/arrays.php webseer_servers.php
+msgid "IP Address"
+msgstr "Adreesị IP"
+
+#: includes/arrays.php
+msgid "IP Address to connect to this server"
+msgstr "Adreesị IP iji jikọọ na sava a"
+
+#: includes/arrays.php webseer.php webseer_servers.php
+msgid "URL"
+msgstr "URL"
+
+#: includes/arrays.php
+msgid "This is the URL to connect to remote.php on this server."
+msgstr "Nke a bụ URL iji jikọọ na remote.php na sava a."
+
+#: includes/arrays.php webseer_servers.php
+msgid "Location"
+msgstr "Ebe Ọ Nọ"
+
+#: includes/arrays.php
+msgid "Location of this server"
+msgstr "Ebe sava a dị"
+
+#: includes/arrays.php
+msgid "Service Check Name"
+msgstr "Aha Nnyocha Ọrụ"
+
+#: includes/arrays.php
+msgid "The name that is displayed for this Service Check, and is included in any Alert notifications."
+msgstr "Aha a na-egosipụta maka Nyocha Ọrụ a, ma gụnye ya na ọkwa Ncheta ọ bụla."
+
+#: includes/arrays.php webseer.php
+msgid "Enable Service Check"
+msgstr "Gbanye Nlele Ọrụ"
+
+#: includes/arrays.php
+msgid "Uncheck this box to disabled this url from being checked."
+msgstr "Wepụ akara n'igbe a iji gbanyụọ URL a ka a ghara ilele ya."
+
+#: includes/arrays.php
+msgid "The URL to Monitor"
+msgstr "URL a ga-enyocha"
+
+#: includes/arrays.php
+msgid "Enter an IP address to connect to.  Leaving blank will use DNS Resolution instead."
+msgstr "Tinye adreesị IP iji jikọọ na ya.  Ịhapụ oghere ga-eji Mkpebi DNS kama."
+
+#: includes/arrays.php
+msgid "Proxy Server"
+msgstr "Sava Proxy"
+
+#: includes/arrays.php
+msgid "If this connection text requires a proxy, select it here.  Otherwise choose 'None'."
+msgstr "Ọ bụrụ na ederede njikọ a chọrọ proxy, họrọ ya ebe a.  Ma ọ bụghị ya họrọ 'Ọ dịghị'."
+
+#: includes/arrays.php webseer.php
+msgid "None"
+msgstr "Ọ Dịghị Nke Ọ Bụla"
+
+#: includes/arrays.php webseer.php
+msgid "Compression"
+msgstr "Nkpakọ"
+
+#: includes/arrays.php
+msgid "What compression does the server require?  Most servers should not need this, but some will not redirect properly without it."
+msgstr "Kedu mkpakọ sava ahụ chọrọ?  Ọtụtụ sava ekwesịghị ịchọ nke a, mana ụfọdụ agaghị ebugharị nke ọma na-enweghị ya."
+
+#: includes/arrays.php
+msgid "Available Checks"
+msgstr "Nlele Ndị Dị"
+
+#: includes/arrays.php
+msgid "Requires Authentication"
+msgstr "Chọrọ Nkwenye Njirimara"
+
+#: includes/arrays.php
+msgid "Check this box if the site will normally return a 401 Error as it requires a username and password."
+msgstr "Kaa akara n'igbe a ma ọ bụrụ na saịtị ahụ na-eweghachi Njehie 401 n'ihi na ọ chọrọ aha njirimara na okwuntụghe."
+
+#: includes/arrays.php
+msgid "Check Certificate"
+msgstr "Lelee Asambodo"
+
+#: includes/arrays.php
+msgid "If using SSL, check this box if you want to validate the certificate. Default on, turn off if you the site uses a self-signed certificate."
+msgstr "Ọ bụrụ na ị na-eji SSL, kaa igbe a akara ma ọ bụrụ na ịchọrọ ịkwado asambodo ahụ. Gbanyere na ndabara, gbanyụọ ma ọ bụrụ na saịtị ahụ na-eji asambodo bịanyere aka n'onwe ya."
+
+#: includes/arrays.php
+msgid "Notification Timing"
+msgstr "Ịtụ Oge Ọkwa"
+
+#: includes/arrays.php
+msgid "Trigger"
+msgstr "Mkpali"
+
+#: includes/arrays.php
+msgid "How many minutes the URL must be down before it will send an alert.  After an alert is sent, in order for a 'Site Recovering' Email to be send, it must also be up this number of minutes."
+msgstr "Nkeji ole ka URL ga-anọ ala tupu ya eziga ọkwa mgbaama.  Mgbe e zigara ọkwa mgbaama, ka e wee ziga Ozi-e 'Saịtị Na-agbake', ọ ga-adịkwa elu ọnụ ọgụgụ nkeji a."
+
+#: includes/arrays.php
+msgid "Time Out"
+msgstr "Oge Agwụla"
+
+#: includes/arrays.php
+msgid "How many seconds to allow the page to timeout before reporting it as down."
+msgstr "Sekọnd ole ka a ga-ekwe ka ibe gafee oge tupu e kwupụta na ọ dara."
+
+#: includes/arrays.php
+msgid "Verification Strings"
+msgstr "Eriri Nkwenye"
+
+#: includes/arrays.php
+msgid "Response Search String"
+msgstr "Eriri Ọchụchọ Nzaghachi"
+
+#: includes/arrays.php
+msgid "This is the string to search for in the URL response for a live and working Web Service."
+msgstr "Nke a bụ eriri ederede a ga-achọ na nzaghachi URL maka Ọrụ Weebụ dị ndụ ma na-arụ ọrụ."
+
+#: includes/arrays.php
+msgid "Response Search String - Maintenance Page"
+msgstr "Eriri Ọchụchọ Nzaghachi - Ibe Ndozi"
+
+#: includes/arrays.php
+msgid "This is the string to search for on the Maintenance Page.  The Service Check will check for this string if the above string is not found.  If found, it means that the Web Service is under maintenance."
+msgstr "Nke a bụ eriri ederede a ga-achọ na Peeji Ndozi. Nnyocha Ọrụ ga-elele maka eriri ederede a ma ọ bụrụ na ahụghị eriri dị n'elu. Ọ bụrụ na a hụ ya, ọ pụtara na a na-edozi Ọrụ Weebụ ahụ."
+
+#: includes/arrays.php
+msgid "Response Search String - Failed"
+msgstr "Eriri Ọchụchọ Nzaghachi - Dara"
+
+#: includes/arrays.php
+msgid "This is the string to search for a known failure in the Web Service response.  The Service Check will only alert if this string is found, ignoring any timeout issues and the search strings above."
+msgstr "Nke a bụ eriri ederede a ga-achọ maka ọdịda a maara na nzaghachi Ọrụ Weebụ. Nnyocha Ọrụ ga-enye ọkwa naanị ma ọ bụrụ na a hụrụ eriri ederede a, na-eleghara nsogbu nkwụsị oge na eriri nchọta dị n'elu anya."
+
+#: includes/arrays.php
+msgid "Notification Settings"
+msgstr "Ntọala Ọkwa"
+
+#: includes/arrays.php
+msgid "Notify Format"
+msgstr "Ụdị Ọkwa"
+
+#: includes/arrays.php
+msgid "This is the format to use when sending the notification email"
+msgstr "Nke a bụ usoro a ga-eji mgbe a na-ezipu ozi-e ọkwa"
+
+#: includes/arrays.php
+msgid "Notification List"
+msgstr "Ndepụta Ọkwa"
+
+#: includes/arrays.php
+msgid "Use this Notification List for those to be notified when this website goes down."
+msgstr "Jiri Ndepụta Ọkwa a maka ndị a ga-agwa mgbe weebụsaịtị a dara."
+
+#: includes/arrays.php
+msgid "Notify Accounts"
+msgstr "Gwa Akaụntụ"
+
+#: includes/arrays.php
+msgid "This is a listing of accounts that will be notified when this website goes down."
+msgstr "Nke a bụ ndepụta akaụntụ a ga-agwa mgbe weebụsaịtị a kwụsịrị."
+
+#: includes/arrays.php
+msgid "Extra Alert Emails"
+msgstr "Ozi-e Mkpọku Mgbakwunye"
+
+#: includes/arrays.php
+msgid "You may specify here extra Emails to receive alerts for this URL (comma separated)"
+msgstr "Ị nwere ike ịkọwapụta Ozi-e ndị ọzọ ebe a iji nata mkpu maka URL a (e jiri rikọm kewaa)"
+
+#: includes/functions.php webseer.php
+msgid "Checks"
+msgstr "Nlele Gasị"
+
+#: includes/functions.php webseer_servers.php
+msgid "Servers"
+msgstr "Sava"
+
+#: includes/functions.php webseer_proxies.php
+msgid "Proxies"
+msgstr "Proxy Gasị"
+
+#: includes/functions.php
+msgid "Log History"
+msgstr "Akụkọ Ndekọ"
+
+#: poller_webseer.php
+msgid "Cacti Master"
+msgstr "Onye Isi Cacti"
+
+#: poller_webseer.php
+msgid "Cacti Remote Server"
+msgstr "Seva Dị Anya nke Cacti"
+
+#: setup.php
+msgid "Web Service Check Admin"
+msgstr "Onye Nchịkwa Nyocha Ọrụ Weebụ"
+
+#: setup.php
+msgid "Management"
+msgstr "Njikwa"
+
+#: setup.php
+msgid "Service Checks"
+msgstr "Nnyocha Ọrụ Gasị"
+
+#: setup.php
+msgid "WebSeer Service Checks"
+msgstr "Nyocha Ọrụ WebSeer Gasị"
+
+#: setup.php
+msgid "Service Check Edit"
+msgstr "Dezie Nnyocha Ọrụ"
+
+#: setup.php
+msgid "Service Check Save"
+msgstr "Chekwaa Nnyocha Ọrụ"
+
+#: setup.php
+msgid "WebSeer Servers"
+msgstr "Sava WebSeer Gasị"
+
+#: setup.php
+msgid "Server Edit"
+msgstr "Dezie Sava"
+
+#: setup.php
+msgid "Save Server"
+msgstr "Chekwaa Sava"
+
+#: setup.php
+msgid "WebSeer Proxies"
+msgstr "Proxy WebSeer Gasị"
+
+#: setup.php
+msgid "Proxie Edit"
+msgstr "Dezie Proxy"
+
+#: setup.php
+msgid "Save Proxy"
+msgstr "Chekwaa Proxy"
+
+#: webseer.php
+msgid "Click 'Continue' to Delete the following URL."
+msgid_plural "Click 'Continue' to Delete following URLs."
+msgstr[0] "Pịa 'Gaa n'ihu' iji Hichapụ URL ndị na-esonụ."
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Cancel"
+msgstr "Kagbuo"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Continue"
+msgstr "Gaa n'ihu"
+
+#: webseer.php
+msgid "Delete URL"
+msgid_plural "Delete URLs"
+msgstr[0] "Hichapụ URL Gasị"
+
+#: webseer.php
+msgid "Click 'Continue' to Disable the following URL."
+msgid_plural "Click 'Continue' to Disable following URLs."
+msgstr[0] "Pịa 'Gaa n'ihu' iji Gbanyụọ URL ndị na-esonụ."
+
+#: webseer.php
+msgid "Disable URL"
+msgid_plural "Disable URLs"
+msgstr[0] "Gbanyụọ URL Gasị"
+
+#: webseer.php
+msgid "Click 'Continue' to Enable the following URL."
+msgid_plural "Click 'Continue' to Enable following URLs."
+msgstr[0] "Pịa 'Gaa n'ihu' iji Gbanye URL ndị na-esonụ."
+
+#: webseer.php
+msgid "Enable URL"
+msgid_plural "Enable URLs"
+msgstr[0] "Gbanye URL Gasị"
+
+#: webseer.php
+msgid "Click 'Continue' to Duplicate the following URL."
+msgid_plural "Click 'Continue' to Duplicate following URLs."
+msgstr[0] "Pịa 'Gaa n'ihu' iji Mepụta oyiri URL ndị na-esonụ."
+
+#: webseer.php
+msgid "Duplicate URL"
+msgid_plural "Duplicate URLs"
+msgstr[0] "Mepụta Oyiri URL Gasị"
+
+#: webseer.php
+#, php-format
+msgid "The Service Check history was purged for %s"
+msgstr "E kpochapụrụ akụkọ Nnyocha Ọrụ maka %s"
+
+#: webseer.php webseer_servers.php
+#, php-format
+msgid "Query [edit: %s]"
+msgstr "Ajụjụ [dezie: %s]"
+
+#: webseer.php webseer_servers.php
+msgid "Query [new]"
+msgstr "Ajụjụ [ọhụrụ]"
+
+#: webseer.php
+msgid "No Users Selected"
+msgstr "Enweghị Ndị Ọrụ Ahọpụtara"
+
+#: webseer.php
+msgid "Users Selected"
+msgstr "Ndị Ọrụ Ahọpụtara"
+
+#: webseer.php
+msgid "All Users Selected"
+msgstr "Ahọpụtala Ndị Ọrụ Nile"
+
+#: webseer.php
+msgid "All"
+msgstr "Niile"
+
+#: webseer.php webseer_proxies.php
+msgid "Search"
+msgstr "Chọọ"
+
+#: webseer.php webseer_servers.php
+msgid "Date"
+msgstr "Ụbọchị"
+
+#: webseer.php webseer_servers.php
+msgid "Error"
+msgstr "Njehie"
+
+#: webseer.php webseer_servers.php
+msgid "HTTP Code"
+msgstr "Koodu HTTP"
+
+#: webseer.php webseer_servers.php
+msgid "DNS"
+msgstr "DNS"
+
+#: webseer.php webseer_servers.php
+msgid "Connect"
+msgstr "Jikọọ"
+
+#: webseer.php webseer_servers.php
+msgid "Redirect"
+msgstr "Bugharịa"
+
+#: webseer.php webseer_servers.php
+msgid "Total"
+msgstr "Ngụkọta"
+
+#: webseer.php
+msgid "Urls"
+msgstr "URL gasị"
+
+#: webseer.php
+msgid "Service Down"
+msgstr "Ọrụ Adịghị Arụ Ọrụ"
+
+#: webseer.php
+msgid "Service Restored"
+msgstr "Eweghachiri Ọrụ"
+
+#: webseer.php
+msgid "No Service Check Events in History"
+msgstr "Enweghị Mmemme Nlele Ọrụ na Akụkọ ihe mere eme"
+
+#: webseer.php webseer_servers.php
+msgid "Actions"
+msgstr "Omume"
+
+#: webseer.php
+msgid "Status"
+msgstr "Ọnọdụ"
+
+#: webseer.php webseer_servers.php
+msgid "Enabled"
+msgstr "Gbanyere"
+
+#: webseer.php
+msgid "Auth"
+msgstr "Nkwenye"
+
+#: webseer.php
+msgid "Timeout"
+msgstr "Oge njedebe"
+
+#: webseer.php webseer_servers.php
+msgid "Last Check"
+msgstr "Nlele Ikpeazụ"
+
+#: webseer.php
+msgid "Edit Service Check"
+msgstr "Dezie Nlele Ọrụ"
+
+#: webseer.php
+msgid "Disable Service Check"
+msgstr "Gbanyụọ Nnyocha Ọrụ"
+
+#: webseer.php
+msgid "View Service Check History"
+msgstr "Lee Akụkọ Ihe Mere Eme nke Nnyocha Ọrụ"
+
+#: webseer.php
+#, php-format
+msgid "DNS: Server %s - A Record for %s"
+msgstr "DNS: Sava %s - Ndekọ A maka %s"
+
+#: webseer.php
+msgid "N/A"
+msgstr "Ọ dịghị"
+
+#: webseer.php webseer_servers.php
+msgid "Down"
+msgstr "Dara ada"
+
+#: webseer.php webseer_servers.php
+msgid "Up"
+msgstr "Na-arụ ọrụ"
+
+#: webseer.php webseer_servers.php
+msgid "Disabled"
+msgstr "Gbanyụrụ"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "No Servers Found"
+msgstr "Ahụghị Sava Ọ bụla"
+
+#: webseer.php
+msgid "Webseer Service Checks"
+msgstr "Nyocha Ọrụ Webseer Gasị"
+
+#: webseer.php webseer_servers.php
+msgid "State"
+msgstr "Steeti"
+
+#: webseer.php webseer_servers.php
+msgid "Any"
+msgstr "Ọ Bụla"
+
+#: webseer.php webseer_servers.php
+msgid "Refresh"
+msgstr "Megharịa"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Default"
+msgstr "Nke Ndabere"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Go"
+msgstr "Gaa"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Clear"
+msgstr "Kpochapụ"
+
+#: webseer.php
+msgid "Webseer Service Check History"
+msgstr "Akụkọ Ihe Mere Eme Nyocha Ọrụ Webseer"
+
+#: webseer.php webseer_servers.php
+msgid "Date Search"
+msgstr "Ọchụchọ Ụbọchị"
+
+#: webseer.php webseer_servers.php
+msgid "Entries"
+msgstr "Ntinye"
+
+#: webseer.php
+msgid "Purge Events"
+msgstr "Kpochapụ Ihe Omume"
+
+#: webseer_proxies.php
+msgid "Click 'Continue' to delete the following Proxy."
+msgid_plural "Click 'Continue' to delete following Proxies."
+msgstr[0] "Pịa 'Gaa n'ihu' iji hichapụ Prọksị ndị na-esonụ."
+
+#: webseer_proxies.php
+msgid "Delete Proxy"
+msgid_plural "Delete Proxies"
+msgstr[0] "Hichapụ Prọksị Gasị"
+
+#: webseer_proxies.php
+#, php-format
+msgid "Proxy [edit: %s]"
+msgstr "Proxy [dezie: %s]"
+
+#: webseer_proxies.php
+msgid "Proxy [new]"
+msgstr "Proxy [ọhụrụ]"
+
+#: webseer_proxies.php
+msgid "Ports (http/https)"
+msgstr "Port Gasị (http/https)"
+
+#: webseer_proxies.php
+msgid "Username"
+msgstr "Aha njirimara"
+
+#: webseer_proxies.php
+msgid "Not Set"
+msgstr "Atọghị"
+
+#: webseer_proxies.php
+msgid "Webseer Proxy Management"
+msgstr "Njikwa Proxy Webseer"
+
+#: webseer_servers.php
+msgid "Click 'Continue' to Delete the following Server."
+msgid_plural "Click 'Continue' to Delete following Servers."
+msgstr[0] "Pịa 'Gaa n'ihu' iji Hichapụ Sava ndị na-esonụ."
+
+#: webseer_servers.php
+msgid "Delete Server"
+msgid_plural "Delete Servers"
+msgstr[0] "Hichapụ Sava Gasị"
+
+#: webseer_servers.php
+msgid "Click 'Continue' to Disable the following Server."
+msgid_plural "Click 'Continue' to Disable following Servers."
+msgstr[0] "Pịa 'Gaa n'ihu' iji Gbanyụọ Sava ndị na-esonụ."
+
+#: webseer_servers.php
+msgid "Disable Server"
+msgid_plural "Disable Servers"
+msgstr[0] "Gbanyụọ Sava Gasị"
+
+#: webseer_servers.php
+msgid "Click 'Continue' to Enable the following Server."
+msgid_plural "Click 'Continue' to Enable following Servers."
+msgstr[0] "Pịa 'Gaa n'ihu' iji Gbanye Sava ndị na-esonụ."
+
+#: webseer_servers.php
+msgid "No Events in History"
+msgstr "Enweghị Mmemme na Akụkọ ihe mere eme"
+
+#: webseer_servers.php
+msgid "Master"
+msgstr "Isi"
+
+#: webseer_servers.php
+msgid "This Host"
+msgstr "Onye nnabata a"
+
+#: webseer_servers.php
+msgid "Edit Server"
+msgstr "Dezie Sava"
+
+#: webseer_servers.php
+msgid "View Server History"
+msgstr "Lee Akụkọ Ihe Mere Eme nke Sava"
+
+#: webseer_servers.php
+msgid "No"
+msgstr "Mba"
+
+#: webseer_servers.php
+msgid "Yes"
+msgstr "Ee"
+
+#: webseer_servers.php
+msgid "Webseer Servers"
+msgstr "Sava Webseer Gasị"
+
+#: webseer_servers.php
+msgid "Triggered"
+msgstr "Akpaliri"
+
+#: webseer_servers.php
+msgid "Webseer Server History"
+msgstr "Akụkọ Ihe Mere Eme Sava Webseer"
+

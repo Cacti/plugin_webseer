@@ -1,0 +1,726 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR The Cacti Group
+# This file is distributed under the same license as the Cacti package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Cacti\n"
+"Report-Msgid-Bugs-To: developers@cacti.net\n"
+"POT-Creation-Date: 2026-09-28 16:09-0400\n"
+"PO-Revision-Date: 2026-11-24 19:00+0000\n"
+"Last-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\n"
+"Language-Team: Hausa\n"
+"Language: ha-NG\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: includes/arrays.php webseer_servers.php
+#, php-format
+msgid "%d Minute"
+msgstr "Minti %d"
+
+#: includes/arrays.php webseer_servers.php
+#, php-format
+msgid "%d Minutes"
+msgstr "Mintuna %d"
+
+#: includes/arrays.php webseer_servers.php
+#, php-format
+msgid "%d Seconds"
+msgstr "Daƙiƙa %d"
+
+#: includes/arrays.php
+msgid "Delete"
+msgstr "Share"
+
+#: includes/arrays.php
+msgid "Disable"
+msgstr "Kashe"
+
+#: includes/arrays.php
+msgid "Enable"
+msgstr "Kunna"
+
+#: includes/arrays.php
+msgid "Duplicate"
+msgstr "Maimaituwa"
+
+#: includes/arrays.php webseer.php webseer_proxies.php webseer_servers.php
+msgid "Name"
+msgstr "Suna"
+
+#: includes/arrays.php
+msgid "A Useful Name for this Proxy."
+msgstr "Suna mai amfani don wannan Proxy."
+
+#: includes/arrays.php
+msgid "New Proxy"
+msgstr "Sabon Proxy"
+
+#: includes/arrays.php webseer_proxies.php
+msgid "Hostname"
+msgstr "Sunan Mai Masauki"
+
+#: includes/arrays.php
+msgid "The Proxy Hostname."
+msgstr "Sunan Mai Masauki na Proxy."
+
+#: includes/arrays.php
+msgid "HTTP Port"
+msgstr "Tashar HTTP"
+
+#: includes/arrays.php
+msgid "The HTTP Proxy Port."
+msgstr "Tashar Wakili (Proxy) ta HTTP."
+
+#: includes/arrays.php
+msgid "HTTPS Port"
+msgstr "Tashar HTTPS"
+
+#: includes/arrays.php
+msgid "The HTTPS Proxy Port."
+msgstr "Tashar Wakili (Proxy) ta HTTPS."
+
+#: includes/arrays.php
+msgid "User Name"
+msgstr "Sunan Mai Amfani"
+
+#: includes/arrays.php
+msgid "The user to use to authenticate with the Proxy if any."
+msgstr "Mai amfani da za a yi amfani da shi don tantancewa da Proxy idan akwai."
+
+#: includes/arrays.php
+msgid "Password"
+msgstr "Kalmar sirri"
+
+#: includes/arrays.php
+msgid "The user password to use to authenticate with the Proxy if any."
+msgstr "Kalmar sirri ta mai amfani da za a yi amfani da ita don tantancewa da Proxy idan akwai."
+
+#: includes/arrays.php
+msgid "General Settings"
+msgstr "Saitunan Gabaɗaya"
+
+#: includes/arrays.php
+msgid "Display Name of this server"
+msgstr "Sunan Nuni na wannan uwar garken"
+
+#: includes/arrays.php webseer_servers.php
+msgid "Enable Server"
+msgid_plural "Enable Servers"
+msgstr[0] "Kunna Sabar"
+msgstr[1] "Kunna Sabobi"
+
+#: includes/arrays.php
+msgid "Uncheck this box to disabled this server from checking urls."
+msgstr "Cire alama a wannan akwatin don hana wannan uwar garken duba adiresoshin URL."
+
+#: includes/arrays.php
+msgid "Is this server the local server?"
+msgstr "Shin wannan uwar garken ita ce uwar garken gida?"
+
+#: includes/arrays.php
+msgid "Check this box if the current server you are connected to is this entry."
+msgstr "Yi alama a wannan akwatin idan sabar da kake haɗe da ita a yanzu ita ce wannan shigarwar."
+
+#: includes/arrays.php
+msgid "Master Server"
+msgstr "Babban Sabar"
+
+#: includes/arrays.php
+msgid "Sets this server to the Master server.  The Master server handles all Email operations"
+msgstr "Yana saita wannan uwar garken zuwa Babbar uwar garke.  Babbar uwar garken tana kula da duk ayyukan Imel"
+
+#: includes/arrays.php webseer_servers.php
+msgid "IP Address"
+msgstr "Adireshin IP"
+
+#: includes/arrays.php
+msgid "IP Address to connect to this server"
+msgstr "Adireshin IP don haɗawa da wannan sabar"
+
+#: includes/arrays.php webseer.php webseer_servers.php
+msgid "URL"
+msgstr "URL"
+
+#: includes/arrays.php
+msgid "This is the URL to connect to remote.php on this server."
+msgstr "Wannan shine URL don haɗawa zuwa remote.php akan wannan sabar."
+
+#: includes/arrays.php webseer_servers.php
+msgid "Location"
+msgstr "Wuri"
+
+#: includes/arrays.php
+msgid "Location of this server"
+msgstr "Wurin wannan uwar garken"
+
+#: includes/arrays.php
+msgid "Service Check Name"
+msgstr "Sunan Binciken Sabis"
+
+#: includes/arrays.php
+msgid "The name that is displayed for this Service Check, and is included in any Alert notifications."
+msgstr "Sunan da ake nunawa don wannan Duba Sabis, kuma ana haɗa shi a cikin duk sanarwar Faɗakarwa."
+
+#: includes/arrays.php webseer.php
+msgid "Enable Service Check"
+msgstr "Kunna Binciken Sabis"
+
+#: includes/arrays.php
+msgid "Uncheck this box to disabled this url from being checked."
+msgstr "Cire alama a wannan akwatin don hana duba wannan URL ɗin."
+
+#: includes/arrays.php
+msgid "The URL to Monitor"
+msgstr "URL ɗin da za a Sa Ido a kai"
+
+#: includes/arrays.php
+msgid "Enter an IP address to connect to.  Leaving blank will use DNS Resolution instead."
+msgstr "Shigar da adireshin IP don haɗawa zuwa gare shi. Barin shi fanko zai yi amfani da Warwarewar DNS a madadin haka."
+
+#: includes/arrays.php
+msgid "Proxy Server"
+msgstr "Sabar Wakili"
+
+#: includes/arrays.php
+msgid "If this connection text requires a proxy, select it here.  Otherwise choose 'None'."
+msgstr "Idan wannan rubutun haɗi yana buƙatar proxy, zaɓe shi a nan. In ba haka ba zaɓi 'Babu'."
+
+#: includes/arrays.php webseer.php
+msgid "None"
+msgstr "Babu"
+
+#: includes/arrays.php webseer.php
+msgid "Compression"
+msgstr "Matsawa"
+
+#: includes/arrays.php
+msgid "What compression does the server require?  Most servers should not need this, but some will not redirect properly without it."
+msgstr "Wane irin matsi sabar ke buƙata?  Yawancin sabobi ba sa buƙatar wannan, amma wasu ba za su tura yadda ya kamata ba tare da shi ba."
+
+#: includes/arrays.php
+msgid "Available Checks"
+msgstr "Binciken da Ake da Su"
+
+#: includes/arrays.php
+msgid "Requires Authentication"
+msgstr "Yana Buƙatar Tantancewa"
+
+#: includes/arrays.php
+msgid "Check this box if the site will normally return a 401 Error as it requires a username and password."
+msgstr "Yi alama a wannan akwatin idan wurin yakan dawo da Kuskuren 401 saboda yana buƙatar sunan mai amfani da kalmar sirri."
+
+#: includes/arrays.php
+msgid "Check Certificate"
+msgstr "Duba Takardar Shaida"
+
+#: includes/arrays.php
+msgid "If using SSL, check this box if you want to validate the certificate. Default on, turn off if you the site uses a self-signed certificate."
+msgstr "Idan ana amfani da SSL, zaɓi wannan akwati idan kana son tabbatar da ingancin takardar shaida. Yana kunne ta tsoho, kashe idan wurin yana amfani da takardar shaida da aka sa wa hannu da kai."
+
+#: includes/arrays.php
+msgid "Notification Timing"
+msgstr "Lokacin Sanarwa"
+
+#: includes/arrays.php
+msgid "Trigger"
+msgstr "Mai Tada Aiki"
+
+#: includes/arrays.php
+msgid "How many minutes the URL must be down before it will send an alert.  After an alert is sent, in order for a 'Site Recovering' Email to be send, it must also be up this number of minutes."
+msgstr "Mintuna nawa ya kamata URL ya kasance a kashe kafin ya aika da faɗakarwa.  Bayan an aika da faɗakarwa, domin a aika Imel na 'Wuri Yana Farfaɗowa', dole ne kuma ya kasance a kunne na wannan adadin mintuna."
+
+#: includes/arrays.php
+msgid "Time Out"
+msgstr "Ƙarewar Lokaci"
+
+#: includes/arrays.php
+msgid "How many seconds to allow the page to timeout before reporting it as down."
+msgstr "Dakiku nawa za a ba shafin don ƙarewar lokaci kafin a bayar da rahoton cewa ya faɗi."
+
+#: includes/arrays.php
+msgid "Verification Strings"
+msgstr "Jumlolin Tabbatarwa"
+
+#: includes/arrays.php
+msgid "Response Search String"
+msgstr "Kalmomin Binciken Amsa"
+
+#: includes/arrays.php
+msgid "This is the string to search for in the URL response for a live and working Web Service."
+msgstr "Wannan ita ce jimlar da za a bincika a cikin amsar URL don Sabis na Yanar Gizo da ke raye kuma yana aiki."
+
+#: includes/arrays.php
+msgid "Response Search String - Maintenance Page"
+msgstr "Kalmomin Binciken Amsa - Shafin Kulawa"
+
+#: includes/arrays.php
+msgid "This is the string to search for on the Maintenance Page.  The Service Check will check for this string if the above string is not found.  If found, it means that the Web Service is under maintenance."
+msgstr "Wannan ita ce jimlar da za a bincika a kan Shafin Kulawa. Binciken Sabis zai bincika wannan jimlar idan ba a sami jimlar da ke sama ba. Idan an same ta, yana nufin cewa Sabis na Yanar Gizo yana ƙarƙashin gyara."
+
+#: includes/arrays.php
+msgid "Response Search String - Failed"
+msgstr "Kalmomin Binciken Amsa - Ya Gaza"
+
+#: includes/arrays.php
+msgid "This is the string to search for a known failure in the Web Service response.  The Service Check will only alert if this string is found, ignoring any timeout issues and the search strings above."
+msgstr "Wannan ita ce jimlar da za a bincika don sanannen gazawa a cikin amsar Sabis na Yanar Gizo. Binciken Sabis zai yi faɗakarwa ne kawai idan an sami wannan jimlar, tare da yin watsi da duk wata matsalar ƙarewar lokaci da jimlolin bincike na sama."
+
+#: includes/arrays.php
+msgid "Notification Settings"
+msgstr "Saitunan Sanarwa"
+
+#: includes/arrays.php
+msgid "Notify Format"
+msgstr "Tsarin Sanarwa"
+
+#: includes/arrays.php
+msgid "This is the format to use when sending the notification email"
+msgstr "Wannan shine tsarin da za a yi amfani da shi lokacin aika imel na sanarwa"
+
+#: includes/arrays.php
+msgid "Notification List"
+msgstr "Jerin Sanarwa"
+
+#: includes/arrays.php
+msgid "Use this Notification List for those to be notified when this website goes down."
+msgstr "Yi amfani da wannan Jerin Sanarwa don waɗanda za a sanar lokacin da wannan gidan yanar gizon ya tsaya."
+
+#: includes/arrays.php
+msgid "Notify Accounts"
+msgstr "Asusun Sanarwa"
+
+#: includes/arrays.php
+msgid "This is a listing of accounts that will be notified when this website goes down."
+msgstr "Wannan jerin asusun da za a sanar da su ne idan wannan shafin yanar gizon ya daina aiki."
+
+#: includes/arrays.php
+msgid "Extra Alert Emails"
+msgstr "Ƙarin Imel ɗin Faɗakarwa"
+
+#: includes/arrays.php
+msgid "You may specify here extra Emails to receive alerts for this URL (comma separated)"
+msgstr "Za ka iya ƙayyade ƙarin Imel a nan don karɓar faɗakarwa ga wannan URL (a raba da waƙafi)"
+
+#: includes/functions.php webseer.php
+msgid "Checks"
+msgstr "Bincike-bincike"
+
+#: includes/functions.php webseer_servers.php
+msgid "Servers"
+msgstr "Sabobi"
+
+#: includes/functions.php webseer_proxies.php
+msgid "Proxies"
+msgstr "Wakilan Proxy"
+
+#: includes/functions.php
+msgid "Log History"
+msgstr "Tarihin Rajista"
+
+#: poller_webseer.php
+msgid "Cacti Master"
+msgstr "Babban Cacti"
+
+#: poller_webseer.php
+msgid "Cacti Remote Server"
+msgstr "Uwar Garken Cacti ta Nesa"
+
+#: setup.php
+msgid "Web Service Check Admin"
+msgstr "Gudanarwar Binciken Sabis na Yanar Gizo"
+
+#: setup.php
+msgid "Management"
+msgstr "Gudanarwa"
+
+#: setup.php
+msgid "Service Checks"
+msgstr "Bincike-binciken Sabis"
+
+#: setup.php
+msgid "WebSeer Service Checks"
+msgstr "Binciken Sabis na WebSeer"
+
+#: setup.php
+msgid "Service Check Edit"
+msgstr "Gyara Binciken Sabis"
+
+#: setup.php
+msgid "Service Check Save"
+msgstr "Ajiye Binciken Sabis"
+
+#: setup.php
+msgid "WebSeer Servers"
+msgstr "Sabobin WebSeer"
+
+#: setup.php
+msgid "Server Edit"
+msgstr "Gyara Saba"
+
+#: setup.php
+msgid "Save Server"
+msgstr "Ajiye Sabar"
+
+#: setup.php
+msgid "WebSeer Proxies"
+msgstr "Proxies na WebSeer"
+
+#: setup.php
+msgid "Proxie Edit"
+msgstr "Gyaran Proxy"
+
+#: setup.php
+msgid "Save Proxy"
+msgstr "Ajiye Proxy"
+
+#: webseer.php
+msgid "Click 'Continue' to Delete the following URL."
+msgid_plural "Click 'Continue' to Delete following URLs."
+msgstr[0] "Danna 'Ci gaba' don Share URL mai zuwa."
+msgstr[1] "Danna 'Ci gaba' don Share URLs masu zuwa."
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Cancel"
+msgstr "Soke"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Continue"
+msgstr "Ci gaba"
+
+#: webseer.php
+msgid "Delete URL"
+msgid_plural "Delete URLs"
+msgstr[0] "Share URL"
+msgstr[1] "Share URLs"
+
+#: webseer.php
+msgid "Click 'Continue' to Disable the following URL."
+msgid_plural "Click 'Continue' to Disable following URLs."
+msgstr[0] "Danna 'Ci gaba' don Kashe URL mai zuwa."
+msgstr[1] "Danna 'Ci gaba' don Kashe URLs masu zuwa."
+
+#: webseer.php
+msgid "Disable URL"
+msgid_plural "Disable URLs"
+msgstr[0] "Kashe URL"
+msgstr[1] "Kashe URLs"
+
+#: webseer.php
+msgid "Click 'Continue' to Enable the following URL."
+msgid_plural "Click 'Continue' to Enable following URLs."
+msgstr[0] "Danna 'Ci gaba' don Kunna URL mai zuwa."
+msgstr[1] "Danna 'Ci gaba' don Kunna URLs masu zuwa."
+
+#: webseer.php
+msgid "Enable URL"
+msgid_plural "Enable URLs"
+msgstr[0] "Kunna URL"
+msgstr[1] "Kunna URLs"
+
+#: webseer.php
+msgid "Click 'Continue' to Duplicate the following URL."
+msgid_plural "Click 'Continue' to Duplicate following URLs."
+msgstr[0] "Danna 'Ci gaba' don Kwafi URL mai zuwa."
+msgstr[1] "Danna 'Ci gaba' don Kwafi URLs masu zuwa."
+
+#: webseer.php
+msgid "Duplicate URL"
+msgid_plural "Duplicate URLs"
+msgstr[0] "Kwafi URL"
+msgstr[1] "Kwafi URLs"
+
+#: webseer.php
+#, php-format
+msgid "The Service Check history was purged for %s"
+msgstr "An goge tarihin Binciken Sabis don %s"
+
+#: webseer.php webseer_servers.php
+#, php-format
+msgid "Query [edit: %s]"
+msgstr "Tambaya [gyara: %s]"
+
+#: webseer.php webseer_servers.php
+msgid "Query [new]"
+msgstr "Tambaya [sabo]"
+
+#: webseer.php
+msgid "No Users Selected"
+msgstr "Babu Masu Amfani da Aka Zaɓa"
+
+#: webseer.php
+msgid "Users Selected"
+msgstr "Masu Amfani da aka Zaɓa"
+
+#: webseer.php
+msgid "All Users Selected"
+msgstr "An Zaɓi Duk Masu Amfani"
+
+#: webseer.php
+msgid "All"
+msgstr "Duka"
+
+#: webseer.php webseer_proxies.php
+msgid "Search"
+msgstr "Bincika"
+
+#: webseer.php webseer_servers.php
+msgid "Date"
+msgstr "Kwanan Wata"
+
+#: webseer.php webseer_servers.php
+msgid "Error"
+msgstr "Kuskure"
+
+#: webseer.php webseer_servers.php
+msgid "HTTP Code"
+msgstr "Lambar HTTP"
+
+#: webseer.php webseer_servers.php
+msgid "DNS"
+msgstr "DNS"
+
+#: webseer.php webseer_servers.php
+msgid "Connect"
+msgstr "Haɗa"
+
+#: webseer.php webseer_servers.php
+msgid "Redirect"
+msgstr "Juya hanya"
+
+#: webseer.php webseer_servers.php
+msgid "Total"
+msgstr "Jimla"
+
+#: webseer.php
+msgid "Urls"
+msgstr "Adiresoshin URL"
+
+#: webseer.php
+msgid "Service Down"
+msgstr "Sabis Ya Sauka"
+
+#: webseer.php
+msgid "Service Restored"
+msgstr "An Dawo da Sabis"
+
+#: webseer.php
+msgid "No Service Check Events in History"
+msgstr "Babu Abubuwan Binciken Sabis a Tarihi"
+
+#: webseer.php webseer_servers.php
+msgid "Actions"
+msgstr "Ayyuka"
+
+#: webseer.php
+msgid "Status"
+msgstr "Matsayi"
+
+#: webseer.php webseer_servers.php
+msgid "Enabled"
+msgstr "An kunna"
+
+#: webseer.php
+msgid "Auth"
+msgstr "Tabbatarwa"
+
+#: webseer.php
+msgid "Timeout"
+msgstr "Ƙarewar Lokaci"
+
+#: webseer.php webseer_servers.php
+msgid "Last Check"
+msgstr "Binciken Ƙarshe"
+
+#: webseer.php
+msgid "Edit Service Check"
+msgstr "Gyara Binciken Sabis"
+
+#: webseer.php
+msgid "Disable Service Check"
+msgstr "Kashe Binciken Sabis"
+
+#: webseer.php
+msgid "View Service Check History"
+msgstr "Duba Tarihin Binciken Sabis"
+
+#: webseer.php
+#, php-format
+msgid "DNS: Server %s - A Record for %s"
+msgstr "DNS: Sabar %s - Rikodin A don %s"
+
+#: webseer.php
+msgid "N/A"
+msgstr "Babu"
+
+#: webseer.php webseer_servers.php
+msgid "Down"
+msgstr "Ba Ya Aiki"
+
+#: webseer.php webseer_servers.php
+msgid "Up"
+msgstr "Yana Aiki"
+
+#: webseer.php webseer_servers.php
+msgid "Disabled"
+msgstr "An kashe"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "No Servers Found"
+msgstr "Ba a Samu Sabobi ba"
+
+#: webseer.php
+msgid "Webseer Service Checks"
+msgstr "Binciken Sabis na Webseer"
+
+#: webseer.php webseer_servers.php
+msgid "State"
+msgstr "Jiha"
+
+#: webseer.php webseer_servers.php
+msgid "Any"
+msgstr "Kowane"
+
+#: webseer.php webseer_servers.php
+msgid "Refresh"
+msgstr "Sabunta"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Default"
+msgstr "Na Asali"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Go"
+msgstr "Tafi"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Clear"
+msgstr "Share"
+
+#: webseer.php
+msgid "Webseer Service Check History"
+msgstr "Tarihin Binciken Sabis na Webseer"
+
+#: webseer.php webseer_servers.php
+msgid "Date Search"
+msgstr "Neman Kwanan Wata"
+
+#: webseer.php webseer_servers.php
+msgid "Entries"
+msgstr "Shigarwa"
+
+#: webseer.php
+msgid "Purge Events"
+msgstr "Share Abubuwan da Suka Faru"
+
+#: webseer_proxies.php
+msgid "Click 'Continue' to delete the following Proxy."
+msgid_plural "Click 'Continue' to delete following Proxies."
+msgstr[0] "Danna 'Ci gaba' don share Proxy mai zuwa."
+msgstr[1] "Danna 'Ci gaba' don share Proxies masu zuwa."
+
+#: webseer_proxies.php
+msgid "Delete Proxy"
+msgid_plural "Delete Proxies"
+msgstr[0] "Share Proxy"
+msgstr[1] "Share Proxies"
+
+#: webseer_proxies.php
+#, php-format
+msgid "Proxy [edit: %s]"
+msgstr "Proxy [gyara: %s]"
+
+#: webseer_proxies.php
+msgid "Proxy [new]"
+msgstr "Proxy [sabo]"
+
+#: webseer_proxies.php
+msgid "Ports (http/https)"
+msgstr "Tashoshin haɗi (http/https)"
+
+#: webseer_proxies.php
+msgid "Username"
+msgstr "Sunan mai amfani"
+
+#: webseer_proxies.php
+msgid "Not Set"
+msgstr "Ba a Saita Ba"
+
+#: webseer_proxies.php
+msgid "Webseer Proxy Management"
+msgstr "Gudanarwar Proxy na Webseer"
+
+#: webseer_servers.php
+msgid "Click 'Continue' to Delete the following Server."
+msgid_plural "Click 'Continue' to Delete following Servers."
+msgstr[0] "Danna 'Ci gaba' don Share Sabar mai zuwa."
+msgstr[1] "Danna 'Ci gaba' don Share Sabobi masu zuwa."
+
+#: webseer_servers.php
+msgid "Delete Server"
+msgid_plural "Delete Servers"
+msgstr[0] "Share Sabar"
+msgstr[1] "Share Sabobi"
+
+#: webseer_servers.php
+msgid "Click 'Continue' to Disable the following Server."
+msgid_plural "Click 'Continue' to Disable following Servers."
+msgstr[0] "Danna 'Ci gaba' don Kashe Sabar mai zuwa."
+msgstr[1] "Danna 'Ci gaba' don Kashe Sabobi masu zuwa."
+
+#: webseer_servers.php
+msgid "Disable Server"
+msgid_plural "Disable Servers"
+msgstr[0] "Kashe Sabar"
+msgstr[1] "Kashe Sabobi"
+
+#: webseer_servers.php
+msgid "Click 'Continue' to Enable the following Server."
+msgid_plural "Click 'Continue' to Enable following Servers."
+msgstr[0] "Danna 'Ci gaba' don Kunna Sabar mai zuwa."
+msgstr[1] "Danna 'Ci gaba' don Kunna Sabobi masu zuwa."
+
+#: webseer_servers.php
+msgid "No Events in History"
+msgstr "Babu Abubuwan da Suka Faru a Tarihi"
+
+#: webseer_servers.php
+msgid "Master"
+msgstr "Babba"
+
+#: webseer_servers.php
+msgid "This Host"
+msgstr "Wannan Mai Masauki"
+
+#: webseer_servers.php
+msgid "Edit Server"
+msgstr "Gyara Uwar Garke"
+
+#: webseer_servers.php
+msgid "View Server History"
+msgstr "Duba Tarihin Sabar"
+
+#: webseer_servers.php
+msgid "No"
+msgstr "A'a"
+
+#: webseer_servers.php
+msgid "Yes"
+msgstr "Eh"
+
+#: webseer_servers.php
+msgid "Webseer Servers"
+msgstr "Sabobin Webseer"
+
+#: webseer_servers.php
+msgid "Triggered"
+msgstr "An tada"
+
+#: webseer_servers.php
+msgid "Webseer Server History"
+msgstr "Tarihin Sabar Webseer"
+

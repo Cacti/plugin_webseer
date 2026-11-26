@@ -1,0 +1,710 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR The Cacti Group
+# This file is distributed under the same license as the Cacti package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Cacti\n"
+"Report-Msgid-Bugs-To: developers@cacti.net\n"
+"POT-Creation-Date: 2026-09-28 16:09-0400\n"
+"PO-Revision-Date: 2026-11-24 19:00+0000\n"
+"Last-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\n"
+"Language-Team: Yoruba\n"
+"Language: yo-NG\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: includes/arrays.php webseer_servers.php
+#, php-format
+msgid "%d Minute"
+msgstr "Ìṣẹ́jú %d"
+
+#: includes/arrays.php webseer_servers.php
+#, php-format
+msgid "%d Minutes"
+msgstr "Ìṣẹ́jú %d"
+
+#: includes/arrays.php webseer_servers.php
+#, php-format
+msgid "%d Seconds"
+msgstr "Ìṣẹ́jú-àáyá %d"
+
+#: includes/arrays.php
+msgid "Delete"
+msgstr "Pa rẹ́"
+
+#: includes/arrays.php
+msgid "Disable"
+msgstr "Dá Dúró"
+
+#: includes/arrays.php
+msgid "Enable"
+msgstr "Mú Ṣiṣẹ́"
+
+#: includes/arrays.php
+msgid "Duplicate"
+msgstr "Ẹ̀dà"
+
+#: includes/arrays.php webseer.php webseer_proxies.php webseer_servers.php
+msgid "Name"
+msgstr "Orúkọ"
+
+#: includes/arrays.php
+msgid "A Useful Name for this Proxy."
+msgstr "Orúkọ tó wúlò fún Aṣojú yìí."
+
+#: includes/arrays.php
+msgid "New Proxy"
+msgstr "Proxy Tuntun"
+
+#: includes/arrays.php webseer_proxies.php
+msgid "Hostname"
+msgstr "Orúkọ Olùgbàlejò"
+
+#: includes/arrays.php
+msgid "The Proxy Hostname."
+msgstr "Orúkọ Olùgbàlejò Proxy."
+
+#: includes/arrays.php
+msgid "HTTP Port"
+msgstr "Èbúté HTTP"
+
+#: includes/arrays.php
+msgid "The HTTP Proxy Port."
+msgstr "Ibùdó Aṣojú HTTP."
+
+#: includes/arrays.php
+msgid "HTTPS Port"
+msgstr "Èbúté HTTPS"
+
+#: includes/arrays.php
+msgid "The HTTPS Proxy Port."
+msgstr "Ibùdó Aṣojú HTTPS."
+
+#: includes/arrays.php
+msgid "User Name"
+msgstr "Orúkọ Olùlò"
+
+#: includes/arrays.php
+msgid "The user to use to authenticate with the Proxy if any."
+msgstr "Olùlò láti lò fún ìdánimọ̀ pẹ̀lú Proxy tí ó bá wà."
+
+#: includes/arrays.php
+msgid "Password"
+msgstr "Ọ̀rọ̀ Aṣínà"
+
+#: includes/arrays.php
+msgid "The user password to use to authenticate with the Proxy if any."
+msgstr "Ọ̀rọ̀ Aṣínà olùlò láti lò fún ìdánimọ̀ pẹ̀lú Proxy tí ó bá wà."
+
+#: includes/arrays.php
+msgid "General Settings"
+msgstr "Àwọn Ètò Gbogbogbòò"
+
+#: includes/arrays.php
+msgid "Display Name of this server"
+msgstr "Orúkọ Ìfihàn ti sẹ́fà yìí"
+
+#: includes/arrays.php webseer_servers.php
+msgid "Enable Server"
+msgid_plural "Enable Servers"
+msgstr[0] "Mú àwọn Sáfà ṣiṣẹ́"
+
+#: includes/arrays.php
+msgid "Uncheck this box to disabled this server from checking urls."
+msgstr "Yọ àmì kúrò nínú àpótí yìí láti dẹ́kun olùpèsè yìí láti máa ṣàyẹ̀wò àwọn URL."
+
+#: includes/arrays.php
+msgid "Is this server the local server?"
+msgstr "Ṣé sẹ́fà yìí ni sẹ́fà agbègbè?"
+
+#: includes/arrays.php
+msgid "Check this box if the current server you are connected to is this entry."
+msgstr "Fi àmì sí àpótí yìí tí olùpèsè tí o so mọ́ lọ́wọ́lọ́wọ́ bá jẹ́ àkọsílẹ̀ yìí."
+
+#: includes/arrays.php
+msgid "Master Server"
+msgstr "Olùpèsè Olórí"
+
+#: includes/arrays.php
+msgid "Sets this server to the Master server.  The Master server handles all Email operations"
+msgstr "Ṣètò olùpèsè yìí gẹ́gẹ́ bí Olùpèsè Àgbà.  Olùpèsè Àgbà ni ó ń ṣàkóso gbogbo iṣẹ́ Ímeèlì"
+
+#: includes/arrays.php webseer_servers.php
+msgid "IP Address"
+msgstr "Àdírẹ́ẹ̀sì IP"
+
+#: includes/arrays.php
+msgid "IP Address to connect to this server"
+msgstr "Àdírẹ́sì IP láti sopọ̀ mọ́ olùpèsè yìí"
+
+#: includes/arrays.php webseer.php webseer_servers.php
+msgid "URL"
+msgstr "URL"
+
+#: includes/arrays.php
+msgid "This is the URL to connect to remote.php on this server."
+msgstr "Èyí ni URL láti sopọ̀ mọ́ remote.php lórí olùpèsè yìí."
+
+#: includes/arrays.php webseer_servers.php
+msgid "Location"
+msgstr "Ibùdó"
+
+#: includes/arrays.php
+msgid "Location of this server"
+msgstr "Ipò tí olùpèsè yìí wà"
+
+#: includes/arrays.php
+msgid "Service Check Name"
+msgstr "Orúkọ Àyẹ̀wò Iṣẹ́"
+
+#: includes/arrays.php
+msgid "The name that is displayed for this Service Check, and is included in any Alert notifications."
+msgstr "Orúkọ tí a fi hàn fún Àyẹ̀wò Iṣẹ́ yìí, tí a sì fi kún èyíkéyìí nínú àwọn ìfitónilétí Ìtànijì."
+
+#: includes/arrays.php webseer.php
+msgid "Enable Service Check"
+msgstr "Mú Àyẹ̀wò Iṣẹ́ ṣiṣẹ́"
+
+#: includes/arrays.php
+msgid "Uncheck this box to disabled this url from being checked."
+msgstr "Yọ àmì kúrò nínú àpótí yìí láti dẹ́kun ṣíṣàyẹ̀wò URL yìí."
+
+#: includes/arrays.php
+msgid "The URL to Monitor"
+msgstr "URL láti Ṣàbójútó"
+
+#: includes/arrays.php
+msgid "Enter an IP address to connect to.  Leaving blank will use DNS Resolution instead."
+msgstr "Tẹ àdírẹ́sì IP kan láti sopọ̀ mọ́.  Fífisílẹ̀ ní òfo yóò lo Ìyanjú DNS dípò."
+
+#: includes/arrays.php
+msgid "Proxy Server"
+msgstr "Olùpèsè Aṣojú"
+
+#: includes/arrays.php
+msgid "If this connection text requires a proxy, select it here.  Otherwise choose 'None'."
+msgstr "Tí ọ̀rọ̀ ìsopọ̀ yìí bá nílò aṣojú (proxy), yàn án níbí. Bíbẹ́ẹ̀kọ́ yan 'Kò sí'."
+
+#: includes/arrays.php webseer.php
+msgid "None"
+msgstr "Kò Sí"
+
+#: includes/arrays.php webseer.php
+msgid "Compression"
+msgstr "Ìfúnpọ̀"
+
+#: includes/arrays.php
+msgid "What compression does the server require?  Most servers should not need this, but some will not redirect properly without it."
+msgstr "Ìfúnkéré wo ni olùpèsè nílò?  Ọ̀pọ̀lọpọ̀ àwọn olùpèsè kò yẹ kí wọ́n nílò èyí, ṣùgbọ́n àwọn kan kò ní darí padà dáadáa láìsí rẹ̀."
+
+#: includes/arrays.php
+msgid "Available Checks"
+msgstr "Àwọn Àyẹ̀wò Tó Wà Nílẹ̀"
+
+#: includes/arrays.php
+msgid "Requires Authentication"
+msgstr "Nílò Ìdánimọ̀"
+
+#: includes/arrays.php
+msgid "Check this box if the site will normally return a 401 Error as it requires a username and password."
+msgstr "Fi àmì sí àpótí yìí tí Ibùdó náà bá sábà máa ń dá Àṣìṣe 401 padà nítorí pé ó nílò Orúkọ Olùlò àti Ọ̀rọ̀ Aṣínà."
+
+#: includes/arrays.php
+msgid "Check Certificate"
+msgstr "Ṣàyẹ̀wò Ìwé-ẹ̀rí"
+
+#: includes/arrays.php
+msgid "If using SSL, check this box if you want to validate the certificate. Default on, turn off if you the site uses a self-signed certificate."
+msgstr "Tí o bá ń lo SSL, ṣàmì sí àpótí yìí tí o bá fẹ́ fọwọ́sí ìwé-ẹ̀rí náà. Ó wà ní ṣíṣí ní ìbẹ̀rẹ̀, pa á tí Ibùdó náà bá ń lo ìwé-ẹ̀rí tí a fọwọ́sí fúnra rẹ̀."
+
+#: includes/arrays.php
+msgid "Notification Timing"
+msgstr "Àkókò Ìfitọ́nilétí"
+
+#: includes/arrays.php
+msgid "Trigger"
+msgstr "Okùnfà"
+
+#: includes/arrays.php
+msgid "How many minutes the URL must be down before it will send an alert.  After an alert is sent, in order for a 'Site Recovering' Email to be send, it must also be up this number of minutes."
+msgstr "Ìṣẹ́jú mélòó ni URL gbọ́dọ̀ wà ní ìsàlẹ̀ kí ó tó fi ìkìlọ̀ ránṣẹ́.  Lẹ́yìn tí a bá ti fi ìkìlọ̀ ránṣẹ́, kí a tó lè fi Ímeèlì 'Ibùdó Ń Bọ̀ Sípò' ránṣẹ́, ó tún gbọ́dọ̀ wà lókè fún iye ìṣẹ́jú yìí."
+
+#: includes/arrays.php
+msgid "Time Out"
+msgstr "Àkókò Ti Parí"
+
+#: includes/arrays.php
+msgid "How many seconds to allow the page to timeout before reporting it as down."
+msgstr "Ìṣẹ́jú-àáyá mélòó láti gba ojú-ewé láyè kí àkókò rẹ̀ tó parí ṣáájú kí a tó ròyìn rẹ̀ pé ó wà ní ìsàlẹ̀."
+
+#: includes/arrays.php
+msgid "Verification Strings"
+msgstr "Àwọn Okùn Ìjẹ́rìísí"
+
+#: includes/arrays.php
+msgid "Response Search String"
+msgstr "Òkùn Ìwádìí Ìdáhùn"
+
+#: includes/arrays.php
+msgid "This is the string to search for in the URL response for a live and working Web Service."
+msgstr "Èyí ni okùn-ọ̀rọ̀ láti wá nínú ìdáhùn URL fún Iṣẹ́ Wẹ́ẹ̀bù tí ó wà láàyè tí ó sì ń ṣiṣẹ́."
+
+#: includes/arrays.php
+msgid "Response Search String - Maintenance Page"
+msgstr "Òkùn Ìwádìí Ìdáhùn - Ojú-ewé Àtúnṣe"
+
+#: includes/arrays.php
+msgid "This is the string to search for on the Maintenance Page.  The Service Check will check for this string if the above string is not found.  If found, it means that the Web Service is under maintenance."
+msgstr "Èyí ni okùn-ọ̀rọ̀ láti wá lórí Ojú-ewé Ìtọ́jú. Àyẹ̀wò Iṣẹ́ yóò ṣàyẹ̀wò fún okùn-ọ̀rọ̀ yìí tí kò bá rí okùn-ọ̀rọ̀ lókè. Tí ó bá rí i, ó túmọ̀ sí pé Iṣẹ́ Wẹ́ẹ̀bù náà wà lábẹ́ ìtọ́jú."
+
+#: includes/arrays.php
+msgid "Response Search String - Failed"
+msgstr "Òkùn Ìwádìí Ìdáhùn - Kùnà"
+
+#: includes/arrays.php
+msgid "This is the string to search for a known failure in the Web Service response.  The Service Check will only alert if this string is found, ignoring any timeout issues and the search strings above."
+msgstr "Èyí ni okùn-ọ̀rọ̀ láti wá ìkùnà tí a mọ̀ nínú ìdáhùn Iṣẹ́ Wẹ́ẹ̀bù. Àyẹ̀wò Iṣẹ́ yóò kìlọ̀ nìkan tí a bá rí okùn-ọ̀rọ̀ yìí, nípa fífo àwọn ìṣòro àkókò-ìparí àti àwọn okùn-ọ̀rọ̀ ìwádìí lókè."
+
+#: includes/arrays.php
+msgid "Notification Settings"
+msgstr "Àwọn Ètò Ìfitónilétí"
+
+#: includes/arrays.php
+msgid "Notify Format"
+msgstr "Ìrísí Ìfitọ́nilétí"
+
+#: includes/arrays.php
+msgid "This is the format to use when sending the notification email"
+msgstr "Èyí ni ìṣètò láti lò nígbà tí a bá ń fi ímeèlì ìfitónilétí ránṣẹ́"
+
+#: includes/arrays.php
+msgid "Notification List"
+msgstr "Àtòjọ Ìfitónilétí"
+
+#: includes/arrays.php
+msgid "Use this Notification List for those to be notified when this website goes down."
+msgstr "Lo Àtòjọ Ìfitọ́nilétí yìí fún àwọn tí a ó fi tó létí nígbà tí ojú òpó wẹ́ẹ̀bù yìí bá dáwọ́ dúró."
+
+#: includes/arrays.php
+msgid "Notify Accounts"
+msgstr "Fitọ́nilétí Àwọn Àkántì"
+
+#: includes/arrays.php
+msgid "This is a listing of accounts that will be notified when this website goes down."
+msgstr "Èyí jẹ́ àkójọ àwọn àkọọ́lẹ̀ tí a ó fi tó létí nígbà tí ojú-òpó wẹ́ẹ̀bù yìí bá dáwọ́ dúró."
+
+#: includes/arrays.php
+msgid "Extra Alert Emails"
+msgstr "Àwọn Ímeèlì Ìtanilólobó Àfikún"
+
+#: includes/arrays.php
+msgid "You may specify here extra Emails to receive alerts for this URL (comma separated)"
+msgstr "O lè tọ́ka sí àwọn Ímeèlì àfikún níbí láti gba àwọn ìtànijí fún URL yìí (tí a fi kọ́mà pín sí)"
+
+#: includes/functions.php webseer.php
+msgid "Checks"
+msgstr "Àwọn Àyẹ̀wò"
+
+#: includes/functions.php webseer_servers.php
+msgid "Servers"
+msgstr "Àwọn Olùpèsè"
+
+#: includes/functions.php webseer_proxies.php
+msgid "Proxies"
+msgstr "Àwọn Proxy"
+
+#: includes/functions.php
+msgid "Log History"
+msgstr "Ìtàn Àkọsílẹ̀"
+
+#: poller_webseer.php
+msgid "Cacti Master"
+msgstr "Olórí Cacti"
+
+#: poller_webseer.php
+msgid "Cacti Remote Server"
+msgstr "Olùpèsè Òkèèrè Cacti"
+
+#: setup.php
+msgid "Web Service Check Admin"
+msgstr "Alákòóso Àyẹ̀wò Iṣẹ́ Wẹ́ẹ̀bù"
+
+#: setup.php
+msgid "Management"
+msgstr "Ìṣàkóso"
+
+#: setup.php
+msgid "Service Checks"
+msgstr "Àwọn Àyẹ̀wò Iṣẹ́"
+
+#: setup.php
+msgid "WebSeer Service Checks"
+msgstr "Àwọn Àyẹ̀wò Iṣẹ́ WebSeer"
+
+#: setup.php
+msgid "Service Check Edit"
+msgstr "Ṣàtúnṣe Àyẹ̀wò Iṣẹ́"
+
+#: setup.php
+msgid "Service Check Save"
+msgstr "Fipamọ́ Àyẹ̀wò Iṣẹ́"
+
+#: setup.php
+msgid "WebSeer Servers"
+msgstr "Àwọn Olùpèsè WebSeer"
+
+#: setup.php
+msgid "Server Edit"
+msgstr "Ṣàtúnṣe Sáfà"
+
+#: setup.php
+msgid "Save Server"
+msgstr "Fipamọ́ Olùpèsè"
+
+#: setup.php
+msgid "WebSeer Proxies"
+msgstr "Àwọn Aṣojú WebSeer"
+
+#: setup.php
+msgid "Proxie Edit"
+msgstr "Ṣàtúnṣe Proxy"
+
+#: setup.php
+msgid "Save Proxy"
+msgstr "Fipamọ́ Proxy"
+
+#: webseer.php
+msgid "Click 'Continue' to Delete the following URL."
+msgid_plural "Click 'Continue' to Delete following URLs."
+msgstr[0] "Tẹ 'Tẹ̀síwájú' láti Pa àwọn URL wọ̀nyí rẹ́."
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Cancel"
+msgstr "Fagilé"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Continue"
+msgstr "Tẹ̀síwájú"
+
+#: webseer.php
+msgid "Delete URL"
+msgid_plural "Delete URLs"
+msgstr[0] "Pa àwọn URL rẹ́"
+
+#: webseer.php
+msgid "Click 'Continue' to Disable the following URL."
+msgid_plural "Click 'Continue' to Disable following URLs."
+msgstr[0] "Tẹ 'Tẹ̀síwájú' láti Sọ àwọn URL wọ̀nyí di àìṣiṣẹ́."
+
+#: webseer.php
+msgid "Disable URL"
+msgid_plural "Disable URLs"
+msgstr[0] "Sọ àwọn URL di àìṣiṣẹ́"
+
+#: webseer.php
+msgid "Click 'Continue' to Enable the following URL."
+msgid_plural "Click 'Continue' to Enable following URLs."
+msgstr[0] "Tẹ 'Tẹ̀síwájú' láti Mú àwọn URL wọ̀nyí ṣiṣẹ́."
+
+#: webseer.php
+msgid "Enable URL"
+msgid_plural "Enable URLs"
+msgstr[0] "Mú àwọn URL ṣiṣẹ́"
+
+#: webseer.php
+msgid "Click 'Continue' to Duplicate the following URL."
+msgid_plural "Click 'Continue' to Duplicate following URLs."
+msgstr[0] "Tẹ 'Tẹ̀síwájú' láti Ṣe ẹ̀dà àwọn URL wọ̀nyí."
+
+#: webseer.php
+msgid "Duplicate URL"
+msgid_plural "Duplicate URLs"
+msgstr[0] "Ṣe ẹ̀dà àwọn URL"
+
+#: webseer.php
+#, php-format
+msgid "The Service Check history was purged for %s"
+msgstr "Ìtàn Àyẹ̀wò Iṣẹ́ ti jẹ́ pípa rẹ́ fún %s"
+
+#: webseer.php webseer_servers.php
+#, php-format
+msgid "Query [edit: %s]"
+msgstr "Ìbéèrè [ṣàtúnṣe: %s]"
+
+#: webseer.php webseer_servers.php
+msgid "Query [new]"
+msgstr "Ìbéèrè [tuntun]"
+
+#: webseer.php
+msgid "No Users Selected"
+msgstr "Kò sí Àwọn Olùlò tí a Yàn"
+
+#: webseer.php
+msgid "Users Selected"
+msgstr "Àwọn Olùlò Tí A Yàn"
+
+#: webseer.php
+msgid "All Users Selected"
+msgstr "Gbogbo Àwọn Olùlò Ti A Yàn"
+
+#: webseer.php
+msgid "All"
+msgstr "Gbogbo"
+
+#: webseer.php webseer_proxies.php
+msgid "Search"
+msgstr "Ṣàwárí"
+
+#: webseer.php webseer_servers.php
+msgid "Date"
+msgstr "Ọjọ́"
+
+#: webseer.php webseer_servers.php
+msgid "Error"
+msgstr "Àṣìṣe"
+
+#: webseer.php webseer_servers.php
+msgid "HTTP Code"
+msgstr "Kóòdù HTTP"
+
+#: webseer.php webseer_servers.php
+msgid "DNS"
+msgstr "DNS"
+
+#: webseer.php webseer_servers.php
+msgid "Connect"
+msgstr "Sopọ̀"
+
+#: webseer.php webseer_servers.php
+msgid "Redirect"
+msgstr "Àtúnjúwe"
+
+#: webseer.php webseer_servers.php
+msgid "Total"
+msgstr "Àpapọ̀"
+
+#: webseer.php
+msgid "Urls"
+msgstr "Àwọn URL"
+
+#: webseer.php
+msgid "Service Down"
+msgstr "Iṣẹ́ Dáwọ́dúró"
+
+#: webseer.php
+msgid "Service Restored"
+msgstr "Iṣẹ́ Ti Padà Bọ̀"
+
+#: webseer.php
+msgid "No Service Check Events in History"
+msgstr "Kò sí Àwọn Ìṣẹ̀lẹ̀ Àyẹ̀wò Iṣẹ́ nínú Ìtàn"
+
+#: webseer.php webseer_servers.php
+msgid "Actions"
+msgstr "Àwọn Ìgbésẹ̀"
+
+#: webseer.php
+msgid "Status"
+msgstr "Ipò"
+
+#: webseer.php webseer_servers.php
+msgid "Enabled"
+msgstr "Ṣiṣẹ́"
+
+#: webseer.php
+msgid "Auth"
+msgstr "Ìdánimọ̀"
+
+#: webseer.php
+msgid "Timeout"
+msgstr "Àkókò Ìparí"
+
+#: webseer.php webseer_servers.php
+msgid "Last Check"
+msgstr "Ìṣàyẹ̀wò Tí Ó Kẹ́yìn"
+
+#: webseer.php
+msgid "Edit Service Check"
+msgstr "Ṣàtúnṣe Àyẹ̀wò Iṣẹ́"
+
+#: webseer.php
+msgid "Disable Service Check"
+msgstr "Ṣe àìṣiṣẹ́ Àyẹ̀wò Iṣẹ́"
+
+#: webseer.php
+msgid "View Service Check History"
+msgstr "Wo Ìtàn Àyẹ̀wò Iṣẹ́"
+
+#: webseer.php
+#, php-format
+msgid "DNS: Server %s - A Record for %s"
+msgstr "DNS: Olùpèsè %s - Àkọsílẹ̀ A fún %s"
+
+#: webseer.php
+msgid "N/A"
+msgstr "Kò Sí"
+
+#: webseer.php webseer_servers.php
+msgid "Down"
+msgstr "Kò Ṣiṣẹ́"
+
+#: webseer.php webseer_servers.php
+msgid "Up"
+msgstr "Ń Ṣiṣẹ́"
+
+#: webseer.php webseer_servers.php
+msgid "Disabled"
+msgstr "Àìṣiṣẹ́"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "No Servers Found"
+msgstr "Kò sí Àwọn Olùpèsè kankan tí a rí"
+
+#: webseer.php
+msgid "Webseer Service Checks"
+msgstr "Àwọn Àyẹ̀wò Iṣẹ́ Webseer"
+
+#: webseer.php webseer_servers.php
+msgid "State"
+msgstr "Ìpínlẹ̀"
+
+#: webseer.php webseer_servers.php
+msgid "Any"
+msgstr "Èyíkéyìí"
+
+#: webseer.php webseer_servers.php
+msgid "Refresh"
+msgstr "Sọdọ̀tun"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Default"
+msgstr "Àìyípadà"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Go"
+msgstr "Lọ"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Clear"
+msgstr "Nu Kúrò"
+
+#: webseer.php
+msgid "Webseer Service Check History"
+msgstr "Ìtàn Àyẹ̀wò Iṣẹ́ Webseer"
+
+#: webseer.php webseer_servers.php
+msgid "Date Search"
+msgstr "Ìwádìí Ọjọ́"
+
+#: webseer.php webseer_servers.php
+msgid "Entries"
+msgstr "Àwọn Àkọsílẹ̀"
+
+#: webseer.php
+msgid "Purge Events"
+msgstr "Fọ Àwọn Ìṣẹ̀lẹ̀ Kúrò"
+
+#: webseer_proxies.php
+msgid "Click 'Continue' to delete the following Proxy."
+msgid_plural "Click 'Continue' to delete following Proxies."
+msgstr[0] "Tẹ 'Tẹ̀síwájú' láti pa àwọn Pírọ́kísì wọ̀nyí rẹ́."
+
+#: webseer_proxies.php
+msgid "Delete Proxy"
+msgid_plural "Delete Proxies"
+msgstr[0] "Pa àwọn Pírọ́kísì rẹ́"
+
+#: webseer_proxies.php
+#, php-format
+msgid "Proxy [edit: %s]"
+msgstr "Proxy [ṣàtúnṣe: %s]"
+
+#: webseer_proxies.php
+msgid "Proxy [new]"
+msgstr "Proxy [tuntun]"
+
+#: webseer_proxies.php
+msgid "Ports (http/https)"
+msgstr "Àwọn Pọ́ọ̀tì (http/https)"
+
+#: webseer_proxies.php
+msgid "Username"
+msgstr "Orúkọ Olùlò"
+
+#: webseer_proxies.php
+msgid "Not Set"
+msgstr "Kò Tíì Jẹ́ Ṣíṣètò"
+
+#: webseer_proxies.php
+msgid "Webseer Proxy Management"
+msgstr "Ìṣàkóso Aṣojú Webseer"
+
+#: webseer_servers.php
+msgid "Click 'Continue' to Delete the following Server."
+msgid_plural "Click 'Continue' to Delete following Servers."
+msgstr[0] "Tẹ 'Tẹ̀síwájú' láti Pa àwọn Sáfà wọ̀nyí rẹ́."
+
+#: webseer_servers.php
+msgid "Delete Server"
+msgid_plural "Delete Servers"
+msgstr[0] "Pa àwọn Sáfà rẹ́"
+
+#: webseer_servers.php
+msgid "Click 'Continue' to Disable the following Server."
+msgid_plural "Click 'Continue' to Disable following Servers."
+msgstr[0] "Tẹ 'Tẹ̀síwájú' láti Sọ àwọn Sáfà wọ̀nyí di àìṣiṣẹ́."
+
+#: webseer_servers.php
+msgid "Disable Server"
+msgid_plural "Disable Servers"
+msgstr[0] "Sọ àwọn Sáfà di àìṣiṣẹ́"
+
+#: webseer_servers.php
+msgid "Click 'Continue' to Enable the following Server."
+msgid_plural "Click 'Continue' to Enable following Servers."
+msgstr[0] "Tẹ 'Tẹ̀síwájú' láti Mú àwọn Sáfà wọ̀nyí ṣiṣẹ́."
+
+#: webseer_servers.php
+msgid "No Events in History"
+msgstr "Kò sí Àwọn Ìṣẹ̀lẹ̀ nínú Ìtàn"
+
+#: webseer_servers.php
+msgid "Master"
+msgstr "Olórí"
+
+#: webseer_servers.php
+msgid "This Host"
+msgstr "Olùgbàlejò Yìí"
+
+#: webseer_servers.php
+msgid "Edit Server"
+msgstr "Ṣàtúnṣe Olùpèsè"
+
+#: webseer_servers.php
+msgid "View Server History"
+msgstr "Wo Ìtàn Sáfà"
+
+#: webseer_servers.php
+msgid "No"
+msgstr "Rárá"
+
+#: webseer_servers.php
+msgid "Yes"
+msgstr "Bẹ́ẹ̀ Ni"
+
+#: webseer_servers.php
+msgid "Webseer Servers"
+msgstr "Àwọn Olùpèsè Webseer"
+
+#: webseer_servers.php
+msgid "Triggered"
+msgstr "Ti Ṣokùnfà"
+
+#: webseer_servers.php
+msgid "Webseer Server History"
+msgstr "Ìtàn Olùpèsè Webseer"
+

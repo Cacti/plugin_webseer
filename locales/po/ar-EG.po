@@ -1,0 +1,790 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR The Cacti Group
+# This file is distributed under the same license as the Cacti package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Cacti\n"
+"Report-Msgid-Bugs-To: developers@cacti.net\n"
+"POT-Creation-Date: 2026-09-28 16:09-0400\n"
+"PO-Revision-Date: 2026-11-24 19:00+0000\n"
+"Last-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\n"
+"Language-Team: Arabic (Egypt)\n"
+"Language: ar-EG\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: includes/arrays.php webseer_servers.php
+#, php-format
+msgid "%d Minute"
+msgstr "دقيقة %d"
+
+#: includes/arrays.php webseer_servers.php
+#, php-format
+msgid "%d Minutes"
+msgstr "%d دقيقة (دقائق)"
+
+#: includes/arrays.php webseer_servers.php
+#, php-format
+msgid "%d Seconds"
+msgstr "%d ثواني"
+
+#: includes/arrays.php
+msgid "Delete"
+msgstr "حذف"
+
+#: includes/arrays.php
+msgid "Disable"
+msgstr "تعطيل"
+
+#: includes/arrays.php
+msgid "Enable"
+msgstr "تفعيل"
+
+#: includes/arrays.php
+msgid "Duplicate"
+msgstr "تكرار"
+
+#: includes/arrays.php webseer.php webseer_proxies.php webseer_servers.php
+msgid "Name"
+msgstr "الاسم"
+
+#: includes/arrays.php
+msgid "A Useful Name for this Proxy."
+msgstr "اسم مفيد لهذا الوكيل (Proxy)."
+
+#: includes/arrays.php
+msgid "New Proxy"
+msgstr "وكيل جديد"
+
+#: includes/arrays.php webseer_proxies.php
+msgid "Hostname"
+msgstr "اسم الخادم"
+
+#: includes/arrays.php
+msgid "The Proxy Hostname."
+msgstr "اسم المستضيف للوكيل."
+
+#: includes/arrays.php
+msgid "HTTP Port"
+msgstr "منفذ HTTP"
+
+#: includes/arrays.php
+msgid "The HTTP Proxy Port."
+msgstr "منفذ وكيل HTTP."
+
+#: includes/arrays.php
+msgid "HTTPS Port"
+msgstr "منفذ HTTPS"
+
+#: includes/arrays.php
+msgid "The HTTPS Proxy Port."
+msgstr "منفذ وكيل HTTPS."
+
+#: includes/arrays.php
+msgid "User Name"
+msgstr "اسم المستخدم"
+
+#: includes/arrays.php
+msgid "The user to use to authenticate with the Proxy if any."
+msgstr "اسم المستخدم المطلوب للمصادقة مع الوكيل (Proxy) إن وجد."
+
+#: includes/arrays.php
+msgid "Password"
+msgstr "كلمة المرور"
+
+#: includes/arrays.php
+msgid "The user password to use to authenticate with the Proxy if any."
+msgstr "كلمة المرور المستخدمة للمصادقة مع الوكيل (Proxy) إن وجدت."
+
+#: includes/arrays.php
+msgid "General Settings"
+msgstr "الاعدادات العامة"
+
+#: includes/arrays.php
+msgid "Display Name of this server"
+msgstr "اسم العرض لهذا الخادم"
+
+#: includes/arrays.php webseer_servers.php
+msgid "Enable Server"
+msgid_plural "Enable Servers"
+msgstr[0] "تفعيل خوادم"
+msgstr[1] "تفعيل خادم"
+msgstr[2] "تفعيل خادمين"
+msgstr[3] "تفعيل خوادم"
+msgstr[4] "تفعيل خوادم"
+msgstr[5] "تفعيل خوادم"
+
+#: includes/arrays.php
+msgid "Uncheck this box to disabled this server from checking urls."
+msgstr "ألغِ تحديد هذا المربع لتعطيل فحص عناوين URL من هذا الخادم."
+
+#: includes/arrays.php
+msgid "Is this server the local server?"
+msgstr "هل هذا الخادم هو الخادم المحلي؟"
+
+#: includes/arrays.php
+msgid "Check this box if the current server you are connected to is this entry."
+msgstr "حدّد هذا المربع إذا كان الخادم الحالي المتصل به هو هذا الإدخال."
+
+#: includes/arrays.php
+msgid "Master Server"
+msgstr "الخادم الرئيسي"
+
+#: includes/arrays.php
+msgid "Sets this server to the Master server.  The Master server handles all Email operations"
+msgstr "يعين هذا الخادم كخادم رئيسي. يتولى الخادم الرئيسي جميع عمليات البريد الإلكتروني"
+
+#: includes/arrays.php webseer_servers.php
+msgid "IP Address"
+msgstr "عنوان الIP"
+
+#: includes/arrays.php
+msgid "IP Address to connect to this server"
+msgstr "عنوان IP للاتصال بهذا الخادم"
+
+#: includes/arrays.php webseer.php webseer_servers.php
+msgid "URL"
+msgstr "الرابط"
+
+#: includes/arrays.php
+msgid "This is the URL to connect to remote.php on this server."
+msgstr "هذا هو عنوان URL للاتصال بملف remote.php على هذا الخادم."
+
+#: includes/arrays.php webseer_servers.php
+msgid "Location"
+msgstr "الموقع"
+
+#: includes/arrays.php
+msgid "Location of this server"
+msgstr "موقع هذا الخادم"
+
+#: includes/arrays.php
+msgid "Service Check Name"
+msgstr "اسم فحص الخدمة"
+
+#: includes/arrays.php
+msgid "The name that is displayed for this Service Check, and is included in any Alert notifications."
+msgstr "الاسم الذي يتم عرضه لفحص الخدمة هذا، ويتم تضمينه في أي إشعارات تنبيه."
+
+#: includes/arrays.php webseer.php
+msgid "Enable Service Check"
+msgstr "تفعيل فحص الخدمة"
+
+#: includes/arrays.php
+msgid "Uncheck this box to disabled this url from being checked."
+msgstr "ألغِ تحديد هذا المربع لتعطيل فحص عنوان URL هذا."
+
+#: includes/arrays.php
+msgid "The URL to Monitor"
+msgstr "عنوان URL المراد مراقبته"
+
+#: includes/arrays.php
+msgid "Enter an IP address to connect to.  Leaving blank will use DNS Resolution instead."
+msgstr "أدخل عنوان IP للاتصال به. تركه فارغاً سيستخدم تحليل DNS بدلاً من ذلك."
+
+#: includes/arrays.php
+msgid "Proxy Server"
+msgstr "خادم وكيل"
+
+#: includes/arrays.php
+msgid "If this connection text requires a proxy, select it here.  Otherwise choose 'None'."
+msgstr "إذا كان نص الاتصال هذا يتطلب وكيلاً (Proxy)، فحدده هنا. وإلا فاختر 'لا شيء'."
+
+#: includes/arrays.php webseer.php
+msgid "None"
+msgstr "لا شيء"
+
+#: includes/arrays.php webseer.php
+msgid "Compression"
+msgstr "الضغط"
+
+#: includes/arrays.php
+msgid "What compression does the server require?  Most servers should not need this, but some will not redirect properly without it."
+msgstr "ما الضغط الذي يتطلبه الخادم؟ لا تحتاج معظم الخوادم إلى ذلك، ولكن بعضها لن يعيد التوجيه بشكل صحيح بدونه."
+
+#: includes/arrays.php
+msgid "Available Checks"
+msgstr "الفحوصات المتاحة"
+
+#: includes/arrays.php
+msgid "Requires Authentication"
+msgstr "يتطلب مصادقة"
+
+#: includes/arrays.php
+msgid "Check this box if the site will normally return a 401 Error as it requires a username and password."
+msgstr "حدّد هذا المربع إذا كان الموقع يُرجع عادةً خطأ 401 لأنه يتطلب اسم مستخدم وكلمة مرور."
+
+#: includes/arrays.php
+msgid "Check Certificate"
+msgstr "فحص الشهادة"
+
+#: includes/arrays.php
+msgid "If using SSL, check this box if you want to validate the certificate. Default on, turn off if you the site uses a self-signed certificate."
+msgstr "عند استخدام SSL، حدد هذا المربع إذا كنت تريد التحقق من صحة الشهادة. يكون مفعلاً افتراضياً، قم بإيقاف تشغيله إذا كان الموقع يستخدم شهادة موقعة ذاتياً."
+
+#: includes/arrays.php
+msgid "Notification Timing"
+msgstr "توقيت الإشعارات"
+
+#: includes/arrays.php
+msgid "Trigger"
+msgstr "مشغل"
+
+#: includes/arrays.php
+msgid "How many minutes the URL must be down before it will send an alert.  After an alert is sent, in order for a 'Site Recovering' Email to be send, it must also be up this number of minutes."
+msgstr "عدد الدقائق التي يجب أن يكون فيها عنوان URL متوقفاً قبل إرسال تنبيه. وبعد إرسال التنبيه، ولكي يتم إرسال بريد إلكتروني بعنوان «تعافي الموقع»، يجب أن يظل متاحاً لنفس هذا العدد من الدقائق."
+
+#: includes/arrays.php
+msgid "Time Out"
+msgstr "انتهاء المهلة"
+
+#: includes/arrays.php
+msgid "How many seconds to allow the page to timeout before reporting it as down."
+msgstr "عدد الثواني المسموح بها قبل انتهاء مهلة تحميل الصفحة والإبلاغ عن توقفها."
+
+#: includes/arrays.php
+msgid "Verification Strings"
+msgstr "سلاسل التحقق"
+
+#: includes/arrays.php
+msgid "Response Search String"
+msgstr "نص البحث في الاستجابة"
+
+#: includes/arrays.php
+msgid "This is the string to search for in the URL response for a live and working Web Service."
+msgstr "هذه هي السلسلة النصية للبحث عنها في استجابة عنوان URL للتأكد من أن خدمة الويب نشطة وتعمل."
+
+#: includes/arrays.php
+msgid "Response Search String - Maintenance Page"
+msgstr "نص البحث في الاستجابة - صفحة الصيانة"
+
+#: includes/arrays.php
+msgid "This is the string to search for on the Maintenance Page.  The Service Check will check for this string if the above string is not found.  If found, it means that the Web Service is under maintenance."
+msgstr "هذه هي السلسلة النصية للبحث عنها في صفحة الصيانة. سيتحقق فحص الخدمة من وجود هذه السلسلة إذا لم يتم العثور على السلسلة المذكورة أعلاه. وإذا وُجدت، فهذا يعني أن خدمة الويب قيد الصيانة."
+
+#: includes/arrays.php
+msgid "Response Search String - Failed"
+msgstr "نص البحث في الاستجابة - فشل"
+
+#: includes/arrays.php
+msgid "This is the string to search for a known failure in the Web Service response.  The Service Check will only alert if this string is found, ignoring any timeout issues and the search strings above."
+msgstr "هذه هي السلسلة النصية للبحث عن فشل معروف في استجابة خدمة الويب. لن يُصدر فحص الخدمة تنبيهًا إلا إذا تم العثور على هذه السلسلة، مع تجاهل أي مشكلات في مهلة الانتظار وسلاسل البحث المذكورة أعلاه."
+
+#: includes/arrays.php
+msgid "Notification Settings"
+msgstr "إعدادات الإشعار"
+
+#: includes/arrays.php
+msgid "Notify Format"
+msgstr "تنسيق الإشعار"
+
+#: includes/arrays.php
+msgid "This is the format to use when sending the notification email"
+msgstr "هذا هو التنسيق المستخدم عند إرسال البريد الإلكتروني للإشعار"
+
+#: includes/arrays.php
+msgid "Notification List"
+msgstr "قائمة الإشعارات"
+
+#: includes/arrays.php
+msgid "Use this Notification List for those to be notified when this website goes down."
+msgstr "استخدم قائمة الإشعارات هذه لإبلاغ المعنيين عند توقف هذا الموقع الإلكتروني."
+
+#: includes/arrays.php
+msgid "Notify Accounts"
+msgstr "حسابات الإشعار"
+
+#: includes/arrays.php
+msgid "This is a listing of accounts that will be notified when this website goes down."
+msgstr "هذه قائمة بالحسابات التي سيتم إشعارها عند توقف هذا الموقع الإلكتروني."
+
+#: includes/arrays.php
+msgid "Extra Alert Emails"
+msgstr "عناوين بريد إلكتروني إضافية للتنبيهات"
+
+#: includes/arrays.php
+msgid "You may specify here extra Emails to receive alerts for this URL (comma separated)"
+msgstr "يمكنك تحديد عناوين بريد إلكتروني إضافية هنا لتلقي تنبيهات لهذا الرابط (مفصولة بفواصل)"
+
+#: includes/functions.php webseer.php
+msgid "Checks"
+msgstr "الفحوصات"
+
+#: includes/functions.php webseer_servers.php
+msgid "Servers"
+msgstr "السيرفرات"
+
+#: includes/functions.php webseer_proxies.php
+msgid "Proxies"
+msgstr "الوكلاء"
+
+#: includes/functions.php
+msgid "Log History"
+msgstr "محفوظات السجل"
+
+#: poller_webseer.php
+msgid "Cacti Master"
+msgstr "خادم Cacti الرئيسي"
+
+#: poller_webseer.php
+msgid "Cacti Remote Server"
+msgstr "خادم Cacti البعيد"
+
+#: setup.php
+msgid "Web Service Check Admin"
+msgstr "إدارة فحص خدمات الويب"
+
+#: setup.php
+msgid "Management"
+msgstr "الإدارة"
+
+#: setup.php
+msgid "Service Checks"
+msgstr "فحوصات الخدمات"
+
+#: setup.php
+msgid "WebSeer Service Checks"
+msgstr "فحوصات خدمة WebSeer"
+
+#: setup.php
+msgid "Service Check Edit"
+msgstr "تحرير فحص الخدمة"
+
+#: setup.php
+msgid "Service Check Save"
+msgstr "حفظ فحص الخدمة"
+
+#: setup.php
+msgid "WebSeer Servers"
+msgstr "خوادم WebSeer"
+
+#: setup.php
+msgid "Server Edit"
+msgstr "تحرير الخادم"
+
+#: setup.php
+msgid "Save Server"
+msgstr "حفظ الخادم"
+
+#: setup.php
+msgid "WebSeer Proxies"
+msgstr "وكلاء WebSeer"
+
+#: setup.php
+msgid "Proxie Edit"
+msgstr "تحرير الوكيل"
+
+#: setup.php
+msgid "Save Proxy"
+msgstr "حفظ الوكيل"
+
+#: webseer.php
+msgid "Click 'Continue' to Delete the following URL."
+msgid_plural "Click 'Continue' to Delete following URLs."
+msgstr[0] "انقر على 'إستمرار' لحذف عناوين URL التالية."
+msgstr[1] "انقر على 'إستمرار' لحذف عنوان URL التالي."
+msgstr[2] "انقر على 'إستمرار' لحذف عنواني URL التاليين."
+msgstr[3] "انقر على 'إستمرار' لحذف عناوين URL التالية."
+msgstr[4] "انقر على 'إستمرار' لحذف عناوين URL التالية."
+msgstr[5] "انقر على 'إستمرار' لحذف عناوين URL التالية."
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Cancel"
+msgstr "إلغاء"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Continue"
+msgstr "إستمرار"
+
+#: webseer.php
+msgid "Delete URL"
+msgid_plural "Delete URLs"
+msgstr[0] "حذف عناوين URL"
+msgstr[1] "حذف عنوان URL"
+msgstr[2] "حذف عنواني URL"
+msgstr[3] "حذف عناوين URL"
+msgstr[4] "حذف عناوين URL"
+msgstr[5] "حذف عناوين URL"
+
+#: webseer.php
+msgid "Click 'Continue' to Disable the following URL."
+msgid_plural "Click 'Continue' to Disable following URLs."
+msgstr[0] "انقر على 'إستمرار' لتعطيل عناوين URL التالية."
+msgstr[1] "انقر على 'إستمرار' لتعطيل عنوان URL التالي."
+msgstr[2] "انقر على 'إستمرار' لتعطيل عنواني URL التاليين."
+msgstr[3] "انقر على 'إستمرار' لتعطيل عناوين URL التالية."
+msgstr[4] "انقر على 'إستمرار' لتعطيل عناوين URL التالية."
+msgstr[5] "انقر على 'إستمرار' لتعطيل عناوين URL التالية."
+
+#: webseer.php
+msgid "Disable URL"
+msgid_plural "Disable URLs"
+msgstr[0] "تعطيل عناوين URL"
+msgstr[1] "تعطيل عنوان URL"
+msgstr[2] "تعطيل عنواني URL"
+msgstr[3] "تعطيل عناوين URL"
+msgstr[4] "تعطيل عناوين URL"
+msgstr[5] "تعطيل عناوين URL"
+
+#: webseer.php
+msgid "Click 'Continue' to Enable the following URL."
+msgid_plural "Click 'Continue' to Enable following URLs."
+msgstr[0] "انقر على 'إستمرار' لتفعيل عناوين URL التالية."
+msgstr[1] "انقر على 'إستمرار' لتفعيل عنوان URL التالي."
+msgstr[2] "انقر على 'إستمرار' لتفعيل عنواني URL التاليين."
+msgstr[3] "انقر على 'إستمرار' لتفعيل عناوين URL التالية."
+msgstr[4] "انقر على 'إستمرار' لتفعيل عناوين URL التالية."
+msgstr[5] "انقر على 'إستمرار' لتفعيل عناوين URL التالية."
+
+#: webseer.php
+msgid "Enable URL"
+msgid_plural "Enable URLs"
+msgstr[0] "تفعيل عناوين URL"
+msgstr[1] "تفعيل عنوان URL"
+msgstr[2] "تفعيل عنواني URL"
+msgstr[3] "تفعيل عناوين URL"
+msgstr[4] "تفعيل عناوين URL"
+msgstr[5] "تفعيل عناوين URL"
+
+#: webseer.php
+msgid "Click 'Continue' to Duplicate the following URL."
+msgid_plural "Click 'Continue' to Duplicate following URLs."
+msgstr[0] "انقر على 'إستمرار' لتكرار عناوين URL التالية."
+msgstr[1] "انقر على 'إستمرار' لتكرار عنوان URL التالي."
+msgstr[2] "انقر على 'إستمرار' لتكرار عنواني URL التاليين."
+msgstr[3] "انقر على 'إستمرار' لتكرار عناوين URL التالية."
+msgstr[4] "انقر على 'إستمرار' لتكرار عناوين URL التالية."
+msgstr[5] "انقر على 'إستمرار' لتكرار عناوين URL التالية."
+
+#: webseer.php
+msgid "Duplicate URL"
+msgid_plural "Duplicate URLs"
+msgstr[0] "تكرار عناوين URL"
+msgstr[1] "تكرار عنوان URL"
+msgstr[2] "تكرار عنواني URL"
+msgstr[3] "تكرار عناوين URL"
+msgstr[4] "تكرار عناوين URL"
+msgstr[5] "تكرار عناوين URL"
+
+#: webseer.php
+#, php-format
+msgid "The Service Check history was purged for %s"
+msgstr "تمت إزالة سجل فحص الخدمة لـ %s"
+
+#: webseer.php webseer_servers.php
+#, php-format
+msgid "Query [edit: %s]"
+msgstr "استعلام [تحرير: %s]"
+
+#: webseer.php webseer_servers.php
+msgid "Query [new]"
+msgstr "استعلام [جديد]"
+
+#: webseer.php
+msgid "No Users Selected"
+msgstr "لم يتم تحديد أي مستخدمين"
+
+#: webseer.php
+msgid "Users Selected"
+msgstr "مستخدمين مختارين"
+
+#: webseer.php
+msgid "All Users Selected"
+msgstr "تم تحديد جميع المستخدمين"
+
+#: webseer.php
+msgid "All"
+msgstr "الكل"
+
+#: webseer.php webseer_proxies.php
+msgid "Search"
+msgstr "بحث"
+
+#: webseer.php webseer_servers.php
+msgid "Date"
+msgstr "التاريخ"
+
+#: webseer.php webseer_servers.php
+msgid "Error"
+msgstr "خطأ"
+
+#: webseer.php webseer_servers.php
+msgid "HTTP Code"
+msgstr "رمز HTTP"
+
+#: webseer.php webseer_servers.php
+msgid "DNS"
+msgstr "خوادم DNS البديلة"
+
+#: webseer.php webseer_servers.php
+msgid "Connect"
+msgstr "اتصل"
+
+#: webseer.php webseer_servers.php
+msgid "Redirect"
+msgstr "إعادة توجيه"
+
+#: webseer.php webseer_servers.php
+msgid "Total"
+msgstr "الإجمالي"
+
+#: webseer.php
+msgid "Urls"
+msgstr "عناوين URL"
+
+#: webseer.php
+msgid "Service Down"
+msgstr "الخدمة متوقفة"
+
+#: webseer.php
+msgid "Service Restored"
+msgstr "تمت استعادة الخدمة"
+
+#: webseer.php
+msgid "No Service Check Events in History"
+msgstr "لا توجد أحداث فحص خدمة في السجل"
+
+#: webseer.php webseer_servers.php
+msgid "Actions"
+msgstr "أفعال"
+
+#: webseer.php
+msgid "Status"
+msgstr "الحالة"
+
+#: webseer.php webseer_servers.php
+msgid "Enabled"
+msgstr "مفعل"
+
+#: webseer.php
+msgid "Auth"
+msgstr "المصادقة"
+
+#: webseer.php
+msgid "Timeout"
+msgstr "المهلة"
+
+#: webseer.php webseer_servers.php
+msgid "Last Check"
+msgstr "اخر فحص"
+
+#: webseer.php
+msgid "Edit Service Check"
+msgstr "تحرير فحص الخدمة"
+
+#: webseer.php
+msgid "Disable Service Check"
+msgstr "تعطيل فحص الخدمة"
+
+#: webseer.php
+msgid "View Service Check History"
+msgstr "عرض سجل فحص الخدمة"
+
+#: webseer.php
+#, php-format
+msgid "DNS: Server %s - A Record for %s"
+msgstr "DNS: الخادم %s - سجل A لـ %s"
+
+#: webseer.php
+msgid "N/A"
+msgstr "N/A"
+
+#: webseer.php webseer_servers.php
+msgid "Down"
+msgstr "متوقف"
+
+#: webseer.php webseer_servers.php
+msgid "Up"
+msgstr "أعلى"
+
+#: webseer.php webseer_servers.php
+msgid "Disabled"
+msgstr "معطل"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "No Servers Found"
+msgstr "لم يتم العثور على خوادم"
+
+#: webseer.php
+msgid "Webseer Service Checks"
+msgstr "فحوصات خدمة Webseer"
+
+#: webseer.php webseer_servers.php
+msgid "State"
+msgstr "الحالة"
+
+#: webseer.php webseer_servers.php
+msgid "Any"
+msgstr "الجميع"
+
+#: webseer.php webseer_servers.php
+msgid "Refresh"
+msgstr "تحديث"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Default"
+msgstr "الافتراضي"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Go"
+msgstr "انتقال"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Clear"
+msgstr "مسح"
+
+#: webseer.php
+msgid "Webseer Service Check History"
+msgstr "سجل فحص خدمة Webseer"
+
+#: webseer.php webseer_servers.php
+msgid "Date Search"
+msgstr "تاريخ البحث"
+
+#: webseer.php webseer_servers.php
+msgid "Entries"
+msgstr "مقالات"
+
+#: webseer.php
+msgid "Purge Events"
+msgstr "أحداث التطهير"
+
+#: webseer_proxies.php
+msgid "Click 'Continue' to delete the following Proxy."
+msgid_plural "Click 'Continue' to delete following Proxies."
+msgstr[0] "انقر على 'إستمرار' لحذف الوكلاء التالية."
+msgstr[1] "انقر على 'إستمرار' لحذف الوكيل التالي."
+msgstr[2] "انقر على 'إستمرار' لحذف الوكيلين التاليين."
+msgstr[3] "انقر على 'إستمرار' لحذف الوكلاء التالية."
+msgstr[4] "انقر على 'إستمرار' لحذف الوكلاء التالية."
+msgstr[5] "انقر على 'إستمرار' لحذف الوكلاء التالية."
+
+#: webseer_proxies.php
+msgid "Delete Proxy"
+msgid_plural "Delete Proxies"
+msgstr[0] "حذف وكلاء"
+msgstr[1] "حذف وكيل"
+msgstr[2] "حذف وكيلين"
+msgstr[3] "حذف وكلاء"
+msgstr[4] "حذف وكلاء"
+msgstr[5] "حذف وكلاء"
+
+#: webseer_proxies.php
+#, php-format
+msgid "Proxy [edit: %s]"
+msgstr "الوكيل [تحرير: %s]"
+
+#: webseer_proxies.php
+msgid "Proxy [new]"
+msgstr "الوكيل [جديد]"
+
+#: webseer_proxies.php
+msgid "Ports (http/https)"
+msgstr "المنافذ (http/https)"
+
+#: webseer_proxies.php
+msgid "Username"
+msgstr "اسم المستخدم"
+
+#: webseer_proxies.php
+msgid "Not Set"
+msgstr "غير معيّن"
+
+#: webseer_proxies.php
+msgid "Webseer Proxy Management"
+msgstr "إدارة وكيل Webseer"
+
+#: webseer_servers.php
+msgid "Click 'Continue' to Delete the following Server."
+msgid_plural "Click 'Continue' to Delete following Servers."
+msgstr[0] "انقر على 'إستمرار' لحذف الخوادم التالية."
+msgstr[1] "انقر على 'إستمرار' لحذف الخادم التالي."
+msgstr[2] "انقر على 'إستمرار' لحذف الخادمين التاليين."
+msgstr[3] "انقر على 'إستمرار' لحذف الخوادم التالية."
+msgstr[4] "انقر على 'إستمرار' لحذف الخوادم التالية."
+msgstr[5] "انقر على 'إستمرار' لحذف الخوادم التالية."
+
+#: webseer_servers.php
+msgid "Delete Server"
+msgid_plural "Delete Servers"
+msgstr[0] "حذف خوادم"
+msgstr[1] "حذف خادم"
+msgstr[2] "حذف خادمين"
+msgstr[3] "حذف خوادم"
+msgstr[4] "حذف خوادم"
+msgstr[5] "حذف خوادم"
+
+#: webseer_servers.php
+msgid "Click 'Continue' to Disable the following Server."
+msgid_plural "Click 'Continue' to Disable following Servers."
+msgstr[0] "انقر على 'إستمرار' لتعطيل الخوادم التالية."
+msgstr[1] "انقر على 'إستمرار' لتعطيل الخادم التالي."
+msgstr[2] "انقر على 'إستمرار' لتعطيل الخادمين التاليين."
+msgstr[3] "انقر على 'إستمرار' لتعطيل الخوادم التالية."
+msgstr[4] "انقر على 'إستمرار' لتعطيل الخوادم التالية."
+msgstr[5] "انقر على 'إستمرار' لتعطيل الخوادم التالية."
+
+#: webseer_servers.php
+msgid "Disable Server"
+msgid_plural "Disable Servers"
+msgstr[0] "تعطيل خوادم"
+msgstr[1] "تعطيل خادم"
+msgstr[2] "تعطيل خادمين"
+msgstr[3] "تعطيل خوادم"
+msgstr[4] "تعطيل خوادم"
+msgstr[5] "تعطيل خوادم"
+
+#: webseer_servers.php
+msgid "Click 'Continue' to Enable the following Server."
+msgid_plural "Click 'Continue' to Enable following Servers."
+msgstr[0] "انقر على 'إستمرار' لتفعيل الخوادم التالية."
+msgstr[1] "انقر على 'إستمرار' لتفعيل الخادم التالي."
+msgstr[2] "انقر على 'إستمرار' لتفعيل الخادمين التاليين."
+msgstr[3] "انقر على 'إستمرار' لتفعيل الخوادم التالية."
+msgstr[4] "انقر على 'إستمرار' لتفعيل الخوادم التالية."
+msgstr[5] "انقر على 'إستمرار' لتفعيل الخوادم التالية."
+
+#: webseer_servers.php
+msgid "No Events in History"
+msgstr "لا توجد أحداث في السجل"
+
+#: webseer_servers.php
+msgid "Master"
+msgstr "رئيسي"
+
+#: webseer_servers.php
+msgid "This Host"
+msgstr "هذا المستضيف Host"
+
+#: webseer_servers.php
+msgid "Edit Server"
+msgstr "تحرير الخادم"
+
+#: webseer_servers.php
+msgid "View Server History"
+msgstr "عرض سجل الخادم"
+
+#: webseer_servers.php
+msgid "No"
+msgstr "لا"
+
+#: webseer_servers.php
+msgid "Yes"
+msgstr "نعم"
+
+#: webseer_servers.php
+msgid "Webseer Servers"
+msgstr "خوادم Webseer"
+
+#: webseer_servers.php
+msgid "Triggered"
+msgstr "تشغيل"
+
+#: webseer_servers.php
+msgid "Webseer Server History"
+msgstr "سجل خادم Webseer"
+

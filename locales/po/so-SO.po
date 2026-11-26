@@ -1,0 +1,726 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR The Cacti Group
+# This file is distributed under the same license as the Cacti package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Cacti\n"
+"Report-Msgid-Bugs-To: developers@cacti.net\n"
+"POT-Creation-Date: 2026-09-28 16:09-0400\n"
+"PO-Revision-Date: 2026-11-24 19:00+0000\n"
+"Last-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\n"
+"Language-Team: Somali\n"
+"Language: so-SO\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: includes/arrays.php webseer_servers.php
+#, php-format
+msgid "%d Minute"
+msgstr "%d Daqiiqo"
+
+#: includes/arrays.php webseer_servers.php
+#, php-format
+msgid "%d Minutes"
+msgstr "%d Daqiiqo"
+
+#: includes/arrays.php webseer_servers.php
+#, php-format
+msgid "%d Seconds"
+msgstr "%d Ilbiriqsi"
+
+#: includes/arrays.php
+msgid "Delete"
+msgstr "Tirtir"
+
+#: includes/arrays.php
+msgid "Disable"
+msgstr "Hawl-jooji"
+
+#: includes/arrays.php
+msgid "Enable"
+msgstr "Hawl-geli"
+
+#: includes/arrays.php
+msgid "Duplicate"
+msgstr "Nuqul labaad"
+
+#: includes/arrays.php webseer.php webseer_proxies.php webseer_servers.php
+msgid "Name"
+msgstr "Magac"
+
+#: includes/arrays.php
+msgid "A Useful Name for this Proxy."
+msgstr "Magac waxtar leh oo loogu talagalay Proxy-gan."
+
+#: includes/arrays.php
+msgid "New Proxy"
+msgstr "Proxy Cusub"
+
+#: includes/arrays.php webseer_proxies.php
+msgid "Hostname"
+msgstr "Magaca Martigeliyaha"
+
+#: includes/arrays.php
+msgid "The Proxy Hostname."
+msgstr "Magaca martigeliyaha Proxy-ga."
+
+#: includes/arrays.php
+msgid "HTTP Port"
+msgstr "Marinka HTTP"
+
+#: includes/arrays.php
+msgid "The HTTP Proxy Port."
+msgstr "Dekedda Wakiilka HTTP."
+
+#: includes/arrays.php
+msgid "HTTPS Port"
+msgstr "Marinka HTTPS"
+
+#: includes/arrays.php
+msgid "The HTTPS Proxy Port."
+msgstr "Dekedda Wakiilka HTTPS."
+
+#: includes/arrays.php
+msgid "User Name"
+msgstr "Magaca Isticmaalaha"
+
+#: includes/arrays.php
+msgid "The user to use to authenticate with the Proxy if any."
+msgstr "Isticmaalaha loo adeegsado xaqiijinta Proxy-ga haddii uu jiro."
+
+#: includes/arrays.php
+msgid "Password"
+msgstr "Erayga sirta ah"
+
+#: includes/arrays.php
+msgid "The user password to use to authenticate with the Proxy if any."
+msgstr "Erayga sirta ah ee isticmaalaha ee loo adeegsado xaqiijinta Proxy-ga haddii uu jiro."
+
+#: includes/arrays.php
+msgid "General Settings"
+msgstr "Dejinta Guud"
+
+#: includes/arrays.php
+msgid "Display Name of this server"
+msgstr "Magaca Muuqda ee serferkan"
+
+#: includes/arrays.php webseer_servers.php
+msgid "Enable Server"
+msgid_plural "Enable Servers"
+msgstr[0] "Hawlgeli Adeegaha"
+msgstr[1] "Hawlgeli Adeegayaasha"
+
+#: includes/arrays.php
+msgid "Uncheck this box to disabled this server from checking urls."
+msgstr "Ka saar calaamadda sanduuqan si aad u joojiso in adeegahani hubiyo URL-yada."
+
+#: includes/arrays.php
+msgid "Is this server the local server?"
+msgstr "Server-kan ma yahay server-ka maxalliga ah?"
+
+#: includes/arrays.php
+msgid "Check this box if the current server you are connected to is this entry."
+msgstr "Calaamadee sanduuqan haddii server-ka hadda aad ku xiran tahay uu yahay gelitaankan."
+
+#: includes/arrays.php
+msgid "Master Server"
+msgstr "Adeegaha Aasaasiga ah"
+
+#: includes/arrays.php
+msgid "Sets this server to the Master server.  The Master server handles all Email operations"
+msgstr "Wuxuu server-kan u dejiyaa inuu noqdo server-ka Master.  Server-ka Master wuxuu maamulaa dhammaan hawlgallada Iimaylka"
+
+#: includes/arrays.php webseer_servers.php
+msgid "IP Address"
+msgstr "Ciwaanka IP"
+
+#: includes/arrays.php
+msgid "IP Address to connect to this server"
+msgstr "Ciwaanka IP ee lagula xiriiro server-kan"
+
+#: includes/arrays.php webseer.php webseer_servers.php
+msgid "URL"
+msgstr "URL"
+
+#: includes/arrays.php
+msgid "This is the URL to connect to remote.php on this server."
+msgstr "Kani waa URL-ka lagu xiro remote.php ee adeegahan ku yaal."
+
+#: includes/arrays.php webseer_servers.php
+msgid "Location"
+msgstr "Goobta"
+
+#: includes/arrays.php
+msgid "Location of this server"
+msgstr "Goobta adeegahan"
+
+#: includes/arrays.php
+msgid "Service Check Name"
+msgstr "Magaca Hubinta Adeegga"
+
+#: includes/arrays.php
+msgid "The name that is displayed for this Service Check, and is included in any Alert notifications."
+msgstr "Magaca loo soo bandhigo Hubintan Adeegga, laguna daro ogeysiisyada qaylo-dhaanta kasta."
+
+#: includes/arrays.php webseer.php
+msgid "Enable Service Check"
+msgstr "Hawlgeli Hubinta Adeegga"
+
+#: includes/arrays.php
+msgid "Uncheck this box to disabled this url from being checked."
+msgstr "Ka saar calaamadda sanduuqan si aad u joojiso hubinta URL-kan."
+
+#: includes/arrays.php
+msgid "The URL to Monitor"
+msgstr "URL-ka la kormeerayo"
+
+#: includes/arrays.php
+msgid "Enter an IP address to connect to.  Leaving blank will use DNS Resolution instead."
+msgstr "Geli ciwaanka IP si loogu xirmo. Bannaanka oo loo daayo waxaa la adeegsan doonaa Xallinta DNS."
+
+#: includes/arrays.php
+msgid "Proxy Server"
+msgstr "Adeegaha Wakiilka (Proxy)"
+
+#: includes/arrays.php
+msgid "If this connection text requires a proxy, select it here.  Otherwise choose 'None'."
+msgstr "Haddii qoraalkan isku xirku uu u baahan yahay wakiil (proxy), halkan ka dooro. Haddii kale dooro 'Midna'."
+
+#: includes/arrays.php webseer.php
+msgid "None"
+msgstr "Midna"
+
+#: includes/arrays.php webseer.php
+msgid "Compression"
+msgstr "Cadaadis"
+
+#: includes/arrays.php
+msgid "What compression does the server require?  Most servers should not need this, but some will not redirect properly without it."
+msgstr "Cadaadis noocee ah ayuu adeeguhu u baahan yahay?  Adeegayaasha badankood uma baahna tan, laakiin qaarkood si sax ah uma leexin doonaan iyada la'aanteed."
+
+#: includes/arrays.php
+msgid "Available Checks"
+msgstr "Hubinnada la heli karo"
+
+#: includes/arrays.php
+msgid "Requires Authentication"
+msgstr "Wuxuu U Baahan Yahay Xaqiijin"
+
+#: includes/arrays.php
+msgid "Check this box if the site will normally return a 401 Error as it requires a username and password."
+msgstr "Calaamadee sanduuqan haddii goobta ay caadiyan soo celiso Khalad 401 ah maadaama ay u baahan tahay magaca isticmaalaha iyo erayga sirta ah."
+
+#: includes/arrays.php
+msgid "Check Certificate"
+msgstr "Hubi Shahaadada"
+
+#: includes/arrays.php
+msgid "If using SSL, check this box if you want to validate the certificate. Default on, turn off if you the site uses a self-signed certificate."
+msgstr "Haddii la isticmaalayo SSL, calaamadee sanduuqan haddii aad rabto inaad xaqiijiso shahaadada. Sida caadiga ah way shidan tahay, dami haddii Goobtu ay isticmaasho shahaado ay iyadu iska saxeexday."
+
+#: includes/arrays.php
+msgid "Notification Timing"
+msgstr "Wakhtiga Ogeysiiska"
+
+#: includes/arrays.php
+msgid "Trigger"
+msgstr "Kiciye"
+
+#: includes/arrays.php
+msgid "How many minutes the URL must be down before it will send an alert.  After an alert is sent, in order for a 'Site Recovering' Email to be send, it must also be up this number of minutes."
+msgstr "Immisa daqiiqo ayay tahay in URL-ku maqnaado ka hor inta uusan dirin digniin. Ka dib marka digniin la diro, si loo diro Iimayl 'Goobta Soo Kabanaysa', waa inuu sidoo kale shaqeeyaa tiradaas daqiiqadaha ah."
+
+#: includes/arrays.php
+msgid "Time Out"
+msgstr "Waqti Dhammaad"
+
+#: includes/arrays.php
+msgid "How many seconds to allow the page to timeout before reporting it as down."
+msgstr "Immisa ilbiriqsi ayaa loo oggolaanayaa bogga ka hor inta uusan waqtigu ka dhicin si loo soo sheego inuu maqan yahay."
+
+#: includes/arrays.php
+msgid "Verification Strings"
+msgstr "Xarfaha Xaqiijinta"
+
+#: includes/arrays.php
+msgid "Response Search String"
+msgstr "Xarigga Raadinta Jawaabta"
+
+#: includes/arrays.php
+msgid "This is the string to search for in the URL response for a live and working Web Service."
+msgstr "Kani waa xarfo-taxaha laga raadinayo jawaabta URL ee Adeeg Web oo nool oo shaqeynaya."
+
+#: includes/arrays.php
+msgid "Response Search String - Maintenance Page"
+msgstr "Xarigga Raadinta Jawaabta - Bogga Dayactirka"
+
+#: includes/arrays.php
+msgid "This is the string to search for on the Maintenance Page.  The Service Check will check for this string if the above string is not found.  If found, it means that the Web Service is under maintenance."
+msgstr "Kani waa xarfo-taxaha laga raadinayo Bogga Dayactirka. Hubinta Adeeggu waxay eegi doontaa xarfo-taxahan haddii aan la helin xarfo-taxaha sare. Haddii la helo, waxay ka dhigan tahay in Adeegga Webku uu ku jiro dayactir."
+
+#: includes/arrays.php
+msgid "Response Search String - Failed"
+msgstr "Xarigga Raadinta Jawaabta - Wuu Fashilmay"
+
+#: includes/arrays.php
+msgid "This is the string to search for a known failure in the Web Service response.  The Service Check will only alert if this string is found, ignoring any timeout issues and the search strings above."
+msgstr "Kani waa xarfo-taxaha laga raadinayo fashil la yaqaan oo ku jira jawaabta Adeegga Webka. Hubinta Adeeggu waxay qaylo-dhaan bixin doontaa oo keliya haddii xarfo-taxahan la helo, iyadoo iska indha tiraysa arrimaha wakhti-dhammaadka iyo xarfo-taxayaasha raadinta ee sare."
+
+#: includes/arrays.php
+msgid "Notification Settings"
+msgstr "Dejinta Ogeysiisyada"
+
+#: includes/arrays.php
+msgid "Notify Format"
+msgstr "Qaabka Ogeysiiska"
+
+#: includes/arrays.php
+msgid "This is the format to use when sending the notification email"
+msgstr "Kani waa qaabka loo adeegsado marka la dirayo iimaylka ogeysiiska"
+
+#: includes/arrays.php
+msgid "Notification List"
+msgstr "Liiska Ogeysiiska"
+
+#: includes/arrays.php
+msgid "Use this Notification List for those to be notified when this website goes down."
+msgstr "U isticmaal Liiskan Ogeysiiska kuwa la ogeysiinayo marka degelkani istaago."
+
+#: includes/arrays.php
+msgid "Notify Accounts"
+msgstr "Ogeysii Akoonnada"
+
+#: includes/arrays.php
+msgid "This is a listing of accounts that will be notified when this website goes down."
+msgstr "Kani waa liiska koontooyinka la ogeysiin doono marka boggani shaqada joojiyo."
+
+#: includes/arrays.php
+msgid "Extra Alert Emails"
+msgstr "Iimayllada Digniinta Dheeraadka ah"
+
+#: includes/arrays.php
+msgid "You may specify here extra Emails to receive alerts for this URL (comma separated)"
+msgstr "Waxaad halkan ku cayimi kartaa Iimayllo dheeraad ah si ay u helaan qaylo-dhaanta URL-kan (kooma ku kala saar)"
+
+#: includes/functions.php webseer.php
+msgid "Checks"
+msgstr "Hubinta"
+
+#: includes/functions.php webseer_servers.php
+msgid "Servers"
+msgstr "Adeegayaasha"
+
+#: includes/functions.php webseer_proxies.php
+msgid "Proxies"
+msgstr "Proxy-yada"
+
+#: includes/functions.php
+msgid "Log History"
+msgstr "Taariikhda Diiwaanka"
+
+#: poller_webseer.php
+msgid "Cacti Master"
+msgstr "Cacti-ga Sare"
+
+#: poller_webseer.php
+msgid "Cacti Remote Server"
+msgstr "Adeegaha Fog ee Cacti"
+
+#: setup.php
+msgid "Web Service Check Admin"
+msgstr "Maamulka Hubinta Adeegga Webka"
+
+#: setup.php
+msgid "Management"
+msgstr "Maamul"
+
+#: setup.php
+msgid "Service Checks"
+msgstr "Hubinnada Adeegga"
+
+#: setup.php
+msgid "WebSeer Service Checks"
+msgstr "Hubinta Adeegyada WebSeer"
+
+#: setup.php
+msgid "Service Check Edit"
+msgstr "Wax ka beddelka Hubinta Adeegga"
+
+#: setup.php
+msgid "Service Check Save"
+msgstr "Keydinta Hubinta Adeegga"
+
+#: setup.php
+msgid "WebSeer Servers"
+msgstr "Adeegayaasha WebSeer"
+
+#: setup.php
+msgid "Server Edit"
+msgstr "Wax ka beddelka Adeegaha"
+
+#: setup.php
+msgid "Save Server"
+msgstr "Keydi Adeegaha"
+
+#: setup.php
+msgid "WebSeer Proxies"
+msgstr "Proxy-yada WebSeer"
+
+#: setup.php
+msgid "Proxie Edit"
+msgstr "Wax ka beddelka Proxy"
+
+#: setup.php
+msgid "Save Proxy"
+msgstr "Keydi Proxy"
+
+#: webseer.php
+msgid "Click 'Continue' to Delete the following URL."
+msgid_plural "Click 'Continue' to Delete following URLs."
+msgstr[0] "Guji 'Sii wad' si aad u Tirtirto URL-ka soo socda."
+msgstr[1] "Guji 'Sii wad' si aad u Tirtirto URL-yada soo socda."
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Cancel"
+msgstr "Jooji"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Continue"
+msgstr "Sii wad"
+
+#: webseer.php
+msgid "Delete URL"
+msgid_plural "Delete URLs"
+msgstr[0] "Tirtir URL-ka"
+msgstr[1] "Tirtir URL-yada"
+
+#: webseer.php
+msgid "Click 'Continue' to Disable the following URL."
+msgid_plural "Click 'Continue' to Disable following URLs."
+msgstr[0] "Guji 'Sii wad' si aad u Joojiso URL-ka soo socda."
+msgstr[1] "Guji 'Sii wad' si aad u Joojiso URL-yada soo socda."
+
+#: webseer.php
+msgid "Disable URL"
+msgid_plural "Disable URLs"
+msgstr[0] "Jooji URL-ka"
+msgstr[1] "Jooji URL-yada"
+
+#: webseer.php
+msgid "Click 'Continue' to Enable the following URL."
+msgid_plural "Click 'Continue' to Enable following URLs."
+msgstr[0] "Guji 'Sii wad' si aad u Hawlgeliso URL-ka soo socda."
+msgstr[1] "Guji 'Sii wad' si aad u Hawlgeliso URL-yada soo socda."
+
+#: webseer.php
+msgid "Enable URL"
+msgid_plural "Enable URLs"
+msgstr[0] "Hawlgeli URL-ka"
+msgstr[1] "Hawlgeli URL-yada"
+
+#: webseer.php
+msgid "Click 'Continue' to Duplicate the following URL."
+msgid_plural "Click 'Continue' to Duplicate following URLs."
+msgstr[0] "Guji 'Sii wad' si aad Nuqul uga samayso URL-ka soo socda."
+msgstr[1] "Guji 'Sii wad' si aad Nuqul uga samayso URL-yada soo socda."
+
+#: webseer.php
+msgid "Duplicate URL"
+msgid_plural "Duplicate URLs"
+msgstr[0] "Nuqul ka samee URL-ka"
+msgstr[1] "Nuqul ka samee URL-yada"
+
+#: webseer.php
+#, php-format
+msgid "The Service Check history was purged for %s"
+msgstr "Taariikhda Hubinta Adeegga waa laga nadiifiyay %s"
+
+#: webseer.php webseer_servers.php
+#, php-format
+msgid "Query [edit: %s]"
+msgstr "Weydiin [wax ka beddel: %s]"
+
+#: webseer.php webseer_servers.php
+msgid "Query [new]"
+msgstr "Weydiin [cusub]"
+
+#: webseer.php
+msgid "No Users Selected"
+msgstr "Isticmaalayaal Lama Dooran"
+
+#: webseer.php
+msgid "Users Selected"
+msgstr "Isticmaalayaasha La Doortay"
+
+#: webseer.php
+msgid "All Users Selected"
+msgstr "Dhammaan Isticmaalayaasha La Doortay"
+
+#: webseer.php
+msgid "All"
+msgstr "Dhammaan"
+
+#: webseer.php webseer_proxies.php
+msgid "Search"
+msgstr "Raadi"
+
+#: webseer.php webseer_servers.php
+msgid "Date"
+msgstr "Taariikhda"
+
+#: webseer.php webseer_servers.php
+msgid "Error"
+msgstr "Cilad"
+
+#: webseer.php webseer_servers.php
+msgid "HTTP Code"
+msgstr "Koodhka HTTP"
+
+#: webseer.php webseer_servers.php
+msgid "DNS"
+msgstr "DNS"
+
+#: webseer.php webseer_servers.php
+msgid "Connect"
+msgstr "Ku xidh"
+
+#: webseer.php webseer_servers.php
+msgid "Redirect"
+msgstr "U leexi"
+
+#: webseer.php webseer_servers.php
+msgid "Total"
+msgstr "Wadarta"
+
+#: webseer.php
+msgid "Urls"
+msgstr "URL-yada"
+
+#: webseer.php
+msgid "Service Down"
+msgstr "Adeeggu Waa Maqan Yahay"
+
+#: webseer.php
+msgid "Service Restored"
+msgstr "Adeegga Waa La Soo Celiyay"
+
+#: webseer.php
+msgid "No Service Check Events in History"
+msgstr "Ma Jiraan Dhacdooyinka Hubinta Adeegga ee Taariikhda"
+
+#: webseer.php webseer_servers.php
+msgid "Actions"
+msgstr "Ficillada"
+
+#: webseer.php
+msgid "Status"
+msgstr "Xaaladda"
+
+#: webseer.php webseer_servers.php
+msgid "Enabled"
+msgstr "La hawlgeliyay"
+
+#: webseer.php
+msgid "Auth"
+msgstr "Xaqiijin"
+
+#: webseer.php
+msgid "Timeout"
+msgstr "Wakhtiga Dhammaadka"
+
+#: webseer.php webseer_servers.php
+msgid "Last Check"
+msgstr "Hubintii Ugu Dambeysay"
+
+#: webseer.php
+msgid "Edit Service Check"
+msgstr "Wax ka beddel Hubinta Adeegga"
+
+#: webseer.php
+msgid "Disable Service Check"
+msgstr "Jooji Hubinta Adeegga"
+
+#: webseer.php
+msgid "View Service Check History"
+msgstr "Eeg Taariikhda Hubinta Adeegga"
+
+#: webseer.php
+#, php-format
+msgid "DNS: Server %s - A Record for %s"
+msgstr "DNS: Adeegaha %s - Diiwaanka A ee %s"
+
+#: webseer.php
+msgid "N/A"
+msgstr "Ma khuseyso"
+
+#: webseer.php webseer_servers.php
+msgid "Down"
+msgstr "Ma shaqeynayo"
+
+#: webseer.php webseer_servers.php
+msgid "Up"
+msgstr "Shaqeynaya"
+
+#: webseer.php webseer_servers.php
+msgid "Disabled"
+msgstr "La joojiyay"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "No Servers Found"
+msgstr "Server-ro Lama Helin"
+
+#: webseer.php
+msgid "Webseer Service Checks"
+msgstr "Hubinta Adeegyada Webseer"
+
+#: webseer.php webseer_servers.php
+msgid "State"
+msgstr "Gobolka"
+
+#: webseer.php webseer_servers.php
+msgid "Any"
+msgstr "Mid kasta"
+
+#: webseer.php webseer_servers.php
+msgid "Refresh"
+msgstr "Cusboonaysii"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Default"
+msgstr "Asal ah"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Go"
+msgstr "Soco"
+
+#: webseer.php webseer_proxies.php webseer_servers.php
+msgid "Clear"
+msgstr "Nadiifi"
+
+#: webseer.php
+msgid "Webseer Service Check History"
+msgstr "Taariikhda Hubinta Adeegga Webseer"
+
+#: webseer.php webseer_servers.php
+msgid "Date Search"
+msgstr "Raadinta Taariikhda"
+
+#: webseer.php webseer_servers.php
+msgid "Entries"
+msgstr "Gelitaanno"
+
+#: webseer.php
+msgid "Purge Events"
+msgstr "Baabi'i Dhacdooyinka"
+
+#: webseer_proxies.php
+msgid "Click 'Continue' to delete the following Proxy."
+msgid_plural "Click 'Continue' to delete following Proxies."
+msgstr[0] "Guji 'Sii wad' si aad u tirtirto Proxy-ga soo socda."
+msgstr[1] "Guji 'Sii wad' si aad u tirtirto Proxy-yada soo socda."
+
+#: webseer_proxies.php
+msgid "Delete Proxy"
+msgid_plural "Delete Proxies"
+msgstr[0] "Tirtir Proxy-ga"
+msgstr[1] "Tirtir Proxy-yada"
+
+#: webseer_proxies.php
+#, php-format
+msgid "Proxy [edit: %s]"
+msgstr "Proxy [wax ka beddel: %s]"
+
+#: webseer_proxies.php
+msgid "Proxy [new]"
+msgstr "Proxy [cusub]"
+
+#: webseer_proxies.php
+msgid "Ports (http/https)"
+msgstr "Dekedaha (http/https)"
+
+#: webseer_proxies.php
+msgid "Username"
+msgstr "Magaca isticmaalaha"
+
+#: webseer_proxies.php
+msgid "Not Set"
+msgstr "Lama Dejin"
+
+#: webseer_proxies.php
+msgid "Webseer Proxy Management"
+msgstr "Maareynta Proxy-ga Webseer"
+
+#: webseer_servers.php
+msgid "Click 'Continue' to Delete the following Server."
+msgid_plural "Click 'Continue' to Delete following Servers."
+msgstr[0] "Guji 'Sii wad' si aad u Tirtirto Adeegaha soo socda."
+msgstr[1] "Guji 'Sii wad' si aad u Tirtirto Adeegayaasha soo socda."
+
+#: webseer_servers.php
+msgid "Delete Server"
+msgid_plural "Delete Servers"
+msgstr[0] "Tirtir Adeegaha"
+msgstr[1] "Tirtir Adeegayaasha"
+
+#: webseer_servers.php
+msgid "Click 'Continue' to Disable the following Server."
+msgid_plural "Click 'Continue' to Disable following Servers."
+msgstr[0] "Guji 'Sii wad' si aad u Joojiso Adeegaha soo socda."
+msgstr[1] "Guji 'Sii wad' si aad u Joojiso Adeegayaasha soo socda."
+
+#: webseer_servers.php
+msgid "Disable Server"
+msgid_plural "Disable Servers"
+msgstr[0] "Jooji Adeegaha"
+msgstr[1] "Jooji Adeegayaasha"
+
+#: webseer_servers.php
+msgid "Click 'Continue' to Enable the following Server."
+msgid_plural "Click 'Continue' to Enable following Servers."
+msgstr[0] "Guji 'Sii wad' si aad u Hawlgeliso Adeegaha soo socda."
+msgstr[1] "Guji 'Sii wad' si aad u Hawlgeliso Adeegayaasha soo socda."
+
+#: webseer_servers.php
+msgid "No Events in History"
+msgstr "Ma Jiraan Dhacdooyin Taariikhda ku Jira"
+
+#: webseer_servers.php
+msgid "Master"
+msgstr "Aasaasi"
+
+#: webseer_servers.php
+msgid "This Host"
+msgstr "Martigeliyahan"
+
+#: webseer_servers.php
+msgid "Edit Server"
+msgstr "Wax ka beddel Adeegaha"
+
+#: webseer_servers.php
+msgid "View Server History"
+msgstr "Eeg Taariikhda Seerfarka"
+
+#: webseer_servers.php
+msgid "No"
+msgstr "Maya"
+
+#: webseer_servers.php
+msgid "Yes"
+msgstr "Haa"
+
+#: webseer_servers.php
+msgid "Webseer Servers"
+msgstr "Adeegayaasha Webseer"
+
+#: webseer_servers.php
+msgid "Triggered"
+msgstr "La kiciyay"
+
+#: webseer_servers.php
+msgid "Webseer Server History"
+msgstr "Taariikhda Adeegaha Webseer"
+
