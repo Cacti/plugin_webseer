@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-28 16:09-0400\nPO-Revision-Date: 2026-11-25 02:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Turkish <https://translate.cacti.net/projects/cacti/webseer/tr/>\nLanguage: tr-TR\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-28 16:09-0400\nPO-Revision-Date: 2026-11-26 03:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Turkish <https://translate.cacti.net/projects/cacti/webseer/tr/>\nLanguage: tr-TR\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
 
 #: includes/arrays.php webseer_servers.php
 #, php-format
@@ -98,11 +98,10 @@ msgid "Display Name of this server"
 msgstr "Bu sunucunun Görünen Adı"
 
 #: includes/arrays.php webseer_servers.php
-#, fuzzy
 msgid "Enable Server"
 msgid_plural "Enable Servers"
 msgstr[0] "Sunucuyu Etkinleştir"
-msgstr[1] "Sunucuyu Etkinleştir"
+msgstr[1] "Sunucuları Etkinleştir"
 
 #: includes/arrays.php
 msgid "Uncheck this box to disabled this server from checking urls."
@@ -326,7 +325,7 @@ msgstr "Web Servis Kontrolü Yönetimi"
 
 #: setup.php
 msgid "Management"
-msgstr "Kullanıcı Yonetimi"
+msgstr "Yönetim"
 
 #: setup.php
 msgid "Service Checks"
@@ -369,11 +368,10 @@ msgid "Save Proxy"
 msgstr "Proxy'yi Kaydet"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Delete the following URL."
 msgid_plural "Click 'Continue' to Delete following URLs."
-msgstr[0] "Aşağıdaki Proxy'yi silmek için 'Devam Et'i tıklayın."
-msgstr[1] "Aşağıdaki Proxy'leri silmek için 'Devam Et'i tıklayın."
+msgstr[0] "Aşağıdaki URL'yi Silmek için 'Devam Et'e tıklayın."
+msgstr[1] "Aşağıdaki URL'leri Silmek için 'Devam Et'e tıklayın."
 
 #: webseer.php webseer_proxies.php webseer_servers.php
 msgid "Cancel"
@@ -384,57 +382,46 @@ msgid "Continue"
 msgstr "Devam et"
 
 #: webseer.php
-#, fuzzy
-#| msgid "Delete"
 msgid "Delete URL"
 msgid_plural "Delete URLs"
-msgstr[0] "Sil"
-msgstr[1] "Sil"
+msgstr[0] "URL'yi Sil"
+msgstr[1] "URL'leri Sil"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Disable the following URL."
 msgid_plural "Click 'Continue' to Disable following URLs."
-msgstr[0] "Aşağıdaki Proxy'yi silmek için 'Devam Et'i tıklayın."
-msgstr[1] "Aşağıdaki Proxy'leri silmek için 'Devam Et'i tıklayın."
+msgstr[0] "Aşağıdaki URL'yi Devre Dışı Bırakmak için 'Devam Et'e tıklayın."
+msgstr[1] "Aşağıdaki URL'leri Devre Dışı Bırakmak için 'Devam Et'e tıklayın."
 
 #: webseer.php
-#, fuzzy
-#| msgid "Disable"
 msgid "Disable URL"
 msgid_plural "Disable URLs"
-msgstr[0] "Devre Dışı"
-msgstr[1] "Devre Dışı"
+msgstr[0] "URL'yi Devre Dışı Bırak"
+msgstr[1] "URL'leri Devre Dışı Bırak"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Enable the following URL."
 msgid_plural "Click 'Continue' to Enable following URLs."
-msgstr[0] "Aşağıdaki Proxy'yi silmek için 'Devam Et'i tıklayın."
-msgstr[1] "Aşağıdaki Proxy'leri silmek için 'Devam Et'i tıklayın."
+msgstr[0] "Aşağıdaki URL'yi Etkinleştirmek için 'Devam Et'e tıklayın."
+msgstr[1] "Aşağıdaki URL'leri Etkinleştirmek için 'Devam Et'e tıklayın."
 
 #: webseer.php
-#, fuzzy
-#| msgid "Enable"
 msgid "Enable URL"
 msgid_plural "Enable URLs"
-msgstr[0] "Etkinleştir"
-msgstr[1] "Etkinleştir"
+msgstr[0] "URL'yi Etkinleştir"
+msgstr[1] "URL'leri Etkinleştir"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Duplicate the following URL."
 msgid_plural "Click 'Continue' to Duplicate following URLs."
-msgstr[0] "Aşağıdaki Proxy'yi silmek için 'Devam Et'i tıklayın."
-msgstr[1] "Aşağıdaki Proxy'leri silmek için 'Devam Et'i tıklayın."
+msgstr[0] "Aşağıdaki URL'yi Çoğaltmak için 'Devam Et'e tıklayın."
+msgstr[1] "Aşağıdaki URL'leri Çoğaltmak için 'Devam Et'e tıklayın."
 
 #: webseer.php
-#, fuzzy
-#| msgid "Duplicate"
 msgid "Duplicate URL"
 msgid_plural "Duplicate URLs"
-msgstr[0] "Kopyala"
-msgstr[1] "Kopyala"
+msgstr[0] "URL'yi Çoğalt"
+msgstr[1] "URL'leri Çoğalt"
 
 #: webseer.php
 #, php-format
@@ -557,7 +544,7 @@ msgstr "DNS: Sunucu %s - %s için A Kaydı"
 
 #: webseer.php
 msgid "N/A"
-msgstr "Yok"
+msgstr "Geçerli Değil"
 
 #: webseer.php webseer_servers.php
 msgid "Down"
@@ -613,25 +600,23 @@ msgstr "Tarih Arama"
 
 #: webseer.php webseer_servers.php
 msgid "Entries"
-msgstr "Kayıtlar"
+msgstr "Girdiler"
 
 #: webseer.php
 msgid "Purge Events"
 msgstr "Olayları Temizle"
 
 #: webseer_proxies.php
-#, fuzzy
 msgid "Click 'Continue' to delete the following Proxy."
 msgid_plural "Click 'Continue' to delete following Proxies."
-msgstr[0] "Aşağıdaki Proxy'yi silmek için 'Devam Et'i tıklayın."
-msgstr[1] "Aşağıdaki Proxy'leri silmek için 'Devam Et'i tıklayın."
+msgstr[0] "Aşağıdaki Proxy'yi silmek için 'Devam Et'e tıklayın."
+msgstr[1] "Aşağıdaki Proxy'leri silmek için 'Devam Et'e tıklayın."
 
 #: webseer_proxies.php
-#, fuzzy
 msgid "Delete Proxy"
 msgid_plural "Delete Proxies"
-msgstr[0] "Sil"
-msgstr[1] "Sil"
+msgstr[0] "Proxy'yi Sil"
+msgstr[1] "Proxy'leri Sil"
 
 #: webseer_proxies.php
 #, php-format
@@ -652,46 +637,41 @@ msgstr "Kullanıcı Adı"
 
 #: webseer_proxies.php
 msgid "Not Set"
-msgstr "Ayarlanmadı"
+msgstr "Seçilmedi"
 
 #: webseer_proxies.php
 msgid "Webseer Proxy Management"
 msgstr "WebSeer Proxy Yönetimi"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Click 'Continue' to Delete the following Server."
 msgid_plural "Click 'Continue' to Delete following Servers."
-msgstr[0] "Aşağıdaki Proxy'yi silmek için 'Devam Et'i tıklayın."
-msgstr[1] "Aşağıdaki Proxy'leri silmek için 'Devam Et'i tıklayın."
+msgstr[0] "Aşağıdaki Sunucuyu Silmek için 'Devam Et'e tıklayın."
+msgstr[1] "Aşağıdaki Sunucuları Silmek için 'Devam Et'e tıklayın."
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Delete Server"
 msgid_plural "Delete Servers"
-msgstr[0] "Web Sunucusu"
-msgstr[1] "Web Sunucusu"
+msgstr[0] "Sunucuyu Sil"
+msgstr[1] "Sunucuları Sil"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Click 'Continue' to Disable the following Server."
 msgid_plural "Click 'Continue' to Disable following Servers."
-msgstr[0] "Aşağıdaki Proxy'yi silmek için 'Devam Et'i tıklayın."
-msgstr[1] "Aşağıdaki Proxy'leri silmek için 'Devam Et'i tıklayın."
+msgstr[0] "Aşağıdaki Sunucuyu Devre Dışı Bırakmak için 'Devam Et'e tıklayın."
+msgstr[1] "Aşağıdaki Sunucuları Devre Dışı Bırakmak için 'Devam Et'e tıklayın."
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Disable Server"
 msgid_plural "Disable Servers"
-msgstr[0] "Sunucuyu Etkinleştir"
-msgstr[1] "Sunucuyu Etkinleştir"
+msgstr[0] "Sunucuyu Devre Dışı Bırak"
+msgstr[1] "Sunucuları Devre Dışı Bırak"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Click 'Continue' to Enable the following Server."
 msgid_plural "Click 'Continue' to Enable following Servers."
-msgstr[0] "Aşağıdaki Proxy'yi silmek için 'Devam Et'i tıklayın."
-msgstr[1] "Aşağıdaki Proxy'leri silmek için 'Devam Et'i tıklayın."
+msgstr[0] "Aşağıdaki Sunucuyu Etkinleştirmek için 'Devam Et'e tıklayın."
+msgstr[1] "Aşağıdaki Sunucuları Etkinleştirmek için 'Devam Et'e tıklayın."
 
 #: webseer_servers.php
 msgid "No Events in History"
