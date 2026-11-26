@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-28 16:09-0400\nPO-Revision-Date: 2026-11-25 02:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Greek <https://translate.cacti.net/projects/cacti/webseer/el/>\nLanguage: el-GR\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-28 16:09-0400\nPO-Revision-Date: 2026-11-26 03:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Greek <https://translate.cacti.net/projects/cacti/webseer/el/>\nLanguage: el-GR\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
 
 #: includes/arrays.php webseer_servers.php
 #, php-format
@@ -98,11 +98,10 @@ msgid "Display Name of this server"
 msgstr "Εμφανιζόμενο όνομα αυτού του διακομιστή"
 
 #: includes/arrays.php webseer_servers.php
-#, fuzzy
 msgid "Enable Server"
 msgid_plural "Enable Servers"
 msgstr[0] "Ενεργοποίηση διακομιστή"
-msgstr[1] "Ενεργοποίηση διακομιστή"
+msgstr[1] "Ενεργοποίηση διακομιστών"
 
 #: includes/arrays.php
 msgid "Uncheck this box to disabled this server from checking urls."
@@ -369,11 +368,10 @@ msgid "Save Proxy"
 msgstr "Αποθήκευση διακομιστή μεσολάβησης"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Delete the following URL."
 msgid_plural "Click 'Continue' to Delete following URLs."
-msgstr[0] "Κάντε κλικ στο «Συνέχεια» για να διαγράψετε τον ακόλουθο διακομιστή μεσολάβησης."
-msgstr[1] "Κάντε κλικ στο «Συνέχεια» για να διαγράψετε τους ακόλουθους διακομιστές μεσολάβησης."
+msgstr[0] "Κάντε κλικ στο 'Συνέχεια' για να διαγράψετε το ακόλουθο URL."
+msgstr[1] "Κάντε κλικ στο 'Συνέχεια' για να διαγράψετε τα ακόλουθα URL."
 
 #: webseer.php webseer_proxies.php webseer_servers.php
 msgid "Cancel"
@@ -384,57 +382,46 @@ msgid "Continue"
 msgstr "Συνέχεια"
 
 #: webseer.php
-#, fuzzy
-#| msgid "Delete"
 msgid "Delete URL"
 msgid_plural "Delete URLs"
-msgstr[0] "Διαγραφή"
-msgstr[1] "Διαγραφή"
+msgstr[0] "Διαγραφή URL"
+msgstr[1] "Διαγραφή διευθύνσεων URL"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Disable the following URL."
 msgid_plural "Click 'Continue' to Disable following URLs."
-msgstr[0] "Κάντε κλικ στο «Συνέχεια» για να διαγράψετε τον ακόλουθο διακομιστή μεσολάβησης."
-msgstr[1] "Κάντε κλικ στο «Συνέχεια» για να διαγράψετε τους ακόλουθους διακομιστές μεσολάβησης."
+msgstr[0] "Κάντε κλικ στο 'Συνέχεια' για να απενεργοποιήσετε το ακόλουθο URL."
+msgstr[1] "Κάντε κλικ στο 'Συνέχεια' για να απενεργοποιήσετε τα ακόλουθα URL."
 
 #: webseer.php
-#, fuzzy
-#| msgid "Disable"
 msgid "Disable URL"
 msgid_plural "Disable URLs"
-msgstr[0] "Απενεργοποίηση"
-msgstr[1] "Απενεργοποίηση"
+msgstr[0] "Απενεργοποίηση URL"
+msgstr[1] "Απενεργοποίηση διευθύνσεων URL"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Enable the following URL."
 msgid_plural "Click 'Continue' to Enable following URLs."
-msgstr[0] "Κάντε κλικ στο «Συνέχεια» για να διαγράψετε τον ακόλουθο διακομιστή μεσολάβησης."
-msgstr[1] "Κάντε κλικ στο «Συνέχεια» για να διαγράψετε τους ακόλουθους διακομιστές μεσολάβησης."
+msgstr[0] "Κάντε κλικ στο 'Συνέχεια' για να ενεργοποιήσετε το ακόλουθο URL."
+msgstr[1] "Κάντε κλικ στο 'Συνέχεια' για να ενεργοποιήσετε τα ακόλουθα URL."
 
 #: webseer.php
-#, fuzzy
-#| msgid "Enable"
 msgid "Enable URL"
 msgid_plural "Enable URLs"
-msgstr[0] "Ενεργοποίηση"
-msgstr[1] "Ενεργοποίηση"
+msgstr[0] "Ενεργοποίηση URL"
+msgstr[1] "Ενεργοποίηση διευθύνσεων URL"
 
 #: webseer.php
-#, fuzzy
 msgid "Click 'Continue' to Duplicate the following URL."
 msgid_plural "Click 'Continue' to Duplicate following URLs."
-msgstr[0] "Κάντε κλικ στο «Συνέχεια» για να διαγράψετε τον ακόλουθο διακομιστή μεσολάβησης."
-msgstr[1] "Κάντε κλικ στο «Συνέχεια» για να διαγράψετε τους ακόλουθους διακομιστές μεσολάβησης."
+msgstr[0] "Κάντε κλικ στο 'Συνέχεια' για να αντιγράψετε το ακόλουθο URL."
+msgstr[1] "Κάντε κλικ στο 'Συνέχεια' για να αντιγράψετε τα ακόλουθα URL."
 
 #: webseer.php
-#, fuzzy
-#| msgid "Duplicate"
 msgid "Duplicate URL"
 msgid_plural "Duplicate URLs"
-msgstr[0] "Αντιγραφή"
-msgstr[1] "Αντιγραφή"
+msgstr[0] "Αντιγραφή URL"
+msgstr[1] "Αντιγραφή διευθύνσεων URL"
 
 #: webseer.php
 #, php-format
@@ -557,7 +544,7 @@ msgstr "DNS: Διακομιστής %s - Εγγραφή A για %s"
 
 #: webseer.php
 msgid "N/A"
-msgstr "Μη Διαθέσιμο"
+msgstr "Μη Εφαρμόσιμο"
 
 #: webseer.php webseer_servers.php
 msgid "Down"
@@ -620,18 +607,16 @@ msgid "Purge Events"
 msgstr "Εκκαθάριση συμβάντων"
 
 #: webseer_proxies.php
-#, fuzzy
 msgid "Click 'Continue' to delete the following Proxy."
 msgid_plural "Click 'Continue' to delete following Proxies."
-msgstr[0] "Κάντε κλικ στο «Συνέχεια» για να διαγράψετε τον ακόλουθο διακομιστή μεσολάβησης."
-msgstr[1] "Κάντε κλικ στο «Συνέχεια» για να διαγράψετε τους ακόλουθους διακομιστές μεσολάβησης."
+msgstr[0] "Κάντε κλικ στο 'Συνέχεια' για να διαγράψετε τον ακόλουθο διακομιστή μεσολάβησης."
+msgstr[1] "Κάντε κλικ στο 'Συνέχεια' για να διαγράψετε τους ακόλουθους διακομιστές μεσολάβησης."
 
 #: webseer_proxies.php
-#, fuzzy
 msgid "Delete Proxy"
 msgid_plural "Delete Proxies"
-msgstr[0] "Διαγραφή"
-msgstr[1] "Διαγραφή"
+msgstr[0] "Διαγραφή διακομιστή μεσολάβησης"
+msgstr[1] "Διαγραφή διακομιστών μεσολάβησης"
 
 #: webseer_proxies.php
 #, php-format
@@ -659,39 +644,34 @@ msgid "Webseer Proxy Management"
 msgstr "Διαχείριση διακομιστών μεσολάβησης WebSeer"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Click 'Continue' to Delete the following Server."
 msgid_plural "Click 'Continue' to Delete following Servers."
-msgstr[0] "Κάντε κλικ στο «Συνέχεια» για να διαγράψετε τον ακόλουθο διακομιστή μεσολάβησης."
-msgstr[1] "Κάντε κλικ στο «Συνέχεια» για να διαγράψετε τους ακόλουθους διακομιστές μεσολάβησης."
+msgstr[0] "Κάντε κλικ στο 'Συνέχεια' για να διαγράψετε τον ακόλουθο διακομιστή."
+msgstr[1] "Κάντε κλικ στο 'Συνέχεια' για να διαγράψετε τους ακόλουθους διακομιστές."
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Delete Server"
 msgid_plural "Delete Servers"
-msgstr[0] "WebServer Servers"
-msgstr[1] "WebServer Servers"
+msgstr[0] "Διαγραφή διακομιστή"
+msgstr[1] "Διαγραφή διακομιστών"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Click 'Continue' to Disable the following Server."
 msgid_plural "Click 'Continue' to Disable following Servers."
-msgstr[0] "Κάντε κλικ στο «Συνέχεια» για να διαγράψετε τον ακόλουθο διακομιστή μεσολάβησης."
-msgstr[1] "Κάντε κλικ στο «Συνέχεια» για να διαγράψετε τους ακόλουθους διακομιστές μεσολάβησης."
+msgstr[0] "Κάντε κλικ στο 'Συνέχεια' για να απενεργοποιήσετε τον ακόλουθο διακομιστή."
+msgstr[1] "Κάντε κλικ στο 'Συνέχεια' για να απενεργοποιήσετε τους ακόλουθους διακομιστές."
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Disable Server"
 msgid_plural "Disable Servers"
-msgstr[0] "Ενεργοποίηση διακομιστή"
-msgstr[1] "Ενεργοποίηση διακομιστή"
+msgstr[0] "Απενεργοποίηση διακομιστή"
+msgstr[1] "Απενεργοποίηση διακομιστών"
 
 #: webseer_servers.php
-#, fuzzy
 msgid "Click 'Continue' to Enable the following Server."
 msgid_plural "Click 'Continue' to Enable following Servers."
-msgstr[0] "Κάντε κλικ στο «Συνέχεια» για να διαγράψετε τον ακόλουθο διακομιστή μεσολάβησης."
-msgstr[1] "Κάντε κλικ στο «Συνέχεια» για να διαγράψετε τους ακόλουθους διακομιστές μεσολάβησης."
+msgstr[0] "Κάντε κλικ στο 'Συνέχεια' για να ενεργοποιήσετε τον ακόλουθο διακομιστή."
+msgstr[1] "Κάντε κλικ στο 'Συνέχεια' για να ενεργοποιήσετε τους ακόλουθους διακομιστές."
 
 #: webseer_servers.php
 msgid "No Events in History"
@@ -727,7 +707,7 @@ msgstr "Διακομιστές WebSeer"
 
 #: webseer_servers.php
 msgid "Triggered"
-msgstr "Ενεργοποιημένο"
+msgstr "Πυροδοτήθηκε"
 
 #: webseer_servers.php
 msgid "Webseer Server History"
