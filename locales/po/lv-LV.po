@@ -4,19 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr ""
-"Project-Id-Version: Cacti 1.2.16\n"
-"Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2026-09-28 16:09-0400\n"
-"PO-Revision-Date: 2024-10-17 16:22+0000\n"
-"Last-Translator: Coool (github.com/Coool) <coool@mail.lv>\n"
-"Language-Team: Latvian <http://translate.cacti.net/projects/cacti/webseer/lv/>\n"
-"Language: lv-LV\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n % 10 == 0 || n % 100 >= 11 && n % 100 <= 19) ? 0 : ((n % 10 == 1 && n % 100 != 11) ? 1 : 2);\n"
-"X-Generator: Weblate 4.8.1\n"
+msgstr "Project-Id-Version: Cacti 1.2.16\nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-28 16:09-0400\nPO-Revision-Date: 2026-11-26 03:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Latvian <https://translate.cacti.net/projects/cacti/webseer/lv/>\nLanguage: lv-LV\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=3; plural=(n % 10 == 0 || n % 100 >= 11 && n % 100 <= 19) ? 0 : ((n % 10 == 1 && n % 100 != 11) ? 1 : 2);\nX-Generator: Weblate 5.11.4\n"
 
 #: includes/arrays.php webseer_servers.php
 #, php-format
@@ -103,7 +91,7 @@ msgstr "Lietotāja parole, ko izmanto, lai autentificētos ar starpniekserveri, 
 
 #: includes/arrays.php
 msgid "General Settings"
-msgstr "Pamatiestatījumi"
+msgstr "Vispārīgie iestatījumi"
 
 #: includes/arrays.php
 msgid "Display Name of this server"
@@ -194,7 +182,7 @@ msgstr "Ja šim savienojuma tekstam ir nepieciešams starpniekserveris, izvēlie
 
 #: includes/arrays.php webseer.php
 msgid "None"
-msgstr "Neviena"
+msgstr "Neviens"
 
 #: includes/arrays.php webseer.php
 msgid "Compression"
@@ -341,10 +329,8 @@ msgid "Management"
 msgstr "Vadība"
 
 #: setup.php
-#, fuzzy
-#| msgid "Web Service Checks"
 msgid "Service Checks"
-msgstr "Tīmekļa pakalpojuma pārbaudes"
+msgstr "Pakalpojumu pārbaudes"
 
 #: setup.php
 msgid "WebSeer Service Checks"
@@ -510,7 +496,7 @@ msgstr "Kopā"
 
 #: webseer.php
 msgid "Urls"
-msgstr "URL vietnes"
+msgstr "URL adreses"
 
 #: webseer.php
 msgid "Service Down"
@@ -542,7 +528,7 @@ msgstr "Autorizācijas kods"
 
 #: webseer.php
 msgid "Timeout"
-msgstr "Nesasniedzams"
+msgstr "Noildze"
 
 #: webseer.php webseer_servers.php
 msgid "Last Check"
@@ -595,7 +581,7 @@ msgstr "Stāvoklis"
 
 #: webseer.php webseer_servers.php
 msgid "Any"
-msgstr "Jebkuru"
+msgstr "Jebkurš"
 
 #: webseer.php webseer_servers.php
 msgid "Refresh"
